@@ -1,10 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=DotGothic16&family=IBM+Plex+Mono:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Silkscreen:wght@400;700&family=VT323&family=Xanh+Mono:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300;400&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap");
+
+@font-face {
+  font-family: OffDot;
+  src: url(/assets/OffBitTrial-Dot.ttf);
+}
+
+@font-face {
+  font-family: OffDotBold;
+  src: url(/assets/OffBitTrial-DotBold.ttf);
+}
+
+@font-face {
+  font-family: Vastantonius;
+  src: url(/assets/Vastantonius.ttf);
+}
+
 :root {
   --red: #c04;
   --lightgray: #e6e6e6;
+  --invert_darkgray: #f2eee8;
+  --invert_venom: #ff007b;
   --darkgray: #0d1117;
+  --venom: #00ff84;
   --blue: #135;
   --white: #fff;
-  --font-family: -apple-system, system-ui, sans-serif;
+  --black: #000;
+  --darksteel: #343;
+  --font-family: OffDot, DotGothic16, monospace;
+  --font-family-navbar: OffDotBold, DotGothic16, monospace;
+  --font-family-title: Vastantonius, DotGothic16, monospace;
+  --font-family-delight: OffDotBold, DotGothic16, monospace;
+  --font-family-emphasis: OffDot, DotGothic16, monospace;
+  --font-family-post-title: Vastantonius, DotGothic16, monospace;
+  --font-family-post-body: DotGothic16, -apple-system, system-ui, sans-serif;
+}
+
+:focus,
+*:focus {
+  outline: var(--venom) dotted 1px !important;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+em,
+strong {
+  font-family: var(--font-family-delight);
+  color: var(--venom);
 }
 
 html,
@@ -12,36 +54,55 @@ body {
   padding: 0;
   margin: 0;
   font-family: var(--font-family);
-  color: var(--darkgray);
-  background-color: var(--white);
-
-  /** Pagefind variables */
-  --pagefind-ui-scale: .8;
-  --pagefind-ui-primary: var(--darkgray);
-  --pagefind-ui-text: var(--darkgray);
-  --pagefind-ui-background: var(--white);
-  --pagefind-ui-border: var(--lightgray);
-  --pagefind-ui-tag: var(--lightgray);
-  --pagefind-ui-border-width: 1px;
-  --pagefind-ui-border-radius: 6px;
-  --pagefind-ui-image-border-radius: 6px;
-  --pagefind-ui-image-box-ratio: 3 / 2;
-  --pagefind-ui-font: var(--font-family);
+  color: var(--white);
+  background-color: var(--darkgray);
 }
 
 main {
-  padding: 5vh 5vw;
+  padding: 2vh 5vw 5vh 5vw;
+}
 
-  & > :first-child {
-    margin-top: 0;
-  }
+main > :first-child {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-delight);
+  color: var(--venom);
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+h4 {
+  font-size: 1rem;
 }
 
 a {
-  color: var(--blue);
+  color: var(--lightgray);
+  text-decoration: dotted underline var(--venom) !important;
+  text-underline-offset: 4px;
+  cursor: pointer;
 }
 
-/* Warning */
+a:hover {
+  color: var(--venom) !important;
+}
+
 .warning {
   background-color: #ffc;
   padding: 1em 0.5em;
@@ -49,22 +110,56 @@ a {
 
 table {
   margin: 1em 0;
-
-  & td,
-  & th {
-    padding-right: 1em;
-  }
 }
 
-pre,
-code {
-  font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
-  line-height: 1.5;
-  font-size: 1rem;
+table td,
+table th {
+  padding-right: 1em;
 }
 
 hr {
   border: 0;
-  border-top: solid 2px var(--lightgray);
-  margin: 5vh 0;
+  border-top: solid 2px var(--darkgray);
+  margin: 2.5vh 0;
+}
+
+picture {
+  position: relative;
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  filter: sepia(1) hue-rotate(102deg) saturate(2.5);
+  image-rendering: pixelated;
+  border: lime dotted 1px;
+}
+
+picture::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 99;
+  content: "";
+  background-image: radial-gradient(transparent, black);
+  background-size: 3px 3px;
+  & > * {
+    image-rendering: pixelated;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }

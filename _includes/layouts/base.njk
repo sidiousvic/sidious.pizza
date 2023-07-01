@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="{{ site.title }}">
     <link rel="alternate" href="/feed.json" type="application/json" title="{{ site.title }}">
+    <link rel="icon" type="image/x-icon" href="/assets/enemy.png">
   </head>
   <body>
-    <nav class="navbar">
+    <nav id="navbar" class="navbar">
       <a href="/" class="navbar-home">
-        <strong>{{ site.title }}</strong>
+        {{ site.title }}
       </a>
 
       <ul class="navbar-links">
@@ -26,16 +27,13 @@
       {%- endfor %}
       </ul>
 
-      <div class="navbar-search">
-        <div id="search"></div>
-      </div>
     </nav>
 
-    <main class="{{ bodyClass }}">
+    <main id="main" class="{{ bodyClass }}">
       {{ content | safe }}
     </main>
 
-    <footer></footer>
+    <footer><p>® 1991 <a href="/posts/just-do-sh-t" style="color: var(--darksteel); font-family: var(--font-family-delight)">"Just Do Sh✸t"</a> All Rights Reserved</p></footer>
 
     <!-- Current page: {{ url }} -->
   </body>

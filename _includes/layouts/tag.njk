@@ -3,7 +3,7 @@ layout: layouts/base.njk
 bodyClass: body-tag
 ---
 <div data-pagefind-body>
-  <h1>Tagged “{{ tag }}”</h1>
+  <h1>{{ tag.toUpperCase() }}</h1>
 
   {% set postslist = search.pages("'" + tag + "'") %}
   {% include "templates/postslist.njk" %}

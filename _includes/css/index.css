@@ -1,0 +1,58 @@
+html {
+  height: 100%;
+}
+
+body {
+  background: transparent;
+  cursor: none;
+}
+
+nav {
+  mix-blend-mode: difference;
+}
+
+a {
+  cursor: pointer;
+}
+
+p {
+  margin: 0;
+  line-height: 30px;
+}
+
+canvas {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: none;
+}
+
+#start-overlay {
+  top: 0;
+  left: 0;
+  background-color: var(--darkgray);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+  font-size: 30px;
+}
+
+#score {
+  position: absolute;
+  font-family: var(--font-family-delight);
+  bottom: 10;
+  left: 10;
+  color: var(--venom);
+}
+
+img {
+  mix-blend-mode: exclusion;
+  image-rendering: pixelated;
+}

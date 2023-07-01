@@ -1,0 +1,25 @@
+---
+layout: layouts/home.njk
+menu:
+  visible: true
+  title: WEBLOG
+  order: 1
+---
+
+{% set postslist = search.pages("type=posts", "date=desc", 3) %}
+
+<h1>🥕 What's cookin'?</h2>
+
+{% include "templates/postslist.njk" %}
+
+<hr>
+
+{% set postslist  = search.pages("pinned=true") %}
+
+{%if postslist.length %}
+  <h1>🔥 Hot kicks</h1>
+  {% include "templates/postslist.njk" %}
+  <hr>
+{% endif %}
+
+<p>There's more at the <a href="/weblog/archive">archive</a>.</p>
