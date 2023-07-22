@@ -125,12 +125,21 @@ hr {
 
 picture {
   position: relative;
+  margin: 0;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 80vw;
   width: fit-content;
   height: fit-content;
   filter: sepia(1) hue-rotate(102deg) saturate(2.5);
   image-rendering: pixelated;
   border: lime dotted 1px;
+  & > p {
+    margin: 0;
+    display: contents;
+  }
 }
 
 picture::after {
@@ -143,8 +152,24 @@ picture::after {
   content: "";
   background-image: radial-gradient(transparent, black);
   background-size: 3px 3px;
+  pointer-events: none;
   & > * {
     image-rendering: pixelated;
+  }
+}
+
+figure {
+  width: fit-content;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+figcaption {
+  font-size: 1.1rem;
+  & > p {
+    margin: 0;
   }
 }
 
