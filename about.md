@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
   </article>
 </div>
 
-Hola amigxs, my name is Vic and this my little corner of the web. I want this domain to be a cyber representation of myself. I will be [writing](/weblog) and sharing my music here, as well as computer programs like _"Phantom Pizza"_, the game in [the homepage](/).
+Hola amigxs, my name is Vic and this my little cyber space. I will be [writing](/weblog) and sharing my music here, as well as computer programs like _"Phantom Pizza"_, the game in [the homepage](/).
 
 # Born and raised in the desert
 
@@ -68,4 +68,4 @@ Hola amigxs, my name is Vic and this my little corner of the web. I want this do
   </figcaption>
 </figure>
 
-I was born in the state of Chihuahua, Mexico.
+I was born in the state of Chihuahua, in the north of Mexico.
