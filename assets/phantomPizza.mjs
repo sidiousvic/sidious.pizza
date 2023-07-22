@@ -1,25 +1,37 @@
 /*
  *
  * Phantom Pizza
+ *
+ * A fun game to play while you wait for your pizza to be delivered.
+ *
  * by @sidiousvic
  *
  */
 
 /*
+ * Constants
+ */
+const START_TEXT_EN = "PRESS START";
+const START_TEXT_JP = "スタート";
+const START_ANIMATION_INTERVAL = 2000;
+
+/*
  *
- * HTML
+ * HTML + CSS
  *
  */
 document.querySelector(
   "main"
 ).innerHTML += `<canvas><img id="player" width="0" height="0" src="/assets/player.gif" /><img id="enemyR" width="0" height="0" src="/assets/enemyR.png" /><img id="enemy" width="0" height="0" src="/assets/enemy.png" /><img id="swoosh" width="0" height="0" src="/assets/swoosh.png" /></canvas><p id="score" hidden>0</p><div id="start-screen"><h1>SIDIOUS.PIZZA</h1><p id="press-start">PRESS START</p></div><style>html {height: 100%;}body {background: transparent;cursor: none;}nav {mix-blend-mode: difference;}a {cursor: pointer;}p {margin: 0;line-height: 30px;}canvas {z-index: -1;position: absolute;top: 0;left: 0;cursor: none;}#start-screen {top: 0;left: 0;background-color: var(--darkgray);display: flex;flex-direction: column;text-align: center;align-items: center;justify-content: center;position: absolute;height: 100vh;width: 100vw;z-index: 2;font-size: 30px;}#score {position: absolute;font-family: var(--font-family-delight);bottom: 10;left: 10;color: var(--venom);}:root {--bg: rgb(28, 31, 7);--fg: rgb(0, 179, 116);}img {mix-blend-mode: exclusion;image-rendering: pixelated;}</style>`;
 
+// Wait for next frame to make sure HTML and CSS have rendered.
 requestAnimationFrame(() => {
   /*
    *
-   * HTML elements
+   * DOM elements
    *
    */
+
   const startScreen = document.getElementById("start-screen");
   const pressStart = document.getElementById("press-start");
   const canvasElement = document.querySelector("canvas");
@@ -34,19 +46,20 @@ requestAnimationFrame(() => {
 
   /*
    *
-   * Start screen
+   * Start screen animation
    *
    */
 
-  setInterval(() => {
-    if (pressStart.innerText === "PRESS START")
-      pressStart.innerHTML = "スタート";
-    else pressStart.innerHTML = "PRESS START";
-  }, 2000);
+  setInterval(
+    () =>
+      (pressStart.innerText =
+        pressStart.innerText === START_TEXT_EN ? START_TEXT_JP : START_TEXT_EN),
+    START_ANIMATION_INTERVAL
+  );
 
   /*
    *
-   * utilities
+   * Utilities
    *
    */
 
@@ -71,7 +84,8 @@ requestAnimationFrame(() => {
 
   /**
    * @function distance
-   * @returns distance between two points
+   * @returns distance in pixels between two points
+   * @example distance({x: 1, y: 1})({x: 2, y: 2}) // 1.4142135623730951
    * @math 𝑑 = √( ( 𝑥2 - 𝑥1 )² + ( 𝑦2 - 𝑦1 )² )
    */
   const distance =
@@ -109,55 +123,91 @@ requestAnimationFrame(() => {
   const divideByTwo = (n) => n / 2;
 
   /**
-   * @function collide
+   * @function hitbox
+   * @returns number half of a game object's dimension
+   * @example hitbox(player) // 25
+   */
+  const hitbox = (o) => divideByTwo(o.dimension);
+
+  /**
+   * @function colliding
+   * @returns boolean true if game objects a and b collide
+   * @example colliding(player)(swoosh) // true
+   */
+  const colliding = (a) => (b) => distance(a)(b) <= hitbox(a) + hitbox(b);
+
+  /**
+   * Side effects
+   */
+
+  /**
+   * @function $collide
+   * @$ideffect
    * fires function f when game objects a and b collide
    * @example collide(player)(swoosh)(() => score.up(z));
    */
-  const collide = (a) => (b) => (f) => {
-    const hitboxA = divideByTwo(a.dimension);
-    const hitboxB = divideByTwo(b.dimension);
-    const distanceAToB = distance(a)(b);
-    distanceAToB <= hitboxA + hitboxB && f();
-  };
+  const $collide = (a) => (b) => (f) => colliding(a)(b) && f();
 
   /**
-   * @function move
+   * @function $move
+   * @$ideffect
    * moves game object o
    * @example move(enemy)
    */
-  const move = (o) => ((o.x += o.velocity.x), (o.y += o.velocity.y));
+  const $move = (o) => ((o.x += o.velocity.x), (o.y += o.velocity.y));
 
-  const utils = {
-    distance,
-    randomIntFromRange,
-    negation,
-    avg,
-    divideByTwo,
-    collide,
-    move,
-  };
+  /**
+   * @function $moveWithMouse
+   * @$ideffect
+   * moves game object o with mouse
+   * @example moveWithMouse(player)(mouse)
+   */
+  const $moveWithMouse = (o) => (m) => ((o.x = m.x), (o.y = m.y));
+
+  /**
+   * @function $switchSprite
+   * @$ideffect
+   * switches game object o sprite (left and right) based on condition
+   * @example switchSprite(player)(z.mouse.x < player.x);
+   */
+  const $switchSprite = (o) => (condition) =>
+    condition ? (o.sprite = o.sprites.L) : (o.sprite = o.sprites.R);
+
+  /**
+   * @function spawnRandom
+   * retunrs a game object with a random spawn position within screen bounds
+   * @example spawnRandom(Enemy)
+   */
+  const spawnRandom = (O) =>
+    O(randomIntFromRange(50)(innerWidth - 50))(
+      randomIntFromRange(50)(innerHeight - 50)
+    )(50)(enemySprites)(randomIntFromRange(-5)(-4) || 5);
+
+  /**
+   * @function respawn
+   * @$ideffect
+   * respawns game object o within screen bounds
+   * @example respawn(coin)
+   */
+  const $respawn = (o) => (
+    (o.x = randomIntFromRange(50)(innerWidth - 50)),
+    (o.y = randomIntFromRange(50)(innerHeight - 50))
+  );
 
   /*
    *
-   * objects
+   * game objects
    *
    */
+
   const Player = (x) => (y) => (dimension) => (sprite) => ({
     x,
     y,
     sprite,
     dimension,
-    moveWithMouse({ player, mouse }) {
-      player.x = mouse.x;
-      player.y = mouse.y;
-    },
-    draw({ player, swoosh, score, collide, c }) {
-      /**@mechanic move player with mouse*/
-      player.moveWithMouse(z);
-
-      /**@mechanic increase score when colliding with swoosh */
-      collide(player)(swoosh)(() => score.up(z));
-
+    draw({ player, swoosh, score, mouse, c }) {
+      $moveWithMouse(player)(mouse);
+      $collide(player)(swoosh)(() => score.up(z));
       c.draw(player);
     },
   });
@@ -167,87 +217,60 @@ requestAnimationFrame(() => {
     y,
     sprite,
     dimension,
-    respawn({ swoosh, randomIntFromRange }) {
-      swoosh.x = randomIntFromRange(50)(innerWidth - 50);
-      swoosh.y = randomIntFromRange(50)(innerHeight - 50);
-    },
-    draw({ swoosh, player, sound, enemies, collide, c }) {
-      /**@mechanic play swoosh sound when colliding with player */
-      /**@mechanic respawn swoosh when colliding with player */
-      /**@mechanic spawn new enemy when colliding with player */
-      collide(swoosh)(player)(() => {
+    draw({ swoosh, player, sound, enemies, c }) {
+      $collide(swoosh)(player)(() => {
+        $respawn(swoosh);
         sound.swoosh.play();
-        swoosh.respawn(z);
-        enemies.spawn(z);
+        enemies.push(spawnRandom(Enemy));
       });
-
       c.draw(swoosh);
     },
   });
 
-  const Enemy =
-    (x) =>
-    (y) =>
-    (dimension) =>
-    ({ ...sprites }) =>
-    (speed) => ({
-      x,
-      y,
-      sprite: sprites.L,
-      spriteR: sprites.R,
-      spriteL: sprites.L,
-      dimension,
-      velocity: {
-        x: speed,
-        y: speed,
-      },
-      switchSprite({ enemy }) {
-        if (enemy.velocity.x < 0) enemy.sprite = enemy.spriteL;
-        else enemy.sprite = enemy.spriteR;
-      },
-      draw({ enemy, player, sound, over, collide, move, c }) {
-        /**@mechanic game over when colliding with player */
-        /**@mechanic play death sound when colliding with player */
-        collide(enemy)(player)(() => {
-          over(z);
-          sound.death.play();
+  const Enemy = (x) => (y) => (dimension) => (sprites) => (speed) => ({
+    x,
+    y,
+    sprites,
+    dimension,
+    velocity: { x: speed, y: speed },
+    draw({ enemy, player, sound, swoosh, c, enemies }) {
+      $collide(enemy)(player)(() => {
+        $respawn(swoosh);
+        enemies.length = 0;
+        sound.death.play();
+      });
+      $move(enemy);
+      $switchSprite(z.enemy)(z.enemy.velocity.x < 0);
+
+      /**@mechanic bounce enemy off walls */
+      {
+        const enemyDistanceFromBottom = distance(enemy)({
+          x: enemy.x,
+          y: innerHeight,
         });
+        const enemyDistanceFromTop = enemyDistanceFromBottom - innerHeight;
+        const enemyDistanceFromRight = distance(enemy)({
+          x: innerWidth,
+          y: enemy.y,
+        });
+        const enemyDistanceFromLeft = enemyDistanceFromRight - innerWidth;
 
-        /**@mechanic move enemy */
-        move(enemy);
+        if (enemyDistanceFromBottom <= enemy.dimension)
+          enemy.velocity.y = negation(enemy.velocity.y);
 
-        /**@mechanic bounce enemy off walls */
-        {
-          const enemyDistanceFromBottom = distance(enemy)({
-            x: enemy.x,
-            y: innerHeight,
-          });
-          const enemyDistanceFromTop = enemyDistanceFromBottom - innerHeight;
-          const enemyDistanceFromRight = distance(enemy)({
-            x: innerWidth,
-            y: enemy.y,
-          });
-          const enemyDistanceFromLeft = enemyDistanceFromRight - innerWidth;
+        if (enemyDistanceFromTop > 0)
+          enemy.velocity.y = negation(enemy.velocity.y);
 
-          if (enemyDistanceFromBottom <= enemy.dimension)
-            enemy.velocity.y = negation(enemy.velocity.y);
+        if (enemyDistanceFromLeft > 0)
+          enemy.velocity.x = negation(enemy.velocity.x);
 
-          if (enemyDistanceFromTop > 0)
-            enemy.velocity.y = negation(enemy.velocity.y);
+        if (enemyDistanceFromRight <= enemy.dimension)
+          enemy.velocity.x = negation(enemy.velocity.x);
+      }
 
-          if (enemyDistanceFromLeft > 0)
-            enemy.velocity.x = negation(enemy.velocity.x);
-
-          if (enemyDistanceFromRight <= enemy.dimension)
-            enemy.velocity.x = negation(enemy.velocity.x);
-        }
-
-        /**@mechanic switch sprite l <--> r */
-        enemy.switchSprite(z);
-
-        c.draw(enemy);
-      },
-    });
+      c.draw(enemy);
+    },
+  });
 
   const Score = (value) => (sprite) => ({
     value,
@@ -266,16 +289,7 @@ requestAnimationFrame(() => {
 
   const Sound =
     ({ ...audios }) =>
-    (sprite) => ({
-      ...audios,
-      sprite,
-      mute({ sound }) {
-        (sound.death.muted = true), (sound.swoosh.muted = true);
-      },
-      unmute({ sound }) {
-        (sound.death.muted = false), (sound.swoosh.muted = false);
-      },
-    });
+    (sprite) => ({ ...audios, sprite });
 
   const Mouse = (c) => ({
     x: c.width / 2,
@@ -308,37 +322,15 @@ requestAnimationFrame(() => {
   };
 
   const launch = ({ canvas, Mouse, Score, Player, Coin, Enemy, Sound }) => {
-    /**@mechanic initialize canvas context*/
     const c = canvas(canvasElement)(innerWidth)(innerHeight);
-
-    /**@mechanic create mouse*/
     const mouse = Mouse(c);
-
-    /**@mechanic create score*/
     const score = Score(0)(scoreSprite);
-
-    /**@mechanic create player*/
     const player = Player(mouse.x)(mouse.y)(50)(playerSprite);
-
-    /**@mechanic create swoosh*/
     const randomCoinX = randomIntFromRange(50)(innerWidth - 50);
     const randomCoinY = randomIntFromRange(50)(innerHeight - 50);
-
     const swoosh = Coin(randomCoinX)(randomCoinY)(50)(swooshSprite);
+    let enemies = [spawnRandom(Enemy)];
 
-    /**@mechanic create enemies */
-    const enemies = [];
-    enemies.spawn = ({ enemies }) => {
-      const randomEnemyX = randomIntFromRange(50)(innerWidth - 50);
-      const randomEnemyY = randomIntFromRange(50)(innerHeight - 50);
-      const randomSpeed = randomIntFromRange(-5)(4); // -5 -4 -3 -2 -1 0 1 2 3 4
-      const randomSpeedNotZero = randomSpeed === 0 ? 5 : randomSpeed; // -5 -4 -3 -2 -1 5 1 2 3 4
-      const spawnedEnemy =
-        Enemy(randomEnemyX)(randomEnemyY)(50)(enemySprites)(randomSpeedNotZero);
-      enemies.push(spawnedEnemy);
-    };
-
-    /**@mechanic create sound */
     const audios = {
       swoosh: new Audio("/assets/swoosh.wav"),
       death: new Audio("/assets/death.wav"),
@@ -356,14 +348,7 @@ requestAnimationFrame(() => {
       score,
       sound,
       mouse,
-      collide,
-      move,
-      over,
-      ...utils,
     };
-
-    /**@inits */
-    enemies.spawn(z);
 
     /**@sideffects */
     addEventListener("resize", ({ target: { innerWidth, innerHeight } }) => {
@@ -402,13 +387,6 @@ requestAnimationFrame(() => {
     return z;
   };
 
-  const over = (z) => {
-    const { swoosh, score, enemies } = z;
-    swoosh.respawn(z);
-    score.reset(z);
-    enemies.length = 0;
-  };
-
   const z = launch({
     canvas,
     Mouse,
@@ -417,7 +395,6 @@ requestAnimationFrame(() => {
     Coin,
     Enemy,
     Sound,
-    ...utils,
   });
 
   Engine(z);
