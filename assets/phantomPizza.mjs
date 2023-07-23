@@ -14,6 +14,8 @@
 const START_TEXT_EN = "PRESS START";
 const START_TEXT_JP = "スタート";
 const START_ANIMATION_INTERVAL = 2000;
+const ENEMY_RANDOM_SPAWN_SPEED_RANGE = { lower: -4, upper: 4 };
+const SPRITE_DIMENSION = 50;
 
 /*
  *
@@ -174,14 +176,18 @@ requestAnimationFrame(() => {
     condition ? (o.sprite = o.sprites.L) : (o.sprite = o.sprites.R);
 
   /**
-   * @function spawnRandom
-   * retunrs a game object with a random spawn position within screen bounds
+   * @function spawnRandomEnemy
+   * retunrs a game object with a random spawn position and speed within screen bounds
    * @example spawnRandom(Enemy)
    */
-  const spawnRandom = (O) =>
-    O(randomIntFromRange(50)(innerWidth - 50))(
-      randomIntFromRange(50)(innerHeight - 50)
-    )(50)(enemySprites)(randomIntFromRange(-5)(-4) || 5);
+  const spawnRandomEnemy = (enemy) =>
+    enemy(randomIntFromRange(SPRITE_DIMENSION)(innerWidth - SPRITE_DIMENSION))(
+      randomIntFromRange(SPRITE_DIMENSION)(innerHeight - SPRITE_DIMENSION)
+    )(SPRITE_DIMENSION)(enemySprites)(
+      randomIntFromRange(ENEMY_RANDOM_SPAWN_SPEED_RANGE.lower)(
+        ENEMY_RANDOM_SPAWN_SPEED_RANGE.upper
+      ) * 2 || 5
+    );
 
   /**
    * @function respawn
@@ -190,8 +196,8 @@ requestAnimationFrame(() => {
    * @example respawn(coin)
    */
   const $respawn = (o) => (
-    (o.x = randomIntFromRange(50)(innerWidth - 50)),
-    (o.y = randomIntFromRange(50)(innerHeight - 50))
+    (o.x = randomIntFromRange(SPRITE_DIMENSION)(innerWidth - SPRITE_DIMENSION)),
+    (o.y = randomIntFromRange(SPRITE_DIMENSION)(innerHeight - SPRITE_DIMENSION))
   );
 
   /*
@@ -221,7 +227,7 @@ requestAnimationFrame(() => {
       $collide(swoosh)(player)(() => {
         $respawn(swoosh);
         sound.swoosh.play();
-        enemies.push(spawnRandom(Enemy));
+        enemies.push(spawnRandomEnemy(Enemy));
       });
       c.draw(swoosh);
     },
@@ -325,18 +331,22 @@ requestAnimationFrame(() => {
     const c = canvas(canvasElement)(innerWidth)(innerHeight);
     const mouse = Mouse(c);
     const score = Score(0)(scoreSprite);
-    const player = Player(mouse.x)(mouse.y)(50)(playerSprite);
-    const randomCoinX = randomIntFromRange(50)(innerWidth - 50);
-    const randomCoinY = randomIntFromRange(50)(innerHeight - 50);
-    const swoosh = Coin(randomCoinX)(randomCoinY)(50)(swooshSprite);
-    let enemies = [spawnRandom(Enemy)];
-
+    const player = Player(mouse.x)(mouse.y)(SPRITE_DIMENSION)(playerSprite);
+    const randomCoinX = randomIntFromRange(SPRITE_DIMENSION)(
+      innerWidth - SPRITE_DIMENSION
+    );
+    const randomCoinY = randomIntFromRange(SPRITE_DIMENSION)(
+      innerHeight - SPRITE_DIMENSION
+    );
+    const swoosh =
+      Coin(randomCoinX)(randomCoinY)(SPRITE_DIMENSION)(swooshSprite);
+    let enemies = [spawnRandomEnemy(Enemy)];
     const audios = {
       swoosh: new Audio("/assets/swoosh.wav"),
       death: new Audio("/assets/death.wav"),
     };
     audios.swoosh.volume = 0.07;
-    audios.death.volume = 1;
+    audios.death.volume = 0.5;
     const sound = Sound(audios)(soundSprite);
 
     /**@gamestate */
