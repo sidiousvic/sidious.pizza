@@ -138,7 +138,7 @@ When boredom struck I biked, read a shit ton of books, wrote [haiku](/tags/haiku
 
 <figure>
   <picture>
-    <video width="720" controls>
+    <video width="100%" controls>
       <source src="/assets/surfing-with-the-alien.mp4" type="video/mp4">
     </video>
   </picture>
@@ -147,7 +147,7 @@ When boredom struck I biked, read a shit ton of books, wrote [haiku](/tags/haiku
   </figcaption>
 </figure>
 
-I had these misadventures under the pseudonym _"Vic Sidious"_ a play on [Sid Vicious](https://www.youtube.com/watch?v=rDyb_alTkMQ). I'm fascinated by villains and anarchists like Sid. For a while I felt like one, but it was too easy to confuse half-assing everything with being a rebel. After 25 I was ready to whole-ass _something_.
+I had these misadventures under the pseudonym _"Vic Sidious"_ a play on [Sid Vicious](https://www.youtube.com/watch?v=rDyb_alTkMQ). I'm fascinated by villains and anarchists like Sid. For a while I felt like one, but it was too easy to confuse half-assing everything with being a rebel. After 25 I was ready to whole-ass something.
 
 # Tokyo boy
 
