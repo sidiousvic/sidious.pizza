@@ -49,6 +49,11 @@ strong {
   color: var(--venom);
 }
 
+strong {
+  font-family: var(--font-family-title);
+  color: var(--venom);
+}
+
 html,
 body {
   padding: 0;
@@ -171,6 +176,10 @@ figcaption {
   & > p {
     margin: 0;
   }
+}
+
+video {
+  width: -webkit-fill-available;
 }
 
 img {

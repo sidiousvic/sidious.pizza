@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
   </article>
 </div>
 
-Hola amigxs, my name is Vic and this my cyber space. I will be [writing](/weblog) and sharing my music here, as well as computer programs . Here's a summary of what's happened so far.
+Hola amigxs, my name is Vic and this my cyber space. I will be [writing](/weblog) and sharing my music and computer programs here. Here's a brief history of my way here.
 
 # Born and raised in the desert
 
@@ -72,7 +72,7 @@ Hola amigxs, my name is Vic and this my cyber space. I will be [writing](/weblog
   </figcaption>
 </figure>
 
-I was born in the state of Chihuahua, in the north of Mexico. It's a very dry region where water and plants are scarce. It's one of the areas of highest scorpionism on the planet.
+I was born in the state of Chihuahua, in the north of Mexico. It's a very dry region where water and plants are scarce. It's the [birthplace of the burrito](https://en.wikipedia.org/wiki/Burrito#:~:text=Burritos%20are%20a%20traditional%20food%20of%20Ciudad%20Ju%C3%A1rez%2C%20a%20city%20bordering%20El%20Paso%2C%20Texas%2C%20in%20the%20northern%20Mexican%20state%20of%20Chihuahua%2C%20where%20people%20buy%20them%20at%20restaurants%20and%20roadside%20stands.%20Northern%20Mexican%20border%20towns%20like%20Villa%20Ahumada%20have%20an%20established%20reputation%20for%20serving%20burritos.), and one of the areas of highest scorpionism on the planet.
 
 <figure>
   <picture>
@@ -82,40 +82,102 @@ I was born in the state of Chihuahua, in the north of Mexico. It's a very dry re
   </picture>
   <figcaption>
 
-Damn little [xerocoles.](https://en.wikipedia.org/wiki/Scorpion#:~:text=Scorpions%20are%20xerocoles%2C%20meaning%20they%20primarily%20live%20in%20deserts%2C)
+Cute little [xerocoles.](https://en.wikipedia.org/wiki/Scorpion#:~:text=Scorpions%20are%20xerocoles%2C%20meaning%20they%20primarily%20live%20in%20deserts%2C)
 
   </figcaption>
 </figure>
 
-My father got a computer from work when I was young, and I used it in the evenings to surf the internet. Few years later I was a seasoned [bounty hunter](https://en.wikipedia.org/wiki/Music_piracy) of Black Sabbath and Cream **.mp3s** for family and pals.
+# Misled youth
 
-Back then the web was more like the wild west, and we were all bustin' cyber bullets willy nilly, having fun and getting by. We were also learning other things.
+When I was young I had a neighbor who was skater. We used to skip school to play ball and skateboard. My uncle had an obscene collection of hard rock records which I stole from every year. My heroes became [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and Jimi Hendrix.
+
+I remember listening to [Foxey Lady](https://www.youtube.com/watch?v=_PVjcIO4MT4) on my discman while taking out the trash. I broke my arm crashing into a parked car trying to do a _"hardflip"_.
 
 <figure>
   <picture>
 
-!["English, motherf*cker, do you speak it?"](/assets/do-you-speak-it.gif)
+![Fish-eye view of a man doing a skateboard trick called a hardflip](/assets/hardflip.gif)
 
   </picture>
   <figcaption>
 
-["English, motherf\*cker, do you speak it?"](https://youtu.be/Y6YBKdmOlM8?t=285)
+Hardflips are really hard!
 
   </figcaption>
-
 </figure>
 
-I left home at 17 with my guitar _"Wozza"_ and a few books. Years followed in southwestern USA, Osaka, Hong Kong, and Mexico. I was a student, a gardener, a buyer and a dishwasher. I taught for a few years in the Japanese countryside. Boredom struck and created [a bit of doom music](https://open.spotify.com/intl-ja/track/4YinnI3uql8ax8EZyqyIjl?si=c25ebef66fa546bc) and silly animation in that time.
+One day my father brought home a computer from work, and I used it in the evenings to surf the internet. Few years later I was a seasoned [bounty hunter](https://en.wikipedia.org/wiki/Music_piracy) of Black Sabbath and Cream _.mp3s_ for family and pals. I spent a lot of my teenage years surfing the web, playing Zelda and watching MTV.
+
+<figure>
+  <picture>
+  
+![MTV logo](/assets/mtvlogo.gif)
+
+  </picture>
+  <figcaption>
+    <em>"Because MTV brings out the bitch in you"</em>
+  </figcaption>
+</figure>
+
+# Skating away
+
+I left home at 17 with my guitar _"Wozza"_ and a few books. Years followed in southwestern USA, Osaka, and Hong Kong, tumbling back to Mexico from time to time, but [never staying there too long](https://en.wikipedia.org/wiki/Timeline_of_the_Mexican_drug_war). I went back to Japan and never left.
 
 <figure>
   <picture>
 
-<video width="720" controls>
-  <source src="/assets/surfing-with-the-alien.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+![Animated gif of a skateboarder ollying over a laundry bottle on the street](/assets/skating-tokyo.gif)
 
   </picture>
-<figure>
+  <figcaption>
+  This is an anti-social activity.
+  </figcaption>
+</figure>
 
-One summer I studied how to program a low resolution game, which ended up becoming _"Phantom Pizza"_, the game in [the homepage](/). Moved to Tokyo, and been here for a few years now. Programming is how I earn my sushi today. I work for an energy company that is [driving the digitization of the electrical grid](https://www.vox.com/energy-and-environment/2017/12/15/16714146/greener-more-reliable-more-resilient-grid-microgrids#:~:text=microgrids%20within%20microgrids.-,Alvin%20Chang,-Next%3A%20microgrids%20need).
+When boredom struck I biked, read a shit ton of books, wrote [haiku](/tags/haiku), made [doomer music](https://open.spotify.com/intl-ja/track/4YinnI3uql8ax8EZyqyIjl?si=c25ebef66fa546bc) and even made silly web cartoons to pass the time.
+
+<figure>
+  <picture>
+    <video width="720" controls>
+      <source src="/assets/surfing-with-the-alien.mp4" type="video/mp4">
+    </video>
+  </picture>
+  <figcaption>
+    Xeno the Alien, 2017
+  </figcaption>
+</figure>
+
+I had these misadventures under the pseudonym _"Vic Sidious"_ a play on [Sid Vicious](https://www.youtube.com/watch?v=rDyb_alTkMQ). I'm fascinated by villains and anarchists like Sid. For a while I felt like one, but it was too easy to confuse half-assing everything with being a rebel. After 25 I was ready to whole-ass _something_.
+
+# Tokyo boy
+
+One summer I studied how to program a low resolution game using C#, which ended up becoming _"Phantom Pizza"_, the game on [the homepage](/). It was fun like hell. I was saving up to buy a motorcycle at the time, but I used the money to continue mashing keys and move to Tokyo to study computer science.
+
+<figure>
+  <picture>
+
+![A view of Kanda river near Asakusabashi, Tokyo](/assets/tokyo.gif)
+
+  </picture>
+  <figcaption>
+    Kanda river 
+  </figcaption>
+</figure>
+
+Programming is how I earn my sushi today. I work for an energy company that is driving the digitization of the electric grid in Japan.
+
+I still play guitar and skate sometime. I'm saving up for a motorcycle again. I dedicate some time to my craft, such this website, but I really spend most of the time drinking and laughing with friends. Every meeting happens only once in a lifetime. _一期一会_.
+
+<figure>
+  <picture>
+
+![Two young men talking by a fire](/assets/demondance.jpg)
+
+  </picture>
+  <figcaption>
+  
+<span style="font-style: italic;">"We made the mountains shake with laughter as we played ⌇ Hiding in our corner of the world ⌇ Then we did the demon dance and rushed to nevermore ⌇ Threw away the key and locked the door."</style>
+  </figcaption>
+</figure>
+
+Thank you for reading a little about who I am. _どうもどうも！_ I'll see you around [sidious.pizza](/). Welcome and I hope you have a great time here.
