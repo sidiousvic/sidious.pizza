@@ -15,6 +15,10 @@ menu:
   flex-direction: row;
   flex-wrap: wrap;
 }
+
+.vic-profile-pic {
+  margin: 1vw;
+}
 </style>
 
 <script type="text/javascript" async>
@@ -36,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 <div class="info">
-  <picture style="margin-right: 3vw;">
+  <picture class="vic-profile-pic">
     <img alt="vic" width=250 src="/assets/vic.png"/>
   </picture>
 
@@ -45,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 |           |                                                                             |
 | --------- | --------------------------------------------------------------------------- |
 | _Name_    | <div class="ypewriter">Victor René Molina Rodríguez</div>                   |
-| _Work_    | [Programmer, energy industry]()                                             |
+| _Work_    | [Programmer, energy industry](https://github.com/sidiousvic)                |
 | _Lives_   | [澁谷東京](https://goo.gl/maps/1YfuGi5HYgRpBjN7A)                           |
 | _Born_    | _(And raised in)_ [Xicuahua, Mexico](https://goo.gl/maps/Ja9LxnZ6kosdRa586) |
 | _Age_     | <span id="age_µs">?</span>                                                  |
@@ -82,7 +86,7 @@ I was born in the state of Chihuahua, in the north of Mexico. It's a very dry re
   </picture>
   <figcaption>
 
-Cute little [xerocoles.](https://en.wikipedia.org/wiki/Scorpion#:~:text=Scorpions%20are%20xerocoles%2C%20meaning%20they%20primarily%20live%20in%20deserts%2C)
+Your deadly neighborhood [arachnid](https://en.wikipedia.org/wiki/Scorpion#:~:text=Scorpions%20are%20xerocoles%2C%20meaning%20they%20primarily%20live%20in%20deserts%2C)
 
   </figcaption>
 </figure>
@@ -101,7 +105,7 @@ I remember listening to [Foxey Lady](https://www.youtube.com/watch?v=_PVjcIO4MT4
   </picture>
   <figcaption>
 
-Hardflips are really hard!
+Hardflips are really hard
 
   </figcaption>
 </figure>
@@ -138,12 +142,14 @@ When boredom struck I biked, read a shit ton of books, wrote [haiku](/tags/haiku
 
 <figure>
   <picture>
-    <video width="100%" controls>
-      <source src="/assets/surfing-with-the-alien.mp4" type="video/mp4">
-    </video>
+
+![Animated gif of a cartoon alien surfing](/assets/surfing-with-the-alien.gif)
+
   </picture>
   <figcaption>
-    Xeno the Alien, 2017
+
+[Xeno the Alien, 2017](https://www.youtube.com/watch?v=cu3iGtqeYD4)
+
   </figcaption>
 </figure>
 
@@ -151,7 +157,7 @@ I had these misadventures under the pseudonym _"Vic Sidious"_ a play on [Sid Vic
 
 # Tokyo boy
 
-One summer I studied how to program a low resolution game using C#, which ended up becoming _"Phantom Pizza"_, the game on [the homepage](/). It was fun like hell. I was saving up to buy a motorcycle at the time, but I used the money to continue mashing keys and move to Tokyo to study computer science.
+One summer I studied how to program a low resolution game using C#, which ended up becoming _"Phantom Pizza"_, the game on [the homepage](/). It was fun like hell. I was saving up to buy a motorcycle at the time, but I used the money to continue mashing keys and move to Tokyo to find work with computers.
 
 <figure>
   <picture>
@@ -164,20 +170,20 @@ One summer I studied how to program a low resolution game using C#, which ended 
   </figcaption>
 </figure>
 
-Programming is how I earn my sushi today. I work for an energy company that is driving the digitization of the electric grid in Japan.
+Programming is how I earn my sushi today. I work for a company that is driving the digitization of the electric grid in Japan, making energy use more green.
 
-I still play guitar and skate sometime. I'm saving up for a motorcycle again. I dedicate some time to my craft, such this website, but I really spend most of the time drinking and laughing with friends. Every meeting happens only once in a lifetime. _一期一会_.
+I still play guitar and skate sometime. I'm saving up for a motorcycle again. I dedicate some time to my craft, such this website, but I really spend most of the time drinking and laughing with friends.
 
 <figure>
   <picture>
 
-![Two young men talking by a fire](/assets/demondance.jpg)
+![Two kids playing a game on a bed, laughing](/assets/ichigo.jpg)
 
   </picture>
   <figcaption>
   
-<span style="font-style: italic;">"We made the mountains shake with laughter as we played ⌇ Hiding in our corner of the world ⌇ Then we did the demon dance and rushed to nevermore ⌇ Threw away the key and locked the door."</style>
+<span style="font-style: italic;">"We made the mountains shake with laughter as we played <em>/</em> Hiding in our corner of the world <em>/</em> Then we did the demon dance and rushed to nevermore <em>/</em> Threw away the key and locked the door."</style>
   </figcaption>
 </figure>
 
-Thank you for reading a little about who I am. _どうもどうも！_ I'll see you around [sidious.pizza](/). Welcome and I hope you have a great time here.
+Thank you for reading. _どうもどうも！_ I'll see you around [sidious.pizza](/). Welcome and I hope you have a great time here.
