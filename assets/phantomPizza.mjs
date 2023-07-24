@@ -9,24 +9,58 @@
  */
 
 /*
- * Constants
+ * Config
  */
+const GAME_TITLE = "SIDIOUS.PIZZA";
 const START_TEXT_EN = "PRESS START";
 const START_TEXT_JP = "スタート";
 const START_ANIMATION_INTERVAL = 2000;
-const ENEMY_RANDOM_SPAWN_SPEED_RANGE = { lower: -4, upper: 4 };
+const ENEMY_RANDOM_SPAWN_SPEEDS = [-5, -4, -3 - 2, 2, 3, 4, 5];
 const SPRITE_DIMENSION = 50;
+const DISPLAY_SCORE = false;
+const SCORE_FONT = "Vastantonius";
+/**
+ * @constant
+ * @type {number}
+ * enemyArea / windowArea * 1000
+ * The larger the window, the less points awarded
+ */
+const SCORE_UPDATER =
+  (Math.pow(SPRITE_DIMENSION, 2) / (innerHeight * innerWidth)) * 1000;
+const PLAYER_SPRITE_URL = "/assets/player.gif";
+const ENEMY_SPRITE_URL = "/assets/enemy.png";
+const ENEMY_SPRITE_R_URL = "/assets/enemyR.png";
+const SWOOSH_SPRITE_URL = "/assets/swoosh.png";
+const SWOOSH_AUDIO_SPRITE_URL = "/assets/swoosh.wav";
+const DEATH_AUDIO_SPRITE_URL = "/assets/death.wav";
+const ARROW_SPEED = 20;
 
 /*
  *
  * HTML + CSS
  *
  */
-document.querySelector(
-  "main"
-).innerHTML += `<canvas><img id="player" width="0" height="0" src="/assets/player.gif" /><img id="enemyR" width="0" height="0" src="/assets/enemyR.png" /><img id="enemy" width="0" height="0" src="/assets/enemy.png" /><img id="swoosh" width="0" height="0" src="/assets/swoosh.png" /></canvas><p id="score" hidden>0</p><div id="start-screen"><h1>SIDIOUS.PIZZA</h1><p id="press-start">PRESS START</p></div><style>html {height: 100%;}body {background: transparent;cursor: none;}nav {mix-blend-mode: difference;}a {cursor: pointer;}p {margin: 0;line-height: 30px;}canvas {z-index: -1;position: absolute;top: 0;left: 0;cursor: none;}#start-screen {top: 0;left: 0;background-color: var(--darkgray);display: flex;flex-direction: column;text-align: center;align-items: center;justify-content: center;position: absolute;height: 100vh;width: 100vw;z-index: 2;font-size: 30px;}#score {position: absolute;font-family: var(--font-family-delight);bottom: 10;left: 10;color: var(--venom);}:root {--bg: rgb(28, 31, 7);--fg: rgb(0, 179, 116);}img {mix-blend-mode: exclusion;image-rendering: pixelated;}</style>`;
+document.querySelector("main").innerHTML += `
+<canvas><img id="player" width="0" height="0" src=${PLAYER_SPRITE_URL} />
+<img id="enemyR" width="0" height="0" src=${ENEMY_SPRITE_R_URL} />
+<img id="enemy" width="0" height="0" src=${ENEMY_SPRITE_URL} />
+<img id="swoosh" width="0" height="0" src=${SWOOSH_SPRITE_URL} />
+</canvas>
+<p id="score" ${DISPLAY_SCORE ? "visible" : "hidden"}>0</p>
+<div id="start-screen"><h1>${GAME_TITLE}</h1><p id="press-start">${START_TEXT_EN}</p></div>
+<style>
+:root {--score-font-color: #00ff2a; }
+html { height: 100%; }
+body { background: transparent; cursor: none; }
+nav { mix-blend-mode: difference; }
+a { cursor: pointer; }
+p { margin: 0; line-height: 30px; }
+canvas { z-index: -1; position: absolute; top: 0; left: 0; cursor: none; }
+#start-screen { top: 0;left: 0; background-color: var(--darkgray); display: flex; flex-direction: column; text-align: center; align-items: center; justify-content: center; position: absolute; height: 100vh; width: 100vw; z-index: 2; font-size: 30px; }
+#score {position: absolute; font-size: 3rem; font-family: ${SCORE_FONT}, monospace; bottom: 50%; mix-blend-mode: difference; left: 50%; transform: translate(-50%, 50%); color: var(--score-font-color); }
+img { mix-blend-mode: exclusion;image-rendering: pixelated; }
+</style>`;
 
-// Wait for next frame to make sure HTML and CSS have rendered.
 requestAnimationFrame(() => {
   /*
    *
@@ -45,20 +79,6 @@ requestAnimationFrame(() => {
     L: document.getElementById("enemy"),
   };
   const soundSprite = document.getElementById("sound");
-
-  /*
-   *
-   * Start screen animation
-   *
-   */
-
-  setInterval(
-    () =>
-      (pressStart.innerText =
-        pressStart.innerText === START_TEXT_EN ? START_TEXT_JP : START_TEXT_EN),
-    START_ANIMATION_INTERVAL
-  );
-
   /*
    *
    * Utilities
@@ -104,6 +124,13 @@ requestAnimationFrame(() => {
     Math.floor(Math.random() * (max - min + 1) + min);
 
   /**
+   * @function randomElement
+   * @returns T random element from a list
+   * @example randomElement([1, 2, 3]) // 2
+   */
+  const randomElement = (list) => list[Math.floor(Math.random() * list.length)];
+
+  /**
    * @function negation
    * @returns number negation of a number
    * @example negation(1) // -1
@@ -146,7 +173,7 @@ requestAnimationFrame(() => {
    * @function $collide
    * @$ideffect
    * fires function f when game objects a and b collide
-   * @example collide(player)(swoosh)(() => score.up(z));
+   * @example collide(player)(swoosh)(() => calculateScore(score)(enemy));
    */
   const $collide = (a) => (b) => (f) => colliding(a)(b) && f();
 
@@ -156,7 +183,9 @@ requestAnimationFrame(() => {
    * moves game object o
    * @example move(enemy)
    */
-  const $move = (o) => ((o.x += o.velocity.x), (o.y += o.velocity.y));
+  const $moveWithVelocity = (o) => (
+    (o.x += o.velocity.x), (o.y += o.velocity.y)
+  );
 
   /**
    * @function $moveWithMouse
@@ -180,14 +209,10 @@ requestAnimationFrame(() => {
    * retunrs a game object with a random spawn position and speed within screen bounds
    * @example spawnRandom(Enemy)
    */
-  const spawnRandomEnemy = (enemy) =>
-    enemy(randomIntFromRange(SPRITE_DIMENSION)(innerWidth - SPRITE_DIMENSION))(
+  const spawnRandomEnemy = () =>
+    Enemy(randomIntFromRange(SPRITE_DIMENSION)(innerWidth - SPRITE_DIMENSION))(
       randomIntFromRange(SPRITE_DIMENSION)(innerHeight - SPRITE_DIMENSION)
-    )(SPRITE_DIMENSION)(enemySprites)(
-      randomIntFromRange(ENEMY_RANDOM_SPAWN_SPEED_RANGE.lower)(
-        ENEMY_RANDOM_SPAWN_SPEED_RANGE.upper
-      ) * 2 || 5
-    );
+    )(SPRITE_DIMENSION)(enemySprites)(randomElement(ENEMY_RANDOM_SPAWN_SPEEDS));
 
   /**
    * @function respawn
@@ -200,6 +225,35 @@ requestAnimationFrame(() => {
     (o.y = randomIntFromRange(SPRITE_DIMENSION)(innerHeight - SPRITE_DIMENSION))
   );
 
+  /**
+   * @function
+   * @$ideffect
+   * sets game object score value based on screen dimensions
+   * @example scoreBasedOnScreenDimensions(score)(enemy)
+   */
+  const $updateScore = (score) => (
+    (score.value += SCORE_UPDATER), (score.sprite.innerHTML = ~~score.value)
+  );
+
+  /**
+   * @function resetScore
+   * @$ideffect
+   * resets game object score value to 0
+   * @example resetScore(score)
+   */
+  const $resetScore = (score) => (score.value = 0);
+
+  /**
+   * @function draw
+   * @$ideffect
+   * draws game object o on canvas
+   * @example draw(c)(player)
+   */
+  const draw =
+    (c) =>
+    ({ sprite, x, y, dimension }) =>
+      c.ctx.drawImage(sprite, x, y, dimension, dimension);
+
   /*
    *
    * game objects
@@ -211,25 +265,27 @@ requestAnimationFrame(() => {
     y,
     sprite,
     dimension,
-    draw({ player, swoosh, score, mouse, c }) {
+    update({ player, swoosh, score, mouse, c }) {
       $moveWithMouse(player)(mouse);
-      $collide(player)(swoosh)(() => score.up(z));
-      c.draw(player);
+      $collide(player)(swoosh)(() => {
+        $updateScore(score);
+      });
+      draw(c)(player);
     },
   });
 
-  const Coin = (x) => (y) => (dimension) => (sprite) => ({
+  const Swoosh = (x) => (y) => (dimension) => (sprite) => ({
     x,
     y,
     sprite,
     dimension,
-    draw({ swoosh, player, sound, enemies, c }) {
+    update({ swoosh, player, sound, enemies, c }) {
       $collide(swoosh)(player)(() => {
         $respawn(swoosh);
         sound.swoosh.play();
-        enemies.push(spawnRandomEnemy(Enemy));
+        enemies.push(spawnRandomEnemy());
       });
-      c.draw(swoosh);
+      draw(c)(swoosh);
     },
   });
 
@@ -239,14 +295,17 @@ requestAnimationFrame(() => {
     sprites,
     dimension,
     velocity: { x: speed, y: speed },
-    draw({ enemy, player, sound, swoosh, c, enemies }) {
-      $collide(enemy)(player)(() => {
-        $respawn(swoosh);
-        enemies.length = 0;
-        sound.death.play();
-      });
-      $move(enemy);
-      $switchSprite(z.enemy)(z.enemy.velocity.x < 0);
+    update({ enemy, player, sound, swoosh, score, c, enemies }) {
+      $collide(enemy)(player)(
+        () => (
+          $respawn(swoosh),
+          $resetScore(score),
+          (enemies.length = 0),
+          sound.death.play()
+        )
+      );
+      $moveWithVelocity(enemy);
+      $switchSprite(enemy)(enemy.velocity.x < 0);
 
       /**@mechanic bounce enemy off walls */
       {
@@ -274,33 +333,13 @@ requestAnimationFrame(() => {
           enemy.velocity.x = negation(enemy.velocity.x);
       }
 
-      c.draw(enemy);
+      draw(c)(enemy);
     },
   });
 
-  const Score = (value) => (sprite) => ({
-    value,
-    sprite,
-    up({ score, enemy }) {
-      const enemyArea = Math.pow(enemy.dimension, 2),
-        windowArea = innerHeight * innerWidth,
-        enemyPercentage = enemyArea / windowArea;
-      score.value += enemyPercentage * 1000;
-      score.sprite.innerHTML = ~~score.value;
-    },
-    reset({ score }) {
-      score.value = 0;
-    },
-  });
+  const Score = (value) => (sprite) => ({ value, sprite });
 
-  const Sound =
-    ({ ...audios }) =>
-    (sprite) => ({ ...audios, sprite });
-
-  const Mouse = (c) => ({
-    x: c.width / 2,
-    y: c.width / 2,
-  });
+  const Mouse = (c) => ({ x: c.width / 2, y: c.height / 2 });
 
   /*
    *
@@ -308,103 +347,103 @@ requestAnimationFrame(() => {
    *
    */
   const Engine = (z) => {
-    const { player, swoosh, enemies, c } = z;
-
     requestAnimationFrame(() => Engine(z));
-    c.ctx.clearRect(0, 0, c.width, c.height);
-
-    player.draw(z);
-    swoosh.draw(z);
-    enemies.map((enemy) => ((z.enemy = enemy), enemy.draw(z)));
+    z.c.ctx.clearRect(0, 0, z.c.width, z.c.height);
+    z.player.update(z);
+    z.swoosh.update(z);
+    z.enemies.map((e) => ((z.enemy = e), e.update(z)));
   };
 
-  const canvas = (c) => (w) => (h) => {
-    c.ctx = c.getContext("2d");
-    c.draw = ({ sprite, x, y, dimension }) =>
-      c.ctx.drawImage(sprite, x, y, dimension, dimension);
-    c.width = w;
-    c.height = h;
-    return c;
-  };
+  const Canvas = (c) => (w) => (h) => (
+    (c.ctx = c.getContext("2d")), (c.width = w), (c.height = h), c
+  );
 
-  const launch = ({ canvas, Mouse, Score, Player, Coin, Enemy, Sound }) => {
-    const c = canvas(canvasElement)(innerWidth)(innerHeight);
+  const launch = ({ Canvas, Mouse, Score, Player, Swoosh, Enemy }) => {
+    const c = Canvas(canvasElement)(innerWidth)(innerHeight);
     const mouse = Mouse(c);
     const score = Score(0)(scoreSprite);
     const player = Player(mouse.x)(mouse.y)(SPRITE_DIMENSION)(playerSprite);
-    const randomCoinX = randomIntFromRange(SPRITE_DIMENSION)(
-      innerWidth - SPRITE_DIMENSION
-    );
-    const randomCoinY = randomIntFromRange(SPRITE_DIMENSION)(
-      innerHeight - SPRITE_DIMENSION
-    );
-    const swoosh =
-      Coin(randomCoinX)(randomCoinY)(SPRITE_DIMENSION)(swooshSprite);
+    const swoosh = Swoosh(
+      randomIntFromRange(SPRITE_DIMENSION)(innerWidth - SPRITE_DIMENSION)
+    )(randomIntFromRange(SPRITE_DIMENSION)(innerHeight - SPRITE_DIMENSION))(
+      SPRITE_DIMENSION
+    )(swooshSprite);
     let enemies = [spawnRandomEnemy(Enemy)];
     const audios = {
-      swoosh: new Audio("/assets/swoosh.wav"),
-      death: new Audio("/assets/death.wav"),
+      swoosh: new Audio(SWOOSH_AUDIO_SPRITE_URL),
+      death: new Audio(DEATH_AUDIO_SPRITE_URL),
     };
     audios.swoosh.volume = 0.07;
     audios.death.volume = 0.5;
-    const sound = Sound(audios)(soundSprite);
+    const sound = { ...audios, soundSprite };
+
+    /*
+     * @screenAnimation
+     */
+    setInterval(
+      () =>
+        (pressStart.innerText =
+          pressStart.innerText === START_TEXT_EN
+            ? START_TEXT_JP
+            : START_TEXT_EN),
+      START_ANIMATION_INTERVAL
+    );
+
+    /**@events */
+    addEventListener(
+      "resize",
+      () => ((c.width = innerWidth), (c.height = innerHeight))
+    );
+    addEventListener(
+      "mousemove",
+      ({ clientX, clientY }) => ((mouse.x = clientX), (mouse.y = clientY))
+    );
+    addEventListener(
+      "touchmove",
+      ({ touches }) => (
+        (mouse.x = touches[0].clientX), (mouse.y = touches[0].clientY - 120)
+      )
+    );
+    addEventListener(
+      "touchstart",
+      ({ touches }) => (
+        (mouse.x = touches[0].clientX), (mouse.y = touches[0].clientY)
+      )
+    );
+    addEventListener(
+      "keydown",
+      (e) => e.key === "Enter" && startScreen.remove()
+    );
+    addEventListener(
+      "keydown",
+      (e) => e.key === "ArrowUp" && (mouse.y -= ARROW_SPEED)
+    );
+    addEventListener(
+      "keydown",
+      (e) => e.key === "ArrowRight" && (mouse.x += ARROW_SPEED)
+    );
+    addEventListener(
+      "keydown",
+      (e) => e.key === "ArrowDown" && (mouse.y += ARROW_SPEED)
+    );
+    addEventListener(
+      "keydown",
+      (e) => e.key === "ArrowLeft" && (mouse.x -= ARROW_SPEED)
+    );
+    addEventListener("click", () => startScreen.remove());
+    addEventListener("touchstart", () => startScreen.remove());
 
     /**@gamestate */
-    const z = {
-      c,
-      player,
-      swoosh,
-      enemies,
-      score,
-      sound,
-      mouse,
-    };
-
-    /**@sideffects */
-    addEventListener("resize", ({ target: { innerWidth, innerHeight } }) => {
-      (c.width = innerWidth), (c.height = innerHeight);
-    });
-
-    addEventListener("mousemove", ({ clientX, clientY }) => {
-      mouse.x = clientX;
-      mouse.y = clientY;
-    });
-
-    addEventListener("touchmove", ({ touches }) => {
-      mouse.x = touches[0].clientX;
-      mouse.y = touches[0].clientY - 120;
-    });
-
-    addEventListener("touchstart", ({ touches }) => {
-      mouse.x = touches[0].clientX;
-      mouse.y = touches[0].clientY;
-    });
-
-    addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
-        startScreen.remove();
-      }
-    });
-
-    addEventListener("click", () => {
-      startScreen.remove();
-    });
-
-    addEventListener("touchstart", () => {
-      startScreen.remove();
-    });
-
-    return z;
+    return { c, player, swoosh, enemies, score, sound, mouse };
   };
 
   const z = launch({
-    canvas,
+    Canvas,
     Mouse,
     Score,
     Player,
-    Coin,
+    Swoosh,
     Enemy,
-    Sound,
   });
 
   Engine(z);
