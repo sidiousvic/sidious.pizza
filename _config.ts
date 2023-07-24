@@ -8,6 +8,7 @@ import resolveUrls from "lume/plugins/resolve_urls.ts";
 import pageFind from "lume/plugins/pagefind.ts";
 import sitemap from "lume/plugins/sitemap.ts";
 import feed from "lume/plugins/feed.ts";
+import lang from "./filters/lang.ts";
 
 const site = lume({
   location: new URL("https://sidious.pizza/"),
@@ -44,6 +45,8 @@ site
       },
     })
   )
-  .use(resolveUrls());
+  .use(resolveUrls())
+  .filter("jp", (body: string) => lang(body, "jp"))
+  .filter("en", (body: string) => lang(body, "en"));
 
 export default site;

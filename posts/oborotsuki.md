@@ -5,10 +5,11 @@ date: 2023-06-01
 pinned: true
 tags:
   - haiku
+  - 秋 🍂
 draft: false
 ---
 
-<!-- japanese -->
+<!-- jp -->
 
 朧月
 <br>
@@ -16,8 +17,14 @@ draft: false
 <br>
 見えたかな
 
-<!-- endjapanese -->
+<!-- endjp -->
 
-<!-- english -->
+<!-- en -->
 
-<!-- endenglish -->
+In a hazy moon
+<br>
+I thought I saw
+<br>
+The shadow of a snake
+
+<!-- enden -->

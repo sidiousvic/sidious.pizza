@@ -5,10 +5,11 @@ date: 2023-06-02
 pinned: false
 tags:
   - haiku
+  - 夏 🐝
 draft: false
 ---
 
-<!-- 日本語 -->
+<!-- jp -->
 
 汗ばむ夜
 <br>
@@ -16,10 +17,14 @@ draft: false
 <br>
 犬が泣く
 
-<!-- English -->
+<!-- endjp -->
+
+<!-- en -->
 
 Balmy night
 <br>
 Far away, in the east
 <br>
 A dog howls
+
+<!-- enden -->
