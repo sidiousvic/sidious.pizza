@@ -3,43 +3,14 @@ layout: layouts/post.njk
 bodyClass: body-post
 ---
 
-<style>
-.post-body, .post-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-
-.post-header {
-    flex-direction: column;
-    padding: 5vh 0;
-}
-
-.post-body {
-    font-size: 2em;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    padding: 0;
-    & :lang(en) {
-        color: var(--darksteel);
-        writing-mode: lr;
-        text-orientation: unset;
-        font-style: italic;
-        font-size: 1rem;
-        text-align: center;
-    }
-}
-</style>
-
 {% set jp = content | jp %}
 {% set en = content | en %}
 
-<section lang="jp">
+<section lang="jp" class="haiku">
 {{ jp | safe }}
 </section>
 
-<section lang="en">
+<section lang="en" class="haiku">
 {{ en | safe }}
 </section>
 

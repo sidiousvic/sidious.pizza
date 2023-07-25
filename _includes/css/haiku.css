@@ -1,0 +1,20 @@
+.haiku {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 2em;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  padding: 0;
+  & :lang(en) {
+    color: var(--darksteel);
+    writing-mode: lr;
+    text-orientation: unset;
+    font-style: italic;
+    font-size: 1rem;
+    text-align: center;
+  }
+  @keyframes {
+  }
+}

@@ -1,0 +1,15 @@
+---
+layout: layouts/home.njk
+menu:
+  visible: true
+  title: HAIKU
+  order: 1
+---
+
+{% set haikus = search.pages("haiku", "date=desc", 99) %}
+
+<h1 class="haikus-header">俳句</h1>
+
+{% include "templates/haikus.njk" %}
+
+

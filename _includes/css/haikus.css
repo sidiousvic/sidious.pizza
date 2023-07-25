@@ -1,0 +1,49 @@
+.haikus {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.haikus-header {
+  padding: 5vh 0;
+  padding-bottom: 2vh;
+  font-size: 4em;
+  font-weight: 100;
+  font-family: var(--font-family-title);
+  text-align: center;
+  margin: 0;
+  color: var(--venom);
+}
+
+.haikus-date {
+  font-size: 0.8rem;
+  color: var(--lightgray);
+}
+
+.haikus-title {
+  font-family: var(--font-family-post-title);
+  display: block;
+  padding: 0.5em 0.2em;
+  font-size: 1.2rem;
+  color: var(--venom);
+
+  &[aria-current="page"] {
+    font-weight: bold;
+  }
+}
+
+.haikus-post {
+  margin: 1rem 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  & > img {
+    filter: sepia(1) hue-rotate(76deg) saturate(2.5);
+    image-rendering: pixelated;
+  }
+}

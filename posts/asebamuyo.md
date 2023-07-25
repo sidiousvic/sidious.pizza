@@ -3,9 +3,10 @@ layout: layouts/haiku.njk
 title: 汗ばむ夜
 date: 2023-06-02
 pinned: false
+gif: https://media1.giphy.com/media/830Fv7XjRhgsp9qw2A/giphy.gif?cid=ecf05e474ps63hoc07vwtvmxgxu1d2cxk6zb53d7lw3k3icf&ep=v1_stickers_search&rid=giphy.gif
 tags:
   - haiku
-  - 夏 🐝
+  - 夏
 draft: false
 ---
 
