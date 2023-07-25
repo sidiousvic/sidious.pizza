@@ -3,12 +3,14 @@ layout: layouts/home.njk
 menu:
   visible: true
   title: WEBLOG
-  order: 1
+  order: 0
 ---
 
 {% set postslist = search.pages("type=posts", "date=desc", 3) %}
 
-<h1>🥕 What's cookin'?</h2>
+<h1 class="weblog-header">WEBLOG</h1>
+
+<h1>🥕 What's cookin'?</h1>
 
 {% include "templates/postslist.njk" %}
 
