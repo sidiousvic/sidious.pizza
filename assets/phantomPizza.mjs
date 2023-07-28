@@ -115,8 +115,14 @@ requestAnimationFrame(() => {
   const pressStart = document.getElementById("press-start");
   const canvasElement = document.querySelector("canvas");
   const scoreSprite = document.getElementById("score");
-  const playerSprite = document.getElementById("player");
-  const swooshSprite = document.getElementById("swoosh");
+  const playerSprites = {
+    R: document.getElementById("player"),
+    L: document.getElementById("player"),
+  };
+  const swooshSprites = {
+    R: document.getElementById("swoosh"),
+    L: document.getElementById("swoosh"),
+  };
   const enemySprites = {
     R: document.getElementById("enemyR"),
     L: document.getElementById("enemy"),
@@ -223,9 +229,7 @@ requestAnimationFrame(() => {
    * moves game object o
    * @example move(enemy)
    */
-  const $moveWithVelocity = (o) => (
-    (o.x += o.velocity.x), (o.y += o.velocity.y)
-  );
+  const $moveWithVelocity = (o) => ((o.x += o.speed.x), (o.y += o.speed.y));
 
   /**
    * @function $moveWithMouse
@@ -241,8 +245,8 @@ requestAnimationFrame(() => {
    * switches game object o sprite (left and right) based on condition
    * @example switchSprite(player)(z.mouse.x < player.x);
    */
-  const $switchSprite = (o) => (condition) =>
-    condition ? (o.sprite = o.sprites.L) : (o.sprite = o.sprites.R);
+  const $switchSprite = (o) => (sprites) => (condition) =>
+    condition ? (o.sprite = sprites.L) : (o.sprite = sprites.R);
 
   /**
    * @function spawnRandomEnemy
@@ -252,7 +256,7 @@ requestAnimationFrame(() => {
   const spawnRandomEnemy = () =>
     Enemy(randomIntFromRange(SPRITE_DIMENSION)(innerWidth - SPRITE_DIMENSION))(
       randomIntFromRange(SPRITE_DIMENSION)(innerHeight - SPRITE_DIMENSION)
-    )(SPRITE_DIMENSION)(enemySprites)(randomElement(ENEMY_RANDOM_SPAWN_SPEEDS));
+    )(SPRITE_DIMENSION)(randomElement(ENEMY_RANDOM_SPAWN_SPEEDS));
 
   /**
    * @function respawn
@@ -295,7 +299,7 @@ requestAnimationFrame(() => {
       x: object.x,
       y: bounds.y,
     }) <= object.dimension
-      ? (object.velocity.y = negation(object.velocity.y))
+      ? (object.speed.y = negation(object.speed.y))
       : /** top */
       distance(object)({
           x: object.x,
@@ -303,13 +307,13 @@ requestAnimationFrame(() => {
         }) -
           innerHeight >
         0
-      ? (object.velocity.y = negation(object.velocity.y))
+      ? (object.speed.y = negation(object.speed.y))
       : /** right */
       distance(object)({
           x: bounds.x,
           y: object.y,
         }) <= object.dimension
-      ? (object.velocity.x = negation(object.velocity.x))
+      ? (object.speed.x = negation(object.speed.x))
       : /** left */
       distance(object)({
           x: bounds.x,
@@ -317,7 +321,7 @@ requestAnimationFrame(() => {
         }) -
           innerWidth >
         0
-      ? (object.velocity.x = negation(object.velocity.x))
+      ? (object.speed.x = negation(object.speed.x))
       : void 0;
 
   /**
@@ -331,68 +335,70 @@ requestAnimationFrame(() => {
     ({ sprite, x, y, dimension }) =>
       c.ctx.drawImage(sprite, x, y, dimension, dimension);
 
-  const Player = (x) => (y) => (dimension) => (sprite) => ({
+  const Controlled = (x) => (y) => (dimension) => (sprite) => ({
     x,
     y,
     sprite,
     dimension,
-    update: ({ player, swoosh, score, mouse, c }) => (
-      $moveWithMouse(player)(mouse),
-      $collide(player)(swoosh)(() => $updateScore(score)),
-      draw(c)(player)
-    ),
   });
 
-  const Swoosh = (x) => (y) => (dimension) => (sprite) => ({
+  const Player = (x) => (y) => (dimension) => (sprite) =>
+    Controlled(x)(y)(dimension)(sprite);
+
+  const Swoosh = (x) => (y) => (dimension) => (sprite) =>
+    Controlled(x)(y)(dimension)(sprite);
+
+  /**
+   * Automatic
+   * An object with L and R sprites (for turning) and a speed at which it can move independently.
+   */
+  const Automatic = (x) => (y) => (dimension) => (sprite) => (speed) => ({
     x,
     y,
     sprite,
     dimension,
-    update: ({ swoosh, player, sound, enemies, c }) => (
-      $collide(swoosh)(player)(
-        () => (
-          $respawn(swoosh),
-          sound.swoosh.play(),
-          enemies.push(spawnRandomEnemy())
-        )
-      ),
-      draw(c)(swoosh)
-    ),
+    speed: { x: speed, y: speed },
   });
 
-  const Enemy = (x) => (y) => (dimension) => (sprites) => (speed) => ({
-    x,
-    y,
-    sprites,
-    dimension,
-    velocity: { x: speed, y: speed },
-    update: ({ enemy, player, sound, swoosh, score, c, enemies }) => (
-      $collide(enemy)(player)(
-        () => (
-          $respawn(swoosh),
-          $resetScore(score),
-          (enemies.length = 0),
-          sound.death.play()
-        )
-      ),
-      $moveWithVelocity(enemy),
-      $switchSprite(enemy)(enemy.velocity.x < 0),
-      $bounce(enemy)({ x: innerWidth, y: innerHeight }),
-      draw(c)(enemy)
-    ),
-  });
+  const Enemy = (x) => (y) => (dimension) => (speed) =>
+    Automatic(x)(y)(dimension)(enemySprites.R)(speed);
 
   const Score = (value) => (sprite) => ({ value, sprite });
 
   const Mouse = (c) => ({ x: c.width / 2, y: c.height / 2 });
 
-  const Engine = (z) => {
-    requestAnimationFrame(() => Engine(z));
-    z.c.ctx.clearRect(0, 0, z.c.width, z.c.height);
-    z.player.update(z);
-    z.swoosh.update(z);
-    z.enemies.map((e) => ((z.enemy = e), e.update(z)));
-  };
+  const Engine = (z) => (
+    requestAnimationFrame(() => Engine(z)),
+    z.c.ctx.clearRect(0, 0, z.c.width, z.c.height),
+    $moveWithMouse(z.player)(z.mouse),
+    $collide(z.player)(z.swoosh)(() => $updateScore(z.score)),
+    draw(z.c)(z.player),
+    $collide(z.swoosh)(z.player)(
+      () => (
+        $respawn(z.swoosh),
+        z.sound.swoosh.play(),
+        z.enemies.push(spawnRandomEnemy())
+      )
+    ),
+    draw(z.c)(z.swoosh),
+    z.enemies.map(
+      (e) => (
+        (z.enemy = e),
+        $collide(e)(z.player)(
+          () => (
+            $respawn(z.swoosh),
+            $resetScore(z.score),
+            (z.enemies.length = 0),
+            z.sound.death.play()
+          )
+        ),
+        $moveWithVelocity(e),
+        $switchSprite(e)(enemySprites)(e.speed.x < 0),
+        $bounce(e)({ x: innerWidth, y: innerHeight }),
+        draw(z.c)(e)
+      )
+    )
+  );
 
   const Canvas = (c) => (w) => (h) => (
     (c.ctx = c.getContext("2d")), (c.width = w), (c.height = h), c
@@ -402,12 +408,12 @@ requestAnimationFrame(() => {
     const c = Canvas(canvasElement)(innerWidth)(innerHeight);
     const mouse = Mouse(c);
     const score = Score(0)(scoreSprite);
-    const player = Player(mouse.x)(mouse.y)(SPRITE_DIMENSION)(playerSprite);
+    const player = Player(mouse.x)(mouse.y)(SPRITE_DIMENSION)(playerSprites.R);
     const swoosh = Swoosh(
       randomIntFromRange(SPRITE_DIMENSION)(innerWidth - SPRITE_DIMENSION)
     )(randomIntFromRange(SPRITE_DIMENSION)(innerHeight - SPRITE_DIMENSION))(
       SPRITE_DIMENSION
-    )(swooshSprite);
+    )(swooshSprites.R);
     let enemies = [spawnRandomEnemy(Enemy)];
     const audios = {
       swoosh: new Audio(SWOOSH_AUDIO_SPRITE_URL),
