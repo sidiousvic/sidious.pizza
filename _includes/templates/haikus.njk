@@ -2,9 +2,9 @@
   {% for haiku in haikus %}
   <li class="haikus-post">
       {% if haiku.data.gif %}
-        <img width=100 style="min-width: 100px;" src="{{ haiku.data.gif }}" />
+        <img src="{{ haiku.data.gif }}" />
       {% else %}
-        <img width=100 style="min-width: 100px;" src="/assets/enemy.png" />
+        <img src="/assets/enemy.png" />
       {% endif %}
     <div class="haikus-meta">
     <a href="{{ haiku.data.url }}" class="haikus-title"{% if entry.data.url == url %} aria-current="page"{% endif %}>

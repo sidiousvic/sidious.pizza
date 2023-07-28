@@ -5,6 +5,7 @@
   align-items: baseline;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .haikus-header {
@@ -45,5 +46,8 @@
   & > img {
     filter: sepia(1) hue-rotate(76deg) saturate(2.5);
     image-rendering: pixelated;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
   }
 }
