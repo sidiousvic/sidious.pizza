@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
   </article>
 </div>
 
-Hola amigxs, my name is Vic and this my cyber space. I will be [writing](/weblog) and sharing my music and computer programs here. Here's a brief history of my way here.
+Hola amigxs, my name is Vic and this my cyber space. I will be [writing](/weblog) and sharing my music and computer programs here. Here's a brief history of my way.
 
 # Born and raised in the desert
 
