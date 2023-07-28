@@ -367,37 +367,10 @@ requestAnimationFrame(() => {
 
   const Mouse = (c) => ({ x: c.width / 2, y: c.height / 2 });
 
-  const Engine = (z) => (
-    requestAnimationFrame(() => Engine(z)),
+  const Engine = (z) => (rev) => (
+    requestAnimationFrame(() => Engine(z)(rev)),
     z.c.ctx.clearRect(0, 0, z.c.width, z.c.height),
-    $moveWithMouse(z.player)(z.mouse),
-    $collide(z.player)(z.swoosh)(() => $updateScore(z.score)),
-    draw(z.c)(z.player),
-    $collide(z.swoosh)(z.player)(
-      () => (
-        $respawn(z.swoosh),
-        z.sound.swoosh.play(),
-        z.enemies.push(spawnRandomEnemy())
-      )
-    ),
-    draw(z.c)(z.swoosh),
-    z.enemies.map(
-      (e) => (
-        (z.enemy = e),
-        $collide(e)(z.player)(
-          () => (
-            $respawn(z.swoosh),
-            $resetScore(z.score),
-            (z.enemies.length = 0),
-            z.sound.death.play()
-          )
-        ),
-        $moveWithVelocity(e),
-        $switchSprite(e)(enemySprites)(e.speed.x < 0),
-        $bounce(e)({ x: innerWidth, y: innerHeight }),
-        draw(z.c)(e)
-      )
-    )
+    rev(z)
   );
 
   const Canvas = (c) => (w) => (h) => (
@@ -475,11 +448,41 @@ requestAnimationFrame(() => {
     addEventListener("click", () => startScreen.remove());
     addEventListener("touchstart", () => startScreen.remove());
 
-    /**@gamestate */
     return { c, player, swoosh, enemies, score, sound, mouse };
   };
 
   const z = launch({ Canvas, Mouse, Score, Player, Swoosh, Enemy });
 
-  Engine(z);
+  Engine(z)(
+    (z) => (
+      $moveWithMouse(z.player)(z.mouse),
+      $collide(z.player)(z.swoosh)(() => $updateScore(z.score)),
+      draw(z.c)(z.player),
+      $collide(z.swoosh)(z.player)(
+        () => (
+          $respawn(z.swoosh),
+          z.sound.swoosh.play(),
+          z.enemies.push(spawnRandomEnemy())
+        )
+      ),
+      draw(z.c)(z.swoosh),
+      z.enemies.map(
+        (e) => (
+          (z.enemy = e),
+          $collide(e)(z.player)(
+            () => (
+              $respawn(z.swoosh),
+              $resetScore(z.score),
+              (z.enemies.length = 0),
+              z.sound.death.play()
+            )
+          ),
+          $moveWithVelocity(e),
+          $switchSprite(e)(enemySprites)(e.speed.x < 0),
+          $bounce(e)({ x: innerWidth, y: innerHeight }),
+          draw(z.c)(e)
+        )
+      )
+    )
+  );
 });
