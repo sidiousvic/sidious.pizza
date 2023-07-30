@@ -10,18 +10,18 @@ menu:
 
 <h1 class="weblog-header">WEBLOG</h1>
 
-<h1>🥕 What's cookin'?</h1>
-
-{% include "templates/postslist.njk" %}
-
-<hr>
-
-{% set postslist  = search.pages("pinned=true") %}
-
-{%if postslist.length %}
-  <h1>🔥 Hot kicks</h1>
+<section class="weblog-content">
   {% include "templates/postslist.njk" %}
-  <hr>
-{% endif %}
 
-<p>You can also go to the <a href="/weblog/archive">archive</a> and search.</p>
+  <hr>
+
+  {% set postslist  = search.pages("pinned=true") %}
+
+  {%if postslist.length %}
+    <h1>🔥 Hot kicks</h1>
+    {% include "templates/postslist.njk" %}
+    <hr>
+  {% endif %}
+
+  <p>You can also go to the <a href="/weblog/archive">archive</a> and search.</p>
+</section>
