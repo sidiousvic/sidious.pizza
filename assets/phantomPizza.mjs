@@ -9,20 +9,19 @@
  */
 
 import {
-  Controlled,
-  Automatic,
   spawnRandom,
   randomIntFromRange,
   Engine,
   launch,
-  $moveWithMouse,
-  $collide,
+  moveWithMouse,
+  collide,
   draw,
-  $respawn,
-  $moveWithVelocity,
-  $switchSprite,
-  $bounce,
-  $updateValue,
+  respawn,
+  moveWithVelocity,
+  switchSprite,
+  bounce,
+  updateValue,
+  Phantom,
 } from "./phantom.mjs";
 
 const GAME_TITLE = "SIDIOUS.PIZZA";
@@ -56,13 +55,13 @@ const { sprites, score, sound, mouse, c } = launch({
 });
 
 const Player = (x) => (y) => (dimension) => (sprite) =>
-  Controlled(x)(y)(dimension)(sprite);
+  Phantom(x)(y)(dimension)(sprite)({ x: 0, y: 0 });
 
 const Swoosh = (x) => (y) => (dimension) => (sprite) =>
-  Controlled(x)(y)(dimension)(sprite);
+  Phantom(x)(y)(dimension)(sprite)({ x: 0, y: 0 });
 
 const Enemy = (x) => (y) => (dimension) => (speed) =>
-  Automatic(x)(y)(dimension)(sprites.enemyR)(speed);
+  Phantom(x)(y)(dimension)(sprites.enemyR)(speed);
 
 const z = {
   player: Player(mouse.x)(mouse.y)(SPRITE_DIMENSION)(sprites.player),
@@ -81,12 +80,12 @@ const z = {
 requestAnimationFrame(() => {
   Engine(z)(
     (z) => (
-      $moveWithMouse(z.player)(z.mouse),
-      $collide(z.player)(z.swoosh)(() => $updateValue(z.score)(SCORE_UPDATER)),
+      moveWithMouse(z.player)(z.mouse),
+      collide(z.player)(z.swoosh)(() => updateValue(z.score)(SCORE_UPDATER)),
       draw(z.c)(z.player),
-      $collide(z.swoosh)(z.player)(
+      collide(z.swoosh)(z.player)(
         () => (
-          $respawn(z.swoosh),
+          respawn(z.swoosh),
           z.sound.swoosh.play(),
           z.enemies.push(
             spawnRandom(Enemy)(SPRITE_DIMENSION)(ENEMY_RANDOM_SPAWN_SPEEDS)
@@ -97,19 +96,19 @@ requestAnimationFrame(() => {
       z.enemies.map(
         (e) => (
           (z.enemy = e),
-          $collide(e)(z.player)(
+          collide(e)(z.player)(
             () => (
-              $respawn(z.swoosh),
+              respawn(z.swoosh),
               (z.score.value = 0),
               (z.enemies.length = 0),
               z.sound.death.play()
             )
           ),
-          $moveWithVelocity(e),
-          $switchSprite(e)({ R: sprites.enemyR, L: sprites.enemyL })(
+          moveWithVelocity(e),
+          switchSprite(e)({ R: sprites.enemyR, L: sprites.enemyL })(
             e.speed.x < 0
           ),
-          $bounce(e)({ x: innerWidth, y: innerHeight }),
+          bounce(e)({ x: innerWidth, y: innerHeight }),
           draw(z.c)(e)
         )
       )

@@ -9,41 +9,26 @@
  */
 const START_ANIMATION_INTERVAL = 2000;
 const ARROW_SPEED = 20;
-/**
- * @function compose
- * @returns function a composition of functions
- * @example
- * const addOne = (n) => n + 1;
- * const double = (n) => n * 2;
- * const addOneThenDouble = compose(double)(addOne);
- */
-export const compose =
-  (...fns) =>
-  (x) =>
-    fns.reduceRight((v, f) => f(v), x);
 
 /**
- * @function exec
- * @returns function execute a sequence of functions
+ * @typedef {Object} Phantom
+ * @description A game object.
+ * @property {number} x - The x coordinate of the game object.
+ * @property {number} y - The y coordinate of the game object.
+ * @property {number} dimension - The dimension of the game object. (width and height)
+ * @property {string} sprite - The sprite of the game object.
  */
-export const exec = (fn) => () => fn();
 
 /**
- * @function debug
- * @alias console.log
- */
-export const debug = console.log;
-
-/**
- * @function distance
- * @returns distance in pixels between two points
+ * @param {Phantom} a The first game object.
+ * @returns {(b: Phantom) => number} b A lambda consuming the second game object.
+ * @param {Phantom} b The second game object.
+ * @returns distance Distance in pixels between two game objects
  * @example distance({x: 1, y: 1})({x: 2, y: 2}) // 1.4142135623730951
  * @math 𝑑 = √( ( 𝑥2 - 𝑥1 )² + ( 𝑦2 - 𝑦1 )² )
  */
-export const distance =
-  ({ x, y }) =>
-  ({ x: w, y: z }) =>
-    Math.sqrt(Math.pow(w - x, 2) + Math.pow(z - y, 2));
+export const distance = (a) => (b) =>
+  Math.sqrt(Math.pow(b.x - a.x, 2) + Math.pow(b.y - a.y, 2));
 
 /**
  * @function randomIntFromRange
@@ -97,43 +82,37 @@ export const hitbox = (o) => divideByTwo(o.dimension);
 export const colliding = (a) => (b) => distance(a)(b) <= hitbox(a) + hitbox(b);
 
 /**
- * @function $collide
- * @$ideffect
+ * @function collide
  * fires function f when game objects a and b collide
  * @example collide(player)(swoosh)(() => calculateScore(score)(enemy));
  */
-export const $collide = (a) => (b) => (f) => colliding(a)(b) && void f();
+export const collide = (a) => (b) => (f) => colliding(a)(b) && void f();
 
 /**
- * @function $move
- * @$ideffect
+ * @function move
  * moves game object o
  * @example move(enemy)
  */
-export const $moveWithVelocity = (o) => (
-  (o.x += o.speed.x), (o.y += o.speed.y)
-);
+export const moveWithVelocity = (o) => ((o.x += o.speed.x), (o.y += o.speed.y));
 
 /**
- * @function $moveWithMouse
- * @$ideffect
+ * @function moveWithMouse
  * moves game object o with mouse
  * @example moveWithMouse(player)(mouse)
  */
-export const $moveWithMouse = (o) => (m) => ((o.x = m.x), (o.y = m.y));
+export const moveWithMouse = (o) => (m) => ((o.x = m.x), (o.y = m.y));
 
 /**
- * @function $switchSprite
- * @$ideffect
+ * @function switchSprite
  * switches game object o sprite (left and right) based on condition
  * @example switchSprite(player)(z.mouse.x < player.x);
  */
-export const $switchSprite = (o) => (sprites) => (condition) =>
+export const switchSprite = (o) => (sprites) => (condition) =>
   condition ? (o.sprite = sprites.L) : (o.sprite = sprites.R);
 
 /**
  * @function spawnRandom
- * retunrs a game object with a random spawn position and speed within screen bounds
+ * returns a game object with a random spawn position and speed within screen bounds
  * @example spawnRandom(Enemy)([-5, -4, -3 - 2, 2, 3, 4, 5]])
  */
 export const spawnRandom = (O) => (dimension) => (speeds) =>
@@ -143,32 +122,29 @@ export const spawnRandom = (O) => (dimension) => (speeds) =>
 
 /**
  * @function respawn
- * @$ideffect
  * respawns game object o within screen bounds
  * @example respawn(coin)
  */
-export const $respawn = (o) => (
+export const respawn = (o) => (
   (o.x = randomIntFromRange(o.dimension)(innerWidth - o.dimension)),
   (o.y = randomIntFromRange(o.dimension)(innerHeight - o.dimension))
 );
 
 /**
  * @function
- * @$ideffect
  * sets game object value
- * @example $updateValue(score)(50)
+ * @example updateValue(score)(50)
  */
-export const $updateValue = (object) => (amount) => (
+export const updateValue = (object) => (amount) => (
   (object.value += amount), (object.sprite.innerHTML = ~~object.value)
 );
 
 /**
  * @function bounce
- * @$ideffect
  * bounces game object o within window bounds
  * @example bounce(enemy)({ x: 500, y: 800 }})
  */
-export const $bounce = (object) => (bounds) =>
+export const bounce = (object) => (bounds) =>
   /** bottom */
   distance(object)({
     x: object.x,
@@ -201,7 +177,6 @@ export const $bounce = (object) => (bounds) =>
 
 /**
  * @function draw
- * @$ideffect
  * draws game object o on canvas
  * @example draw(c)(player)
  */
@@ -210,18 +185,7 @@ export const draw =
   ({ sprite, x, y, dimension }) =>
     c.ctx.drawImage(sprite, x, y, dimension, dimension);
 
-export const Controlled = (x) => (y) => (dimension) => (sprite) => ({
-  x,
-  y,
-  sprite,
-  dimension,
-});
-
-/**
- * Automatic
- * An object with L and R sprites (for turning) and a speed at which it can move independently.
- */
-export const Automatic = (x) => (y) => (dimension) => (sprite) => (speed) => ({
+export const Phantom = (x) => (y) => (dimension) => (sprite) => (speed) => ({
   x,
   y,
   sprite,
@@ -344,6 +308,7 @@ export const launch = ({
   const startScreen = document.getElementById("start-screen");
   const pressStart = document.getElementById("press-start");
   const c = document.querySelector("canvas");
+  //@ts-ignore
   c.ctx = c.getContext("2d");
   c.width = innerWidth;
   c.height = innerHeight;
