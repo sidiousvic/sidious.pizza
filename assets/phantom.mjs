@@ -13,137 +13,165 @@ const ARROW_SPEED = 20;
 /**
  * @typedef {Object} Phantom
  * @description A game object.
- * @property {number} x - The x coordinate of the game object.
- * @property {number} y - The y coordinate of the game object.
- * @property {number} dimension - The dimension of the game object. (width and height)
- * @property {string} sprite - The sprite of the game object.
+ * @property {number} x The x coordinate of the game object.
+ * @property {number} y The y coordinate of the game object.
+ * @property {number} dimension The dimension of the game object. (width and height)
+ * @property {HTMLImageElement} sprite The sprite of the game object.
+ * @property {{x: number, y: number}} speed The speed of the game object.
+ * @example { x: 0, y: 0, dimension: 50, sprite: HTMLImageElement }
  */
 
 /**
- * @param {Phantom} a The first game object.
- * @returns {(b: Phantom) => number} b A lambda consuming the second game object.
- * @param {Phantom} b The second game object.
+ * @typedef {Object} Mouse
+ * @description A game object representing the mouse coordinates.
+ * @property {number} x The x coordinate of the game object.
+ * @property {number} y The y coordinate of the game object.
+ * @example { x: 0, y: 0 }
+ */
+
+/**
+ * @typedef {Function} Mutation
+ * @description A function that executes a void function (side effect)
+ * @param {unknown} x The void to execute
+ * @returns {void}
+ */
+
+/**
+ * @typedef {Function} Mutator
+ * @description A function that executes a mutation
+ * @param {Mutation} m The mutation to execute
+ * @returns {void}
+ */
+
+/**
+ * Calculates the distance between two game objects (Phantoms).
+ *
+ * @param {Phantom} a The first game object
+ * @returns {(b: Phantom) => number} (b: Phantom) => number
+ * @param {Phantom} b The second game object
  * @returns distance Distance in pixels between two game objects
- * @example distance({x: 1, y: 1})({x: 2, y: 2}) // 1.4142135623730951
- * @math 𝑑 = √( ( 𝑥2 - 𝑥1 )² + ( 𝑦2 - 𝑦1 )² )
+ * @description 𝑑 = √( ( 𝑥2 - 𝑥1 )² + ( 𝑦2 - 𝑦1 )² )
+ * @example distance({x: 1, y: 1})({x: 2, y: 2}) ⚡︎1.414...
  */
 export const distance = (a) => (b) =>
   Math.sqrt(Math.pow(b.x - a.x, 2) + Math.pow(b.y - a.y, 2));
 
 /**
- * @function randomIntFromRange
- * @returns number random integer between min and max
- * @example randomIntFromRange(1)(10) // 3
+ * Picks a random integer from a range.
+ *
+ * @param {number} min The lower end of the range
+ * @returns {(max: number) => number} (max: number) => number
+ * @param {number} max The upper end of the range
+ * @returns {number} Random integer from a range
+ * @example randomIntFromRange(1)(10) ⚡︎9
  */
 export const randomIntFromRange = (min) => (max) =>
   Math.floor(Math.random() * (max - min + 1) + min);
 
 /**
- * @function randomElement
- * @returns T random element from a list
- * @example randomElement([1, 2, 3]) // 2
+ * Picks a random element from a list.
+ *
+ * @param {T[]} list The list to pick from
+ * @returns {T} Random element from a list
+ * @example randomElement([1, 2, 3, 4, 5]) ⚡︎3
  */
 export const randomElement = (list) =>
   list[Math.floor(Math.random() * list.length)];
 
 /**
- * @function negation
- * @returns number negation of a number
- * @example negation(1) // -1
+ * Negates a number.
+ *
+ * @param {number} n The number to negate.
+ * @returns {number} Negated number
+ * @example negation(1) ⚡︎-1
  */
 export const negation = (n) => -n;
 
 /**
- * @function avg
- * @returns number average of two numbers
- * @example avg(1)(2) // 1.5
+ * Averages two numbers.
+ * @param {number} n The first number
+ * @returns {(y: number) => number} (y: number) => number
+ * @param {number} m The second number
+ * @returns {number} Average of two numbers
+ * @example avg(1)(2) ⚡︎1.5
  */
-export const avg = (x) => (y) => x + y / 2;
+export const avg = (n) => (m) => n + m / 2;
 
 /**
- * @function divideByTwo
- * @returns number half of a number
- * @example divideByTwo(2) // 1
+ * Divides a number by two.
+ * @param {number} n The number to divide
+ * @returns {number} Half of a number
+ * @example divideByTwo(50) ⚡︎25
  */
 export const divideByTwo = (n) => n / 2;
 
 /**
- * @function hitbox
- * @returns number half of a game object's dimension
- * @example hitbox(player) // 25
+ * Provides the hitbox, which is the radius (half-diagonal) of a game object.
+ * @param {Phantom} o The game object
+ * @returns {number} Hitbox of a game object
+ * @example hitbox(50) ⚡︎25
  */
 export const hitbox = (o) => divideByTwo(o.dimension);
 
 /**
- * @function colliding
- * @returns boolean true if game objects a and b collide
- * @example colliding(player)(swoosh) // true
+ * Verifies that two game objects are colliding.
+ *
+ * @param {Phantom} a The first game object
+ * @returns {(b: Phantom) => boolean} (b: Phantom) => boolean
+ * @param {Phantom} b The second game object
+ * @returns {boolean} True if two game objects are colliding
+ * @example colliding({x: 1, y: 1})({x: 2, y: 2}) ⚡︎false
  */
 export const colliding = (a) => (b) => distance(a)(b) <= hitbox(a) + hitbox(b);
 
 /**
- * @function collide
- * fires function f when game objects a and b collide
- * @example collide(player)(swoosh)(() => calculateScore(score)(enemy));
+ * Executes a mutation if two game objects are colliding.
+ *
+ * @param {Phantom} a The first game object
+ * @returns {(b: Phantom) => Mutator} (b: Phantom) => (f: () => void) => void
+ * @param {Phantom} b The second game object
+ * @returns {Mutator} (f: () => void) => void
+ * @param {Mutation} f The mutation to execute
+ * @returns {void} Executes a mutation if two game objects are colliding
+ * @example collide(player)(enemy)(() => sound.death.play()) ⚡︎
  */
 export const collide = (a) => (b) => (f) => colliding(a)(b) && void f();
 
 /**
- * @function move
- * moves game object o
- * @example move(enemy)
+ * Moves the game object according to their velocity.
+ * @param {Phantom} o The game object
+ * @returns {void} Moves the game object according to their velocity
+ * @example moveWithVelocity(enemy) ⚡︎
  */
 export const moveWithVelocity = (o) => ((o.x += o.speed.x), (o.y += o.speed.y));
 
 /**
- * @function moveWithMouse
- * moves game object o with mouse
- * @example moveWithMouse(player)(mouse)
+ * Moves the game object according to the mouse position.
+ * @param {Phantom} o The game object
+ * @returns {(m: Mouse) => void} (m: Mouse) => void
+ * @param {Mouse} m The mouse position
+ * @returns {void} Moves the game object according to the mouse position
+ * @example moveWithMouse(player)(mouse) ⚡︎
  */
 export const moveWithMouse = (o) => (m) => ((o.x = m.x), (o.y = m.y));
 
-/**
- * @function switchSprite
- * switches game object o sprite (left and right) based on condition
- * @example switchSprite(player)(z.mouse.x < player.x);
- */
 export const switchSprite = (o) => (sprites) => (condition) =>
   condition ? (o.sprite = sprites.L) : (o.sprite = sprites.R);
 
-/**
- * @function spawnRandom
- * returns a game object with a random spawn position and speed within screen bounds
- * @example spawnRandom(Enemy)([-5, -4, -3 - 2, 2, 3, 4, 5]])
- */
 export const spawnRandom = (O) => (dimension) => (speeds) =>
   O(randomIntFromRange(dimension)(innerWidth - dimension))(
     randomIntFromRange(dimension)(innerHeight - dimension)
   )(dimension)(randomElement(speeds));
 
-/**
- * @function respawn
- * respawns game object o within screen bounds
- * @example respawn(coin)
- */
 export const respawn = (o) => (
   (o.x = randomIntFromRange(o.dimension)(innerWidth - o.dimension)),
   (o.y = randomIntFromRange(o.dimension)(innerHeight - o.dimension))
 );
 
-/**
- * @function
- * sets game object value
- * @example updateValue(score)(50)
- */
 export const updateValue = (object) => (amount) => (
   (object.value += amount), (object.sprite.innerHTML = ~~object.value)
 );
 
-/**
- * @function bounce
- * bounces game object o within window bounds
- * @example bounce(enemy)({ x: 500, y: 800 }})
- */
 export const bounce = (object) => (bounds) =>
   /** bottom */
   distance(object)({
@@ -175,11 +203,6 @@ export const bounce = (object) => (bounds) =>
     ? (object.speed.x = negation(object.speed.x))
     : void 0;
 
-/**
- * @function draw
- * draws game object o on canvas
- * @example draw(c)(player)
- */
 export const draw =
   (c) =>
   ({ sprite, x, y, dimension }) =>
