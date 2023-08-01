@@ -12,7 +12,7 @@ import {
   spawnRandom,
   randomIntFromRange,
   Engine,
-  launch,
+  prime,
   moveWithMouse,
   collide,
   draw,
@@ -20,14 +20,16 @@ import {
   moveWithVelocity,
   switchSprite,
   bounce,
-  updateValue,
   Phantom,
+  updateScore,
 } from "./phantom.mjs";
 
 const GAME_TITLE = "SIDIOUS.PIZZA";
 const ENEMY_RANDOM_SPAWN_SPEEDS = [-5, -4, -3 - 2, 2, 3, 4, 5];
 const DISPLAY_SCORE = true;
 const SCORE_FONT = "Vastantonius";
+const BG_COLOR_HEX = "#0d1117";
+const FG_COLOR_HEX = "#00ff2a";
 const SPRITE_DIMENSION = 50;
 const SCORE_UPDATER =
   (Math.pow(SPRITE_DIMENSION, 2) / (innerHeight * innerWidth)) * 1000;
@@ -44,10 +46,12 @@ const AUDIOS = [
   { url: "/assets/death.wav", volume: 0.9 },
 ];
 
-const { sprites, score, sound, mouse, c } = launch({
+const { sprites, score, sound, mouse, c } = prime({
   GAME_TITLE,
   DISPLAY_SCORE,
   SCORE_FONT,
+  BG_COLOR_HEX,
+  FG_COLOR_HEX,
   START_TEXT_A,
   START_TEXT_B,
   SPRITES,
@@ -74,40 +78,39 @@ const z = {
   sound,
   score,
   mouse,
-  c,
 };
 
 requestAnimationFrame(() => {
-  Engine(z)(
-    (z) => (
-      moveWithMouse(z.player)(z.mouse),
-      collide(z.player)(z.swoosh)(() => updateValue(z.score)(SCORE_UPDATER)),
-      draw(z.c)(z.player),
-      collide(z.swoosh)(z.player)(
+  Engine(c)(z)(
+    (u) => (
+      moveWithMouse(u.player)(u.mouse),
+      collide(u.player)(u.swoosh)(() => updateScore(u.score)(SCORE_UPDATER)),
+      draw(c)(u.player),
+      collide(u.swoosh)(u.player)(
         () => (
-          respawn(z.swoosh),
-          z.sound.swoosh.play(),
-          z.enemies.push(
+          respawn(u.swoosh),
+          u.sound.swoosh.play(),
+          u.enemies.push(
             spawnRandom(Enemy)(SPRITE_DIMENSION)(ENEMY_RANDOM_SPAWN_SPEEDS)
           )
         )
       ),
-      draw(z.c)(z.swoosh),
-      z.enemies.map(
+      draw(c)(u.swoosh),
+      u.enemies.map(
         (e) => (
-          (z.enemy = e),
-          collide(e)(z.player)(
+          (u.enemy = e),
+          collide(e)(u.player)(
             () => (
-              respawn(z.swoosh),
-              (z.score.value = 0),
-              (z.enemies.length = 0),
-              z.sound.death.play()
+              respawn(u.swoosh),
+              (u.score.value = 0),
+              (u.enemies.length = 0),
+              u.sound.death.play()
             )
           ),
           moveWithVelocity(e),
           switchSprite(e)(e.speed.x < 0 ? sprites.enemyL : sprites.enemyR),
           bounce(e)({ x: innerWidth, y: innerHeight }),
-          draw(z.c)(e)
+          draw(c)(e)
         )
       )
     )

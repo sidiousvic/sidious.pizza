@@ -11,6 +11,15 @@ const START_ANIMATION_INTERVAL = 2000;
 const ARROW_SPEED = 20;
 
 /**
+ * @typedef {Object} GameState
+ * @property {Object.<string, HTMLImageElement>} sprites The sprites of the game.
+ * @property {Object.<string, HTMLAudioElement>} sound The sound effects of the game.
+ * @property {Numeric} score The score to display.
+ * @property {Coordinates} mouse The mouse coordinates.
+ * @property {HTMLCanvasElement} c The canvas.
+ */
+
+/**
  * @typedef {Object} Phantom
  * @description A game object.
  * @property {number} x The x coordinate of the game object.
@@ -22,8 +31,15 @@ const ARROW_SPEED = 20;
  */
 
 /**
- * @typedef {Object} Mouse
- * @description A game object representing the mouse coordinates.
+ * @typedef {Object} Numeric
+ * @description A numeric value to display visually.
+ * @property {number} value The numeric value to show on the element.
+ * @property {HTMLImageElement} sprite The sprite of the score object.
+ * @example { value: 0, sprite: HTMLImageElement }
+ */
+
+/**
+ * @typedef {Object} Coordinates
  * @property {number} x The x coordinate of the game object.
  * @property {number} y The y coordinate of the game object.
  * @example { x: 0, y: 0 }
@@ -125,96 +141,132 @@ export const hitbox = (o) => divideByTwo(o.dimension);
 export const colliding = (a) => (b) => distance(a)(b) <= hitbox(a) + hitbox(b);
 
 /**
- * Executes a mutation if two game objects are colliding.
- *
+ * Executes a mutation if two game objects are colliding
  * @param {Phantom} a The first game object
  * @returns {(b: Phantom) => Mutator} (b: Phantom) => (f: () => void) => void
  * @param {Phantom} b The second game object
  * @returns {Mutator} (f: () => void) => void
  * @param {Mutation} f The mutation to execute
- * @returns {void} Executes a mutation if two game objects are colliding
+ * @returns {void}
  * @example collide(player)(enemy)(() => sound.death.play()) ⚡︎
  */
 export const collide = (a) => (b) => (f) => colliding(a)(b) && void f();
 
 /**
- * Moves the game object according to their velocity.
+ * Moves the game object according to their velocity
  * @param {Phantom} o The game object
- * @returns {void} Moves the game object according to their velocity
+ * @returns {void}
  * @example moveWithVelocity(enemy) ⚡︎
  */
 export const moveWithVelocity = (o) => ((o.x += o.speed.x), (o.y += o.speed.y));
 
 /**
- * Moves the game object according to the mouse position.
+ * Moves a game object according to the mouse position
  * @param {Phantom} o The game object
- * @returns {(m: Mouse) => void} (m: Mouse) => void
- * @param {Mouse} m The mouse position
- * @returns {void} Moves the game object according to the mouse position
+ * @returns {(m: Coordinates) => void} (m: Coordinates) => void
+ * @param {Coordinates} m The mouse position
+ * @returns {void}
  * @example moveWithMouse(player)(mouse) ⚡︎
  */
 export const moveWithMouse = (o) => (m) => ((o.x = m.x), (o.y = m.y));
 
 /**
- * Switches the sprite of a game object.
+ * Switches the sprite of a game object
  * @param {Phantom} o The game object
  * @returns {(sprite: HTMLElement) => void} (sprite: HTMLElement) => void
  * @param {HTMLElement} sprite The sprite to switch to
- * @returns {void} Switches the sprite of a game object
+ * @returns {void}
  * @example switchSprite(enemy)(enemy.speed.x < 0 ? spriteR : spriteL) ⚡︎
  */
 export const switchSprite = (o) => (sprite) => (o.sprite = sprite);
 
+/**
+ * Spawns a game object at a random position
+ * @param {Phantom} O The game object
+ * @returns {(dimension: number) => (speeds: number[]) => Phantom} (dimension: number) => (speeds: number[]) => Phantom
+ * @param {number} dimension The dimension of the game object
+ * @returns {(speeds: number[]) => Phantom} (speeds: number[]) => Phantom
+ * @param {number[]} speeds The possible speeds of the game object
+ * @returns {Phantom} Spawns a game object at a random position
+ * @example spawnRandom(enemy)(50)([1, 2, 3]) ⚡︎
+ */
 export const spawnRandom = (O) => (dimension) => (speeds) =>
   O(randomIntFromRange(dimension)(innerWidth - dimension))(
     randomIntFromRange(dimension)(innerHeight - dimension)
   )(dimension)(randomElement(speeds));
 
+/**
+ * Respawns a game object at a random position
+ * @param {Phantom} o The game object
+ * @returns {void}
+ * @example respawn(enemy) ⚡︎
+ */
 export const respawn = (o) => (
   (o.x = randomIntFromRange(o.dimension)(innerWidth - o.dimension)),
   (o.y = randomIntFromRange(o.dimension)(innerHeight - o.dimension))
 );
 
-export const updateValue = (object) => (amount) => (
-  (object.value += amount), (object.sprite.innerHTML = ~~object.value)
+/**
+ * Updates the score
+ * @param {Score} score The score object
+ * @returns {(amount: number) => void} (amount: number) => void
+ * @param {number} amount The amount to update the score by
+ * @returns {void} Updates the score
+ * @example updateScore(score)(1) ⚡︎
+ */
+export const updateScore = (score) => (amount) => (
+  (score.value += amount), (score.sprite.innerHTML = ~~score.value)
 );
 
+/**
+ * Bounces a game object off the bounds of the screen using speed
+ * @param {Phantom} object The game object
+ * @returns {(bounds: Coordinates) => void} (bounds: Coordinates) => void
+ * @param {Coordinates} bounds The bounds of the screen
+ * @returns {void} Bounces a game object off the bounds of the screen using speed
+ * @example bounce(enemy)({x: innerWidth, y: innerHeight}) ⚡︎
+ */
 export const bounce = (object) => (bounds) =>
   /** bottom */
-  distance(object)({
-    x: object.x,
-    y: bounds.y,
-  }) <= object.dimension
+  distance(object)({ x: object.x, y: bounds.y }) <= object.dimension
     ? (object.speed.y = negation(object.speed.y))
     : /** top */
-    distance(object)({
-        x: object.x,
-        y: bounds.y,
-      }) -
-        innerHeight >
-      0
+    distance(object)({ x: object.x, y: bounds.y }) - bounds.y > 0
     ? (object.speed.y = negation(object.speed.y))
     : /** right */
-    distance(object)({
-        x: bounds.x,
-        y: object.y,
-      }) <= object.dimension
+    distance(object)({ x: bounds.x, y: object.y }) <= object.dimension
     ? (object.speed.x = negation(object.speed.x))
     : /** left */
-    distance(object)({
-        x: bounds.x,
-        y: object.y,
-      }) -
-        innerWidth >
-      0
-    ? (object.speed.x = negation(object.speed.x))
-    : void 0;
+      distance(object)({ x: bounds.x, y: object.y }) - bounds.x > 0 &&
+      (object.speed.x = negation(object.speed.x));
 
+/**
+ * Draws a game object on the canvas.
+ * @param {Canvas} c The canvas
+ * @returns {(o: Phantom) => void} (o: Phantom) => void
+ * @param {Phantom} o The game object
+ * @returns {void} Draws a game object on the canvas
+ * @example draw(c)(enemy) ⚡︎
+ */
 export const draw =
   (c) =>
   ({ sprite, x, y, dimension }) =>
     c.ctx.drawImage(sprite, x, y, dimension, dimension);
 
+/**
+ * Creates a game object.
+ * @param {number} x The x position of the game object
+ * @returns {(y: number) => (dimension: number) => (sprite: HTMLElement) => (speed: number) => Phantom} (y: number) => (dimension: number) => (sprite: HTMLElement) => (speed: number) => Phantom
+ * @param {number} y The y position of the game object
+ * @returns {(dimension: number) => (sprite: HTMLElement) => (speed: number) => Phantom} (dimension: number) => (sprite: HTMLElement) => (speed: number) => Phantom
+ * @param {number} dimension The dimension of the game object
+ * @returns {(sprite: HTMLElement) => (speed: number) => Phantom} (sprite: HTMLElement) => (speed: number) => Phantom
+ * @param {HTMLElement} sprite The sprite of the game object
+ * @returns {(speed: number) => Phantom} (speed: number) => Phantom
+ * @param {number} speed The speed of the game object
+ * @returns {Phantom} Creates a game object
+ * @example create(0)(0)(50)(sprite)(1) ⚡︎
+ */
 export const Phantom = (x) => (y) => (dimension) => (sprite) => (speed) => ({
   x,
   y,
@@ -223,13 +275,79 @@ export const Phantom = (x) => (y) => (dimension) => (sprite) => (speed) => ({
   speed: { x: speed, y: speed },
 });
 
-export const Engine = (z) => (rev) => (
-  requestAnimationFrame(() => Engine(z)(rev)),
-  z.c.ctx.clearRect(0, 0, z.c.width, z.c.height),
-  rev(z)
+/**
+ * Runs a gamestate mutation at the current frame of the game and schedules the next frame
+ * @param {Canvas} c The canvas
+ * @returns {(z: GameState) => (rev: (z: GameState) => void) => void} 
+ * (z: GameState) => (rev: (z: GameState) => void) => void
+ * @param {GameState} z The game state
+ * @returns {(m: (z: GameState) => void) => void} (m: (z: GameState) => void) => void
+ * @param {(z: GameState) => void} m The gamestate mutation to run
+ * @returns {void} 
+ * @example
+  Engine(c)(z)(
+    (u) => (
+      moveWithMouse(u.player)(u.mouse),
+      collide(u.player)(u.swoosh)(() => updateScore(u.score)(SCORE_UPDATER)),
+      draw(c)(u.player),
+      collide(u.swoosh)(u.player)(
+        () => (
+          respawn(u.swoosh),
+          u.sound.swoosh.play(),
+          u.enemies.push(
+            spawnRandom(Enemy)(SPRITE_DIMENSION)(ENEMY_RANDOM_SPAWN_SPEEDS)
+          )
+        )
+      ),
+      draw(c)(u.swoosh),
+      u.enemies.map(
+        (e) => (
+          (u.enemy = e),
+          collide(e)(u.player)(
+            () => (
+              respawn(u.swoosh),
+              (u.score.value = 0),
+              (u.enemies.length = 0),
+              u.sound.death.play()
+            )
+          ),
+          moveWithVelocity(e),
+          switchSprite(e)(e.speed.x < 0 ? sprites.enemyL : sprites.enemyR),
+          bounce(e)({ x: innerWidth, y: innerHeight }),
+          draw(c)(e)
+        )
+      )
+    )
+  );
+});
+ * ⚡︎
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clearRect
+ */
+export const Engine = (c) => (z) => (m) => (
+  requestAnimationFrame(() => Engine(c)(z)(m)),
+  c.ctx.clearRect(0, 0, c.width, c.height),
+  m(z)
 );
 
-export const launch = ({
+/**
+ * @typedef {Object} GameConfig
+ * @description The user defined configuration constants
+ * @property {string} SCORE_FONT The font of the score
+ * @property {string} START_TEXT_A The first line of the start text
+ * @property {string} START_TEXT_B The second line of the start text
+ * @property {boolean} DISPLAY_SCORE Whether or not to display the score
+ * @property {string} GAME_TITLE The title of the game
+ * @property {string[]} SPRITES The sprites of the game as URLs
+ * @property {string[]} AUDIOS The audios of the game as URLs
+ */
+
+/**
+ * Injects and configures the game elements into the DOM based on user defined constants
+ * @param {GameConfig} config The user defined configuration constants
+ * @returns {GameState} The game state
+ */
+export const prime = ({
   SCORE_FONT,
   START_TEXT_A,
   START_TEXT_B,
@@ -237,6 +355,8 @@ export const launch = ({
   GAME_TITLE,
   SPRITES,
   AUDIOS,
+  BG_COLOR_HEX,
+  FG_COLOR_HEX,
 }) => {
   document.querySelector("main").innerHTML += `
 <canvas>
@@ -257,8 +377,8 @@ export const launch = ({
 
 <style>
   :root {
-    --background-color: #0d1117;
-    --score-font-color: #00ff2a;
+    --background-color: ${BG_COLOR_HEX};
+    --foreground-color: ${FG_COLOR_HEX};
   }
   
   html { 
@@ -295,6 +415,7 @@ export const launch = ({
     top: 0;
     left: 0; 
     background-color: var(--background-color); 
+    color: var(--foreground-color);
     display: flex; 
     flex-direction: column; 
     text-align: center; 
@@ -305,6 +426,9 @@ export const launch = ({
     width: 100vw; 
     z-index: 2; 
     font-size: 30px; 
+    & > p {
+      color: whitesmoke;
+    }
   }
   
   #score { 
@@ -315,7 +439,7 @@ export const launch = ({
     mix-blend-mode: difference; 
     left: 50%; 
     transform: translate(-50%, 50%); 
-    color: var(--score-font-color); 
+    color: var(--foreground-color); 
   }
   
   img { 
@@ -336,14 +460,18 @@ export const launch = ({
   );
 
   const startScreen = document.getElementById("start-screen");
+
   const pressStart = document.getElementById("press-start");
+
   const c = document.querySelector("canvas");
-  //@ts-ignore
   c.ctx = c.getContext("2d");
   c.width = innerWidth;
   c.height = innerHeight;
+
   const mouse = { x: c.width / 2, y: c.height / 2 };
+
   const score = { value: 0, sprite: sprites.score };
+
   const sound = AUDIOS.reduce((acc, audio) => {
     const a = new Audio(audio.url);
     a.volume = audio.volume;
@@ -396,12 +524,6 @@ export const launch = ({
   );
   addEventListener("click", () => startScreen.remove());
   addEventListener("touchstart", () => startScreen.remove());
-  return {
-    pressStart,
-    c,
-    mouse,
-    sound,
-    score,
-    sprites,
-  };
+
+  return { c, mouse, sound, score, sprites };
 };
