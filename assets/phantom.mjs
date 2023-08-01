@@ -155,8 +155,15 @@ export const moveWithVelocity = (o) => ((o.x += o.speed.x), (o.y += o.speed.y));
  */
 export const moveWithMouse = (o) => (m) => ((o.x = m.x), (o.y = m.y));
 
-export const switchSprite = (o) => (sprites) => (condition) =>
-  condition ? (o.sprite = sprites.L) : (o.sprite = sprites.R);
+/**
+ * Switches the sprite of a game object.
+ * @param {Phantom} o The game object
+ * @returns {(sprite: HTMLElement) => void} (sprite: HTMLElement) => void
+ * @param {HTMLElement} sprite The sprite to switch to
+ * @returns {void} Switches the sprite of a game object
+ * @example switchSprite(enemy)(enemy.speed.x < 0 ? spriteR : spriteL) ⚡︎
+ */
+export const switchSprite = (o) => (sprite) => (o.sprite = sprite);
 
 export const spawnRandom = (O) => (dimension) => (speeds) =>
   O(randomIntFromRange(dimension)(innerWidth - dimension))(

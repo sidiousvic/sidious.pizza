@@ -105,9 +105,7 @@ requestAnimationFrame(() => {
             )
           ),
           moveWithVelocity(e),
-          switchSprite(e)({ R: sprites.enemyR, L: sprites.enemyL })(
-            e.speed.x < 0
-          ),
+          switchSprite(e)(e.speed.x < 0 ? sprites.enemyL : sprites.enemyR),
           bounce(e)({ x: innerWidth, y: innerHeight }),
           draw(z.c)(e)
         )
