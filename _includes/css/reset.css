@@ -3,17 +3,17 @@
 
 @font-face {
   font-family: OffDot;
-  src: url(/assets/OffBitTrial-Dot.ttf);
+  src: url(/@/OffBitTrial-Dot.ttf);
 }
 
 @font-face {
   font-family: OffDotBold;
-  src: url(/assets/OffBitTrial-DotBold.ttf);
+  src: url(/@/OffBitTrial-DotBold.ttf);
 }
 
 @font-face {
   font-family: Vastantonius;
-  src: url(/assets/Vastantonius.ttf);
+  src: url(/@/Vastantonius.ttf);
 }
 
 :root {

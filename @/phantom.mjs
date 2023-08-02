@@ -11,50 +11,62 @@ const START_ANIMATION_INTERVAL = 2000;
 const ARROW_SPEED = 20;
 
 /**
+ * The state of the game
  * @typedef {Object} GameState
- * @property {Object.<string, HTMLImageElement>} sprites The sprites of the game.
- * @property {Object.<string, HTMLAudioElement>} sound The sound effects of the game.
- * @property {Numeric} score The score to display.
- * @property {Coordinates} mouse The mouse coordinates.
- * @property {HTMLCanvasElement} c The canvas.
+ * @property {Object.<string, HTMLImageElement>} sprites The sprites of the game
+ * @property {Object.<string, HTMLAudioElement>} sound The sound effects of the game
+ * @property {Numeric} score The score to display
+ * @property {Coordinates} mouse The mouse coordinates
+ * @property {HTMLCanvasElement} c The canvas
  */
 
 /**
+ * The user defined configuration constants
+ * @typedef {Object} GameConfig
+ * @property {string} SCORE_FONT The font of the score
+ * @property {string} START_TEXT_A The first line of the start text
+ * @property {string} START_TEXT_B The second line of the start text
+ * @property {boolean} DISPLAY_SCORE Whether or not to display the score
+ * @property {string} GAME_TITLE The title of the game
+ * @property {string[]} SPRITES The sprites of the game as URLs
+ * @property {string[]} AUDIOS The audios of the game as URLs
+ * @property {string} BG_COLOR_HEX The background color of the game as a hex code
+ * @property {string} FG_COLOR_HEX The foreground color of the game as a hex code
+ */
+
+/**
+ * A game object.
  * @typedef {Object} Phantom
- * @description A game object.
- * @property {number} x The x coordinate of the game object.
- * @property {number} y The y coordinate of the game object.
- * @property {number} dimension The dimension of the game object. (width and height)
- * @property {HTMLImageElement} sprite The sprite of the game object.
- * @property {{x: number, y: number}} speed The speed of the game object.
- * @example { x: 0, y: 0, dimension: 50, sprite: HTMLImageElement }
+ * @property {number} x The x coordinate of the game object
+ * @property {number} y The y coordinate of the game object
+ * @property {number} dimension The dimension of the game object (width and height)
+ * @property {HTMLImageElement} sprite The sprite of the game object
+ * @property {{x: number, y: number}} speed The speed of the game object
  */
 
 /**
+ * A numeric value to display visually
  * @typedef {Object} Numeric
- * @description A numeric value to display visually.
- * @property {number} value The numeric value to show on the element.
- * @property {HTMLImageElement} sprite The sprite of the score object.
- * @example { value: 0, sprite: HTMLImageElement }
+ * @property {number} value The numeric value to show on the element
+ * @property {HTMLImageElement} sprite The sprite of the score object
  */
 
 /**
  * @typedef {Object} Coordinates
- * @property {number} x The x coordinate of the game object.
- * @property {number} y The y coordinate of the game object.
- * @example { x: 0, y: 0 }
+ * @property {number} x The x coordinate of the game object
+ * @property {number} y The y coordinate of the game object
  */
 
 /**
+ * A function that executes a void function (side effect)
  * @typedef {Function} Mutation
- * @description A function that executes a void function (side effect)
  * @param {unknown} x The void to execute
  * @returns {void}
  */
 
 /**
+ * A function that executes a mutation
  * @typedef {Function} Mutator
- * @description A function that executes a mutation
  * @param {Mutation} m The mutation to execute
  * @returns {void}
  */
@@ -105,6 +117,7 @@ export const negation = (n) => -n;
 
 /**
  * Averages two numbers.
+ *
  * @param {number} n The first number
  * @returns {(y: number) => number} (y: number) => number
  * @param {number} m The second number
@@ -123,6 +136,7 @@ export const divideByTwo = (n) => n / 2;
 
 /**
  * Provides the hitbox, which is the radius (half-diagonal) of a game object.
+ *
  * @param {Phantom} o The game object
  * @returns {number} Hitbox of a game object
  * @example hitbox(50) ⚡︎25
@@ -142,6 +156,7 @@ export const colliding = (a) => (b) => distance(a)(b) <= hitbox(a) + hitbox(b);
 
 /**
  * Executes a mutation if two game objects are colliding
+ *
  * @param {Phantom} a The first game object
  * @returns {(b: Phantom) => Mutator} (b: Phantom) => (f: () => void) => void
  * @param {Phantom} b The second game object
@@ -154,6 +169,7 @@ export const collide = (a) => (b) => (f) => colliding(a)(b) && void f();
 
 /**
  * Moves the game object according to their velocity
+ *
  * @param {Phantom} o The game object
  * @returns {void}
  * @example moveWithVelocity(enemy) ⚡︎
@@ -162,6 +178,7 @@ export const moveWithVelocity = (o) => ((o.x += o.speed.x), (o.y += o.speed.y));
 
 /**
  * Moves a game object according to the mouse position
+ *
  * @param {Phantom} o The game object
  * @returns {(m: Coordinates) => void} (m: Coordinates) => void
  * @param {Coordinates} m The mouse position
@@ -172,6 +189,7 @@ export const moveWithMouse = (o) => (m) => ((o.x = m.x), (o.y = m.y));
 
 /**
  * Switches the sprite of a game object
+ *
  * @param {Phantom} o The game object
  * @returns {(sprite: HTMLElement) => void} (sprite: HTMLElement) => void
  * @param {HTMLElement} sprite The sprite to switch to
@@ -181,22 +199,20 @@ export const moveWithMouse = (o) => (m) => ((o.x = m.x), (o.y = m.y));
 export const switchSprite = (o) => (sprite) => (o.sprite = sprite);
 
 /**
- * Spawns a game object at a random position
- * @param {Phantom} O The game object
- * @returns {(dimension: number) => (speeds: number[]) => Phantom} (dimension: number) => (speeds: number[]) => Phantom
+ * Returns a random spawn position for a game object within screen bounds
+ *
  * @param {number} dimension The dimension of the game object
- * @returns {(speeds: number[]) => Phantom} (speeds: number[]) => Phantom
- * @param {number[]} speeds The possible speeds of the game object
- * @returns {Phantom} Spawns a game object at a random position
- * @example spawnRandom(enemy)(50)([1, 2, 3]) ⚡︎
+ * @returns {Coordinates} Random spawn position
+ * @example randomSpawn(50) ⚡︎{x: 100, y: 100}
  */
-export const spawnRandom = (O) => (dimension) => (speeds) =>
-  O(randomIntFromRange(dimension)(innerWidth - dimension))(
-    randomIntFromRange(dimension)(innerHeight - dimension)
-  )(dimension)(randomElement(speeds));
+export const randomSpawn = (dimension) => ({
+  x: randomIntFromRange(dimension)(innerWidth - dimension),
+  y: randomIntFromRange(dimension)(innerHeight - dimension),
+});
 
 /**
- * Respawns a game object at a random position
+ * Respawns a game object at a random position within screen bounds
+ *
  * @param {Phantom} o The game object
  * @returns {void}
  * @example respawn(enemy) ⚡︎
@@ -208,6 +224,7 @@ export const respawn = (o) => (
 
 /**
  * Updates the score
+ *
  * @param {Score} score The score object
  * @returns {(amount: number) => void} (amount: number) => void
  * @param {number} amount The amount to update the score by
@@ -220,6 +237,7 @@ export const updateScore = (score) => (amount) => (
 
 /**
  * Bounces a game object off the bounds of the screen using speed
+ *
  * @param {Phantom} object The game object
  * @returns {(bounds: Coordinates) => void} (bounds: Coordinates) => void
  * @param {Coordinates} bounds The bounds of the screen
@@ -255,25 +273,18 @@ export const draw =
 
 /**
  * Creates a game object.
- * @param {number} x The x position of the game object
- * @returns {(y: number) => (dimension: number) => (sprite: HTMLElement) => (speed: number) => Phantom} (y: number) => (dimension: number) => (sprite: HTMLElement) => (speed: number) => Phantom
- * @param {number} y The y position of the game object
- * @returns {(dimension: number) => (sprite: HTMLElement) => (speed: number) => Phantom} (dimension: number) => (sprite: HTMLElement) => (speed: number) => Phantom
- * @param {number} dimension The dimension of the game object
- * @returns {(sprite: HTMLElement) => (speed: number) => Phantom} (sprite: HTMLElement) => (speed: number) => Phantom
- * @param {HTMLElement} sprite The sprite of the game object
- * @returns {(speed: number) => Phantom} (speed: number) => Phantom
- * @param {number} speed The speed of the game object
- * @returns {Phantom} Creates a game object
- * @example create(0)(0)(50)(sprite)(1) ⚡︎
  */
-export const Phantom = (x) => (y) => (dimension) => (sprite) => (speed) => ({
-  x,
-  y,
-  sprite,
-  dimension,
-  speed: { x: speed, y: speed },
-});
+export const Phantom =
+  ({ x, y }) =>
+  (dimension) =>
+  (sprite) =>
+  (speed) => ({
+    x,
+    y,
+    sprite,
+    dimension,
+    speed: { x: speed, y: speed },
+  });
 
 /**
  * Runs a gamestate mutation at the current frame of the game and schedules the next frame
@@ -331,23 +342,11 @@ export const Engine = (c) => (z) => (m) => (
 );
 
 /**
- * @typedef {Object} GameConfig
- * @description The user defined configuration constants
- * @property {string} SCORE_FONT The font of the score
- * @property {string} START_TEXT_A The first line of the start text
- * @property {string} START_TEXT_B The second line of the start text
- * @property {boolean} DISPLAY_SCORE Whether or not to display the score
- * @property {string} GAME_TITLE The title of the game
- * @property {string[]} SPRITES The sprites of the game as URLs
- * @property {string[]} AUDIOS The audios of the game as URLs
- */
-
-/**
  * Injects and configures the game elements into the DOM based on user defined constants
  * @param {GameConfig} config The user defined configuration constants
  * @returns {GameState} The game state
  */
-export const prime = ({
+export const config = ({
   SCORE_FONT,
   START_TEXT_A,
   START_TEXT_B,

@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <div class="info">
   <picture class="vic-profile-pic">
-    <img alt="vic" width=250 src="/assets/vic.png"/>
+    <img alt="vic" width=250 src="/@/vic.png"/>
   </picture>
 
   <article>
@@ -66,7 +66,7 @@ Hola amigxs, my name is Vic and this my cyber space. I will be [writing](/weblog
 <figure>
   <picture>
 
-![A dry mountain in the middle of a city](/assets/chihuahua.jpeg)
+![A dry mountain in the middle of a city](/@/chihuahua.jpeg)
 
   </picture>
   <figcaption>
@@ -81,7 +81,7 @@ I was born in the state of Chihuahua, in the north of Mexico. It's a very dry re
 <figure>
   <picture>
 
-![A scorpion in dry ground](/assets/scorpionism.png)
+![A scorpion in dry ground](/@/scorpionism.png)
 
   </picture>
   <figcaption>
@@ -100,7 +100,7 @@ I remember listening to [Foxey Lady](https://www.youtube.com/watch?v=_PVjcIO4MT4
 <figure>
   <picture>
 
-![Fish-eye view of a man doing a skateboard trick called a hardflip](/assets/hardflip.gif)
+![Fish-eye view of a man doing a skateboard trick called a hardflip](/@/hardflip.gif)
 
   </picture>
   <figcaption>
@@ -115,7 +115,7 @@ One day my father brought home a computer from work, and I used it in the evenin
 <figure>
   <picture>
   
-![MTV logo](/assets/mtvlogo.gif)
+![MTV logo](/@/mtvlogo.gif)
 
   </picture>
   <figcaption>
@@ -130,7 +130,7 @@ I left home at 17 with my guitar _"Wozza"_ and a few books. Years followed in so
 <figure>
   <picture>
 
-![Animated gif of a skateboarder ollying over a laundry bottle on the street](/assets/skating-tokyo.gif)
+![Animated gif of a skateboarder ollying over a laundry bottle on the street](/@/skating-tokyo.gif)
 
   </picture>
   <figcaption>
@@ -143,7 +143,7 @@ When boredom struck I biked, read a shit ton of books, wrote [haiku](/tags/haiku
 <figure>
   <picture>
 
-![Animated gif of a cartoon alien surfing](/assets/surfing-with-the-alien.gif)
+![Animated gif of a cartoon alien surfing](/@/surfing-with-the-alien.gif)
 
   </picture>
   <figcaption>
@@ -162,7 +162,7 @@ One summer I studied how to program a low resolution game using C#, which ended 
 <figure>
   <picture>
 
-![A view of Kanda river near Asakusabashi, Tokyo](/assets/tokyo.gif)
+![A view of Kanda river near Asakusabashi, Tokyo](/@/tokyo.gif)
 
   </picture>
   <figcaption>
@@ -177,7 +177,7 @@ I still play guitar and skate sometime. I'm saving up for a motorcycle again. I 
 <figure>
   <picture>
 
-![Two kids playing a game on a bed, laughing](/assets/ichigo.jpg)
+![Two kids playing a game on a bed, laughing](/@/ichigo.jpg)
 
   </picture>
   <figcaption>

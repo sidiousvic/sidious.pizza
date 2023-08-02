@@ -8,7 +8,7 @@ import resolveUrls from "lume/plugins/resolve_urls.ts";
 import pageFind from "lume/plugins/pagefind.ts";
 import sitemap from "lume/plugins/sitemap.ts";
 import feed from "lume/plugins/feed.ts";
-import lang from "./filters/lang.ts";
+import lang from "$/filters/lang.ts";
 
 const site = lume({
   location: new URL("https://sidious.pizza/"),
@@ -16,7 +16,7 @@ const site = lume({
 
 site
   .ignore("README.md")
-  .copy("assets")
+  .copy("@")
   .copy("scripts")
   .use(postcss())
   .use(date())
