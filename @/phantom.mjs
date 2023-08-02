@@ -387,6 +387,7 @@ export const config = ({
   body {
     background: transparent; 
     cursor: none; 
+    touch-action: none;
   }
   
   nav { 
@@ -496,19 +497,13 @@ export const config = ({
   addEventListener(
     "touchmove",
     (e) => (
-      e.preventDefault(),
-      (mouse.x = e.touches[0].clientX),
-      (mouse.y = e.touches[0].clientY - 120)
+      (mouse.x = e.touches[0].clientX), (mouse.y = e.touches[0].clientY - 120)
     ),
     { passive: false }
   );
   addEventListener(
     "touchstart",
-    (e) => (
-      e.preventDefault(),
-      (mouse.x = e.touches[0].clientX),
-      (mouse.y = e.touches[0].clientY)
-    ),
+    (e) => ((mouse.x = e.touches[0].clientX), (mouse.y = e.touches[0].clientY)),
     { passive: false }
   );
   addEventListener("keydown", (e) => e.key === "Enter" && startScreen.remove());
