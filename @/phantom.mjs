@@ -433,6 +433,7 @@ export const config = ({
   #score { 
     position: absolute; 
     font-size: 3rem; 
+    white-space: nowrap;
     font-family: ${SCORE_FONT}, monospace; 
     bottom: 50%; 
     mix-blend-mode: difference; 
@@ -494,15 +495,21 @@ export const config = ({
   );
   addEventListener(
     "touchmove",
-    ({ touches }) => (
-      (mouse.x = touches[0].clientX), (mouse.y = touches[0].clientY - 120)
-    )
+    (e) => (
+      e.preventDefault(),
+      (mouse.x = e.touches[0].clientX),
+      (mouse.y = e.touches[0].clientY - 120)
+    ),
+    { passive: false }
   );
   addEventListener(
     "touchstart",
-    ({ touches }) => (
-      (mouse.x = touches[0].clientX), (mouse.y = touches[0].clientY)
-    )
+    (e) => (
+      e.preventDefault(),
+      (mouse.x = e.touches[0].clientX),
+      (mouse.y = e.touches[0].clientY)
+    ),
+    { passive: false }
   );
   addEventListener("keydown", (e) => e.key === "Enter" && startScreen.remove());
   addEventListener(

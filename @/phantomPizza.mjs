@@ -29,11 +29,24 @@ const ZERO_SPEED = { x: 0, y: 0 };
 const SPRITE_DIMENSION = 50;
 const SCORE_UPDATER =
   (Math.pow(SPRITE_DIMENSION, 2) / (innerHeight * innerWidth)) * 1000;
+const GAME_PROMPTS = [
+  "Wicked<i>！</i>",
+  "Pie-wack<i>！</i>",
+  "Slice 'n' dice<i>！</i>",
+  "Mamma mia<i>！</i>",
+  "Pizza-boo<i>！</i>",
+  "Sizzle and fizzle<i>！</i>",
+  "Pie 'n' die<i>！</i>",
+  "パイやばっ<i>！</i>",
+  "凄腕ピザ<i>！</i>",
+  "逃げろー<i>！</i>",
+  "パイ逃避<i>！</i>",
+];
 
 const { sprites, score, sound, mouse, c } = config({
   GAME_TITLE: "SIDIOUS.PIZZA",
   DISPLAY_SCORE: true,
-  SCORE_FONT: "Vastantonius",
+  SCORE_FONT: "Vastantonius, DotGothic16, monospace",
   BG_COLOR_HEX: "#0d1117",
   FG_COLOR_HEX: "#00ff2a",
   START_TEXT_A: "START",
@@ -44,6 +57,8 @@ const { sprites, score, sound, mouse, c } = config({
     { url: "/@/death.wav", volume: 0.9 },
   ],
 });
+
+innerWidth < 500 && (document.getElementById("score").style.fontSize = "2rem");
 
 const z = {
   player: Phantom(mouse)(SPRITE_DIMENSION)(sprites.player)(ZERO_SPEED),
@@ -64,10 +79,12 @@ requestAnimationFrame(() => {
   Engine(c)(z)(
     (u) => (
       moveWithMouse(u.player)(u.mouse),
-      collide(u.player)(u.swoosh)(() => updateScore(u.score)(SCORE_UPDATER)),
       draw(c)(u.player),
       collide(u.swoosh)(u.player)(
         () => (
+          updateScore(u.score)(SCORE_UPDATER),
+          !(~~score.value % 3) &&
+            (score.sprite.innerHTML = randomElement(GAME_PROMPTS)),
           respawn(u.swoosh),
           u.sound.swoosh.play(),
           u.enemies.push(
