@@ -1,13 +1,13 @@
 pre,
 code {
-  font-family: Martian Mono, monospace;
+  font-family: DotGothic16, monospace;
   line-height: 1.6rem;
   font-size: 1rem;
 }
 :root {
-  --viper: #00b988;
-  --slime: #88ff88;
-  --gypsy: #1b2f22;
+  --viper: var(--venom);
+  --slime: var(--venom);
+  --gypsy: var(--venom);
 }
 code > .hljs-comment {
   animation: blink 1s infinite;
