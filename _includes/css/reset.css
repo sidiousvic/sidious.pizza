@@ -54,6 +54,11 @@ strong {
   color: var(--venom);
 }
 
+ul,
+li {
+  list-style-type: "";
+}
+
 html,
 body {
   padding: 0;
