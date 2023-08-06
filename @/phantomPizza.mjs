@@ -58,6 +58,24 @@ const { sprites, score, sound, mouse, c } = config({
   ],
 });
 
+requestAnimationFrame(() => {
+  const animationStyle = document.createElement("style");
+  animationStyle.textContent = `
+    @keyframes shake {
+0%, 100% {
+    transform: translate(calc(-50%), 50%);
+}
+10%, 30%, 50%, 70%, 90% {
+    transform: translate(calc(-50% - 2px), 50%);
+}
+20%, 40%, 60%, 80% {
+    transform: translate(-50%, calc(50% + 2px));
+}
+}
+  `;
+  document.head.appendChild(animationStyle);
+});
+
 innerWidth < 500 && (document.getElementById("score").style.fontSize = "2rem");
 
 const z = {
@@ -83,8 +101,11 @@ requestAnimationFrame(() => {
       collide(u.swoosh)(u.player)(
         () => (
           updateScore(u.score)(SCORE_UPDATER),
-          !(~~score.value % 3) &&
-            (score.sprite.innerHTML = randomElement(GAME_PROMPTS)),
+          !(~~score.value % 3)
+            ? ((document.getElementById("score").style.animation =
+                "shake .5s infinite"),
+              (score.sprite.innerHTML = randomElement(GAME_PROMPTS)))
+            : (document.getElementById("score").style.animation = "none"),
           respawn(u.swoosh),
           u.sound.swoosh.play(),
           u.enemies.push(
