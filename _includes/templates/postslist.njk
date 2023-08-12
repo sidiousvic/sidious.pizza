@@ -7,18 +7,19 @@
       {% else %}
         <code>{{ post.url }}</code>
       {% endif %}
+      {% if post.data.beta %}
+        <sup class="tag beta">beta</sup>
+      {% endif %}
     </a>
-
     <time class="postList-date" datetime="{{ post.data.date | date('DATETIME') }}">
       {{ post.data.date | date('HUMAN_DATE') }}
     </time>
-
     {% for tag in post.data.tags %}
     {% set page = search.page("type=tag tag='" + tag + "'") %}
     {% if page %}
-    <a href="{{ page.data.url  }}" class="tag">{{ tag }}</a>
+      <a href="{{ page.data.url  }}" class="tag">{{ tag }}</a>
     {% endif %}
     {% endfor %}
-  </li>
+ </li>
 {% endfor %}
 </ul>
