@@ -1,6 +1,7 @@
 const musicPlayer = document.getElementById("music-player");
 const seekSlider = document.getElementById("seek-slider");
 const volumeSlider = document.getElementById("volume-slider");
+const pressSpaceBar = document.getElementById("press-spacebar");
 const muteIcon = document.getElementById("mute-icon");
 let playState = "play";
 let muteState = "unmute";
@@ -11,10 +12,15 @@ window.addEventListener("keydown", (e) => {
       ? (audio.play(),
         requestAnimationFrame(whilePlaying),
         (playState = "pause"),
-        musicPlayer.classList.add("venomous"))
+        musicPlayer.classList.add("venomous"),
+        (pressSpaceBar.innerHTML =
+          'Press <span class="tag border venomous">spacebar</span> to pause'))
       : (audio.pause(),
         (playState = "play"),
-        musicPlayer.classList.remove("venomous"));
+        musicPlayer.classList.remove("venomous")(
+          (pressSpaceBar.innerHTML =
+            'Press <span class="tag border venomous">spacebar</span> to play')
+        ));
 });
 
 muteIcon.addEventListener("click", () => {

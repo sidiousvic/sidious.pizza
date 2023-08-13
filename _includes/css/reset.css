@@ -56,6 +56,7 @@
   --font-family-emphasis: OffDot, DotGothic16, monospace;
   --font-family-post-title: Vastantonius, DotGothic16, monospace;
   --font-family-post-body: DotGothic16, -apple-system, system-ui, sans-serif;
+  --font-family-dot-gothic: DotGothic16, -apple-system, system-ui, sans-serif;
 }
 
 .tag {
