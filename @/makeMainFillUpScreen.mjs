@@ -1,16 +1,20 @@
-const navbar = document.getElementById("navbar");
-const main = document.getElementById("main");
+const ROUNDING_ERROR = 2;
 
 function computeNavbarHeight() {
-  const navbarYPadding =
-    parseInt(window.getComputedStyle(navbar).getPropertyValue("padding-top")) +
-    parseInt(
-      window.getComputedStyle(navbar).getPropertyValue("padding-bottom")
-    );
-  return navbar.offsetHeight + navbarYPadding;
+  const navbar = document.getElementById("navbar");
+  return navbar.offsetHeight;
+}
+
+function computeFooterMargin() {
+  const footer = document.getElementById("footer");
+  const footerYMargin =
+    parseInt(window.getComputedStyle(footer).getPropertyValue("margin-top")) +
+    parseInt(window.getComputedStyle(footer).getPropertyValue("margin-bottom"));
+  return footer.offsetHeight + footerYMargin;
 }
 
 function computeMainPadding() {
+  const main = document.getElementById("main");
   return (
     parseInt(window.getComputedStyle(main).getPropertyValue("padding-top")) +
     parseInt(window.getComputedStyle(main).getPropertyValue("padding-bottom"))
@@ -18,14 +22,21 @@ function computeMainPadding() {
 }
 
 function computeMainHeight() {
-  return window.innerHeight - computeNavbarHeight() - computeMainPadding();
+  return (
+    window.innerHeight -
+    computeNavbarHeight() -
+    computeFooterMargin() -
+    computeMainPadding() -
+    ROUNDING_ERROR
+  );
 }
 
-addEventListener(
-  "DOMContentLoaded",
-  () => (main.style.height = `${computeMainHeight()}px`)
-);
+addEventListener("DOMContentLoaded", () => {
+  const main = document.getElementById("main");
+  main.style.height = `${computeMainHeight()}px`;
+});
 
 addEventListener("resize", () => {
+  const main = document.getElementById("main");
   main.style.height = `${computeMainHeight()}px`;
 });
