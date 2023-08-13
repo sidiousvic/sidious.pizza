@@ -1,16 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=DotGothic16&family=IBM+Plex+Mono:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Silkscreen:wght@400;700&family=VT323&family=Xanh+Mono:ital@0;1&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300;400&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap");
-
 @font-face {
   font-family: OffDot;
   src: url(/@/OffBitTrial-Dot.ttf);
 }
-
 @font-face {
   font-family: OffDotBold;
   src: url(/@/OffBitTrial-DotBold.ttf);
 }
-
 @font-face {
   font-family: Vastantonius;
   src: url(/@/Vastantonius.ttf);
@@ -18,6 +15,7 @@
 
 .venomous {
   animation: venomous 3s infinite;
+  mix-blend-mode: difference;
 }
 
 @keyframes venomous {
@@ -33,6 +31,11 @@
     background-color: var(--darkgray);
     color: var(--venom);
   }
+}
+
+.border {
+  border: dotted 1px var(--venom);
+  border-radius: 3px;
 }
 
 :root {
@@ -53,6 +56,36 @@
   --font-family-emphasis: OffDot, DotGothic16, monospace;
   --font-family-post-title: Vastantonius, DotGothic16, monospace;
   --font-family-post-body: DotGothic16, -apple-system, system-ui, sans-serif;
+}
+
+.tag {
+  position: relative;
+  font-family: var(--font-family-delight);
+  font-weight: 400;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  line-height: 1;
+  color: var(--white);
+  border-radius: 0.25em;
+  text-decoration: none;
+  padding: 0.4em 0.4em 0.2em 0.4em;
+
+  &.big {
+    font-size: 1rem;
+    padding: 0.4em 0.3em 0.2em 0.6em;
+  }
+
+  &.border {
+    font-family: var(--font-family-delight);
+    outline: var(--venom) dotted 1px !important;
+    border-radius: 2px;
+    text-decoration: none !important;
+  }
+
+  &.beta {
+    margin-left: 4px;
+  }
 }
 
 :focus,
