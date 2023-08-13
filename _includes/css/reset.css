@@ -22,7 +22,7 @@
 
 @keyframes venomous {
   0% {
-    background-color: transparent;
+    background-color: var(--darkgray);
     color: var(--venom);
   }
   50% {
@@ -30,7 +30,7 @@
     color: #000;
   }
   100% {
-    background-color: transparent;
+    background-color: var(--darkgray);
     color: var(--venom);
   }
 }
@@ -169,6 +169,10 @@ picture {
     margin: 0;
     display: contents;
   }
+}
+
+.no-border {
+  border: none !important;
 }
 
 picture::after {
