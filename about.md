@@ -5,6 +5,7 @@ templateClass: tmpl-post
 menu:
   visible: true
   order: 2
+beta: true
 ---
 
 <style>
@@ -59,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
   </article>
 </div>
 
-Hola amigxs, my name is Vic and this my cyber space. I will be [writing](/weblog) and sharing my music and computer programs here. Here's a brief history of my way.
+Hola amigxs, my name is Vic and this my cyber space. I will be [writing](/weblog) and sharing my music and computer programs here.
 
 # Born and raised in the desert
 
@@ -93,7 +94,7 @@ Your deadly neighborhood [arachnid](https://en.wikipedia.org/wiki/Scorpion#:~:te
 
 # Misled youth
 
-When I was young I had a neighbor who was skater. We used to skip school to play ball and skateboard. My uncle had an obscene collection of hard rock records which I stole from every year. My heroes became [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and Jimi Hendrix.
+I was a bit of a goblin when young, and used to skip school to play ball and skateboard. I spent a lot of time listening to hard rock records. My heroes became [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and Jimi Hendrix.
 
 I remember listening to [Foxey Lady](https://www.youtube.com/watch?v=_PVjcIO4MT4) on my discman while taking out the trash. I broke my arm crashing into a parked car trying to do a _"hardflip"_.
 
@@ -110,7 +111,7 @@ Hardflips are really hard
   </figcaption>
 </figure>
 
-One day my father brought home a computer from work, and I used it in the evenings to surf the internet. Few years later I was a seasoned [bounty hunter](https://en.wikipedia.org/wiki/Music_piracy) of Black Sabbath and Cream _.mp3s_ for family and pals. I spent a lot of my teenage years surfing the web, playing Zelda and watching MTV.
+I was a seasoned [bounty hunter](https://en.wikipedia.org/wiki/Music_piracy) of _.mp3s_ which I shared with family and friends. I spent a lot of my teenage years surfing the web, playing Zelda and watching MTV.
 
 <figure>
   <picture>
