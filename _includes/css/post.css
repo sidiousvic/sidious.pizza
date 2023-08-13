@@ -6,6 +6,7 @@
   padding: 5vh 0;
   padding-bottom: 2vh;
 }
+
 .post-title {
   font-family: var(--font-family-post-title);
   font-weight: 100 !important;
@@ -15,9 +16,11 @@
   letter-spacing: 0.2rem;
   margin: 0 0 0.25em;
 }
+
 .post-tags {
   display: inline;
 }
+
 .post-body {
   text-align: left;
   font-family: var(--font-family-post-body);
@@ -25,14 +28,12 @@
   font-weight: 400;
   line-height: 1.6;
   padding: 0 20vw;
-
   letter-spacing: 1px;
 
   & p,
   & ul,
   & ol {
     transform-origin: left;
-    /* max-width: 45em; */
   }
 
   & h1,
