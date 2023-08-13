@@ -7,7 +7,7 @@
         <img src="/@/enemyR.png" />
       {% endif %}
     <div class="haikus-meta">
-    <a href="{{ haiku.data.url }}" class="haikus-title"{% if entry.data.url == url %} aria-current="page"{% endif %}>
+    <a href="{{ haiku.data.url }}" class="haikus-title"{% if haiku.data.url == url %} aria-current="page"{% endif %}>
       {% if haiku.data.title %}
         {{ haiku.data.title }}
       {% else %}
