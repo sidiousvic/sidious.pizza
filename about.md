@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
   </article>
 </div>
 
-Hola amigxs, my name is Vic and this my cyber space. I will be [writing](/weblog) and sharing my music and computer programs here.
+Hola amigxs, my name is Vic. Welcome to my cyber space. I want to use this space to [spill my brains](/weblog), share my music and computer programs. Here's a little about me.
 
 # Born and raised in the desert
 
@@ -94,9 +94,9 @@ Your deadly neighborhood [arachnid](https://en.wikipedia.org/wiki/Scorpion#:~:te
 
 # Misled youth
 
-I was a bit of a goblin when young, and used to skip school to play ball and skateboard. I spent a lot of time listening to hard rock records. My heroes became [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and Jimi Hendrix.
+I was a bit of a goblin when young, and used to skip school to play ball and skateboard. I spent a lot of time listening to hard rock records. My heroes were [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and Jimi Hendrix.
 
-I remember listening to [Foxey Lady](https://www.youtube.com/watch?v=_PVjcIO4MT4) on my discman while taking out the trash. I broke my arm crashing into a parked car trying to do a _"hardflip"_.
+I remember listening to [Foxey Lady](https://www.youtube.com/watch?v=_PVjcIO4MT4) on my discman while taking out the trash.That shit made me want to play the axe! I broke my arm crashing into a parked car trying to do a _"hardflip"_. After that, I stopped skateboarding for a long time.
 
 <figure>
   <picture>
@@ -111,7 +111,7 @@ Hardflips are really hard
   </figcaption>
 </figure>
 
-I was a seasoned [bounty hunter](https://en.wikipedia.org/wiki/Music_piracy) of _.mp3s_ which I shared with family and friends. I spent a lot of my teenage years surfing the web, playing Zelda and watching MTV.
+On the internet, I was a seasoned [bounty hunter](https://en.wikipedia.org/wiki/Music_piracy) of _.mp3s_ which I shared with family and friends. I spent a lot of my teenage years surfing the web, playing Zelda and watching MTV.
 
 <figure>
   <picture>
@@ -139,7 +139,7 @@ I left home at 17 with my guitar _"Wozza"_ and a few books. Years followed in so
   </figcaption>
 </figure>
 
-When boredom struck I biked, read a shit ton of books, wrote [haiku](/tags/haiku), made [doomer music](https://open.spotify.com/intl-ja/track/4YinnI3uql8ax8EZyqyIjl?si=c25ebef66fa546bc) and even made silly web cartoons to pass the time.
+When boredom struck I biked, read books, wrote [haiku](/tags/haiku), made [doomer music](https://open.spotify.com/intl-ja/track/4YinnI3uql8ax8EZyqyIjl?si=c25ebef66fa546bc) and even made silly web cartoons to pass the time.
 
 <figure>
   <picture>
@@ -154,7 +154,7 @@ When boredom struck I biked, read a shit ton of books, wrote [haiku](/tags/haiku
   </figcaption>
 </figure>
 
-I had these misadventures under the pseudonym _"Vic Sidious"_ a play on [Sid Vicious](https://www.youtube.com/watch?v=rDyb_alTkMQ). I'm fascinated by villains and anarchists like Sid. For a while I felt like one, but it was too easy to confuse half-assing everything with being a rebel. After 25 I was ready to whole-ass something.
+I have these misadventures under the pseudonym _"Vic Sidious"_ a play on [Sid Vicious](https://www.youtube.com/watch?v=rDyb_alTkMQ). I'm fascinated by villains and rebels like Sid. For a while I felt like one, but it's too easy to confuse half-assing shit with being a rebel.
 
 # Tokyo boy
 
@@ -173,7 +173,7 @@ One summer I studied how to program a low resolution game using C#, which ended 
 
 Programming is how I earn my sushi today. I work for a company that is driving the digitization of the electric grid in Japan, making energy use more green.
 
-I still play guitar and skate sometime. I'm saving up for a motorcycle again. I dedicate some time to my craft, such this website, but I really spend most of the time drinking and laughing with friends.
+I still play guitar and skateboard occasionally. I'm saving up for a motorcycle again. I miss my brother a lot, wish you were here cabrøn.
 
 <figure>
   <picture>
@@ -182,8 +182,7 @@ I still play guitar and skate sometime. I'm saving up for a motorcycle again. I 
 
   </picture>
   <figcaption>
-  
-<span style="font-style: italic;">"We made the mountains shake with laughter as we played <em>/</em> Hiding in our corner of the world <em>/</em> Then we did the demon dance and rushed to nevermore <em>/</em> Threw away the key and locked the door."</style>
+    <em>Me and my brother</em>
   </figcaption>
 </figure>
 
