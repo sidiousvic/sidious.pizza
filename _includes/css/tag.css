@@ -19,16 +19,12 @@
   &.beta {
     font-family: var(--font-family-delight);
     outline: var(--venom) dotted 1px !important;
-    outline-offset: 3px;
     border-radius: 2px;
     text-decoration: none !important;
     margin-left: 4px;
 
     &:hover {
       cursor: pointer;
-      background-color: var(--venom);
-      color: var(--darksteel);
-      outline-offset: 0;
     }
   }
 }

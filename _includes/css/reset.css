@@ -16,6 +16,25 @@
   src: url(/@/Vastantonius.ttf);
 }
 
+.venomous {
+  animation: venomous 3s infinite;
+}
+
+@keyframes venomous {
+  0% {
+    background-color: transparent;
+    color: var(--venom);
+  }
+  50% {
+    background-color: var(--venom);
+    color: #000;
+  }
+  100% {
+    background-color: transparent;
+    color: var(--venom);
+  }
+}
+
 :root {
   --red: #c04;
   --lightgray: #e6e6e6;
