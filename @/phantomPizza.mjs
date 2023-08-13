@@ -46,6 +46,7 @@ const GAME_PROMPTS = [
 const { sprites, score, sound, mouse, c } = config({
   GAME_TITLE: "SIDIOUS.PIZZA",
   DISPLAY_SCORE: true,
+  START_SCREEN: true,
   SCORE_FONT: "Vastantonius, DotGothic16, monospace",
   BG_COLOR_HEX: "#0d1117",
   FG_COLOR_HEX: "#00ff2a",

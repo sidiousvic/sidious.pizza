@@ -268,8 +268,8 @@ export const bounce = (object) => (bounds) =>
  */
 export const draw =
   (c) =>
-  ({ sprite, x, y, dimension }) =>
-    c.ctx.drawImage(sprite, x, y, dimension, dimension);
+  ({ sprite, x, y, w, h, dimension }) =>
+    c.ctx.drawImage(sprite, x, y, w ?? dimension, h ?? dimension);
 
 /**
  * Creates a game object.
@@ -352,6 +352,8 @@ export const config = ({
   START_TEXT_B,
   DISPLAY_SCORE,
   GAME_TITLE,
+  START_SCREEN,
+  CURSOR,
   SPRITES,
   AUDIOS,
   BG_COLOR_HEX,
@@ -386,7 +388,7 @@ export const config = ({
   
   body {
     background: transparent; 
-    cursor: none; 
+    cursor: ${CURSOR ? "default" : "none"}; 
     touch-action: none;
   }
   
@@ -408,15 +410,15 @@ export const config = ({
     position: absolute; 
     top: 0; 
     left: 0; 
-    cursor: none; 
+    cursor: ${CURSOR ? "default" : "none"}; 
   }
   
   #start-screen { 
+    display: ${START_SCREEN ? "flex" : "none"};
     top: 0;
     left: 0; 
     background-color: var(--background-color); 
     color: var(--foreground-color);
-    display: flex; 
     flex-direction: column; 
     text-align: center; 
     align-items: center; 
