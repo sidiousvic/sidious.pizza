@@ -25,6 +25,11 @@ bodyClass: body-post
     </time>
   </div>
 
+    {% if beta %}
+      <em>Beware! This entry is in beta, so you're reading an unfinished version.</em>
+      <br></br>
+    {% endif %}
+
 
   <div class="post-body">
     {{ content | safe }}
