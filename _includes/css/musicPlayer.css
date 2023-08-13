@@ -1,0 +1,254 @@
+button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+  width: 40px;
+  height: 40px;
+  float: left;
+}
+
+#music-player {
+  --seek-before-width: 0%;
+  --volume-before-width: 100%;
+  --buffered-width: 0%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  border: dotted 1px var(--venom);
+  border-radius: 3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  width: 95%;
+  max-width: 30%;
+  background: var(--darkgray);
+  & > * {
+    mix-blend-mode: difference;
+  }
+}
+
+img {
+  mix-blend-mode: normal;
+}
+
+@media (max-width: 1080px) {
+  #music-player {
+    max-width: 85%;
+  }
+}
+
+#music-player > h1 {
+  font-family: var(--font-family-title);
+  color: var(--venom);
+  font-size: 160%;
+}
+
+#music-player-playback,
+#music-player-levels {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+#play-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--venom);
+
+  & > img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+path {
+  stroke: var(--venom);
+}
+
+.time {
+  display: inline-block;
+  width: 37px;
+  text-align: center;
+  font-size: 20px;
+  margin: auto;
+  float: left;
+  color: var(--venom);
+}
+
+output {
+  display: inline-block;
+  width: 32px;
+  text-align: center;
+  font-size: 20px;
+  float: left;
+  clear: left;
+  color: var(--venom);
+}
+
+#volume-slider {
+  margin: 10px 2.5%;
+  width: 58%;
+}
+
+#volume-slider::-webkit-slider-runnable-track {
+  background: var(--darksteel);
+}
+
+#volume-slider::-moz-range-track {
+  background: var(--darksteel);
+}
+
+#volume-slider::-ms-fill-upper {
+  background: var(--darksteel);
+}
+
+#volume-slider::before {
+  width: var(--volume-before-width);
+}
+
+#mute-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--venom);
+  margin: 10px;
+
+  & > img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+input[type="range"] {
+  position: relative;
+  -webkit-appearance: none;
+  width: 48%;
+  margin: 0;
+  padding: 0;
+  height: 19px;
+  margin: auto;
+  float: left;
+  outline: none;
+  background-color: transparent;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  background: linear-gradient(
+    to right,
+    var(--venom) var(--buffered-width),
+    var(--darksteel) var(--buffered-width)
+  );
+}
+
+input[type="range"]::before {
+  position: absolute;
+  content: "";
+  top: 8px;
+  left: 0;
+  width: var(--seek-before-width);
+  height: 3px;
+  background-color: var(--venom);
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  position: relative;
+  -webkit-appearance: none;
+  box-sizing: content-box;
+  border: 1px dotted var(--venom);
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: var(--darkgray);
+  cursor: pointer;
+  margin: -7px 0 0 0;
+}
+
+input[type="range"]:active::-webkit-slider-thumb {
+  transform: scale(1.2);
+  background: var(--venom);
+}
+
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  background: linear-gradient(
+    to right,
+    var(--venom) var(--buffered-width),
+    var(--darksteel) var(--buffered-width)
+  );
+}
+
+input[type="range"]::-moz-range-progress {
+  background-color: var(--venom);
+}
+
+input[type="range"]::-moz-focus-outer {
+  border: 0;
+}
+
+input[type="range"]::-moz-range-thumb {
+  box-sizing: content-box;
+  border: 1px solid var(--venom);
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: var(--darkgray);
+  cursor: pointer;
+}
+
+input[type="range"]:active::-moz-range-thumb {
+  transform: scale(1.2);
+  background: var(--venom);
+}
+
+input[type="range"]::-ms-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  background: transparent;
+  border: solid transparent;
+  color: transparent;
+}
+
+input[type="range"]::-ms-fill-lower {
+  background-color: var(--venom);
+}
+
+input[type="range"]::-ms-fill-upper {
+  background: linear-gradient(
+    to right,
+    var(--venom) var(--buffered-width),
+    var(--darksteel) var(--buffered-width)
+  );
+}
+
+input[type="range"]::-ms-thumb {
+  box-sizing: content-box;
+  border: 1px solid var(--venom);
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: var(--darkgray);
+  cursor: pointer;
+}
+
+input[type="range"]:active::-ms-thumb {
+  transform: scale(1.2);
+  background: var(--venom);
+}

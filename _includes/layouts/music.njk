@@ -1,0 +1,24 @@
+---
+layout: layouts/home.njk
+---
+
+<script type="module" src="/@/musicPlayer.mjs"></script>
+<script src="/@/makeMainFillUpScreen.mjs"></script>
+
+
+<div id="music-player">
+  <picture class="no-border">
+    <img src={{ gif }}>
+  </picture>
+  <h1>{{ title }}.mp3</h1>
+  <audio src={{ audio }} preload="metadata" loop></audio>
+  <div id="music-player-playback">
+    <span id="current-time" class="time">0:00</span>
+    <input type="range" id="seek-slider" max="100" value="0">
+    <span id="duration" class="time">0:00</span>
+  </div> 
+    <input hidden type="range" id="volume-slider" max="100" value="100">
+    <button hidden id="mute-icon"><img src="/@/mute-icon.png"/></button>
+  </div>
+</div>
+

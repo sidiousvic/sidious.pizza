@@ -1,0 +1,19 @@
+<ul class="music">
+  {% for music in musics %}
+  <li class="musics-post">
+      {% if music.data.gif %}
+        <img src="{{ music.data.gif }}" />
+      {% else %}
+        <img src="/@/enemyR.png" />
+      {% endif %}
+    <div class="musics-meta">
+    <a href="{{ music.data.url }}" class="musics-title"{% if music.data.url == url %} aria-current="page"{% endif %}>
+      {% if music.data.title %}
+        {{ music.data.title }}
+      {% else %}
+        <code>{{ music.url }}</code>
+      {% endif %}
+    </a>
+    </div>
+{% endfor %}
+</ul>

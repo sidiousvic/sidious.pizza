@@ -1,0 +1,15 @@
+---
+layout: layouts/home.njk
+menu:
+  visible: true
+  title: MUSIC
+  order: 1
+---
+
+{% set musics = search.pages("music", "date=desc", 99) %}
+
+<h1 class="musics-header">MUSIC</h1>
+
+{% include "templates/musics.njk" %}
+
+
