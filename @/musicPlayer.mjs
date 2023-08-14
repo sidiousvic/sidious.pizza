@@ -1,10 +1,15 @@
 const musicPlayer = document.getElementById("music-player");
 const seekSlider = document.getElementById("seek-slider");
 const volumeSlider = document.getElementById("volume-slider");
-const pressSpaceBar = document.getElementById("press-spacebar");
+const triggerPlayback = document.getElementById("trigger-playback");
 const muteIcon = document.getElementById("mute-icon");
 let playState = "play";
 let muteState = "unmute";
+
+triggerPlayback.innerHTML =
+  window.innerWidth > 768
+    ? 'Press <span class="tag border venomous">spacebar</span> to play'
+    : '<span class="tag border venomous">Tap</span> to play';
 
 window.addEventListener("keydown", (e) => {
   if (e.key === " ")
@@ -13,14 +18,28 @@ window.addEventListener("keydown", (e) => {
         requestAnimationFrame(whilePlaying),
         (playState = "pause"),
         musicPlayer.classList.add("venomous"),
-        (pressSpaceBar.innerHTML =
+        (triggerPlayback.innerHTML =
           'Press <span class="tag border venomous">spacebar</span> to pause'))
       : (audio.pause(),
         (playState = "play"),
-        musicPlayer.classList.remove("venomous")(
-          (pressSpaceBar.innerHTML =
-            'Press <span class="tag border venomous">spacebar</span> to play')
-        ));
+        musicPlayer.classList.remove("venomous"),
+        (triggerPlayback.innerHTML =
+          'Press <span class="tag border venomous">spacebar</span> to play'));
+});
+
+window.addEventListener("touchstart", (e) => {
+  playState === "play"
+    ? (audio.play(),
+      requestAnimationFrame(whilePlaying),
+      (playState = "pause"),
+      musicPlayer.classList.add("venomous"),
+      (triggerPlayback.innerHTML =
+        '<span class="tag border venomous">Tap</span> to pause'))
+    : (audio.pause(),
+      (playState = "play"),
+      musicPlayer.classList.remove("venomous"),
+      (triggerPlayback.innerHTML =
+        '<span class="tag border venomous">Tap</span> to play'));
 });
 
 muteIcon.addEventListener("click", () => {
@@ -166,6 +185,7 @@ if ("mediaSession" in navigator) {
       },
     ],
   });
+
   navigator.mediaSession.setActionHandler("play", () => {
     if (playState === "play") {
       audio.play();
@@ -179,6 +199,7 @@ if ("mediaSession" in navigator) {
       playState = "play";
     }
   });
+
   navigator.mediaSession.setActionHandler("pause", () => {
     if (playState === "play") {
       audio.play();
@@ -192,12 +213,15 @@ if ("mediaSession" in navigator) {
       playState = "play";
     }
   });
+
   navigator.mediaSession.setActionHandler("seekbackward", (details) => {
     audio.currentTime = audio.currentTime - (details.seekOffset || 10);
   });
+
   navigator.mediaSession.setActionHandler("seekforward", (details) => {
     audio.currentTime = audio.currentTime + (details.seekOffset || 10);
   });
+
   navigator.mediaSession.setActionHandler("seekto", (details) => {
     if (details.fastSeek && "fastSeek" in audio) {
       audio.fastSeek(details.seekTime);
@@ -205,6 +229,7 @@ if ("mediaSession" in navigator) {
     }
     audio.currentTime = details.seekTime;
   });
+
   navigator.mediaSession.setActionHandler("stop", () => {
     audio.currentTime = 0;
     seekSlider.value = 0;
