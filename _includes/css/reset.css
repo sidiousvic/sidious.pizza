@@ -15,7 +15,6 @@
 
 .venomous {
   animation: venomous 3s infinite;
-  mix-blend-mode: difference;
 }
 
 @keyframes venomous {
@@ -25,7 +24,7 @@
   }
   50% {
     background-color: var(--venom);
-    color: #000;
+    color: var(--darkgray);
   }
   100% {
     background-color: var(--darkgray);
@@ -36,6 +35,10 @@
 .border {
   border: dotted 1px var(--venom);
   border-radius: 3px;
+}
+
+#press-spacebar {
+  color: var(--venom);
 }
 
 :root {
