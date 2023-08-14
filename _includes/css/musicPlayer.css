@@ -42,8 +42,14 @@ button {
   }
 }
 
+#music-cover {
+  margin: 20px;
+}
+
 #music-player > h1 {
   font-family: var(--font-family-title);
+  width: 100%;
+  text-align: center;
   color: var(--venom);
   font-size: 160%;
 }
