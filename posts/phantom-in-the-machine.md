@@ -1,7 +1,6 @@
 ---
 title: Phantom In The Machine
 date: 2023-07-09
-pinned: true
 tags:
   - programming
   - computers

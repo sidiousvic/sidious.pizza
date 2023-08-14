@@ -80,14 +80,7 @@
     padding: 0.4em 0.3em 0.2em 0.6em;
   }
 
-  &.border {
-    font-family: var(--font-family-delight);
-    outline: var(--venom) dotted 1px !important;
-    border-radius: 2px;
-    text-decoration: none !important;
-  }
-
-  &.beta {
+  &.marker {
     margin-left: 4px;
   }
 }
@@ -160,9 +153,13 @@ h4 {
 
 a {
   color: var(--lightgray);
-  text-decoration: dotted underline var(--venom) !important;
+  text-decoration: dotted underline var(--venom);
   text-underline-offset: 4px;
   cursor: pointer;
+  & > .tag {
+    webkit-text-decoration: none !important;
+    text-decoration: none !important;
+  }
 }
 
 a:hover {

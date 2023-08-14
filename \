@@ -1,17 +1,14 @@
 <ul class="postList">
   {% for post in postslist %}
   <li class="postList-post">
-  <p class='postList-post-top'>
     <a href="{{ post.data.url }}" class="postList-title"{% if entry.data.url == url %} aria-current="page"{% endif %}>
       {% if post.data.title %}
-        {{ post.data.title }} 
+        {{ post.data.title }} {% if post.data.pinned %} <sup class="tag border">🔥 HOT</sup> {% endif %}
       {% else %}
         <code>{{ post.url }}</code>
       {% endif %}
+      {% if post.data.beta %} <sup class="tag border beta">BETA</sup> {% endif %}
     </a>
-      {% if post.data.beta %} <sup class="tag border marker">BETA</sup> {% endif %}
-      {% if post.data.pinned %} <sup class="tag border marker venomous">🔥 HOT</sup> {% endif %}
-    </p>
     <time class="postList-date" datetime="{{ post.data.date | date('DATETIME') }}">
       {{ post.data.date | date('HUMAN_DATE') }}
     </time>

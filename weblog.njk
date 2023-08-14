@@ -6,22 +6,14 @@ menu:
   order: 0
 ---
 
-{% set postslist = search.pages("type=posts", "date=desc", 3) %}
-
 <h1 class="weblog-header">WEBLOG</h1>
 
 <section class="weblog-content">
-  {% include "templates/postslist.njk" %}
-
-  <hr>
-
-  {% set postslist  = search.pages("pinned=true") %}
-
-  {%if postslist.length %}
-    <h1>🔥 Hot kicks</h1>
+  {% set postslist = search.pages("pinned=true") %}
+    {%if postslist.length %}
+      {% include "templates/postslist.njk" %}
+    {% endif %}
+  {% set postslist = search.pages("type=posts", "date=desc", 4) %}
     {% include "templates/postslist.njk" %}
-    <hr>
-  {% endif %}
-
-  <p>You can also go to the <a href="/weblog/archive">archive</a> and search.</p>
+  <p>See all posts <a href="/weblog/archive">at the archive.</a></p>
 </section>

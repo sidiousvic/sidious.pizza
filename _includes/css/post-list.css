@@ -4,6 +4,7 @@
   align-items: center;
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .postList-date {
@@ -11,9 +12,14 @@
   color: var(--lightgray);
 }
 
+.postList-post-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .postList-title {
   font-family: var(--font-family-post-title);
-  display: block;
   padding: 0.5em 0.2em;
   font-size: 1.2rem;
   color: var(--venom);
