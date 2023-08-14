@@ -42,9 +42,12 @@ button {
   }
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 720px) {
   #music-player {
     max-width: 85%;
+  }
+  #music-player > picture > img {
+    max-height: 300px;
   }
 }
 
