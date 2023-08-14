@@ -1,12 +1,12 @@
 ---
-layout: layouts/home.njk
+layout: layouts/base.njk
 ---
 
 <script type="module" src="/@/musicPlayer.mjs"></script>
 <script src="/@/makeMainFillUpScreen.mjs"></script>
 
-
-<div id="music-player">
+<div id="music-body">
+  <div id="music-player">
   <picture id="music-cover" class="no-border">
     <img src={{ gif }}>
   </picture>
