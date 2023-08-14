@@ -44,7 +44,7 @@ button {
     max-width: 85%;
   }
   #music-player > picture > img {
-    max-height: 300px;
+    max-height: 20vh;
   }
 }
 
