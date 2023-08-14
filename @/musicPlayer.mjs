@@ -11,35 +11,29 @@ triggerPlayback.innerHTML =
     ? 'Press <span class="tag border venomous">spacebar</span> to play'
     : '<span class="tag border venomous">Tap</span> to play';
 
-window.addEventListener("keydown", (e) => {
-  if (e.key === " ")
-    playState === "play"
-      ? (audio.play(),
-        requestAnimationFrame(whilePlaying),
-        (playState = "pause"),
-        musicPlayer.classList.add("venomous"),
-        (triggerPlayback.innerHTML =
-          'Press <span class="tag border venomous">spacebar</span> to pause'))
-      : (audio.pause(),
-        (playState = "play"),
-        musicPlayer.classList.remove("venomous"),
-        (triggerPlayback.innerHTML =
-          'Press <span class="tag border venomous">spacebar</span> to play'));
-});
-
-window.addEventListener("touchstart", (e) => {
+function playbackFX(playstate, tabOrSpacebar) {
   playState === "play"
     ? (audio.play(),
       requestAnimationFrame(whilePlaying),
       (playState = "pause"),
-      musicPlayer.classList.add("venomous"),
-      (triggerPlayback.innerHTML =
-        '<span class="tag border venomous">Tap</span> to pause'))
+      document.body.classList.add("venomous"),
+      (document.querySelector(".navbar-links").style.mixBlendMode = "darken"),
+      (document.querySelector(".navbar-links").style.filter = "invert(1)"),
+      (triggerPlayback.innerHTML = `Press <span class="tag border venomous">${tabOrSpacebar}</span> to pause`))
     : (audio.pause(),
       (playState = "play"),
-      musicPlayer.classList.remove("venomous"),
-      (triggerPlayback.innerHTML =
-        '<span class="tag border venomous">Tap</span> to play'));
+      document.body.classList.remove("venomous"),
+      (document.querySelector(".navbar-links").style.mixBlendMode = "unset"),
+      (document.querySelector(".navbar-links").style.filter = "unset"),
+      (triggerPlayback.innerHTML = `Press <span class="tag border venomous">${tabOrSpacebar}</span> to play`));
+}
+
+window.addEventListener("keydown", (e) => {
+  if (e.key === " ") playbackFX(playState, "spacebar");
+});
+
+window.addEventListener("touchstart", (e) => {
+  playbackFX(playState, "tap");
 });
 
 muteIcon.addEventListener("click", () => {
@@ -92,9 +86,9 @@ const setSliderMax = () => {
 };
 
 const displayBufferedAmount = () => {
-  const bufferedAmount = Math.floor(
-    audio.buffered.end(audio.buffered.length - 1)
-  );
+  const bufferedAmount = audio.buffered.length
+    ? Math.floor(audio.buffered.end(audio.buffered.length - 1))
+    : undefined;
   musicPlayer.style.setProperty(
     "--buffered-width",
     `${(bufferedAmount / seekSlider.max) * 100}%`

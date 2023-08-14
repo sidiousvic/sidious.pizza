@@ -4,7 +4,7 @@ footer {
   justify-content: center;
   align-items: center;
   color: var(--darksteel);
-  margin: 0 0 2vh 0;
+  padding: 0 0 2vh 0;
 }
 
 footer > * {

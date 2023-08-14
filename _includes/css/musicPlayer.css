@@ -31,12 +31,9 @@ button {
   flex-wrap: wrap;
   gap: 1rem;
   padding: 1rem;
-  border: dotted 1px var(--venom);
-  border-radius: 3px;
   margin: auto;
   width: 95%;
   max-width: 30%;
-  background: var(--darkgray);
   & > * {
     mix-blend-mode: difference;
   }
