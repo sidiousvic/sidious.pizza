@@ -1,13 +1,8 @@
 ---
-layout: layouts/base.njk
-bodyClass: body-tag
+layout: layouts/home.njk
 ---
 
-<h1>{{ title }}</h1>
-
-<div class="navbar-search">
-  <div id="search"></div>
-</div>
+<h1 class="weblog-header">ARCHIVE</h1>
 
 {% set postslist = results %}
 {% include "templates/postslist.njk" %}
