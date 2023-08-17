@@ -58,6 +58,7 @@ const { sprites, score, sound, mouse, c } = config({
   AUDIOS: [
     { url: "/@/swoosh.wav", volume: 0.3 },
     { url: "/@/death.wav", volume: 0.9 },
+    { url: "/@/phantomPizza.wav", volume: 0.8 },
   ],
 });
 
@@ -77,6 +78,7 @@ requestAnimationFrame(() => {
 }
   `;
   document.head.appendChild(animationStyle);
+  document.getElementById("score").style.animation = "shake .5s infinite";
 });
 
 innerWidth < 500 && (document.getElementById("score").style.fontSize = "2rem");
@@ -99,14 +101,16 @@ const z = {
 requestAnimationFrame(() => {
   Engine(c)(z)(
     (u) => (
-      score.value === 0 &&
-        (document.getElementById("score").innerHTML = "START!"),
+      u.score.value === 0 &&
+        ((document.getElementById("score").innerHTML = "START!"),
+        u.sound.phantomPizza.pause()),
+      u.score.value > 1 && u.sound.phantomPizza.play(),
       moveWithMouse(u.player)(u.mouse),
       draw(c)(u.player),
       collide(u.swoosh)(u.player)(
         () => (
           updateScore(u.score)(SCORE_UPDATER),
-          !(~~score.value % 3)
+          !(~~u.score.value % 3)
             ? ((document.getElementById("score").style.animation =
                 "shake .5s infinite"),
               (score.sprite.innerHTML = randomElement(GAME_PROMPTS)))
