@@ -47,11 +47,13 @@ const { sprites, score, sound, mouse, c } = config({
   GAME_TITLE: "SIDIOUS.PIZZA",
   DISPLAY_SCORE: true,
   START_SCREEN: true,
+  START_SCREEN_TITLE_FONT: "Vastantonius, DotGothic16, monospace",
+  START_SCREEN_TEXT_FONT: "DotGothic16, monospace",
   SCORE_FONT: "Vastantonius, DotGothic16, monospace",
   BG_COLOR_HEX: "#0d1117",
-  FG_COLOR_HEX: "#00ff2a",
-  START_TEXT_A: "START",
-  START_TEXT_B: "スタート",
+  FG_COLOR_HEX: "var(--venom)",
+  START_TEXT_A: "<em>ENTER</em> AT YOUR OWN PERIL",
+  START_TEXT_B: "自己の危険に <em>ENTER</em> を押す",
   SPRITES: ["/@/enemyL.png", "/@/enemyR.png", "/@/swoosh.png", "/@/player.gif"],
   AUDIOS: [
     { url: "/@/swoosh.wav", volume: 0.3 },
@@ -97,6 +99,8 @@ const z = {
 requestAnimationFrame(() => {
   Engine(c)(z)(
     (u) => (
+      score.value === 0 &&
+        (document.getElementById("score").innerHTML = "START!"),
       moveWithMouse(u.player)(u.mouse),
       draw(c)(u.player),
       collide(u.swoosh)(u.player)(

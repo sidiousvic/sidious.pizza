@@ -348,6 +348,8 @@ export const Engine = (c) => (z) => (m) => (
  */
 export const config = ({
   SCORE_FONT,
+  START_SCREEN_TITLE_FONT,
+  START_SCREEN_TEXT_FONT,
   START_TEXT_A,
   START_TEXT_B,
   DISPLAY_SCORE,
@@ -372,8 +374,8 @@ export const config = ({
 <p id="score" ${DISPLAY_SCORE ? "visible" : "hidden"}>0</p>
 
 <div id="start-screen">
-  <h1>${GAME_TITLE}</h1>
-  <p id="press-start">${START_TEXT_A}</p>
+  <h1 id="start-screen-title">${GAME_TITLE}</h1>
+  <p id="start-screen-text">${START_TEXT_A}</p>
 </div>
 
 <style>
@@ -412,6 +414,8 @@ export const config = ({
     left: 0; 
     cursor: ${CURSOR ? "default" : "none"}; 
   }
+
+
   
   #start-screen { 
     display: ${START_SCREEN ? "flex" : "none"};
@@ -433,6 +437,17 @@ export const config = ({
     }
   }
   
+  #start-screen-title {
+    font-family: ${START_SCREEN_TITLE_FONT}, monospace; 
+    font-size: 40px;
+  }
+
+  #start-screen-text {
+    font-family: ${START_SCREEN_TEXT_FONT}, monospace; 
+    font-size: 24px;
+  }
+
+
   #score { 
     position: absolute; 
     font-size: 3rem; 
@@ -464,7 +479,7 @@ export const config = ({
 
   const startScreen = document.getElementById("start-screen");
 
-  const pressStart = document.getElementById("press-start");
+  const startScreenText = document.getElementById("start-screen-text");
 
   const c = document.querySelector("canvas");
   c.ctx = c.getContext("2d");
@@ -483,8 +498,10 @@ export const config = ({
 
   setInterval(
     () =>
-      (pressStart.innerText =
-        pressStart.innerText === START_TEXT_A ? START_TEXT_B : START_TEXT_A),
+      (startScreenText.innerHTML =
+        startScreenText.innerHTML === START_TEXT_A
+          ? START_TEXT_B
+          : START_TEXT_A),
     START_ANIMATION_INTERVAL
   );
 
