@@ -22,23 +22,9 @@ beta: true
 }
 </style>
 
-<script type="text/javascript" async>
-document.addEventListener("DOMContentLoaded", () => {
-  const ageElement = document.getElementById("age_µs");
-  const MS_TO_µs_FACTOR = 1000;
-  const UNIX_TIME_START_YEAR = 1970;
-  const unixZero = new Date(+0); 
-  const vicsBirthday = new Date("September 24, 1991");
-  setInterval(() => {
-    const unixNow = new Date(); 
-    const vicsAgeDate = new Date(unixNow.getTime() - vicsBirthday.getTime());
-    const vicsAgeMs = vicsAgeDate.getTime();
-    const vicsAgeµs = vicsAgeMs * MS_TO_µs_FACTOR;
-    const vicsAgeFemto = vicsAgeMs * MS_TO_µs_FACTOR;
-    ageElement.innerHTML = `${vicsAgeµs}<sub><em>µs</em></sub> <em>(${Math.abs(vicsAgeDate.getUTCFullYear() - UNIX_TIME_START_YEAR)})</em>`
-  });
-});
-</script>
+<script type="module" src="/@/vicsAge.mjs"></script>
+
+Hola amigxs, my name is Vic. Welcome to my cyber space. Here I will [spill my brains](/weblog), share [weird music](/music) and computer programs (like [_Phantom Pizza_](/), the game at the home page). Here's a little more about me.
 
 <div class="info">
   <picture class="vic-profile-pic">
@@ -49,18 +35,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 |           |                                                                             |
 | --------- | --------------------------------------------------------------------------- |
-| _Name_    | <div class="ypewriter">Victor René Molina Rodríguez</div>                   |
+| _Name_    | <em>Victor René Molina Rodríguez</em>                                       |
 | _Work_    | [Programmer, energy industry](https://github.com/sidiousvic)                |
-| _Lives_   | [澁谷東京](https://goo.gl/maps/1YfuGi5HYgRpBjN7A)                           |
-| _Born_    | _(And raised in)_ [Xicuahua, Mexico](https://goo.gl/maps/Ja9LxnZ6kosdRa586) |
+| _Lives_   | [澁谷東京 <em>(Shibuya, Tokyo)</em>](https://goo.gl/maps/1YfuGi5HYgRpBjN7A) |
+| _Born_    | [Chihuahua, Mexico](https://goo.gl/maps/Ja9LxnZ6kosdRa586)                  |
 | _Age_     | <span id="age_µs">?</span>                                                  |
-| _Loves_   | 🍕                                                                          |
+| _Loves_   | 🍕 🍺 ☕️ 🛹 ⚽️ 🎸                                                         |
 | _Hobbies_ | Football, music, writing, programming                                       |
 
   </article>
 </div>
-
-Hola amigxs, my name is Vic. Welcome to my cyber space. I want to use this space to [spill my brains](/weblog), share my music and computer programs. Here's a little about me.
 
 # Born and raised in the desert
 
@@ -94,24 +78,19 @@ Your deadly neighborhood [arachnid](https://en.wikipedia.org/wiki/Scorpion#:~:te
 
 # Misled youth
 
-I was a bit of a goblin when young, and used to skip school to play ball and skateboard. I spent a lot of time listening to hard rock records. My heroes were [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and Jimi Hendrix.
-
-I remember listening to [Foxey Lady](https://www.youtube.com/watch?v=_PVjcIO4MT4) on my discman while taking out the trash.That shit made me want to play the axe! I broke my arm crashing into a parked car trying to do a _"hardflip"_. After that, I stopped skateboarding for a long time.
+I was a bit of a goblin _(<img src="/@/goblin.png" width=40 style="display: inline-block" />)_ when young, and skipped school to play ball, guitar and skateboard. I spent a lot of time playing Zelda and watching MTV. My heroes were [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and Angus Young.
 
 <figure>
   <picture>
-
-![Fish-eye view of a man doing a skateboard trick called a hardflip](/@/hardflip.gif)
-
   </picture>
-  <figcaption>
+<figcaption>
 
-Hardflips are really hard
+Bad Boy Boogie
 
   </figcaption>
 </figure>
 
-On the internet, I was a seasoned [bounty hunter](https://en.wikipedia.org/wiki/Music_piracy) of _.mp3s_ which I shared with family and friends. I spent a lot of my teenage years surfing the web, playing Zelda and watching MTV.
+On the internet, I was a seasoned [bounty hunter](https://en.wikipedia.org/wiki/Music_piracy) of _.mp3s_ which I shared with family and friends.
 
 <figure>
   <picture>
@@ -124,22 +103,9 @@ On the internet, I was a seasoned [bounty hunter](https://en.wikipedia.org/wiki/
   </figcaption>
 </figure>
 
-# Skating away
+# <img width=40 style="transform: translateY(10px)" src="/@/swoosh.png" /> JUST DO SH\*T
 
-I left home at 17 with my guitar _"Wozza"_ and a few books. Years followed in southwestern USA, Osaka, and Hong Kong, tumbling back to Mexico from time to time, but [never staying there too long](https://en.wikipedia.org/wiki/Timeline_of_the_Mexican_drug_war). I went back to Japan and never left.
-
-<figure>
-  <picture>
-
-![Animated gif of a skateboarder ollying over a laundry bottle on the street](/@/skating-tokyo.gif)
-
-  </picture>
-  <figcaption>
-  This is an anti-social activity.
-  </figcaption>
-</figure>
-
-When boredom struck I biked, read books, wrote [haiku](/tags/haiku), made [doomer music](https://open.spotify.com/intl-ja/track/4YinnI3uql8ax8EZyqyIjl?si=c25ebef66fa546bc) and even made silly web cartoons to pass the time.
+When boredom strikes I bike, wrote [haiku](/tags/haiku), made [doomer music](https://open.spotify.com/intl-ja/track/4YinnI3uql8ax8EZyqyIjl?si=c25ebef66fa546bc) and even made silly web cartoons to pass the time.
 
 <figure>
   <picture>
@@ -154,11 +120,22 @@ When boredom struck I biked, read books, wrote [haiku](/tags/haiku), made [doome
   </figcaption>
 </figure>
 
-I have these misadventures under the pseudonym _"Vic Sidious"_ a play on [Sid Vicious](https://www.youtube.com/watch?v=rDyb_alTkMQ). I'm fascinated by villains and rebels like Sid. For a while I felt like one, but it's too easy to confuse half-assing shit with being a rebel.
-
 # Tokyo boy
 
-One summer I studied how to program a low resolution game using C#, which ended up becoming _"Phantom Pizza"_, the game on [the homepage](/). It was fun like hell. I was saving up to buy a motorcycle at the time, but I used the money to continue mashing keys and move to Tokyo to find work with computers.
+I live in Tokyo now.
+
+<figure>
+  <picture>
+
+![Animated gif of a skateboarder ollying over a laundry bottle on the street](/@/skating-tokyo.gif)
+
+  </picture>
+  <figcaption>
+  This is an anti-social activity in Japan.
+  </figcaption>
+</figure>
+
+Tokyo
 
 <figure>
   <picture>
@@ -172,8 +149,6 @@ One summer I studied how to program a low resolution game using C#, which ended 
 </figure>
 
 Programming is how I earn my sushi today. I work for a company that is driving the digitization of the electric grid in Japan, making energy use more green.
-
-I still play guitar and skateboard occasionally. I'm saving up for a motorcycle again. I miss my brother a lot, wish you were here cabrøn.
 
 <figure>
   <picture>
