@@ -127,6 +127,18 @@ main > :first-child {
   margin-top: 0;
 }
 
+blockquote {
+  font-family: var(--font-family-delight);
+  color: var(--venom);
+  border-left: dotted 2px var(--venom);
+  padding-left: 1em;
+  margin-left: 0;
+}
+
+hidden {
+  display: none;
+}
+
 h1,
 h2,
 h3,
