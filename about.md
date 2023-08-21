@@ -1,11 +1,11 @@
 ---
 layout: layouts/post.njk
 title: VIC
+date: 1991-09-24
 templateClass: tmpl-post
 menu:
   visible: true
   order: 2
-beta: true
 ---
 
 <style>
@@ -24,8 +24,6 @@ beta: true
 
 <script type="module" src="/@/vicsAge.mjs"></script>
 
-Hola amigxs, my name is Vic. Welcome to my cyber space. Here I will [spill my brains](/weblog), share [weird music](/music) and computer programs (like [_Phantom Pizza_](/), the game at the home page). Here's a little more about me.
-
 <div class="info">
   <picture class="vic-profile-pic">
     <img alt="vic" width=250 src="/@/vic.png"/>
@@ -33,18 +31,19 @@ Hola amigxs, my name is Vic. Welcome to my cyber space. Here I will [spill my br
 
   <article>
 
-|           |                                                                             |
-| --------- | --------------------------------------------------------------------------- |
-| _Name_    | <em>Victor René Molina Rodríguez</em>                                       |
-| _Work_    | [Programmer, energy industry](https://github.com/sidiousvic)                |
-| _Lives_   | [澁谷東京 <em>(Shibuya, Tokyo)</em>](https://goo.gl/maps/1YfuGi5HYgRpBjN7A) |
-| _Born_    | [Chihuahua, Mexico](https://goo.gl/maps/Ja9LxnZ6kosdRa586)                  |
-| _Age_     | <span id="age_µs">?</span>                                                  |
-| _Loves_   | 🍕 🍺 ☕️ 🛹 ⚽️ 🎸                                                         |
-| _Hobbies_ | Football, music, writing, programming                                       |
+|         |                                                                                                |
+| ------- | ---------------------------------------------------------------------------------------------- |
+| _Name_  | <em>Victor René Molina Rodríguez</em> _(Vic Sidious)_                                          |
+| _Work_  | Programmer, energy industry                                                                    |
+| _Lives_ | [澁谷東京 <em>(Shibuya, Tokyo)</em>](https://goo.gl/maps/1YfuGi5HYgRpBjN7A)                    |
+| _Born_  | [Chihuahua, Mexico](https://goo.gl/maps/Ja9LxnZ6kosdRa586)                                     |
+| _Age_   | <span id="age_µs">?</span>                                                                     |
+| _Vices_ | Pizza, booze, [axe](https://youtu.be/en7EKL1pX5w) and [burritos](https://youtu.be/YZRtE9I5w7k) |
 
   </article>
 </div>
+
+Hola amigxs, my name is Vic. Welcome to my cyber space. Here's where I [spill my brains](/weblog), share [weird music](/music) and computer programs (like [_Phantom Pizza_](/), the game at the home page). Here's a little more about me.
 
 # Born and raised in the desert
 
@@ -82,18 +81,6 @@ I was a bit of a goblin _(<img src="/@/goblin.png" width=40 style="display: inli
 
 <figure>
   <picture>
-  </picture>
-<figcaption>
-
-Bad Boy Boogie
-
-  </figcaption>
-</figure>
-
-On the internet, I was a seasoned [bounty hunter](https://en.wikipedia.org/wiki/Music_piracy) of _.mp3s_ which I shared with family and friends.
-
-<figure>
-  <picture>
   
 ![MTV logo](/@/mtvlogo.gif)
 
@@ -105,7 +92,7 @@ On the internet, I was a seasoned [bounty hunter](https://en.wikipedia.org/wiki/
 
 # <img width=40 style="transform: translateY(10px)" src="/@/swoosh.png" /> JUST DO SH\*T
 
-When boredom strikes I bike, wrote [haiku](/tags/haiku), made [doomer music](https://open.spotify.com/intl-ja/track/4YinnI3uql8ax8EZyqyIjl?si=c25ebef66fa546bc) and even made silly web cartoons to pass the time.
+When Nike says _"Just Do It"_, I says _"Just Do Sh\*t"_. In other words, **don't do nothing** is my tune. When boredom strikes I [program](https://github.com/sidiousvic), write [haiku](/haiku), make [doomer music](/music) or even silly web cartoons to pass the time.
 
 <figure>
   <picture>
@@ -120,9 +107,9 @@ When boredom strikes I bike, wrote [haiku](/tags/haiku), made [doomer music](htt
   </figcaption>
 </figure>
 
-# Tokyo boy
+# Tokyo Boy
 
-I live in Tokyo now.
+I moved to Tokyo a few years ago and have had a hell of a time here. It's a great place to break the law in sinless ways and still feel like a maverick.
 
 <figure>
   <picture>
@@ -135,30 +122,40 @@ I live in Tokyo now.
   </figcaption>
 </figure>
 
-Tokyo
+It's a mercurial city, with masks that are many and different at every corner and time of day. Cheap booze by the river, cherry blossoms in the dark, futuristic visions and very old ghosts, the most ordinary quietnesses and the most bollocks weirdo shit you've never heard of.
 
+<div style="position: relative; margin: 3rem -10rem; display: grid; gap: 3rem; grid-template-columns: 1fr 1fr; justify-content: center;">
 <figure>
   <picture>
 
 ![A view of Kanda river near Asakusabashi, Tokyo](/@/tokyo.gif)
 
   </picture>
-  <figcaption>
-    Kanda river 
-  </figcaption>
 </figure>
-
-Programming is how I earn my sushi today. I work for a company that is driving the digitization of the electric grid in Japan, making energy use more green.
 
 <figure>
   <picture>
 
-![Two kids playing a game on a bed, laughing](/@/ichigo.jpg)
+![Cherry blossom petals falling by a convenience store by a side road in Tokyo](/@/cherry-blossoms-at-nite.gif)
 
   </picture>
-  <figcaption>
-    <em>Me and my brother</em>
-  </figcaption>
 </figure>
+
+<figure>
+  <picture>
+
+![A backstreet with several drinking establishments at night](/@/apa-hotel-blues.gif)
+
+  </picture>
+</figure>
+
+<figure>
+  <picture>
+
+![A view of the tokyo skyline, with buildings' plane lights glowing](/@/skyline-tokyo.gif)
+
+  </picture> 
+</figure>
+</div>
 
 Thank you for reading. _どうもどうも！_ I'll see you around [sidious.pizza](/). Welcome and I hope you have a great time here.

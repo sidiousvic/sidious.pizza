@@ -120,6 +120,7 @@ body {
 
 main {
   padding: 2vh 5vw 5vh 5vw;
+  overflow: hidden;
 }
 
 main > :first-child {
