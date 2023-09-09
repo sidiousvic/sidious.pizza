@@ -30,7 +30,7 @@ const { sprites, c } = config({
   FG_COLOR_HEX: "#00ff2a",
   CURSOR: true,
   START_SCREEN: false,
-  SPRITES: ["/@/notFound404.png", "/@/sidiousvic404.png"],
+  SPRITES: ["/@/notFound404.png"],
   AUDIOS: [{ url: "/@/death.wav", volume: 0.9 }],
 });
 
@@ -45,9 +45,6 @@ requestAnimationFrame(() => {
     (u) => (
       moveWithVelocity(u.notFound),
       bounce(u.notFound)({ x: innerWidth, y: innerHeight }),
-      switchSprite(u.notFound)(
-        u.notFound.speed.x < 0 ? sprites.sidiousvic404 : sprites.notFound404
-      ),
       draw(c)({ ...u.notFound, h: 100, w: 200 })
     )
   );
