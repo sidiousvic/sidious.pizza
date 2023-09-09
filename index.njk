@@ -8,4 +8,30 @@ menu:
 
 <script defer type="module" src="/@/phantomPizza.mjs"></script>
 <script defer type="module" src="/@/makeMainFillUpScreen.mjs"></script>
+<script>
+addEventListener("DOMContentLoaded", () => {
+  if (!/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) 
+    document.getElementById('pizza').hidden = true;
+});
+</script>
+
+<figure 
+  style="
+    mix-blend-mode: color-dodge;
+    position: absolute;
+    filter: sepia(1) hue-rotate(70deg) saturate(13);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  "
+>
+  <picture class="no-border">
+    <img
+      id="pizza" 
+      width="250"
+      src="@/pizza.gif"
+    />
+  </picture>
+</figure>
+
 

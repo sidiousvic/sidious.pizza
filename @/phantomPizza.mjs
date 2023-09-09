@@ -24,6 +24,9 @@ import {
   randomSpawn,
 } from "/@/phantom.mjs";
 
+if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent))
+  throw new Error("Use a bigger screen to play the game... 🍕");
+
 const ENEMY_RANDOM_SPAWN_SPEEDS = [-5, -4, -3 - 2, 2, 3, 4, 5];
 const ZERO_SPEED = { x: 0, y: 0 };
 const SPRITE_DIMENSION = 50;
@@ -80,8 +83,6 @@ requestAnimationFrame(() => {
   document.head.appendChild(animationStyle);
   document.getElementById("score").style.animation = "shake .5s infinite";
 });
-
-innerWidth < 500 && (document.getElementById("score").style.fontSize = "2rem");
 
 const z = {
   player: Phantom(mouse)(SPRITE_DIMENSION)(sprites.player)(ZERO_SPEED),
