@@ -53,7 +53,7 @@ const { sprites, score, sound, mouse, c } = config({
   BG_COLOR_HEX: "#0d1117",
   FG_COLOR_HEX: "var(--venom)",
   START_TEXT_A: "<em>ENTER</em> AT YOUR OWN PERIL",
-  START_TEXT_B: "自己の危険に <em>ENTER</em> を押す",
+  START_TEXT_B: "危険ゾーンに <em>投入</em>",
   SPRITES: ["/@/enemyL.png", "/@/enemyR.png", "/@/swoosh.png", "/@/player.gif"],
   AUDIOS: [
     { url: "/@/swoosh.wav", volume: 0.3 },
