@@ -37,7 +37,7 @@ menu:
 | _Work_  | Programmer, energy industry                                                                    |
 | _Lives_ | [澁谷東京 <em>(Shibuya, Tokyo)</em>](https://goo.gl/maps/1YfuGi5HYgRpBjN7A)                    |
 | _Born_  | [Chihuahua, Mexico](https://goo.gl/maps/Ja9LxnZ6kosdRa586)                                     |
-| _Age_   | <span id="age_µs">?</span>                                                                     |
+| _Age_   | <span id="age">?</span>                                                                        |
 | _Vices_ | Pizza, booze, [axe](https://youtu.be/en7EKL1pX5w) and [burritos](https://youtu.be/YZRtE9I5w7k) |
 
   </article>
@@ -92,7 +92,7 @@ I was a bit of a goblin _(<img src="/@/goblin.png" width=40 style="display: inli
 
 # <img width=40 style="transform: translateY(10px)" src="/@/swoosh.png" /> JUST DO SH\*T
 
-When Nike says _"Just Do It"_, I says _"Just Do Sh\*t"_. In other words, **don't do nothing** is my tune. When boredom strikes I [program](https://github.com/sidiousvic), write [haiku](/haiku), make [doomer music](/music) or even silly web cartoons to pass the time.
+When Nike says _"Just Do It"_, I says _"Just Do Sh\*t"_. When boredom strikes I [program](https://github.com/sidiousvic), write [haiku](/haiku), make [doomer music](/music) or even silly web cartoons to pass the time.
 
 <figure>
   <picture>
@@ -122,7 +122,7 @@ I moved to Tokyo a few years ago and have had a hell of a time here. It's a grea
   </figcaption>
 </figure>
 
-It's a mercurial city, with masks that are many and different at every corner and time of day. Cheap booze by the river, cherry blossoms in the dark, futuristic visions and very old ghosts, the most ordinary quietnesses and the most bollocks weirdo shit you've never heard of.
+Cheap booze by the river, cherry blossoms in the dark, futuristic streets full of old ghosts, the most ordinary quietnesses and the most bollocks weirdo shit you've never heard of.
 
 <div style="position: relative; margin: 3rem -10rem; display: grid; gap: 3rem; grid-template-columns: 1fr 1fr; justify-content: center;">
 <figure>
