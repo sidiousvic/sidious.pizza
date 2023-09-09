@@ -44,7 +44,7 @@
   justify-content: center;
 
   & > img {
-    filter: sepia(1) hue-rotate(76deg) saturate(2.5);
+    filter: sepia(1) hue-rotate(60deg) saturate(5);
     image-rendering: pixelated;
     width: 100px;
     height: 100px;

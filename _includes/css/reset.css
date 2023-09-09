@@ -47,7 +47,7 @@
   --invert_darkgray: #f2eee8;
   --invert_venom: #ff007b;
   --darkgray: #0d1117;
-  --venom: #00ff84;
+  --venom: #00ff00ff;
   --blue: #135;
   --white: #fff;
   --black: #000;
@@ -210,7 +210,7 @@ picture {
   max-width: 80vw;
   width: fit-content;
   height: fit-content;
-  filter: sepia(1) hue-rotate(102deg) saturate(2.5);
+  filter: sepia(1) hue-rotate(90deg) saturate(3);
   image-rendering: pixelated;
   border: lime dotted 1px;
   & > p {
