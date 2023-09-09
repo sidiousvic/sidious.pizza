@@ -33,8 +33,8 @@ menu:
 
 |         |                                                                                                |
 | ------- | ---------------------------------------------------------------------------------------------- |
-| _Name_  | <em>Victor René Molina Rodríguez</em> _(Vic Sidious)_                                          |
-| _Work_  | Programmer, energy industry                                                                    |
+| _Name_  | Vic _(Sidious)_                                                                                |
+| _Work_  | Programmer, Axewielder, Generic Dark Lord                                                      |
 | _Lives_ | [澁谷東京 <em>(Shibuya, Tokyo)</em>](https://goo.gl/maps/1YfuGi5HYgRpBjN7A)                    |
 | _Born_  | [Chihuahua, Mexico](https://goo.gl/maps/Ja9LxnZ6kosdRa586)                                     |
 | _Age_   | <span id="age">?</span>                                                                        |
