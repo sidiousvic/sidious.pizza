@@ -77,8 +77,6 @@
   }
 }
 
-search-form {
-}
 oom-search::part(input) {
   border: solid 2px var(--darkgray);
   border-radius: 4px;

@@ -94,6 +94,7 @@ output {
 
 input[type="range"] {
   position: relative;
+  appearance: none;
   -webkit-appearance: none;
   width: 48%;
   margin: 0;

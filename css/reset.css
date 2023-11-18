@@ -12,6 +12,10 @@
   font-family: Vastantonius;
   src: url(/@/Vastantonius.ttf);
 }
+@font-face {
+  font-family: Berkeley Mono;
+  src: url(/@/BerkeleyMono.ttf);
+}
 
 .venomous {
   animation: venomous 3s infinite;
@@ -171,7 +175,7 @@ a {
   text-underline-offset: 4px;
   cursor: pointer;
   & > .tag {
-    webkit-text-decoration: none !important;
+    /* webkit-text-decoration: none !important; */
     text-decoration: none !important;
   }
 }

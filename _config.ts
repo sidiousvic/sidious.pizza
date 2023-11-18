@@ -1,6 +1,5 @@
 import lume from "lume/mod.ts";
 import date from "lume/plugins/date.ts";
-import postcss from "lume/plugins/postcss.ts";
 import codeHighlight from "lume/plugins/code_highlight.ts";
 import basePath from "lume/plugins/base_path.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
@@ -18,7 +17,8 @@ site
   .ignore("README.md")
   .copy("@")
   .copy("scripts")
-  .use(postcss())
+  .copy("css")
+  .copy("styles.css")
   .use(date())
   .use(codeHighlight())
   .use(basePath())
