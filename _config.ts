@@ -23,13 +23,7 @@ site
   .use(codeHighlight())
   .use(basePath())
   .use(sitemap())
-  .use(
-    pageFind({
-      ui: {
-        resetStyles: false,
-      },
-    })
-  )
+  .use(pageFind({ ui: { resetStyles: false } }))
   .use(slugifyUrls({ alphanumeric: false }))
   .use(
     feed({
