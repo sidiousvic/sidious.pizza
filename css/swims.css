@@ -1,4 +1,4 @@
-.musics {
+.swims {
   list-style: none;
   padding: 0;
   display: flex;
@@ -8,23 +8,12 @@
   gap: 2rem;
 }
 
-.musics-header {
-  padding: 5vh 0;
-  padding-bottom: 2vh;
-  font-size: 4em;
-  font-weight: 100;
-  font-family: var(--font-family-title);
-  text-align: center;
-  margin: 0;
-  color: var(--venom);
-}
-
-.musics-date {
+.swims-date {
   font-size: 0.8rem;
   color: var(--lightgray);
 }
 
-.musics-title {
+.swims-title {
   font-family: var(--font-family-post-title);
   display: block;
   padding: 0.5em 0.2em;
@@ -36,7 +25,7 @@
   }
 }
 
-.musics-post {
+.swims-post {
   margin: 2rem 0rem;
   display: flex;
   flex-direction: column;

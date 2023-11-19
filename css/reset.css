@@ -277,3 +277,14 @@ img {
     opacity: 0;
   }
 }
+
+.page-title {
+  padding: 5vh 0;
+  padding-bottom: 2vh;
+  font-size: 4em;
+  font-weight: 100;
+  font-family: var(--font-family-title);
+  text-align: center;
+  margin: 0;
+  color: var(--venom);
+}

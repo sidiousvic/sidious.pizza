@@ -1,4 +1,4 @@
-.haikus {
+.things {
   list-style: none;
   padding: 0;
   display: flex;
@@ -8,23 +8,12 @@
   gap: 2rem;
 }
 
-.haikus-header {
-  padding: 5vh 0;
-  padding-bottom: 2vh;
-  font-size: 4em;
-  font-weight: 100;
-  font-family: var(--font-family-title);
-  text-align: center;
-  margin: 0;
-  color: var(--venom);
-}
-
-.haikus-date {
+.things-date {
   font-size: 0.8rem;
   color: var(--lightgray);
 }
 
-.haikus-title {
+.things-header {
   font-family: var(--font-family-post-title);
   display: block;
   padding: 0.5em 0.2em;
@@ -36,7 +25,7 @@
   }
 }
 
-.haikus-post {
+.things-post {
   margin: 1rem 0rem;
   display: flex;
   flex-direction: column;

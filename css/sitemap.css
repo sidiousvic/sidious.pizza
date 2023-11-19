@@ -1,0 +1,38 @@
+main * {
+  letter-spacing: 3px;
+}
+
+main li {
+  underline-color: lime;
+  width: fit-content;
+  margin: 15px 0;
+}
+
+main ul li::before {
+  content: "⌾";
+  color: var(--venom);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+main a:hover {
+  font-weight: 900 !important;
+}
+
+main a {
+  padding: 5px;
+}
+
+main ul,
+main li {
+  list-style: none;
+  padding: revert;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
