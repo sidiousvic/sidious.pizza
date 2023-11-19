@@ -8,6 +8,10 @@ menu:
 
 <h1 class="page-title">SWIMS</h1>
 
-{% include "templates/swims.njk" %}
+{% set things = search.pages("swims", "date=desc", 99) %}
+
+{% include "templates/things.njk" %}
+
+
 
 
