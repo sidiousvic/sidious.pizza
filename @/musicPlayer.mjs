@@ -6,10 +6,11 @@ const muteIcon = document.getElementById("mute-icon");
 let playState = "play";
 let muteState = "unmute";
 
-triggerPlayback.innerHTML =
-  window.innerWidth > 768
-    ? 'Press <span class="tag border venomous">spacebar</span> to play'
-    : '<span class="tag border venomous">Tap</span> to play';
+triggerPlayback.innerHTML = /iPhone|iPad|iPod|Android/i.test(
+  navigator.userAgent
+)
+  ? '<span class="tag border venomous">Tap</span> to play'
+  : 'Press <span class="tag border venomous">spacebar</span> to play';
 
 function playbackFX(playstate, tabOrSpacebar) {
   playState === "play"
