@@ -172,7 +172,9 @@ h4 {
 
 a {
   color: var(--lightgray);
-  text-decoration: dotted underline var(--venom);
+  text-decoration: underline;
+  text-decoration-color: var(--venom);
+  text-decoration-style: dotted;
   text-underline-offset: 4px;
   cursor: pointer;
   & > .tag {
