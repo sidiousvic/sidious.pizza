@@ -12,20 +12,21 @@ triggerPlayback.innerHTML = /iPhone|iPad|iPod|Android/i.test(
   ? '<span class="tag border venomous">Tap</span> to play'
   : 'Press <span class="tag border venomous">spacebar</span> to play';
 
+document.querySelector(".navbar-links").style.display = "none";
+
 function playbackFX(playstate, tabOrSpacebar) {
   playState === "play"
     ? (audio.play(),
       requestAnimationFrame(whilePlaying),
       (playState = "pause"),
       document.body.classList.add("venomous"),
-      (document.querySelector(".navbar-links").style.mixBlendMode = "darken"),
-      (document.querySelector(".navbar-links").style.filter = "invert(1)"),
+      (document.querySelector(".navbar-home").style.mixBlendMode =
+        "difference"),
       (triggerPlayback.innerHTML = `Press <span class="tag border venomous">${tabOrSpacebar}</span> to pause`))
     : (audio.pause(),
       (playState = "play"),
       document.body.classList.remove("venomous"),
-      (document.querySelector(".navbar-links").style.mixBlendMode = "unset"),
-      (document.querySelector(".navbar-links").style.filter = "unset"),
+      (document.querySelector(".navbar-home").style.mixBlendMode = "unset"),
       (triggerPlayback.innerHTML = `Press <span class="tag border venomous">${tabOrSpacebar}</span> to play`));
 }
 
