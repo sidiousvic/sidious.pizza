@@ -1,4 +1,66 @@
+.haiku-post {
+  text-align: center;
+  padding-bottom: 0;
+  & > img {
+    filter: sepia(1) hue-rotate(60deg) saturate(5);
+    image-rendering: pixelated;
+    height: 90px;
+    width: 90px;
+    object-fit: contain;
+    padding: 10px;
+  }
+}
+
+.haiku-header {
+  padding: 5vh 0;
+  padding-bottom: 2vh;
+}
+
+.haiku-title {
+  font-family: var(--font-family-post-title);
+  font-weight: 100 !important;
+  font-size: 4rem;
+  font-size: clamp(2rem, 10vw, 4rem);
+  line-height: 1;
+  letter-spacing: 0.2rem;
+  margin: 0 0 0.25em;
+}
+
+.haiku-body {
+  text-align: left;
+  font-family: var(--font-family-post-body);
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.6;
+  padding: 0 20vw;
+  letter-spacing: 1px;
+
+  & p,
+  & ul,
+  & ol {
+    transform-origin: left;
+  }
+
+  & h1,
+  & h2,
+  & h3,
+  & h4,
+  & h5,
+  & h6 {
+    font-family: var(--font-family-title);
+    font-weight: 100 !important;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .post-body {
+    padding: 0 1%;
+  }
+}
+
 .haiku {
+  color: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,7 +76,5 @@
     font-style: italic;
     font-size: 1rem;
     text-align: center;
-  }
-  @keyframes {
   }
 }

@@ -28,7 +28,7 @@
 .things-post {
   margin: 1rem 0rem;
   display: flex;
-  gap: 1rem;
+  gap: 0.7rem;
   flex-direction: column;
   align-items: center;
   justify-content: center;

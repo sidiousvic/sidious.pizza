@@ -14,12 +14,6 @@ bodyClass: body-post
      {% endif %}
     </h1>
     
-    <nav class="post-tags">
-    {% for tag in tags %}
-      <a href="/tags/{{ tag }}/" class="tag">{{ tag }}</a>
-    {% endfor %}
-       </nav>
-
     <time class="post-date" datetime="{{ date | date('DATETIME') }}">
       {{ date | date('HUMAN_DATE') }}
     </time>

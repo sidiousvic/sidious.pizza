@@ -1,6 +1,6 @@
 ---
-layout: layouts/post.njk
-bodyClass: body-post
+layout: layouts/base.njk
+bodyClass: haiku-post
 ---
 
 <link preload rel="stylesheet" href="/css/haiku.css">
@@ -8,12 +8,28 @@ bodyClass: body-post
 {% set jp = content | jp %}
 {% set en = content | en %}
 
-<section lang="jp" class="haiku">
-{{ jp | safe }}
-</section>
+<article class="haiku-post" data-pagefind-body>
+  <div class="haiku-header">
+    <h1 class="haiku-title">
+      {{ title }} 
+     {% if beta %}
+       <sup class="tag big border beta venomous">BETA</sup>
+     {% endif %}
+    </h1>
+  </div>
 
-<section lang="en" class="haiku">
-{{ en | safe }}
-</section>
+    {% if beta %}
+      <em>Beware! This entry is in beta, so you're reading an unfinished version.</em>
+      <br></br>
+    {% endif %}
 
-
+  <div class="haiku-body">
+    <section lang="jp" class="haiku">
+      {{ jp | safe }}
+    </section>
+    <section lang="en" class="haiku">
+      {{ en | safe }}
+    </section>
+  </div>
+  <img src="{{ page.data.gif }}"/>
+</article>
