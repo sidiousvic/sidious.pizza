@@ -55,6 +55,7 @@
   --blue: #135;
   --white: #fff;
   --black: #000;
+  --vermilion: #ff3500;
   --darksteel: #343;
   --font-family: OffDot, DotGothic16, monospace;
   --font-family-navbar: OffDotBold, DotGothic16, monospace;
@@ -287,4 +288,8 @@ img {
   text-align: center;
   margin: 0;
   color: var(--venom);
+}
+
+.current-page-indicator-bullet {
+  color: var(--vermilion);
 }

@@ -21,6 +21,7 @@
       {%- for entry in search.pages("menu.visible=true", "menu.order") %}
         <li>
           <a href="{{ entry.data.url }}"{% if entry.data.url == url %} aria-current="page"{% endif %}>
+            {% if entry.data.url == url %} <span class="current-page-indicator-bullet">⦿</span> {% endif %}
             {{ entry.data.menu.title or entry.data.title }}
           </a>
         </li>
