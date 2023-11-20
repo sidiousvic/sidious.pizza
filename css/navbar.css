@@ -35,7 +35,7 @@
 
 .navbar-links {
   color: whitesmoke;
-  padding: 0;
+  padding: 0.5rem;
   margin: 0;
   list-style: none;
   display: flex;
@@ -43,7 +43,7 @@
   column-gap: 2rem;
   row-gap: 1rem;
   align-items: baseline;
-  justify-content: space-between;
+  justify-content: space-around;
 
   & [aria-current="page"] {
     font-weight: bold;
@@ -53,7 +53,6 @@
 
 .navbar-search {
   flex-grow: 1;
-  /* max-width: 800px; */
   margin-left: auto;
 }
 
@@ -63,10 +62,16 @@
   }
   .navbar-links > li {
     box-shadow: var(--venom) 3px 3px;
+    -webkit-box-shadow: var(--venom) 3px 3px;
     text-align: center;
     border: dotted 1px var(--venom);
     padding: 0.5rem;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 40%;
   }
+}
+
+.current-page-indicator-bullet {
+  display: inline-block;
+  color: var(--vermilion);
 }
