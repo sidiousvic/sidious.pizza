@@ -128,10 +128,6 @@ main {
   overflow: hidden;
 }
 
-main > :first-child {
-  margin-top: 0;
-}
-
 blockquote {
   font-family: var(--font-family-delight);
   color: var(--venom);
@@ -282,11 +278,10 @@ img {
 }
 
 .page-title {
-  padding: 3vh 0 0 0;
+  margin: 1rem 0;
   font-size: 4em;
   font-weight: 100;
   font-family: var(--font-family-title);
   text-align: center;
-  margin: 0;
   color: var(--venom);
 }

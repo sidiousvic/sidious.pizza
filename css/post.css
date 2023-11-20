@@ -2,8 +2,11 @@
   text-align: center;
 }
 
+.post-header {
+  margin: 1rem 0;
+}
+
 .post-title {
-  padding: 3vh 0 0 0;
   font-size: 4em;
   font-weight: 100;
   font-family: var(--font-family-title);
