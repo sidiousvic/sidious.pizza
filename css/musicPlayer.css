@@ -33,7 +33,7 @@ button {
   padding: 1rem;
   margin: auto;
   width: 95%;
-  max-width: 30%;
+  max-width: 25%;
   & > * {
     mix-blend-mode: difference;
   }
