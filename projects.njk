@@ -1,11 +1,14 @@
 ---
 layout: layouts/home.njk
-menu:
-  visible: true
-  title: PROJECTS
-  order: 1
+visible: true
+title: PROJECTS
+order: 1
 ---
 
 <h1 class="page-title">PROJECTS</h1>
 
-{% set musics = search.pages("", "date=desc", 99) %}
+{% set things = search.pages("projects", "date=desc", 99) %}
+
+{% include "templates/things.njk" %}
+
+
