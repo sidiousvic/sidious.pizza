@@ -6,9 +6,7 @@ export default function* ({ search, paginate }) {
   const paginated = paginate(posts, { url, size: 9 });
 
   const pages = paginated.map((data) =>
-    data.pagination.page === 1
-      ? { ...data, menu: { visible: false, order: 1 } }
-      : data
+    data.pagination.page === 1 ? { ...data, visible: false, order: 1 } : data
   );
 
   for (const data of pages) yield data;

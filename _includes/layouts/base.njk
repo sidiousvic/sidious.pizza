@@ -18,13 +18,13 @@
       </a>
 
       <ul class="navbar-links">
-      {%- for entry in search.pages("menu.visible=true", "menu.order") %}
+      {%- for entry in search.pages("visible=true", "order") %}
         <li>
           <a href="{{ entry.data.url }}"{% if entry.data.url == url %} aria-current="page"{% endif %}>
             {% if entry.data.url == url %} 
             <div class="current-page-indicator-bullet">⦿</div> 
             {% endif %}
-            {{ entry.data.menu.title or entry.data.title }}
+            {{ entry.data.title }}
           </a>
         </li>
       {%- endfor %}

@@ -3,9 +3,8 @@ layout: layouts/post.njk
 title: VIC
 date: 1991-09-24
 templateClass: tmpl-post
-menu:
-  visible: true
-  order: 2
+visible: true
+order: 2
 ---
 
 <style>
