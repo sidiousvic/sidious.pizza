@@ -6,7 +6,6 @@ pinned: true
 gif: /@/oborotsuki.gif
 tags:
   - haiku
-  - 秋
 draft: false
 ---
 
@@ -22,7 +21,7 @@ draft: false
 
 <!-- en -->
 
-In a hazy moon
+Hazy moon
 <br>
 I thought I saw
 <br>
