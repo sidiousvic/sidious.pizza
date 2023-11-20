@@ -82,7 +82,7 @@
 
   &.big {
     font-size: 1rem;
-    padding: 0.4em 0.3em 0.2em 0.6em;
+    padding: 0.4em 0.6em 0.2em 0.6em;
   }
 
   &.marker {
@@ -280,8 +280,7 @@ img {
 }
 
 .page-title {
-  padding: 5vh 0;
-  padding-bottom: 2vh;
+  padding: 3vh 0 0 0;
   font-size: 4em;
   font-weight: 100;
   font-family: var(--font-family-title);

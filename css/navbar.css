@@ -43,14 +43,30 @@
   column-gap: 2rem;
   row-gap: 1rem;
   align-items: baseline;
+  justify-content: space-between;
 
   & [aria-current="page"] {
     font-weight: bold;
     color: var(--venom);
   }
 }
+
 .navbar-search {
   flex-grow: 1;
   /* max-width: 800px; */
   margin-left: auto;
+}
+
+@media (max-width: 500px) {
+  .navbar-links {
+    column-gap: 0;
+  }
+  .navbar-links > li {
+    box-shadow: var(--venom) 3px 3px;
+    text-align: center;
+    border: dotted 1px var(--venom);
+    padding: 0.5rem;
+    justify-content: space-between;
+    width: 40%;
+  }
 }
