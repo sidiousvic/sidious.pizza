@@ -24,6 +24,8 @@ import {
   randomSpawn,
 } from "/@/phantom.mjs";
 
+console.log(navigator.userAgent);
+
 if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent))
   throw new Error("Use a bigger screen to play the game... 🍕");
 
