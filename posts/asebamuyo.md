@@ -6,7 +6,6 @@ pinned: false
 gif: /@/asebamuyo.gif
 tags:
   - haiku
-  - 夏
 draft: false
 ---
 
@@ -22,7 +21,7 @@ draft: false
 
 <!-- en -->
 
-Balmy night
+Sweaty night
 <br>
 Far away, in the east
 <br>
