@@ -23,8 +23,8 @@ draft: false
 
 Demon storm
 <br>
-Behind the thunder
+Behind the lightning
 <br>
-The sound of laughter
+Sound of laughter
 
 <!-- enden -->
