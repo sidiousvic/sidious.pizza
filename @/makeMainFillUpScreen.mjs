@@ -1,4 +1,4 @@
-const ROUNDING_ERROR = 13;
+const ROUNDING_ERROR = 10;
 
 function computeNavbarHeight() {
   const navbar = document.getElementById("navbar");
@@ -31,7 +31,7 @@ function computeMainHeight() {
   );
 }
 
-addEventListener("DOMContentLoaded", () => {
+addEventListener("load", () => {
   const main = document.getElementById("main");
   main.style.minHeight = `${computeMainHeight()}px`;
 });
