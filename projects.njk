@@ -2,6 +2,7 @@
 layout: layouts/home.njk
 visible: true
 title: PROJECTS
+info: Here's where I store all of my named works. Some are writings, some are music, but there's a lot to see! 
 order: 1
 ---
 
@@ -10,5 +11,8 @@ order: 1
 {% set things = search.pages("projects", "date=desc", 99) %}
 
 {% include "templates/things.njk" %}
+{% include "templates/page-info.njk" %}
+
+
 
 

@@ -1,0 +1,112 @@
+.page-info-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 70px;
+  max-width: 70px;
+  position: absolute;
+  right: 40px;
+  bottom: 30px;
+  border-bottom: dotted 2px transparent;
+}
+
+.page-info-button img,
+.page-info-icon img {
+  filter: sepia(1) hue-rotate(-100deg) saturate(99) invert(1);
+  image-rendering: pixelated;
+  object-fit: contain;
+  padding: 10px;
+  display: inline;
+}
+
+@media (max-width: 500px) {
+  .page-info-button {
+    bottom: 100px;
+    right: 0;
+    background: var(--venom);
+    border-radius: 5px 0 0 5px;
+    padding: 5px 3px 5px 5px;
+    border: none;
+  }
+
+  .page-info-button:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    border-bottom: dotted 2px transparent !important;
+    border-radius: unset !important;
+  }
+
+  .page-info-button img {
+    filter: unset;
+  }
+}
+
+.page-info-button:hover {
+  border: dotted 2px var(--venom);
+  border-radius: 5px;
+  transform: translateY(-10px);
+  box-shadow: 3px 3px var(--venom);
+}
+
+.page-info-icon img {
+  max-width: 60px;
+  max-height: 60px;
+}
+
+.page-info-overlay {
+  background: black;
+  background-image: radial-gradient(transparent, black);
+  background-size: 3px 3px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 90%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-info-title {
+  display: flex;
+  margin-bottom: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 100;
+  font-family: var(--font-family-title);
+}
+
+.page-info-body {
+  text-align: justify;
+  font-size: 1.2rem;
+  font-weight: 100;
+  line-height: 1.6;
+  padding: 0 30vw;
+  letter-spacing: 1px;
+
+  & p,
+  & ul,
+  & ol {
+    transform-origin: left;
+  }
+
+  & h1,
+  & h2,
+  & h3,
+  & h4,
+  & h5,
+  & h6 {
+    font-family: var(--font-family-title);
+    font-weight: 100 !important;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .page-info-body {
+    padding: 0 20vw;
+  }
+}

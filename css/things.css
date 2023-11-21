@@ -8,6 +8,10 @@
   gap: 2rem;
 }
 
+.thing-title {
+  letter-spacing: 3px;
+}
+
 .things-date {
   font-size: 0.8rem;
   color: var(--lightgray);
