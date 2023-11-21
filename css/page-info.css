@@ -1,10 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap");
+
 .page-info-button {
   display: flex;
   align-items: center;
   justify-content: center;
   max-height: 70px;
   max-width: 70px;
-  position: absolute;
+  position: fixed;
   right: 40px;
   bottom: 30px;
   border-bottom: dotted 2px transparent;
@@ -21,12 +23,14 @@
 
 @media (max-width: 500px) {
   .page-info-button {
+    width: 50px;
+    height: 50px;
     bottom: 100px;
     right: 0;
     background: var(--venom);
     border-radius: 5px 0 0 5px;
     padding: 5px 3px 5px 5px;
-    border: none;
+    border: dotted 1px transparent;
   }
 
   .page-info-button:hover {
@@ -59,7 +63,8 @@
   background-size: 3px 3px;
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
+  overflow: hidden;
   top: 0;
   left: 0;
   opacity: 90%;
@@ -105,8 +110,19 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 1000px) {
   .page-info-body {
     padding: 0 20vw;
+    font-size: 1.1rem;
   }
+}
+
+.vic-signature {
+  display: block;
+  font-family: "Reenie Beanie", cursive;
+  color: var(--venom);
+  font-size: 3rem;
+  float: inline-end;
+  margin-block: 10px;
+  transform: rotate(7deg);
 }
