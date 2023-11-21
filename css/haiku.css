@@ -1,6 +1,7 @@
 .haiku-post {
+  width: 100%;
   text-align: center;
-  padding-bottom: 0;
+  padding: 0;
   & > img {
     filter: sepia(1) hue-rotate(60deg) saturate(5);
     image-rendering: pixelated;
@@ -32,7 +33,6 @@
   font-size: 1.2rem;
   font-weight: 400;
   line-height: 1.6;
-  padding: 0 20vw;
   letter-spacing: 1px;
 
   & p,
@@ -53,9 +53,8 @@
   }
 }
 
-@media (max-width: 1200px) {
-  .post-body {
-    padding: 0 1%;
+@media (max-width: 500px) {
+  .haiku-body {
   }
 }
 
@@ -75,7 +74,8 @@
     text-orientation: unset;
     font-style: italic;
     font-size: 1rem;
-    text-align: end;
+    text-align: center;
     margin-block: 3rem;
+    text-wrap: nowrap;
   }
 }
