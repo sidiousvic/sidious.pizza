@@ -128,7 +128,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2vh 5vw 5vh 5vw;
+  padding: 2vh 5vw 2vh 5vw;
   overflow: hidden;
 }
 
