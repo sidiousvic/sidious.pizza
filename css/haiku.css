@@ -75,6 +75,7 @@
     text-orientation: unset;
     font-style: italic;
     font-size: 1rem;
-    text-align: center;
+    text-align: end;
+    margin-block: 3rem;
   }
 }
