@@ -1,14 +1,14 @@
-main * {
+.body-sitemap * {
   letter-spacing: 3px;
 }
 
-main li {
+.body-sitemap li {
   underline-color: lime;
   width: fit-content;
   margin: 15px 0;
 }
 
-main ul li::before {
+.body-sitemap ul li::before {
   content: "⌾";
   color: var(--venom);
   font-weight: bold;
@@ -17,23 +17,21 @@ main ul li::before {
   margin-left: -1em;
 }
 
-main a:hover {
+.body-sitemap a:hover {
   font-weight: 900 !important;
 }
 
-main a {
+.body-sitemap a {
   padding: 5px;
 }
 
-main ul,
-main li {
+.body-sitemap ul,
+.body-sitemap li {
   list-style: none;
   padding: revert;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.body-sitemap ul {
+  width: fit-content;
+  margin: auto;
 }

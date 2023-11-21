@@ -1,5 +1,6 @@
 ---
 layout: layouts/base.njk
+bodyClass: body-sitemap
 visible: true
 title: SITEMAP
 order: 1
