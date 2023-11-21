@@ -39,9 +39,29 @@ button {
   }
 }
 
-@media (max-width: 720px) {
+@media (min-width: 1000px) {
+  #music-player > h1 {
+    width: 150% !important;
+    font-size: 250% !important;
+  }
+}
+
+@media (max-width: 1000px) {
   #music-player {
-    max-width: 85%;
+    max-width: 45%;
+  }
+  #music-player > picture > img {
+    max-height: 20vh;
+  }
+}
+
+@media (max-width: 500px) {
+  #music-player > h1 {
+    width: 130% !important;
+    font-size: 150% !important;
+  }
+  #music-player {
+    max-width: 70%;
   }
   #music-player > picture > img {
     max-height: 20vh;
@@ -54,10 +74,10 @@ button {
 
 #music-player > h1 {
   font-family: var(--font-family-title);
-  width: 100%;
+  width: 130%;
   text-align: center;
   color: var(--venom);
-  font-size: 160%;
+  font-size: 180%;
 }
 
 #music-player-playback,
