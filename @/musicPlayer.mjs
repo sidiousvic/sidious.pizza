@@ -12,8 +12,6 @@ triggerPlayback.innerHTML = /iPhone|iPad|iPod|Android/i.test(
   ? '<span class="tag border venomous">Tap</span> to play'
   : 'Press <span class="tag border venomous">spacebar</span> to play';
 
-document.querySelector(".navbar-links").style.display = "none";
-
 function playbackFX(playstate, tabOrSpacebar) {
   playState === "play"
     ? (audio.play(),
