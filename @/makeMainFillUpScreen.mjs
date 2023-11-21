@@ -33,10 +33,10 @@ function computeMainHeight() {
 
 addEventListener("DOMContentLoaded", () => {
   const main = document.getElementById("main");
-  main.style.height = `${computeMainHeight()}px`;
+  main.style.minHeight = `${computeMainHeight()}px`;
 });
 
 addEventListener("resize", () => {
   const main = document.getElementById("main");
-  main.style.height = `${computeMainHeight()}px`;
+  main.style.minHeight = `${computeMainHeight()}px`;
 });
