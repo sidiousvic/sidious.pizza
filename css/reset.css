@@ -124,8 +124,18 @@ body {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 2vh 5vw 5vh 5vw;
   overflow: hidden;
+}
+
+@media (max-width: 500px) {
+  main {
+    justify-content: flex-start;
+  }
 }
 
 blockquote {
