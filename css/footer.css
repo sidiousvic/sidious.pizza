@@ -4,9 +4,9 @@ footer {
   justify-content: center;
   align-items: center;
   color: var(--darksteel);
-  padding: 0 0 2vh 0;
+  font-size: 0.9rem;
 }
 
-footer > * {
-  padding: 5px 0;
+footer > p {
+  margin-block: 5px;
 }

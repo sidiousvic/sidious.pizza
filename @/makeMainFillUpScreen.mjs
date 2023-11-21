@@ -1,4 +1,4 @@
-const ROUNDING_ERROR = 2;
+const ROUNDING_ERROR = 13;
 
 function computeNavbarHeight() {
   const navbar = document.getElementById("navbar");
