@@ -3,16 +3,15 @@
 }
 
 .body-sitemap li {
-  underline-color: lime;
   width: fit-content;
   margin: 15px 0;
 }
 
 .body-sitemap ul li::before {
+  align-items: flex-start;
   content: "⌾";
   color: var(--venom);
   font-weight: bold;
-  display: inline-block;
   width: 1em;
   margin-left: -1em;
 }
@@ -28,10 +27,9 @@
 .body-sitemap ul,
 .body-sitemap li {
   list-style: none;
-  padding: revert;
 }
 
 .body-sitemap ul {
   width: fit-content;
-  margin: auto;
+  margin: 0 auto;
 }
