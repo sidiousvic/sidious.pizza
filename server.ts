@@ -7,11 +7,27 @@ const server = new Server({
   root: `${Deno.cwd()}/_site`,
 });
 
-server.use(expires());
-server.use(notFound({
-  root: `${Deno.cwd()}/_site`,
-  page404: "/404.html",
-}));
+const HOUR = 3600000;
+const DAY = HOUR * 24;
+const WEEK = DAY * 7;
+
+server.use(
+  expires({
+    defaultDuration: WEEK,
+    durations: {
+      "text/html": 0,
+      "application/json": 0,
+      "application/xml": 0,
+    },
+  })
+);
+
+server.use(
+  notFound({
+    root: `${Deno.cwd()}/_site`,
+    page404: "/404.html",
+  })
+);
 
 server.start();
 
