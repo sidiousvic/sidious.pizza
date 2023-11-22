@@ -1,5 +1,6 @@
 import Server from "lume/core/server.ts";
 import expires from "lume/middlewares/expires.ts";
+import cache_busting from "lume/middlewares/cache_busting.ts";
 import notFound from "lume/middlewares/not_found.ts";
 
 const server = new Server({
@@ -19,7 +20,8 @@ server.use(
       "application/json": 0,
       "application/xml": 0,
     },
-  })
+  }),
+  cache_busting()
 );
 
 server.use(
