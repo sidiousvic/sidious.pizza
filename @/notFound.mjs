@@ -16,7 +16,6 @@ import {
   Phantom,
   config,
   randomSpawn,
-  switchSprite,
 } from "/@/phantom.mjs";
 
 const SPRITE_DIMENSION = 200;
@@ -30,13 +29,13 @@ const { sprites, c } = config({
   FG_COLOR_HEX: "#00ff2a",
   CURSOR: true,
   START_SCREEN: false,
-  SPRITES: ["/@/notFound404.png"],
+  SPRITES: ["/@/pizza-slice.png"],
   AUDIOS: [{ url: "/@/death.wav", volume: 0.9 }],
 });
 
 const z = {
   notFound: Phantom(randomSpawn(SPRITE_DIMENSION))(SPRITE_DIMENSION)(
-    sprites.notFound404
+    sprites["pizza-slice"]
   )(2),
 };
 
@@ -45,6 +44,7 @@ requestAnimationFrame(() => {
     (u) => (
       moveWithVelocity(u.notFound),
       bounce(u.notFound)({ x: innerWidth, y: innerHeight }),
+      (c.style.filter = `invert(1) hue-rotate(-50deg)`),
       draw(c)({ ...u.notFound, h: 100, w: 200 })
     )
   );
