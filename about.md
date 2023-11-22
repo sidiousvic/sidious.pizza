@@ -96,7 +96,9 @@ When Nike says _"Just Do It"_, I says _"Just Do Sh\*t"_. When boredom strikes I 
 <figure>
   <picture>
 
-![Animated gif of a cartoon alien surfing](/@/surfing-with-the-alien.gif)
+<video autoplay muted>
+  <source src="/@/surfing-with-the-alien.mp4" type="video/mp4">
+</video>
 
   </picture>
   <figcaption>
@@ -113,7 +115,9 @@ I moved to Tokyo a few years ago and have had a hell of a time here. It's a grea
 <figure>
   <picture>
 
-![Animated gif of a skateboarder ollying over a laundry bottle on the street](/@/skating-tokyo.gif)
+<video autoplay muted>
+  <source src="/@/skating-tokyo.mp4" type="video/mp4">
+</video>
 
   </picture>
   <figcaption>
