@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   const ageElement = document.getElementById("age");
-  const UNIX_TIME_START_YEAR = 1970;
   const LEAP_DAYS_SINCE_1991_MS = 691_200_000;
   const vicsBirthday = new Date("September 24, 1991, 23:54:00 GMT-7");
   setInterval(() => {
