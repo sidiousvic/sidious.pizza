@@ -25,7 +25,7 @@ order: 2
 
 <div class="info">
   <picture class="vic-profile-pic">
-    <img alt="vic" width=250 src="/@/vic.png"/>
+    <img alt="vic" width=250 src="/@/vic.jpeg"/>
   </picture>
 
   <article>
