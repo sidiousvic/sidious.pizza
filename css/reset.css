@@ -267,7 +267,7 @@ figcaption {
 }
 
 video {
-  width: -webkit-fill-available;
+  width: 600px;
 }
 
 img {
