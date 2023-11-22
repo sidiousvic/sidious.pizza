@@ -5,6 +5,8 @@ title: WEBLOG
 order: 0
 ---
 
+<link preload rel="stylesheet" href="/css/post-list.css">
+
 <h1 class="page-title">WEBLOG</h1>
 
 <section class="weblog-content">
@@ -12,7 +14,6 @@ order: 0
     {%if postslist.length %}
       {% include "templates/postslist.njk" %}
     {% endif %}
-  {% set postslist = search.pages("type=posts", "date=desc", 4) %}
+  {% set postslist = search.pages("type=posts", "date=desc", 99) %}
     {% include "templates/postslist.njk" %}
-  <p>See all posts <a href="/weblog/archive">at the archive.</a></p>
 </section>
