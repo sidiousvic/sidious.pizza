@@ -1,10 +1,13 @@
-const whenToLift = document.querySelector(".post")
-  ? "DOMContentLoaded"
-  : "load";
-
-console.log(`whenToLift: ${whenToLift}`);
-
-addEventListener(whenToLift, () => {
+function liftSlowly() {
   const curtainElement = document.getElementById("curtain");
-  curtainElement.style.opacity = `0`;
-});
+  setTimeout(() => (curtainElement.style.opacity = `0`), 0);
+}
+
+function liftOnLoad() {
+  const curtainElement = document.getElementById("curtain");
+  addEventListener("load", () => {
+    curtainElement.style.opacity = `0`;
+  });
+}
+
+document.querySelector(".post") ? liftSlowly() : liftOnLoad();
