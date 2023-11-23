@@ -30,19 +30,20 @@ order: 2
 
   <article>
 
-|         |                                                                                                |
-| ------- | ---------------------------------------------------------------------------------------------- |
-| _Name_  | Vic _(Sidious)_                                                                                |
-| _Work_  | Programmer, Axewielder, Generic Dark Lord                                                      |
-| _Lives_ | [澁谷東京 <em>(Shibuya, Tokyo)</em>](https://goo.gl/maps/1YfuGi5HYgRpBjN7A)                    |
-| _Born_  | [Chihuahua, Mexico](https://goo.gl/maps/Ja9LxnZ6kosdRa586)                                     |
-| _Age_   | <span id="age">?</span>                                                                        |
-| _Vices_ | Pizza, booze, [axe](https://youtu.be/en7EKL1pX5w) and [burritos](https://youtu.be/YZRtE9I5w7k) |
+|           |                                                                                                 |
+| --------- | ----------------------------------------------------------------------------------------------- |
+| _Name_    | Vic _(Sidious)_                                                                                 |
+| _Work_    | Programmer, Axewielder, Generic Dark Lord                                                       |
+| _Lives_   | [澁谷東京 <em>(Shibuya, Tokyo)</em>](https://goo.gl/maps/1YfuGi5HYgRpBjN7A)                     |
+| _Born_    | [Chihuahua, Mexico](https://goo.gl/maps/Ja9LxnZ6kosdRa586)                                      |
+| _Age_     | <span id="age">?</span>                                                                         |
+| _Vices_   | Pizza, booze, [axe](https://youtu.be/en7EKL1pX5w) and [burritos](https://youtu.be/YZRtE9I5w7k)  |
+| _Reading_ | [I Am A Strange Loop, Douglas R. Hofstadter](https://en.wikipedia.org/wiki/I_Am_a_Strange_Loop) |
 
   </article>
 </div>
 
-Hola amigxs, my name is Vic. Welcome to my cyber space. Here's where I [spill my brains](/weblog), share [weird music](/music) and computer programs (like [_Phantom Pizza_](/), the game at the home page). Here's a little more about me.
+Hola amigxs, my name is Vic. Welcome to my cyber space. Here's where I [spill my brains](/weblog), share [weird music](/swims) and computer programs (like [_Phantom Pizza_](/phantompizza), the game at the home page). Here's a little more about me.
 
 # Born and raised in the desert
 
@@ -59,7 +60,7 @@ Hola amigxs, my name is Vic. Welcome to my cyber space. Here's where I [spill my
   </figcaption>
 </figure>
 
-I was born in the state of Chihuahua, in the north of Mexico. It's a very dry region where water and plants are scarce. It's the [birthplace of the burrito](https://en.wikipedia.org/wiki/Burrito#:~:text=Burritos%20are%20a%20traditional%20food%20of%20Ciudad%20Ju%C3%A1rez%2C%20a%20city%20bordering%20El%20Paso%2C%20Texas%2C%20in%20the%20northern%20Mexican%20state%20of%20Chihuahua%2C%20where%20people%20buy%20them%20at%20restaurants%20and%20roadside%20stands.%20Northern%20Mexican%20border%20towns%20like%20Villa%20Ahumada%20have%20an%20established%20reputation%20for%20serving%20burritos.), and one of the areas of highest scorpionism on the planet.
+I was born in Chihuahua, in the north of Mexico. It's a very dry region where water and plants are scarce. It's the [birthplace of the burrito](https://en.wikipedia.org/wiki/Burrito#:~:text=Burritos%20are%20a%20traditional%20food%20of%20Ciudad%20Ju%C3%A1rez%2C%20a%20city%20bordering%20El%20Paso%2C%20Texas%2C%20in%20the%20northern%20Mexican%20state%20of%20Chihuahua%2C%20where%20people%20buy%20them%20at%20restaurants%20and%20roadside%20stands.%20Northern%20Mexican%20border%20towns%20like%20Villa%20Ahumada%20have%20an%20established%20reputation%20for%20serving%20burritos.), and one of the areas of highest scorpionism on the planet.
 
 <figure>
   <picture>
@@ -80,18 +81,22 @@ I was a bit of a goblin _(<img src="/@/goblin.png" width=40 style="display: inli
 
 <figure>
   <picture>
-  
-![MTV logo](/@/mtvlogo.gif)
+
+<video autoplay muted>
+  <source src="/@/angus.mp4" type="video/mp4">
+</video>
 
   </picture>
   <figcaption>
-    <em>"Because MTV brings out the bitch in you"</em>
+
+["Because MTV brings out the bitch in you"](https://zeroskateboards.com/pages/jamie-thomas)
+
   </figcaption>
 </figure>
 
 # <img width=40 style="transform: translateY(10px)" src="/@/swoosh.png" /> JUST DO SH\*T
 
-When Nike says _"Just Do It"_, I says _"Just Do Sh\*t"_. When boredom strikes I [program](https://github.com/sidiousvic), write [haiku](/haiku), make [doomer music](/music) or even silly web cartoons to pass the time.
+I love Nike's slogan, _"Just Do Sh\*t"_. When boredom strikes I [program](https://github.com/sidiousvic), write [haiku](/kaminari-no-ura), make [doomy music](/swims) or even silly web cartoons to pass the time.
 
 <figure>
   <picture>
@@ -110,7 +115,9 @@ When Nike says _"Just Do It"_, I says _"Just Do Sh\*t"_. When boredom strikes I 
 
 # Tokyo Boy
 
-I moved to Tokyo a few years ago and have had a hell of a time here. It's a great place to break the law in sinless ways and still feel like a maverick.
+Tokyo adopted me a few years ago. It's f\*cking great. You can break the law in sinless ways and still feel like a maverick.
+
+_(Not that I ever do)_
 
 <figure>
   <picture>
@@ -125,7 +132,9 @@ I moved to Tokyo a few years ago and have had a hell of a time here. It's a grea
   </figcaption>
 </figure>
 
-Cheap booze by the river, cherry blossoms in the dark, futuristic streets full of old ghosts, the most ordinary quietnesses and the most bollocks weirdo shit you've never heard of.
+Cheap booze by the convenience store, cherry blossoms in the dark, cyberkids and old ghosts, the most ordinary quietnesses and the most bollocks weirdo shit all in the same place.
+
+I may leave someday, but I will always call it home.
 
 <div style="position: relative; margin: 3rem -10rem; display: grid; gap: 3rem; grid-template-columns: 1fr 1fr; justify-content: center;">
 <figure>
@@ -160,5 +169,9 @@ Cheap booze by the river, cherry blossoms in the dark, futuristic streets full o
   </picture> 
 </figure>
 </div>
+
+# "Always do what you said you'd do when you were drunk."
+
+Methinks if you said you'd do it, you should do it. If you are doing it, you should do it _well_. It's even better if you dress for the occasion.
 
 Thank you for reading. _どうもどうも！_ I'll see you around [sidious.pizza](/). Welcome and I hope you have a great time here.
