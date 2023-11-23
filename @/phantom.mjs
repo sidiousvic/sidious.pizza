@@ -440,6 +440,7 @@ export const config = ({
   #start-screen-title {
     font-family: ${START_SCREEN_TITLE_FONT}, monospace; 
     font-size: 40px;
+    font-weight: 100;
   }
 
   #start-screen-text {
