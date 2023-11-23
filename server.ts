@@ -1,6 +1,4 @@
 import Server from "lume/core/server.ts";
-import expires from "lume/middlewares/expires.ts";
-import cache_busting from "lume/middlewares/cache_busting.ts";
 import notFound from "lume/middlewares/not_found.ts";
 
 const server = new Server({
@@ -8,21 +6,7 @@ const server = new Server({
   root: `${Deno.cwd()}/_site`,
 });
 
-const HOUR = 3600000;
-const DAY = HOUR * 24;
-const WEEK = DAY * 7;
-
-server.use(
-  expires({
-    defaultDuration: WEEK,
-    durations: {
-      "text/html": 0,
-      "application/json": 0,
-      "application/xml": 0,
-    },
-  }),
-  cache_busting()
-);
+server.use();
 
 server.use(
   notFound({
