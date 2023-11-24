@@ -13,7 +13,6 @@ order: 1
 - [Home](/)
   - [Weblog](/weblog)
   - [Projects](/projects)
-    - [Swims](/swims)
-    - [雷の裏](/kaminari-no-ura)
   - [Vic](/about)
+  - [Meta (Under construction)](/meta)
   - [Sitemap](/sitemap)

@@ -18,7 +18,7 @@ import {
   randomSpawn,
 } from "/@/phantom.mjs";
 
-const SPRITE_DIMENSION = 200;
+const SPRITE_DIMENSION = 100;
 (Math.pow(SPRITE_DIMENSION, 2) / (innerHeight * innerWidth)) * 1000;
 
 const { sprites, c } = config({
