@@ -14,5 +14,5 @@ order: 1
   - [Weblog](/weblog)
   - [Projects](/projects)
   - [Vic](/about)
-  - [Meta (Under construction)](/meta)
-  - [Sitemap](/sitemap)
+- [Meta](/meta)
+- [Sitemap](/sitemap)
