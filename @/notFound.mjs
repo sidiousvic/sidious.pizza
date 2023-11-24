@@ -19,7 +19,6 @@ import {
 } from "/@/phantom.mjs";
 
 const SPRITE_DIMENSION = 100;
-(Math.pow(SPRITE_DIMENSION, 2) / (innerHeight * innerWidth)) * 1000;
 
 const { sprites, c } = config({
   GAME_TITLE: "SIDIOUS.PIZZA",
@@ -29,13 +28,13 @@ const { sprites, c } = config({
   FG_COLOR_HEX: "#00ff2a",
   CURSOR: true,
   START_SCREEN: false,
-  SPRITES: ["/@/pizza-slice.png"],
+  SPRITES: ["/@/notFound404.png"],
   AUDIOS: [{ url: "/@/death.wav", volume: 0.9 }],
 });
 
 const z = {
   notFound: Phantom(randomSpawn(SPRITE_DIMENSION))(SPRITE_DIMENSION)(
-    sprites["pizza-slice"]
+    sprites["notFound404"]
   )(2),
 };
 
@@ -44,7 +43,7 @@ requestAnimationFrame(() => {
     (u) => (
       moveWithVelocity(u.notFound),
       bounce(u.notFound)({ x: innerWidth, y: innerHeight }),
-      (c.style.filter = `invert(1) hue-rotate(-50deg)`),
+      (c.style.filter = `hue-rotate(0deg)`),
       draw(c)({ ...u.notFound, h: 100, w: 200 })
     )
   );
