@@ -82,7 +82,7 @@ I was a bit of a goblin _(<img src="/@/goblin.png" width=40 style="display: inli
 <figure>
   <picture>
 
-<video autoplay muted>
+<video autoplay muted loop>
   <source src="/@/angus.mp4" type="video/mp4">
 </video>
 
@@ -101,7 +101,7 @@ I love Nike's slogan, _"Just Do Sh\*t"_. When boredom strikes I [program](https:
 <figure>
   <picture>
 
-<video autoplay muted>
+<video autoplay muted loop>
   <source src="/@/surfing-with-the-alien.mp4" type="video/mp4">
 </video>
 
@@ -122,7 +122,7 @@ _(Not that I ever do)_
 <figure>
   <picture>
 
-<video autoplay muted>
+<video autoplay muted loop>
   <source src="/@/vic-skating-tokyo.mp4" type="video/mp4">
 </video>
 
