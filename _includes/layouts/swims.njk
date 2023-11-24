@@ -13,7 +13,7 @@ layout: layouts/base.njk
   <picture id="music-cover" class="no-border">
     <img src={{ gif }}>
   </picture>
-  <h1>{{ title }}</h1>
+  <h1>{{ title | upper }}</h1>
   <audio src={{ audio }} preload="metadata" loop></audio>
   <div id="music-player-playback">
     <span id="current-time" class="time">0:00</span>

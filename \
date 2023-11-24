@@ -3,7 +3,7 @@
   <li class="postList-post">
     <a href="{{ post.data.url }}" class="postList-title"{% if entry.data.url == url %} aria-current="page"{% endif %}>
       {% if post.data.title %}
-        {{ post.data.title }} {% if post.data.pinned %} <sup class="tag border">🔥 HOT</sup> {% endif %}
+        {{ post.data.title | upper }} {% if post.data.pinned %} <sup class="tag border">🔥 HOT</sup> {% endif %}
       {% else %}
         <code>{{ post.url }}</code>
       {% endif %}

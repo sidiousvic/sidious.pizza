@@ -24,7 +24,7 @@
             {% if entry.data.url == url %} 
             <div class="current-page-indicator-bullet">⦿</div> 
             {% endif %}
-            {{ entry.data.title }}
+            {{ entry.data.title | upper }}
           </a>
         </li>
       {%- endfor %}

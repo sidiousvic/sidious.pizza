@@ -4,7 +4,7 @@
   <p class='postList-post-top'>
     <a href="{{ post.data.url }}" class="postList-title"{% if entry.data.url == url %} aria-current="page"{% endif %}>
       {% if post.data.title %}
-        {{ post.data.title }} 
+        {{ post.data.title | upper }} 
       {% else %}
         <code>{{ post.url }}</code>
       {% endif %}
