@@ -442,6 +442,11 @@ export const config = ({
     font-size: 40px;
     font-weight: 100;
   }
+  @media (max-width: 600px) {
+    #start-screen-title {
+      font-size: 30px;
+    }
+  }
 
   #start-screen-text {
     font-family: ${START_SCREEN_TEXT_FONT}, monospace; 
