@@ -20,34 +20,7 @@ bodyClass: body-post
     </time>
     {% endif %}
   </div>
-
-    {% if beta %}
-      <em>Beware! This entry is in beta, so you're reading an unfinished version.</em>
-      <br></br>
-    {% endif %}
-
-
   <div class="post-body">
     {{ content | safe }}
   </div>
 </article>
-
-<hr>
-
-<nav class="post-navigation">
-  <ul>
-    {%- set previousPost = search.previousPage(url, "type=posts") %}
-    {%- if previousPost %}
-    <li>
-      ← Previous: <a href="{{ previousPost.data.url }}" rel="prev">{{ previousPost.data.title }}</a>
-    </li>
-    {% endif %}
-
-    {%- set nextPost = search.nextPage(url, "type=posts") %}
-    {%- if nextPost %}
-    <li>
-      <strong>Next: <a href="{{ nextPost.data.url }}" rel="next">{{ nextPost.data.title }}</a> →</strong>
-    </li>
-    {% endif %}
-  </ul>
-</nav>
