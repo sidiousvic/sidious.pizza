@@ -8,7 +8,7 @@
  *
  */
 const START_ANIMATION_INTERVAL = 2000;
-const ARROW_SPEED = 20;
+const ARROW_SPEED = 60;
 
 /**
  * The state of the game
@@ -414,8 +414,6 @@ export const config = ({
     left: 0; 
     cursor: ${CURSOR ? "default" : "none"}; 
   }
-
-
   
   #start-screen { 
     display: ${START_SCREEN ? "flex" : "none"};
@@ -442,6 +440,7 @@ export const config = ({
     font-size: 40px;
     font-weight: 100;
   }
+
   @media (max-width: 600px) {
     #start-screen-title {
       font-size: 30px;
