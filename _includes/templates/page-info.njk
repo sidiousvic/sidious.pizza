@@ -13,21 +13,12 @@
       "{{ page.data.title | upper }}"
     </h1>
     <p class="page-info-body">
-      {{ page.data.info | safe }} <span class="vic-signature">—VlC<span>
+      {{ page.data.info | safe }} <span hidden class="vic-signature"><span>
     </p>
   </div>
 </div>
 
-<script>
-  const pageInfoButton = document.querySelector(".page-info-button");
-  const pageInfoOverlay = document.querySelector(".page-info-overlay");
-  pageInfoOverlay.addEventListener("click", (e) => {
-    pageInfoOverlay.style.display = "none";
-  })
- pageInfoButton.addEventListener("click", (e) => {
-    pageInfoOverlay.style.display = "flex";
-  })
-</script>
+<script type="module" src="/@/pageInfo.mjs"></script>
 
 
 

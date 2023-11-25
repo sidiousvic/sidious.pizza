@@ -71,6 +71,7 @@
   display: none;
   justify-content: center;
   align-items: center;
+  z-index: 100;
 }
 
 .page-info-title {
@@ -119,10 +120,9 @@
 
 .vic-signature {
   display: block;
-  font-family: "Reenie Beanie", cursive;
+  font-family: "Vastantonius", cursive;
   color: var(--venom);
-  font-size: 3rem;
+  font-size: 2rem;
   float: inline-end;
   margin-block: 10px;
-  transform: rotate(7deg);
 }

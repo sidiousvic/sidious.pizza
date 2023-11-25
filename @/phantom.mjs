@@ -455,13 +455,13 @@ export const config = ({
     white-space: nowrap;
     font-family: ${SCORE_FONT}, monospace; 
     bottom: 50%; 
-    mix-blend-mode: difference; 
     left: 50%; 
+    mix-blend-mode: difference;
     transform: translate(-50%, 50%); 
     color: var(--foreground-color); 
   }
   
-  img { 
+  canvas img { 
     mix-blend-mode: exclusion;
     image-rendering: pixelated; 
   }
