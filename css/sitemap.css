@@ -9,7 +9,7 @@
 
 .body-sitemap ul li::before {
   align-items: flex-start;
-  content: "⌾";
+  content: "⎗";
   color: var(--venom);
   font-weight: bold;
   width: 1em;
