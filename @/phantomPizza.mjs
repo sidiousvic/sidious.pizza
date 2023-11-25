@@ -26,9 +26,6 @@ import {
 
 console.log(navigator.userAgent);
 
-if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent))
-  throw new Error("Use a bigger screen to play the game... 🍕");
-
 const ENEMY_RANDOM_SPAWN_SPEEDS = [-5, -4, -3 - 2, 2, 3, 4, 5];
 const ZERO_SPEED = { x: 0, y: 0 };
 const SPRITE_DIMENSION = 50;
@@ -50,7 +47,7 @@ const GAME_PROMPTS = [
 
 const { sprites, score, sound, mouse, c } = config({
   GAME_TITLE: "SIDIOUS.PIZZA",
-  DISPLAY_SCORE: true,
+  DISPLAY_SCORE: !/iPhone|iPad|iPod|Android/i.test(navigator.userAgent),
   START_SCREEN: true,
   START_SCREEN_TITLE_FONT: "Vastantonius, DotGothic16, monospace",
   START_SCREEN_TEXT_FONT: "DotGothic16, monospace",
