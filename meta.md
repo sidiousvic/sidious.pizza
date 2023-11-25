@@ -14,15 +14,28 @@ order: 2
   flex-direction: row;
   flex-wrap: wrap;
 }
+
+th {
+    font-family: var(--font-family-delight);
+    color: var(--venom);
+    text-transform: uppercase;
+}
 </style>
 
 <div class="info">
 
-|          |                                                       |
-| -------- | ----------------------------------------------------- |
-| _Engine_ | Deno                                                  |
-| _Server_ | Lume                                                  |
-| _UI_     | HTML/CSS                                              |
-| _Source_ | [Github](https://github.com/sidiousvic/sidious.pizza) |
+| Specifications |                                                       |
+| -------------- | ----------------------------------------------------- |
+| _Engine_       | [Deno](https://deno.com/)                             |
+| _Source_       | [Github](https://github.com/sidiousvic/sidious.pizza) |
+
+</div>
+
+<div style="display: none" class="info">
+
+| Design Standards                                 |
+| ------------------------------------------------ |
+| [Close to the metal.](/posts/close-to-the-metal) |
+| [Function is design.](/posts/close-to-the-metal) |
 
 </div>
