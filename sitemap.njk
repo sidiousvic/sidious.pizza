@@ -1,0 +1,29 @@
+---
+layout: layouts/base.njk
+bodyClass: body-sitemap
+visible: true
+title: SITEMAP
+order: 1
+---
+
+<h1 class="page-title">SITEMAP</h1>
+<link preload rel="stylesheet" href="css/sitemap.css">
+
+
+{% set projects = search.pages("projects") %}
+
+<ul>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/weblog">Weblog</a></li>
+<li><a href="/projects">Projects</a>
+  <ul>
+  {% for project in projects %}
+  <li><a href="{{ project.data.url }}">{{ project.data.title }}</a></li>
+  {% endfor %}
+</ul>
+</li>
+<li><a href="/sitemap">Sitemap</a></li>
+<li><a href="/about">Vic</a></li>
+<li><a href="/meta">Meta</a></li>
+</ul>
