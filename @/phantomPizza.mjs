@@ -24,7 +24,32 @@ import {
   randomSpawn,
 } from "/@/phantom.mjs";
 
-console.log(navigator.userAgent);
+if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+  console.log(`Using ${navigator.userAgent}`);
+  const phantomPizzaGifUrl = "/@/phantom-pizza-game-hd.gif";
+  document.body.style.backgroundImage = `url(${phantomPizzaGifUrl})`;
+  document.body.style.backgroundSize = "cover";
+  document.body.style.backgroundPosition = "center";
+  const bottomMessage = document.createElement("div");
+  bottomMessage.style.position = "fixed";
+  bottomMessage.style.bottom = "0";
+  bottomMessage.style.left = "0";
+  bottomMessage.style.width = "100%";
+  bottomMessage.style.height = "47px";
+  bottomMessage.style.borderTop = "1px dotted var(--black)";
+  bottomMessage.style.backgroundColor = "var(--venom)";
+  bottomMessage.style.color = "black";
+  bottomMessage.style.fontSize = "1rem";
+  bottomMessage.style.textAlign = "center";
+  bottomMessage.style.lineHeight = "47px";
+  bottomMessage.style.fontFamily = "var(--font-family-post-body)";
+  bottomMessage.style.fontWeight = "bold";
+  bottomMessage.style.pointerEvents = "none";
+  bottomMessage.innerHTML = '"Phantom Pizza" is not available on mobile.';
+  document.querySelector("#footer").style.display = "none";
+  document.body.appendChild(bottomMessage);
+  throw new Error("Phantom pizza is not available on mobile.");
+}
 
 const ENEMY_RANDOM_SPAWN_SPEEDS = [-5, -4, -3 - 2, 2, 3, 4, 5];
 const ZERO_SPEED = { x: 0, y: 0 };
@@ -47,7 +72,7 @@ const GAME_PROMPTS = [
 
 const { sprites, score, sound, mouse, c } = config({
   GAME_TITLE: "SIDIOUS.PIZZA",
-  DISPLAY_SCORE: !/iPhone|iPad|iPod|Android/i.test(navigator.userAgent),
+  DISPLAY_SCORE: true,
   START_SCREEN: true,
   START_SCREEN_TITLE_FONT: "Vastantonius, DotGothic16, monospace",
   START_SCREEN_TEXT_FONT: "DotGothic16, monospace",

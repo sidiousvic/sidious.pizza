@@ -6,27 +6,21 @@ date: 2023
 gif: /@/phantom-pizza-game.gif
 title: PHANTOM PIZZA
 info: |
-  <i>Phantom Pizza</i> was made using a programming style for game mechanics that proved so useful, few months ago I extracted into an independent engine called <em><a href="/@/phantom.mjs">Phantom</a></em>. 
+  <i>Phantom Pizza</i> is a game about evading evil, ghostly pizzas.
   <br>
   <br>
   The gameplay is so addictive that every time I work on it, I end up spending more time playing than programming. I don't remember how I came up with it!
   <br>
   <br>
-  The music is based on a bassline that reminds me of the old Batman TV shows. <em>Nanananana...</em>
+  The music is based on a bassline that reminds me of the old Batman TV shows. <em>Nanananana...</em> <em>PIZZA!</em>
 tags:
   - projects
 ---
 
 <script defer type="module" src="/@/phantomPizza.mjs"></script>
-{% include "templates/page-info.njk" %}
+<script defer type="module" src="/@/hideNavbar.mjs"></script>
 
-<script>
-addEventListener("load", () => {
-   document.querySelector('#start-screen-title').innerText = 'PHANTOM PIZZA';
-   document.querySelector('#start-screen-text').style.display = 'none';
-   document.querySelector('.navbar-links').style.display = 'none';
-});
-</script>
+{% include "templates/page-info.njk" %}
 
 <link rel="stylesheet" href="/css/post.css">
 
