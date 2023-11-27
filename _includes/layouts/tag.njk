@@ -2,13 +2,11 @@
 layout: layouts/base.njk
 bodyClass: body-tag
 ---
-<div data-pagefind-body>
-  <h1>{{ tag.toUpperCase() }}</h1>
+<link preload rel="stylesheet" href="/css/post-list.css">
+<link preload rel="stylesheet" href="/css/search.css">
+<h1 class="page-title">{{ tag | upper }}</h1>
 
-  {% set postslist = search.pages("'" + tag + "'") %}
-  {% include "templates/postslist.njk" %}
+{% set postslist = search.pages("'" + tag + "'") %}
+{% include "templates/postslist.njk" %}
 
-  <hr>
 
-  <p>See <a href="/tags/">all tags</a>.</p>
-</div>
