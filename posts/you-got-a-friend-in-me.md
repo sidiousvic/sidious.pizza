@@ -8,8 +8,6 @@ date: 1995-03-26
 
 </script>
 
-I have a younger brother. He's <div id="danys-age">3 years younger than me.</div>
-
 <figure>
   <picture>
 
@@ -18,11 +16,11 @@ I have a younger brother. He's <div id="danys-age">3 years younger than me.</div
   </picture>
   <figcaption>
 
-_You and I have had many misadventures._
+_"You and I have had many misadventures."_
 
   </figcaption>
 </figure>
 
-To my little brother Dany, wherever you are right now, and whatever little evil plan you're cooking up now... remember that _I fucking love you cabrón_.
+To my little brother Dany, wherever you are right now, and whatever little evil plan you're cooking up now... remember that _I fucking love you cabrón!_
 <hidden>
 </hidden>
