@@ -1,9 +1,19 @@
 ---
-layout: layouts/home.njk
+layout: layouts/base.njk
 visible: false
 title: HOME 
 order: 0
 ---
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+	if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+		const main = document.querySelector('#main');	
+		main.innerHTML = '';
+		window.location.href = '/sitemap';
+	}
+});
+</script>
 
 <script defer type="module" src="/@/phantomPizza.mjs"></script>
 

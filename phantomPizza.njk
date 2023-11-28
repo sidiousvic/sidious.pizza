@@ -1,5 +1,5 @@
 ---
-layout: layouts/home.njk
+layout: layouts/base.njk
 visible: false
 order: 3
 date: 2023
@@ -17,16 +17,16 @@ tags:
   - projects
 ---
 
+
 <script defer type="module" src="/@/phantomPizza.mjs"></script>
 <script defer type="module" src="/@/hideNavbar.mjs"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-if (!/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-   const text = document.querySelector('#start-screen-text');
-   const title = document.querySelector('#start-screen-title');
-   text.style.display = 'none';
-   title.innerHTML = 'PHANTOM PIZZA';
-}
+   if (!/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      const title = document.querySelector('#start-screen-title')
+         .innerHTML = 'PHANTOM PIZZA';
+      document.querySelector('#start-screen-text').style.display = 'none';
+   }
 });
 </script>
 

@@ -25,39 +25,22 @@ import {
 } from "/@/phantom.mjs";
 
 if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-  const phantomPizzaGifUrl = "/@/phantom-pizza-game-hd.gif";
-  const bottomMessage = document.createElement("div");
-  bottomMessage.id = "mobile-message";
-  bottomMessage.innerHTML = '"Phantom Pizza" is not available on mobile.';
+  const main = document.getElementById("main");
   const styles = document.createElement("style");
   styles.textContent = `
-    body {
-      background-image: url(${phantomPizzaGifUrl});
-      background-size: cover;
-      background-position: center;
-    }
-    #mobile-message {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 47px;
-      border-top: 1px dotted var(--black);
-      background-color: var(--venom);
-      color: black;
+    #main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      line-height: 47px;
-      font-family: var(--font-family-post-body);
-      font-weight: normal;
-      font-size: .9rem;
-      pointer-events: none;
+      font-size: 1.4rem;
     }
-    footer {
-      display: none;
+    strong {
+      font-size: 1.9rem;
     }
-`;
-  document.body.appendChild(bottomMessage);
+  `;
   document.head.appendChild(styles);
+  main.innerHTML = `<strong>"PHANTOM PIZZA"</strong><br>is not available on mobile.<br><br>Try it on a desktop browser.${main.innerHTML} `;
   throw new Error("Phantom pizza is not available on mobile.");
 }
 
