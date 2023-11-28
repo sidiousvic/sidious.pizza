@@ -6,7 +6,7 @@ date: 2023
 gif: /@/phantom-pizza-game.gif
 title: PHANTOM PIZZA
 info: |
-  <i>Phantom Pizza</i> is a game about evading evil, ghostly pizzas.
+  <em>"Phantom Pizza"</em> is a game about evading evil, ghostly pizzas.
   <br>
   <br>
   The gameplay is so addictive that every time I work on it, I end up spending more time playing than programming. I don't remember how I came up with it!
@@ -19,6 +19,16 @@ tags:
 
 <script defer type="module" src="/@/phantomPizza.mjs"></script>
 <script defer type="module" src="/@/hideNavbar.mjs"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+if (!/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+   const text = document.querySelector('#start-screen-text');
+   const title = document.querySelector('#start-screen-title');
+   text.style.display = 'none';
+   title.innerHTML = 'PHANTOM PIZZA';
+}
+});
+</script>
 
 {% include "templates/page-info.njk" %}
 

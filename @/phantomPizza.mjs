@@ -25,31 +25,60 @@ import {
 } from "/@/phantom.mjs";
 
 if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-  console.log(`Using ${navigator.userAgent}`);
   const phantomPizzaGifUrl = "/@/phantom-pizza-game-hd.gif";
-  document.body.style.backgroundImage = `url(${phantomPizzaGifUrl})`;
-  document.body.style.backgroundSize = "cover";
-  document.body.style.backgroundPosition = "center";
   const bottomMessage = document.createElement("div");
-  bottomMessage.style.position = "fixed";
-  bottomMessage.style.bottom = "0";
-  bottomMessage.style.left = "0";
-  bottomMessage.style.width = "100%";
-  bottomMessage.style.height = "47px";
-  bottomMessage.style.borderTop = "1px dotted var(--black)";
-  bottomMessage.style.backgroundColor = "var(--venom)";
-  bottomMessage.style.color = "black";
-  bottomMessage.style.fontSize = "1rem";
-  bottomMessage.style.textAlign = "center";
-  bottomMessage.style.lineHeight = "47px";
-  bottomMessage.style.fontFamily = "var(--font-family-post-body)";
-  bottomMessage.style.fontWeight = "bold";
-  bottomMessage.style.pointerEvents = "none";
+  bottomMessage.id = "mobile-message";
   bottomMessage.innerHTML = '"Phantom Pizza" is not available on mobile.';
-  document.querySelector("#footer").style.display = "none";
+  const styles = document.createElement("style");
+  styles.textContent = `
+    body {
+      background-image: url(${phantomPizzaGifUrl});
+      background-size: cover;
+      background-position: center;
+    }
+    #mobile-message {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 47px;
+      border-top: 1px dotted var(--black);
+      background-color: var(--venom);
+      color: black;
+      text-align: center;
+      line-height: 47px;
+      font-family: var(--font-family-post-body);
+      font-weight: normal;
+      font-size: .9rem;
+      pointer-events: none;
+    }
+    footer {
+      display: none;
+    }
+`;
   document.body.appendChild(bottomMessage);
+  document.head.appendChild(styles);
   throw new Error("Phantom pizza is not available on mobile.");
 }
+
+const styles = document.createElement("style");
+styles.textContent = `
+  #score { 
+    animation: shake .5s infinite;
+  }
+  @keyframes shake {
+      0%, 100% {
+      transform: translate(calc(-50%), 50%);
+    }
+    10%, 30%, 50%, 70%, 90% {
+      transform: translate(calc(-50% - 2px), 50%);
+    }
+    20%, 40%, 60%, 80% {
+      transform: translate(-50%, calc(50% + 2px));
+    }
+  }
+`;
+document.head.appendChild(styles);
 
 const ENEMY_RANDOM_SPAWN_SPEEDS = [-5, -4, -3 - 2, 2, 3, 4, 5];
 const ZERO_SPEED = { x: 0, y: 0 };
@@ -89,25 +118,6 @@ const { sprites, score, sound, mouse, c } = config({
   ],
 });
 
-requestAnimationFrame(() => {
-  const animationStyle = document.createElement("style");
-  animationStyle.textContent = `
-    @keyframes shake {
-0%, 100% {
-    transform: translate(calc(-50%), 50%);
-}
-10%, 30%, 50%, 70%, 90% {
-    transform: translate(calc(-50% - 2px), 50%);
-}
-20%, 40%, 60%, 80% {
-    transform: translate(-50%, calc(50% + 2px));
-}
-}
-  `;
-  document.head.appendChild(animationStyle);
-  document.getElementById("score").style.animation = "shake .5s infinite";
-});
-
 const z = {
   player: Phantom(mouse)(SPRITE_DIMENSION)(sprites.player)(ZERO_SPEED),
   swoosh: Phantom(randomSpawn(SPRITE_DIMENSION))(SPRITE_DIMENSION)(
@@ -138,7 +148,8 @@ requestAnimationFrame(() => {
           !(~~u.score.value % 3)
             ? ((document.getElementById("score").style.animation =
                 "shake .5s infinite"),
-              (score.sprite.innerHTML = randomElement(GAME_PROMPTS)))
+              (score.sprite.innerHTML =
+                randomElement(GAME_PROMPTS).toUpperCase()))
             : (document.getElementById("score").style.animation = "none"),
           respawn(u.swoosh),
           u.sound.swoosh.play(),
