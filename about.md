@@ -8,16 +8,20 @@ order: 2
 ---
 
 <style>
+img {
+    max-width: 600px;
+}
+
 .info {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .vic-profile-pic {
-  margin: 1vw;
+    margin: 1vw;
 }
 </style>
 
@@ -39,11 +43,12 @@ order: 2
 | _Age_     | <span id="age">?</span>                                                                         |
 | _Vices_   | Pizza, booze, [axe](https://youtu.be/en7EKL1pX5w) and [burritos](https://youtu.be/YZRtE9I5w7k)  |
 | _Reading_ | [I Am A Strange Loop, Douglas R. Hofstadter](https://en.wikipedia.org/wiki/I_Am_a_Strange_Loop) |
+| _Email_   | _vic‎@‎sidious.pizza_                                                                           |
 
   </article>
 </div>
 
-Hola amigxs, my name is Vic. Welcome to my cyber space. Here's where I [spill my brains](/weblog), share [weird music](/swims) and computer programs (like [_Phantom Pizza_](/phantompizza), the game at the home page). Here's a little more about me.
+Hola amigxs, my name is Vic. Welcome to my cyber space. Here's where I [spill my brains](/weblog), share [weird music](/swims) and computer programs (like [_Phantom Pizza_](/phantompizza), the game at the home page) and even [haiku](/kaminari-no-ura). Don't forget to visit the [sitemap](/sitemap) to keep exploring. Here's a little more about me.
 
 # Born and raised in the desert
 
@@ -94,9 +99,11 @@ I was a bit of a goblin _(<img src="/@/goblin.png" width=40 style="display: inli
   </figcaption>
 </figure>
 
+Even tough I behave like an adult now, I think it's important to always keep a little of that youthful dumbfuckery afloat to add a spice to life.
+
 # <img width=40 style="transform: translateY(10px)" src="/@/swoosh.png" /> JUST DO SH\*T
 
-I love Nike's slogan, _"Just Do Sh\*t"_. When boredom strikes I [program](https://github.com/sidiousvic), write [haiku](/kaminari-no-ura), make [doomy music](/swims) or even silly web cartoons to pass the time.
+I love Nike's slogan, _"Just Do Sh\*t"_. When boredom strikes I [program](https://github.com/sidiousvic), write [haiku](/kaminari-no-ura), make [doomy music](/swims) or even silly web cartoons to contribute to the net of human creation.
 
 <figure>
   <picture>
@@ -113,11 +120,25 @@ I love Nike's slogan, _"Just Do Sh\*t"_. When boredom strikes I [program](https:
   </figcaption>
 </figure>
 
+# "Hello world!"
+
+I loved the old web, where websites were simpler and wackier.
+
+<figure>
+  <picture>
+
+![](https://storage.googleapis.com/blog-images-backup/1*tY3o3UFtBaMQ103en48qxA.png)
+
+  </picture>
+
+<figcaption>
+I hope this website makes Danny proud.
+</figcaption>
+</figure>
+
 # Tokyo Boy
 
-Tokyo adopted me a few years ago. It's f\*cking great. You can break the law in sinless ways and still feel like a maverick.
-
-_(Not that I ever do)_
+Tokyo adopted me a few years ago and I love living here. You can break the law in sinless ways and still feel like a maverick.
 
 <figure>
   <picture>
@@ -132,9 +153,9 @@ _(Not that I ever do)_
   </figcaption>
 </figure>
 
-Cheap booze by the convenience store, cherry blossoms in the dark, cyberkids and old ghosts, the most ordinary quietnesses and the most bollocks weirdo shit all in the same place.
+Cheap booze by the convenience store, cherry blossoms in the dark, futuristic art and old ghostly shrines, the most ordinary quiet streets and bollocks weirdo shit all in the same huge slab of concrete.
 
-I may leave someday, but I will always call it home.
+I may get tired of it all someday, but I will always call it home.
 
 <div style="position: relative; margin: 3rem -10rem; display: grid; gap: 3rem; grid-template-columns: 1fr 1fr; justify-content: center;">
 <figure>
@@ -170,8 +191,9 @@ I may leave someday, but I will always call it home.
 </figure>
 </div>
 
-# "Always do what you said you'd do when you were drunk."
+# THANKS FOR VISITING!
 
-Methinks if you said you'd do it, you should do it. If you are doing it, you should do it _well_. It's even better if you dress for the occasion.
+That's me. _どうもどうも！_ If you want to get in touch, send me a mail at _vic‎@‎sidious.pizza_. Welcome again and I hope you have a great time in this website.
 
-Thank you for reading. _どうもどうも！_ I'll see you around [sidious.pizza](/). Welcome and I hope you have a great time here.
+<br>
+<br>
