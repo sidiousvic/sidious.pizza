@@ -15,7 +15,13 @@ order: 2
   flex-wrap: wrap;
 }
 
-th {
+@media (max-width: 500px) {
+  .info {
+    font-size: 1rem;
+  }
+}
+
+thead {
     font-family: var(--font-family-delight);
     color: var(--venom);
     text-transform: uppercase;
@@ -24,18 +30,22 @@ th {
 
 <div class="info">
 
-| Specifications |                                                       |
-| -------------- | ----------------------------------------------------- |
-| _Engine_       | [Deno](https://deno.com/)                             |
-| _Source_       | [Github](https://github.com/sidiousvic/sidious.pizza) |
+| Specifications                                                  |                                                                                                                                                                                                                                        |
+| --------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _Runtime_                                                       | [Deno](https://deno.com/)                                                                                                                                                                                                              |
+| _[Engine](https://en.wikipedia.org/wiki/Static_site_generator)_ | [Lume](https://deno.com/)                                                                                                                                                                                                              |
+| _Languages_                                                     | [Standard web languages](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/The_web_and_web_standards#html_css_and_javascript:~:text=the%20basic%20idea.-,HTML%2C%20CSS%2C%20and%20JavaScript,-HTML%2C%20CSS) |
+| _Source_                                                        | [See on Github](https://github.com/sidiousvic/sidious.pizza)                                                                                                                                                                           |
 
 </div>
 
-<div style="display: none" class="info">
+<div class="info">
 
-| Design Standards                                 |
-| ------------------------------------------------ |
-| [Close to the metal.](/posts/close-to-the-metal) |
-| [Function is design.](/posts/close-to-the-metal) |
+| Design Standards                                                                         |
+| ---------------------------------------------------------------------------------------- |
+| Standard web functionality                                                               |
+| Uniform visual id                                                                        |
+| Performance is design                                                                    |
+| Be like [Curve Space](https://geocities.restorativland.org/ResearchTriangle/Forum/1545/) |
 
 </div>
