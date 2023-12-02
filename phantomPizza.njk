@@ -20,15 +20,7 @@ tags:
 
 <script defer type="module" src="/@/phantomPizza.mjs"></script>
 <script defer type="module" src="/@/hideNavbar.mjs"></script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-   if (!/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-      const title = document.querySelector('#start-screen-title')
-         .innerHTML = 'PHANTOM PIZZA';
-      document.querySelector('#start-screen-text').style.display = 'none';
-   }
-});
-</script>
+<script defer type="module" src="/@/changeStartScreenText.mjs"></script>
 
 {% include "templates/page-info.njk" %}
 
