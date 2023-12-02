@@ -1,2 +1,3 @@
 _site
 _bin
+*.DS_Store
