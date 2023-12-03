@@ -8,10 +8,6 @@ order: 2
 ---
 
 <style>
-img {
-    max-width: 600px;
-}
-
 .info {
     display: flex;
     align-items: center;
@@ -22,6 +18,21 @@ img {
 
 .vic-profile-pic {
     margin: 1vw;
+}
+
+.contents {
+    line-height: 2.5rem;
+    border: var(--venom) 1px dashed;
+    text-transform: uppercase;
+    padding-bottom: 2rem;
+}
+
+.contents h1 {
+    padding-left: 40px;
+}
+
+.contents ul li:hover {
+    animation: shake 0.5s infinite;
 }
 </style>
 
@@ -49,6 +60,25 @@ img {
 </div>
 
 Hola amigxs, my name is Vic. Welcome to my cyber space. Here's where I [spill my brains](/weblog), share [weird music](/swims) and computer programs (like [_Phantom Pizza_](/phantompizza), the game at the home page) and even [haiku](/kaminari-no-ura). Don't forget to visit the [sitemap](/sitemap) to keep exploring. Here's a little more about me.
+
+<br>
+
+<section class="contents">
+
+# Contents
+
+- [Born and raised in the desert](#born-and-raised)
+- [Misled youth](#misled-youth)
+- [JUST DO SH\*T](#just-do-shit)
+- ["Hello world!"](#hello-world)
+- [Tokyo Boy](#tokyo-boy)
+- [THANKS FOR VISITING!](#thanks-for-visiting)
+
+</section>
+
+<br>
+
+<a name="born-and-raised"></a>
 
 # Born and raised in the desert
 
@@ -80,6 +110,8 @@ Your deadly neighborhood [arachnid](https://en.wikipedia.org/wiki/Scorpion#:~:te
   </figcaption>
 </figure>
 
+<a name="misled-youth"></a>
+
 # Misled youth
 
 I was a bit of a goblin _(<img src="/@/goblin.png" width=40 style="display: inline-block" />)_ when young, and skipped school to play ball, guitar and skateboard. I spent a lot of time playing Zelda and watching MTV. My heroes were [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and Angus Young.
@@ -99,7 +131,9 @@ I was a bit of a goblin _(<img src="/@/goblin.png" width=40 style="display: inli
   </figcaption>
 </figure>
 
-Even tough I behave like an adult now, I think it's important to always keep a little of that youthful dumbfuckery afloat to add a spice to life.
+Even tough I behave like an adult now, I think it's important to always keep a little of that dumbfuckery to add a spice to life.
+
+<a name="just-do-shit"></a>
 
 # <img width=40 style="transform: translateY(10px)" src="/@/swoosh.png" /> JUST DO SH\*T
 
@@ -120,6 +154,8 @@ I love Nike's slogan, _"Just Do Sh\*t"_. When boredom strikes I [program](https:
   </figcaption>
 </figure>
 
+<a name="hello-world"></a>
+
 # "Hello world!"
 
 I loved the old web, where websites were simpler and wackier.
@@ -135,6 +171,8 @@ I loved the old web, where websites were simpler and wackier.
 I hope this website makes Danny proud.
 </figcaption>
 </figure>
+
+<a name="tokyo-boy"></a>
 
 # Tokyo Boy
 
@@ -190,6 +228,8 @@ I may get tired of it all someday, but I will always call it home.
   </picture> 
 </figure>
 </div>
+
+<a name="thanks-for-visiting"></a>
 
 # THANKS FOR VISITING!
 
