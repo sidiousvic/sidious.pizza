@@ -52,6 +52,10 @@ S I D I O U S . P I Z Z A  -->
 
     <footer id="footer"><p>® 2023 <a href="https://github.com/sidiousvic" style="color: var(--darksteel); font-family: var(--font-family-delight)">"@sidiousvic"</a> All Rights Reserved</p></footer>
 
+{% if page.data.info %} 
+  {% include "templates/page-info.njk" %}
+{% endif %}
+
     <script type="module" src="/@/makeMainFillUpScreen.mjs"></script>
     <script type="module" src="/@/liftCurtain.mjs"></script>
   </body>
