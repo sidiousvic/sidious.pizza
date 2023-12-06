@@ -13,7 +13,5 @@ const messages = [
   "There are no secrets left.",
 ];
 
-const notFoundMessageElement = document.getElementById("404message");
-const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-
-notFoundMessageElement.innerHTML = randomMessage;
+document.getElementById("message-404").innerHTML =
+  messages[Math.floor(Math.random() * messages.length)];
