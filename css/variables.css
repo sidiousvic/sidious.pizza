@@ -1,0 +1,51 @@
+:root {
+  /* Colors */
+  --red: #c04;
+  --lightgray: #e6e6e6;
+  --invert_darkgray: #f2eee8;
+  --invert_venom: #ff007b;
+  --darkgray: #0d1117;
+  --venom: #00ff00ff;
+  --venom-filter: sepia(1) hue-rotate(90deg) saturate(5);
+  --blue: #135;
+  --white: #fff;
+  --black: #000;
+  --vermilion: #ff3500;
+  --darksteel: #343;
+
+  /* Fonts */
+  --font-family: OffDot, DotGothic16, monospace;
+  --font-family-navbar: OffDotBold, DotGothic16, monospace;
+  --font-family-title: Vastantonius, DotGothic16, monospace;
+  --font-family-delight: OffDotBold, DotGothic16, monospace;
+  --font-family-emphasis: OffDot, DotGothic16, monospace;
+  --font-family-post-title: Vastantonius, DotGothic16, monospace;
+  --font-family-post-body: DotGothic16, -apple-system, system-ui, sans-serif;
+  --font-family-dot-gothic: DotGothic16, -apple-system, system-ui, sans-serif;
+}
+
+:root {
+  /* Colors */
+  --red: #c04;
+  --lightgray: #e6e6e6;
+  --invert_darkgray: #f2eee8;
+  --invert_venom: #ff007b;
+  --darkgray: #0d1117;
+  --venom: red;
+  --venom-filter: sepia(1) hue-rotate(310deg) saturate(5);
+  --blue: #135;
+  --white: #fff;
+  --black: #000;
+  --vermilion: #ff3500;
+  --darksteel: #343;
+
+  /* Fonts */
+  --font-family: OffDot, DotGothic16, monospace;
+  --font-family-navbar: OffDotBold, DotGothic16, monospace;
+  --font-family-title: Vastantonius, DotGothic16, monospace;
+  --font-family-delight: OffDotBold, DotGothic16, monospace;
+  --font-family-emphasis: OffDot, DotGothic16, monospace;
+  --font-family-post-title: Vastantonius, DotGothic16, monospace;
+  --font-family-post-body: DotGothic16, -apple-system, system-ui, sans-serif;
+  --font-family-dot-gothic: DotGothic16, -apple-system, system-ui, sans-serif;
+}

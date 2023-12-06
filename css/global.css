@@ -1,0 +1,83 @@
+.border {
+  border: dotted 1px var(--venom);
+  border-radius: 3px;
+}
+
+.tag {
+  position: relative;
+  font-family: var(--font-family-delight);
+  font-weight: 400;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  line-height: 1;
+  color: var(--white);
+  border-radius: 0.25em;
+  text-decoration: none;
+  padding: 0.4em 0.4em 0.2em 0.4em;
+
+  &.big {
+    font-size: 1rem;
+    padding: 0.4em 0.6em 0.2em 0.6em;
+  }
+
+  &.marker {
+    margin-left: 4px;
+  }
+}
+
+.no-border {
+  border: none !important;
+}
+
+.page-title {
+  margin: 1rem 0 0 0;
+  font-size: 4em;
+  font-weight: 100;
+  font-family: var(--font-family-title);
+  text-align: center;
+  color: var(--venom);
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.contents {
+  margin: 0rem 1rem;
+  line-height: 2.5rem;
+  border: var(--venom) 1px dashed;
+  text-transform: uppercase;
+  padding-bottom: 2rem;
+
+  @media (max-width: 500px) {
+    margin-inline: 1rem;
+  }
+}
+
+.contents h1 {
+  padding-left: 40px;
+}
+
+.contents ul li:hover {
+  animation: shake 0.5s infinite;
+}
+
+.picture-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  margin-inline: -200px;
+
+  @media (max-width: 800px) {
+    margin-inline: -300px;
+  }
+
+  @media (max-width: 500px) {
+    margin-inline: -50vw;
+  }
+}

@@ -8,40 +8,25 @@ order: 2
 ---
 
 <style>
-.info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.vic-profile-pic {
-    margin: 1vw;
-}
-
-.contents {
-    line-height: 2.5rem;
-    border: var(--venom) 1px dashed;
-    text-transform: uppercase;
-    padding-bottom: 2rem;
-}
-
-.contents h1 {
-    padding-left: 40px;
-}
-
-.contents ul li:hover {
-    animation: shake 0.5s infinite;
+.vic-pic {
+  margin: 10px;
+  & > picture > img {
+    width: 250px; 
+  }
 }
 </style>
 
 <script type="module" src="/@/vicsAge.mjs"></script>
 
 <div class="info">
-  <picture class="vic-profile-pic">
-    <img alt="vic" width=250 src="/@/vic.jpeg"/>
+
+<figure class="vic-pic">
+  <picture>
+
+<img alt="vic" src="/@/vic.jpeg"/>
+
   </picture>
+</figure>
 
   <article>
 
@@ -195,7 +180,7 @@ Cheap booze by the convenience store, cherry blossoms in the dark, futuristic ar
 
 I may get tired of it all someday, but I will always call it home.
 
-<div style="position: relative; margin: 3rem -10rem; display: grid; gap: 3rem; grid-template-columns: 1fr 1fr; justify-content: center;">
+<div class="picture-grid"> 
 <figure>
   <picture>
 
@@ -225,7 +210,7 @@ I may get tired of it all someday, but I will always call it home.
 
 ![A view of the tokyo skyline, with buildings' plane lights glowing](/@/skyline-tokyo.gif)
 
-  </picture> 
+  </picture>
 </figure>
 </div>
 

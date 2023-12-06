@@ -1,0 +1,58 @@
+.shake {
+  animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translate(2px, 2px);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translate(0px, 0px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate(-2px, -2px);
+  }
+}
+
+.venomous {
+  animation: venomous 3s infinite;
+}
+
+@keyframes venomous {
+  0% {
+    background-color: var(--darkgray);
+    color: var(--venom);
+  }
+  50% {
+    background-color: var(--venom);
+    color: var(--darkgray);
+  }
+  100% {
+    background-color: var(--darkgray);
+    color: var(--venom);
+  }
+}
+
+.blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
