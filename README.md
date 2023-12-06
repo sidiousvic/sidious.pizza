@@ -1,3 +1,3 @@
 # sidious.pizza
 
-@sidiousvic's cyber space
+Vic's cyber space
