@@ -1,0 +1,35 @@
+---
+layout: layouts/base.njk
+---
+
+<h1 class="page-title">CONFIG</h1>
+
+<style>
+.config-section {
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  & > h2 {
+    text-align: center;
+    margin: 0 ;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+}
+</style>
+
+
+<script type="module" src="/@/setItemInLocalStorage.mjs"></script>
+<div class="config-section">
+  <h2>THEMES</h2>
+  <button onclick="localStorage.setItem('colors', 'fire');">FIRE</button>
+  <button onclick="localStorage.setItem('colors', 'venom');">VENOM</button>
+  <button onclick="localStorage.setItem('colors', 'zero');">ZERO</button>
+  <button onclick="localStorage.setItem('colors', 'void');">VOID</button>
+  <button onclick="localStorage.setItem('colors', 'moon');">MOON</button>
+  <button onclick="localStorage.setItem('colors', 'phantom');">PHANTOM</button>
+</div>

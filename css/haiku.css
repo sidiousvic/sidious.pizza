@@ -63,7 +63,7 @@
 }
 
 .haiku {
-  color: var(--white);
+  color: var(--lightgray);
   display: flex;
   align-items: center;
   justify-content: center;

@@ -4,7 +4,7 @@ body {
   margin: 0;
   height: 100%;
   font-family: var(--font-family);
-  color: var(--white);
+  color: var(--lightgray);
   background-color: var(--darkgray);
 }
 
@@ -18,6 +18,28 @@ main {
 
   @media (max-width: 500px) {
     justify-content: flex-start;
+  }
+}
+
+button {
+  font-family: var(--font-family-delight);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--lightgray);
+  background-color: var(--darkgray);
+  border: var(--venom) dotted 1px;
+  border-radius: 2px;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  outline: none;
+  &:hover {
+    background-color: var(--venom);
+    color: var(--darkgray);
+  }
+  &:focus {
+    outline-offset: 0px !important;
+    background-color: var(--venom);
+    color: var(--darkgray);
   }
 }
 
@@ -60,17 +82,17 @@ blockquote {
   margin-left: 0;
 }
 
-h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-family-delight);
+  font-family: var(--font-family-dot-gothic);
   color: var(--venom);
 }
 
 h1 {
+  color: var(--venom);
   font-size: 2rem;
 }
 

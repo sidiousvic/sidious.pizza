@@ -1,11 +1,4 @@
-#start-screen {
-  background-color: var(--darkgray) !important;
-  color: var(--venom) !important;
-  & > p {
-    color: var(--venom) !important;
-  }
-}
-
 #score {
+  color: var(--venom);
   filter: var(--filter-invert);
 }

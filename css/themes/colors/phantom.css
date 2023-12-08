@@ -1,0 +1,14 @@
+:root {
+  --lightgray: #e6e6e6 !important;
+  --darkgray: #0d1117 !important;
+  --venom: hsla(242, 88.4%, 66.3%, 1) !important;
+  --venom-filter: sepia(1) hue-rotate(210deg) saturate(5) !important;
+  --venom-filter-canvas: sepia(1) hue-rotate(-155deg) brightness(0.7)
+    saturate(5) !important;
+  --darksteel: #343 !important;
+  --indicator: hsla(242, 88.4%, 66.3%, 1) !important;
+  --blend-mode: difference !important;
+  --filter-invert: invert(0) !important;
+  --filter-dark-primary: invert(1) sepia(1) hue-rotate(180deg) brightness(0.5)
+    saturate(150) !important;
+}

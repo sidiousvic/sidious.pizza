@@ -7,13 +7,9 @@
   margin: 15px 0;
 }
 
-.body-sitemap ul li::before {
-  align-items: flex-start;
-  content: "⎗";
+.body-sitemap ul li::marker {
   color: var(--venom);
-  font-weight: bold;
-  width: 1em;
-  margin-left: -1em;
+  filter: var(--venom-filter);
 }
 
 .body-sitemap a:hover {

@@ -2,7 +2,7 @@
   --pagefind-ui-scale: 0.8;
   --pagefind-ui-primary: var(--darkgray);
   --pagefind-ui-text: var(--darkgray);
-  --pagefind-ui-background: var(--white);
+  --pagefind-ui-background: var(--lightgray);
   --pagefind-ui-border: var(--lightgray);
   --pagefind-ui-tag: var(--lightgray);
   --pagefind-ui-border-radius: 5px !important;

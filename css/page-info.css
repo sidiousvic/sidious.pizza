@@ -17,9 +17,9 @@
   border-bottom: dotted 2px transparent;
 }
 
-.page-info-button,
-.page-info-icon {
-  filter: var(--venom-filter-canvas) saturate(5);
+.page-info-button img,
+.page-info-icon img {
+  filter: var(--filter-dark-primary);
 }
 
 .page-info-button img,

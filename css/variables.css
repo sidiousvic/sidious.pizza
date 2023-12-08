@@ -1,17 +1,13 @@
 :root {
   /* Colors */
-  --red: #c04;
-  --lightgray: #060606;
-  --darkgray: #fff;
-  --venom: #111;
+  --lightgray: whitesmoke;
+  --darkgray: #111;
+  --venom: whitesmoke;
   --venom-filter: grayscale(1) saturate(5);
   --venom-filter-canvas: grayscale(1) brightness(01);
-  --white: black;
-  --black: #000;
-  --vermilion: black;
-  --darksteel: #343;
+  --darksteel: #333;
 
-  /* Fonts */
+  /* Typography */
   --font-family: OffDot, DotGothic16, monospace;
   --font-family-navbar: OffDotBold, DotGothic16, monospace;
   --font-family-title: Vastantonius, DotGothic16, monospace;
@@ -22,7 +18,6 @@
   --font-family-dot-gothic: DotGothic16, -apple-system, system-ui, sans-serif;
 
   /* Mix-blend-mode */
-  --blend-mode: darken;
-
-  --filter-invert: invert(1);
+  --blend-mode: difference;
+  --filter-invert: invert(0);
 }
