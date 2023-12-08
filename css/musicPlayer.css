@@ -1,3 +1,7 @@
+.navbar {
+  mix-blend-mode: darken !important;
+}
+
 button {
   padding: 0;
   border: 0;
@@ -33,10 +37,19 @@ button {
   padding: 1rem;
   margin: auto;
   width: 95%;
-  max-width: 25%;
+  max-width: 50%;
   & > * {
     mix-blend-mode: difference;
   }
+}
+
+#music-player > h1 {
+  font-size: 180%;
+  filter: var(--filter-invert);
+}
+
+#music-player > picture > img {
+  max-width: 30vh;
 }
 
 @media (min-width: 1000px) {
@@ -48,7 +61,7 @@ button {
 
 @media (max-width: 1000px) {
   #music-player {
-    max-width: 45%;
+    max-width: 90%;
   }
   #music-player > picture > img {
     max-height: 20vh;
@@ -59,9 +72,6 @@ button {
   #music-player > h1 {
     width: 130% !important;
     font-size: 150% !important;
-  }
-  #music-player {
-    max-width: 70%;
   }
   #music-player > picture > img {
     max-height: 20vh;
@@ -88,6 +98,7 @@ button {
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+  filter: var(--filter-invert);
 }
 
 path {

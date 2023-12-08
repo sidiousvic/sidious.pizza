@@ -18,8 +18,7 @@ function playbackFX(playstate, tabOrSpacebar) {
       requestAnimationFrame(whilePlaying),
       (playState = "pause"),
       document.body.classList.add("venomous"),
-      (document.querySelector(".navbar-home").style.mixBlendMode =
-        "difference"),
+      (document.querySelector(".navbar-home").style.mixBlendMode = "exclusion"),
       (triggerPlayback.innerHTML = `Press <span class="tag border venomous">${tabOrSpacebar}</span> to pause`))
     : (audio.pause(),
       (playState = "play"),

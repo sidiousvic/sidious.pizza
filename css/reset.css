@@ -21,6 +21,14 @@ main {
   }
 }
 
+canvas {
+  filter: var(--venom-filter-canvas);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
 :focus,
 *:focus {
   outline: var(--venom) dotted 1px !important;

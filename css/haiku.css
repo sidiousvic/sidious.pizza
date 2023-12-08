@@ -2,8 +2,12 @@
   width: 100%;
   text-align: center;
   padding: 0;
-  & > img {
-    filter: sepia(1) hue-rotate(60deg) saturate(5);
+
+  & > picture {
+    mix-blend-mode: difference;
+  }
+
+  & > picture > img {
     image-rendering: pixelated;
     height: 90px;
     width: 90px;

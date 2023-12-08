@@ -26,5 +26,7 @@ layout: layouts/base.njk
       {{ en | safe }}
     </section>
   </div>
-  <img class="haiku-img" src="{{ gif }}" alt="{{ title }}">
+  <picture class="no-border">
+    <img class="haiku-img" src="{{ gif }}" alt="{{ title }}">
+  </picture>
 </article>

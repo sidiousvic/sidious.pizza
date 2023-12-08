@@ -4,9 +4,13 @@
   {% for thing in things %}
   <li class="things-post">
       {% if thing.data.gif %}
-        <img src="{{ thing.data.gif }}" />
+        <picture class="no-border">
+          <img src="{{ thing.data.gif }}" />
+        </picture>
       {% else %}
-        <img src="/@/enemyR.png" />
+        <picture class="no-border">
+          <img src="/@/enemyR.png" />
+        </picture>
       {% endif %}
     <div class="things-meta">
     <a href="{{ thing.data.url }}" class="thing-title"{% if thing.data.url == url %} aria-current="page"{% endif %}>

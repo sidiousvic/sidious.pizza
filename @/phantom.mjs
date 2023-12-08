@@ -394,10 +394,6 @@ export const config = ({
     touch-action: none;
   }
   
-  nav { 
-    mix-blend-mode: difference; 
-  }
-  
   a { 
     cursor: pointer; 
   }
@@ -465,7 +461,7 @@ export const config = ({
     color: var(--foreground-color); 
   }
   
-  canvas img { 
+  canvas > img { 
     mix-blend-mode: exclusion;
     image-rendering: pixelated; 
   }

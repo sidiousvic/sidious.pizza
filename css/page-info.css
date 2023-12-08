@@ -17,9 +17,13 @@
   border-bottom: dotted 2px transparent;
 }
 
+.page-info-button,
+.page-info-icon {
+  filter: var(--venom-filter-canvas) saturate(5);
+}
+
 .page-info-button img,
 .page-info-icon img {
-  filter: sepia(1) hue-rotate(-100deg) saturate(99) invert(1);
   image-rendering: pixelated;
   object-fit: contain;
   padding: 10px;
@@ -72,8 +76,8 @@
 }
 
 .page-info-overlay {
-  background: black;
-  background-image: radial-gradient(transparent, black);
+  background: var(--darkgray);
+  background-image: radial-gradient(transparent, var(--darkgray));
   background-size: 3px 3px;
   width: 100%;
   height: 100%;
