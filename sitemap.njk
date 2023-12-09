@@ -13,17 +13,21 @@ order: 1
 {% set projects = search.pages("projects") %}
 
 <ul>
-<ul>
-<li><a href="/">Home</a></li>
-<li><a href="/weblog">Weblog</a></li>
-<li><a href="/projects">Projects</a>
+<li style="list-style-type: '⛾'" ><a href="/">Home</a></li>
+<li style="list-style-type: '∿'" ><a href="/weblog">Weblog</a></li>
+<li style="list-style-type: '✐'" ><a href="/projects">Projects</a>
   <ul>
-  {% for project in projects %}
-  <li><a href="{{ project.data.url }}">{{ project.data.title }}</a></li>
-  {% endfor %}
-</ul>
+    {% for project in projects %}
+      <li style="list-style-type: '{{ project.data.bullet }}'">
+        <a href="{{ project.data.url }}">
+          {{ project.data.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
 </li>
-<li><a href="/sitemap">Sitemap</a></li>
-<li><a href="/about">Vic</a></li>
-<li><a href="/meta">Meta</a></li>
+<li style="list-style-type: '⟜'" ><a href="/sitemap">Sitemap</a></li>
+<li style="list-style-type: '⌗'" ><a href="/meta">Meta</a></li>
+<li style="list-style-type: 'ℹ'"><a href="/about">About</a></li>
+<li style="list-style-type: '⛭'"><a href="/config">Config</a></li>
 </ul>
