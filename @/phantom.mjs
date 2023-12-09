@@ -453,7 +453,7 @@ export const config = ({
     position: absolute; 
     font-size: 3rem; 
     white-space: nowrap;
-    font-family: ${SCORE_FONT}, monospace; 
+    font-family: ${SCORE_FONT}; 
     bottom: 50%; 
     left: 50%; 
     mix-blend-mode: difference;

@@ -8,16 +8,14 @@
   --darksteel: #333;
 
   /* Typography */
-  --font-family: OffDot, DotGothic16, monospace;
-  --font-family-navbar: OffDotBold, DotGothic16, monospace;
+  --font-family: OffBitDot, DotGothic16, monospace;
+  --font-family-secondary: OffBitDotBold, DotGothic16, monospace;
+  --font-family-tertiary: DotGothic16, monospace;
   --font-family-title: Vastantonius, DotGothic16, monospace;
-  --font-family-delight: OffDotBold, DotGothic16, monospace;
-  --font-family-emphasis: OffDot, DotGothic16, monospace;
-  --font-family-post-title: Vastantonius, DotGothic16, monospace;
-  --font-family-post-body: DotGothic16, -apple-system, system-ui, sans-serif;
-  --font-family-dot-gothic: DotGothic16, -apple-system, system-ui, sans-serif;
 
   /* Mix-blend-mode */
   --blend-mode: difference;
   --filter-invert: invert(0);
+
+  --indicator: var(--venom);
 }

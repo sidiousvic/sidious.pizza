@@ -1,12 +1,15 @@
-import { configTheme } from "./configTheme.mjs";
+import { configTypography } from "./configTypography.mjs";
+import { configColors } from "./configColors.mjs";
 
 const builtInSetItem = localStorage.setItem;
 
 localStorage.setItem = function (key, value) {
   builtInSetItem.apply(this, arguments);
   switch (key) {
-    case "theme":
-      return configTheme(value);
+    case "colors":
+      return configColors(value);
+    case "typography":
+      return configTypography(value);
     default:
       return;
   }

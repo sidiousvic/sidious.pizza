@@ -7,10 +7,10 @@ order: 2
 
 <style>
 .info {
-  font-family: OffDot;
+  font-family: var(--font-family);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   flex-direction: row;
   flex-wrap: wrap;
 }
@@ -22,30 +22,47 @@ order: 2
 }
 
 thead {
-    font-family: var(--font-family-delight);
+    font-family: var(--font-family-tertiary);
     color: var(--venom);
     text-transform: uppercase;
 }
+
+td {
+    text-align: left;
+}
+
+td:first-child {
+    text-align: left;
+}
+
 </style>
 
 <div class="info">
 
-| Specifications                                                  |                                                                                                                                                                                                                                        |
-| --------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| _Runtime_                                                       | [Deno](https://deno.com/)                                                                                                                                                                                                              |
-| _[Engine](https://en.wikipedia.org/wiki/Static_site_generator)_ | [Lume](https://deno.com/)                                                                                                                                                                                                              |
-| _Languages_                                                     | [Standard web languages](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/The_web_and_web_standards#html_css_and_javascript:~:text=the%20basic%20idea.-,HTML%2C%20CSS%2C%20and%20JavaScript,-HTML%2C%20CSS) |
-| _Source_                                                        | [See on Github](https://github.com/sidiousvic/sidious.pizza)                                                                                                                                                                           |
+| HARDWARE  |                                                            |
+| --------- | ---------------------------------------------------------- |
+| _Machine_ | [Apple Macbook Pro]()                                      |
+| _Fuel_    | [Coffee, alcohol and various other addictive substances]() |
 
 </div>
 
 <div class="info">
 
-| Design Standards                                                                         |
-| ---------------------------------------------------------------------------------------- |
-| Standard web functionality                                                               |
-| Uniform visual id                                                                        |
-| Performance is design                                                                    |
-| Be like [Curve Space](https://geocities.restorativland.org/ResearchTriangle/Forum/1545/) |
+| Software   |                                                                                                                                                                                                                                        |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _Runtime_  | [Deno](https://deno.com/)                                                                                                                                                                                                              |
+| _Engine_   | [Lume](https://deno.com/)                                                                                                                                                                                                              |
+| _Programs_ | [Standard web languages](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/The_web_and_web_standards#html_css_and_javascript:~:text=the%20basic%20idea.-,HTML%2C%20CSS%2C%20and%20JavaScript,-HTML%2C%20CSS) |
+| _Source_   | [See on Github](https://github.com/sidiousvic/sidious.pizza)                                                                                                                                                                           |
+
+</div>
+
+<div class="info">
+
+| Design Standards                     |
+| ------------------------------------ |
+| _0_&nbsp; Standard Web Functionality |
+| _1_&nbsp; Performance is design      |
+| _2_&nbsp; Uniform visual ID          |
 
 </div>

@@ -83,7 +83,6 @@ button {
 }
 
 #music-player > h1 {
-  font-family: var(--font-family-title);
   width: 130%;
   text-align: center;
   color: var(--venom);

@@ -19,7 +19,6 @@
 }
 
 .things-header {
-  font-family: var(--font-family-post-title);
   display: block;
   padding: 0.5em 0.2em;
   font-size: 1.2rem;

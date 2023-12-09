@@ -22,7 +22,7 @@ main {
 }
 
 button {
-  font-family: var(--font-family-delight);
+  font-family: var(--font-family-secondary);
   font-size: 1rem;
   font-weight: 400;
   color: var(--lightgray);
@@ -60,7 +60,7 @@ canvas {
 
 em,
 strong {
-  font-family: var(--font-family-delight);
+  font-family: var(--font-family-secondary);
   color: var(--venom);
 }
 
@@ -75,11 +75,19 @@ li {
 }
 
 blockquote {
-  font-family: var(--font-family-delight);
+  font-family: var(--font-family-title);
+  font-size: 2rem;
+  font-style: italic;
   color: var(--venom);
   border-left: dotted 2px var(--venom);
   padding-left: 1em;
   margin-left: 0;
+}
+
+h1 {
+  font-family: var(--font-family-title);
+  font-size: 3rem;
+  color: var(--venom);
 }
 
 h2,
@@ -87,21 +95,16 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-family-dot-gothic);
+  font-family: var(--font-family-title);
   color: var(--venom);
-}
-
-h1 {
-  color: var(--venom);
-  font-size: 2rem;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 h3 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 h4 {
