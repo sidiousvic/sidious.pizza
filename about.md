@@ -14,6 +14,7 @@ order: 2
     width: 250px; 
   }
 }
+
 </style>
 
 <script type="module" src="/@/vicsAge.mjs"></script>
@@ -48,6 +49,10 @@ Hola amigxs, my name is Vic. Welcome to my cyber space. Here's where I [spill my
 
 <br>
 
+> Men with courage and character always seem sinister to the rest.
+
+<br>
+
 <section class="contents">
 
 # Contents
@@ -65,7 +70,9 @@ Hola amigxs, my name is Vic. Welcome to my cyber space. Here's where I [spill my
 
 <a name="born-and-raised"></a>
 
-# Born and raised in the desert
+# BORN AND RAISED IN THE DESERT
+
+<br>
 
 <figure>
   <picture>
@@ -97,7 +104,7 @@ Your deadly neighborhood [arachnid](https://en.wikipedia.org/wiki/Scorpion#:~:te
 
 <a name="misled-youth"></a>
 
-# Misled youth
+# MISLED YOUTH
 
 I was a bit of a goblin _(<img src="/@/goblin.png" width=40 style="display: inline-block" />)_ when young, and skipped school to play ball, guitar and skateboard. I spent a lot of time playing Zelda and watching MTV. My heroes were [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and Angus Young.
 
@@ -141,7 +148,7 @@ I love Nike's slogan, _"Just Do Sh\*t"_. When boredom strikes I [program](https:
 
 <a name="hello-world"></a>
 
-# "Hello world!"
+# "HELLO WORLD!"
 
 I loved the old web, where websites were simpler and wackier.
 
@@ -159,7 +166,7 @@ I hope this website makes Danny proud.
 
 <a name="tokyo-boy"></a>
 
-# Tokyo Boy
+# TOKYO BOY
 
 Tokyo adopted me a few years ago and I love living here. You can break the law in sinless ways and still feel like a maverick.
 
