@@ -48,14 +48,15 @@
 }
 
 .contents {
-  margin: 0rem 1rem;
+  margin: 0;
+  padding-inline-end: 1rem;
   line-height: 2.5rem;
   border: var(--venom) 1px dashed;
   text-transform: uppercase;
   padding-bottom: 2rem;
 
   @media (max-width: 500px) {
-    margin-inline: 1rem;
+    font-size: 1rem;
   }
 }
 
