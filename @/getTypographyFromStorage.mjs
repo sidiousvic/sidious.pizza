@@ -1,12 +1,5 @@
-const typographies = {
-  nilheim: "nilheim",
-  dexter: "dexter",
-  doomed: "doomed",
-  virgil: "virgil",
-};
-
-const typography = localStorage.getItem("typography") ?? typographies.nilheim;
-
+const default_typography = "sidious";
+const typography = localStorage.getItem("typography") ?? default_typography;
 const link = document.createElement("link");
 link.setAttribute("rel", "stylesheet");
 link.setAttribute("href", `/css/themes/typography/${typography}.css`);

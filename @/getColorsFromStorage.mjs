@@ -1,11 +1,5 @@
-const colors = {
-  venom: "venom",
-  fire: "fire",
-  ghost: "ghost",
-};
-
-const color = localStorage.getItem("colors") ?? colors.venom;
-
+const default_color = "phantom";
+const color = localStorage.getItem("colors") ?? default_color;
 const link = document.createElement("link");
 link.setAttribute("rel", "stylesheet");
 link.setAttribute("href", `/css/themes/colors/${color}.css`);
