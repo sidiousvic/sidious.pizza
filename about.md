@@ -49,7 +49,7 @@ Hola amigxs, my name is Vic. Welcome to my cyber space. Here's where I [spill my
 
 <br>
 
-> Men with courage and character always seem sinister to the rest.
+> “Laugh and the world laughs with you, snore and you sleep alone.”
 
 <br>
 
