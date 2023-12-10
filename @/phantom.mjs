@@ -445,7 +445,7 @@ export const config = ({
 
   #start-screen-text {
     font-family: ${START_SCREEN_TEXT_FONT}, monospace; 
-    font-size: 24px;
+    font-size: 20px;
   }
 
 
