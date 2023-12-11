@@ -39,30 +39,22 @@ td:first-child {
 
 <div class="info">
 
-| HARDWARE  |                                                            |
-| --------- | ---------------------------------------------------------- |
-| _Machine_ | [Apple Macbook Pro]()                                      |
-| _Fuel_    | [Coffee, alcohol and various other addictive substances]() |
+| Software  |                                                                                |
+| --------- | ------------------------------------------------------------------------------ |
+| _Runtime_ | [Deno](https://deno.com/) with [Deno Deploy](https://deno.com/deploy)          |
+| _Engine_  | [Lume](https://lume.land/) and various addictive substances                    |
+| _Tools_   | DOM, Canvas 2D, raw HTML/CSS/JS                                                |
+| _Source_  | [See _`sidious.pizza`_ on Github](https://github.com/sidiousvic/sidious.pizza) |
 
 </div>
 
 <div class="info">
 
-| Software   |                                                                                                                                                                                                                                        |
-| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| _Runtime_  | [Deno](https://deno.com/)                                                                                                                                                                                                              |
-| _Engine_   | [Lume](https://deno.com/)                                                                                                                                                                                                              |
-| _Programs_ | [Standard web languages](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/The_web_and_web_standards#html_css_and_javascript:~:text=the%20basic%20idea.-,HTML%2C%20CSS%2C%20and%20JavaScript,-HTML%2C%20CSS) |
-| _Source_   | [See on Github](https://github.com/sidiousvic/sidious.pizza)                                                                                                                                                                           |
-
-</div>
-
-<div class="info">
-
-| Design Standards                     |
-| ------------------------------------ |
-| _0_&nbsp; Standard Web Functionality |
-| _1_&nbsp; Performance is design      |
-| _2_&nbsp; Uniform visual ID          |
+| Design Standards                                                                                             |
+| ------------------------------------------------------------------------------------------------------------ |
+| _0_&nbsp; Use standard web functionality                                                                     |
+| _1_&nbsp; Design = \{ ..., _Performance_ \}                                                                  |
+| _2_&nbsp; Fun to make = fun to visit                                                                         |
+| _3_&nbsp; Be like [Curve Space](https://geocities.restorativland.org/ResearchTriangle/Forum/1545/index.html) |
 
 </div>
