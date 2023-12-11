@@ -17,9 +17,7 @@
 
 :root {
   --font-family: DotGothic16, monospace !important;
-  --font-family-title: Doomed, DotGothic16, monospace !important;
   --font-family-secondary: OffBitDot, DotGothic16, monospace !important;
   --font-family-tertiary: OffBitDotBold, DotGothic16, monospace !important;
-
   --font-family-title: Sidious, DotGothic16, monospace !important;
 }
