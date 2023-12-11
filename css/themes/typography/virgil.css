@@ -16,9 +16,8 @@
 }
 
 :root {
-  --font-family: OffBitDot, DotGothic16, monospace !important;
-  --font-sizedown: smaller;
+  --font-family: DotGothic16, monospace !important;
+  --font-family-secondary: OffBitDot, DotGothic16, monospace !important;
+  --font-family-tertiary: OffBitDotBold, DotGothic16, monospace !important;
   --font-family-title: Virgil, DotGothic16, monospace !important;
-  --font-family-secondary: OffBitDotBold, DotGothic16, monospace !important;
-  --font-family-tertiary: DotGothic16, monospace !important;
 }
