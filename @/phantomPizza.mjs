@@ -87,7 +87,7 @@ const { sprites, score, sound, mouse, c } = config({
   DISPLAY_SCORE: true,
   START_SCREEN: true,
   START_SCREEN_TITLE_FONT: "var(--font-family-title)",
-  START_SCREEN_TEXT_FONT: "var(--font-family-tertiary)",
+  START_SCREEN_TEXT_FONT: "var(--font-family)",
   SCORE_FONT: "var(--font-family-title)",
   BG_COLOR_HEX: "#0d1117",
   FG_COLOR_HEX: "var(--venom)",
