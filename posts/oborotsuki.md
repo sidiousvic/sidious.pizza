@@ -2,7 +2,7 @@
 layout: layouts/haiku.njk
 title: 朧月
 date: 2023-06-01
-pinned: true
+pinned: false
 gif: /@/oborotsuki.gif
 tags:
   - haiku
