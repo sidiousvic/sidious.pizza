@@ -102,6 +102,8 @@ Your deadly neighborhood [arachnid](https://en.wikipedia.org/wiki/Scorpion#:~:te
   </figcaption>
 </figure>
 
+I'm very proud to be from the Mexican north, where people
+
 <a name="misled-youth"></a>
 
 # MISLED YOUTH
@@ -123,7 +125,9 @@ I was a bit of a goblin _(<img src="/@/goblin.png" width=40 style="display: inli
   </figcaption>
 </figure>
 
-Even tough I behave like an adult now, I think it's important to always keep a little of that dumbfuckery to add a spice to life.
+Even tough I behave like an adult now, I think it's important to always keep a little of that dumbfuckery in you to add a spice to life.
+
+[//]: <> (Growing up in the dawn of internet age was special. I was the first kid in my family to make friends out of a computer, and network with people around the world. I got to be one of the admins of a Pokémon forum.)
 
 <a name="just-do-shit"></a>
 
