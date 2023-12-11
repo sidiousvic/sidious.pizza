@@ -22,22 +22,29 @@ main {
 }
 
 button {
+  box-shadow: -3px -2px 11px -1px var(--venom) inset;
+  border-radius: 22px;
   font-family: var(--font-family-secondary);
   font-size: 1rem;
   font-weight: 400;
   color: var(--lightgray);
   background-color: var(--darkgray);
-  border: var(--venom) dotted 1px;
-  border-radius: 2px;
+  border: var(--venom) 1px;
+  border-radius: 22px;
   padding: 0.5em 1em;
   cursor: pointer;
   outline: none;
+
   &:hover {
+    font-family: var(--font-family-tertiary);
+    box-shadow: -1px -2px 11px black inset;
     background-color: var(--venom);
     color: var(--darkgray);
   }
+
   &:focus {
-    outline-offset: 0px !important;
+    font-family: var(--font-family-tertiary);
+    box-shadow: -1px -2px 11px black inset;
     background-color: var(--venom);
     color: var(--darkgray);
   }
