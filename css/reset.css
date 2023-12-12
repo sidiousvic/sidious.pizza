@@ -22,12 +22,12 @@ main {
 }
 
 button {
+  color: var(--venom);
   box-shadow: -3px -2px 11px -1px var(--venom) inset;
   border-radius: 22px;
-  font-family: var(--font-family-secondary);
+  font-family: var(--font-family);
   font-size: 1rem;
   font-weight: 400;
-  color: var(--lightgray);
   background-color: var(--darkgray);
   border: var(--venom) 1px;
   border-radius: 22px;
