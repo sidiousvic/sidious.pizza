@@ -58,21 +58,6 @@
   margin-left: auto;
 }
 
-@media (max-width: 500px) {
-  .navbar-links {
-    column-gap: 0;
-  }
-  .navbar-links > li {
-    box-shadow: var(--venom) 3px 3px;
-    -webkit-box-shadow: var(--venom) 3px 3px;
-    text-align: center;
-    border: dotted 1px var(--venom);
-    padding: 0.5rem;
-    justify-content: space-around;
-    width: 40%;
-  }
-}
-
 .current-page-indicator-bullet {
   background: var(--indicator);
   border-radius: 50%;

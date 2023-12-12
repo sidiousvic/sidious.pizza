@@ -57,6 +57,15 @@ S I D I O U S . P I Z Z A  -->
 {% if page.data.info %} 
   {% include "templates/page-info.njk" %}
 {% endif %}
+    
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+	if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+		const navbarLinks = document.querySelector('.navbar-links');	
+		navbarLinks.style.display = 'none';
+	}
+});
+</script>
 
     <script type="module" src="/@/makeMainFillUpScreen.mjs"></script>
     <script type="module" src="/@/liftCurtain.mjs"></script>
