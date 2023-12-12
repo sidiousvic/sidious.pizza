@@ -9,5 +9,5 @@
   --darksteel: #343 !important;
   --blend-mode: difference !important;
   --filter-invert: invert(0) !important;
-  --filter-dark-primary: invert(1) sepia(1) hue-rotate(-70deg) saturate(120);
+  --filter-dark-primary: invert(1);
 }

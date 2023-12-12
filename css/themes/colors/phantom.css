@@ -9,6 +9,5 @@
   --indicator: hsla(242, 88.4%, 66.3%, 1) !important;
   --blend-mode: difference !important;
   --filter-invert: invert(0) !important;
-  --filter-dark-primary: invert(1) sepia(1) hue-rotate(180deg) brightness(0.5)
-    saturate(150) !important;
+  --filter-dark-primary: invert(1);
 }
