@@ -29,24 +29,23 @@ button {
   font-size: 1rem;
   font-weight: 400;
   background-color: var(--darkgray);
-  border: var(--venom) 1px;
-  border-radius: 22px;
+  border: var(--venom) dotted 1px;
   padding: 0.5em 1em;
   cursor: pointer;
   outline: none;
 
   &:hover {
-    font-family: var(--font-family-tertiary);
     box-shadow: -1px -2px 11px black inset;
     background-color: var(--venom);
     color: var(--darkgray);
+    border: var(--venom) transparent 1px;
   }
 
   &:focus {
-    font-family: var(--font-family-tertiary);
     box-shadow: -1px -2px 11px black inset;
     background-color: var(--venom);
     color: var(--darkgray);
+    border-radius: 22px !important;
   }
 }
 
