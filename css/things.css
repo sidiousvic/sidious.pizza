@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: flex-end;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .thing-title {
@@ -30,7 +30,7 @@
 }
 
 .things-post {
-  margin: 1rem 0rem;
+  margin: 0;
   display: flex;
   gap: 0.7rem;
   flex-direction: column;
