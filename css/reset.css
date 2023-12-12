@@ -151,7 +151,8 @@ hr {
 }
 
 img {
-  max-width: -webkit-fill-available;
+  min-width: 1px;
+  object-fit: contain;
 }
 
 picture {
@@ -206,5 +207,4 @@ figcaption {
 
 video {
   min-width: 200px;
-  width: -webkit-fill-available;
 }
