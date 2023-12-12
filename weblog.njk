@@ -14,6 +14,6 @@ order: 0
     {%if postslist.length %}
       {% include "templates/postslist.njk" %}
     {% endif %}
-  {% set postslist = search.pages("type=posts", "date=desc", 99) %}
+  {% set postslist = search.pages("type=posts pinned!=true", "date=desc", 99) %}
     {% include "templates/postslist.njk" %}
 </section>

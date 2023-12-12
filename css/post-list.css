@@ -26,6 +26,10 @@
   &[aria-current="page"] {
     font-weight: bold;
   }
+
+  &:hover {
+    color: var(--lightgray);
+  }
 }
 
 .postList-post {

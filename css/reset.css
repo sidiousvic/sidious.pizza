@@ -125,9 +125,10 @@ a {
   text-decoration-style: dotted;
   text-underline-offset: 4px;
   cursor: pointer;
-}
-a:hover {
-  color: var(--venom);
+
+  &:hover {
+    color: var(--venom);
+  }
 }
 
 .warning {
