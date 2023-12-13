@@ -12,10 +12,6 @@
   filter: var(--venom-filter);
 }
 
-.body-sitemap a:hover {
-  font-weight: 900 !important;
-}
-
 .body-sitemap a {
   padding: 5px;
 }
