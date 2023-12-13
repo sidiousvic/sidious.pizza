@@ -24,6 +24,16 @@ layout: layouts/base.njk
   grid-template-columns: repeat(2, minmax(150px, 1fr));
   gap: 1.5rem;
 }
+
+.config-button {
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  &.full {
+    grid-column: 1 / -1;
+  }
+}
 </style>
 
 
@@ -38,6 +48,7 @@ layout: layouts/base.njk
     <button class="config-button" data-config="colors-void">VOID</button>
     <button class="config-button" data-config="colors-moon">MOON</button>
     <button class="config-button" data-config="colors-phantom">PHANTOM</button>
+    <button class="config-button full" data-config="colors-random">RANDOM</button>
   </div>
 </div>
 
@@ -50,6 +61,7 @@ layout: layouts/base.njk
     <button class="config-button" data-config="typography-dexter">DEXTER</button>
     <button class="config-button" data-config="typography-sinister">SINISTER</button>
     <button class="config-button" data-config="typography-sidious">SIDIOUS</button>
+    <button class="config-button full" data-config="typography-random">RANDOM</button>
   </div>
 </div>
 

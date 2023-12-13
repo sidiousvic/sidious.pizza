@@ -1,5 +1,6 @@
-const default_color = "phantom";
-const color = localStorage.getItem("colors") ?? default_color;
+const colors = ["moon", "zero", "venom", "fire", "void", "phantom"];
+const randomColor = colors[Math.floor(Math.random() * colors.length)];
+const color = localStorage.getItem("colors") ?? randomColor;
 const link = document.createElement("link");
 link.setAttribute("rel", "stylesheet");
 link.setAttribute("href", `/css/themes/colors/${color}.css`);

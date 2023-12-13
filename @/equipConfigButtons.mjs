@@ -5,7 +5,8 @@ const configButtons = document.querySelectorAll(".config-button");
 [...configButtons].map((button) => {
   button.addEventListener("click", () => {
     const [config, value] = button.dataset.config.split("-");
-    localStorage.setItem(config, value);
+    if (value === "random") localStorage.removeItem(config);
+    else localStorage.setItem(config, value);
     switch (config) {
       case "colors":
         return configColors(value);

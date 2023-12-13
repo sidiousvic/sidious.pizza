@@ -1,5 +1,16 @@
-const default_typography = "sidious";
-const typography = localStorage.getItem("typography") ?? default_typography;
+const typographies = [
+  "sinister",
+  "dexter",
+  "virgil",
+  "nilheim",
+  "doomed",
+  "sidious",
+];
+
+const randomTypography =
+  typographies[Math.floor(Math.random() * typographies.length)];
+
+const typography = localStorage.getItem("typography") ?? randomTypography;
 const link = document.createElement("link");
 link.setAttribute("rel", "stylesheet");
 link.setAttribute("href", `/css/themes/typography/${typography}.css`);
