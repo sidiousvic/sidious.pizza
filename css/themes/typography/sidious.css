@@ -13,6 +13,7 @@
 @font-face {
   font-family: Sidious;
   src: url(/@/Sidious.ttf);
+  size-adjust: 80%;
 }
 
 :root {

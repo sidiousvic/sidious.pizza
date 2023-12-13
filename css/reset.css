@@ -25,11 +25,11 @@ button {
   color: var(--venom);
   box-shadow: -3px -2px 11px -1px var(--venom) inset;
   border-radius: 10px;
-  font-family: var(--font-family);
-  font-size: 1rem;
+  font-family: var(--font-family-title);
+  font-size: 1.3rem;
   font-weight: 400;
   background-color: var(--darkgray);
-  border: var(--venom) inset 0.5px;
+  border: var(--venom) inset 1px;
   padding: 0.5em 1em;
   cursor: pointer;
   outline: none;
@@ -38,7 +38,7 @@ button {
     box-shadow: -1px -2px 11px black inset;
     background-color: var(--venom);
     color: var(--darkgray);
-    border: black inset 0.5px;
+    border: black solid 1px;
   }
 
   &:focus {

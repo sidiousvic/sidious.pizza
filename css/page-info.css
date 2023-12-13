@@ -16,7 +16,6 @@
   max-height: 60px;
 
   &:hover {
-    transform: scale(1.2) translate(-1px, -1px) !important;
   }
 }
 
