@@ -38,7 +38,7 @@ button {
     box-shadow: -1px -2px 11px black inset;
     background-color: var(--venom);
     color: var(--darkgray);
-    border: var(--venom) transparent 1px;
+    border: black dotted 1px;
   }
 
   &:focus {
@@ -94,6 +94,7 @@ h1 {
   font-family: var(--font-family-title);
   font-size: 3rem;
   color: var(--venom);
+  font-weight: 100;
 }
 
 h2,
@@ -103,6 +104,7 @@ h5,
 h6 {
   font-family: var(--font-family-title);
   color: var(--venom);
+  font-weight: 100;
 }
 
 h2 {
