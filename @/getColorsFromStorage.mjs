@@ -1,4 +1,4 @@
-const colors = ["moon", "zero", "venom", "fire", "void", "phantom"];
+const colors = ["zero", "venom", "fire", "void", "phantom"];
 const randomColor = colors[Math.floor(Math.random() * colors.length)];
 const color = localStorage.getItem("colors") ?? randomColor;
 const link = document.createElement("link");

@@ -1,4 +1,4 @@
-const colors = ["moon", "zero", "venom", "fire", "void", "phantom"];
+const colors = ["zero", "venom", "fire", "void", "phantom"];
 export function configColors(color) {
   if (color === "random")
     color = colors[Math.floor(Math.random() * colors.length)];
@@ -11,6 +11,6 @@ export function configColors(color) {
   setTimeout(() => {
     head.replaceChild(link, document.getElementById("colors"));
     curtain.style.opacity = "0";
-  }, 1000);
+  }, 2000);
   link.setAttribute("id", "colors");
 }
