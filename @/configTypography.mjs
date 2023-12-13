@@ -19,6 +19,6 @@ export function configTypography(typography) {
   setTimeout(() => {
     head.replaceChild(link, document.getElementById("typography"));
     curtain.style.opacity = "0";
-  }, 1000);
+  }, 2000);
   link.setAttribute("id", "typography");
 }

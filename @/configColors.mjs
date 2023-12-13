@@ -11,6 +11,6 @@ export function configColors(color) {
   setTimeout(() => {
     head.replaceChild(link, document.getElementById("colors"));
     curtain.style.opacity = "0";
-  }, 2000);
+  }, 800);
   link.setAttribute("id", "colors");
 }
