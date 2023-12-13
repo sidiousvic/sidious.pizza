@@ -27,29 +27,29 @@ layout: layouts/base.njk
 </style>
 
 
-<script type="module" src="/@/setItemInLocalStorage.mjs"></script>
+<script type="module" src="/@/equipConfigButtons.mjs"></script>
 
 <div class="config-section">
   <h2>THEMES</h2>
   <div class="config-buttons">
-    <button onclick="localStorage.setItem('colors', 'fire');">FIRE</button>
-    <button onclick="localStorage.setItem('colors', 'venom');">VENOM</button>
-    <button onclick="localStorage.setItem('colors', 'zero');">ZERO</button>
-    <button onclick="localStorage.setItem('colors', 'void');">VOID</button>
-    <button onclick="localStorage.setItem('colors', 'moon');">MOON</button>
-    <button onclick="localStorage.setItem('colors', 'phantom');">PHANTOM</button>
+    <button class="config-button" data-config="colors-fire">FIRE</button>
+    <button class="config-button" data-config="colors-venom">VENOM</button>
+    <button class="config-button" data-config="colors-zero">ZERO</button>
+    <button class="config-button" data-config="colors-void">VOID</button>
+    <button class="config-button" data-config="colors-moon">MOON</button>
+    <button class="config-button" data-config="colors-phantom">PHANTOM</button>
   </div>
 </div>
 
 <div class="config-section">
   <h2>TYPOGRAPHY</h2>
   <div class="config-buttons">
-    <button onclick="localStorage.setItem('typography', 'nilheim');">NILHEIM</button>
-    <button onclick="localStorage.setItem('typography', 'doomed');">DOOMED</button>
-    <button onclick="localStorage.setItem('typography', 'virgil');">VIRGIL</button>
-    <button onclick="localStorage.setItem('typography', 'dexter');">DEXTER</button>
-    <button onclick="localStorage.setItem('typography', 'sinister');">SINISTER</button>
-    <button onclick="localStorage.setItem('typography', 'sidious');">SIDIOUS</button>
+    <button class="config-button" data-config="typography-nilheim">NILHEIM</button>
+    <button class="config-button" data-config="typography-doomed">DOOMED</button>
+    <button class="config-button" data-config="typography-virgil">VIRGIL</button>
+    <button class="config-button" data-config="typography-dexter">DEXTER</button>
+    <button class="config-button" data-config="typography-sinister">SINISTER</button>
+    <button class="config-button" data-config="typography-sidious">SIDIOUS</button>
   </div>
 </div>
 

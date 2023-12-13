@@ -1,4 +1,5 @@
 export function configColors(color) {
+  console.log("configColors", color);
   const link = document.createElement("link");
   link.setAttribute("rel", "stylesheet");
   link.setAttribute("href", `/css/themes/colors/${color}.css`);
