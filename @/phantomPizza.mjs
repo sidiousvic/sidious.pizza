@@ -91,8 +91,11 @@ const { sprites, score, sound, mouse, c } = config({
   SCORE_FONT: "var(--font-family-title)",
   BG_COLOR_HEX: "#0d1117",
   FG_COLOR_HEX: "var(--venom)",
-  START_TEXT_A: "<em>ENTER</em> AT YOUR OWN PERIL",
-  START_TEXT_B: "危険ゾーンに <em>投入</em>",
+  FILTER: "var(--filter-invert)",
+  START_TEXT_A:
+    '<em style="filter: var(--filter-invert)">ENTER</em> AT YOUR OWN PERIL',
+  START_TEXT_B:
+    '危険ゾーンに <em style="filter: var(--filter-invert)">投入</em>',
   SPRITES: ["/@/enemyL.png", "/@/enemyR.png", "/@/swoosh.png", "/@/player.gif"],
   AUDIOS: [
     { url: "/@/swoosh.wav", volume: 0.3 },

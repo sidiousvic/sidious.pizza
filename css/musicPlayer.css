@@ -89,6 +89,10 @@ button {
   font-size: 180%;
 }
 
+#music-player > p {
+  filter: var(--filter-invert);
+}
+
 #music-player-playback,
 #music-player-levels {
   display: flex;

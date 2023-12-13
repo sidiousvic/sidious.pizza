@@ -24,12 +24,12 @@ main {
 button {
   color: var(--venom);
   box-shadow: -3px -2px 11px -1px var(--venom) inset;
-  border-radius: 22px;
+  border-radius: 10px;
   font-family: var(--font-family);
   font-size: 1rem;
   font-weight: 400;
   background-color: var(--darkgray);
-  border: var(--venom) dotted 1px;
+  border: var(--venom) inset 0.5px;
   padding: 0.5em 1em;
   cursor: pointer;
   outline: none;
@@ -38,14 +38,14 @@ button {
     box-shadow: -1px -2px 11px black inset;
     background-color: var(--venom);
     color: var(--darkgray);
-    border: black dotted 1px;
+    border: black inset 0.5px;
   }
 
   &:focus {
     box-shadow: -1px -2px 11px black inset;
     background-color: var(--venom);
     color: var(--darkgray);
-    border-radius: 22px !important;
+    border-radius: 10px;
   }
 }
 

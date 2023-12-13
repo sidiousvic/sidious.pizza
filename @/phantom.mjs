@@ -360,6 +360,7 @@ export const config = ({
   AUDIOS,
   BG_COLOR_HEX,
   FG_COLOR_HEX,
+  FILTER,
 }) => {
   document.querySelector("main").innerHTML += `
 <canvas>
@@ -380,8 +381,8 @@ export const config = ({
 
 <style>
   :root {
-    --background-color: ${BG_COLOR_HEX};
-    --foreground-color: ${FG_COLOR_HEX};
+    --phantom-background-color: ${BG_COLOR_HEX};
+    --phantom-foreground-color: ${FG_COLOR_HEX};
   }
   
   html { 
@@ -415,8 +416,9 @@ export const config = ({
     display: ${START_SCREEN ? "flex" : "none"};
     top: 0;
     left: 0; 
-    background-color: var(--background-color); 
-    color: var(--foreground-color);
+    background-color: var(--phantom-background-color); 
+    color: var(--phantom-foreground-color);
+    filter: ${FILTER};
     flex-direction: column; 
     text-align: center; 
     align-items: center; 
@@ -435,6 +437,7 @@ export const config = ({
     font-family: ${START_SCREEN_TITLE_FONT}, monospace; 
     font-size: 40px;
     font-weight: 100;
+    filter: ${FILTER};w
   }
 
   @media (max-width: 600px) {
@@ -458,7 +461,7 @@ export const config = ({
     left: 50%; 
     mix-blend-mode: difference;
     transform: translate(-50%, 50%); 
-    color: var(--foreground-color); 
+    color: var(--phantom-foreground-color); 
   }
   
   canvas > img { 
