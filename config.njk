@@ -21,8 +21,14 @@ layout: layouts/base.njk
 .config-buttons {
   margin: 2rem 0;
   display: grid;
-  grid-template-columns: repeat(2, minmax(150px, 1fr));
+  grid-template-columns: repeat(3, minmax(150px, 1fr));
   gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .config-buttons {
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+  }
 }
 
 .config-button {
