@@ -87,7 +87,10 @@ blockquote {
   color: var(--venom);
   border-left: dotted 2px var(--venom);
   padding-left: 1em;
-  margin-left: 0;
+  margin: 1rem 0 0 0;
+  & > p {
+    margin: 0;
+  }
 }
 
 h1 {
