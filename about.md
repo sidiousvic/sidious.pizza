@@ -51,6 +51,8 @@ Hola amigxs, my name is Vic. Welcome to my cyber space. Here's where I [spill my
 
 > “Laugh and the world laughs with you, snore and you sleep alone.”
 
+<h3 style="display: block; text-align: right; margin-top: 0; margin-bottom: 1rem;">Anthony Burgess</h3>
+
 <br>
 
 <section class="contents">
