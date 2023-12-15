@@ -16,7 +16,7 @@ import {
   Phantom,
   config,
   randomSpawn,
-} from "/@/phantom.mjs";
+} from "/@/programs/phantom.mjs";
 
 const SPRITE_DIMENSION = 100;
 
@@ -28,8 +28,8 @@ const { sprites, c } = config({
   FG_COLOR_HEX: "#00ff2a",
   CURSOR: true,
   START_SCREEN: false,
-  SPRITES: ["/@/notFound404.png"],
-  AUDIOS: [{ url: "/@/death.wav", volume: 0.9 }],
+  SPRITES: ["/@/images/notFound404.png"],
+  AUDIOS: [{ url: "/@/music/death.wav", volume: 0.9 }],
 });
 
 const z = {

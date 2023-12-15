@@ -22,7 +22,7 @@ import {
   config,
   randomElement,
   randomSpawn,
-} from "/@/phantom.mjs";
+} from "/@/programs/phantom.mjs";
 
 if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
   const main = document.getElementById("main");
@@ -96,11 +96,16 @@ const { sprites, score, sound, mouse, c } = config({
     '<em style="filter: var(--filter-invert)">ENTER</em> AT YOUR OWN PERIL',
   START_TEXT_B:
     '危険ゾーンに <em style="filter: var(--filter-invert)">投入</em>',
-  SPRITES: ["/@/enemyL.png", "/@/enemyR.png", "/@/swoosh.png", "/@/player.gif"],
+  SPRITES: [
+    "/@/images/enemyL.png",
+    "/@/images/enemyR.png",
+    "/@/images/swoosh.png",
+    "/@/images/player.gif",
+  ],
   AUDIOS: [
-    { url: "/@/swoosh.wav", volume: 0.3 },
-    { url: "/@/death.wav", volume: 0.9 },
-    { url: "/@/phantomPizza.wav", volume: 0.8 },
+    { url: "/@/music/swoosh.wav", volume: 0.3 },
+    { url: "/@/music/death.wav", volume: 0.9 },
+    { url: "/@/music/phantomPizza.wav", volume: 0.8 },
   ],
 });
 

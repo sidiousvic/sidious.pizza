@@ -17,14 +17,14 @@ order: 3
 
 </style>
 
-<script type="module" src="/@/vicsAge.mjs"></script>
+<script type="module" src="/@/programs/vicsAge.mjs"></script>
 
 <div class="info">
 
 <figure class="vic-pic">
   <picture>
 
-<img alt="vic" src="/@/vic.jpeg"/>
+<img alt="vic" src="/@/images/vic.jpeg"/>
 
   </picture>
 </figure>
@@ -79,7 +79,7 @@ Hola amigxs, my name is Vic. Welcome to my cyber space. Here's where I [spill my
 <figure>
   <picture>
 
-![A dry mountain in the middle of a city](/@/chihuahua.jpeg)
+![A dry mountain in the middle of a city](/@/images/chihuahua.jpeg)
 
   </picture>
   <figcaption>
@@ -94,7 +94,7 @@ I was born in Chihuahua, in the north of Mexico. It's a very dry region where wa
 <figure>
   <picture>
 
-![A scorpion in dry ground](/@/scorpionism.png)
+![A scorpion in dry ground](/@/images/scorpionism.png)
 
   </picture>
   <figcaption>
@@ -110,13 +110,13 @@ I'm very proud to be from the Mexican north, where people
 
 # MISLED YOUTH
 
-I was a bit of a goblin _(<img src="/@/goblin.png" width=40 style="display: inline-block" />)_ when young, and skipped school to play ball, guitar and skateboard. I spent a lot of time playing Zelda and watching MTV. My heroes were [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and Angus Young.
+I was a bit of a goblin _(<img src="/@/images/goblin.png" width=40 style="display: inline-block" />)_ when young, and skipped school to play ball, guitar and skateboard. I spent a lot of time playing Zelda and watching MTV. My heroes were [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and Angus Young.
 
 <figure>
   <picture>
 
 <video autoplay muted loop>
-  <source src="/@/angus.mp4" type="video/mp4">
+  <source src="/@/movies/angus.mp4" type="video/mp4">
 </video>
 
   </picture>
@@ -133,7 +133,7 @@ Even tough I behave like an adult now, I think it's important to always keep a l
 
 <a name="just-do-shit"></a>
 
-# <img width=40 style="transform: translateY(10px)" src="/@/swoosh.png" /> JUST DO SH\*T
+# <img width=40 style="transform: translateY(10px)" src="/@/images/swoosh.png" /> JUST DO SH\*T
 
 I love Nike's slogan, _"Just Do Sh\*t"_. When boredom strikes I [program](https://github.com/sidiousvic), write [haiku](/kaminari-no-ura), make [doomy music](/swims) or even silly web cartoons to contribute to the net of human creation.
 
@@ -141,7 +141,7 @@ I love Nike's slogan, _"Just Do Sh\*t"_. When boredom strikes I [program](https:
   <picture>
 
 <video autoplay muted loop>
-  <source src="/@/surfing-with-the-alien.mp4" type="video/mp4">
+  <source src="/@/movies/surfing-with-the-alien.mp4" type="video/mp4">
 </video>
 
   </picture>
@@ -180,7 +180,7 @@ Tokyo adopted me a few years ago and I love living here. You can break the law i
   <picture>
 
 <video autoplay muted loop>
-  <source src="/@/vic-skating-tokyo.mp4" type="video/mp4">
+  <source src="/@/movies/vic-skating-tokyo.mp4" type="video/mp4">
 </video>
 
   </picture>
@@ -197,7 +197,7 @@ I may get tired of it all someday, but I will always call it home.
 <figure>
   <picture>
 
-![A view of Kanda river near Asakusabashi, Tokyo](/@/tokyo.gif)
+![A view of Kanda river near Asakusabashi, Tokyo](/@/images/tokyo.gif)
 
   </picture>
 </figure>
@@ -205,7 +205,7 @@ I may get tired of it all someday, but I will always call it home.
 <figure>
   <picture>
 
-![Cherry blossom petals falling by a convenience store by a side road in Tokyo](/@/cherry-blossoms-at-nite.gif)
+![Cherry blossom petals falling by a convenience store by a side road in Tokyo](/@/images/cherry-blossoms-at-nite.gif)
 
   </picture>
 </figure>
@@ -213,7 +213,7 @@ I may get tired of it all someday, but I will always call it home.
 <figure>
   <picture>
 
-![A backstreet with several drinking establishments at night](/@/apa-hotel-blues.gif)
+![A backstreet with several drinking establishments at night](/@/images/apa-hotel-blues.gif)
 
   </picture>
 </figure>
@@ -221,7 +221,7 @@ I may get tired of it all someday, but I will always call it home.
 <figure>
   <picture>
 
-![A view of the tokyo skyline, with buildings' plane lights glowing](/@/skyline-tokyo.gif)
+![A view of the tokyo skyline, with buildings' plane lights glowing](/@/images/skyline-tokyo.gif)
 
   </picture>
 </figure>

@@ -3,7 +3,7 @@ layout: layouts/haiku.njk
 title: イチョウ
 date: 2023
 pinned: true
-gif: /@/ginkgo.gif
+gif: /@/images/ginkgo.gif
 tags:
   - haiku
 draft: false

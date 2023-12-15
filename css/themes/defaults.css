@@ -2,12 +2,12 @@
 
 @font-face {
   font-family: OffBitDot;
-  src: url(/@/OffBitTrial-Dot.ttf);
+  src: url(/@/fonts/OffBitTrial-Dot.ttf);
 }
 
 @font-face {
   font-family: OffBitDotBold;
-  src: url(/@/OffBitTrial-DotBold.ttf);
+  src: url(/@/fonts/OffBitTrial-DotBold.ttf);
 }
 
 :root {
