@@ -1,5 +1,29 @@
-document.addEventListener("DOMContentLoaded", () => {
-  if (!/iPhone|iPad|iPod|Android/i.test(navigator.userAgent))
-    (document.querySelector("#start-screen-title").innerHTML = "PHANTOM PIZZA"),
-      (document.querySelector("#start-screen-text").style.display = "none");
-});
+import { isMobile } from "./isMobileUserAgent.mjs";
+import { pipe, inject, mutate } from "./utils.mjs";
+
+const z_0 = {
+  startScreenTitleId: "start-screen-title",
+  startScreenTextId: "start-screen-text",
+};
+
+const changeStartScreenText = mutate(
+  ({ startScreenTitleId }) =>
+    (document.getElementById(startScreenTitleId).innerHTML = "PHANTOM PIZZA")
+);
+
+const hideStartScreenText = mutate(
+  ({ startScreenTextId }) =>
+    (document.getElementById(startScreenTextId).style.display = "none")
+);
+
+const changeStartScreenTextToSayOnlyPhantomPizza = pipe(
+  inject(z_0),
+  changeStartScreenText,
+  hideStartScreenText
+);
+
+!isMobile(navigator.userAgent) &&
+  document.addEventListener(
+    "DOMContentLoaded",
+    changeStartScreenTextToSayOnlyPhantomPizza
+  );
