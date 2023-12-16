@@ -1,3 +1,4 @@
+import { COLORS, TYPOGRAPHIES } from "./constants.mjs";
 import { pipe, inject, mutate, random } from "./utils.mjs";
 
 const getType = (s) => s.split("-")[0];
@@ -5,8 +6,8 @@ const getType = (s) => s.split("-")[0];
 const loadingTime_ms = (type) => (type === "typography" ? 1000 : 0);
 
 const z_0 = {
-  colors: ["zero", "venom", "fire", "void", "phantom"],
-  typography: ["sinister", "dexter", "virgil", "nilheim", "doomed", "sidious"],
+  colors: COLORS,
+  typography: TYPOGRAPHIES,
   user: { stored: undefined },
 };
 

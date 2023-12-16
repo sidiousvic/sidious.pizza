@@ -1,14 +1,8 @@
-const typographies = [
-  "sinister",
-  "dexter",
-  "virgil",
-  "nilheim",
-  "doomed",
-  "sidious",
-];
-const randomTypography =
-  typographies[Math.floor(Math.random() * typographies.length)];
+import { random } from "./utils.mjs";
+import { TYPOGRAPHIES } from "./constants.mjs";
+
 const typography = localStorage.getItem("typography");
+
 document.documentElement.classList.add(
-  `typography-${typography ? typography : randomTypography}`
+  `typography-${typography ? typography : random(TYPOGRAPHIES)}`
 );
