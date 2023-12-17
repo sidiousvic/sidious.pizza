@@ -1,45 +1,48 @@
 import { pipe, apply, inject, mutate } from "./utils.mjs";
 
-const getType = (s) => s.split("-")[0];
+const computeLoadingTime_ms = (type) => (type === "typography" ? 1000 : 0);
 
-const getValue = (s) => s.split("-")[1];
+const fx_setCurtainOpacity = (value) =>
+  (document.getElementById("curtain").style.opacity = value);
 
-const loadingTime_ms = (type) => (type === "typography" ? 1000 : 0);
+const fx_removeClassContaining = (type) =>
+  [...document.documentElement.classList].map(
+    (c) => c.includes(type) && document.documentElement.classList.remove(c)
+  );
 
-const z_0 = {
-  colors: ["zero", "venom", "fire", "void", "phantom"],
-  typography: ["sinister", "dexter", "virgil", "nilheim", "doomed", "sidious"],
-  user: { stored: undefined },
-};
+const fx_removeStoredItem = (type) => localStorage.removeItem(type);
+
+const fx_enableSelectedConfig = (type, value) =>
+  document.documentElement.classList.add(`${type}-${value}`);
+
+const z_0 = { user: { stored: undefined } };
 
 const switchSelectedConfig = pipe(
   inject(z_0),
-  apply(({ target }) => ({
+  apply((z) => ({
     user: {
-      stored: localStorage.getItem(getType(target.dataset.config))
-        ? `${getType(target.dataset.config)}-${localStorage.getItem(
-            getType(target.dataset.config)
+      stored: localStorage.getItem(z.target.dataset.type)
+        ? `${z.target.dataset.type}-${localStorage.getItem(
+            z.target.dataset.type
           )}`
         : undefined,
     },
   })),
-  mutate(() => (document.getElementById("curtain").style.opacity = "1")),
-  mutate((z) =>
-    setTimeout(
-      () => (
-        [...document.documentElement.classList].map(
-          (c) =>
-            c.includes(getType(z.target.dataset.config)) &&
-            document.documentElement.classList.remove(c)
+  mutate(
+    (z) => (
+      fx_setCurtainOpacity(1),
+      setTimeout(
+        () => (
+          fx_removeClassContaining(z.target.dataset.type),
+          fx_removeStoredItem(z.target.dataset.type),
+          fx_enableSelectedConfig(
+            z.target.dataset.type,
+            z.target.dataset.value
+          ),
+          fx_setCurtainOpacity(0)
         ),
-        localStorage.setItem(
-          getType(z.target.dataset.config),
-          getValue(z.target.dataset.config)
-        ),
-        document.documentElement.classList.add(z.target.dataset.config),
-        (document.getElementById("curtain").style.opacity = "0")
-      ),
-      loadingTime_ms(getType(z.target.dataset.config))
+        computeLoadingTime_ms(z.target.dataset.type)
+      )
     )
   )
 );
