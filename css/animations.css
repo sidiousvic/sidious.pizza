@@ -2,6 +2,39 @@
   animation: shake 0.5s infinite;
 }
 
+.spulse {
+  /* display: inline-block; */
+  /* transform-origin: 0% 30%; */
+  animation: spulse 6s infinite;
+}
+
+@keyframes spulse {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg);
+  }
+  10%,
+  20%,
+  30% {
+    transform: rotate(225deg);
+    opacity: 0;
+  }
+  50% {
+    transform: rotate(425deg);
+    opacity: 1;
+  }
+  70%,
+  80%,
+  90% {
+    transform: rotate(605deg);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(765deg);
+  }
+}
+
 @keyframes shake {
   0%,
   100% {
