@@ -24,7 +24,7 @@ order: 3
 <figure class="vic-pic">
   <picture>
 
-<img inline alt="vic" src="/@/images/vic.jpeg"/>
+<img inline alt="vic" src="/@/images/vic.jpg"/>
 
   </picture>
 </figure>
