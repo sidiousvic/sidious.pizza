@@ -1,6 +1,6 @@
 ---
 layout: layouts/swims.njk
-title: TATTSU
+title: Tattsu
 pinned: true
 date: 2023-08-01
 gif: /@/images/tattsu.gif

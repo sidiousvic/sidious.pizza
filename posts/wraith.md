@@ -1,6 +1,6 @@
 ---
 layout: layouts/swims.njk
-title: WRAITH
+title: Wraith
 date: 2023-08-01
 gif: /@/images/wraith.gif
 audio: /@/music/wraith.mp3
