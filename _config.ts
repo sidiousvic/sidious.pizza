@@ -8,6 +8,7 @@ import pageFind from "lume/plugins/pagefind.ts";
 import sitemap from "lume/plugins/sitemap.ts";
 import feed from "lume/plugins/feed.ts";
 import lang from "$/filters/lang.ts";
+import terser from "lume/plugins/terser.ts";
 
 const site = lume({
   location: new URL("https://sidious.pizza/"),
@@ -19,6 +20,7 @@ site
   .copy("scripts")
   .copy("css")
   .copy("styles.css")
+  .use(terser({ extensions: [".mjs"] }))
   .use(date())
   .use(codeHighlight())
   .use(basePath())

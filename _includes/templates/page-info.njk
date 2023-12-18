@@ -1,10 +1,12 @@
-<link preload rel="stylesheet" href="css/page-info.css">
+<style>
+  {% include '/css/page-info.css' %}
+</style>
 
-<script type="module" src="/@/programs/togglePageInfo.mjs"></script>
+<script type="module">   
+  {% include '/@/programs/togglePageInfo.mjs' %}
+</script>
 
-<button href="#" class="page-info-button">
-?
-</button>
+<button href="#" class="page-info-button">?</button>
 
 <div class="page-info-overlay">
   <div class="page-info">

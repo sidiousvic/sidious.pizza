@@ -4,34 +4,21 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <meta name="description" content="{{ description or site.description }}">
+
+    <title>{{ title }}</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link preload rel="stylesheet" href="/styles.css">
-    <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="{{ site.title }}">
-    <link rel="alternate" href="/feed.json" type="application/json" title="{{ site.title }}">
+    <link rel="alternate" href="/feed.xml" type="application/atom+xml" 
+      title="{{ site.title }}">
+    <link rel="alternate" href="/feed.json" type="application/json" 
+      title="{{ site.title }}">
     <link rel="icon" type="image/x-icon" href="/@/images/pizza-slice.png">
   </head>
   <body>
-    <nav id="navbar" class="navbar">
-      <a href="/" class="navbar-home">
-        {{ site.title }}
-      </a>
 
-      <ul class="navbar-links">
-      {%- for entry in search.pages("visible=true", "order") %}
-        <li>
-          <a href="{{ entry.data.url }}"{% if entry.data.url == url %} aria-current="page"{% endif %}>
-            {% if entry.data.url == url %} 
-            <div class="current-page-indicator-bullet"></div> 
-            {% endif %}
-            {{ entry.data.title | upper }}
-          </a>
-        </li>
-      {%- endfor %}
-      </ul>
-    </nav>
-
+  {% include "templates/navbar.njk" %}
 
 <!--  .-----.
     /  .----.\
@@ -59,9 +46,9 @@ S I D I O U S . P I Z Z A  -->
       </p>
     </footer>
 
-{% if page.data.info %} 
-  {% include "templates/page-info.njk" %}
-{% endif %}
+  {% if page.data.info %} 
+    {% include "templates/page-info.njk" %}
+  {% endif %}
 
   <link href="/@/programs/utils.mjs" rel="preload" as="script" crossorigin>
 
