@@ -10,3 +10,9 @@ footer {
 footer > p {
   margin-block: 5px;
 }
+
+footer > p > a {
+  color: var(--venom);
+  transition: color 0.3s ease-in-out;
+  font-family: var(--font-family-secondary);
+}
