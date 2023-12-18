@@ -1,5 +1,11 @@
-import { COLORS, TYPOGRAPHIES } from "./constants.mjs";
-import { pipe, inject, mutate, random } from "./utils.mjs";
+import {
+  pipe,
+  inject,
+  mutate,
+  random,
+  COLORS,
+  TYPOGRAPHIES,
+} from "./utils.mjs";
 
 const computeLoadingTime_ms = (type) => (type === "typography" ? 1000 : 0);
 

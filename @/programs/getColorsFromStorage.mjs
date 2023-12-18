@@ -1,5 +1,4 @@
-import { random } from "./utils.mjs";
-import { COLORS } from "./constants.mjs";
+import { random, COLORS } from "/@/programs/utils.mjs";
 
 const color = localStorage.getItem("colors");
 

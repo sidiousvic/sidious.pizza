@@ -58,19 +58,28 @@ S I D I O U S . P I Z Z A  -->
 {% if page.data.info %} 
   {% include "templates/page-info.njk" %}
 {% endif %}
-    
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-	if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-		const navbarLinks = document.querySelector('.navbar-links');	
-		navbarLinks.style.display = 'none';
-	}
-});
-</script>
 
-    <script type="module" src="/@/programs/makeMainFillUpScreen.mjs"></script>
-    <script type="module" src="/@/programs/liftCurtainOnLoad.mjs"></script>
-    <script type="module" src="/@/programs/getColorsFromStorage.mjs"></script>
-    <script type="module" src="/@/programs/getTypographyFromStorage.mjs"></script>
+  <link href="/@/programs/utils.mjs" rel="preload" as="script" crossorigin>
+
+  <script async type="module">   
+    {% include '/@/programs/hideNavbarLinksOnMobile.mjs' %}
+  </script>
+
+  <script async type="module">   
+    {% include '/@/programs/liftCurtainOnLoad.mjs' %}
+  </script>
+
+  <script async type="module">   
+    {% include '/@/programs/getColorsFromStorage.mjs' %}
+  </script>
+
+  <script async type="module">   
+    {% include '/@/programs/getTypographyFromStorage.mjs' %}
+  </script>
+
+  <script async type="module">   
+    {% include '/@/programs/makeMainFillUpScreen.mjs' %}
+  </script>
+
   </body>
 </html>

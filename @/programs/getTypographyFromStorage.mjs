@@ -1,5 +1,4 @@
-import { random } from "./utils.mjs";
-import { TYPOGRAPHIES } from "./constants.mjs";
+import { random, TYPOGRAPHIES } from "/@/programs/utils.mjs";
 
 const typography = localStorage.getItem("typography");
 

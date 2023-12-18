@@ -21,3 +21,17 @@ export const inject = (a) => (b) =>
 export const mutate = (fn) => (z) => (fn(z), z);
 
 export const random = (list) => list[Math.floor(Math.random() * list.length)];
+
+export const isMobile = (userAgent) =>
+  /iPhone|iPad|iPod|Android/i.test(userAgent);
+
+export const COLORS = ["zero", "venom", "fire", "void", "phantom"];
+
+export const TYPOGRAPHIES = [
+  "sinister",
+  "dexter",
+  "virgil",
+  "nilheim",
+  "doomed",
+  "sidious",
+];
