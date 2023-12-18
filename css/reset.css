@@ -75,6 +75,11 @@ strong {
   color: var(--venom);
 }
 
+sup {
+  font-size: 0.7em;
+  vertical-align: super;
+}
+
 ul,
 li {
   list-style-type: "";
