@@ -24,7 +24,7 @@ order: 3
 <figure class="vic-pic">
   <picture>
 
-<img alt="vic" src="/@/images/vic.jpeg"/>
+<img inline alt="vic" src="/@/images/vic.jpeg"/>
 
   </picture>
 </figure>
@@ -79,7 +79,7 @@ Hola amigxs, my name is Vic. Welcome to my cyber space. Here's where I [spill my
 <figure>
   <picture>
 
-![A dry mountain in the middle of a city](/@/images/chihuahua.jpeg)
+<img inline src="/@/images/chihuahua.jpeg">
 
   </picture>
   <figcaption>
@@ -94,7 +94,7 @@ I was born in Chihuahua, in the north of Mexico. It's a very dry region where wa
 <figure>
   <picture>
 
-![A scorpion in dry ground](/@/images/scorpionism.png)
+<img inline src="/@/images/scorpionism.png">
 
   </picture>
   <figcaption>
@@ -110,7 +110,7 @@ I'm very proud to be from the Mexican north, where people
 
 # MISLED YOUTH
 
-I was a bit of a goblin _(<img src="/@/images/goblin.png" width=40 style="display: inline-block" />)_ when young, and skipped school to play ball, guitar and skateboard. I spent a lot of time playing Zelda and watching MTV. My heroes were [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and Angus Young.
+I was a bit of a goblin _(<img inline src="/@/images/goblin.png" width=40 style="display: inline-block" />)_ when young, and skipped school to play ball, guitar and skateboard. I spent a lot of time playing Zelda and watching MTV. My heroes were [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and Angus Young.
 
 <figure>
   <picture>
@@ -133,7 +133,7 @@ Even tough I behave like an adult now, I think it's important to always keep a l
 
 <a name="just-do-shit"></a>
 
-# <img width=40 style="transform: translateY(10px)" src="/@/images/swoosh.png" /> JUST DO SH\*T
+# <img inline width=40 style="transform: translateY(10px)" src="/@/images/swoosh.png" /> JUST DO SH\*T
 
 I love Nike's slogan, _"Just Do Sh\*t"_. When boredom strikes I [program](https://github.com/sidiousvic), write [haiku](/kaminari-no-ura), make [doomy music](/swims) or even silly web cartoons to contribute to the net of human creation.
 
@@ -161,7 +161,7 @@ I loved the old web, where websites were simpler and wackier.
 <figure>
   <picture>
 
-![](https://storage.googleapis.com/blog-images-backup/1*tY3o3UFtBaMQ103en48qxA.png)
+<img inline src="/@/images/dannys-homepage.png">
 
   </picture>
 
@@ -197,7 +197,7 @@ I may get tired of it all someday, but I will always call it home.
 <figure>
   <picture>
 
-![A view of Kanda river near Asakusabashi, Tokyo](/@/images/tokyo.gif)
+<img inline src="/@/images/tokyo.gif">
 
   </picture>
 </figure>
@@ -205,7 +205,7 @@ I may get tired of it all someday, but I will always call it home.
 <figure>
   <picture>
 
-![Cherry blossom petals falling by a convenience store by a side road in Tokyo](/@/images/cherry-blossoms-at-nite.gif)
+<img inline src="/@/images/cherry-blossoms-at-nite.gif">
 
   </picture>
 </figure>
@@ -213,7 +213,7 @@ I may get tired of it all someday, but I will always call it home.
 <figure>
   <picture>
 
-![A backstreet with several drinking establishments at night](/@/images/apa-hotel-blues.gif)
+<img inline src="/@/images/apa-hotel-blues.gif">
 
   </picture>
 </figure>
@@ -221,7 +221,7 @@ I may get tired of it all someday, but I will always call it home.
 <figure>
   <picture>
 
-![A view of the tokyo skyline, with buildings' plane lights glowing](/@/images/skyline-tokyo.gif)
+<img inline src="/@/images/skyline-tokyo.gif">
 
   </picture>
 </figure>
