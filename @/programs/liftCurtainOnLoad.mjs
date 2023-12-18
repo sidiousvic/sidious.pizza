@@ -8,4 +8,4 @@ const setCurtainOpacityToZero = mutate(
 
 const hideCurtain = pipe(inject(z_0), setCurtainOpacityToZero);
 
-addEventListener("load", hideCurtain);
+addEventListener("DOMContentLoaded", hideCurtain);
