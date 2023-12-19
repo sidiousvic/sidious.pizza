@@ -1,4 +1,4 @@
-import { pipe, inject, mutate } from "../utils";
+import { pipe, inject, mutate } from "/@/programs/utils.mjs";
 
 const z_0 = { curtainId: "curtain" };
 

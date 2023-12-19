@@ -17,12 +17,15 @@
     <link rel="preload" href="/@/fonts/DotGothic16.ttf" 
       as="font" type="font/ttf" crossorigin>
 
-    <link preload rel="stylesheet" href="/bundle.css">
+    <link preload rel="stylesheet" href="/bundle.css" 
+      crossorigin>
 
     <link rel="alternate" href="/feed.xml" type="application/atom+xml" 
       title="{{ site.title }}">
+
     <link rel="alternate" href="/feed.json" type="application/json" 
       title="{{ site.title }}">
+
     <link rel="icon" type="image/x-icon" href="/@/images/pizza-slice.png">
   </head>
   <body>
@@ -39,6 +42,8 @@
  / /             \
  */               \
 S I D I O U S . P I Z Z A  -->
+
+
 
 
     <div id="curtain"></div>
@@ -62,7 +67,7 @@ S I D I O U S . P I Z Z A  -->
 
   <script async type="module" inline src="/@/programs/hideNavbarLinksOnMobile.mjs">
     </script>
-  <script async type="module" inline src="/@/programs/liftCurtainOnLoad.mjs">
+  <script async type="module" inline src="/@/programs/curtain.mjs">
     </script>
   <script async type="module" inline src="/@/programs/getColorsFromStorage.mjs">
     </script>

@@ -13,8 +13,8 @@ order: 3
 }
 </style>
 
-<script type="module" src="/@/programs/vicsAge.mjs"></script>
-<script type="module" src="/@/programs/lazyVideos.mjs"></script>
+<script inline type="module" src="/@/programs/vicsAge.mjs"></script>
+<script inline type="module" src="/@/programs/lazyVideos.mjs"></script>
 
 <div class="info">
 
