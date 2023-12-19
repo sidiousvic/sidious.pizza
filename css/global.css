@@ -64,7 +64,8 @@
   }
 }
 
-.contents h1 {
+.contents h1,
+.contents h2 {
   padding-left: 40px;
 }
 

@@ -54,7 +54,7 @@ Hola amigxs, my name is Vic. Welcome to my cyber space. Here's where I [spill my
 
 <section class="contents">
 
-# Contents
+## Contents
 
 - [Born and raised in the desert](#born-and-raised)
 - [Misled youth](#misled-youth)
@@ -69,7 +69,7 @@ Hola amigxs, my name is Vic. Welcome to my cyber space. Here's where I [spill my
 
 <a name="born-and-raised"></a>
 
-# BORN AND RAISED IN THE DESERT
+## BORN AND RAISED IN THE DESERT
 
 <br>
 
@@ -105,7 +105,7 @@ I'm very proud to be from the Mexican north, where people
 
 <a name="misled-youth"></a>
 
-# MISLED YOUTH
+## MISLED YOUTH
 
 I was a bit of a goblin _(<img src="/@/images/goblin.webp" width=40 style="display: inline-block" />)_ when young, and skipped school to play ball, guitar and skateboard. I spent a lot of time playing Zelda and watching MTV. My heroes were [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and Angus Young.
 
@@ -130,7 +130,7 @@ Even tough I behave like an adult now, I think it's important to always keep a l
 
 <a name="just-do-shit"></a>
 
-# <img width=40 style="transform: translateY(10px)" src="/@/images/swoosh.webp" /> JUST DO SH\*T
+## <img width=40 style="transform: translateY(10px)" src="/@/images/swoosh.webp" /> JUST DO SH\*T
 
 I love Nike's slogan, _"Just Do Sh\*t"_. When boredom strikes I [program](https://github.com/sidiousvic), write [haiku](/kaminari-no-ura), make [doomy music](/swims) or even silly web cartoons to contribute to the net of human creation.
 
@@ -151,7 +151,7 @@ I love Nike's slogan, _"Just Do Sh\*t"_. When boredom strikes I [program](https:
 
 <a name="hello-world"></a>
 
-# "HELLO WORLD!"
+## "HELLO WORLD!"
 
 I loved the old web, where websites were simpler and wackier.
 
@@ -169,7 +169,7 @@ I hope this website makes Danny proud.
 
 <a name="tokyo-boy"></a>
 
-# TOKYO BOY
+## TOKYO BOY
 
 Tokyo adopted me a few years ago and I love living here. You can break the law in sinless ways and still feel like a maverick.
 
@@ -226,7 +226,7 @@ I may get tired of it all someday, but I will always call it home.
 
 <a name="thanks-for-visiting"></a>
 
-# THANKS FOR VISITING!
+## THANKS FOR VISITING!
 
 That's me. _どうもどうも！_ If you want to get in touch, send me a mail at _vic‎@‎sidious.pizza_. Welcome again and I hope you have a great time in this website.
 
