@@ -1,6 +1,7 @@
 @font-face {
   font-family: Virgil;
   src: url(/@/fonts/Virgil.ttf);
+  font-display: swap;
 }
 
 .typography-virgil {

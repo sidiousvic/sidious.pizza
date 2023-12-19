@@ -1,6 +1,7 @@
 @font-face {
   font-family: Alagard;
   src: url(/@/fonts/Alagard.ttf);
+  font-display: swap;
 }
 
 .typography-nilheim {

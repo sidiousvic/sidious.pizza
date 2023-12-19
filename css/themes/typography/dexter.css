@@ -1,6 +1,7 @@
 @font-face {
   font-family: Dexter;
   src: url(/@/fonts/Dexter.ttf);
+  font-display: swap;
 }
 
 .typography-dexter {

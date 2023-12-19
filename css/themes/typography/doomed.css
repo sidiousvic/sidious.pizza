@@ -1,6 +1,7 @@
 @font-face {
   font-family: Doomed;
   src: url(/@/fonts/Doomed.ttf);
+  font-display: swap;
 }
 
 .typography-doomed {

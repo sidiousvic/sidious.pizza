@@ -2,6 +2,7 @@
   font-family: Sidious;
   src: url(/@/fonts/Sidious.ttf);
   size-adjust: 90%;
+  font-display: swap;
 }
 
 .typography-sidious {
