@@ -1,4 +1,4 @@
-import { pipe, inject, mutate, isMobile } from "./utils.mjs";
+import { pipe, inject, mutate, isMobile } from "/@/programs/utils.mjs";
 
 const z_0 = {
   startScreenTitleId: "start-screen-title",

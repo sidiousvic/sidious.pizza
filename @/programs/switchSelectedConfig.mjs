@@ -1,4 +1,4 @@
-import { pipe, apply, inject, mutate } from "./utils.mjs";
+import { pipe, apply, inject, mutate } from "/@/programs/utils.mjs";
 
 const computeLoadingTime_ms = (type) => (type === "typography" ? 1000 : 0);
 
@@ -14,6 +14,9 @@ const fx_removeStoredItem = (type) => localStorage.removeItem(type);
 
 const fx_enableSelectedConfig = (type, value) =>
   document.documentElement.classList.add(`${type}-${value}`);
+
+const fx_storeSelectedConfig = (type, value) =>
+  localStorage.setItem(type, value);
 
 const z_0 = { user: { stored: undefined } };
 
@@ -39,6 +42,7 @@ const switchSelectedConfig = pipe(
             z.target.dataset.type,
             z.target.dataset.value
           ),
+          fx_storeSelectedConfig(z.target.dataset.type, z.target.dataset.value),
           fx_setCurtainOpacity(0)
         ),
         computeLoadingTime_ms(z.target.dataset.type)

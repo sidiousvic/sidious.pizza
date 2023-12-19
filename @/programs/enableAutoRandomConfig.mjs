@@ -5,7 +5,7 @@ import {
   random,
   COLORS,
   TYPOGRAPHIES,
-} from "./utils.mjs";
+} from "/@/programs/utils.mjs";
 
 const computeLoadingTime_ms = (type) => (type === "typography" ? 1000 : 0);
 
