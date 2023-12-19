@@ -10,14 +10,14 @@ import feed from "lume/plugins/feed.ts";
 import lang from "$/filters/lang.ts";
 import terser from "lume/plugins/terser.ts";
 import inline from "lume/plugins/inline.ts";
-import { bundleAndMinifyCSS } from "./plugins/bundleAndMinifyCSS.ts";
+import { bundleCSS } from "./plugins/bundleAndMinifyCSS.ts";
 
 const site = lume({ location: new URL("https://sidious.pizza/") });
 
 site
   .ignore("README.md")
   .use(inline({ extensions: [".mjs", ".html", ".css"] }))
-  .use(bundleAndMinifyCSS({ bundler: { filename: "css/styles.css" } }))
+  .use(bundleCSS({ bundler: { filename: "css/styles.css" } }))
   .copy("@")
   .use(terser({ extensions: [".mjs"] }))
   .use(date())
