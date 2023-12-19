@@ -76,7 +76,7 @@ Hola amigxs, my name is Vic. Welcome to my cyber space. Here's where I [spill my
 <figure>
   <picture>
 
-<img src="/@/images/chihuahua.jpeg">
+<img src="/@/images/chihuahua.webp">
 
   </picture>
   <figcaption>
