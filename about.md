@@ -76,7 +76,7 @@ Hola amigxs, my name is Vic. Welcome to my cyber space. Here's where I [spill my
 <figure>
   <picture>
 
-<img src="/@/images/chihuahua.webp">
+<img loading="lazy" loading="lazy" src="/@/images/chihuahua.webp">
 
   </picture>
   <figcaption>
@@ -91,7 +91,7 @@ I was born in Chihuahua, in the north of Mexico. It's a very dry region where wa
 <figure>
   <picture>
 
-<img src="/@/images/scorpionism.webp">
+<img loading="lazy" loading="lazy" src="/@/images/scorpionism.webp">
 
   </picture>
   <figcaption>
@@ -107,7 +107,7 @@ I'm very proud to be from the Mexican north, where people
 
 ## MISLED YOUTH
 
-I was a bit of a goblin _(<img src="/@/images/goblin.webp" width=40 style="display: inline-block" />)_ when young, and skipped school to play ball, guitar and skateboard. I spent a lot of time playing Zelda and watching MTV. My heroes were [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and Angus Young.
+I was a bit of a goblin _(<img loading="lazy" src="/@/images/goblin.webp" width=40 style="display: inline-block" />)_ when young, and skipped school to play ball, guitar and skateboard. I spent a lot of time playing Zelda and watching MTV. My heroes were [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and Angus Young.
 
 <figure>
   <picture>
@@ -130,7 +130,7 @@ Even tough I behave like an adult now, I think it's important to always keep a l
 
 <a name="just-do-shit"></a>
 
-## <img width=40 style="transform: translateY(10px)" src="/@/images/swoosh.webp" /> JUST DO SH\*T
+## <img loading="lazy" width=40 style="transform: translateY(10px)" src="/@/images/swoosh.webp" /> JUST DO SH\*T
 
 I love Nike's slogan, _"Just Do Sh\*t"_. When boredom strikes I [program](https://github.com/sidiousvic), write [haiku](/kaminari-no-ura), make [doomy music](/swims) or even silly web cartoons to contribute to the net of human creation.
 
@@ -158,7 +158,7 @@ I loved the old web, where websites were simpler and wackier.
 <figure>
   <picture>
 
-<img src="/@/images/dannys-homepage.webp">
+<img loading="lazy" src="/@/images/dannys-homepage.webp">
 
   </picture>
 
@@ -194,7 +194,7 @@ I may get tired of it all someday, but I will always call it home.
 <figure>
   <picture>
 
-<img src="/@/images/tokyo.gif">
+<img loading="lazy" src="/@/images/tokyo.gif">
 
   </picture>
 </figure>
@@ -202,7 +202,7 @@ I may get tired of it all someday, but I will always call it home.
 <figure>
   <picture>
 
-<img src="/@/images/cherry-blossoms-at-nite.gif">
+<img loading="lazy" src="/@/images/cherry-blossoms-at-nite.gif">
 
   </picture>
 </figure>
@@ -210,7 +210,7 @@ I may get tired of it all someday, but I will always call it home.
 <figure>
   <picture>
 
-<img src="/@/images/apa-hotel-blues.gif">
+<img loading="lazy" src="/@/images/apa-hotel-blues.gif">
 
   </picture>
 </figure>
@@ -218,7 +218,7 @@ I may get tired of it all someday, but I will always call it home.
 <figure>
   <picture>
 
-<img src="/@/images/skyline-tokyo.gif">
+<img loading="lazy" src="/@/images/skyline-tokyo.gif">
 
   </picture>
 </figure>
