@@ -1,5 +1,4 @@
 import { bundleAsync } from "npm:lightningcss-wasm@1.22.1";
-import { Page } from "lume/core/filesystem.ts";
 
 export const bundleAndMinifyCSS =
   (options: {
@@ -17,26 +16,31 @@ export const bundleAndMinifyCSS =
         minify: true,
         analyzeDependencies: false,
       },
-      target: "/bundle.css",
+      target: "./_bundle.css",
     };
 
     async function bundleAndMinifyCSS() {
-      console.log(
+      console.info(
         `⚡️ Bundling and minifying ${options.bundler?.filename}...\n`
       );
+
       const { code: bundledAndMinifiedBinary } = await bundleAsync({
         ...defaultOptions.bundler,
         ...options.bundler,
       });
 
-      const bundledAndMinifiedCSS = Page.create(
+      await Deno.writeFile(
         defaultOptions.target || options.target,
         bundledAndMinifiedBinary
       );
 
-      await site.writer.savePage(bundledAndMinifiedCSS);
+      console.info(
+        `✅ Bundled and minified into ${
+          defaultOptions.target || options.target
+        }!\n`
+      );
     }
 
-    site.addEventListener("afterBuild", bundleAndMinifyCSS);
-    site.addEventListener("afterUpdate", bundleAndMinifyCSS);
+    site.addEventListener("beforeBuild", bundleAndMinifyCSS);
+    site.addEventListener("beforeUpdate", bundleAndMinifyCSS);
   };

@@ -12,16 +12,14 @@ import terser from "lume/plugins/terser.ts";
 import inline from "lume/plugins/inline.ts";
 import { bundleAndMinifyCSS } from "./plugins/bundleAndMinifyCSS.ts";
 
-const site = lume({
-  location: new URL("https://sidious.pizza/"),
-});
+const site = lume({ location: new URL("https://sidious.pizza/") });
 
 site
   .ignore("README.md")
-  .copy("@")
+  .use(inline({ extensions: [".mjs", ".html", ".css"] }))
   .use(bundleAndMinifyCSS({ bundler: { filename: "css/styles.css" } }))
+  .copy("@")
   .use(terser({ extensions: [".mjs"] }))
-  .use(inline({ extensions: [".mjs", ".html"] }))
   .use(date())
   .use(codeHighlight())
   .use(basePath())
