@@ -9,5 +9,5 @@ beta: true
 ---
 
 <picture>
-  <img inline src="/@/images/phantom.gif" />
+  <img src="/@/images/phantom.gif" />
 </picture>

@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <li style="list-style-type: '⛾'" ><a href="/">Home</a></li>
 <li style="list-style-type: '∿'" ><a href="/weblog">Weblog</a></li>
 <li style="list-style-type: '✐'" ><a href="/projects">Projects</a>
-  <ul>
+<ul>
     {% for project in projects %}
       <li style="list-style-type: '{{ project.data.bullet }}'">
         <a href="{{ project.data.url }}">
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </a>
       </li>
     {% endfor %}
-  </ul>
+</ul>
 </li>
 <li style="list-style-type: '⟜'" ><a href="/sitemap">Sitemap</a></li>
 <li style="list-style-type: '⌗'" ><a href="/meta">Meta</a></li>
