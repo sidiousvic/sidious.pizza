@@ -130,7 +130,7 @@ Even tough I behave like an adult now, I think it's important to always keep a l
 
 <a name="just-do-shit"></a>
 
-# <img style="transform: translateY(10px)" src="/@/images/swoosh.webp" /> JUST DO SH\*T
+# <img width=40 style="transform: translateY(10px)" src="/@/images/swoosh.webp" /> JUST DO SH\*T
 
 I love Nike's slogan, _"Just Do Sh\*t"_. When boredom strikes I [program](https://github.com/sidiousvic), write [haiku](/kaminari-no-ura), make [doomy music](/swims) or even silly web cartoons to contribute to the net of human creation.
 
