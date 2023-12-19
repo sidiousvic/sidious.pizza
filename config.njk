@@ -4,47 +4,10 @@ layout: layouts/base.njk
 
 <h1 class="page-title">CONFIG</h1>
 
-<style>
-* {
-  transition: all 0.5s ease-in-out;
-}
-
-.config-section {
-  margin: 2rem 0 0 0;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  flex-wrap: wrap;
-  & > h2 {
-    margin: 0;
-  }
-}
-
-.config-buttons {
-  margin: 2rem 0;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(150px, 1fr));
-  gap: 1.5rem;
-}
-
-@media (max-width: 768px) {
-  .config-buttons {
-    grid-template-columns: repeat(2, minmax(150px, 1fr));
-  }
-}
-
-.config-section button {
-  cursor: pointer;
-  &.full {
-    grid-column: 1 / -1;
-  }
-}
-</style>
-
-
 <script type="module" src="/@/programs/switchSelectedConfig.mjs"></script>
 <script type="module" src="/@/programs/enableAutoRandomConfig.mjs"></script>
+
+<style>*{transition: all 0.5s ease-in-out;}</style>
 
 <div class="config-section">
   <h2>THEMES</h2>
