@@ -42,5 +42,5 @@ export const bundleAndMinifyCSS =
     }
 
     site.addEventListener("beforeBuild", bundleAndMinifyCSS);
-    site.addEventListener("beforeUpdate", bundleAndMinifyCSS);
+    site.addEventListener("afterUpdate", bundleAndMinifyCSS);
   };
