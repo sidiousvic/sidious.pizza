@@ -10,6 +10,7 @@ import feed from "lume/plugins/feed.ts";
 import lang from "$/filters/lang.ts";
 import terser from "lume/plugins/terser.ts";
 import inline from "lume/plugins/inline.ts";
+import { bundleAndMinifyCSS } from "./plugins/bundleAndMinifyCSS.ts";
 
 const site = lume({
   location: new URL("https://sidious.pizza/"),
@@ -18,11 +19,9 @@ const site = lume({
 site
   .ignore("README.md")
   .copy("@")
-  .copy("scripts")
-  .copy("css")
-  .copy("styles.css")
+  .use(bundleAndMinifyCSS({ bundler: { filename: "css/styles.css" } }))
   .use(terser({ extensions: [".mjs"] }))
-  .use(inline({ extensions: [".css", ".mjs", ".html"] }))
+  .use(inline({ extensions: [".mjs", ".html"] }))
   .use(date())
   .use(codeHighlight())
   .use(basePath())

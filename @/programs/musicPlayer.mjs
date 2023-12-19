@@ -6,6 +6,8 @@ const muteIcon = document.getElementById("mute-icon");
 let playState = "play";
 let muteState = "unmute";
 
+document.querySelector(".navbar").style.mixBlendMode = "darken !important";
+
 triggerPlayback.innerHTML = /iPhone|iPad|iPod|Android/i.test(
   navigator.userAgent
 )

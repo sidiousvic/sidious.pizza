@@ -2,8 +2,6 @@
 layout: layouts/base.njk
 bodyClass: body-tag
 ---
-<link preload rel="stylesheet" href="/css/post-list.css">
-<link preload rel="stylesheet" href="/css/search.css">
 <h1 class="page-title">{{ tag | upper }}</h1>
 
 {% set postslist = search.pages("'" + tag + "'") %}

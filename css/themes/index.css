@@ -1,15 +1,15 @@
-@import "./defaults.css";
+@import "defaults.css";
 
-@import "./colors/fire.css";
-@import "./colors/moon.css";
-@import "./colors/phantom.css";
-@import "./colors/venom.css";
-@import "./colors/void.css";
-@import "./colors/zero.css";
+@import "colors/fire.css";
+@import "colors/moon.css";
+@import "colors/phantom.css";
+@import "colors/venom.css";
+@import "colors/void.css";
+@import "colors/zero.css";
 
-@import "./typography/dexter.css";
-@import "./typography/doomed.css";
-@import "./typography/nilheim.css";
-@import "./typography/sidious.css";
-@import "./typography/sinister.css";
-@import "./typography/virgil.css";
+@import "typography/dexter.css";
+@import "typography/doomed.css";
+@import "typography/nilheim.css";
+@import "typography/sidious.css";
+@import "typography/sinister.css";
+@import "typography/virgil.css";

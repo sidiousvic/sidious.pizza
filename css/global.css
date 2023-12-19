@@ -54,7 +54,6 @@
 
 .contents {
   margin: 0;
-  padding-inline-end: 1rem;
   line-height: 2.5rem;
   border: var(--venom) 1px dashed;
   text-transform: uppercase;
@@ -67,6 +66,10 @@
 
 .contents h1 {
   padding-left: 40px;
+}
+
+.contents ul {
+  margin-left: 2.5rem;
 }
 
 .contents ul li:hover {
