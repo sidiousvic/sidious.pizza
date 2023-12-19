@@ -14,6 +14,7 @@ order: 3
 </style>
 
 <script type="module" src="/@/programs/vicsAge.mjs"></script>
+<script type="module" src="/@/programs/lazyVideos.mjs"></script>
 
 <div class="info">
 
@@ -111,7 +112,7 @@ I was a bit of a goblin _(<img height=40 src="/@/images/goblin.webp" width=40 st
 <figure>
   <picture>
 
-<video playsinline autoplay muted loop>
+<video class="lazy" playsinline autoplay muted loop>
   <source src="/@/movies/angus.mp4" type="video/mp4">
 </video>
 
@@ -136,7 +137,7 @@ I love Nike's slogan, _"Just Do Sh\*t"_. When boredom strikes I [program](https:
 <figure>
   <picture>
 
-<video playsinline autoplay muted loop>
+<video class="lazy" playsinline autoplay muted loop>
   <source src="/@/movies/surfing-with-the-alien.mp4" type="video/mp4">
 </video>
 
@@ -175,7 +176,7 @@ Tokyo adopted me a few years ago and I love living here. You can break the law i
 <figure>
   <picture>
 
-<video playsinline autoplay muted loop>
+<video class="lazy" playsinline autoplay muted loop>
   <source src="/@/movies/vic-skating-tokyo.mp4" type="video/mp4">
 </video>
 
