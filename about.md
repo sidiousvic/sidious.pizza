@@ -22,7 +22,7 @@ order: 3
   <picture>
 
 <link rel="preload" as="image" href="/@/images/vic.webp"/>
-<img width=250 height=250 alt="vic" src="/@/images/vic.webp"/>
+<img fetchpriority="high" width=250 height=250 alt="vic" src="/@/images/vic.webp"/>
 
   </picture>
 </figure>
