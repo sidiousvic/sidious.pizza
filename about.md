@@ -21,6 +21,7 @@ order: 3
 <figure class="vic-pic">
   <picture>
 
+<link rel="preload" as="image" href="/@/images/vic.webp"/>
 <img width=250 height=250 alt="vic" src="/@/images/vic.webp"/>
 
   </picture>
