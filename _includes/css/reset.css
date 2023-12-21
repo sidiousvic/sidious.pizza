@@ -42,7 +42,6 @@ button {
   font-weight: 400;
   background-color: var(--darkgray);
   border: var(--venom) inset 1px;
-  padding: 0.5em 1em;
   cursor: pointer;
   outline: none;
 
@@ -111,9 +110,13 @@ blockquote {
   color: var(--venom);
   border-left: dotted 2px var(--venom);
   padding-left: 1em;
-  margin: 1rem 0 0 0;
+  margin: 1rem 0;
   & > p {
     margin: 0;
+  }
+  & h3 {
+    margin: 0;
+    text-align: right;
   }
 }
 
@@ -138,7 +141,7 @@ h6 {
   font-family: var(--font-family-title);
   color: var(--venom);
   font-weight: 100;
-  margin: 3rem 0 0 0;
+  margin: 2rem 0 0 0;
 }
 
 h3 {

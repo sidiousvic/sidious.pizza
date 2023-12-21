@@ -40,9 +40,7 @@ Hola amigxs, my name is Vic. Welcome to my cyber space. Here's where I [spill my
 
 <br>
 
-> “Laugh and the world laughs with you, snore and you sleep alone.”
-
-<h3 style="display: block; text-align: right; margin-top: 0; margin-bottom: 1rem;">Anthony Burgess</h3>
+> “Laugh and the world laughs with you, snore and you sleep alone.” <h3>Anthony Burgess</h3>
 
 <br>
 
@@ -79,17 +77,17 @@ I'm very proud to be from the Mexican north. We are a hardworking, industrious, 
 
 ## MISLED YOUTH
 
-I was a bit of a goblin _(<img loading="lazy" src="/assets/images/goblin.webp" width=40 style="display: inline-block" />)_ when young, and skipped school to play ball, guitar and skateboard. I spent a lot of time playing Zelda and watching MTV. My heroes were [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and Angus Young.
+I was a bit of a goblin _(<img loading="lazy" src="/assets/images/goblin.webp" width=40 style="display: inline-block; margin: -0.5rem 0;" />)_ when young, and skipped school to play ball, guitar and skateboard. I spent a lot of time playing Zelda and watching MTV. My heroes were [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and Angus Young.
 
 ![A man playing wearing a schoolboy's uniform, playing guitar agitatedly](/assets/movies/angus.mp4){ optimize video caption="Because MTV brings out the bitch in you." }
 
-Even tough I behave like an adult now, I think it's important to always keep a little of that dumbfuckery in you to add a spice to life.
+Even tough I behave like an adult now, I think it's important to always keep a little of that dumbfuckery inside to add a spice to life.
 
 [//]: <> (Growing up in the dawn of internet age was special. I was the first kid in my family to make friends out of a computer, and network with people around the world. I got to be one of the admins of a Pokémon forum.)
 
 <a name="just-do-shit"></a>
 
-## <img loading="lazy" width=40 style="transform: translateY(10px)" src="/assets/images/swoosh.webp" /> JUST DO SH\*T
+## <img loading="lazy" width=40 style="transform: translateY(10px); filter: var(--venom-filter)" src="/assets/images/swoosh.webp" /> JUST DO SH\*T
 
 I love Nike's slogan, _"Just Do Sh\*t"_. When boredom strikes I [program](https://github.com/sidiousvic), write [haiku](/kaminari-no-ura), make [doomy music](/swims) or even silly web cartoons to contribute to the net of human creation.
 

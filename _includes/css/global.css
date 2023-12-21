@@ -52,7 +52,7 @@
 }
 
 .contents {
-  margin: 0;
+  margin: 1rem 0;
   padding: 2rem 1rem 2rem 2.5rem;
   border: var(--venom) 1px dashed;
   text-transform: uppercase;
@@ -71,7 +71,8 @@
     margin-left: 1.5rem;
   }
 
-  & ul li:hover {
+  & ul li:hover,
+  ul li:focus {
     list-style: "ｘ ";
     animation: shake 0.5s infinite;
   }
@@ -82,10 +83,10 @@
 }
 
 .picture-grid {
+  margin: 2rem -200px;
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr 1fr;
-  margin-inline: -200px;
   & > p {
     display: none;
   }
