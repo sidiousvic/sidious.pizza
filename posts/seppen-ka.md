@@ -1,8 +1,9 @@
 ---
 layout: layouts/haiku.vto
 title: 雪片か？
-date: 2023
+date: 2023-12-11
 pinned: true
+pin: 🔥 fresh out the oven
 gif: /assets/images/onsen.gif
 tags:
   - haiku

@@ -1,4 +1,4 @@
-{{ set posts = search.pages(query) }}
+{{ set posts = search.pages(query, "date=desc") }}
 
 
 <ul class="postList">
@@ -13,7 +13,7 @@
       {{ /if }}
     </a>
       {{ if post.beta }} <sup class="tag border marker">BETA</sup> {{ /if }}
-      {{ if post.pinned }} <sup class="tag border marker venomous">🔥 HOT</sup> {{ /if }}
+      {{ if post.pinned }} <sup class="tag border marker venomous">{{ post.pin || '🔥 HOT' }}</sup> {{ /if }}
     </p>
     <time class="postList-date" datetime="{{ post.date |> date('DATETIME') }}">
       {{ post.date |> date('HUMAN_DATE') }}

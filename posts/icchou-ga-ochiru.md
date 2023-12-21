@@ -1,8 +1,7 @@
 ---
 layout: layouts/haiku.vto
 title: イチョウ
-date: 2023
-pinned: true
+date: 2023-11-27
 gif: /assets/images/ginkgo.gif
 tags:
   - haiku

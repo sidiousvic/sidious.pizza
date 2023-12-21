@@ -9,5 +9,5 @@ order: 0
 
 <section class="weblog-content">
   {{ include "templates/postslist.vto" { query: "pinned=true"} }}
-  {{ include "templates/postslist.vto" { query: "pinned!=true"} }}
+  {{ include "templates/postslist.vto" { query: "pinned!=true type=posts"} }}
 </section>
