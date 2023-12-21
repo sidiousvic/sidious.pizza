@@ -49,27 +49,36 @@
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 1rem;
 }
 
 .contents {
   margin: 0;
+  padding: 2rem 1rem 2rem 2.5rem;
   border: var(--venom) 1px dashed;
   text-transform: uppercase;
-  padding-bottom: 2rem;
 
-  @media (max-width: 500px) {
-    font-size: 1rem;
+  & h2 {
+    margin: 0;
   }
-}
 
-.contents h1,
-.contents h2 {
-  padding-left: 40px;
-}
+  & ul {
+    padding: 0;
+    margin: 0;
+  }
 
-.contents ul li:hover {
-  animation: shake 0.5s infinite;
+  & ul li {
+    list-style: "⌑ ";
+    margin-left: 1.5rem;
+  }
+
+  & ul li:hover {
+    list-style: "ｘ ";
+    animation: shake 0.5s infinite;
+  }
+
+  & ul li a {
+    margin-left: 0rem;
+  }
 }
 
 .picture-grid {
