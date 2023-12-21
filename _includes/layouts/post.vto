@@ -19,6 +19,9 @@ bodyClass: body-post
 			{{ date |> date('HUMAN_DATE') }}                      
 		</time>                                             
 		{{ /if }}                                        
+
+		<aside>{{ readingInfo.words }} words, {{ readingInfo.minutes }} min read</aside>
+
 	</div>                                            
 	<div class="post-body">                                
 		{{ content }}

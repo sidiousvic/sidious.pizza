@@ -12,6 +12,7 @@ import terser from "lume/plugins/terser.ts";
 import inline from "lume/plugins/inline.ts";
 import { bundleCSS } from "./plugins/bundleAndMinifyCSS.ts";
 import { optimizePics9000 } from "./processors/optimizePics9000.ts";
+import readInfo from "lume/plugins/reading_info.ts";
 
 const site = lume({
   location: new URL("https://sidious.pizza/"),
@@ -29,6 +30,7 @@ site
   .use(sitemap())
   .use(pageFind({ ui: { resetStyles: false } }))
   .use(slugifyUrls({ alphanumeric: false }))
+  .use(readInfo())
   .use(
     feed({
       output: ["/feed.json", "/feed.xml"],
