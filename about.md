@@ -13,8 +13,8 @@ beta: false
 }
 </style>
 
-<script inline type="module" src="/assets/programs/vicsAge.mjs"></script>
-<script inline type="module" src="/assets/programs/lazyVideos.mjs"></script>
+<script inline type="module" src="/assets/programs/vicsage.mjs"></script>
+<script inline type="module" src="/assets/programs/lazyvideos.mjs"></script>
 
 <div class="info">
 

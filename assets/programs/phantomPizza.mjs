@@ -97,15 +97,15 @@ const { sprites, score, sound, mouse, c } = config({
   START_TEXT_B:
     '危険ゾーンに <em style="filter: var(--filter-invert)">投入</em>',
   SPRITES: [
-    "/assets/images/enemyL.png",
-    "/assets/images/enemyR.png",
+    "/assets/images/enemyl.png",
+    "/assets/images/enemyr.png",
     "/assets/images/swoosh.png",
     "/assets/images/player.gif",
   ],
   AUDIOS: [
     { url: "/assets/music/swoosh.wav", volume: 0.3 },
     { url: "/assets/music/death.wav", volume: 0.9 },
-    { url: "/assets/music/phantomPizza.wav", volume: 0.8 },
+    { url: "/assets/music/phantompizza.wav", volume: 0.8 },
   ],
 });
 
@@ -115,7 +115,7 @@ const z = {
     sprites.swoosh
   )(ZERO_SPEED),
   enemies: [
-    Phantom(randomSpawn(SPRITE_DIMENSION))(SPRITE_DIMENSION)(sprites.enemyR)(
+    Phantom(randomSpawn(SPRITE_DIMENSION))(SPRITE_DIMENSION)(sprites.enemyr)(
       randomElement(ENEMY_RANDOM_SPAWN_SPEEDS)
     ),
   ],
@@ -129,8 +129,8 @@ requestAnimationFrame(() => {
     (u) => (
       u.score.value === 0 &&
         ((document.getElementById("score").innerHTML = "START!"),
-        u.sound.phantomPizza.pause()),
-      u.score.value > 1 && u.sound.phantomPizza.play(),
+        u.sound.phantompizza.pause()),
+      u.score.value > 1 && u.sound.phantompizza.play(),
       moveWithMouse(u.player)(u.mouse),
       draw(c)(u.player),
       collide(u.swoosh)(u.player)(
@@ -146,7 +146,7 @@ requestAnimationFrame(() => {
           u.sound.swoosh.play(),
           u.enemies.push(
             Phantom(randomSpawn(SPRITE_DIMENSION))(SPRITE_DIMENSION)(
-              sprites.enemyR
+              sprites.enemyr
             )(randomElement(ENEMY_RANDOM_SPAWN_SPEEDS))
           )
         )
@@ -164,7 +164,7 @@ requestAnimationFrame(() => {
             )
           ),
           moveWithVelocity(e),
-          switchSprite(e)(e.speed.x < 0 ? sprites.enemyL : sprites.enemyR),
+          switchSprite(e)(e.speed.x < 0 ? sprites.enemyl : sprites.enemyr),
           bounce(e)({ x: innerWidth, y: innerHeight }),
           draw(c)(e)
         )
