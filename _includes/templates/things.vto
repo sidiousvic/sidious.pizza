@@ -1,7 +1,5 @@
 {{ set things = search.pages(query, "date=desc", 99) }}
 
-{{> console.log(things) }}
-
 <ul class="things">
 {{ for thing of things }}
   <li class="things-post">

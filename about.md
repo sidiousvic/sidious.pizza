@@ -18,16 +18,7 @@ beta: false
 
 <div class="info">
 
-@[A man sitting in front of a fire, with a beer in hand and a burrito in the other.](/@/images/vic.webp)(250)
-
-<figure class="vic-pic">
-  <picture>
-
-<link rel="preload" as="image" href="/assets/images/vic.webp"/>
-<img fetchpriority="high" width=250 height=250 alt="vic" src="/assets/images/vic.webp"/>
-
-  </picture>
-</figure>
+@optimizedPic<alt="A man sitting in front of a fire, with a beer in hand and a burrito in the other." src="/assets/images/vic.webp" height=300 priority="high">
 
   <article>
 
