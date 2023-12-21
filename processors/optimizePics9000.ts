@@ -25,10 +25,13 @@ export function optimizePics9000(pages) {
         const [, , priority] =
           picToOptimize.match(priorityPattern) ?? matchResultFallback;
 
+        const videoPattern = /video/;
+        const isVideo = videoPattern.test(picToOptimize);
+
         if (!alt)
-          throw new Error(`No alt attribute found for ${picToOptimize.input}`);
+          throw new Error(`No alt attribute found for ${picToOptimize}`);
         if (!src)
-          throw new Error(`No src attribute found for ${picToOptimize.input}`);
+          throw new Error(`No src attribute found for ${picToOptimize}`);
 
         const optimizedPicHTML = `
 <figure>
@@ -46,7 +49,22 @@ export function optimizePics9000(pages) {
 </figure>
 `;
 
-        page.content = page.content.replace(picToOptimize, optimizedPicHTML);
+        const optimizedVideoHTML = `
+<figure>
+  <picture>
+    <video class="lazy" playsinline autoplay muted loop>
+      <source src="${src}" type="video/mp4">
+    </video>
+  </picture>
+  <figcaption>
+  <figcaption>${caption}</figcaption>
+</figure>
+`;
+
+        page.content = page.content.replace(
+          picToOptimize,
+          isVideo ? optimizedVideoHTML : optimizedPicHTML
+        );
       }
     }
   }
