@@ -11,19 +11,15 @@ draft: false
 <!-- jp -->
 
 鴨の足
-<br>
-池にさざ波
-<br>
-黄の閃光
+<br> 池にさざ波
+<br> 黄の閃光
 
 <!-- endjp -->
 
 <!-- en -->
 
 A duck's feet
-<br>
-Ripples on the pond
-<br>
-A flash of yellow
+<br> Ripples on the pond
+<br> A flash of yellow
 
 <!-- enden -->

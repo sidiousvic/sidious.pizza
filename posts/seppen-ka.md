@@ -13,19 +13,15 @@ draft: false
 <!-- jp -->
 
 木星が
-<br>
-霧に包まれ
-<br>
-雪片か
+<br> 霧に包まれ
+<br> 雪片か
 
 <!-- endjp -->
 
 <!-- en -->
 
 Jupiter
-<br>
-Enveloped in mist
-<br>
-Or is it a snowflake?
+<br> Enveloped in mist
+<br> Or is it a snowflake?
 
 <!-- enden -->

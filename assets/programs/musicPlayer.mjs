@@ -9,8 +9,8 @@ let muteState = "unmute";
 document.querySelector(".navbar").style.mixBlendMode = "darken !important";
 
 triggerPlayback.innerHTML = /iPhone|iPad|iPod|Android/i.test(
-  navigator.userAgent
-)
+    navigator.userAgent,
+  )
   ? '<span class="tag border venomous">Tap</span> to play'
   : 'Press <span class="tag border venomous">spacebar</span> to play';
 
@@ -21,12 +21,14 @@ function playbackFX(playstate, tabOrSpacebar) {
       (playState = "pause"),
       document.body.classList.add("venomous"),
       (document.querySelector(".navbar-home").style.mixBlendMode = "exclusion"),
-      (triggerPlayback.innerHTML = `Press <span class="tag border venomous">${tabOrSpacebar}</span> to pause`))
+      (triggerPlayback.innerHTML =
+        `Press <span class="tag border venomous">${tabOrSpacebar}</span> to pause`))
     : (audio.pause(),
       (playState = "play"),
       document.body.classList.remove("venomous"),
       (document.querySelector(".navbar-home").style.mixBlendMode = "unset"),
-      (triggerPlayback.innerHTML = `Press <span class="tag border venomous">${tabOrSpacebar}</span> to play`));
+      (triggerPlayback.innerHTML =
+        `Press <span class="tag border venomous">${tabOrSpacebar}</span> to play`));
 }
 
 window.addEventListener("keydown", (e) => {
@@ -44,16 +46,17 @@ muteIcon.addEventListener("click", () => {
 });
 
 const showRangeProgress = (rangeInput) => {
-  if (rangeInput === seekSlider)
+  if (rangeInput === seekSlider) {
     musicPlayer.style.setProperty(
       "--seek-before-width",
-      (rangeInput.value / rangeInput.max) * 100 + "%"
+      (rangeInput.value / rangeInput.max) * 100 + "%",
     );
-  else
+  } else {
     musicPlayer.style.setProperty(
       "--volume-before-width",
-      (rangeInput.value / rangeInput.max) * 100 + "%"
+      (rangeInput.value / rangeInput.max) * 100 + "%",
     );
+  }
 };
 
 seekSlider.addEventListener("input", (e) => {
@@ -92,7 +95,7 @@ const displayBufferedAmount = () => {
     : undefined;
   musicPlayer.style.setProperty(
     "--buffered-width",
-    `${(bufferedAmount / seekSlider.max) * 100}%`
+    `${(bufferedAmount / seekSlider.max) * 100}%`,
   );
 };
 
@@ -101,7 +104,7 @@ const whilePlaying = () => {
   currentTimeContainer.textContent = calculateTime(seekSlider.value);
   musicPlayer.style.setProperty(
     "--seek-before-width",
-    `${(seekSlider.value / seekSlider.max) * 100}%`
+    `${(seekSlider.value / seekSlider.max) * 100}%`,
   );
   raf = requestAnimationFrame(whilePlaying);
 };

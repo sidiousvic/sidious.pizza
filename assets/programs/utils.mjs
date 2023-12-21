@@ -1,7 +1,4 @@
-export const pipe =
-  (...fns) =>
-  (arg) =>
-    fns.reduce((acc, fn) => fn(acc), arg);
+export const pipe = (...fns) => (arg) => fns.reduce((acc, fn) => fn(acc), arg);
 
 export const apply = (fn) => (z) => inject(fn(z))(z);
 
@@ -11,11 +8,10 @@ export const inject = (a) => (b) =>
       void Object.defineProperty(
         acc,
         key,
-        Object.getOwnPropertyDescriptor(a, key)
-      ),
-      acc
+        Object.getOwnPropertyDescriptor(a, key),
+      ), acc
     ),
-    b
+    b,
   );
 
 export const mutate = (fn) => (z) => (fn(z), z);

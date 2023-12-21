@@ -10,8 +10,8 @@ import feed from "lume/plugins/feed.ts";
 import lang from "$/filters/lang.ts";
 import terser from "lume/plugins/terser.ts";
 import inline from "lume/plugins/inline.ts";
-import { bundleCSS } from "./plugins/bundleAndMinifyCSS.ts";
-import { optimizePics9000 } from "./processors/optimizePics9000.ts";
+import { bundleCSS } from "$/plugins/bundleAndMinifyCSS.ts";
+import { optimizePics9000 } from "$/processors/optimizePics9000.ts";
 import readInfo from "lume/plugins/reading_info.ts";
 
 const site = lume({
@@ -43,7 +43,7 @@ site
         title: "=title",
         content: "$.post-body",
       },
-    })
+    }),
   )
   .use(resolveUrls())
   .process([".md"], optimizePics9000)

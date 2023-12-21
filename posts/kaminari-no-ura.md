@@ -12,19 +12,15 @@ draft: false
 <!-- jp -->
 
 鬼嵐
-<br>
-雷の裏
-<br>
-笑い声
+<br> 雷の裏
+<br> 笑い声
 
 <!-- endjp -->
 
 <!-- en -->
 
 Demon storm
-<br>
-Behind the lightning
-<br>
-Sound of laughter
+<br> Behind the lightning
+<br> Sound of laughter
 
 <!-- enden -->

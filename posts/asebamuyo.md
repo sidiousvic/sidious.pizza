@@ -12,19 +12,15 @@ draft: false
 <!-- jp -->
 
 汗ばむ夜
-<br>
-遠い東に
-<br>
-犬が泣く
+<br> 遠い東に
+<br> 犬が泣く
 
 <!-- endjp -->
 
 <!-- en -->
 
 Sweaty night
-<br>
-Far away, in the east
-<br>
-A dog howls
+<br> Far away, in the east
+<br> A dog howls
 
 <!-- enden -->

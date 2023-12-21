@@ -20,7 +20,7 @@ beta: false
 
 ![A man sitting in front of a fire, with a beer in hand and a burrito in the other.](/assets/images/vic.webp){ optimize height=300 fetchpriority="high" caption="Booze, 🔥, pals and mum's burritos!" }
 
-  <article>
+<article>
 
 |           |                                                                                                 |
 | --------- | ----------------------------------------------------------------------------------------------- |
@@ -33,14 +33,19 @@ beta: false
 | _Reading_ | [I Am A Strange Loop, Douglas R. Hofstadter](https://en.wikipedia.org/wiki/I_Am_a_Strange_Loop) |
 | _Email_   | _vic‎@‎sidious.pizza_                                                                           |
 
-  </article>
+</article>
 </div>
 
-Hola amigxs, my name is Vic. Welcome to my cyber space. Here's where I [spill my brains](/weblog), share [weird music](/swims) and computer programs (like [_Phantom Pizza_](/phantompizza), the game at the home page) and even [haiku](/kaminari-no-ura). Don't forget to visit the [sitemap](/sitemap) to keep exploring. Here's a little more about me.
+Hola amigxs, my name is Vic. Welcome to my cyber space. Here's where I
+[spill my brains](/weblog), share [weird music](/swims) and computer programs
+(like [_Phantom Pizza_](/phantompizza), the game at the home page) and even
+[haiku](/kaminari-no-ura). Don't forget to visit the [sitemap](/sitemap) to keep
+exploring. Here's a little more about me.
 
 <br>
 
-> “Laugh and the world laughs with you, snore and you sleep alone.” <h3>Anthony Burgess</h3>
+> “Laugh and the world laughs with you, snore and you sleep alone.” <h3>Anthony
+> Burgess</h3>
 
 <br>
 
@@ -67,21 +72,31 @@ Hola amigxs, my name is Vic. Welcome to my cyber space. Here's where I [spill my
 
 ![A mountain in a desert city.](/assets/images/chihuahua.webp){ optimize width=300 fetchpriority="low" caption="Chihuahua, Chih. Mexico" }
 
-I was born in Chihuahua, in the north of Mexico. It's a very dry region where water and plants are scarce. It's the [birthplace of the burrito](https://en.wikipedia.org/wiki/Burrito#:~:text=Burritos%20are%20a%20traditional%20food%20of%20Ciudad%20Ju%C3%A1rez%2C%20a%20city%20bordering%20El%20Paso%2C%20Texas%2C%20in%20the%20northern%20Mexican%20state%20of%20Chihuahua%2C%20where%20people%20buy%20them%20at%20restaurants%20and%20roadside%20stands.%20Northern%20Mexican%20border%20towns%20like%20Villa%20Ahumada%20have%20an%20established%20reputation%20for%20serving%20burritos.), and one of the areas of highest scorpionism on the planet.
+I was born in Chihuahua, in the north of Mexico. It's a very dry region where
+water and plants are scarce. It's the
+[birthplace of the burrito](https://en.wikipedia.org/wiki/Burrito#:~:text=Burritos%20are%20a%20traditional%20food%20of%20Ciudad%20Ju%C3%A1rez%2C%20a%20city%20bordering%20El%20Paso%2C%20Texas%2C%20in%20the%20northern%20Mexican%20state%20of%20Chihuahua%2C%20where%20people%20buy%20them%20at%20restaurants%20and%20roadside%20stands.%20Northern%20Mexican%20border%20towns%20like%20Villa%20Ahumada%20have%20an%20established%20reputation%20for%20serving%20burritos.),
+and one of the areas of highest scorpionism on the planet.
 
 ![A scorpion resting on dry earth.](/assets/images/scorpionism.webp){ optimize width=300 fetchpriority="low" caption="Your deadly neighborhood arachnid" }
 
-I'm very proud to be from the Mexican north. We are a hardworking, industrious, no-bullshit kind of people. There's still a sense of dignity and politeness that you can only find in small old towns these days.
+I'm very proud to be from the Mexican north. We are a hardworking, industrious,
+no-bullshit kind of people. There's still a sense of dignity and politeness that
+you can only find in small old towns these days.
 
 <a name="misled-youth"></a>
 
 ## MISLED YOUTH
 
-I was a bit of a goblin _(<img loading="lazy" src="/assets/images/goblin.webp" width=40 style="display: inline-block; margin: -0.5rem 0;" />)_ when young, and skipped school to play ball, guitar and skateboard. I spent a lot of time playing Zelda and watching MTV. My heroes were [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and Angus Young.
+I was a bit of a goblin
+_(<img loading="lazy" src="/assets/images/goblin.webp" width=40 style="display: inline-block; margin: -0.5rem 0;" />)_
+when young, and skipped school to play ball, guitar and skateboard. I spent a
+lot of time playing Zelda and watching MTV. My heroes were
+[Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and Angus Young.
 
 ![A man playing wearing a schoolboy's uniform, playing guitar agitatedly](/assets/movies/angus.mp4){ optimize video caption="Because MTV brings out the bitch in you." }
 
-Even tough I behave like an adult now, I think it's important to always keep a little of that dumbfuckery inside to add a spice to life.
+Even tough I behave like an adult now, I think it's important to always keep a
+little of that dumbfuckery inside to add a spice to life.
 
 [//]: <> (Growing up in the dawn of internet age was special. I was the first kid in my family to make friends out of a computer, and network with people around the world. I got to be one of the admins of a Pokémon forum.)
 
@@ -89,9 +104,12 @@ Even tough I behave like an adult now, I think it's important to always keep a l
 
 ## <img loading="lazy" width=40 style="transform: translateY(10px); filter: var(--venom-filter)" src="/assets/images/swoosh.webp" /> JUST DO SH\*T
 
-I love Nike's slogan, _"Just Do Sh\*t"_. When boredom strikes I [program](https://github.com/sidiousvic), write [haiku](/kaminari-no-ura), make [doomy music](/swims) or even silly web cartoons to contribute to the net of human creation.
+I love Nike's slogan, _"Just Do Sh\*t"_. When boredom strikes I
+[program](https://github.com/sidiousvic), write [haiku](/kaminari-no-ura), make
+[doomy music](/swims) or even silly web cartoons to contribute to the net of
+human creation.
 
-![A cartoon extraterrestrial being surfing a wave in on an island beach. ](/assets/movies/surfing-with-the-alien.mp4){ optimize video caption="Xeno the Alien, 2014" }
+![A cartoon extraterrestrial being surfing a wave in on an island beach.](/assets/movies/surfing-with-the-alien.mp4){ optimize video caption="Xeno the Alien, 2014" }
 
 <a name="hello-world"></a>
 
@@ -105,11 +123,14 @@ I loved the old web, where websites were simpler and wackier.
 
 ## TOKYO BOY
 
-Tokyo adopted me a few years ago and I love living here. You can break the law in sinless ways and still feel like a maverick.
+Tokyo adopted me a few years ago and I love living here. You can break the law
+in sinless ways and still feel like a maverick.
 
 ![The author of this website ollying over an old detergent bottle on a Tokyo street.](/assets/movies/vic-skating-tokyo.mp4){ optimize video caption="This is an antisocial activity in Japan." }
 
-Cheap booze by the convenience store, cherry blossoms in the dark, futuristic art and old ghostly shrines, the most ordinary quiet streets and bollocks weirdo shit all in the same huge slab of concrete.
+Cheap booze by the convenience store, cherry blossoms in the dark, futuristic
+art and old ghostly shrines, the most ordinary quiet streets and bollocks weirdo
+shit all in the same huge slab of concrete.
 
 I may get tired of it all someday, but I will always call it home.
 
@@ -117,8 +138,7 @@ I may get tired of it all someday, but I will always call it home.
 
 ![A river near Asakusabashi, in east Tokyo.](/assets/images/tokyo.gif){ optimize }
 ![A street with a cherry blossom tree and a convenience store in Tokyo.](/assets/images/cherry-blossoms-at-nite.gif){ optimize }
-![A "shotengai" or "street lined with small shops" at night, in Tokyo.](/assets/images/apa-hotel-blues.gif){ optimize }
-![The Tokyo skyline at night.](/assets/images/skyline-tokyo.gif){ optimize }
+![A "shotengai" or "street lined with small shops" at night, in Tokyo.](/assets/images/apa-hotel-blues.gif){ optimize } ![The Tokyo skyline at night.](/assets/images/skyline-tokyo.gif){ optimize }
 
 </div>
 
@@ -126,7 +146,9 @@ I may get tired of it all someday, but I will always call it home.
 
 ## THANKS FOR VISITING!
 
-That's me. _どうもどうも！_ If you want to get in touch, send me a mail at _vic‎@‎sidious.pizza_. Welcome again and I hope you have a great time in this website.
+That's me. _どうもどうも！_ If you want to get in touch, send me a mail at
+_vic‎@‎sidious.pizza_. Welcome again and I hope you have a great time in this
+website.
 
 <br>
 <br>

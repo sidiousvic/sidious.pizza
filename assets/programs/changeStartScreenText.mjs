@@ -1,4 +1,4 @@
-import { pipe, inject, mutate, isMobile } from "/assets/programs/utils.mjs";
+import { inject, isMobile, mutate, pipe } from "/assets/programs/utils.mjs";
 
 const z_0 = {
   startScreenTitleId: "start-screen-title",
@@ -6,23 +6,26 @@ const z_0 = {
 };
 
 const changeStartScreenText = mutate(
-  ({ startScreenTitleId }) =>
-    (document.getElementById(startScreenTitleId).innerHTML = "PHANTOM PIZZA")
+  (
+    { startScreenTitleId },
+  ) => (document.getElementById(startScreenTitleId).innerHTML =
+    "PHANTOM PIZZA"),
 );
 
 const hideStartScreenText = mutate(
-  ({ startScreenTextId }) =>
-    (document.getElementById(startScreenTextId).style.display = "none")
+  (
+    { startScreenTextId },
+  ) => (document.getElementById(startScreenTextId).style.display = "none"),
 );
 
 const changeStartScreenTextToSayOnlyPhantomPizza = pipe(
   inject(z_0),
   changeStartScreenText,
-  hideStartScreenText
+  hideStartScreenText,
 );
 
 !isMobile(navigator.userAgent) &&
   document.addEventListener(
     "DOMContentLoaded",
-    changeStartScreenTextToSayOnlyPhantomPizza
+    changeStartScreenTextToSayOnlyPhantomPizza,
   );

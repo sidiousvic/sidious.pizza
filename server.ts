@@ -12,7 +12,7 @@ server.use(
   notFound({
     root: `${Deno.cwd()}/_site`,
     page404: "/404.html",
-  })
+  }),
 );
 
 server.start();

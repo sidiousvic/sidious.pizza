@@ -12,19 +12,15 @@ draft: false
 <!-- jp -->
 
 朧月
-<br>
-蛇の影に
-<br>
-見えたかな
+<br> 蛇の影に
+<br> 見えたかな
 
 <!-- endjp -->
 
 <!-- en -->
 
 Hazy moon
-<br>
-I thought I saw
-<br>
-The shadow of a snake
+<br> I thought I saw
+<br> The shadow of a snake
 
 <!-- enden -->

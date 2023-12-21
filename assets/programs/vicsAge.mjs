@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const unixNow = new Date();
     const vicsAgeDate = new Date(unixNow.getTime() - vicsBirthday.getTime());
     const vicsAgeMs = vicsAgeDate.getTime();
-    const vicsAgeYrs =
-      (vicsAgeMs - LEAP_DAYS_SINCE_1991_MS) / 1000 / 60 / 60 / 24 / 365;
+    const vicsAgeYrs = (vicsAgeMs - LEAP_DAYS_SINCE_1991_MS) / 1000 / 60 / 60 /
+      24 / 365;
     ageElement.innerHTML = `${vicsAgeYrs.toFixed(20)} <em>years old</em>`;
   });
 });
