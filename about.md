@@ -18,7 +18,7 @@ beta: false
 
 <div class="info">
 
-@optimizedPic<alt="A man sitting in front of a fire, with a beer in hand and a burrito in the other." src="/assets/images/vic.webp" height=300 priority="high">
+![A man sitting in front of a fire, with a beer in hand and a burrito in the other.](/assets/images/vic.webp){ optimize height=300 fetchpriority="high" caption="Booze, 🔥, pals and mum's burritos!" }
 
   <article>
 
