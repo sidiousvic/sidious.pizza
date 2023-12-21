@@ -43,10 +43,12 @@ export function optimizePics9000(pages: RawData[]) {
   ${priority === "high" ? `<link rel="preload" as="image" href="${src}"/>` : ""}
     <img 
         fetchpriority="${priority === "high" ? "high" : "low"}" 
-        ${height ? 'height="${height}"' : ""} 
-        ${width ? 'width="${width}"' : ""}
+        ${height ? `height="${height}"` : ""} 
+        ${width ? `width="${width}"` : ""}
+        ${priority === "high" ? "" : 'loading="lazy"'}
         alt="${alt}" 
         src="${src}"
+        
     />
   </picture>
   <figcaption>${caption}</figcaption>

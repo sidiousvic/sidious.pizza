@@ -138,7 +138,8 @@ I may get tired of it all someday, but I will always call it home.
 
 ![A river near Asakusabashi, in east Tokyo.](/assets/images/tokyo.gif){ optimize }
 ![A street with a cherry blossom tree and a convenience store in Tokyo.](/assets/images/cherry-blossoms-at-nite.gif){ optimize }
-![A "shotengai" or "street lined with small shops" at night, in Tokyo.](/assets/images/apa-hotel-blues.gif){ optimize } ![The Tokyo skyline at night.](/assets/images/skyline-tokyo.gif){ optimize }
+![A "shotengai" or "street lined with small shops" at night, in Tokyo.](/assets/images/apa-hotel-blues.gif){ optimize }
+![The Tokyo skyline at night.](/assets/images/skyline-tokyo.gif){ optimize }
 
 </div>
 
