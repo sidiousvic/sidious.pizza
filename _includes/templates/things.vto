@@ -1,0 +1,29 @@
+{{ set things = search.pages(query, "date=desc", 99) }}
+
+{{> console.log(things) }}
+
+<ul class="things">
+{{ for thing of things }}
+  <li class="things-post">
+      {{ if thing.gif }}
+        <picture class="no-border">
+          <img src="{{ thing.gif }}" />
+        </picture>
+      {{ else }}
+        <picture class="no-border">
+          <img src="/assets/images/enemyR.png" />
+        </picture>
+      {{ /if }}
+    <div class="things-meta">
+      <a href="{{ thing.url }}" class="thing-title"{{ if thing.url == url }} aria-current="page"{{ /if }}>
+      {{ if thing.shortTitle }}
+        {{ thing.shortTitle }}
+      {{ else if thing.title }}
+        {{ thing.title }}
+      {{ else }}
+        <code>{{ thing.url }}</code>
+      {{ /if }}
+    </a>
+    </div>
+{{ /for }}
+</ul>

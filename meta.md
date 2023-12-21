@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: layouts/post.vto
 title: META
 templateClass: tmpl-post
 order: 2

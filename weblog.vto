@@ -1,0 +1,13 @@
+---
+layout: layouts/base.vto
+visible: true
+title: WEBLOG
+order: 0
+---
+
+<h1 class="page-title">WEBLOG</h1>
+
+<section class="weblog-content">
+  {{ include "templates/postslist.vto" { query: "pinned=true"} }}
+  {{ include "templates/postslist.vto" { query: "pinned!=true"} }}
+</section>

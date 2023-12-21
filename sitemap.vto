@@ -1,0 +1,40 @@
+---
+layout: layouts/base.vto
+bodyClass: body-sitemap
+visible: true
+title: SITEMAP
+order: 2
+---
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+	if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+		const title = document.querySelector('.page-title');	
+		title.style.display = 'none';
+	}
+});
+</script>
+
+<h1 class="page-title">SITEMAP</h1>
+
+{{ set projects = search.pages("projects") }}
+
+<ul>
+<li style="list-style-type: '⛾'" ><a href="/">Home</a></li>
+<li style="list-style-type: '∿'" ><a href="/weblog">Weblog</a></li>
+<li style="list-style-type: '✐'" ><a href="/projects">Projects</a>
+<ul>
+    {{ for project of projects }}
+      <li style="list-style-type: '{{ project.bullet }}'">
+        <a href="{{ project.url }}">
+          {{ project.title }}
+        </a>
+      </li>
+    {{ /for }}
+</ul>
+</li>
+<li style="list-style-type: '⟜'" ><a href="/sitemap">Sitemap</a></li>
+<li style="list-style-type: '⌗'" ><a href="/meta">Meta</a></li>
+<li style="list-style-type: '⚐'"><a href="/about">About</a></li>
+<li style="list-style-type: '⛭'"><a href="/config">Config</a></li>
+</ul>

@@ -1,0 +1,17 @@
+<nav id="navbar" class="navbar">
+  <a href="/" class="navbar-home">
+    {{ site.title }}
+  </a>
+  <ul class="navbar-links">
+    {{ for entry of search.pages("visible=true") }}
+      <li>
+        <a href="{{ entry.url }}" {{ if entry.url == site.url }} aria-current="page"{{ /if }}>
+          {{ if entry.url == site.url }}
+            <div class="current-page-indicator-bullet"></div>
+          {{ /if }}
+          {{ entry.title |> toUpperCase }}
+        </a>
+      </li>
+    {{ /for }}
+  </ul>
+</nav>

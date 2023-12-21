@@ -1,0 +1,235 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  font-family: var(--font-family);
+  color: var(--lightgray);
+  background-color: var(--darkgray);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 20vw;
+  overflow: hidden;
+
+  @media (max-width: 500px) {
+    justify-content: flex-start;
+  }
+}
+
+button {
+  width: auto;
+  color: var(--venom);
+  box-shadow: -3px -2px 11px -1px var(--venom) inset;
+  border-radius: 10px;
+  font-family: var(--font-family-title);
+  font-size: 1.3rem;
+  font-weight: 400;
+  background-color: var(--darkgray);
+  border: var(--venom) inset 1px;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    box-shadow: -1px -2px 11px black inset;
+    background-color: var(--venom);
+    color: var(--darkgray);
+    border: black solid 1px;
+  }
+
+  &:focus {
+    box-shadow: -1px -2px 11px black inset;
+    background-color: var(--venom);
+    color: var(--darkgray);
+    border-radius: 10px;
+  }
+}
+
+canvas {
+  filter: var(--venom-filter-canvas);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+:focus,
+*:focus {
+  outline: var(--venom) dotted 1px !important;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+em,
+strong {
+  font-family: var(--font-family-secondary);
+  color: var(--venom);
+}
+
+strong {
+  font-family: var(--font-family-title);
+  color: var(--venom);
+}
+
+sup {
+  font-size: 0.7em;
+  vertical-align: super;
+}
+
+ul,
+li {
+  list-style-type: "";
+  & > a {
+    margin-left: 0.5rem;
+  }
+}
+
+::marker {
+  color: var(--venom);
+}
+
+blockquote {
+  font-family: var(--font-family-title);
+  font-size: 2rem;
+  font-style: italic;
+  color: var(--venom);
+  border-left: dotted 2px var(--venom);
+  padding-left: 1em;
+  margin: 1rem 0 0 0;
+  & > p {
+    margin: 0;
+  }
+}
+
+h1 {
+  font-family: var(--font-family-title);
+  font-size: 3rem;
+  color: var(--venom);
+  font-weight: 100;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: var(--venom);
+  font-weight: 100;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-title);
+  color: var(--venom);
+  font-weight: 100;
+  margin: 3rem 0 0 0;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+a {
+  color: var(--lightgray);
+  text-decoration: underline;
+  text-decoration-color: var(--venom);
+  text-decoration-style: dotted;
+  text-underline-offset: 4px;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--venom);
+  }
+}
+
+.warning {
+  background-color: #ffc;
+  padding: 1em 0.5em;
+}
+
+table {
+  margin: 1em 0;
+}
+
+table td,
+table th {
+  padding-right: 1em;
+}
+
+hr {
+  border: 0;
+  border-top: solid 2px var(--darkgray);
+  margin: 2.5vh 0;
+}
+
+img {
+  min-width: 1px;
+  object-fit: contain;
+}
+
+picture {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 80vw;
+  margin: 0 auto;
+  width: fit-content;
+  height: fit-content;
+  filter: var(--venom-filter);
+  image-rendering: pixelated;
+  border: var(--venom) dotted 1px;
+  & > p {
+    margin: 0;
+    display: contents;
+  }
+}
+
+picture::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 99;
+  content: "";
+  background-image: radial-gradient(transparent, black);
+  background-size: 3px 3px;
+  pointer-events: none;
+  & > * {
+    image-rendering: pixelated;
+  }
+}
+
+figure {
+  width: fit-content;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+figcaption {
+  font-size: 1rem;
+  margin-top: 0.3em;
+  & > p {
+    margin: 0;
+  }
+}
+
+video {
+  min-width: 200px;
+}

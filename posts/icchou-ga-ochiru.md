@@ -1,9 +1,9 @@
 ---
-layout: layouts/haiku.njk
+layout: layouts/haiku.vto
 title: イチョウ
 date: 2023
 pinned: true
-gif: /@/images/ginkgo.gif
+gif: /assets/images/ginkgo.gif
 tags:
   - haiku
 draft: false

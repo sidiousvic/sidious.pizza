@@ -1,0 +1,46 @@
+.post {
+  text-align: center;
+}
+
+.post-header {
+  margin: 1rem 0;
+}
+
+.post-title {
+  font-size: 4em;
+  font-weight: 100;
+  text-align: center;
+  margin: 0;
+  color: var(--venom);
+}
+
+.post-tags {
+  display: inline;
+}
+
+.post-body {
+  text-align: left;
+}
+
+.post-navigation {
+  & ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  & li {
+    padding: 1em;
+  }
+}
+.post-navigation {
+  color: var(--darksteel) !important;
+}
+.post-navigation a {
+  color: var(--darksteel) !important;
+}
+.post-navigation a:hover {
+  color: var(--venom) !important;
+}

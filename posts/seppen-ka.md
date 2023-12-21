@@ -1,9 +1,9 @@
 ---
-layout: layouts/haiku.njk
+layout: layouts/haiku.vto
 title: 雪片か？
-date: 2023-12
+date: 2023
 pinned: true
-gif: /@/images/onsen.gif
+gif: /assets/images/onsen.gif
 tags:
   - haiku
 draft: false

@@ -1,10 +1,10 @@
 ---
-layout: layouts/post.njk
+layout: layouts/post.vto
 title: VIC
 date: 1991-09-24
-templateClass: tmpl-post
 visible: true
 order: 3
+beta: false
 ---
 
 <style>
@@ -13,16 +13,18 @@ order: 3
 }
 </style>
 
-<script inline type="module" src="/@/programs/vicsAge.mjs"></script>
-<script inline type="module" src="/@/programs/lazyVideos.mjs"></script>
+<script inline type="module" src="/assets/programs/vicsAge.mjs"></script>
+<script inline type="module" src="/assets/programs/lazyVideos.mjs"></script>
 
 <div class="info">
+
+@[A man sitting in front of a fire, with a beer in hand and a burrito in the other.](/@/images/vic.webp)(250)
 
 <figure class="vic-pic">
   <picture>
 
-<link rel="preload" as="image" href="/@/images/vic.webp"/>
-<img fetchpriority="high" width=250 height=250 alt="vic" src="/@/images/vic.webp"/>
+<link rel="preload" as="image" href="/assets/images/vic.webp"/>
+<img fetchpriority="high" width=250 height=250 alt="vic" src="/assets/images/vic.webp"/>
 
   </picture>
 </figure>
@@ -77,7 +79,7 @@ Hola amigxs, my name is Vic. Welcome to my cyber space. Here's where I [spill my
 <figure>
   <picture>
 
-<img loading="lazy" loading="lazy" src="/@/images/chihuahua.webp">
+<img loading="lazy" loading="lazy" src="/assets/images/chihuahua.webp">
 
   </picture>
   <figcaption>
@@ -92,7 +94,7 @@ I was born in Chihuahua, in the north of Mexico. It's a very dry region where wa
 <figure>
   <picture>
 
-<img loading="lazy" loading="lazy" src="/@/images/scorpionism.webp">
+<img loading="lazy" loading="lazy" src="/assets/images/scorpionism.webp">
 
   </picture>
   <figcaption>
@@ -108,13 +110,13 @@ I'm very proud to be from the Mexican north, where people
 
 ## MISLED YOUTH
 
-I was a bit of a goblin _(<img loading="lazy" src="/@/images/goblin.webp" width=40 style="display: inline-block" />)_ when young, and skipped school to play ball, guitar and skateboard. I spent a lot of time playing Zelda and watching MTV. My heroes were [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and Angus Young.
+I was a bit of a goblin _(<img loading="lazy" src="/assets/images/goblin.webp" width=40 style="display: inline-block" />)_ when young, and skipped school to play ball, guitar and skateboard. I spent a lot of time playing Zelda and watching MTV. My heroes were [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and Angus Young.
 
 <figure>
   <picture>
 
 <video class="lazy" playsinline autoplay muted loop>
-  <source src="/@/movies/angus.mp4" type="video/mp4">
+  <source src="/assets/movies/angus.mp4" type="video/mp4">
 </video>
 
   </picture>
@@ -131,7 +133,7 @@ Even tough I behave like an adult now, I think it's important to always keep a l
 
 <a name="just-do-shit"></a>
 
-## <img loading="lazy" width=40 style="transform: translateY(10px)" src="/@/images/swoosh.webp" /> JUST DO SH\*T
+## <img loading="lazy" width=40 style="transform: translateY(10px)" src="/assets/images/swoosh.webp" /> JUST DO SH\*T
 
 I love Nike's slogan, _"Just Do Sh\*t"_. When boredom strikes I [program](https://github.com/sidiousvic), write [haiku](/kaminari-no-ura), make [doomy music](/swims) or even silly web cartoons to contribute to the net of human creation.
 
@@ -139,7 +141,7 @@ I love Nike's slogan, _"Just Do Sh\*t"_. When boredom strikes I [program](https:
   <picture>
 
 <video class="lazy" playsinline autoplay muted loop>
-  <source src="/@/movies/surfing-with-the-alien.mp4" type="video/mp4">
+  <source src="/assets/movies/surfing-with-the-alien.mp4" type="video/mp4">
 </video>
 
   </picture>
@@ -159,7 +161,7 @@ I loved the old web, where websites were simpler and wackier.
 <figure>
   <picture>
 
-<img loading="lazy" src="/@/images/dannys-homepage.webp">
+<img loading="lazy" src="/assets/images/dannys-homepage.webp">
 
   </picture>
 
@@ -178,7 +180,7 @@ Tokyo adopted me a few years ago and I love living here. You can break the law i
   <picture>
 
 <video class="lazy" playsinline autoplay muted loop>
-  <source src="/@/movies/vic-skating-tokyo.mp4" type="video/mp4">
+  <source src="/assets/movies/vic-skating-tokyo.mp4" type="video/mp4">
 </video>
 
   </picture>
@@ -195,7 +197,7 @@ I may get tired of it all someday, but I will always call it home.
 <figure>
   <picture>
 
-<img loading="lazy" src="/@/images/tokyo.gif">
+<img loading="lazy" src="/assets/images/tokyo.gif">
 
   </picture>
 </figure>
@@ -203,7 +205,7 @@ I may get tired of it all someday, but I will always call it home.
 <figure>
   <picture>
 
-<img loading="lazy" src="/@/images/cherry-blossoms-at-nite.gif">
+<img loading="lazy" src="/assets/images/cherry-blossoms-at-nite.gif">
 
   </picture>
 </figure>
@@ -211,7 +213,7 @@ I may get tired of it all someday, but I will always call it home.
 <figure>
   <picture>
 
-<img loading="lazy" src="/@/images/apa-hotel-blues.gif">
+<img loading="lazy" src="/assets/images/apa-hotel-blues.gif">
 
   </picture>
 </figure>
@@ -219,7 +221,7 @@ I may get tired of it all someday, but I will always call it home.
 <figure>
   <picture>
 
-<img loading="lazy" src="/@/images/skyline-tokyo.gif">
+<img loading="lazy" src="/assets/images/skyline-tokyo.gif">
 
   </picture>
 </figure>

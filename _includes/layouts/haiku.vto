@@ -1,0 +1,31 @@
+---
+layout: layouts/base.vto
+---
+
+<script inline type="module" src="/assets/programs/hideNavbarLinks.mjs"></script>
+
+{{ set jp = content |> jp }}
+{{ set en = content |> en }}
+
+<article class="haiku-post" data-pagefind-body>
+  <div class="haiku-header">
+    <h1 class="haiku-title">
+      {{ title }} 
+      {{ if page.data.beta }}
+        <sup class="tag big border beta venomous">BETA</sup>
+      {{ /if }}
+    </h1>
+  </div>
+
+  <div class="haiku-body">
+    <section lang="jp" class="haiku">
+      {{ jp }}
+    </section>
+    <section lang="en" class="haiku">
+      {{ en }}
+    </section>
+  </div>
+  <picture class="no-border">
+    <img class="haiku-img" src="{{ gif }}" alt="{{ title }}">
+  </picture>
+</article>

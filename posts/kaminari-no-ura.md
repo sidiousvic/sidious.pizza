@@ -1,9 +1,9 @@
 ---
-layout: layouts/haiku.njk
+layout: layouts/haiku.vto
 title: 雷の裏
 date: 2023-11-20
 pinned: false
-gif: /@/images/lightning-strike.gif
+gif: /assets/images/lightning-strike.gif
 tags:
   - haiku
 draft: false

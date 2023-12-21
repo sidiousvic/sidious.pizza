@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: layouts/post.vto
 title: You've got a friend in me
 date: 1995-03-26
 ---
@@ -11,7 +11,7 @@ date: 1995-03-26
 <figure>
   <picture>
 
-![Two kids playing a game on a bed, laughing](/@/images/ichigo.jpg)
+![Two kids playing a game on a bed, laughing](/assets/images/ichigo.jpg)
 
   </picture>
   <figcaption>

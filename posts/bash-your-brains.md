@@ -1,10 +1,10 @@
 ---
-layout: layouts/swims.njk
+layout: layouts/swims.vto
 title: Bash Your Brains </br> <sup>(DON'T SWING THAT BAT)</sup>
 shortTitle: Bash Ur Brains
 date: 2024
-gif: /@/images/bash-your-brains.png
-audio: /@/music/bash-your-brains.mp3
+gif: /assets/images/bash-your-brains.png
+audio: /assets/music/bash-your-brains.mp3
 tags:
   - swims
   - music
