@@ -58,9 +58,9 @@ const ARROW_SPEED = 60;
  */
 
 /**
- * A function that executes a void function (side effect)
+ * A function that executes a side effect, updates the state of the game
  * @typedef {Function} Mutation
- * @param {unknown} x The void to execute
+ * @param {unknown} x
  * @returns {void}
  */
 
