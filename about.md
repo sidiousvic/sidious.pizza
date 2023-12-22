@@ -70,14 +70,14 @@ exploring. Here's a little more about me.
 
 <br>
 
-![A mountain in a desert city.](/assets/images/chihuahua.webp){ optimize width=300 fetchpriority="low" caption="Chihuahua, Chih. Mexico" }
+![A mountain in a desert city.](/assets/images/chihuahua.webp){ optimize width=500 fetchpriority="low" caption="Chihuahua, Chih. Mexico" }
 
 I was born in Chihuahua, in the north of Mexico. It's a very dry region where
 water and plants are scarce. It's the
 [birthplace of the burrito](https://en.wikipedia.org/wiki/Burrito#:~:text=Burritos%20are%20a%20traditional%20food%20of%20Ciudad%20Ju%C3%A1rez%2C%20a%20city%20bordering%20El%20Paso%2C%20Texas%2C%20in%20the%20northern%20Mexican%20state%20of%20Chihuahua%2C%20where%20people%20buy%20them%20at%20restaurants%20and%20roadside%20stands.%20Northern%20Mexican%20border%20towns%20like%20Villa%20Ahumada%20have%20an%20established%20reputation%20for%20serving%20burritos.),
 and one of the areas of highest scorpionism on the planet.
 
-![A scorpion resting on dry earth.](/assets/images/scorpionism.webp){ optimize width=300 fetchpriority="low" caption="Your deadly neighborhood arachnid" }
+![A scorpion resting on dry earth.](/assets/images/scorpionism.webp){ optimize wi dth=500 fetchpriority="low" caption="Your deadly neighborhood arachnid" }
 
 I'm very proud to be from the Mexican north. We are a hardworking, industrious,
 no-bullshit kind of people. There's still a sense of dignity and politeness that
@@ -117,7 +117,7 @@ human creation.
 
 I loved the old web, where websites were simpler and wackier.
 
-![An old-looking website, in an Internet Explorer browser from the 90's.](/assets/images/dannys-homepage.webp){ optimize caption="I hope my website makes Danny proud." }
+![An old-looking website, in an Internet Explorer browser from the 90's.](/assets/images/dannys-homepage.webp){ optimize width=600 caption="I hope my website makes Danny proud." }
 
 <a name="tokyo-boy"></a>
 
