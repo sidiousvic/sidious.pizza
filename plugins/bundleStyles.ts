@@ -1,7 +1,7 @@
 import { bundleAsync } from "npm:lightningcss-wasm@1.22.1";
 import { sha256 } from "https://denopkg.com/chiefbiiko/sha256@v1.0.0/mod.ts";
 
-export const bundleCSS = (options: {
+export const bundleStyles = (options: {
   bundler?: {
     filename?: string;
     minify?: boolean;

@@ -10,19 +10,22 @@ import feed from "lume/plugins/feed.ts";
 import lang from "$/filters/lang.ts";
 import terser from "lume/plugins/terser.ts";
 import inline from "lume/plugins/inline.ts";
-import { bundleCSS } from "$/plugins/bundleAndMinifyCSS.ts";
+import { bundleStyles } from "$/plugins/bundleStyles.ts";
 import { optimizePics9000 } from "$/processors/optimizePics9000.ts";
 import readInfo from "lume/plugins/reading_info.ts";
+import { compilePrograms } from "$/plugins/compilePrograms.ts";
 
 const site = lume({
   location: new URL("https://sidious.pizza/"),
+  watcher: { ignore: ["_temp"] },
 });
 
 site
   .ignore("README.md")
   .copy("assets")
   .use(inline({ extensions: [".mjs", ".html", ".css"] }))
-  .use(bundleCSS({ bundler: { filename: "_includes/css/styles.css" } }))
+  .use(bundleStyles({ bundler: { filename: "_includes/css/styles.css" } }))
+  .use(compilePrograms({ dirname: "_includes/ts" }))
   .use(terser({ extensions: [".mjs"] }))
   .use(date())
   .use(codeHighlight())
