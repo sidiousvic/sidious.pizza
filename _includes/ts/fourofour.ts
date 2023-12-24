@@ -27,7 +27,7 @@ const randomize404Message = pipe(
     z: State,
   ) => (
     Try(document.getElementById(z.messageID))(
-      "404 page message element not found",
+      `ID ${z.messageID} not found.`,
     ).innerHTML = random(z.messages)
   )),
 );

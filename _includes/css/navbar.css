@@ -35,7 +35,7 @@
   transform: translate(0, 3px);
 }
 
-.navbar-links {
+#navbar-links {
   color: whitesmoke;
   padding: 0.5rem;
   margin: 0;
