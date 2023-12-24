@@ -10,10 +10,6 @@
     "lume": "echo \"import 'lume/cli.ts'\" | deno run --unstable -A -"
   },
   "compilerOptions": {
-    "types": ["lume/types.ts"],
-    "baseUrl": ".",
-    "paths": {
-      "programs": ["./*"]
-    }
+    "types": ["lume/types.ts"]
   }
 }

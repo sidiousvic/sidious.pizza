@@ -36,6 +36,8 @@ export const compilePrograms = (options: {
         ).catch(() => new Uint8Array([])),
       );
 
+      await Deno.mkdir("_temp/esnext", { recursive: true });
+
       const { warnings, errors } = await build({
         entryPoints: [file.path],
         outdir: "_temp/esnext",
@@ -64,8 +66,8 @@ export const compilePrograms = (options: {
 
       await Deno.writeFile(
         generatedFilePath.replace(
-          "_temp",
-          "_includes",
+          "_temp/esnext",
+          "_esnext",
         ),
         bundledAndMinifiedBinary,
       );
