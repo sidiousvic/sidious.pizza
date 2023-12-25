@@ -1,3 +1,4 @@
+// TODO: Refactor into functional TS as found in switchselectedconfig.ts
 import { getElementById } from "./domutils.ts";
 
 addEventListener("DOMContentLoaded", () => {

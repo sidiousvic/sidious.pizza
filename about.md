@@ -14,7 +14,7 @@ beta: false
 </style>
 
 <script inline src="/_esnext/vicsage.js"></script>
-<script inline type="module" src="/assets/programs/lazyvideos.mjs"></script>
+<script inline src="/_esnext/lazyvideos.js"></script>
 
 <div class="info">
 
