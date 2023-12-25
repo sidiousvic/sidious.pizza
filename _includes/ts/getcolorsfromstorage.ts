@@ -1,5 +1,4 @@
 import { COLORS } from "./constants.ts";
-import { TryOr } from "./dontpanic.ts";
 import { inject, mix, mutate, pipe, random } from "./utils.ts";
 
 type Config = {
@@ -19,11 +18,6 @@ const registedStoredColor = (z: State) => ({
   userStoredColor: localStorage.getItem(z.colorsKey),
 });
 
-const defaultToRandomColor = (z: State) =>
-  TryOr(z.userStoredColor)(() =>
-    localStorage.setItem(z.colorsKey, z.randomColor)
-  );
-
 const applyStoredOrRandomColor = (z: State) =>
   document.documentElement.classList.add(
     `colors-${z.userStoredColor ? z.userStoredColor : z.randomColor}`,
@@ -32,7 +26,6 @@ const applyStoredOrRandomColor = (z: State) =>
 const getColorsFromStorage = pipe(
   inject(config),
   mix(registedStoredColor),
-  mutate(defaultToRandomColor),
   mutate(applyStoredOrRandomColor),
 );
 
