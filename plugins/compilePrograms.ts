@@ -1,4 +1,5 @@
 import { build } from "https://deno.land/x/esbuild@v0.19.9/mod.js";
+import { Event } from "lume/core/events.ts";
 import { sha256 } from "https://denopkg.com/chiefbiiko/sha256@v1.0.0/mod.ts";
 import Site from "lume/core/site.ts";
 import { walkSync } from "lume/deps/fs.ts";
@@ -11,7 +12,7 @@ export const compilePrograms = (options: {
     dirname: ".",
   };
 
-  async function compilePrograms(e) {
+  async function compilePrograms(_e: Event) {
     const tsFiles = await Promise.all(
       Array.from(
         walkSync(
@@ -36,7 +37,12 @@ export const compilePrograms = (options: {
         ).catch(() => new Uint8Array([])),
       );
 
-      await Deno.remove("_temp/esnext", { recursive: true });
+      await Deno.remove("_temp/esnext", { recursive: true }).catch(() =>
+        "🛃 No _temp/esnext directory found. Creating one..."
+      );
+
+      console.log(`🛠️  Compiling _includes/ts/${file.path.split("/").pop()}...`);
+
       await Deno.mkdir("_temp/esnext", { recursive: true });
 
       const { warnings, errors } = await build({
@@ -48,14 +54,16 @@ export const compilePrograms = (options: {
       });
 
       if (errors.length) {
-        console.error(`[esbuild] Errors: \n${errors.join("\n")}`);
+        console.error(`🚨 [esbuild] Errors: \n${errors.join("\n")}`);
       }
 
       if (warnings.length) {
         console.warn(
-          `[esbuild] Warnings: \n${warnings.join("\n")}`,
+          `⚠️ [esbuild] Warnings: \n${warnings.join("\n")}`,
         );
       }
+
+      console.log(`🏭 Compiled _esnext/${file.path.split("/").pop()}!`);
 
       const bundledAndMinifiedBinary = await Deno.readFile(generatedFilePath);
 
@@ -71,6 +79,12 @@ export const compilePrograms = (options: {
           "_esnext",
         ),
         bundledAndMinifiedBinary,
+      );
+
+      console.log(
+        `👩🏽‍🏭 Compiled _exnext/${
+          file.path.split("/").pop()
+        } for the first time!`,
       );
     });
   }
