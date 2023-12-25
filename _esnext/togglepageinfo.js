@@ -1,0 +1,1 @@
+(()=>{var a=t=>{throw new Error(t)},o=t=>e=>t??a(e);var n=t=>o(document.querySelector(t))(`Selector ${t} not found.`);addEventListener("DOMContentLoaded",()=>{let t=n(".page-info-overlay"),e=n(".page-info-button"),r=()=>t.style.display="none",s=()=>t.style.display="flex";t.addEventListener("click",r),e.addEventListener("click",s)});})();
