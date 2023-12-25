@@ -1,5 +1,5 @@
 .config-section {
-  margin: 2rem 0 0 0;
+  margin: 0 0 2rem 0;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -14,7 +14,6 @@
 }
 
 .config-buttons {
-  margin: 2rem 0;
   display: grid;
   grid-template-columns: repeat(3, minmax(150px, 1fr));
   gap: 1.5rem;
