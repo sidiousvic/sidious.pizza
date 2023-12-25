@@ -1,4 +1,11 @@
 import { Guard, Try } from "./dontpanic.ts";
+import {
+  addEventListenerToClass,
+  getClickedElementDatasetKey,
+  getStoredItem,
+  removeClassContaining,
+  removeStoredItem,
+} from "./domutils.ts";
 import { apply, inject, mutate, pipe } from "./utils.ts";
 
 type ConfigKey = "typography" | "colors";
@@ -42,30 +49,6 @@ const setCurtainOpacity = (
     .opacity = value.toFixed()
 );
 
-const removeClassContaining = (type?: string) =>
-  [...document.documentElement.classList].map(
-    (c) =>
-      c.includes(type as string) &&
-      document.documentElement.classList.remove(c),
-  );
-
-const removeStoredItem = (type?: string) =>
-  localStorage.removeItem(type as string);
-
-const getStoredItem = (type: string) => localStorage.getItem(type);
-
-const getMouseEventTarget = (event: MouseEvent) =>
-  Try(event.target)(`${event.type} event had no target.`);
-
-const getElementDataset = (element: HTMLElement) =>
-  Try(element.dataset)(`Element ${element.tagName} had no dataset.`);
-
-const getMouseEventTargetDataset = (event: MouseEvent) =>
-  getElementDataset(getMouseEventTarget(event) as HTMLElement);
-
-const getClickedElementDatasetKey = (event: MouseEvent) => (key: string) =>
-  Try(getMouseEventTargetDataset(event)[key])(`Dataset ${key} not found.`);
-
 const enableSelectedConfig = (type?: string) => (value?: string) =>
   document.documentElement.classList.add(
     `${
@@ -82,14 +65,6 @@ const storeSelectedConfig = (type?: string) => (value?: string) =>
     Try(type)(`Unable to store configuration. Config type is undefined.`),
     Try(value)(`Unable to store configuration. Config value is undefined.`),
   );
-
-const addEventListenerToClass =
-  (eventType: string) =>
-  (selector: string) =>
-  (listener: EventListenerOrEventListenerObject) =>
-    [...document.querySelectorAll(selector)].map((element) =>
-      element.addEventListener(eventType, listener)
-    );
 
 const switchSelectedConfig = pipe(
   inject(config),
