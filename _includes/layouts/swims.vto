@@ -3,14 +3,14 @@ layout: layouts/base.vto
 ---
 
 <script inline type="module" src="/assets/programs/musicplayer.mjs"></script>
-<script inline src="/_esnext/obscurenavbarlinksonmobile.js"></script>
+<script inline src="/_esnext/obscurenavbarlinks.js"></script>
 
 <div id="music-body">
   <div id="music-player">
   <picture id="music-cover" class="no-border">
     <img src={{ gif }}>
   </picture>
-  <h1>{{ title |> safe }}</h1>
+  <h1>{{ title |> toUpperCase }}</h1>
   <audio src={{ audio }} preload="metadata" loop></audio>
   <div id="music-player-playback">
     <span id="current-time" class="time">0:00</span>
