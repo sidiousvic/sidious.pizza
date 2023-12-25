@@ -25,6 +25,12 @@ export const getClickedElementDatasetKey =
   (event: MouseEvent) => (key: string) =>
     Try(getMouseEventTargetDataset(event)[key])(`Dataset ${key} not found.`);
 
+export const getElementById = (id: string) =>
+  Try(document.getElementById(id))(`ID ${id} not found.`);
+
+export const getElement = (selector: string) =>
+  Try(document.querySelector(selector))(`Selector ${selector} not found.`);
+
 export const addEventListenerToClass =
   (eventType: string) =>
   (selector: string) =>
