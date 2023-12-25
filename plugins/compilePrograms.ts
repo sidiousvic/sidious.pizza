@@ -12,7 +12,7 @@ export const compilePrograms = (options: {
     dirname: ".",
   };
 
-  async function compilePrograms(_e: Event) {
+  async function compilePrograms(e: Event) {
     const tsFiles = await Promise.all(
       Array.from(
         walkSync(
@@ -41,7 +41,11 @@ export const compilePrograms = (options: {
         "🛃 No _temp/esnext directory found. Creating one..."
       );
 
-      console.log(`🛠️  Compiling _includes/ts/${file.path.split("/").pop()}...`);
+      if (e.type === "beforeBuild") {
+        console.log(
+          `🛠️  Compiling _includes/ts/${file.path.split("/").pop()}...`,
+        );
+      }
 
       await Deno.mkdir("_temp/esnext", { recursive: true });
 
@@ -63,7 +67,9 @@ export const compilePrograms = (options: {
         );
       }
 
-      console.log(`🏭 Compiled _esnext/${file.path.split("/").pop()}!`);
+      if (e.type === "beforeBuild") {
+        console.log(`🏭 Compiled _esnext/${file.path.split("/").pop()}!`);
+      }
 
       const bundledAndMinifiedBinary = await Deno.readFile(generatedFilePath);
 
@@ -81,11 +87,13 @@ export const compilePrograms = (options: {
         bundledAndMinifiedBinary,
       );
 
-      console.log(
-        `👩🏽‍🏭 Compiled _exnext/${
-          file.path.split("/").pop()
-        } for the first time!`,
-      );
+      if (e.type === "afterUpdate") {
+        console.log(
+          `👩🏽‍ Recompiled  ♻️  _esnext/${
+            file.path.split("/").pop()?.replace("ts", "js")
+          }!`,
+        );
+      }
     });
   }
 
