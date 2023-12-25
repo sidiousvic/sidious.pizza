@@ -34,7 +34,7 @@ function computeMainHeight() {
 addEventListener("load", () => {
   const main = document.getElementById("main");
   main.style.minHeight = `${computeMainHeight()}px`;
-  dispatchEvent(new CustomEvent("ready"));
+  dispatchEvent(new CustomEvent("screenDimensionsReady"));
 });
 
 addEventListener("resize", () => {
