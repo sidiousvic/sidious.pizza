@@ -8,6 +8,9 @@
   & > h2 {
     margin: 0;
   }
+  & > * {
+    transition: all 0.5s ease-in-out;
+  }
 }
 
 .config-buttons {
@@ -15,6 +18,9 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(150px, 1fr));
   gap: 1.5rem;
+  & > * {
+    transition: all 0.5s ease-in-out;
+  }
 }
 
 @media (max-width: 768px) {
