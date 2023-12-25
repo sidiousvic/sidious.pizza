@@ -88,7 +88,7 @@ you can only find in small old towns these days.
 ## MISLED YOUTH
 
 I was a bit of a goblin
-_(<img loading="lazy" src="/assets/images/goblin.webp" width=40 style="display: inline-block; margin: -0.5rem 0;" />)_
+_(<img loading="lazy" alt="A small Shiba Inu dog, looking sad, smoking a cigarette and with a bottle of Corona beer resting in front of it" src="/assets/images/goblin.webp" width=40 style="display: inline-block; margin: -0.5rem 0;" />)_
 when young, and skipped school to play ball, guitar and skateboard. I spent a
 lot of time playing Zelda and watching MTV. My heroes were
 [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and Angus Young.
@@ -102,7 +102,7 @@ little of that dumbfuckery inside to add a spice to life.
 
 <a name="just-do-shit"></a>
 
-## <img loading="lazy" width=40 style="transform: translateY(10px); filter: var(--venom-filter)" src="/assets/images/swoosh.webp" /> JUST DO SH\*T
+## <img loading="lazy" alt="A red swoosh symbol" width=40 style="transform: translateY(10px); filter: var(--venom-filter)" src="/assets/images/swoosh.webp" /> JUST DO SH\*T
 
 I love Nike's slogan, _"Just Do Sh\*t"_. When boredom strikes I
 [program](https://github.com/sidiousvic), write [haiku](/kaminari-no-ura), make
