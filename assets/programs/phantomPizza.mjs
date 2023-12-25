@@ -129,7 +129,7 @@ requestAnimationFrame(() => {
       u.score.value === 0 &&
       ((document.getElementById("score").innerHTML = "START!"),
         u.sound.phantompizza.pause()),
-        u.score.value > 1 && u.sound.phantompizza.play(),
+        u.score.value > 1 && u.sound.phantompizza.play().catch(() => {}),
         moveWithMouse(u.player)(u.mouse),
         draw(c)(u.player),
         collide(u.swoosh)(u.player)(
@@ -142,7 +142,7 @@ requestAnimationFrame(() => {
                     .toUpperCase()))
                 : (document.getElementById("score").style.animation = "none"),
               respawn(u.swoosh),
-              u.sound.swoosh.play(),
+              u.sound.swoosh.play().catch(() => {}),
               u.enemies.push(
                 Phantom(randomSpawn(SPRITE_DIMENSION))(SPRITE_DIMENSION)(
                   sprites.enemyr,
@@ -155,12 +155,10 @@ requestAnimationFrame(() => {
           (e) => (
             (u.enemy = e),
               collide(e)(u.player)(
-                () => (
-                  respawn(u.swoosh),
-                    (u.score.value = 0),
-                    (u.enemies.length = 0),
-                    u.sound.death.play()
-                ),
+                () => (respawn(u.swoosh),
+                  (u.score.value = 0),
+                  (u.enemies.length = 0),
+                  u.sound.death.play().catch(() => {})),
               ),
               moveWithVelocity(e),
               switchSprite(e)(e.speed.x < 0 ? sprites.enemyl : sprites.enemyr),
