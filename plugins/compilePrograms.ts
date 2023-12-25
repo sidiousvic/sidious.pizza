@@ -36,6 +36,7 @@ export const compilePrograms = (options: {
         ).catch(() => new Uint8Array([])),
       );
 
+      await Deno.remove("_temp/esnext", { recursive: true });
       await Deno.mkdir("_temp/esnext", { recursive: true });
 
       const { warnings, errors } = await build({
