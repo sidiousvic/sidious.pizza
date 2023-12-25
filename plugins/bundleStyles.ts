@@ -1,5 +1,7 @@
 import { bundleAsync } from "npm:lightningcss-wasm@1.22.1";
 import { sha256 } from "https://denopkg.com/chiefbiiko/sha256@v1.0.0/mod.ts";
+import { Event } from "lume/core/events.ts";
+import Site from "lume/core/site.ts";
 
 export const bundleStyles = (options: {
   bundler?: {
@@ -9,7 +11,7 @@ export const bundleStyles = (options: {
   };
   target?: string;
 }) =>
-async (site) => {
+(site: Site) => {
   const defaultOptions = {
     bundler: {
       filename: "_includes/index.css",
@@ -19,7 +21,7 @@ async (site) => {
     target: "./_bundle.css",
   };
 
-  async function bundleCSS(e) {
+  async function bundleCSS(e: Event) {
     const { code: bundledAndMinifiedBinary } = await bundleAsync({
       ...defaultOptions.bundler,
       ...options.bundler,
@@ -28,7 +30,7 @@ async (site) => {
     const currChecksum = sha256(bundledAndMinifiedBinary);
 
     const previousChecksum = sha256(
-      await Deno.readFile(defaultOptions.target || options.target),
+      await Deno.readFile(defaultOptions.target || options.target || ""),
     );
 
     if (e.type === "beforeBuild") {
@@ -39,7 +41,7 @@ async (site) => {
       );
 
       await Deno.writeFile(
-        defaultOptions.target || options.target,
+        defaultOptions.target || options.target || "",
         bundledAndMinifiedBinary,
       );
 
@@ -56,7 +58,7 @@ async (site) => {
       console.info(`⚡️ Bundling ${options.bundler?.filename}...`);
 
       await Deno.writeFile(
-        defaultOptions.target || options.target,
+        defaultOptions.target || options.target || "",
         bundledAndMinifiedBinary,
       );
 
