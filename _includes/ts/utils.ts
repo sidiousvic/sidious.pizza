@@ -17,6 +17,10 @@ export const inject = (a) => (b) =>
     b,
   );
 
+export const map = (fn) => (z) => fn(z);
+
+export const mix = (fn) => (z) => ({ ...z, ...fn(z) });
+
 export const mutate = (fn) => (z) => (fn(z), z);
 
 export const isMobile = (userAgent) =>

@@ -1,1 +1,0 @@
-(()=>{var a=t=>{throw new Error(t)},o=t=>e=>t??a(e);var r=(...t)=>e=>t.reduce((p,s)=>s(p),e);var n=t=>e=>(t(e),e),i=t=>/iPhone|iPad|iPod|Android/i.test(t);var c={navbarLinksID:"navbar-links"};i(navigator.userAgent)&&r(n(t=>o(document.getElementById(t.navbarLinksID))(`ID ${t.navbarLinksID} not found.`).style.display="none"))(c);})();

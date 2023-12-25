@@ -1,1 +1,1 @@
-(()=>{var o=t=>{throw new Error(t)},e=t=>r=>t??o(r);})();
+(()=>{var o=r=>{throw new Error(r)},T=r=>t=>r??o(t),e=r=>t=>r??t();})();

@@ -1,7 +1,14 @@
 import { Try } from "./dontpanic.ts";
 import { inject, mutate, pipe, random } from "./utils.ts";
 
-const Config = {
+type Config = {
+  messageID: string;
+  messages: string[];
+};
+
+type State = Config & Event;
+
+const config: Config = {
   messageID: "404-page-message",
   messages: [
     "Are you lost?",
@@ -19,17 +26,13 @@ const Config = {
   ],
 };
 
-type State = typeof Config & Event;
-
 const randomize404Message = pipe(
-  inject(Config),
+  inject(config),
   mutate((
     z: State,
-  ) => (
-    Try(document.getElementById(z.messageID))(
-      `ID ${z.messageID} not found.`,
-    ).innerHTML = random(z.messages)
-  )),
+  ) => (Try(document.getElementById(z.messageID))(
+    `ID ${z.messageID} not found.`,
+  ).innerHTML = random(z.messages))),
 );
 
 addEventListener("DOMContentLoaded", randomize404Message);
