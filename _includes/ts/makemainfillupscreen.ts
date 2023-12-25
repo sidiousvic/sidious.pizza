@@ -1,7 +1,5 @@
-import { Try } from "./dontpanic.ts";
+import { getElementById } from "./domutils.ts";
 import { inject, mix, mutate, pipe } from "./utils.ts";
-
-const ROUNDING_ERROR = 10;
 
 type Config = {
   navbarId: string;
@@ -21,56 +19,65 @@ const config: Config = {
 type State = Config & Event;
 
 const computeNavbarOffsetHeight = (z: State) =>
-  Try(document.getElementById(z.navbarId))(
-    `ID ${config.navbarId} not found.`,
-  ).offsetHeight;
+  getElementById(z.navbarId).offsetHeight;
+
+const computeNavbarPaddingTop = (z: State) =>
+  parseInt(
+    window.getComputedStyle(
+      getElementById(z.navbarId),
+    ).getPropertyValue("padding-top"),
+  );
+
+const computeNavbarPaddingBottom = (z: State) =>
+  parseInt(
+    window.getComputedStyle(
+      getElementById(z.navbarId),
+    ).getPropertyValue("padding-bottom"),
+  );
 
 const computeFooterMarginTop = (z: State) =>
   parseInt(
     window.getComputedStyle(
-      Try(document.getElementById(z.footerId))(
-        `ID ${config.footerId} not found.`,
-      ),
+      getElementById(z.footerId),
     ).getPropertyValue("margin-top"),
   );
 
 const computeFooterMarginBottom = (z: State) =>
   parseInt(
     window.getComputedStyle(
-      Try(document.getElementById(z.footerId))(
-        `ID ${config.footerId} not found.`,
-      ),
+      getElementById(z.footerId),
     ).getPropertyValue("margin-bottom"),
   );
+
+const computeFooterOffsetHeight = (z: State) =>
+  getElementById(z.footerId).offsetHeight;
 
 const computeMainPaddingTop = (z: State) =>
   parseInt(
     window.getComputedStyle(
-      Try(document.getElementById(z.mainId))(
-        `ID ${config.mainId} not found.`,
-      ),
+      getElementById(z.mainId),
     ).getPropertyValue("padding-top"),
   );
 
 const computeMainPaddingBottom = (z: State) =>
   parseInt(
     window.getComputedStyle(
-      Try(document.getElementById(z.mainId))(
-        `ID ${config.mainId} not found.`,
-      ),
+      getElementById(z.mainId),
     ).getPropertyValue("padding-bottom"),
   );
 
 const makeMainElementFillUpScreen = pipe(
   inject(config),
   mix((z: State) => ({
-    computedMainHeight: window.innerHeight - computeNavbarOffsetHeight(z) -
-      computeFooterMarginTop(z) - computeFooterMarginBottom(z) -
-      computeMainPaddingTop(z) - computeMainPaddingBottom(z) - ROUNDING_ERROR,
+    computedMainHeight: window.innerHeight -
+      (computeNavbarPaddingTop(z) + computeNavbarPaddingBottom(z) +
+        computeNavbarOffsetHeight(z)) -
+      (computeFooterMarginTop(z) + computeFooterMarginBottom(z) +
+        computeFooterOffsetHeight(z)) -
+      computeMainPaddingTop(z) + computeMainPaddingBottom(z),
   })),
   mutate((z: State) => (
-    Try(document.getElementById(z.mainId))(`ID ${z.mainId} not found.`).style
-      .minHeight = `${z.computedMainHeight}px`
+    getElementById(z.mainId).style.minHeight = `${z.computedMainHeight}px`
   )),
   mutate((
     z: State,
