@@ -7,12 +7,26 @@
   margin: 0;
 }
 
+.postList-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0.5rem 0;
+  font-style: italic;
+}
+
+.tag {
+  font-family: var(--font-family-tertiary);
+  color: var(--venom);
+}
+
 .postList-date {
   font-size: 0.8rem;
   color: var(--lightgray);
 }
 
 .postList-post-top {
+  margin: 0 0;
   display: flex;
   align-items: center;
   justify-content: center;

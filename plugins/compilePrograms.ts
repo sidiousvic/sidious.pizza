@@ -34,7 +34,9 @@ export const compilePrograms = (options: {
       const previousChecksum = sha256(
         await Deno.readFile(
           generatedFilePath,
-        ).catch(() => new Uint8Array([])),
+        )
+          .then((binary) => binary)
+          .catch(() => new Uint8Array([])),
       );
 
       await Deno.remove("_temp/esnext", { recursive: true }).catch(() =>
@@ -72,10 +74,11 @@ export const compilePrograms = (options: {
       }
 
       const bundledAndMinifiedBinary = await Deno.readFile(generatedFilePath)
+        .then((binary) => binary)
         .catch(() => {});
 
       const currChecksum = sha256(
-        bundledAndMinifiedBinary,
+        bundledAndMinifiedBinary as Uint8Array,
       );
 
       if (previousChecksum.toString() === currChecksum.toString()) return;
@@ -85,7 +88,7 @@ export const compilePrograms = (options: {
           "_temp/esnext",
           "_esnext",
         ),
-        bundledAndMinifiedBinary,
+        bundledAndMinifiedBinary as Uint8Array,
       );
 
       if (e.type === "afterUpdate") {

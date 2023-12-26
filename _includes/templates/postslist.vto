@@ -18,12 +18,14 @@
     <time class="postList-date" datetime="{{ post.date |> date('DATETIME') }}">
       {{ post.date |> date('HUMAN_DATE') }}
     </time>
+    <div class="postList-tags">
     {{ for tag of post.tags }}
-    {{ set page = search.page("type=tag tag='" + tag + "'") }}
+    {{ set page = search.pages("type=tag tag='" + tag + "'") }}
     {{ if page }}
-      <a href="{{ page.url  }}" class="tag">{{ tag }}</a>
+    <a href="/tags/{{ tag }}" class="tag">{{ tag }}</a>
     {{ /if }}
     {{ /for }}
+    </div>
  </li>
 {{ /for }}
 </ul>

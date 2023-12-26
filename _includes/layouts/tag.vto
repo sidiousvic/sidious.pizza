@@ -2,8 +2,9 @@
 layout: layouts/base.vto
 bodyClass: body-tag
 ---
-<h1 class="page-title">{{ page.title |> upper }}</h1>
 
-{{ include "templates/postslist.vto" { query: "'" + page.tag + "'" } }}
+<h1 class="page-title">{{ title |> toUpperCase }}</h1>
+
+{{ include "templates/postslist.vto" { query: "'" + tag + "'" } }}
 
 
