@@ -1,7 +1,7 @@
 @font-face {
   font-family: Sidious;
-  src: url(/assets/fonts/sidious.ttf);
-  size-adjust: 90%;
+  src: url(/assets/fonts/sidious.otf);
+  size-adjust: 60%;
   font-display: swap;
 }
 
