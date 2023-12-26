@@ -1,3 +1,16 @@
+import { getElementById } from "./domutils.ts";
+import { inject, mutate, pipe } from "./utils.ts";
+
+type Config = { playbackTriggerMessageID: string };
+
+const config: Config = { playbackTriggerMessageID: "trigger-playback" };
+
+type State = Config & Event;
+
+const mixBlendDarkenNavbar = (
+  z: State,
+) => (getElementById(z.navbarID).style.mixBlendMode = "darken !important");
+
 addEventListener("DOMContentLoaded", () => {
   const musicPlayer = document.getElementById("music-player");
   const seekSlider = document.getElementById("seek-slider");
@@ -7,7 +20,6 @@ addEventListener("DOMContentLoaded", () => {
   let playState = "play";
   let muteState = "unmute";
 
-  document.querySelector(".navbar").style.mixBlendMode = "darken !important";
   triggerPlayback.innerHTML = /iPhone|iPad|iPod|Android/i.test(
       navigator.userAgent,
     )
@@ -144,101 +156,4 @@ addEventListener("DOMContentLoaded", () => {
     outputContainer.textContent = value;
     audio.volume = value / 100;
   });
-
-  /* Implementation of the Media Session API */
-  if ("mediaSession" in navigator) {
-    navigator.mediaSession.metadata = new MediaMetadata({
-      title: "Komorebi",
-      artist: "Anitek",
-      album: "MainStay",
-      artwork: [
-        {
-          src: "https://assets.codepen.io/4358584/1.300.jpg",
-          sizes: "96x96",
-          type: "image/png",
-        },
-        {
-          src: "https://assets.codepen.io/4358584/1.300.jpg",
-          sizes: "128x128",
-          type: "image/png",
-        },
-        {
-          src: "https://assets.codepen.io/4358584/1.300.jpg",
-          sizes: "192x192",
-          type: "image/png",
-        },
-        {
-          src: "https://assets.codepen.io/4358584/1.300.jpg",
-          sizes: "256x256",
-          type: "image/png",
-        },
-        {
-          src: "https://assets.codepen.io/4358584/1.300.jpg",
-          sizes: "384x384",
-          type: "image/png",
-        },
-        {
-          src: "https://assets.codepen.io/4358584/1.300.jpg",
-          sizes: "512x512",
-          type: "image/png",
-        },
-      ],
-    });
-
-    navigator.mediaSession.setActionHandler("play", () => {
-      if (playState === "play") {
-        audio.play();
-        playAnimation.playSegments([14, 27], true);
-        requestAnimationFrame(whilePlaying);
-        playState = "pause";
-      } else {
-        audio.pause();
-        playAnimation.playSegments([0, 14], true);
-        cancelAnimationFrame(raf);
-        playState = "play";
-      }
-    });
-
-    navigator.mediaSession.setActionHandler("pause", () => {
-      if (playState === "play") {
-        audio.play();
-        playAnimation.playSegments([14, 27], true);
-        requestAnimationFrame(whilePlaying);
-        playState = "pause";
-      } else {
-        audio.pause();
-        playAnimation.playSegments([0, 14], true);
-        cancelAnimationFrame(raf);
-        playState = "play";
-      }
-    });
-
-    navigator.mediaSession.setActionHandler("seekbackward", (details) => {
-      audio.currentTime = audio.currentTime - (details.seekOffset || 10);
-    });
-
-    navigator.mediaSession.setActionHandler("seekforward", (details) => {
-      audio.currentTime = audio.currentTime + (details.seekOffset || 10);
-    });
-
-    navigator.mediaSession.setActionHandler("seekto", (details) => {
-      if (details.fastSeek && "fastSeek" in audio) {
-        audio.fastSeek(details.seekTime);
-        return;
-      }
-      audio.currentTime = details.seekTime;
-    });
-
-    navigator.mediaSession.setActionHandler("stop", () => {
-      audio.currentTime = 0;
-      seekSlider.value = 0;
-      musicPlayer.style.setProperty("--seek-before-width", "0%");
-      currentTimeContainer.textContent = "0:00";
-      if (playState === "pause") {
-        playAnimation.playSegments([0, 14], true);
-        cancelAnimationFrame(raf);
-        playState = "play";
-      }
-    });
-  }
 });
