@@ -26,74 +26,7 @@ addEventListener("DOMContentLoaded", () => {
     musicPlayer: getElement("#music-player") as HTMLDivElement,
   };
 
-  const togglePlaystateOnKey = (key: string) => (z: State & KeyboardEvent) =>
-    getStoredItem("audioplaystate") === "pause"
-      ? z.key === key && localStorage.setItem("audioplaystate", "play")
-      : z.key === key && localStorage.setItem("audioplaystate", "pause");
-
-  const togglePlaystateOnTouch = (z: State) =>
-    getStoredItem("audioplaystate") === "pause"
-      ? z.type === "touchstart" &&
-        localStorage.setItem("audioplaystate", "play")
-      : z.type === "touchstart" &&
-        localStorage.setItem("audioplaystate", "pause");
-
-  const playback = (z: State) =>
-    // @ts-ignore: Audio[playstate]() can be indexed with "play" or "pause"
-    z.audio[getStoredItem("audioplaystate") ?? z.defaultPlaystate]();
-
-  const showRangeProgress = (z: State) =>
-    z.musicPlayer.style.setProperty(
-      "--seek-before-width",
-      (z.seekSlider.value / z.seekSlider.max) * 100 + "%",
-    );
-
-  const calculateTime = (timeS: number) => {
-    const minutes = Math.floor(timeS / 60);
-    const seconds = Math.floor(timeS % 60);
-    const returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
-    return `${minutes}:${returnedSeconds}`;
-  };
-
-  const displayDuration = (z: State) =>
-    z.duration.textContent = calculateTime(z.audio.duration);
-
-  const displayCurrentTime = (z: State) =>
-    z.currentTime.textContent = calculateTime(z.seekSlider.value);
-
-  const setSliderMax = (z: State) =>
-    z.seekSlider.max = Math.floor(z.audio.duration);
-
-  const displayBuffered = (z: State) => {
-    const bufferedAmount = z.audio.buffered.length
-      ? Math.floor(z.audio.buffered.end(z.audio.buffered.length - 1))
-      : 0;
-    z.musicPlayer.style.setProperty(
-      "--buffered-width",
-      `${(bufferedAmount / z.seekSlider.max) * 100}%`,
-    );
-  };
-
-  const whilePlaying = (z: State) => () => {
-    z.seekSlider.value = Math.floor(z.audio.currentTime);
-    z.currentTime.textContent = calculateTime(z.seekSlider.value);
-    z.musicPlayer.style.setProperty(
-      "--seek-before-width",
-      `${(z.seekSlider.value / z.seekSlider.max) * 100}%`,
-    );
-    animationFrame = requestAnimationFrame(whilePlaying(z));
-  };
-
-  const setAudioTimeToSliderValue = (z: State) =>
-    z.audio.currentTime = z.seekSlider.value;
-
-  const pauseAnimationIfPlaying = (z: State) =>
-    !z.audio.paused &&
-    cancelAnimationFrame(animationFrame ?? 0);
-
-  const runAnimationIfPlaying = (z: State) =>
-    !z.audio.paused &&
-    requestAnimationFrame(whilePlaying(z));
+  storeDefaultPlaystate(config as State);
 
   addEventListener(
     "keydown",
@@ -153,3 +86,75 @@ addEventListener("DOMContentLoaded", () => {
     ),
   );
 });
+
+const storeDefaultPlaystate = (z: State) =>
+  localStorage.setItem("audioplaystate", z.defaultPlaystate);
+
+const togglePlaystateOnKey = (key: string) => (z: State & KeyboardEvent) =>
+  getStoredItem("audioplaystate") === "pause"
+    ? z.key === key && localStorage.setItem("audioplaystate", "play")
+    : z.key === key && localStorage.setItem("audioplaystate", "pause");
+
+const togglePlaystateOnTouch = (z: State & TouchEvent) =>
+  getStoredItem("audioplaystate") === "pause"
+    ? z.type === "touchstart" &&
+      localStorage.setItem("audioplaystate", "play")
+    : z.type === "touchstart" &&
+      localStorage.setItem("audioplaystate", "pause");
+
+const playback = (z: State) =>
+  // @ts-ignore: Audio[playstate]() can be indexed with "play" or "pause"
+  z.audio[getStoredItem("audioplaystate") ?? z.defaultPlaystate]();
+
+const showRangeProgress = (z: State) =>
+  z.musicPlayer.style.setProperty(
+    "--seek-before-width",
+    (z.seekSlider.value / z.seekSlider.max) * 100 + "%",
+  );
+
+const calculateTime = (timeS: number) => {
+  const minutes = Math.floor(timeS / 60);
+  const seconds = Math.floor(timeS % 60);
+  const returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
+  return `${minutes}:${returnedSeconds}`;
+};
+
+const displayDuration = (z: State) =>
+  z.duration.textContent = calculateTime(z.audio.duration);
+
+const displayCurrentTime = (z: State) =>
+  z.currentTime.textContent = calculateTime(z.seekSlider.value);
+
+const setSliderMax = (z: State) =>
+  z.seekSlider.max = Math.floor(z.audio.duration);
+
+const displayBuffered = (z: State) => {
+  const bufferedAmount = z.audio.buffered.length
+    ? Math.floor(z.audio.buffered.end(z.audio.buffered.length - 1))
+    : 0;
+  z.musicPlayer.style.setProperty(
+    "--buffered-width",
+    `${(bufferedAmount / z.seekSlider.max) * 100}%`,
+  );
+};
+
+const whilePlaying = (z: State) => () => {
+  z.seekSlider.value = Math.floor(z.audio.currentTime);
+  z.currentTime.textContent = calculateTime(z.seekSlider.value);
+  z.musicPlayer.style.setProperty(
+    "--seek-before-width",
+    `${(z.seekSlider.value / z.seekSlider.max) * 100}%`,
+  );
+  animationFrame = requestAnimationFrame(whilePlaying(z));
+};
+
+const setAudioTimeToSliderValue = (z: State) =>
+  z.audio.currentTime = z.seekSlider.value;
+
+const pauseAnimationIfPlaying = (z: State) =>
+  !z.audio.paused &&
+  cancelAnimationFrame(animationFrame ?? 0);
+
+const runAnimationIfPlaying = (z: State) =>
+  !z.audio.paused &&
+  requestAnimationFrame(whilePlaying(z));
