@@ -20,7 +20,7 @@ import {
   respawn,
   switchSprite,
   updateScore,
-} from "/assets/programs/phantom.mjs";
+} from "./phantom.js";
 
 if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
   const main = document.getElementById("main");
