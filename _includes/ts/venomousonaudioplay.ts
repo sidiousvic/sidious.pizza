@@ -20,7 +20,7 @@ addEventListener("DOMContentLoaded", () => {
     "keydown",
     pipe(
       inject(config),
-      mutate(toggleVenomousBody),
+      mutate(toggleVenomousBodyOnSpacebar),
       mutate(togglePlaybackSpacebarMessage),
     ),
   );
@@ -29,16 +29,21 @@ addEventListener("DOMContentLoaded", () => {
     "touchstart",
     pipe(
       inject(config),
-      mutate(toggleVenomousBody),
+      mutate(toggleVenomousBodyOnTap),
       mutate(togglePlaybackTapMessage),
     ),
   );
 });
 
-const toggleVenomousBody = (z: State) =>
+const toggleVenomousBodyOnSpacebar = (z: State) =>
   getStoredItem("audioplaystate") === "play"
     ? z.key === " " && document.body.classList.add("venomous")
     : z.key === " " && document.body.classList.remove("venomous");
+
+const toggleVenomousBodyOnTap = (z: State) =>
+  getStoredItem("audioplaystate") === "play"
+    ? z.type === "touchstart" && document.body.classList.add("venomous")
+    : z.type === "touchstart" && document.body.classList.remove("venomous");
 
 const togglePlaybackSpacebarMessage = (z: State) =>
   getStoredItem("audioplaystate") === "pause"
@@ -53,12 +58,12 @@ const togglePlaybackTapMessage = (z: State) =>
   getStoredItem("audioplaystate") === "pause"
     ? z.type === "touchstart" &&
       (z.playbackTriggerMessageElement.innerHTML =
-        `Press <span class="tag border venomous">tap</span> to play`)
+        `<span class="tag border venomous">tap</span> to play`)
     : z.type === "touchstart" &&
       (z.playbackTriggerMessageElement.innerHTML =
-        `Press <span class="tag border venomous">tap</span> to pause`);
+        `<span class="tag border venomous">tap</span> to pause`);
 
 const toggleTapMessageOnMobile = (z: State) =>
   isMobile(navigator.userAgent) &&
   (z.playbackTriggerMessageElement.innerHTML =
-    `Press <span class="tag border venomous">tap</span> to play`);
+    `<span class="tag border venomous">tap</span> to play`);
