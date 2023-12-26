@@ -3,7 +3,7 @@
     {{ site.title }}
   </a>
   <ul id="navbar-links">
-    {{ for entry of search.pages("visible=true", "sort=desc") }}
+    {{ for entry of search.pages("visible=true", "order") }}
       <li>
         <a href="{{ entry.url }}" {{ if entry.url == site.url }} aria-current="page"{{ /if }}>
           {{ if entry.url == site.url }}
