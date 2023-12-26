@@ -47,7 +47,7 @@ export const compilePrograms = (options: {
         );
       }
 
-      await Deno.mkdir("_temp/esnext", { recursive: true });
+      await Deno.mkdir("_temp/esnext", { recursive: true }).catch(() => {});
 
       const { warnings, errors } = await build({
         entryPoints: [file.path],
@@ -71,7 +71,8 @@ export const compilePrograms = (options: {
         console.log(`🏭 Compiled _esnext/${file.path.split("/").pop()}!`);
       }
 
-      const bundledAndMinifiedBinary = await Deno.readFile(generatedFilePath);
+      const bundledAndMinifiedBinary = await Deno.readFile(generatedFilePath)
+        .catch(() => {});
 
       const currChecksum = sha256(
         bundledAndMinifiedBinary,
