@@ -23,7 +23,8 @@ export const compilePrograms = (options: {
         .filter((entry) => entry.isFile)
         .map(async (entry) => ({
           path: entry.path,
-          binary: await Deno.readFile(entry.path),
+          binary: await Deno.readFile(entry.path).then((binary) => binary)
+            .catch(() => new Uint8Array([0])),
         })),
     );
 
@@ -36,7 +37,7 @@ export const compilePrograms = (options: {
           generatedFilePath,
         )
           .then((binary) => binary)
-          .catch(() => new Uint8Array([])),
+          .catch(() => new Uint8Array([0])),
       );
 
       await Deno.remove("_temp/esnext", { recursive: true }).catch(() =>
@@ -49,7 +50,9 @@ export const compilePrograms = (options: {
         );
       }
 
-      await Deno.mkdir("_temp/esnext", { recursive: true }).catch(() => {});
+      await Deno.mkdir("_temp/esnext", { recursive: true }).catch(() =>
+        console.info(`🛃 _temp/esnext directory already exists. Ignoring...`)
+      );
 
       const { warnings, errors } = await build({
         entryPoints: [file.path],
@@ -75,7 +78,9 @@ export const compilePrograms = (options: {
 
       const bundledAndMinifiedBinary = await Deno.readFile(generatedFilePath)
         .then((binary) => binary)
-        .catch(() => {});
+        .catch(() =>
+          console.error(`🚨 [Deno] Error reading ${generatedFilePath}`)
+        );
 
       const currChecksum = sha256(
         bundledAndMinifiedBinary as Uint8Array,
@@ -89,6 +94,13 @@ export const compilePrograms = (options: {
           "_esnext",
         ),
         bundledAndMinifiedBinary as Uint8Array,
+      ).catch(() =>
+        console.error(`🚨 [Deno] Error writing ${
+          generatedFilePath.replace(
+            "_temp/esnext",
+            "_esnext",
+          )
+        }`)
       );
 
       if (e.type === "afterUpdate") {
