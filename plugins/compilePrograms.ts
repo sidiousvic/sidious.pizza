@@ -54,23 +54,14 @@ export const compilePrograms = (options: {
         console.info(`🛃 _temp/esnext directory already exists. Ignoring...`)
       );
 
-      const { warnings, errors } = await build({
+      await build({
         entryPoints: [file.path],
         outdir: "_temp/esnext",
         logLevel: "error",
+        color: true,
         minify: true,
         bundle: true,
-      });
-
-      if (errors.length) {
-        console.error(`🚨 [esbuild] Errors: \n${errors.join("\n")}`);
-      }
-
-      if (warnings.length) {
-        console.warn(
-          `⚠️ [esbuild] Warnings: \n${warnings.join("\n")}`,
-        );
-      }
+      }).catch(console.error);
 
       if (e.type === "beforeBuild") {
         console.log(`🏭 Compiled _esnext/${file.path.split("/").pop()}!`);
@@ -83,8 +74,8 @@ export const compilePrograms = (options: {
         );
 
       const currChecksum = sha256(
-        bundledAndMinifiedBinary as Uint8Array,
-      );
+        bundledAndMinifiedBinary as Uint8Array || new Uint8Array([0]),
+      ).toString();
 
       if (previousChecksum.toString() === currChecksum.toString()) return;
 
