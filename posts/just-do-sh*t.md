@@ -1,9 +1,9 @@
 ---
 layout: layouts/post.vto
 title: "Just Do Sh*t"
-draft: true
+weblog: true
 tags:
   - philosophy
 ---
 
-Hello.
+Hello, this is my weblog. I'm trying real hard to come up with stuff to write.

@@ -1,4 +1,4 @@
-{{ set posts = search.pages(query, "date=desc") }}
+{{ set posts = search.pages(query + " weblog=true", "date=desc") }}
 
 
 <ul class="postList">
