@@ -15,22 +15,18 @@ const config: Config = {
 
 type State = Config & Event;
 
-const changeStartScreenText = mutate(
-  (
-    z: State,
-  ) => (getElementById(z.startScreenTitleId).innerHTML = z.newStartScreenText),
-);
+const changeStartScreenText = (
+  z: State,
+) => (getElementById(z.startScreenTitleId).innerHTML = z.newStartScreenText);
 
-const hideStartScreenText = mutate(
-  (
-    z: State,
-  ) => (getElementById(z.startScreenTextId).style.display = "none"),
-);
+const hideStartScreenText = (
+  z: State,
+) => (getElementById(z.startScreenTextId).style.display = "none");
 
 const changeStartScreenTextToSayOnlyPhantomPizza = pipe(
   inject(config),
-  changeStartScreenText,
-  hideStartScreenText,
+  mutate(changeStartScreenText),
+  mutate(hideStartScreenText),
 );
 
 !isMobile(navigator.userAgent) &&

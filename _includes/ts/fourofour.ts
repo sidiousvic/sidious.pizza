@@ -26,13 +26,15 @@ const config: Config = {
   ],
 };
 
-const randomize404Message = pipe(
-  inject(config),
-  mutate((
-    z: State,
-  ) => (Try(document.getElementById(z.messageID))(
+const randomize404Message = (z: State) =>
+  Try(document.getElementById(z.messageID))(
     `ID ${z.messageID} not found.`,
-  ).innerHTML = random(z.messages))),
-);
+  ).innerHTML = random(z.messages);
 
-addEventListener("DOMContentLoaded", randomize404Message);
+addEventListener(
+  "DOMContentLoaded",
+  pipe(
+    inject(config),
+    mutate(randomize404Message),
+  ),
+);
