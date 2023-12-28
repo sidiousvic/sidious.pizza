@@ -56,7 +56,7 @@ exploring. Here's a little more about me.
 - [Born and raised in the desert](#born-and-raised)
 - [Misled youth](#misled-youth)
 - [JUST DO SH\*T](#just-do-shit)
-- ["Hello world!"](#hello-world)
+<!-- - ["Hello world!"](#hello-world) -->
 - [Tokyo Boy](#tokyo-boy)
 - [THANKS FOR VISITING!](#thanks-for-visiting)
 
@@ -111,13 +111,9 @@ human creation.
 
 ![A cartoon extraterrestrial being surfing a wave in on an island beach.](/assets/movies/surfing-with-the-alien.mp4){ optimize video caption="Xeno the Alien, 2014" }
 
-<a name="hello-world"></a>
+<!-- <a name="hello-world"></a> -->
 
-## "HELLO WORLD!"
-
-I loved the old web, where websites were simpler and wackier.
-
-![An old-looking website, in an Internet Explorer browser from the 90's.](/assets/images/dannys-homepage.webp){ optimize width=600 caption="I hope my website makes Danny proud." }
+<!-- ![An old-looking website, in an Internet Explorer browser from the 90's.](/assets/images/dannys-homepage.webp){ optimize width=600 caption="I hope my website makes Danny proud." } -->
 
 <a name="tokyo-boy"></a>
 
