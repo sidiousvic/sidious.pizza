@@ -1,4 +1,7 @@
 _site
 _bin
 _temp
+*.vim
 *.DS_Store
+*.vscode
+*.gitkeep
