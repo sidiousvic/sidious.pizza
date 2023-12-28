@@ -28,7 +28,7 @@ UI programs are compiled from Typescript into [ESNext](https://developer.mozilla
 
 Source `.ts` files can be found in the [\_includes/ts](_includes/ts) folder. Compiled files are stored in the `_esnext` directory. [Here's an example of a layout using compiled files.](_includes/layouts/swims.vto#L5)
 
-The programs are for the most part written in a functional dialect, using small utilities for piping and mutating state. They might look a bit unusual, but it works really well as a design constraint, making things easier to prove and to change.
+The programs are for the most part written in a functional style, using small utilities for piping lambdas and mutating state. They might look a bit unusual from typical ESNEXT, but it works really well as a design constraint, making things easier to prove and to change. Also, it's fun.
 
 ### Watch-mode compilation and bundling
 
