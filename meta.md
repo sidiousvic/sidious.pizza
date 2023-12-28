@@ -42,6 +42,6 @@ This website is built with performance and accessibility as user-critical respon
 |           |                                                                                                    |
 | --------- | -------------------------------------------------------------------------------------------------- |
 | _0_&nbsp; | Use native web technologies                                                                        |
-| _1_&nbsp; | Design _=_ \{ _..._, _Performance_, _Accessibility_ \}                                             |
+| _1_&nbsp; | `Design = { ..., Performance, Accessibility }`                                                     |
 | _2_&nbsp; | Fun to make _=_ fun to visit                                                                       |
 | _3_&nbsp; | Be like [Curve Space](https://geocities.restorativland.org/ResearchTriangle/Forum/1545/index.html) |

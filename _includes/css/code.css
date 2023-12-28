@@ -20,11 +20,15 @@
   }
 }
 
-code {
+pre code {
   border: 1px dotted var(--venom);
 }
 
-code::after {
+code {
+  color: var(--venom);
+}
+
+pre::after {
   padding: 0.2rem 0 0.1rem 0;
   content: " ▢ ▢ ▢";
   color: black;
