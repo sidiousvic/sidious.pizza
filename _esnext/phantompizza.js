@@ -1,6 +1,6 @@
 (()=>{var m=e=>t=>Math.sqrt(Math.pow(t.x-e.x,2)+Math.pow(t.y-e.y,2)),x=e=>t=>Math.floor(Math.random()*(t-e+1)+e),v=e=>e[Math.floor(Math.random()*e.length)],y=e=>-e;var b=e=>e/2,O=e=>b(e.dimension),J=e=>t=>m(e)(t)<=O(e)+O(t),T=e=>t=>i=>J(e)(t)&&void i(),z=e=>(e.x+=e.speed.x,e.y+=e.speed.y),k=e=>t=>(e.x=t.x,e.y=t.y),N=e=>t=>e.sprite=t,E=e=>({x:x(e)(innerWidth-e),y:x(e)(innerHeight-e)}),S=e=>(e.x=x(e.dimension)(innerWidth-e.dimension),e.y=x(e.dimension)(innerHeight-e.dimension)),W=e=>t=>(e.value+=t,e.sprite.innerHTML=~~e.value),H=e=>t=>m(e)({x:e.x,y:t.y})<=e.dimension||m(e)({x:e.x,y:t.y})-t.y>0?e.speed.y=y(e.speed.y):(m(e)({x:t.x,y:e.y})<=e.dimension||m(e)({x:t.x,y:e.y})-t.x>0)&&(e.speed.x=y(e.speed.x)),g=e=>({sprite:t,x:i,y:c,w:l,h:f,dimension:h})=>e.ctx.drawImage(t,i,c,l??h,f??h),p=({x:e,y:t})=>i=>c=>l=>({x:e,y:t,sprite:c,dimension:i,speed:{x:l,y:l}}),A=e=>t=>i=>(requestAnimationFrame(()=>A(e)(t)(i)),e.ctx.clearRect(0,0,e.width,e.height),i(t)),$=({SCORE_FONT:e,START_SCREEN_TITLE_FONT:t,START_SCREEN_TEXT_FONT:i,START_TEXT_A:c,START_TEXT_B:l,DISPLAY_SCORE:f,GAME_TITLE:h,START_SCREEN:U,CURSOR:R,SPRITES:_,AUDIOS:X,BG_COLOR_HEX:Y,FG_COLOR_HEX:Z,FILTER:I})=>{document.querySelector("main").innerHTML+=`
 <canvas>
-  ${_.map(n=>`<img id="${n.split("/").pop().split(".")[0]}" width="0" height="0" src=${n} />`)}
+  ${_.map(n=>`<img alt="an in-game sprite" id="${n.split("/").pop().split(".")[0]}" width="0" height="0" src=${n} />`)}
 </canvas>
 
 <p id="score" ${f?"visible":"hidden"}>0</p>

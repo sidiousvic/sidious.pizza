@@ -217,7 +217,7 @@ export const randomSpawn = (dimension) => ({
  */
 export const respawn = (o) => (
   (o.x = randomIntFromRange(o.dimension)(innerWidth - o.dimension)),
-    (o.y = randomIntFromRange(o.dimension)(innerHeight - o.dimension))
+  (o.y = randomIntFromRange(o.dimension)(innerHeight - o.dimension))
 );
 
 /**
@@ -246,14 +246,14 @@ export const bounce = (object) => (bounds) =>
   /** bottom */
   distance(object)({ x: object.x, y: bounds.y }) <= object.dimension
     ? (object.speed.y = negation(object.speed.y))
-    /** top */
-    : distance(object)({ x: object.x, y: bounds.y }) - bounds.y > 0
+    : /** top */
+    distance(object)({ x: object.x, y: bounds.y }) - bounds.y > 0
     ? (object.speed.y = negation(object.speed.y))
-    /** right */
-    : distance(object)({ x: bounds.x, y: object.y }) <= object.dimension
+    : /** right */
+    distance(object)({ x: bounds.x, y: object.y }) <= object.dimension
     ? (object.speed.x = negation(object.speed.x))
-    /** left */
-    : distance(object)({ x: bounds.x, y: object.y }) - bounds.x > 0 &&
+    : /** left */
+      distance(object)({ x: bounds.x, y: object.y }) - bounds.x > 0 &&
       (object.speed.x = negation(object.speed.x));
 
 /**
@@ -264,19 +264,25 @@ export const bounce = (object) => (bounds) =>
  * @returns {void} Draws a game object on the canvas
  * @example draw(c)(enemy) ⚡︎
  */
-export const draw = (c) => ({ sprite, x, y, w, h, dimension }) =>
-  c.ctx.drawImage(sprite, x, y, w ?? dimension, h ?? dimension);
+export const draw =
+  (c) =>
+  ({ sprite, x, y, w, h, dimension }) =>
+    c.ctx.drawImage(sprite, x, y, w ?? dimension, h ?? dimension);
 
 /**
  * Creates a game object.
  */
-export const Phantom = ({ x, y }) => (dimension) => (sprite) => (speed) => ({
-  x,
-  y,
-  sprite,
-  dimension,
-  speed: { x: speed, y: speed },
-});
+export const Phantom =
+  ({ x, y }) =>
+  (dimension) =>
+  (sprite) =>
+  (speed) => ({
+    x,
+    y,
+    sprite,
+    dimension,
+    speed: { x: speed, y: speed },
+  });
 
 /**
  * Runs a gamestate mutation at the current frame of the game and schedules the next frame
@@ -329,8 +335,8 @@ export const Phantom = ({ x, y }) => (dimension) => (sprite) => (speed) => ({
  */
 export const Engine = (c) => (z) => (m) => (
   requestAnimationFrame(() => Engine(c)(z)(m)),
-    c.ctx.clearRect(0, 0, c.width, c.height),
-    m(z)
+  c.ctx.clearRect(0, 0, c.width, c.height),
+  m(z)
 );
 
 /**
@@ -356,14 +362,12 @@ export const config = ({
 }) => {
   document.querySelector("main").innerHTML += `
 <canvas>
-  ${
-    SPRITES.map(
-      (sprite) =>
-        `<img id="${
-          sprite.split("/").pop().split(".")[0]
-        }" width="0" height="0" src=${sprite} />`,
-    )
-  }
+  ${SPRITES.map(
+    (sprite) =>
+      `<img alt="an in-game sprite" id="${
+        sprite.split("/").pop().split(".")[0]
+      }" width="0" height="0" src=${sprite} />`
+  )}
 </canvas>
 
 <p id="score" ${DISPLAY_SCORE ? "visible" : "hidden"}>0</p>
@@ -469,10 +473,10 @@ export const config = ({
     (acc, sprite) => ({
       ...acc,
       [sprite.split("/").pop().split(".")[0]]: document.getElementById(
-        sprite.split("/").pop().split(".")[0],
+        sprite.split("/").pop().split(".")[0]
       ),
     }),
-    { score: document.getElementById("score") },
+    { score: document.getElementById("score") }
   );
 
   const startScreen = document.getElementById("start-screen");
@@ -495,47 +499,50 @@ export const config = ({
   }, {});
 
   setInterval(
-    () => (startScreenText.innerHTML =
-      startScreenText.innerHTML === START_TEXT_A ? START_TEXT_B : START_TEXT_A),
-    START_ANIMATION_INTERVAL,
+    () =>
+      (startScreenText.innerHTML =
+        startScreenText.innerHTML === START_TEXT_A
+          ? START_TEXT_B
+          : START_TEXT_A),
+    START_ANIMATION_INTERVAL
   );
 
   addEventListener(
     "resize",
-    () => ((c.width = innerWidth), (c.height = innerHeight)),
+    () => ((c.width = innerWidth), (c.height = innerHeight))
   );
   addEventListener(
     "mousemove",
-    ({ clientX, clientY }) => ((mouse.x = clientX), (mouse.y = clientY)),
+    ({ clientX, clientY }) => ((mouse.x = clientX), (mouse.y = clientY))
   );
   addEventListener(
     "touchmove",
     (e) => (
       (mouse.x = e.touches[0].clientX), (mouse.y = e.touches[0].clientY - 120)
     ),
-    { passive: false },
+    { passive: false }
   );
   addEventListener(
     "touchstart",
     (e) => ((mouse.x = e.touches[0].clientX), (mouse.y = e.touches[0].clientY)),
-    { passive: false },
+    { passive: false }
   );
   addEventListener("keydown", (e) => e.key === "Enter" && startScreen.remove());
   addEventListener(
     "keydown",
-    (e) => e.key === "ArrowUp" && (mouse.y -= ARROW_SPEED),
+    (e) => e.key === "ArrowUp" && (mouse.y -= ARROW_SPEED)
   );
   addEventListener(
     "keydown",
-    (e) => e.key === "ArrowRight" && (mouse.x += ARROW_SPEED),
+    (e) => e.key === "ArrowRight" && (mouse.x += ARROW_SPEED)
   );
   addEventListener(
     "keydown",
-    (e) => e.key === "ArrowDown" && (mouse.y += ARROW_SPEED),
+    (e) => e.key === "ArrowDown" && (mouse.y += ARROW_SPEED)
   );
   addEventListener(
     "keydown",
-    (e) => e.key === "ArrowLeft" && (mouse.x -= ARROW_SPEED),
+    (e) => e.key === "ArrowLeft" && (mouse.x -= ARROW_SPEED)
   );
   addEventListener("click", () => startScreen.remove());
   addEventListener("touchstart", () => startScreen.remove());
