@@ -18,6 +18,13 @@
   }
 }
 
+.navbar > ul > li > a:first-letter {
+  text-decoration: underline;
+  text-decoration-color: var(--venom);
+  text-decoration-style: dotted;
+  text-decoration-thickness: 0.1rem;
+}
+
 .navbar > a,
 .navbar > ul > li > a {
   text-decoration: none !important;

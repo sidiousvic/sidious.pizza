@@ -5,17 +5,17 @@ addEventListener("DOMContentLoaded", () => {
   const pageInfoButton = getElement(".page-info-button") as HTMLButtonElement;
   const hideOverlay = () => (pageInfoOverlay.style.display = "none");
   const showOverlay = () => (pageInfoOverlay.style.display = "flex");
-  pageInfoOverlay.addEventListener("click", hideOverlay),
-    pageInfoButton.addEventListener("click", showOverlay),
-    addEventListener(
-      "keydown",
-      (e) =>
-        e.key === "Escape" &&
-        hideOverlay(),
-    ),
-    pageInfoButton.addEventListener("keydown", (e) =>
-      e.key === "Enter" &&
-      showOverlay()),
-    addEventListener("keydown", (e) => e.key === "i" && showOverlay()),
-    addEventListener("keyup", (e) => e.key === "i" && hideOverlay());
+  pageInfoOverlay.addEventListener("click", hideOverlay);
+  pageInfoButton.addEventListener("click", showOverlay);
+  addEventListener("keydown", (e) =>
+    pageInfoOverlay.style.display === "flex"
+      ? (e.key === "?" || e.key === "/") && hideOverlay()
+      : (e.key === "?" || e.key === "/") && showOverlay()
+  );
+  pageInfoButton.addEventListener(
+    "keydown",
+    (e) => e.key === "Enter" && showOverlay()
+  );
+  addEventListener("keydown", (e) => e.key === "i" && showOverlay());
+  addEventListener("keyup", (e) => e.key === "i" && hideOverlay());
 });

@@ -1,1 +1,1 @@
-(()=>{addEventListener("keydown",n=>n.key==="c"&&location.assign("/config"));})();
+(()=>{[e=>e.key==="c"&&location.assign("/config"),e=>e.key==="w"&&location.assign("/weblog"),e=>e.key==="s"&&location.assign("/sitemap"),e=>e.key==="v"&&location.assign("/about"),e=>e.key==="p"&&location.assign("/projects")].map(e=>window.addEventListener("keydown",e));})();
