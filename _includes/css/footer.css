@@ -5,10 +5,11 @@ footer {
   align-items: center;
   color: var(--darksteel);
   font-size: 0.9rem;
+  margin-bottom: 5px;
 }
 
 footer > p {
-  margin-block: 5px;
+  margin-top: 5px;
   font-family: var(--font-family-secondary);
   line-height: normal;
   text-align: center;
