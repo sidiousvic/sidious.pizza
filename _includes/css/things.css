@@ -45,7 +45,7 @@
     height: 90px;
     width: 90px;
     object-fit: contain;
-    padding: 10px;
+    margin: 10px;
   }
 }
 
