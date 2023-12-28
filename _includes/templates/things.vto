@@ -15,9 +15,9 @@
     <div class="things-meta">
       <a href="{{ thing.url }}" class="thing-title"{{ if thing.url == url }} aria-current="page"{{ /if }}>
       {{ if thing.shortTitle }}
-        {{ thing.shortTitle }}
+      {{ thing.shortTitle |> toUpperCase }}
       {{ else if thing.title }}
-        {{ thing.title }}
+      {{ thing.title |> toUpperCase}}
       {{ else }}
         <code>{{ thing.url }}</code>
       {{ /if }}
