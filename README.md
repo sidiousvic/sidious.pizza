@@ -1,6 +1,6 @@
 # sidious.pizza
 
-[Vic's](about.md) cyber space.
+Vic's personal cyber space.
 
 ![Preview of sidious.pizza, showing various of its screens.](assets/images/preview.gif)
 
@@ -30,7 +30,19 @@ UI programs are compiled from Typescript into [ESNext](https://developer.mozilla
 
 Source `.ts` files can be found in the [\_includes/ts](_includes/ts) folder. Compiled files are stored in the `_esnext` directory. [Here's an example of a layout using compiled files.](_includes/layouts/swims.vto#L5)
 
-The programs are for the most part written in a functional style, using small utilities for piping lambdas and mutating state. They might look a bit unusual from typical ESNEXT, but it works really well as a design constraint, making things easier to prove and to change. Also, it's fun.
+The programs are for the most part written in a functional style, using small utilities for piping lambdas and mutating state.
+
+```ts
+const getColorsFromStorage = pipe(
+  inject(config),
+  mix(registerStoredColor),
+  mutate(applyStoredOrRandomColor)
+);
+
+document.addEventListener("DOMContentLoaded", getColorsFromStorage);
+```
+
+They might look a bit unlike typical DOM manipulators, but it works really well as a design constraint, making things easier to prove and to change. Also, they are fun to make! 😈
 
 ## Watch-mode compilation and bundling
 
