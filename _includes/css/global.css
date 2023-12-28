@@ -83,6 +83,15 @@
   }
 }
 
+.quote-author {
+  font-family: var(--font-family-title);
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--venom);
+  text-align: right;
+  margin: 0;
+}
+
 .picture-grid {
   margin: 2rem -200px;
   display: grid;

@@ -44,8 +44,8 @@ exploring. Here's a little more about me.
 
 <br>
 
-> “Laugh and the world laughs with you, snore and you sleep alone.” <h3>Anthony
-> Burgess</h3>
+> “Laugh and the world laughs with you, snore and you sleep alone.” <p class="quote-author">Anthony
+> Burgess</p>
 
 <br>
 
