@@ -11,18 +11,7 @@ tags:
 
 </script>
 
-<figure>
-  <picture>
-
-![Two kids playing a game on a bed, laughing](/assets/images/ichigo.jpg)
-
-</picture>
-  <figcaption>
-
-_"You and I have had many misadventures."_
-
-</figcaption>
-</figure>
+![Two kids playing a game on a bed, laughing](/assets/images/ichigo.jpg){optimize caption="You and I have had many misadventures."}
 
 To my little brother Dany, whatever little evil
 plan you're cooking up now... know that _I love you cabrón!_
