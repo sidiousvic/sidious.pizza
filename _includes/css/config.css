@@ -6,10 +6,10 @@
   justify-content: center;
   flex-wrap: wrap;
   & > h2 {
-    margin: 0;
+    margin: 1rem 0;
   }
   & > * {
-    transition: all 0.5s ease-in-out;
+    transition: color, background, background-color 0.5s ease-in-out;
   }
 }
 
