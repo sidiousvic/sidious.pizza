@@ -16,8 +16,6 @@ Content can be edited directly in the appropriate `.md` files.
 
 Follow [Lume](https://lume.land/docs/overview/about-lume/) documentation to modify layouts, templates, processors, plugins and more.
 
-[This is a processor](processors/optimizePics9000.ts) to optimize images with HTML features such as `preload` and `fetchpriority` automatically.
-
 ## Styles
 
 Styles are bundled and minified with [LightningCSS](https://lightningcss.dev/) on build and [inlined with the base layout](_includes/layouts/base.vto).
@@ -49,3 +47,9 @@ They might look a bit unlike typical DOM manipulators, but it works really well 
 The [compiler](plugins/compilePrograms.ts) and [bundler](plugins/bundleStyles.ts) plugins perform checksum comparisons to rerun on watch mode in order to reload your changes live. In the compiled programs case, an untracked directory `_temp/esnext` is created as a part of this diffing process.
 
 There might be slight bugs with this feature (cache invalidation is hard). Please report [as an issue](https://github.com/sidiousvic/sidious.pizza/issues).
+
+## Optimizations
+
+Processors are used to perform web optimizations on build.
+
+For example, [this is a processor](processors/optimizePics9000.ts) to process `{ optimize }` suffixed images with HTML attributes such as `preload` and `fetchpriority` automatically.
