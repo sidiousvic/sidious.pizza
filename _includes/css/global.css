@@ -41,6 +41,7 @@
   font-weight: 100;
   text-align: center;
   color: var(--venom);
+  line-height: normal;
 }
 
 .info {
