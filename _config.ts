@@ -14,6 +14,7 @@ import { bundleStyles } from "$/plugins/bundleStyles.ts";
 import { optimizePics9000 } from "$/processors/optimizePics9000.ts";
 import readInfo from "lume/plugins/reading_info.ts";
 import { compilePrograms } from "$/plugins/compilePrograms.ts";
+import minifyHTML from "lume/plugins/minify_html.ts";
 
 const site = lume({
   location: new URL("https://sidious.pizza/"),
@@ -26,6 +27,7 @@ site
   .use(inline({ extensions: [".mjs", ".html", ".css", ".js"] }))
   .use(bundleStyles({ bundler: { filename: "_includes/css/styles.css" } }))
   .use(compilePrograms({ dirname: "_includes/ts" }))
+  .use(minifyHTML())
   .use(terser({ extensions: [".mjs"] }))
   .use(date())
   .use(codeHighlight())
