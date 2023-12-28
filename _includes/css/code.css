@@ -1,6 +1,6 @@
 @font-face {
-  font-family: SKA75;
-  src: url(/assets/fonts/Ska75.ttf);
+  font-family: Code;
+  src: url(/assets/fonts/code.ttf);
   font-display: swap;
 }
 
@@ -46,7 +46,7 @@ pre {
 
 pre,
 code {
-  font-family: SKA75, monospace;
+  font-family: Code, monospace !important;
   font-weight: 100;
   font-size: 0.8rem;
   line-height: 1rem;
