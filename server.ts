@@ -1,5 +1,6 @@
 import Server from "lume/core/server.ts";
 import notFound from "lume/middlewares/not_found.ts";
+import expires from "lume/middlewares/expires.ts";
 
 const server = new Server({
   port: 8000,
@@ -12,6 +13,7 @@ server.use(
     page404: "404.html",
     directoryIndex: true,
   }),
+  expires(),
 );
 
 server.start();
