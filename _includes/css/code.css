@@ -15,7 +15,7 @@
     border: none !important;
     border-radius: 0 !important;
   }
-  pre code.hljs::after {
+  pre::after {
     display: none;
   }
 }
