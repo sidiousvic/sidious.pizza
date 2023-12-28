@@ -1,12 +1,17 @@
 import Server from "lume/core/server.ts";
-
-console.log("Starting server...");
+import notFound from "lume/middlewares/not_found.ts";
 
 const server = new Server({
   port: 8000,
   root: `${Deno.cwd()}/_site`,
 });
 
-server.start();
+server.use(
+  notFound({
+    root: `${Deno.cwd()}/_site`,
+    page404: "404.html",
+    directoryIndex: true,
+  }),
+);
 
-console.log("Listening on http://localhost:8000");
+server.start();
