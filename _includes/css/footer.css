@@ -9,7 +9,16 @@ footer {
 
 footer > p {
   margin-block: 5px;
+  font-family: var(--font-family-secondary);
+  line-height: normal;
+  text-align: center;
+  text-wrap: wrap;
 }
+
+@media (max-width: 500px) {
+  footer > p {
+    font-size: 0.8rem;
+  }
 
 footer > p > a {
   color: var(--venom);
