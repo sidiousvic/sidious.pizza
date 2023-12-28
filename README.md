@@ -44,7 +44,7 @@ They might look a bit unlike typical DOM manipulators, but it works really well 
 
 ## Watch-mode compilation and bundling
 
-The [compiler](plugins/compilePrograms.ts) and [bundler](plugins/bundleStyles.ts) plugins perform checksum comparisons to rerun on watch mode in order to reload your changes live. In the compiled programs case, an untracked directory `_temp/esnext` is created as a part of this diffing process.
+The [compiler](plugins/compilePrograms.ts) and [bundler](plugins/bundleStyles.ts) plugins perform checksum comparisons to rerun on watch mode in order to reload changes live. In the compiled programs case, an untracked directory `_temp/esnext` is created as a part of this diffing process.
 
 There might be slight bugs with this feature (cache invalidation is hard). Please report [as an issue](https://github.com/sidiousvic/sidious.pizza/issues).
 
@@ -53,3 +53,7 @@ There might be slight bugs with this feature (cache invalidation is hard). Pleas
 Processors are used to perform web optimizations on build.
 
 For example, [this is a processor](processors/optimizePics9000.ts) to process `{ optimize }` suffixed images with HTML attributes such as `preload` and `fetchpriority` automatically.
+
+## License
+
+No-bullsh\*t universal use allowed. If you somehow manage to make any money with anything found here, won't say no to a beer.
