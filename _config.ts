@@ -27,7 +27,7 @@ site
   .use(inline({ extensions: [".mjs", ".html", ".css", ".js"] }))
   .use(bundleStyles({ bundler: { filename: "_includes/css/styles.css" } }))
   .use(compilePrograms({ dirname: "_includes/ts" }))
-  .use(minifyHTML())
+  .use(minifyHTML({ options: { keep_comments: true } }))
   .use(terser({ extensions: [".mjs"] }))
   .use(date())
   .use(codeHighlight())
@@ -48,7 +48,7 @@ site
         title: "=title",
         content: "$.post-body",
       },
-    }),
+    })
   )
   .use(resolveUrls())
   .process([".md"], optimizePics9000)
