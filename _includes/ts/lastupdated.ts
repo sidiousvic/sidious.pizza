@@ -13,9 +13,9 @@ const config: Config = {
     year: "numeric",
     month: "short",
     day: "numeric",
-    hour: "numeric",
-    minute: "numeric",
-    hour12: isMobile(navigator.userAgent) ? false : true,
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
   }),
 };
 
