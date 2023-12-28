@@ -1,6 +1,8 @@
 import { getElementById } from "./domutils.ts";
 import { inject, mix, mutate, pipe } from "./utils.ts";
 
+const MAIN_PADDING_PX = 25;
+
 type Config = {
   navbarId: string;
   footerId: string;
@@ -23,30 +25,30 @@ const computeNavbarOffsetHeight = (z: State) =>
 
 const computeNavbarPaddingTop = (z: State) =>
   parseInt(
-    window.getComputedStyle(
-      getElementById(z.navbarId),
-    ).getPropertyValue("padding-top"),
+    window
+      .getComputedStyle(getElementById(z.navbarId))
+      .getPropertyValue("padding-top")
   );
 
 const computeNavbarPaddingBottom = (z: State) =>
   parseInt(
-    window.getComputedStyle(
-      getElementById(z.navbarId),
-    ).getPropertyValue("padding-bottom"),
+    window
+      .getComputedStyle(getElementById(z.navbarId))
+      .getPropertyValue("padding-bottom")
   );
 
 const computeFooterMarginTop = (z: State) =>
   parseInt(
-    window.getComputedStyle(
-      getElementById(z.footerId),
-    ).getPropertyValue("margin-top"),
+    window
+      .getComputedStyle(getElementById(z.footerId))
+      .getPropertyValue("margin-top")
   );
 
 const computeFooterMarginBottom = (z: State) =>
   parseInt(
-    window.getComputedStyle(
-      getElementById(z.footerId),
-    ).getPropertyValue("margin-bottom"),
+    window
+      .getComputedStyle(getElementById(z.footerId))
+      .getPropertyValue("margin-bottom")
   );
 
 const computeFooterOffsetHeight = (z: State) =>
@@ -54,34 +56,40 @@ const computeFooterOffsetHeight = (z: State) =>
 
 const computeMainPaddingTop = (z: State) =>
   parseInt(
-    window.getComputedStyle(
-      getElementById(z.mainId),
-    ).getPropertyValue("padding-top"),
+    window
+      .getComputedStyle(getElementById(z.mainId))
+      .getPropertyValue("padding-top")
   );
 
 const computeMainPaddingBottom = (z: State) =>
   parseInt(
-    window.getComputedStyle(
-      getElementById(z.mainId),
-    ).getPropertyValue("padding-bottom"),
+    window
+      .getComputedStyle(getElementById(z.mainId))
+      .getPropertyValue("padding-bottom")
   );
 
 const makeMainElementFillUpScreen = pipe(
   inject(config),
   mix((z: State) => ({
-    computedMainHeight: window.innerHeight -
-      (computeNavbarPaddingTop(z) + computeNavbarPaddingBottom(z) +
+    computedMainHeight:
+      window.innerHeight -
+      (computeNavbarPaddingTop(z) +
+        computeNavbarPaddingBottom(z) +
         computeNavbarOffsetHeight(z)) -
-      (computeFooterMarginTop(z) + computeFooterMarginBottom(z) +
+      (computeFooterMarginTop(z) +
+        computeFooterMarginBottom(z) +
         computeFooterOffsetHeight(z)) -
-      computeMainPaddingTop(z) + computeMainPaddingBottom(z),
+      computeMainPaddingTop(z) +
+      computeMainPaddingBottom(z) +
+      MAIN_PADDING_PX,
   })),
-  mutate((z: State) => (
-    getElementById(z.mainId).style.minHeight = `${z.computedMainHeight}px`
-  )),
-  mutate((
-    z: State,
-  ) => (dispatchEvent(new CustomEvent(z.screenDimensionsReadyEventName)))),
+  mutate(
+    (z: State) =>
+      (getElementById(z.mainId).style.minHeight = `${z.computedMainHeight}px`)
+  ),
+  mutate((z: State) =>
+    dispatchEvent(new CustomEvent(z.screenDimensionsReadyEventName))
+  )
 );
 
 addEventListener("load", makeMainElementFillUpScreen);
