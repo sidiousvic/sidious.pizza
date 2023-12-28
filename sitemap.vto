@@ -6,15 +6,6 @@ title: SITEMAP
 order: 2
 ---
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-	if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-		const title = document.querySelector('.page-title');	
-		title.style.display = 'none';
-	}
-});
-</script>
-
 <h1 class="page-title">SITEMAP</h1>
 
 {{ set projects = search.pages("projects") }}
