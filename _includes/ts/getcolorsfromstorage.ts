@@ -14,19 +14,19 @@ const config: Config = {
   randomColor: random(COLORS),
 };
 
-const registedStoredColor = (z: State) => ({
+const registerStoredColor = (z: State) => ({
   userStoredColor: localStorage.getItem(z.colorsKey),
 });
 
 const applyStoredOrRandomColor = (z: State) =>
   document.documentElement.classList.add(
-    `colors-${z.userStoredColor ? z.userStoredColor : z.randomColor}`,
+    `colors-${z.userStoredColor ? z.userStoredColor : z.randomColor}`
   );
 
 const getColorsFromStorage = pipe(
   inject(config),
-  mix(registedStoredColor),
-  mutate(applyStoredOrRandomColor),
+  mix(registerStoredColor),
+  mutate(applyStoredOrRandomColor)
 );
 
 document.addEventListener("DOMContentLoaded", getColorsFromStorage);
