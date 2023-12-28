@@ -11,13 +11,37 @@
   }
   pre code.hljs {
     padding: 3rem 1rem !important;
+    padding-top: 4rem;
     border: none !important;
     border-radius: 0 !important;
   }
+  pre code.hljs::after {
+    display: none;
+  }
+}
+
+code {
+  border: 1px dotted var(--venom);
+}
+
+code::after {
+  padding: 0.2rem 0 0.1rem 0;
+  content: " ▢ ▢ ▢";
+  color: black;
+  color: var(--venom);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(1rem + 2px);
+  border-bottom: 1px dotted var(--venom);
+  filter: hue-rotate(5deg) saturate(1.5) brightness(0.8);
+  border-radius: 6px 6px 0 0;
 }
 
 pre {
   white-space: pre-wrap;
+  position: relative;
 }
 
 pre,
@@ -37,7 +61,9 @@ pre code.hljs {
   display: block;
   overflow-x: auto;
   padding: 3rem;
-  background: #101;
+  padding-top: 4.2rem;
+  background: #010101;
+  filter: contrast(0.9) brightness(1);
   border-radius: 0.3rem;
 }
 code.hljs {
