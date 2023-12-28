@@ -6,4 +6,4 @@ tags:
   - philosophy
 ---
 
-Hello, this is my weblog. I'm trying real hard to come up with stuff to write.
+Hello world, this is my weblog. I'll be writing things here soon.

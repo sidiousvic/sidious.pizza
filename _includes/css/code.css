@@ -1,14 +1,33 @@
+@font-face {
+  font-family: SKA75;
+  src: url(/assets/fonts/Ska75.ttf);
+  font-display: swap;
+}
+
+@media (max-width: 500px) {
+  pre {
+    width: 100vw;
+    margin: auto -9vw;
+  }
+  pre code.hljs {
+    padding: 3rem 1rem !important;
+    border: none !important;
+    border-radius: 0 !important;
+  }
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
 pre,
 code {
-  font-family: DotGothic16, monospace;
-  line-height: 1.6rem;
-  font-size: 1rem;
+  font-family: SKA75, monospace;
+  font-weight: 100;
+  font-size: 0.8rem;
+  line-height: 1rem;
 }
-:root {
-  --viper: var(--venom);
-  --slime: var(--venom);
-  --gypsy: var(--venom);
-}
+
 code > .hljs-comment {
   animation: blink 1s infinite;
   animation-duration: 4s;
@@ -17,7 +36,9 @@ code > .hljs-comment {
 pre code.hljs {
   display: block;
   overflow-x: auto;
-  padding: 1em;
+  padding: 3rem;
+  background: #101;
+  border-radius: 0.3rem;
 }
 code.hljs {
   padding: 3px 5px;
@@ -33,14 +54,15 @@ code.hljs {
 .hljs-template-variable,
 .hljs-type,
 .hljs-variable.language_ {
-  color: var(--viper);
+  color: var(--venom);
   font-style: italic !important;
+  filter: hue-rotate(-5deg);
 }
 .hljs-title,
 .hljs-title.class_,
 .hljs-title.class_.inherited__,
 .hljs-title.function_ {
-  color: var(--slime);
+  color: var(--venom);
 }
 .hljs-attr,
 .hljs-attribute,
@@ -52,12 +74,14 @@ code.hljs {
 .hljs-selector-class,
 .hljs-selector-id,
 .hljs-variable {
-  color: var(--slime);
+  color: var(--venom);
+  filter: hue-rotate(10deg);
 }
 .hljs-meta .hljs-string,
 .hljs-regexp,
 .hljs-string {
-  color: var(--gypsy);
+  color: var(--venom);
+  filter: hue-rotate(5deg);
 }
 .hljs-built_in,
 .hljs-symbol {
@@ -66,37 +90,37 @@ code.hljs {
 .hljs-code,
 .hljs-comment,
 .hljs-formula {
-  color: var(--gypsy);
+  color: var(--venom);
 }
 .hljs-name,
 .hljs-quote,
 .hljs-selector-pseudo,
 .hljs-selector-tag {
-  color: var(--slime);
+  color: var(--venom);
 }
 .hljs-subst {
-  color: var(--gypsy);
+  color: var(--venom);
 }
 .hljs-section {
   color: var(--venom);
   font-weight: 700;
 }
 .hljs-bullet {
-  color: var(--gypsy);
+  color: var(--venom);
 }
 .hljs-emphasis {
-  color: var(--gypsy);
+  color: var(--venom);
   font-style: italic;
 }
 .hljs-strong {
-  color: var(--gypsy);
+  color: var(--venom);
   font-weight: 700;
 }
 .hljs-addition {
-  color: var(--gypsy);
+  color: var(--venom);
   background-color: #033a16;
 }
 .hljs-deletion {
-  color: var(--gypsy);
+  color: var(--venom);
   background-color: #67060c;
 }
