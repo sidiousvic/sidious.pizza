@@ -9,7 +9,11 @@
 }
 
 .tag {
-  position: relative;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: var(--font-family-secondary);
   font-weight: 400;
   display: inline-block;
@@ -17,16 +21,15 @@
   font-size: 0.7rem;
   line-height: 1;
   color: var(--lightgray);
-  border-radius: 0.25em;
   text-decoration: none;
-  padding: 0.4em 0.4em 0.2em 0.4em;
+  border-radius: 0 0 5px 5px;
+  width: 100%;
+  max-width: 200px;
 
   &.big {
     font-size: 1rem;
     padding: 0.4em 0.6em 0.2em 0.6em;
     display: block;
-    margin: 1rem auto;
-    max-width: 360px;
   }
 
   &.marker {

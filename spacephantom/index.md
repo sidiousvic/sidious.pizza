@@ -9,11 +9,9 @@ tags:
   - projects
 ---
 
-![A screengrab of the game Space Phantom, depicting an alien ship destroying enemies in the shape of red skulls with laser beams.](/assets/images/spacephantom.gif){ optimize priority="high" height=400 }
+![A screengrab of the game Space Phantom, depicting an alien ship destroying enemies in the shape of red skulls with laser beams.](/assets/images/spacephantom.gif){ optimize priority="high" }
 
-## Hello, world!
-
-I have a dear friend, [Beau](https://beaunus.com). We met at a Xmas dinner not long after I started a position as a programming teacher in an engineering school in Tokyo. We sat at opposite sides of a long table that sat dozens, and between bites of turkey and chugs o' beer he broke the ice with a question that to this day has stayed with me.
+I have a dear friend, [Beau](https://beaunus.com). We met at a Xmas dinner not long after I started a position as a programming teacher in an engineering school in Tokyo. We sat with dozens at opposite sides of a long table, and between bites of turkey and chugs o' beer he broke the ice with a question that stays with me to the day.
 
 > "Hey Vic, what was your "Hello, World!" moment?"
 
@@ -21,10 +19,10 @@ For those unaquainted, _"Hello, world!"_ is a phrase programmers use to celebrat
 
 ```rust
 fn main() {
-  println!("こんにちは世界!"); // "Hello, world!" in Rust (and Japanese)!
+  println!("こんにちは世界!");
 }
 ```
 
-The program is usually small enough that it's also a good test that the code is running properly, and all utilities in orbit are working as they should.
+The program is usually small enough that it's also a good test that the code is running properly, and all utilities in its orbit are working as they should.
 
-[Space Phantom](/spacephantom/game) was my hello world moment.
+[Space Phantom](/spacephantom/game) was my _"Hello world!"_ moment.

@@ -115,7 +115,7 @@ blockquote {
   color: var(--venom);
   border-left: dotted 2px var(--venom);
   padding-left: 1em;
-  margin: 1rem 0;
+  margin: 2rem 0;
   & > p {
     margin: 0;
   }
@@ -123,6 +123,10 @@ blockquote {
     margin: 0;
     text-align: right;
   }
+}
+
+code {
+  margin: 2rem 0;
 }
 
 h1 {
@@ -233,7 +237,7 @@ picture::after {
 
 figure {
   width: fit-content;
-  margin: auto;
+  margin: 2rem auto;
   display: flex;
   flex-direction: column;
   align-items: baseline;
