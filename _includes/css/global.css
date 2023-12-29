@@ -11,9 +11,9 @@
 .tag {
   text-transform: uppercase;
   padding: 0.4rem 0.6rem 0.2rem 0.6rem;
-  border-radius: 7px;
-  font-family: var(--font-family-secondary);
-  font-weight: 400;
+  border-radius: 3px;
+  font-family: var(--font-family-secondary) !important;
+  font-weight: 600;
   display: inline-block;
   text-decoration: none;
   line-height: 1;
