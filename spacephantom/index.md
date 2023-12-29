@@ -43,6 +43,4 @@ It was fun, and also hard. Half the time I had no idea of the meaning the symbol
 
 I thought making something more visual would help, so I moved on to trying out a space shooter game in the style of [Galaga](https://en.wikipedia.org/wiki/Galaga), using Unity3D as a mechanics engine.
 
-Cicadas rang and the Japanese summer went on, and bit by bit I put the jigsaw together.
-
-After a while, I was nearly done. But then...
+Cicadas rang and the Japanese summer went on. Bit by bit, I put the jigsaw together.

@@ -23,5 +23,8 @@ bodyClass: body-post
 	</div>                                            
 	<div class="post-body">                                
 		{{ content }}
+			{{ if page.data.beta }}
+				<h3 style="text-align:center;display:block;">To be continued...</h3>
+			{{ /if }}
 	</div>                          
 </article>
