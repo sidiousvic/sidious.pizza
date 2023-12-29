@@ -134,6 +134,7 @@ h1 {
   font-size: 3rem;
   color: var(--venom);
   font-weight: 100;
+  margin: 1rem 0 !important;
 }
 
 h2 {
