@@ -129,16 +129,12 @@ code {
   margin: 2rem 0;
 }
 
-time {
-  font-size: 0.9rem;
-}
-
 h1 {
   font-family: var(--font-family-title);
   font-size: 3rem;
   color: var(--venom);
   font-weight: 100;
-  margin: 1rem 0 !important;
+  margin: 0.5rem 0 !important;
 }
 
 h2 {

@@ -13,9 +13,8 @@ bodyClass: body-post
 		</h1>                                                
 
 		{{ if title != 404 }}                              
-		<time class="post-date" datetime="{{ date |> date('DATETIME') }}">
-			{{ date |> date('HUMAN_DATE') }} <em>{{ if page.data.readingInfo }} {{ readingInfo.words }} words, {{ readingInfo.minutes }} min read</em>
-		{{ /if }}
+		<time class="post-meta" datetime="{{ date |> date('DATETIME') }}">
+			<em><b>{{ date |> date('HUMAN_DATE') }}</b> {{ if page.data.readingInfo }}{{ readingInfo.words }} words, {{ readingInfo.minutes }} min read</em>{{ /if }}
 		</time>                                             
 		{{ /if }}                                        
 

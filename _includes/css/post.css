@@ -4,7 +4,7 @@
 }
 
 .post-header {
-  margin: 1rem 0;
+  margin: 2rem 0;
 }
 
 .post-title {
@@ -46,4 +46,8 @@
 }
 .post-navigation a:hover {
   color: var(--venom) !important;
+}
+
+.post-meta {
+  font-size: 0.8rem;
 }
