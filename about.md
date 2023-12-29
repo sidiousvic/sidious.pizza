@@ -121,8 +121,6 @@ I was made publicly available on September 1991, just one month after the [web](
 
 I was lucky to surf the internet through the wacky 90's and remember it well. There were no standards, no rules, like a virtual wild west. Just like my hometown was founded by those wicked and brave enough to jaunt into the northern wastelands and work it the hell out, somehow, the early web was full of them too.
 
-Technologies were much simpler back then but creativity was unlimited. Wanting to keep that spirit alive is what brought me to programming. I wanted to make a web game.
-
 <a name="tokyo-boy"></a>
 
 ## TOKYO BOY
