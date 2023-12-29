@@ -29,7 +29,7 @@ code {
 }
 
 pre::after {
-  padding: 0.2rem 0 0.1rem 0;
+  padding: 0.5rem 0 0.1rem 0;
   content: " ▢ ▢ ▢";
   color: black;
   color: var(--venom);
@@ -50,7 +50,7 @@ pre {
 
 pre,
 code {
-  font-family: Code, monospace !important;
+  font-family: Code, DotGothic16, monospace !important;
   font-weight: 100;
   font-size: 0.8rem;
   line-height: 1rem;
