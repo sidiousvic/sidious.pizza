@@ -22,7 +22,7 @@
     {{ for tag of post.tags }}
     {{ set page = search.pages("type=tag tag='" + tag + "'") }}
     {{ if page }}
-    <a href="/tags/{{ tag }}" class="tag">{{ tag }}</a>
+    <a href="/tags/{{ tag }}" class="tag notch">{{ tag }}</a>
     {{ /if }}
     {{ /for }}
     </div>
