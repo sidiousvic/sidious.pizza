@@ -14,13 +14,11 @@ bodyClass: body-post
 
 		{{ if title != 404 }}                              
 		<time class="post-date" datetime="{{ date |> date('DATETIME') }}">
-			{{ date |> date('HUMAN_DATE') }}                      
+			{{ date |> date('HUMAN_DATE') }} <em>{{ if page.data.readingInfo }} {{ readingInfo.words }} words, {{ readingInfo.minutes }} min read</em>
+		{{ /if }}
 		</time>                                             
 		{{ /if }}                                        
 
-		{{ if page.data.readingInfo }}
-		<aside>{{ readingInfo.words }} words, {{ readingInfo.minutes }} min read</aside>
-		{{ /if }}
 
 	</div>                                            
 	<div class="post-body">                                
