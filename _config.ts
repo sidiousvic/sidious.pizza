@@ -24,6 +24,7 @@ const site = lume({
 site
   .ignore("README.md")
   .copy("assets")
+  .copy("spacephantom/build")
   .use(inline({ extensions: [".mjs", ".html", ".css", ".js"] }))
   .use(bundleStyles({ bundler: { filename: "_includes/css/styles.css" } }))
   .use(compilePrograms({ dirname: "_includes/ts" }))

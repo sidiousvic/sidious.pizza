@@ -56,7 +56,7 @@ exploring. Here's a little more about me.
 - [Born and raised in the desert](#born-and-raised)
 - [Misled youth](#misled-youth)
 - [JUST DO SH\*T](#just-do-shit)
-<!-- - ["Hello world!"](#hello-world) -->
+- ["Hello world!"](#hello-world)
 - [Tokyo Boy](#tokyo-boy)
 - [THANKS FOR VISITING!](#thanks-for-visiting)
 
@@ -113,7 +113,15 @@ human creation.
 
 <!-- <a name="hello-world"></a> -->
 
-<!-- ![An old-looking website, in an Internet Explorer browser from the 90's.](/assets/images/dannys-homepage.webp){ optimize width=600 caption="I hope my website makes Danny proud." } -->
+## "HELLO WORLD"
+
+I was made publicly available on September 1991, just one month after the [web](https://en.wikipedia.org/wiki/World_Wide_Web#History:~:text=The%20technology%20was%20released%20outside%20CERN%20to%20other%20research%20institutions%20starting%20in%20January%201991%2C%20and%20then%20to%20the%20whole%20Internet%20on%2023%20August%201991.).
+
+![The website for the film "Space Jam" showing the logo as the center of a planetary system where each planet is a hyperlink.](/assets/images/spacejam-website.webp){ optimize width=600 caption="I hope my website makes Mike proud." }
+
+I was lucky to surf the internet through the wacky 90's and remember it well. There were no standards, no rules, like a virtual wild west. Just like my hometown was founded by those wicked and brave enough to jaunt into the northern wastelands and work it the hell out, somehow, the early web was full of them too.
+
+Technologies were much simpler back then but creativity was unlimited. Wanting to keep that spirit alive is what brought me to programming. I wanted to make a web game.
 
 <a name="tokyo-boy"></a>
 
