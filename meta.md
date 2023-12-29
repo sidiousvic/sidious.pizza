@@ -19,13 +19,9 @@ thead {
 
 ## Engineering
 
-This website was designed and programmed by [Vic Sidious](/about), alias _@sidiousvic_. It is updated by directly modifying the [source code](https://github.com/sidiousvic/sidious.pizza). It is being actively engineered in Tokyo, Japan
+This website was designed and programmed by [Vic Sidious](/about), alias _@sidiousvic_. It is updated by directly modifying the [source code](https://github.com/sidiousvic/sidious.pizza). It is being actively engineered in Tokyo, Japan.
 
 UI programs are written in a [web-friendly functional way](https://github.com/sidiousvic/sidious.pizza/blob/9c3eb45f1d5c7c6483636e9fe23b54ecc3e20dd5/_includes/ts/playback.ts#L31C3-L31C3), compiled and bundled serverside into [ESNext](https://developer.mozilla.org/en-US/docs/Web/JavaScript/JavaScript_technologies_overview#standardization_process), and delivered inline with each document. Raw CSS is also bundled, minified and inlined on delivery.
-
-Pages are composed in [.vto](https://vento.js.org) and [.md](https://en.wikipedia.org/wiki/Markdown) formats.
-
-This website is built with performance and accessibility as user-critical responsibilities. I will appreciate [reports](https://github.com/sidiousvic/sidious.pizza/issues) of issues in those areas.
 
 ## Technologies used
 
