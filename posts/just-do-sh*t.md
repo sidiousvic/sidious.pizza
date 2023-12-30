@@ -2,6 +2,7 @@
 layout: layouts/post.vto
 title: "Just Do Sh*t"
 weblog: true
+draft: true
 tags:
   - philosophy
 ---

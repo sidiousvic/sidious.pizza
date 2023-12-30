@@ -3,6 +3,7 @@ layout: layouts/post.vto
 title: You've got a friend in me
 date: 1995-03-26
 weblog: true
+draft: true
 tags:
   - life
 ---

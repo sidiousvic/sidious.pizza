@@ -6,6 +6,7 @@ tags:
   - computers
 weblog: true
 beta: true
+draft: true
 ---
 
 ![A ghostly figure hovering through the void](/assets/images/phantom.gif){ optimize width=500 fetchpriority="high" }
