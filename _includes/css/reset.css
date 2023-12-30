@@ -123,6 +123,13 @@ blockquote {
     margin: 0;
     text-align: right;
   }
+  &:has(callout) {
+    padding: 1rem;
+    border-radius: 3px;
+    font-family: var(--font-family-secondary);
+    font-size: 1rem;
+    border: 1px dotted var(--venom);
+  }
 }
 
 code {
@@ -184,6 +191,12 @@ a {
 
 table {
   margin: 1em 0;
+}
+
+table th {
+  text-align: left;
+  color: var(--venom);
+  font-family: var(--font-family-title);
 }
 
 table td,
