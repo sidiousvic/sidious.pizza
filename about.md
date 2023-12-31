@@ -56,8 +56,8 @@ exploring. Here's a little more about me.
 - [Born and raised in the desert](#born-and-raised)
 - [Misled youth](#misled-youth)
 - [JUST DO SH\*T](#just-do-shit)
-- ["Hello world!"](#hello-world)
 - [Tokyo Boy](#tokyo-boy)
+- ["Beep boop"](#beep-boop)
 - [THANKS FOR VISITING!](#thanks-for-visiting)
 
 </section>
@@ -104,28 +104,15 @@ little of that dumbfuckery inside to add a spice to life.
 
 ## <img loading="lazy" alt="A red swoosh symbol" width=40 height=40 style="transform: translateY(10px); filter: var(--venom-filter)" src="/assets/images/swoosh.webp" /> JUST DO SH\*T
 
-I love Nike's slogan, _"Just Do Sh\*t"_. When boredom strikes I
-[program](https://github.com/sidiousvic), write [haiku](/kaminari-no-ura), make
-[doomy music](/swims) or even silly web cartoons to contribute to the net of
-human creation.
+I love Nike's slogan, _"Just Do Sh\*t"_, or something like that. I don't want to do nothing. I enjoy [programming games](https://github.com/sidiousvic/spacephantom-c-sharp), writing [Japanese poetry](/kaminari-no-ura), making [doomy music](/swims) or even [animation](https://www.youtube.com/watch?v=cu3iGtqeYD4).
 
 ![A cartoon extraterrestrial being surfing a wave in on an island beach.](/assets/movies/surfing-with-the-alien.mp4){ optimize video caption="Xeno the Alien, 2014" }
-
-<!-- <a name="hello-world"></a> -->
-
-## "HELLO WORLD"
-
-I was made publicly available on September 1991, just one month after the [web](https://en.wikipedia.org/wiki/World_Wide_Web#History:~:text=The%20technology%20was%20released%20outside%20CERN%20to%20other%20research%20institutions%20starting%20in%20January%201991%2C%20and%20then%20to%20the%20whole%20Internet%20on%2023%20August%201991.).
-
-![The website for the film "Space Jam" showing the logo as the center of a planetary system where each planet is a hyperlink.](/assets/images/spacejam-website.webp){ optimize width=600 caption="I hope my website makes Mike proud." }
-
-I was lucky to surf the internet through the wacky 90's and remember it well. There were no standards, no rules, like a virtual wild west. Just like my hometown was founded by those wicked and brave enough to jaunt into the northern wastelands and work it the hell out, somehow, the early web was full of them too.
 
 <a name="tokyo-boy"></a>
 
 ## TOKYO BOY
 
-Tokyo adopted me a few years ago and I love living here. You can break the law
+Tokyo adopted me a few years ago and I am very happy here. You can break the law
 in sinless ways and still feel like a maverick.
 
 ![The author of this website ollying over an old detergent bottle on a Tokyo street.](/assets/movies/vic-skating-tokyo.mp4){ optimize video caption="This is an antisocial activity in Japan." }
@@ -144,6 +131,16 @@ I may get tired of it all someday, but I will always call it home.
 ![The Tokyo skyline at night.](/assets/images/skyline-tokyo.gif){ optimize }
 
 </div>
+
+<a name="beep-boop"></a>
+
+## <span class="ascii">⚡️</span> \*BEEP BOOP\*
+
+I work in the digitization of the energy grid, or making it go _\*BEEP BOOP BOOP\*_. We install physical devices in generation plants, measure electricity I/O and optimize usage.
+
+![A diagram of the electricity grid, showing generation plants, houses, and a device in the middle communicating them.](/assets/images/beep-boop.jpg){ width=700 optimize caption="" }
+
+It's meaningful for me to program for [critical infra](https://en.wikipedia.org/wiki/Critical_infrastructure). We wrangle fun problems and reduce energy waste.
 
 <a name="thanks-for-visiting"></a>
 
