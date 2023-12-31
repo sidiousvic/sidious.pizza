@@ -8,18 +8,12 @@
   & > h2 {
     margin: 1rem 0;
   }
-  & > * {
-    transition: color, background, background-color 0.5s ease-in-out;
-  }
 }
 
 .config-buttons {
   display: grid;
   grid-template-columns: repeat(3, minmax(150px, 1fr));
   gap: 1.5rem;
-  & > * {
-    transition: all 0.5s ease-in-out;
-  }
 }
 
 @media (max-width: 768px) {
