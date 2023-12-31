@@ -12,7 +12,7 @@ _"Space Phantom"_ is a my maiden software project. It was built with C# and Unit
 
 ![A screengrab of the game Space Phantom, depicting an alien ship destroying enemies in the shape of red skulls with laser beams.](/assets/images/spacephantom.gif){ optimize priority="high" caption="Space invaders, with a twist." }
 
-One of its unique features is that the ship gyrates towards the direction of motion, adjusting the angle of shooting. Implementing this orbit transform and its functional limit (so that the ship did not over rotate) was, to put it mildly, **wicked fun** and what I consider my ["Hello World!"](/posts/your-hello-world-moment) moment.
+One of its unique features is that the ship gyrates towards the direction of motion, adjusting the angle of shooting. Implementing this orbit transform and its functional limit (so that the ship did not over rotate) was **wicked fun** and what I consider my ["Hello World!"](/posts/your-hello-world-moment) moment.
 
 I made the music using Logic Pro X drum machine and graphics w/ a pixel editor. I would love to create a manual for it in the style of old NES games sometime.
 
