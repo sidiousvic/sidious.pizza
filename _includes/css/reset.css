@@ -131,6 +131,15 @@ blockquote {
     font-size: 1rem;
     border: 1px dotted var(--venom);
   }
+
+  &:has(dialogue) {
+    content: "attr(who)";
+    padding: 1rem;
+    border-radius: 3px;
+    font-family: var(--font-family-secondary);
+    font-size: 1rem;
+    border: 1px dotted var(--venom);
+  }
 }
 
 code {
