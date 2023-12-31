@@ -136,11 +136,11 @@ I may get tired of it all someday, but I will always call it home.
 
 ## <span class="ascii">⚡️</span> \*BEEP BOOP\*
 
-I work in the digitization of the energy grid, or making it go _\*BEEP BOOP BOOP\*_. We install physical devices in generation plants, measure electricity I/O and optimize usage.
+I work in the digitization of the energy grid, or making it go _\*BEEP BOOP BOOP\*_. We install physical devices in generation plants, measure electricity _I/O_ and optimize usage.
 
 ![A diagram of the electricity grid, showing generation plants, houses, and a device in the middle communicating them.](/assets/images/beep-boop.jpg){ width=700 optimize caption="" }
 
-It's meaningful for me to program for [critical infra](https://en.wikipedia.org/wiki/Critical_infrastructure). We wrangle fun problems and reduce energy waste.
+I enjoy programming for [critical energy infra](https://en.wikipedia.org/wiki/Critical_infrastructure). We wrangle fun problems that reduce energy waste.
 
 <a name="thanks-for-visiting"></a>
 
