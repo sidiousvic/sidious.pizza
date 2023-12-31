@@ -120,6 +120,12 @@ blockquote {
   & > p {
     margin: 0;
   }
+  & em {
+    text-decoration: underline;
+    text-decoration-color: var(--venom);
+    text-decoration-style: dotted;
+    text-underline-offset: 4px;
+  }
   & h3 {
     margin: 0;
     text-align: right;
