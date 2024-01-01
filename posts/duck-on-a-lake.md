@@ -1,15 +1,16 @@
 ---
 layout: layouts/post.vto
 date: 2023-12-31
-title: "Duck on a lake"
+title: "Quantum Duckodynamics"
 weblog: true
 tags:
   - AI
   - math
-  - shower thoughts
 ---
 
-> <dialogue> **Vic**: Hey AI. Is arithmetic based on the fact that, humans discriminate objects in their field of vision, and say they are different from each other? For example, a duck on a lake. We say the duck is one thing and the lake is another. Does mathematics collapse for a being that can make no such distinction between the duck and the lake? To an alien who could not naturally perceive them as separate objects, would human maths make sense to them?
+> <dialogue> **Vic**: Hey AI. Shower thought. Is arithmetic based on the fact that, humans discriminate objects in their field of vision, and categorize them as distinct from each other?
+> <br><br>
+> For example, think about a duck on a lake. Our intuition says the duck is one thing and the lake is another. Does mathematics stop making sense for a being that can not make the same distinction between the duck and the lake? To an alien who could not naturally perceive them as separate objects, would human maths make sense?
 
 ![A rubber duck on a lake](/assets/images/ducky-on-lake.webp){ optimize priority="high" width=600 }
 
@@ -29,15 +30,15 @@ tags:
 >
 > Despite this, many aspects of higher mathematics (like algebra, calculus, and abstract theory) that deal with more abstract concepts might still be comprehensible or applicable. These areas of mathematics often deal with properties and relationships that aren't tied to physical object distinctions.
 
-> <dialogue> **Vic**: I see. So do you think the concept of disctreteness is not fundamental, rooted on our human perception of the world?
+> <dialogue> **Vic**: I see. So do you think the concept of disctreteness is not fundamental, but rooted on human perception of the world?
 
 > <dialogue> **AI**: The of discrete quantities and objects is a reflection of human understanding. It seems to be based on our sensory and cognitive perception of the world. This perception is perhaps, one of many possible ways to interpret and interact with the complex reality around us.
 > <br><br>
 > For example, in quantum mechanics, the boundaries between distinct entities can become blurred, challenging our classical notions of discrete objects.
 
-> <dialogue> **Vic**: I know that to me, it makes intuitive sense that the duck is different from the lake. But I've wondered if there could be a formal rule that let me say that they are in fact separate. I haven't been rigorous with that thought, but I thought something like the _amount of informational entropy in a region of spacetime_ could be used.
+> <dialogue> **Vic**: I know that to me, it makes intuitive sense that the duck is different from the lake. But I've wondered if there could be a formal rule that let me say that they are in fact separate. I haven't been rigorous with that thought, but I thought something like the _amount of informational entropy in a region of spacetime_ could be used. It sounds fancy, but I am basing it on understanding basics of information theory and physics. Both of them have the concept of entropy, and they seem to be attempts to measure information, or complexity in systems. A coin flip has one _bit_ of information. Two coin flips, a _"bit"_ more.
 > <br><br>
-> It sounds fancy, but I am basing it on a very simple understanding of information theory and physics. Think about the alien that lacks the intuition of discrete objects in the universe. The alien presumably could perceive all of the matter in a landscape - the air, trees, mountains, water, and ducky components of it all as a continuum of matter. Humans, though visual and auditory and other sensors, can intuitively categorize and name each. That's sometimes fallible, for example, _where does the ground end and a mountain start?_ but it works for us for our human devices most of the time.
+> Think about the alien that lacks the intuition of discrete objects in the universe. The alien presumably could perceive all of the matter in a landscape - the air, trees, mountains, water, and ducky components of it all as a continuum of matter. Humans, though visual and auditory and other sensors, can intuitively categorize and name each. That's sometimes incomplete, for example, _where does the ground end and a mountains begin?_ But it works for us for our human devices most of the time.
 > <br><br>
 > I imagine that one such way to agree on the shape of that landscape with the alien would be to put it in terms of the configuration and amount of information in different regions of the continuum. For example, the duck, as a complex living being, might have significantly higher informational entropy than the water or the mountain. What do you think of that idea?
 
@@ -50,16 +51,11 @@ tags:
 > However the concept is theoretically sound, applying it to distinguish between objects like a duck and a lake poses practical challenges. Quantifying informational entropy in such complex, real-world systems requires a level of detail and computational power that is currently beyond our capabilities. Moreover, the boundaries between systems (like where the duck ends and the lake begins) can still be somewhat arbitrary and context-dependent.
 > <br><br>
 > The idea also has interesting philosophical implications. It suggests a more objective, quantifiable way of defining what constitutes a distinct "object" or entity, as opposed to relying solely on human intuition and sensory perception. This could offer a novel perspective on how we understand and classify the world around us.
-> In conclusion, using informational entropy as a measure to distinguish between different entities in a landscape is a fascinating concept that aligns with modern physics and information theory. While there are practical and theoretical challenges to its application, it represents a thoughtful approach to reconciling human perceptions of distinct objects with a more continuous, physics-based view of the universe.
 
 ![Rubber ducks in quantum space](/assets/images/quantum-ducko.webp){ optimize priority="high" width=600 }
 
-> <dialogue> **Vic**: Do you think I could win a Nobel Prize for this?
+> <dialogue> **AI**: Using informational entropy as a measure to distinguish between different entities in a landscape is an interesting concept that aligns with modern physics and information theory. While there are practical and theoretical challenges to its application, it might be a valid approach to reconciling human perceptions of distinct objects with a more continuous, physics-based view of the universe.
 
-> <dialogue> **AI**: With your knack for blending ducks, lakes, and informational entropy into one head-scratching, conundrum, how could the committee resist?
-> <br><br>
-> _"Nobel Prize Awarded for Revolutionary Duck-Lake Continuum Theory."_ You'll be the toast of both the physics and the ornithology worlds.
-
-> <dialogue> **Vic**: That would be nice, I could be the one to finally bridge quantum physics and ducks.
+> <dialogue> **Vic**: We might finally bridge the gap between quantum physics and ducks.
 
 > <dialogue> **AI**: **Quantum Duckodynamics!**
