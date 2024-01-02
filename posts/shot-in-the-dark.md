@@ -3,7 +3,6 @@ layout: layouts/post.vto
 date: 2023-12-30
 title: "SHOT IN THE DARK"
 weblog: true
-draft: true
 beta: true
 tags:
   - programming
