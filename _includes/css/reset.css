@@ -109,6 +109,13 @@ li {
   color: var(--venom);
 }
 
+comment {
+  color: var(--darksteel);
+  font-family: Code, var(--font-family-secondary);
+  font-size: 0.9rem;
+  animation: blink 3s infinite;
+}
+
 blockquote {
   font-family: var(--font-family-title);
   font-size: 2rem;
