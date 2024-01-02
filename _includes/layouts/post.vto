@@ -18,7 +18,6 @@ bodyClass: body-post
 
 			{{ if page.data.beta }}                                  
 				<sup class="tag notch big border beta venomous">BETA</sup>
-				<div class="tag border beta lower center">This entry is in beta, which means it's not fit for human consumption. Read at your own risk.</div>
 			{{ /if }}                 
 
 	</div>                                            
@@ -26,6 +25,9 @@ bodyClass: body-post
 		{{ content }}
 			{{ if page.data.beta }}
 				<h3 style="text-align:center;display:block;">To be continued...</h3>
+			{{ /if }}
+			{{ if page.data.goodbye }}
+			<h3 style="text-align:center;display:block;">{{ goodbye }}</h3>
 			{{ /if }}
 	</div>                          
 </article>
