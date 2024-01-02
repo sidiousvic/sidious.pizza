@@ -16,9 +16,8 @@
   font-size: 0.6rem;
 }
 
-.tag {
-  font-family: var(--font-family-tertiary);
-  color: var(--venom);
+.postList-tags a {
+  margin-inline: 0;
 }
 
 .postList-date {

@@ -11,12 +11,22 @@
 .tag {
   text-transform: uppercase;
   padding: 0.4rem 0.6rem 0.2rem 0.6rem;
+  margin-inline: 0.5rem;
   border-radius: 3px;
+  color: var(--venom);
   font-family: var(--font-family-secondary) !important;
   font-weight: 600;
   display: inline-block;
   text-decoration: none;
   line-height: 1;
+
+  &.button {
+    cursor: pointer;
+    &:hover {
+      background-color: var(--venom);
+      color: var(--darkgray);
+    }
+  }
 
   &.notch {
     z-index: 1;
