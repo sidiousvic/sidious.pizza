@@ -138,15 +138,36 @@ blockquote {
     font-size: 1rem;
     border: 1px dotted var(--venom);
   }
-
   &:has(dialogue) {
-    content: "attr(who)";
+    text-align: justify;
     color: var(--lightgray);
-    padding: 1rem;
+    padding: 2rem;
     border-radius: 3px;
     font-family: var(--font-family-secondary);
     font-size: 1rem;
     border: 1px dotted var(--venom);
+    min-height: 8rem;
+  }
+  & dialogue {
+    position: relative;
+  }
+  & dialogue::before {
+    content: " ";
+    float: left;
+    margin-inline-end: 1rem;
+    width: 4rem;
+    height: 4rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    border: 1px dotted var(--venom);
+    filter: var(--venom-filter);
+  }
+  & dialogue[vic]::before {
+    background-image: url("/assets/images/dialogue-vic.webp");
+  }
+  & dialogue[ai]::before {
+    background-image: url("/assets/images/dialogue-ai.webp");
   }
 }
 
