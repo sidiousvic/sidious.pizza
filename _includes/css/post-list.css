@@ -24,6 +24,7 @@
 .postList-date {
   font-size: 0.8rem;
   color: var(--lightgray);
+  margin-block: 0;
 }
 
 .postList-post-top {
