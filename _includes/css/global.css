@@ -11,7 +11,7 @@
 .tag {
   text-transform: uppercase;
   padding: 0.4rem 0.6rem 0.2rem 0.6rem;
-  margin-inline: 0.5rem;
+  margin-inline: 0.3rem;
   border-radius: 3px;
   color: var(--venom);
   font-family: var(--font-family-secondary) !important;
