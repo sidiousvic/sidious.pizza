@@ -8,11 +8,11 @@ tags:
   - projects
 ---
 
-<a href="game" class="tag border button">Play SPACE PHANTOM</a> (beware, takes a few seconds to load).
+![An alien spaceship shooting at another dark ship in space](/assets/images/space-phantom.png){ optimize width=800 priority="high" }
+
+<a href="game" class="tag border button">Play SPACE PHANTOM HERE</a> (beware, takes a few seconds to load the binary)
 
 _"Space Phantom"_ is a my maiden software project. It was built with C# and Unity3D by following a dusty a development manual. It was heavily inspired by the arcade classic [Space Invaders](https://en.wikipedia.org/wiki/Space_Invaders).
-
-![An alien spaceship shooting at another dark ship in space](/assets/images/space-phantom.png){ optimize width=800 priority="high" }
 
 One of its unique features is that the ship gyrates towards the direction of motion, adjusting the angle of shooting. Implementing the maths of this orbit transform and its limit (so that the ship did not over rotate) was **wicked fun** and what I consider my ["Hello World!"](/posts/konnichiwa-sekai) moment.
 
