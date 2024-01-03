@@ -154,7 +154,9 @@ blockquote {
   & dialogue::before {
     content: " ";
     float: left;
-    margin-inline-end: 1rem;
+    padding: 10px;
+    margin: -2rem -8rem;
+    border-radius: 3px;
     width: 4rem;
     height: 4rem;
     background-size: contain;
@@ -162,6 +164,13 @@ blockquote {
     display: block;
     border: 1px dotted var(--venom);
     filter: var(--venom-filter);
+  }
+  @media (max-width: 900px) {
+    font-size: 1.5rem;
+    & dialogue::before {
+      margin: unset;
+      margin-inline-end: 1rem;
+    }
   }
   & dialogue[vic]::before {
     background-image: url("/assets/images/dialogue-vic.webp");
