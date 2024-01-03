@@ -4,7 +4,7 @@ title: VIC
 date: 1991-09-24
 visible: true
 order: 3
-beta: false
+beta: true
 ---
 
 <style>
@@ -78,20 +78,22 @@ when young, and skipped school to play ball, guitar and skateboard. I spent a
 lot of time playing Zelda and watching MTV. My heroes were
 [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and Angus Young.
 
-![A man playing wearing a schoolboy's uniform, playing guitar agitatedly](/assets/movies/angus.mp4){ optimize video caption="Because MTV brings out the bitch in you." }
+![A man playing wearing a schoolboy's uniform, playing guitar agitatedly](/assets/images/angus.webp){ optimize width=700 caption="Because MTV brings out the bitch in you." }
 
 Even tough I behave like an adult now, I think it's important to always keep a
 little of that dumbfuckery inside to add a spice to life.
-
-[//]: <> (Growing up in the dawn of internet age was special. I was the first kid in my family to make friends out of a computer, and network with people around the world. I got to be one of the admins of a Pokémon forum.)
 
 <a name="just-do-shit"></a>
 
 ## <img loading="lazy" alt="A red swoosh symbol" width=40 height=40 style="transform: translateY(10px); filter: var(--venom-filter)" src="/assets/images/swoosh.webp" /> JUST DO SH\*T
 
-I love Nike's slogan, _"Just Do Sh\*t"_, or something like that. I don't want to do nothing. I enjoy [programming games](https://github.com/sidiousvic/spacephantom-c-sharp), writing [Japanese poetry](/kaminari-no-ura), making [doomy music](/swims) or even [animation](https://www.youtube.com/watch?v=cu3iGtqeYD4).
+![A japanese classroom with an alien drawn on the blackboard](/assets/images/aliens-on-board.webp){ optimize priority="high" width=800 }
 
-![A cartoon extraterrestrial being surfing a wave in on an island beach.](/assets/movies/surfing-with-the-alien.mp4){ optimize video caption="Xeno the Alien, 2014" }
+I lived in rural Japan for a while, teaching at elementary schools. Days were fun during the daytime, but very quiet after. I didn't go out much. My girlfriend lived hours away. I had little money. I spent a lot of time alone, twiddling my thumbs, and other things, at home, bored out of my brain.
+
+They say an idle brain is the devil's fruit shop, or something like that. Anyway, boredom breeds misadventure.
+
+I wrote [Tattsu](/posts/tattsu) on a school piano at Oiwake Elementary. I drew [Xeno the Alien](https://www.youtube.com/watch?v=cu3iGtqeYD4) on a 4th grade clasroom blackboard. My journal was ridden with scenes about undead bounty hunters and space assassins. I released NEMESIS, and [I began to program](/posts/shot-in-the-dark).
 
 <a name="tokyo-boy"></a>
 
@@ -99,8 +101,6 @@ I love Nike's slogan, _"Just Do Sh\*t"_, or something like that. I don't want to
 
 Tokyo adopted me a few years ago and I am very happy here. You can break the law
 in sinless ways and still feel like a maverick.
-
-![The author of this website ollying over an old detergent bottle on a Tokyo street.](/assets/movies/vic-skating-tokyo.mp4){ optimize video caption="This is an antisocial activity in Japan." }
 
 Cheap booze by the convenience store, cherry blossoms in the dark, futuristic
 art and old ghostly shrines, the most ordinary quiet streets and bollocks weirdo

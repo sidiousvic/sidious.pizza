@@ -4,49 +4,15 @@ date: 2023-12-30
 title: "SHOT IN THE DARK"
 weblog: true
 beta: true
+<!-- goodbye: See you, space cowboy... -->
 tags:
   - programming
   - art
 ---
 
-<div hidden>
-### Shot in the dark
+![A spaceship](/assets/images/shot-dark.webp){ optimize width=800 }
 
-- Struggle to learn programming.
-- Remind of the planets.
-
-### Aliens on board
-
-- Teaching in Japan. Solitude. Desire to stop teaching, be creator one day. Hard to cook shit up.
-
-- Teach the plantes, they are not sticking. Tell a story of spaceships to students. They are psyched.
-
-- Begin using stories to create. Xeno. Tattsu. NEMESIS. Shit's flowing.
-
-###
-
-- Go back from Famima. Tell myself I'm Indy Jones exploring a cave.
-
-- Get the game done. It's just a clone of Space Invaders.
-
-- Show to students. One motherfucker. Why can't it spin. It's not supposed to.
-
-- Who the fuck said it's not supposed to? Raiders of the lost theta.
-
-### Raiders of the lost θ
-
-- This time is wicked treats. Learn some math. Get the feature done.
-
-- Programming's a bitch, but she's fucking fun.
-</div>
-
-It was just another bedroom project.
-
-![A desk with a computer, can of beer, fan, and cigarette smoke in a Japanese room with mountains outside](/assets/images/shot-in-the-dark.webp){ optimize width=800 }
-
-Cicadas rang outside. The fan ran on high, blowing smoke of a marlboro joint into the haze of the Japanese summer. A programming manual and a can of Asahi sat on the desk, next to my computer. On the screen, Microsoft Visual Studio, and my maiden lines of _C#_.
-
-<span class="tag border">COMPILE</span>.
+Cicadas rang outside. The fan on full throttle, blowed smoke of a marlboro joint into the haze of the Japanese summer. A programming manual and an empty can of Asahi sat on the desk, next to my computer. On the screen, Microsoft Visual Studio, and my maiden lines of _C#_. I hit<span class="tag border venomous"> COMPILE</span>.
 
 ```csharp
 Unhandled exception. System.NullReferenceException:
@@ -56,25 +22,19 @@ Unhandled exception. System.NullReferenceException:
 
 Okay, I need another drink.
 
-I grab my keys from the table. The usual sigils do the demon dance in my mind. `exception`. `instance`, `null`, it all sounds like fucking voodoo. Fit my shoes on, mumbling. _"What the hell you mean `object is not an object`?"_ Been stuck here for hours. I'm tired, Satan.
+Grab the house keys. Usual symbols do a demon dance inside my mind. `reference`. `instance`, `NULL`, it all sounds like fucking voodoo. Fit my shoes on, mumbling, `"NULL, my ass!"`. I immediately realize it's a self burn, but I don't care. I'm tired, Satan. This programming thing is harder than I tought. I mean, I wasn't expecting cake, but there's something _sinister_ about it. And I think I finally know what it is.
 
-I lock the door and tread into the night. It's damp and dark outside and I feel lost, but at least I know the way to Family Mart.
+_It smells too much like math._
 
-## Aliens on board
+![asdf](/assets/images/smells-math.jpeg){ optimize width=600 }
 
-![A japanese classroom with an alien drawn on the blackboard](/assets/images/aliens-on-board.webp){ optimize priority="high" width=800 }
+Primates tend to hate math. Yes, some are born for it, but most of us like touching things.
 
-I'd lived in rural Japan for a while, teaching at elementary schools. Days were fun during class, but very quiet after. My girlfriend lived hours away. I didn't go out much. Had little money, anyway.
+Maths is the _`OG`_ dark arts... It doesn't deal with the thing, it deals with the _shadow of the thing_. The fancy word for it is [_abstraction_](https://en.wikipedia.org/wiki/Abstraction).
 
-I wanted to get out of the countryside, and dreamed of a career as a creator. I tried to make many things but failed and failed. I could not finish anything.
+> <dialogue ai> **AI:** Abstraction in mathematics is the process of extracting the underlying structures, patterns or properties of a mathematical concept or object, removing any dependence on real-world objects with which it might originally have been connected, and generalizing it so that it has wider applications or matching among other abstract descriptions of equivalent phenomena.
 
-I loved teaching. My students were the funnest primates. I complained in passing to a fellow about teaching the planets to a group of 7 year olds. "These little motherfuckers remember all the Pokemon, but they can't remember seven damn words.". He said, well, maybe it's because Pokemon has a story. Holy shit, that was it!
-
-That night, my girlfriend and I cooked up a story about a spaceship traveling to the planets. Mercury was the icy rock, Venus was the hazy inferno. The kids ate that shit up.
-
-That spring, I wrote [Tattsu](/posts/tattsu) on a school piano at Oiwake Elementary. I drew [Xeno the Alien](https://www.youtube.com/watch?v=cu3iGtqeYD4) on a 4th grade clasroom blackboard. My journal was ridden with scenes about undead bounty hunters and space assassins. Worlds were popping out left and right.
-
-Stories have power.
+I lock the door and tread outside. It's damp and dark. I feel lost, but at least I know the way to Family Mart.
 
 ## Raiders of the lost _θ_
 
@@ -82,28 +42,8 @@ Stories have power.
 
 The screen lights up like shining a torch to ancient hieroglyphs on a wall. They look as intractable as before, but you have no time to hesitate. The necrophagi lurk in the dark, and you can't stay for too long.
 
-Piece by piece, I put the jigsaw together. It was heavy and it was scary. But every night, the story would continue.
-
-Finally one day it was done. Space Invaders. I was very proud. I played that shit for ages.
-
-When I showed it to my students, they were psyched. You made this? Felt pretty good about myself. But one little motherfucker again came to tickle the dragon.
-
-"Why doesn't it turn?"
-
-"What do you mean turn? It's not suppposed to turn."
-
-"Why?"
-
-Yeah, why?
-
-Went back home. This kid is onto something. Let me give it a shot.
-
-The maths seemed simple. But for the first time I would venture into the unknown. I was not following a manual.
-
-That shit was scary. And fun.
-
-I opened a new chamber in the dungeon, and it here's where the real treasure lurked.
+![A desk with a computer, can of beer, fan, and cigarette smoke in a Japanese room with mountains outside](/assets/images/shot-in-the-dark.webp){ optimize width=800 }
 
 Programming's a bitch. But she's wicked fun.
 
-![A spaceship](/assets/images/shot-dark.webp){ optimize width=800 }
+![A spaceship](/assets/images/shot-dark.webp){ optimize width=400 }
