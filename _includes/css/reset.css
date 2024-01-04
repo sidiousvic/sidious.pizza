@@ -118,7 +118,7 @@ comment {
 
 blockquote {
   font-family: var(--font-family-title);
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-style: italic;
   color: var(--venom);
   border-left: dotted 2px var(--venom);
