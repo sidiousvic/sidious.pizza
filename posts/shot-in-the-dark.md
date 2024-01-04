@@ -10,40 +10,51 @@ tags:
   - art
 ---
 
+<div hidden>
+### Axioms
+
+- Programming is a mix of maths and language.
+- Maths and language deal with shadows.
+- Primates have a fear of the dark.
+- We can praise shadows instead of driving them away.
+- I've been trying to understand the symbols in the light.
+- Extinguish the torch. Observe the inner eye.
+- The answer lies between the shadows and the light.
+</div>
+
 ![A spaceship](/assets/images/shot-dark.webp){ optimize width=800 }
 
-Cicadas rang outside. The fan on full throttle, blowed smoke of a marlboro joint into the haze of the Japanese summer. A programming manual and an empty can of Asahi sat on the desk, next to my computer. On the screen, Microsoft Visual Studio, and my maiden lines of _C#_. I hit<span class="tag border venomous"> COMPILE</span>.
+Cicadas rang outside. The fan on full throttle, blowed smoke of a marlboro joint into the haze of the Japanese summer. A programming manual and an empty can of Asahi sat on the desk, next to my computer. On the screen, Unity3D, and my maiden lines of _C#_.
 
 ```csharp
-Unhandled exception. System.NullReferenceException:
-    Object reference not set to an instance of an object.
-        at Program.Main() in C:\f*ck\you.cs:line 6
+    float angle = Mathf.Atan2(player.y, player.x) * Mathf.Rad2Deg;
+    Quaternion theta = Quaternion.AngleAxis(angle, Vector3.forward);
 ```
 
-Okay, I need another drink.
+I do the ritual. Run the compiler. Start the game. An ominous beat plays. The screen reads: `SPACE PHANTOM`. Hit <span class="tag border">ENTER</span>. An alien ship emerges from the dark. I hit the arrow key. The screen freezes up immediately.
 
-Grab the house keys. Usual symbols do a demon dance inside my mind. `reference`. `instance`, `NULL`, it all sounds like fucking voodoo. Fit my shoes on, mumbling, `"NULL, my ass!"`. I immediately realize it's a self burn, but I don't care. I'm tired, Satan. This programming thing is harder than I tought. I mean, I wasn't expecting cake, but there's something _sinister_ about it. And I think I finally know what it is.
+This programming thing's a bitch. I haven't moved much, but I'm tired like a dog. Brain juice drips out with every bug. I mean, I wasn't expecting cake. But there's something _sinister_ about it.
 
-_It smells too much like math._
+_It smells too much like `MATH`._
 
-![asdf](/assets/images/smells-math.jpeg){ optimize width=600 }
+Primates tend to hate math. Some are born for it, but most of us have a fear of the dark.
 
-Primates tend to hate math. Yes, some are born for it, but most of us like touching things.
+![Something](/assets/images/bamboo-shadows.webp){ optimize width=700 caption="Bamboo grove, or mutant tarantula" }
 
-Maths is the _`OG`_ dark arts... It doesn't deal with the thing, it deals with the _shadow of the thing_. The fancy word for it is [_abstraction_](https://en.wikipedia.org/wiki/Abstraction).
+Math is the _`OG`_ dark arts. It doesn't deal with the thing, it deals with the _shadows of the thing_. It describes non-physical objects, objects in the void. We ooze these objects into partial view with symbols, and organize these symbols into formal language. No amount of grammars, though, will drive them from the dark.
 
-> <dialogue ai> **AI:** Abstraction in mathematics is the process of extracting the underlying structures, patterns or properties of a mathematical concept or object, removing any dependence on real-world objects with which it might originally have been connected, and generalizing it so that it has wider applications or matching among other abstract descriptions of equivalent phenomena.
+I grab my keys, fit my shoes on, lock the door. I'm also afraid of the dark, but at least I know the way to Family Mart.
 
-I lock the door and tread outside. It's damp and dark. I feel lost, but at least I know the way to Family Mart.
+## In praise of shadows
 
-## Raiders of the lost _θ_
+> No words can describe that sensation as one sits in the dim light, basking in the faint glow reflected from the shoji.
 
-![A torch illuminarting ancient symbols on a dungeon wall.](/assets/images/indy-torch.webp){ optimize width=700 }
+<!-- ## Raiders of the lost _θ_ -->
 
-The screen lights up like shining a torch to ancient hieroglyphs on a wall. They look as intractable as before, but you have no time to hesitate. The necrophagi lurk in the dark, and you can't stay for too long.
+<!-- ![A torch illuminarting ancient symbols on a dungeon wall.](/assets/images/indy-torch.webp){ optimize width=700 } -->
 
-![A desk with a computer, can of beer, fan, and cigarette smoke in a Japanese room with mountains outside](/assets/images/shot-in-the-dark.webp){ optimize width=800 }
+<!-- The screen lights up like shining a torch to ancient hieroglyphs on a wall. They look as intractable as before, but you have no time to hesitate. The necrophagi lurk in the dark, and you can't stay for too long. -->
 
-Programming's a bitch. But she's wicked fun.
+<!-- ![A desk with a computer, can of beer, fan, and cigarette smoke in a Japanese room with mountains outside](/assets/images/shot-in-the-dark.webp){ optimize width=800 } -->
 
 ![A spaceship](/assets/images/shot-dark.webp){ optimize width=400 }

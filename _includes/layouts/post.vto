@@ -21,6 +21,9 @@ bodyClass: body-post
 
 	</div>                                            
 	<div class="post-body">                                
+		{{ if page.data.beta }}
+			<h3 style="text-align:center;display:block;">This story is in beta. Read at your own risk.</h3>
+		{{ /if }}
 		{{ content }}
 			{{ if page.data.beta }}
 				<h3 style="text-align:center;display:block;">To be continued...</h3>
