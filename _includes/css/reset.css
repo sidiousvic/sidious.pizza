@@ -30,6 +30,7 @@ main {
 
   @media (max-width: 500px) {
     justify-content: flex-start;
+    padding: 0 5vw 1rem 5vw;
   }
 }
 
@@ -290,7 +291,7 @@ picture::after {
   z-index: 99;
   content: "";
   background-image: radial-gradient(transparent, black);
-  background-size: 3px 3px;
+  background-size: 2px 2px;
   pointer-events: none;
   & > * {
     image-rendering: pixelated;
