@@ -36,11 +36,11 @@ beta: true
 </article>
 </div>
 
-Hola amigxs, my name is Vic. Welcome to my cyber space. Here's where I
+Hola `amigxs`, my name is Vic. Welcome to my cyber space. Here's where I
 [spill my brains](/weblog), share [weird music](/swims) and computer programs
 (like [_Phantom Pizza_](/phantompizza), the game at the home page) and even
 [haiku](/kaminari-no-ura). Don't forget to visit the [sitemap](/sitemap) to keep
-exploring. Here's a little more about me.
+exploring. Here's a little bit about me.
 
 <br>
 
@@ -57,16 +57,16 @@ exploring. Here's a little more about me.
 
 ![A mountain in a desert city.](/assets/images/chihuahua.webp){ optimize width=800 fetchpriority="low" caption="Chihuahua, Chih. Mexico" }
 
-I was born in Chihuahua, in the north of Mexico. It's a very dry region where
+I was born in Chihuahua, in the north of Mexico, a region where
 water and plants are scarce. It's the
 [birthplace of the burrito](https://en.wikipedia.org/wiki/Burrito#:~:text=Burritos%20are%20a%20traditional%20food%20of%20Ciudad%20Ju%C3%A1rez%2C%20a%20city%20bordering%20El%20Paso%2C%20Texas%2C%20in%20the%20northern%20Mexican%20state%20of%20Chihuahua%2C%20where%20people%20buy%20them%20at%20restaurants%20and%20roadside%20stands.%20Northern%20Mexican%20border%20towns%20like%20Villa%20Ahumada%20have%20an%20established%20reputation%20for%20serving%20burritos.),
 and one of the areas of highest scorpionism on the planet.
 
 ![A scorpion resting on dry earth.](/assets/images/scorpionism.webp){ optimize width=800 fetchpriority="low" caption="Your deadly neighborhood arachnid" }
 
-I'm very proud to be from the Mexican north. We are a hardworking, industrious,
-no-bullshit kind of people. There's still a sense of dignity and politeness that
-you can only find in small old towns these days.
+In the desert we are a hardworking, industrious,
+no-bullshit kind of people. We have a sense of dignity and politeness that
+you can only find in small old towns.
 
 <a name="misled-youth"></a>
 
@@ -78,10 +78,16 @@ when young, and skipped school to play ball, guitar and skateboard. I spent a
 lot of time playing Zelda and watching MTV. My heroes were
 [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and Angus Young.
 
-![A man playing wearing a schoolboy's uniform, playing guitar agitatedly](/assets/images/angus.webp){ optimize width=700 caption="Because MTV brings out the bitch in you." }
+I used the internet to explore beyond the desert, and became a skilled bounty hunter of `.mp3s`.
 
-Even tough I behave like an adult now, I think it's important to always keep a
-little of that dumbfuckery inside to add a spice to life.
+<div class="picture-grid stagger">
+
+![A broken skateboard in a deserted street.](/assets/images/angus.webp){ optimize width=600 }
+![alien](/assets/images/mp3-bounty.webp){ optimize width=700 }
+
+</div>
+
+I'm not proud of all the things I did back then, but even tough I behave like an adult now, I think it's important to always keep a little of that dumbfuckery alive to add a spice to life.
 
 <a name="just-do-shit"></a>
 
@@ -89,11 +95,13 @@ little of that dumbfuckery inside to add a spice to life.
 
 ![A japanese classroom with an alien drawn on the blackboard](/assets/images/aliens-on-board.webp){ optimize priority="high" width=800 }
 
-I lived in rural Japan for a while, teaching at elementary schools. Days were fun during the daytime, but very quiet after. I didn't go out much. My girlfriend lived hours away. I had little money. I spent a lot of time alone, twiddling my thumbs, and other things, at home, bored out of my brain.
+I've been a gardener, dishwasher, videographer, assistant P.E. coach, teacher and even a street sweeper.
+
+I lived in rural Japan for a while, teaching at elementary schools. Days were fun during the daytime, but very quiet after. I didn't go out much. My girlfriend lived hours away. I had little money. I spent a lot of time alone at home, twiddling my thumbs, and other things.
 
 They say an idle brain is the devil's fruit shop, or something like that. Anyway, boredom breeds misadventure.
 
-I wrote [Tattsu](/posts/tattsu) on a school piano at Oiwake Elementary. I drew [Xeno the Alien](https://www.youtube.com/watch?v=cu3iGtqeYD4) on a 4th grade clasroom blackboard. My journal was ridden with scenes about undead bounty hunters and space assassins. I released NEMESIS, and [I began to program](/posts/shot-in-the-dark).
+I wrote [Tattsu](/posts/tattsu) on a school piano at Oiwake Elementary. I drew [Xeno the Alien](https://www.youtube.com/watch?v=cu3iGtqeYD4) on a 4th grade clasroom blackboard. My journal was ridden with scenes about undead fiends and space assassins. I released [NEMESIS](https://open.spotify.com/intl-ja/album/1qHUvcdIbPv4CTNTDWlzPU?si=LaftNGr6Ska3ZAMejh1obA), and [I programmed my first game](/posts/shot-in-the-dark).
 
 <a name="tokyo-boy"></a>
 
@@ -116,10 +124,6 @@ I may get tired of it all someday, but I will always call it home.
 ![The Tokyo skyline at night.](/assets/images/skyline-tokyo.gif){ optimize }
 
 </div>
-
-<a name="beep-boop"></a>
-
-## \*BEEP BOOP\*
 
 I work in the digitization of the energy grid, or making it go _\*BEEP BOOP BOOP\*_. We install physical devices in generation plants, measure electricity _I/O_ and optimize usage.
 
