@@ -8,8 +8,8 @@ beta: true
 ---
 
 <style>
-.vic-pic {
-  margin: 10px;
+.info figure {
+  margin: 1rem 1rem 0 1rem !important;
 }
 </style>
 
@@ -18,7 +18,7 @@ beta: true
 
 <div class="info">
 
-![A man sitting in front of a fire, with a beer in hand and a burrito in the other.](/assets/images/vic.webp){ optimize height=275 fetchpriority="high" caption="Booze, 🔥, pals and mum's burritos!" }
+![A bald man with a beanie and glasses](/assets/images/dialogue-vic.webp){ optimize height=275 fetchpriority="high" caption="" }
 
 <article>
 
@@ -64,9 +64,7 @@ and one of the areas of highest scorpionism on the planet.
 
 ![A scorpion resting on dry earth.](/assets/images/scorpionism.webp){ optimize width=800 fetchpriority="low" caption="Your deadly neighborhood arachnid" }
 
-In the desert we are a hardworking, industrious,
-no-bullshit kind of people. We have a sense of dignity and politeness that
-you can only find in small old towns.
+In the desert we are a hardworking, industrious, no-bullshit kind of people. We have a sense of dignity and honesty that you can only find in small old towns. Except if you're me when I was a teenager.
 
 <a name="misled-youth"></a>
 
@@ -74,16 +72,16 @@ you can only find in small old towns.
 
 I was a bit of a goblin
 _(<img loading="lazy" alt="A small Shiba Inu dog, looking sad, smoking a cigarette and with a bottle of Corona beer resting in front of it" src="/assets/images/goblin.webp" width=40 height=40 style="display: inline-block; margin: -0.5rem 0;" />)_
-when young, and skipped school to play ball, guitar and skateboard. I spent a
+when young, and abandoned my responsibilities to play ball, guitar and skateboard. Instead of doing maths, or going to church, I spent a
 lot of time playing Zelda and watching MTV. My heroes were
 [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and Angus Young.
 
-I used the internet to explore beyond the desert, and became a skilled bounty hunter of `.mp3s`.
+[I was made publicly available a month after the internet](https://www.google.com/search?q=when+was+the+internet+publicly+available), and I used it to explore beyond the desert. My email was `burn_the_chairs@hotmail.com`. I was an admin of a Dragon Ball board, and the resident `.mp3` bounty hunter.
 
 <div class="picture-grid stagger">
 
-![A broken skateboard in a deserted street.](/assets/images/angus.webp){ optimize width=600 }
-![alien](/assets/images/mp3-bounty.webp){ optimize width=700 }
+![A broken skateboard in a deserted street.](/assets/images/angus.webp){ optimize width=500 }
+![alien](/assets/images/mp3-bounty.webp){ optimize width=600 }
 
 </div>
 
@@ -95,13 +93,11 @@ I'm not proud of all the things I did back then, but even tough I behave like an
 
 ![A japanese classroom with an alien drawn on the blackboard](/assets/images/aliens-on-board.webp){ optimize priority="high" width=800 }
 
-I've been a gardener, dishwasher, videographer, assistant P.E. coach, teacher and even a street sweeper.
-
-I lived in rural Japan for a while, teaching at elementary schools. Days were fun during the daytime, but very quiet after. I didn't go out much. My girlfriend lived hours away. I had little money. I spent a lot of time alone at home, twiddling my thumbs, and other things.
+I've been a dishwasher. I also worked at a video store. I lived in rural Japan for a while, teaching at elementary schools.
 
 They say an idle brain is the devil's fruit shop, or something like that. Anyway, boredom breeds misadventure.
 
-I wrote [Tattsu](/posts/tattsu) on a school piano at Oiwake Elementary. I drew [Xeno the Alien](https://www.youtube.com/watch?v=cu3iGtqeYD4) on a 4th grade clasroom blackboard. My journal was ridden with scenes about undead fiends and space assassins. I released [NEMESIS](https://open.spotify.com/intl-ja/album/1qHUvcdIbPv4CTNTDWlzPU?si=LaftNGr6Ska3ZAMejh1obA), and [I programmed my first game](/posts/shot-in-the-dark).
+I wrote [Tattsu](/posts/tattsu) on a piano at Oiwake Elementary. I drew [Xeno the Alien](https://www.youtube.com/watch?v=cu3iGtqeYD4) on a 4th grade clasroom blackboard. My journal was ridden with scenes about undead fiends and space assassins. I released [NEMESIS](https://open.spotify.com/intl-ja/album/1qHUvcdIbPv4CTNTDWlzPU?si=LaftNGr6Ska3ZAMejh1obA), and [I programmed my first game](/posts/shot-in-the-dark).
 
 <a name="tokyo-boy"></a>
 
