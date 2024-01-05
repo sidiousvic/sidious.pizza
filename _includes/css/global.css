@@ -136,6 +136,14 @@ time {
     display: none;
   }
 
+  &.stagger > :nth-child(odd) {
+    transform: translateY(-20px);
+  }
+
+  &.stagger > :nth-child(even) {
+    transform: translateY(20px);
+  }
+
   @media (max-width: 800px) {
     margin-inline: -300px;
   }
