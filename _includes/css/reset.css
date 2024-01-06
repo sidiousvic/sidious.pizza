@@ -140,14 +140,14 @@ blockquote {
     border: 1px dotted var(--venom);
   }
   &:has(dialogue) {
-    text-align: justify;
+    text-align: left;
     color: var(--lightgray);
     padding: 2rem;
     border-radius: 3px;
     font-family: var(--font-family-secondary);
     font-size: 1rem;
     border: 1px dotted var(--venom);
-    min-height: 8rem;
+    min-height: 150px;
   }
   & dialogue {
     position: relative;
