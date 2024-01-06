@@ -19,8 +19,6 @@ tags:
 > <br><br>
 > Arithmetic, at its core, is based on the human ability to discern and count distinct objects or entities. This ability to differentiate between things like "one duck" and "one lake" is fundamental to the development of basic arithmetic concepts such as counting, addition, subtraction, and so on. Our perception of discrete objects in our environment directly informs these basic mathematical concepts.
 
-![A table showing many rubber ducks and arithmetic symbols](/assets/images/ducky-arithmetic.webp){ optimize priority="high" width=600 }
-
 > <dialogue ai> **AI:** Now, considering an alien species with a fundamentally different perception, it's an intriguing question whether human mathematics would make sense to them. If they don't intuitively perceive distinctions between objects.
 >
 > #### Basic Arithmetic
@@ -45,7 +43,7 @@ tags:
 
 ![A duck on a lake, but it's really hazy and it has no colors](/assets/images/ducky-hazy-lake.webp){ optimize priority="high" width=600 }
 
-> <dialogue ai> **AI:** Using informational entropy as a basis for distinguishing between objects like a duck and a lake is quite intriguing and touches on some sophisticated concepts in physics and information theory.
+> <dialogue ai> **AI:** Using informational entropy as a basis for distinguishing between objects like a duck and a lake touches on intriguing concepts in physics and information theory.
 > <br><br>
 > In information theory, entropy is a measure of the unpredictability or randomness in a system. Applied to a physical context, it could be thought of as a measure of the complexity or the amount of information required to describe a state or configuration of matter. In this sense, a living organism like a duck, with its complex biological structures and processes, could indeed be seen as having higher informational entropy compared to relatively simpler and more uniform matter like water in a lake.
 > <br><br>
