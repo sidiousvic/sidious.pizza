@@ -8,10 +8,10 @@ addEventListener("DOMContentLoaded", () => {
     const unixNow = new Date();
     const vicsAgeDate = new Date(unixNow.getTime() - vicsBirthday.getTime());
     const vicsAgeMs = vicsAgeDate.getTime();
-    const vicsAgeYrs = (vicsAgeMs - LEAP_DAYS_SINCE_1991_MS) / 1000 / 60 / 60 /
-      24 / 365;
-    getElementById("age").innerHTML = `${
-      vicsAgeYrs.toFixed(20)
-    } <em>years old</em>`;
+    const vicsAgeYrs =
+      (vicsAgeMs - LEAP_DAYS_SINCE_1991_MS) / 1000 / 60 / 60 / 24 / 365;
+    getElementById("age").innerHTML = `${vicsAgeYrs.toFixed(
+      13
+    )} <em>years old</em>`;
   });
 });
