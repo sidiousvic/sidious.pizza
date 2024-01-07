@@ -1,6 +1,6 @@
 ---
 layout: layouts/haiku.vto
-title: 雷の裏
+title: 雷の陰
 date: 2023-11-20
 pinned: false
 gif: /assets/images/lightning-strike.gif
@@ -12,7 +12,7 @@ draft: false
 <!-- jp -->
 
 鬼嵐
-<br> 雷の裏
+<br> 雷の陰
 <br> 笑い声
 
 <!-- endjp -->
@@ -21,6 +21,6 @@ draft: false
 
 Demon storm
 <br> Behind the lightning
-<br> Sound of laughter
+<br> Wicked laughter
 
 <!-- enden -->

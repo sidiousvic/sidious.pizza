@@ -39,7 +39,7 @@ goodbye: よろしくお願いしいます。。。
 Hola `amigxs`, my name is Vic. Welcome to my cyber space. Here's where I
 [spill my brains](/weblog), share [weird music](/swims), computer programs
 (like [_Phantom Pizza_](/phantompizza), the game at the home page) and even
-[haiku](/kaminari-no-ura). Don't forget to visit the [sitemap](/sitemap) to keep
+[haiku](/kaminari-no-kage). Don't forget to visit the [sitemap](/sitemap) to keep
 exploring. Here's a little bit more about me.
 
 <br>
@@ -61,7 +61,7 @@ I was born and raised in Chihuahua, in the north of Mexico, an arid region where
 
 ![A scorpion resting on dry earth.](/assets/images/scorpionism.webp){ optimize width=800 fetchpriority="low" caption="Your deadly neighborhood arachnid" }
 
-In the desert we're bred with a sense of scarcity and danger that makes us hardy, and stubborn. These of course are all double edged swords...
+In the desert we're bred with a sense of scarcity and danger that makes us loud, hardy, and stubborn. These of course are all double edged swords...
 
 <a name="misled-youth"></a>
 
