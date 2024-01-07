@@ -13,7 +13,7 @@ tags:
 _"Space Phantom"_ is a my maiden software project. It was built with C# and Unity3D by following a development manual. It was inspired by the arcade classic [Space Invaders](https://en.wikipedia.org/wiki/Space_Invaders).
 <br>
 <br>
-<a href="game" style="display:table;margin:auto"><button style="font-family: var(--font-family-title) !important;">Play SPACE PHANTOM HERE</button></a>
+<a href="game" style="display:table;margin:auto"><button style="font-family: var(--font-family-title) !important;">Play SPACE PHANTOM</button></a>
 <br>
 The ship gyrates towards the direction of motion, adjusting the angle of shooting. Implementing the maths of this orbit transform and its limit (so that the ship did not over rotate) was **wicked fun** and what I consider my "hello world" moment.
 
