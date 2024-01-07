@@ -8,7 +8,7 @@ tags:
   - math
 ---
 
-> <dialogue vic> **VIC:** Hey AI. Shower thought. Is arithmetic based on the fact that, humans discriminate objects in their field of vision, and categorize them as distinct from each other?
+> <dialogue vic> **VIC:** Shower thought. Is arithmetic based on the fact that, humans discriminate objects in their field of vision, and categorize them as distinct from each other?
 > For example, think about a duck on a lake. Our intuition says the duck is one thing and the lake is another. Does mathematics stop making sense for a being that can not make the same distinction between the duck and the lake?
 > <br><br>
 > To an alien who could not naturally perceive them as separate objects, would human maths make sense?
