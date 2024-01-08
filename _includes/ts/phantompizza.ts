@@ -38,8 +38,7 @@ if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
     }
   `;
   document.head.appendChild(styles);
-  main.innerHTML =
-    `<strong>"PHANTOM PIZZA"</strong><br>is not available on mobile.<br><br>Try it on a desktop browser.${main.innerHTML} `;
+  main.innerHTML = `<strong>"PHANTOM PIZZA"</strong><br>is not available on mobile.<br><br>Try it on a desktop browser.${main.innerHTML} `;
   throw new Error("Phantom pizza is not available on mobile.");
 }
 
@@ -96,9 +95,9 @@ const { sprites, score, sound, mouse, c } = config({
   START_TEXT_B:
     '危険ゾーンに <em style="filter: var(--filter-invert)">投入</em>',
   SPRITES: [
-    "/assets/images/enemyl.png",
-    "/assets/images/enemyr.png",
-    "/assets/images/swoosh.png",
+    "/assets/images/enemyl.webp",
+    "/assets/images/enemyr.webp",
+    "/assets/images/swoosh.webp",
     "/assets/images/player.gif",
   ],
   AUDIOS: [
@@ -111,11 +110,11 @@ const { sprites, score, sound, mouse, c } = config({
 const z = {
   player: Phantom(mouse)(SPRITE_DIMENSION)(sprites.player)(ZERO_SPEED),
   swoosh: Phantom(randomSpawn(SPRITE_DIMENSION))(SPRITE_DIMENSION)(
-    sprites.swoosh,
+    sprites.swoosh
   )(ZERO_SPEED),
   enemies: [
     Phantom(randomSpawn(SPRITE_DIMENSION))(SPRITE_DIMENSION)(sprites.enemyr)(
-      randomElement(ENEMY_RANDOM_SPAWN_SPEEDS),
+      randomElement(ENEMY_RANDOM_SPAWN_SPEEDS)
     ),
   ],
   sound,
@@ -127,45 +126,47 @@ requestAnimationFrame(() => {
   Engine(c)(z)(
     (u) => (
       u.score.value === 0 &&
-      ((document.getElementById("score").innerHTML = "START!"),
+        ((document.getElementById("score").innerHTML = "START!"),
         u.sound.phantompizza.pause()),
-        u.score.value > 1 && u.sound.phantompizza.play().catch(() => {}),
-        moveWithMouse(u.player)(u.mouse),
-        draw(c)(u.player),
-        collide(u.swoosh)(u.player)(
-          () => (
-            updateScore(u.score)(SCORE_UPDATER),
-              !(~~u.score.value % 3)
-                ? ((document.getElementById("score").style.animation =
-                  "shake .5s infinite"),
-                  (score.sprite.innerHTML = randomElement(GAME_PROMPTS)
-                    .toUpperCase()))
-                : (document.getElementById("score").style.animation = "none"),
-              respawn(u.swoosh),
-              u.sound.swoosh.play().catch(() => {}),
-              u.enemies.push(
-                Phantom(randomSpawn(SPRITE_DIMENSION))(SPRITE_DIMENSION)(
-                  sprites.enemyr,
-                )(randomElement(ENEMY_RANDOM_SPAWN_SPEEDS)),
-              )
-          ),
-        ),
-        draw(c)(u.swoosh),
-        u.enemies.map(
-          (e) => (
-            (u.enemy = e),
-              collide(e)(u.player)(
-                () => (respawn(u.swoosh),
-                  (u.score.value = 0),
-                  (u.enemies.length = 0),
-                  u.sound.death.play().catch(() => {})),
-              ),
-              moveWithVelocity(e),
-              switchSprite(e)(e.speed.x < 0 ? sprites.enemyl : sprites.enemyr),
-              bounce(e)({ x: innerWidth, y: innerHeight }),
-              draw(c)(e)
-          ),
+      u.score.value > 1 && u.sound.phantompizza.play().catch(() => {}),
+      moveWithMouse(u.player)(u.mouse),
+      draw(c)(u.player),
+      collide(u.swoosh)(u.player)(
+        () => (
+          updateScore(u.score)(SCORE_UPDATER),
+          !(~~u.score.value % 3)
+            ? ((document.getElementById("score").style.animation =
+                "shake .5s infinite"),
+              (score.sprite.innerHTML =
+                randomElement(GAME_PROMPTS).toUpperCase()))
+            : (document.getElementById("score").style.animation = "none"),
+          respawn(u.swoosh),
+          u.sound.swoosh.play().catch(() => {}),
+          u.enemies.push(
+            Phantom(randomSpawn(SPRITE_DIMENSION))(SPRITE_DIMENSION)(
+              sprites.enemyr
+            )(randomElement(ENEMY_RANDOM_SPAWN_SPEEDS))
+          )
         )
-    ),
+      ),
+      draw(c)(u.swoosh),
+      u.enemies.map(
+        (e) => (
+          (u.enemy = e),
+          collide(e)(u.player)(
+            () => (
+              respawn(u.swoosh),
+              (u.score.value = 0),
+              (u.enemies.length = 0),
+              u.sound.death.play().catch(() => {})
+            )
+          ),
+          moveWithVelocity(e),
+          switchSprite(e)(e.speed.x < 0 ? sprites.enemyl : sprites.enemyr),
+          bounce(e)({ x: innerWidth, y: innerHeight }),
+          draw(c)(e)
+        )
+      )
+    )
   );
 });
