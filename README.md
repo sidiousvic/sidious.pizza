@@ -1,6 +1,6 @@
 # sidious.pizza
 
-Vic's personal cyber space.
+Vic's cyber space.
 
 ![Preview of sidious.pizza, showing various of its screens.](assets/images/preview.gif)
 
@@ -8,52 +8,45 @@ Vic's personal cyber space.
 
 Install [Deno](https://deno.com/) and run `deno task serve` to launch watch mode.
 
-## Content
-
-Content can be edited directly in the appropriate `.md` files.
-
-## Static Site Generation
-
 Follow [Lume](https://lume.land/docs/overview/about-lume/) documentation to modify layouts, templates, processors, plugins and more.
 
-## `CSS`
+<details>
+  <summary>⚙️</summary>
+
+### `CSS`
 
 CSS stylesheets are bundled and minified with [LightningCSS](https://lightningcss.dev/) on build and [inlined with the base layout](_includes/layouts/base.vto).
 
 The source `.css` files can be found in the [\_includes/css](_includes/css) directory. Bundled styles are generated as [\_bundle.css](_bundle.css#L20).
 
-## `ESNext`
+### `ESNext`
 
 ESNEXT programs are compiled from Typescript into [ESNext](https://developer.mozilla.org/en-US/docs/Web/JavaScript/JavaScript_technologies_overview#standardization_process) on build, in order to be delivered inline from server with the document.
 
 Source `.ts` files can be found in the [\_includes/ts](_includes/ts) folder. Compiled files are stored in the `_esnext` directory. [Here's an example of a layout using compiled files.](_includes/layouts/swims.vto#L5)
 
-The programs themselves are mostly written in a functional style, using small utilities for piping lambdas and mutating state.
-
-```ts
-const getColorsFromStorage = pipe(
-  inject(config),
-  mix(registerStoredColor),
-  mutate(applyStoredOrRandomColor)
-);
-
-document.addEventListener("DOMContentLoaded", getColorsFromStorage);
-```
+Programs are written in a functional dialect, using small utilities for piping lambdas and mutating state.
 
 They might look a bit unlike typical DOM manipulators, but it works really well as a design constraint, making things easier to prove and to change. Also, they are fun to make! 😈
 
-## Watch-mode compilation and bundling
+### Watch mode
 
 The [compiler](plugins/compilePrograms.ts) and [bundler](plugins/bundleStyles.ts) plugins perform checksum comparisons to rerun on watch mode in order to reload changes live. In the compiled programs case, an untracked directory `_temp/esnext` is created as a part of this diffing process.
 
-There might be slight bugs with this feature (cache invalidation is hard). Please report [as an issue](https://github.com/sidiousvic/sidious.pizza/issues).
+</details>
 
-## Optimizations
+## Specification
 
-Processors are used to perform web optimizations on build.
-
-For example, [this is a processor](processors/optimizePics9000.ts) to process `{ optimize }` suffixed images with HTML attributes such as `preload` and `fetchpriority` automatically.
+The specification is will be available soon. Stay tuned.
 
 ## License
 
-No-bullsh\*t universal use allowed. If you somehow manage to make any money with anything found here, won't say no to a beer.
+MIT License
+
+Copyright (c) 2024 Victor René Molina Rodriguez
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
