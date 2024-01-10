@@ -92,5 +92,5 @@ const makeMainElementFillUpScreen = pipe(
   )
 );
 
-addEventListener("load", makeMainElementFillUpScreen);
+addEventListener("DOMContentLoaded", makeMainElementFillUpScreen);
 addEventListener("resize", makeMainElementFillUpScreen);
