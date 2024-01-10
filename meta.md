@@ -21,7 +21,7 @@ thead {
 
 This website was designed and programmed by [Vic Sidious](/about), in Tokyo.
 
-UI programs are written in a [web-friendly functional way](https://github.com/sidiousvic/sidious.pizza/blob/9c3eb45f1d5c7c6483636e9fe23b54ecc3e20dd5/_includes/ts/playback.ts#L31C3-L31C3), compiled and bundled serverside into [ESNext](https://developer.mozilla.org/en-US/docs/Web/JavaScript/JavaScript_technologies_overview#standardization_process), and delivered inline with each document. Raw CSS is also bundled, minified and inlined on delivery.
+UI programs are written in [web-friendly functional paradigm](https://github.com/sidiousvic/sidious.pizza/blob/9c3eb45f1d5c7c6483636e9fe23b54ecc3e20dd5/_includes/ts/playback.ts#L31C3-L31C3), compiled and bundled serverside into [ESNext](https://developer.mozilla.org/en-US/docs/Web/JavaScript/JavaScript_technologies_overview#standardization_process), and delivered inline with each document. Raw CSS is also bundled, minified and inlined on delivery.
 
 ## Technologies used
 
