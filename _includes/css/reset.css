@@ -30,7 +30,6 @@ main {
 
   @media (max-width: 500px) {
     justify-content: flex-start;
-    padding: 0 5vw 1rem 5vw;
   }
 }
 
