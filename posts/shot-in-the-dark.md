@@ -4,7 +4,7 @@ date: 2023-12-30
 title: "SHOT IN THE DARK"
 weblog: true
 beta: true
-<!-- draft: true -->
+draft: true
 <!-- goodbye: See you, space cowboy... -->
 tags:
   - programming
@@ -20,65 +20,67 @@ Cicadas rang outside. The fan blew smoke of a marlboro joint into the haze of th
  Quaternion theta = Quaternion.AngleAxis(angle, Vector3.forward);
 ```
 
-I looked at the program. Hemingway would be proud. It was a good program, and it was a true program. The commands were simple. The logic was sound. It read like a fine conversation. Flowed like fine bourbon near the fireplace. Ebbed like the bamboo in a grove, casting quiet shadows under twilight.
+I run the compiler. Launch the program. An ominous beat plays. The screen reads: `SPACE PHANTOM`. Hit <span class="tag border">ENTER</span>. An alien ship emerges from the dark. I hit the arrow key and play.
 
-![Something](/assets/images/bamboo-shadows.webp){ optimize width=700 }
+_\*pew pew\*,_ _\*swoosh swoosh\*..._
 
-I run the compiler. Start the game. An ominous beat plays. The screen reads: `SPACE PHANTOM`. Hit <span class="tag border">ENTER</span>. An alien ship emerges from the dark. I hit the arrow key, ready to play.
+It's a fun, don't get me wrong. Feels like _Space Invaders_. There's just something... missing. The mechanics feel a little tight. I put the ciggy down and lay back to think.
 
-I play for a while, proud of what I've done, but there's just a small problem. The game's not that fun. There's no way around it, it doesn't feel dynamic enough. Maybe, if I only could shoot at an angle.
+![A desk with a computer, can of beer, fan, and cigarette smoke in a Japanese room with mountains outside](/assets/images/shot-in-the-dark.webp){ optimize width=800 }
 
-_An angle._
+The ship moves in the `x` direction. It shoots lasers in the `y`, where the enemies come from. To shoot them, it needs to move below them. Ah! That's what feels heavy and dank. What if you could shoot enemies without moving all that? What if you could shoot _at an angle?_
 
-There's was something _sinister_ about this idea. Something smelt... funny about it.
+_<p class="shake">An angle.</p>_
 
-_...It smelled like `math`._
+A tinge of fear drips down my spine. There's something sinister about that thought, something smells funny.
 
-A Kafkian tinge of fear drips down my spine. So this is it. I've ensared myself in my own web. _I am not the fly. I am the spider_.
+_...something smells like `math`._
 
-I run for the door and tread outside. It's dark, damp and I'm scared, but at least I know the way to FamilyMart.
+> I had desired it with an ardour that far exceeded moderation; but now that I had finished, the beauty of the dream vanished, and breathless horror and disgust filled my heart. <p class="quote-author">Dr. Frankenstein</p>
+
+<span class="tag border">`🚧`</span>
+
+## The dark arts
+
+![ ](/assets/images/summoning-maths.webp){ optimize width=800 }
+
+Maths is the _`OG`_ dark arts; it doesn't deal with the object, it deals with the _shadows_ of the object.
+
+It uses formal language to [summon spectres](), [observe obscure truths](), and augur the future.
+
+No amount of grammar, though, will drive mathematical objects from the darkness. No amount of syntax will elliminate the shadows, and shadows are not what they seem.
+
+![_](/assets/images/bamboo-shadows.webp){ optimize width=800 caption="A bamboo grove, or a mutant tarantula" }
+
+<span class="tag border">`🚧`</span>
+
+It's called [abstract thought](). Some are born for it, but most of us are afraid of the dark.
 
 ## Fear of the dark
 
 ![A spaceship](/assets/images/fear-of-the-dark.webp){ optimize width=800 }
 
-Primates tend to hate math. Some are born for kkit, but most of us have a fear of the dark.
+[Underrated Iron Maiden album](https://www.youtube.com/watch?v=bePCRKGUwAY), and one of our primal instincts.
 
-Might be fear of the unknown. [Light supresses the amygdala](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8208532/).
+We fear the dark as a survival mechanism, evolved to avoiding potential threats that are harder to detect without light.
 
-## The dark arts
+<span class="tag border">`🚧`</span>
 
-![A mathematical book sitting in a dark dungeon, lit by candlelight](/assets/images/dark-arts-math.webp){ optimize width=800 }
+[Visible light supresses the amygdala](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8208532/), the fear sentinel of the brain.
 
-Math is the _`OG`_ dark arts; it doesn't deal with the thing, it deals with the _shadows of the thing_. The objects are abstract [abstract](https://en.wikipedia.org/wiki/Abstraction), non-physical. Angles, matrices, quaternions are spectres.
-
-No amount of grammar, though, will drive abstract from the darkness. No amount of syntax will let us touch them, hear them, or see them, at least not in their primal form.
-
-> Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo
-
-It's called abstract thinking. The same word represents different objects.
-
-Computer programs are built in this way too, so as with mathematical expressions, they are like sigils of the occult. Weaving programs is like summoning demons, it asks us to reach into the shadows.
-
-![ ](/assets/images/summoning-maths.webp){ optimize width=800 }
+<span class="tag border">`🚧`</span>
 
 ## In praise of shadows
 
-> No words can describe that sensation as one sits in the dim light, basking in the faint glow reflected from the shoji.
+> No words can describe that sensation as one sits in the dim light, basking in the faint glow reflected from the shoji. <p class="quote-author">谷崎純一郎</p>
 
 ![ ](/assets/images/praise-shadows.webp){ optimize width=800 }
 
 The old Japanese architects learned to live in darkness, to welcome the darkness and shadows.
 
-Tanizaki talks about dark toilets.
+Tanizaki praises dark toilets.
 
-Pirates wore eye patches to see in the darkness.
-
-We face the unknown by speaking the word. Say the word and you'll be free. Tell a story.
-
-When I was a little kid I used stories in my head.
-
-Time is ripe for another one.
+Maybe, jsut like pirates wore eye patches to see in the darkness, we too must learn how to live in it.
 
 ## Raiders of the lost _θ_
 
@@ -86,17 +88,11 @@ Time is ripe for another one.
 
 The screen lights up like shining a torch to ancient hieroglyphs on a wall.
 
-They look as intractable as before, but you have no time to hesitate. I have a Strong Zero.
-
-I think of Tanizaki, and instead of staring, I close my eyes and submerge myself.
+I close my eyes and submerge myself.
 
 I can see the spectres of the symbols in my inner eye. Suddenly it all makes sense.
-
-The angle is theta.
 
 ```csharp
  float angle = Mathf.Atan2(player.y, player.x) * Mathf.Rad2Deg;
  Quaternion theta = Quaternion.AngleAxis(angle, Vector3.forward);
 ```
-
-![A desk with a computer, can of beer, fan, and cigarette smoke in a Japanese room with mountains outside](/assets/images/shot-in-the-dark.webp){ optimize width=400 }
