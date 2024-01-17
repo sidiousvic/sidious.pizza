@@ -1,5 +1,3 @@
-import { getElement } from "./domutils";
-
 [
   (e: KeyboardEvent) => e.key === "h" && location.assign("/"),
   (e: KeyboardEvent) => e.key === "c" && location.assign("/config"),
