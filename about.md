@@ -18,20 +18,20 @@ goodbye: よろしくお願いしいます。。。
 
 <div class="info">
 
-![A bald man with a beanie and glasses](/assets/images/dialogue-vic.webp){ optimize height=275 fetchpriority="high" caption="" }
+![A bald man with a beanie and glasses](/assets/images/vic.webp){ optimize height=275 fetchpriority="high" caption="" }
 
 <article>
 
-|           |                                                                                                 |
-| --------- | ----------------------------------------------------------------------------------------------- |
-| _Name_    | Vic _(Sidious)_                                                                                 |
-| _Work_    | Programmer, Axewielder, Generic Dark Lord                                                       |
-| _Lives_   | [澁谷東京 <em>(Shibuya, Tokyo)</em>](https://goo.gl/maps/1YfuGi5HYgRpBjN7A)                     |
-| _Born_    | [Chihuahua, Mexico](https://goo.gl/maps/Ja9LxnZ6kosdRa586)                                      |
-| _Age_     | <span id="age">?</span>                                                                         |
-| _Vices_   | Pizza, booze, [axe](https://youtu.be/en7EKL1pX5w) and [burritos](https://youtu.be/YZRtE9I5w7k)  |
-| _Reading_ | [I Am A Strange Loop, Douglas R. Hofstadter](https://en.wikipedia.org/wiki/I_Am_a_Strange_Loop) |
-| _Email_   | _vic‎@‎sidious.pizza_                                                                           |
+|           |                                                                                                |
+| --------- | ---------------------------------------------------------------------------------------------- |
+| _Name_    | Victor René Molina Rodríguez _(Vic Sidious)_                                                   |
+| _Work_    | Programmer, Axewielder, Generic Dark Lord                                                      |
+| _Lives_   | [澁谷東京 <em>(Shibuya, Tokyo)</em>](https://goo.gl/maps/1YfuGi5HYgRpBjN7A)                    |
+| _Born_    | [Chihuahua, Mexico](https://goo.gl/maps/Ja9LxnZ6kosdRa586)                                     |
+| _Age_     | <span id="age">?</span>                                                                        |
+| _Vices_   | Pizza, booze, [axe](https://youtu.be/en7EKL1pX5w) and [burritos](https://youtu.be/YZRtE9I5w7k) |
+| _Reading_ | [Blood Meridian by Cormac McCarthy](https://en.wikipedia.org/wiki/Blood_Meridian)              |
+| _Email_   | _vic‎@‎sidious.pizza_                                                                          |
 
 </article>
 </div>
@@ -57,17 +57,19 @@ exploring. Here's a little bit more about me.
 
 ![A mountain in a desert city.](/assets/images/chihuahua.webp){ optimize width=800 fetchpriority="low" caption="Chihuahua, Chih. Mexico" }
 
-I was born and raised in Chihuahua, in the north of Mexico, an arid region where water and plants are scarce. It's the [birthplace of the burrito](https://en.wikipedia.org/wiki/Burrito#:~:text=Burritos%20are%20a%20traditional%20food%20of%20Ciudad%20Ju%C3%A1rez%2C%20a%20city%20bordering%20El%20Paso%2C%20Texas%2C%20in%20the%20northern%20Mexican%20state%20of%20Chihuahua%2C%20where%20people%20buy%20them%20at%20restaurants%20and%20roadside%20stands.%20Northern%20Mexican%20border%20towns%20like%20Villa%20Ahumada%20have%20an%20established%20reputation%20for%20serving%20burritos.), and one of the areas of [highest scorpionism on the planet](https://www.sciencedirect.com/science/article/abs/pii/0041010194903832).
+I was born and raised in the state of Chihuahua, in the north of Mexico. It is an arid region where water and plants are scarce. It's the [birthplace of the burrito](https://en.wikipedia.org/wiki/Burrito#:~:text=Burritos%20are%20a%20traditional%20food%20of%20Ciudad%20Ju%C3%A1rez%2C%20a%20city%20bordering%20El%20Paso%2C%20Texas%2C%20in%20the%20northern%20Mexican%20state%20of%20Chihuahua%2C%20where%20people%20buy%20them%20at%20restaurants%20and%20roadside%20stands.%20Northern%20Mexican%20border%20towns%20like%20Villa%20Ahumada%20have%20an%20established%20reputation%20for%20serving%20burritos.), and one of the areas of [highest scorpionism on the planet](https://www.sciencedirect.com/science/article/abs/pii/0041010194903832).
 
 ![A scorpion resting on dry earth.](/assets/images/scorpionism.webp){ optimize width=800 fetchpriority="low" caption="Your deadly neighborhood arachnid" }
 
-In the desert we're bred with a sense of scarcity and danger that makes us loud, hardy, and stubborn. These of course are all double edged swords...
+I have fond memories of playing footy with an [empty Frutsi](https://cdn2.excelsior.com.mx/media/styles/image800x600/public/pictures/2019/06/26/2171032.jpg) bottle on the streets, oogling at graffiti on the way to school, picking sugarcane from the dry riverside with grandpa.
 
 <a name="misled-youth"></a>
 
 ## MISLED YOUTH
 
-I was a bit of a goblin _(_<img loading="lazy" alt="A small Shiba Inu dog, looking sad, smoking a cigarette and with a bottle of Corona beer resting in front of it" src="/assets/images/goblin.webp" width=40 height=40 style="display: inline-block; margin: -0.5rem 0;" />_)_ when young. Instead of math and Jesus, I was playing Zelda, browsing the web and watching MTV. My heroes were fiends like [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and [Angus Young](https://www.youtube.com/watch?v=PCjhgiVnYDs).
+In the desert we're bred with a sense of scarcity and danger that makes us loud, hardy, and stubborn. Maybe a little devilish too. These of course are all double edged swords...
+
+I was a bit of a goblin _(_<img loading="lazy" alt="A small Shiba Inu dog, looking sad, smoking a cigarette and with a bottle of Corona beer resting in front of it" src="/assets/images/goblin.webp" width=40 height=40 style="display: inline-block; margin: -0.5rem 0;" />_)_ when a youngblood. Instead of praising math and Jesus, I was playing Zelda, browsing the web and watching MTV. My heroes were fiends like [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and [Angus Young](https://www.youtube.com/watch?v=PCjhgiVnYDs). I hung out with
 
 <div class="picture-grid stagger">
 
@@ -76,7 +78,7 @@ I was a bit of a goblin _(_<img loading="lazy" alt="A small Shiba Inu dog, looki
 
 </div>
 
-This sense of mischief helped me escape dogma and gave me courage to dive into the unknown, but it was a real pain in the ass to many around me. I'm sorry mama.
+The taste for mischief and (mis)adventure helped me escape dogma and gave me courage to dive into the unknown, but it was a real pain in the ass to many around me. I'm sorry mama.
 
 Even tough I behave like an adult now, I think it's important to always keep a little of dumbfuckery alive to add a spice to life.
 
@@ -84,13 +86,15 @@ Even tough I behave like an adult now, I think it's important to always keep a l
 
 ## <img loading="lazy" alt="A red swoosh symbol" width=40 height=40 style="transform: translateY(10px); filter: var(--venom-filter)" src="/assets/images/swoosh.webp" /> JUST DO SH\*T
 
-I thank every experience, every pain and pleasure, because it helps me understand this wicked world a little more. I've been a gardener on the coast, a dishwasher in the desert, a teacher near the _hutongs_. One day I'll be a wildlife explorer, own a small brewery or push a tamales truck.
+I am fond of learning because it helps me understand this wicked little world a bit more.
 
-![A japanese classroom with an alien drawn on the blackboard](/assets/images/aliens-on-board.webp){ optimize priority="high" width=800 }
+I've been a gardener on the coast, a dishwasher in the steppes, a teacher near the hutongs. One day I'll be a wildlife explorer, own a small brewery or push a tamale truck in Shinjuku.
 
-No matter where I tread or what I'm doing, [I'll be cooking up some wacky thing on the side](/projects). I drew [Xeno the Alien](https://www.youtube.com/watch?v=cu3iGtqeYD4) on a 4th grade classroom blackboard, wrote [Tattsu](/posts/tattsu) on a small `KORG` synth after humming it while dishwashing. Turned night terrors into awkward doomer rock with [NEMESIS](https://open.spotify.com/intl-ja/album/1qHUvcdIbPv4CTNTDWlzPU?si=LaftNGr6Ska3ZAMejh1obA), and [studied the dark arts of maths](/posts/shot-in-the-dark) making [SPACE PHANTOM](/spacephantom).
+![A japanese classroom with an alien drawn on the blackboard](/assets/images/aliens-on-board.webp){ optimize priority="high" width=800 caption="Learn to teach, teach to learn" }
 
-They say an idle brain is the devil's fruit shop, or something like that. Anyway, boredom breeds misadventures. And I know a place full of them...
+No matter where I tread or what I'm doing, [I'll be cooking up some wacky thing on the side](/projects). I drew [Xeno the Alien](https://www.youtube.com/watch?v=cu3iGtqeYD4) on a 4th grade classroom blackboard, turned nightmares into awkward doomer rock with [NEMESIS](https://open.spotify.com/intl-ja/album/1qHUvcdIbPv4CTNTDWlzPU?si=LaftNGr6Ska3ZAMejh1obA), and studied the dark arts of mathematics making [SPACE PHANTOM](/spacephantom).
+
+They say an idle brain is the devil's fruit shop, or something like that. Anyway, boredom breeds misadventures. And I know a place full of those!
 
 <a name="tokyo-boy"></a>
 
@@ -98,7 +102,9 @@ They say an idle brain is the devil's fruit shop, or something like that. Anyway
 
 > "What a strange thing! To be alive beneath ginkgo leaves."
 
-I love Tokyo because it's mad, not in a good of bad way, but in a _fun_ way. Tread through its streets like a jungle. Eat at a new joint every time and never run out. Break no laws and still feel like a maverick.
+I love Tokyo because it's mad, not in a good of bad way, but in a _fun_ way.
+
+Tread through its streets like a jungle. Eat at a new joint every time and never run out. Break no laws and still feel like a maverick.
 
 <div class="picture-grid">
 
@@ -107,7 +113,7 @@ I love Tokyo because it's mad, not in a good of bad way, but in a _fun_ way. Tre
 
 </div>
 
-Fried chicken by the _conbini_, cherry blossoms and beer by the river, dystopic designs and tenebrous shrines, suits and skirts and gangsters and weirdos.
+Fried chicken by the _conbini_, blossoms and booze by the river, dystopic designs and tenebrous shrines, suits and skirts and gangsters and weirdos.
 
 <div class="picture-grid">
 
@@ -116,7 +122,9 @@ Fried chicken by the _conbini_, cherry blossoms and beer by the river, dystopic 
 
 </div>
 
-I may get sick of it all someday, but I will always call it home.
+You can say it's demented, jammed, thundering, cold, but you can't say it's boring.
+
+I may get sick of it all someday... but I will always call it home.
 
 <a name="thanks-for-visiting"></a>
 
