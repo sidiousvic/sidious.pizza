@@ -78,7 +78,7 @@ I was a bit of a goblin _(_<img loading="lazy" alt="A small Shiba Inu dog, looki
 
 </div>
 
-The taste for mischief and (mis)adventure helped me escape dogma and gave me courage to dive into the unknown, but it was a real pain in the ass to many around me. I'm sorry mama.
+A taste for mischief and (mis)adventure helped me escape dogma and gave me courage to dive into the unknown.
 
 Even tough I behave like an adult now, I think it's important to always keep a little of dumbfuckery alive to add a spice to life.
 
@@ -86,15 +86,17 @@ Even tough I behave like an adult now, I think it's important to always keep a l
 
 ## <img loading="lazy" alt="A red swoosh symbol" width=40 height=40 style="transform: translateY(10px); filter: var(--venom-filter)" src="/assets/images/swoosh.webp" /> JUST DO SH\*T
 
-I am fond of learning because it helps me understand this wicked little world a bit more.
+I am fond of learning because it helps me understand this wicked world a bit more.
 
-I've been a gardener on the coast, a dishwasher in the steppes, a teacher near the hutongs. One day I'll be a wildlife explorer, own a small brewery or push a tamale truck in Shinjuku.
+I've been a gardener on the Japanese coast, a dishwasher in a desert town, a teacher near the hutongs and rice paddies. One day I'll be a wildlife explorer, own a small brewery or push a tamale truck in Shinjuku.
 
 ![A japanese classroom with an alien drawn on the blackboard](/assets/images/aliens-on-board.webp){ optimize priority="high" width=800 caption="Learn to teach, teach to learn" }
 
-No matter where I tread or what I'm doing, [I'll be cooking up some wacky thing on the side](/projects). I drew [Xeno the Alien](https://www.youtube.com/watch?v=cu3iGtqeYD4) on a 4th grade classroom blackboard, turned nightmares into awkward doomer rock with [NEMESIS](https://open.spotify.com/intl-ja/album/1qHUvcdIbPv4CTNTDWlzPU?si=LaftNGr6Ska3ZAMejh1obA), and studied the dark arts of mathematics making [SPACE PHANTOM](/spacephantom).
+[I like cooking up wacky ideas](/projects). I drew [Xeno the Alien](https://www.youtube.com/watch?v=cu3iGtqeYD4) for my 4th grade classroom, turned nightmares into awkward doomer rock when making [NEMESIS](https://open.spotify.com/intl-ja/album/1qHUvcdIbPv4CTNTDWlzPU?si=LaftNGr6Ska3ZAMejh1obA), and studied the dark arts of mathematics when designing [SPACE PHANTOM](/spacephantom).
 
-They say an idle brain is the devil's fruit shop, or something like that. Anyway, boredom breeds misadventures. And I know a place full of those!
+They say an idle brain is the devil's fruit shop, or something like that.
+
+Anyway, boredom breeds misadventures. And I know a place full of those!
 
 <a name="tokyo-boy"></a>
 
@@ -102,9 +104,9 @@ They say an idle brain is the devil's fruit shop, or something like that. Anyway
 
 > "What a strange thing! To be alive beneath ginkgo leaves."
 
-I love Tokyo because it's mad, not in a good of bad way, but in a _fun_ way.
+I love Tokyo because it's mad, not in a good of bad way, but in a **fun** way.
 
-Tread through its streets like a jungle. Eat at a new joint every time and never run out. Break no laws and still feel like a maverick.
+You can swing through its streets like a jungle, eat at a new joint every time and never run out, break no laws and still feel like a villain!
 
 <div class="picture-grid">
 
@@ -122,7 +124,7 @@ Fried chicken by the _conbini_, blossoms and booze by the river, dystopic design
 
 </div>
 
-You can say it's demented, jammed, thundering, cold, but you can't say it's boring.
+You can say it's demented, jammed, cold, but you can't say it's boring.
 
 I may get sick of it all someday... but I will always call it home.
 
