@@ -32,7 +32,7 @@ site
   .use(minifyHTML({ options: { keep_comments: true } }))
   .use(terser({ extensions: [".mjs"] }))
   .use(date())
-  .use(codeHighlight())
+  .use(codeHighlight({ languages: { math: katex } }))
   .use(katex({ displayMode: false }))
   .use(basePath())
   .use(sitemap())
