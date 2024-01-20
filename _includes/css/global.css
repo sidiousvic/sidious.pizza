@@ -8,6 +8,11 @@
   -webkit-font-feature-settings: "emoji" 0;
 }
 
+.goodbye {
+  font-size: 2rem;
+  text-align: center;
+}
+
 .tag {
   text-transform: uppercase;
   padding: 0.4rem 0.6rem 0.2rem 0.6rem;
