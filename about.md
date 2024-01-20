@@ -4,14 +4,8 @@ title: VIC
 date: 1991-09-24
 visible: true
 order: 3
-goodbye: よろしくお願いしいます。。。
+goodbye: See you again web cowboy...
 ---
-
-<style>
-.info figure {
-  margin: 1rem 1rem 0 1rem !important;
-}
-</style>
 
 <script inline src="/_esnext/vicsage.js"></script>
 <script inline src="/_esnext/lazyvideos.js"></script>
@@ -22,54 +16,65 @@ goodbye: よろしくお願いしいます。。。
 
 <article>
 
-|           |                                                                                                |
-| --------- | ---------------------------------------------------------------------------------------------- |
-| _Name_    | Victor René Molina Rodríguez _(Vic Sidious)_                                                   |
-| _Work_    | Programmer, Axewielder, Generic Dark Lord                                                      |
-| _Lives_   | [澁谷東京 <em>(Shibuya, Tokyo)</em>](https://goo.gl/maps/1YfuGi5HYgRpBjN7A)                    |
-| _Born_    | [Chihuahua, Mexico](https://goo.gl/maps/Ja9LxnZ6kosdRa586)                                     |
-| _Age_     | <span id="age">?</span>                                                                        |
-| _Vices_   | Pizza, booze, [axe](https://youtu.be/en7EKL1pX5w) and [burritos](https://youtu.be/YZRtE9I5w7k) |
-| _Reading_ | [Blood Meridian by Cormac McCarthy](https://en.wikipedia.org/wiki/Blood_Meridian)              |
-| _Email_   | _vic‎@‎sidious.pizza_                                                                          |
+|         |                                                                                                |
+| ------- | ---------------------------------------------------------------------------------------------- |
+| _Name_  | Victor René Molina Rodríguez _(Vic Sidious)_                                                   |
+| _Work_  | Programmer, Axewielder, Generic Dark Lord                                                      |
+| _Lives_ | [澁谷東京 <em>(Shibuya, Tokyo)</em>](https://goo.gl/maps/1YfuGi5HYgRpBjN7A)                    |
+| _Born_  | [Chihuahua, Mexico](https://goo.gl/maps/Ja9LxnZ6kosdRa586)                                     |
+| _Age_   | <span id="age">?</span>                                                                        |
+| _Vices_ | Pizza, booze, [axe](https://youtu.be/en7EKL1pX5w) and [burritos](https://youtu.be/YZRtE9I5w7k) |
+| _Email_ | _vic‎@‎sidious.pizza_                                                                          |
 
 </article>
 </div>
 
-Hola `amigxs`, my name is Vic. Welcome to my cyber space. Here's where I
+## Hola amig(x)s!
+
+My name is Vic. Welcome to my cyber space. Here's where I
 [spill my brains](/weblog), share [weird music](/swims), computer programs
 (like [_Phantom Pizza_](/phantompizza), the game at the home page) and even
-[haiku](/kaminari-no-kage). Don't forget to visit the [sitemap](/sitemap) to keep
-exploring. Here's a little bit more about me.
+[haiku](/kaminari-no-kage). Don't forget to visit the [sitemap](/sitemap)
+begin your adventure. Here's a little bit more about me.
 
-<br>
+> “Laugh and the world laughs with you, snore and you sleep alone.” <p class="quote-author">Anthony Burgess</p>
 
-> “Laugh and the world laughs with you, snore and you sleep alone.” <p class="quote-author">Anthony
-> Burgess</p>
+<div class="contents">
 
-<br>
+### Index
+
+<!-- - [BIOGRAPHY](#bio) -->
+
+- [BORN AND RAISED IN THE DESERT](#born-and-raised)
+- [MISLED YOUTH](#misled-youth)
+- ["JUST DO SH\*T"](#just-do-shit)
+- [TOYKO BOY](#tokyo-boy)
+
+</div>
+
+<a name="bio"></a>
+
+<!-- ## BIOGRAPHY -->
 
 <a name="born-and-raised"></a>
 
-## BORN AND RAISED IN THE DESERT
-
-<br>
+### BORN AND RAISED IN THE DESERT
 
 ![A mountain in a desert city.](/assets/images/chihuahua.webp){ optimize width=800 fetchpriority="low" caption="Chihuahua, Chih. Mexico" }
 
-I was born and raised in the state of Chihuahua, in the north of Mexico. It is an arid region where water and plants are scarce. It's the [birthplace of the burrito](https://en.wikipedia.org/wiki/Burrito#:~:text=Burritos%20are%20a%20traditional%20food%20of%20Ciudad%20Ju%C3%A1rez%2C%20a%20city%20bordering%20El%20Paso%2C%20Texas%2C%20in%20the%20northern%20Mexican%20state%20of%20Chihuahua%2C%20where%20people%20buy%20them%20at%20restaurants%20and%20roadside%20stands.%20Northern%20Mexican%20border%20towns%20like%20Villa%20Ahumada%20have%20an%20established%20reputation%20for%20serving%20burritos.), and one of the areas of [highest scorpionism on the planet](https://www.sciencedirect.com/science/article/abs/pii/0041010194903832).
+I was born and raised in the state of Chihuahua, in the north of Mexico. It is an arid region where water and plants are scarce. They say _Xicuahua_ means "dry and sandy place". It's the [birthplace of the burrito](https://en.wikipedia.org/wiki/Burrito#:~:text=Burritos%20are%20a%20traditional%20food%20of%20Ciudad%20Ju%C3%A1rez%2C%20a%20city%20bordering%20El%20Paso%2C%20Texas%2C%20in%20the%20northern%20Mexican%20state%20of%20Chihuahua%2C%20where%20people%20buy%20them%20at%20restaurants%20and%20roadside%20stands.%20Northern%20Mexican%20border%20towns%20like%20Villa%20Ahumada%20have%20an%20established%20reputation%20for%20serving%20burritos.), and one of the areas of [highest scorpionism on the planet](https://www.sciencedirect.com/science/article/abs/pii/0041010194903832).
+
+I have fond memories of playing footy on the dusty streets with neighbors and [empty Frutsi](https://cdn2.excelsior.com.mx/media/styles/image800x600/public/pictures/2019/06/26/2171032.jpg) bottles, oogling at vacant lots and graffiti on the way to school, and picking sugarcane from the dry riverside with grandpa.
 
 ![A scorpion resting on dry earth.](/assets/images/scorpionism.webp){ optimize width=800 fetchpriority="low" caption="Your deadly neighborhood arachnid" }
 
-I have fond memories of playing footy with an [empty Frutsi](https://cdn2.excelsior.com.mx/media/styles/image800x600/public/pictures/2019/06/26/2171032.jpg) bottle on the streets, oogling at graffiti on the way to school, picking sugarcane from the dry riverside with grandpa.
+In the desert we're bred with a sense of scarcity and danger that makes us loud, hardy, and stubborn. These of course are all double edged swords...
 
 <a name="misled-youth"></a>
 
-## MISLED YOUTH
+### MISLED YOUTH
 
-In the desert we're bred with a sense of scarcity and danger that makes us loud, hardy, and stubborn. Maybe a little devilish too. These of course are all double edged swords...
-
-I was a bit of a goblin _(_<img loading="lazy" alt="A small Shiba Inu dog, looking sad, smoking a cigarette and with a bottle of Corona beer resting in front of it" src="/assets/images/goblin.webp" width=40 height=40 style="display: inline-block; margin: -0.5rem 0;" />_)_ when a youngblood. Instead of praising math and Jesus, I was playing Zelda, browsing the web and watching MTV. My heroes were fiends like [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and [Angus Young](https://www.youtube.com/watch?v=PCjhgiVnYDs). I hung out with
+I was a bit of a goblin _(_<img loading="lazy" alt="A small Shiba Inu dog, looking sad, smoking a cigarette and with a bottle of Corona beer resting in front of it" src="/assets/images/goblin.webp" width=40 height=40 style="display: inline-block; margin: -0.5rem 0;" />_)_ when a young. Instead of praising math and Jesus, I was playing Zelda, browsing the web and watching MTV. My heroes were fiends like [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and [Angus Young](https://www.youtube.com/watch?v=PCjhgiVnYDs).
 
 <div class="picture-grid stagger">
 
@@ -78,13 +83,15 @@ I was a bit of a goblin _(_<img loading="lazy" alt="A small Shiba Inu dog, looki
 
 </div>
 
-A taste for mischief and (mis)adventure helped me escape dogma and gave me courage to dive into the unknown.
+I skipped school, hung out with the wrong gang, and was a generic pain in the a`$$`.
 
-Even tough I behave like an adult now, I think it's important to always keep a little of dumbfuckery alive to add a spice to life.
+I also never did my maths homework, which I consider one of my biggest fuck-ups so far and trust me, I've fucked up _many_ times.
+
+Even tough I behave like an adult now, I think it's important to always keep a little of dumbfuckery alive to add a spice to life. A taste for mischief and (mis)adventure helped me escape dogma and gave me courage to dive into the unknown...
 
 <a name="just-do-shit"></a>
 
-## <img loading="lazy" alt="A red swoosh symbol" width=40 height=40 style="transform: translateY(10px); filter: var(--venom-filter)" src="/assets/images/swoosh.webp" /> JUST DO SH\*T
+### <img loading="lazy" alt="A red swoosh symbol" width=40 height=40 style="transform: translateY(10px); filter: var(--venom-filter)" src="/assets/images/swoosh.webp" /> JUST DO SH\*T
 
 I am fond of learning because it helps me understand this wicked world a bit more.
 
@@ -100,7 +107,7 @@ Anyway, boredom breeds misadventures. And I know a place full of those!
 
 <a name="tokyo-boy"></a>
 
-## TOKYO BOY
+### TOKYO BOY
 
 > "What a strange thing! To be alive beneath ginkgo leaves."
 
