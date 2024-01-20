@@ -4,95 +4,99 @@ date: 2023-12-30
 title: "SHOT IN THE DARK"
 weblog: true
 beta: true
-draft: true
+<!-- draft: true -->
 <!-- goodbye: See you, space cowboy... -->
 tags:
   - programming
   - art
+  - math
 ---
 
 ![A spaceship](/assets/images/shot-dark.webp){ optimize width=800 }
 
-Cicadas rang outside. The fan blew smoke of a marlboro joint into the haze of the Japanese summer. A programming manual and an empty can of Asahi sat on the desk, next to my computer. On the screen, Unity3D, and my maiden lines of _C#_.
+Cicadas rang outside. The fan blew smoke of a marlboro joint into the haze of the Japanese summer. A programming manual and an empty can of Asahi sat on the desk, next to my computer. On the screen, Unity3D, and my maiden lines in _C#_.
 
-```csharp
- float angle = Mathf.Atan2(player.y, player.x) * Mathf.Rad2Deg;
- Quaternion theta = Quaternion.AngleAxis(angle, Vector3.forward);
-```
+I run the compiler. Launch the program. An ominous beat plays. The screen reads: `SPACE PHANTOM`. Hit <span class="tag border button">ENTER</span>. An alien ship emerges from the dark.
 
-I run the compiler. Launch the program. An ominous beat plays. The screen reads: `SPACE PHANTOM`. Hit <span class="tag border">ENTER</span>. An alien ship emerges from the dark. I hit the arrow key and play.
+_Pew pew, swoosh swoosh._
 
-_\*pew pew\*,_ _\*swoosh swoosh\*..._
+Put the ciggy down, and lean back, hands over head. I look through the pane. A full moon hangs over the mountains. Sigh. There, I've done it. I've made a game.
 
-It's a fun, don't get me wrong. Feels like _Space Invaders_. There's just something... missing. The mechanics feel a little tight. I put the ciggy down and lay back to think.
+A boring game.
+
+Shit.
 
 ![A desk with a computer, can of beer, fan, and cigarette smoke in a Japanese room with mountains outside](/assets/images/shot-in-the-dark.webp){ optimize width=800 }
 
-The ship moves in the `x` direction. It shoots lasers in the `y`, where the enemies come from. To shoot them, it needs to move below them. Ah! That's what feels heavy and dank. What if you could shoot enemies without moving all that? What if you could shoot _at an angle?_
+<!-- <span class="tag border">`🚧`</span> -->
+
+Well, what if if the spaceship shot at an angle? That would demand positioning and aim.
+
+Hmm. Did you hear that?
 
 _<p class="shake">An angle.</p>_
 
-A tinge of fear drips down my spine. There's something sinister about that thought, something smells funny.
+A tinge of fear drips down my spine. There's something sinister about the thought, something smells... funny.
 
 _...something smells like `math`._
 
-> I had desired it with an ardour that far exceeded moderation; but now that I had finished, the beauty of the dream vanished, and breathless horror and disgust filled my heart. <p class="quote-author">Dr. Frankenstein</p>
-
-<span class="tag border">`🚧`</span>
-
-## The dark arts
-
-![ ](/assets/images/summoning-maths.webp){ optimize width=800 }
-
-Maths is the _`OG`_ dark arts; it doesn't deal with the object, it deals with the _shadows_ of the object.
-
-It uses formal language to [summon spectres](), [observe obscure truths](), and augur the future.
-
-No amount of grammar, though, will drive mathematical objects from the darkness. No amount of syntax will elliminate the shadows, and shadows are not what they seem.
-
-![_](/assets/images/bamboo-shadows.webp){ optimize width=800 caption="A bamboo grove, or a mutant tarantula" }
-
-<span class="tag border">`🚧`</span>
-
-It's called [abstract thought](). Some are born for it, but most of us are afraid of the dark.
+<!-- ![_](/assets/images/bamboo-shadows.webp){ optimize width=800 caption="A bamboo grove, or a mutant tarantula" } -->
 
 ## Fear of the dark
 
-![A spaceship](/assets/images/fear-of-the-dark.webp){ optimize width=800 }
+Back then, as we have seen, I was fucking scared of math.
 
-[Underrated Iron Maiden album](https://www.youtube.com/watch?v=bePCRKGUwAY), and one of our primal instincts.
+![A field littered by tall stalagmites, with staring demonic eyes floating in the sky](/assets/images/fear-of-the-dark.webp){ optimize width=800 }
 
-We fear the dark as a survival mechanism, evolved to avoiding potential threats that are harder to detect without light.
+I'm a primate. We tend to hate math. Some are born for it, yes, but most of us have a fear of the dark.
 
-<span class="tag border">`🚧`</span>
+Fear of the dark is an [underrated Iron Maiden album](https://youtu.be/bePCRKGUwAY?si=SRtiL8vko69cZHvB).
 
-[Visible light supresses the amygdala](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8208532/), the fear sentinel of the brain.
+It's also one of our primal instincts. At its core, it's a [survival optimization algorithm](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4364301/) to avoid dangers hard to detect without light. [Visible radiation supresses the amygdala](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0252350), the fear sentinel of the brain. It's a mechanism to tread with the unknown.
 
-<span class="tag border">`🚧`</span>
+When you're in the dark, your brain drips with adrenaline. It summons shapes to the mind's eye, but tenuously lit, tricky to observe. They slither like a fog of wicked lizard eyes, monsters whose forms we cannot not fully see.
+
+And that's where terror lies, in what we cannot fully see.
+
+It's not in the object, but in the shadow.
+
+The shark in Jaws. The xenomorph. Sauron. They all scared us, not because they were monsters, but _because they were shadows._
+
+Math scared me because it dealt with shadows.
 
 ## In praise of shadows
 
-> No words can describe that sensation as one sits in the dim light, basking in the faint glow reflected from the shoji. <p class="quote-author">谷崎純一郎</p>
+A shadow is a `2D` projection of a `3D` object. A [sine wave](https://en.wikipedia.org/wiki/Sine_wave) is a `1D` projection of radial `2D` motion. Both have the property of hiding dimensions from view, partial instancing of objects that are otherwise out of sight.
 
-![ ](/assets/images/praise-shadows.webp){ optimize width=800 }
+Math is ridden with these ill-lit, abstract objects. Numbers, angles, quaternions, they're all shadows.
 
-The old Japanese architects learned to live in darkness, to welcome the darkness and shadows.
+![ ](/assets/images/bamboo-shadows.webp){ optimize width=800 caption="A bamboo grove, or a mutant tarantula" }
 
-Tanizaki praises dark toilets.
+Ninety-something years ago, Tanizaki made a profound observation about shadows.
 
-Maybe, jsut like pirates wore eye patches to see in the darkness, we too must learn how to live in it.
+And toilets.
 
-## Raiders of the lost _θ_
+> No words can describe that sensation as one sits in the dim light, basking in the faint glow reflected from the shoji. <p class="quote-author">Junnichiro Tanizaki 谷崎純一郎</p>
 
-![A torch illuminarting ancient symbols on a dungeon wall.](/assets/images/indy-torch.webp){ optimize width=700 }
+In an essay about aesthetics, he admired
 
-The screen lights up like shining a torch to ancient hieroglyphs on a wall.
+![ ](/assets/images/praise-shadows.webp){ optimize width=400 }
 
-I close my eyes and submerge myself.
+<!-- <span class="tag border">`🚧`</span> -->
 
-I can see the spectres of the symbols in my inner eye. Suddenly it all makes sense.
+<!-- ## Raiders of the lost _θ_ -->
 
-```csharp
- float angle = Mathf.Atan2(player.y, player.x) * Mathf.Rad2Deg;
- Quaternion theta = Quaternion.AngleAxis(angle, Vector3.forward);
-```
+<!-- ![A torch illuminarting ancient symbols on a dungeon wall.](/assets/images/indy-torch.webp){ optimize width=700 } -->
+
+<!-- The screen lights up like shining a torch to ancient hieroglyphs on a wall. -->
+
+<!-- I close my eyes and submerge myself. -->
+
+<!-- I can see the spectres of the symbols in my inner eye. Suddenly it all makes sense. -->
+
+<!-- <span class="tag border">`🚧`</span> -->
+
+<!-- ```csharp -->
+<!--  float angle = Mathf.Atan2(player.y, player.x) * Mathf.Rad2Deg; -->
+<!--  Quaternion theta = Quaternion.AngleAxis(angle, Vector3.forward); -->
+<!-- ``` -->
