@@ -14,6 +14,7 @@ import { bundleStyles } from "$/plugins/bundleStyles.ts";
 import { optimizePics9000 } from "$/processors/optimizePics9000.ts";
 import readInfo from "lume/plugins/reading_info.ts";
 import { compilePrograms } from "$/plugins/compilePrograms.ts";
+import katex from "lume/plugins/katex.ts";
 import minifyHTML from "lume/plugins/minify_html.ts";
 
 const site = lume({
@@ -32,6 +33,7 @@ site
   .use(terser({ extensions: [".mjs"] }))
   .use(date())
   .use(codeHighlight())
+  .use(katex({ displayMode: false }))
   .use(basePath())
   .use(sitemap())
   .use(pageFind({ ui: { resetStyles: false } }))
