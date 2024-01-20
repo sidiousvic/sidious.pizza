@@ -5,6 +5,7 @@
   align-items: baseline;
   justify-content: center;
   padding: 4vh 5vw 1vh 5vw;
+  margin: 0 0 2rem 0;
   column-gap: 2rem;
   mix-blend-mode: var(--blend-mode);
 
