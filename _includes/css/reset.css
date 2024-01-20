@@ -124,6 +124,7 @@ math {
   font-style: italic;
   color: var(--venom);
   margin: 0 0 2rem 0;
+  overflow-wrap: anywhere;
 }
 
 blockquote {

@@ -8,7 +8,7 @@ tags:
   - life
 ---
 
-With the help of a Finnish friend and fellow `(meth)`ematician, I've derived an algebraic formula that might prove useful to those wanting to _"find out"._
+With the help of a Finnish friend and fellow `(me`thematician, I've derived an algebraic formula that might prove useful to those wanting to _"find out"._
 
 ![A T-Rex chasing a caveman who was fucking about](/assets/images/fa-equals-k-fo.webp){ optimize fetchpriority="high" caption="The more you fuck about, the more you find out" }
 

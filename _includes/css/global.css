@@ -11,6 +11,7 @@
 .goodbye {
   font-size: 2rem;
   text-align: center;
+  overflow-wrap: anywhere;
 }
 
 .tag {
