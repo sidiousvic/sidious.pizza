@@ -112,6 +112,20 @@ comment {
   animation: blink 3s infinite;
 }
 
+math {
+  display: none;
+}
+
+.katex-display {
+  display: block;
+  text-align: center;
+  font-family: Code, monospace;
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--venom);
+  margin: 0 0 2rem 0;
+}
+
 blockquote {
   font-family: var(--font-family-title);
   font-size: 1.5rem;
