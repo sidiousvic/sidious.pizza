@@ -519,7 +519,8 @@ export const config = ({
   addEventListener(
     "touchmove",
     (e) => (
-      (mouse.x = e.touches[0].clientX), (mouse.y = e.touches[0].clientY - 120)
+      (mouse.x = e.touches[0].clientX - 17),
+      (mouse.y = e.touches[0].clientY - 90)
     ),
     { passive: false }
   );
