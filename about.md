@@ -4,7 +4,7 @@ title: VIC
 date: 1991-09-24
 visible: true
 order: 3
-goodbye: See you again web cowboy...
+goodbye: See you again (cyber)space cowboy
 ---
 
 <script inline src="/_esnext/vicsage.js"></script>
@@ -131,9 +131,7 @@ Fried chicken by the _conbini_, blossoms and booze by the river, dystopic design
 
 </div>
 
-You can say it's demented, jammed, cold, but you can't say it's boring.
-
-I may get sick of it all someday... but I will always call it home.
+You can say it's demented, jammed, cold, but you can't say it's boring. I may get sick of it all someday... but I will always call it home.
 
 <a name="thanks-for-visiting"></a>
 
