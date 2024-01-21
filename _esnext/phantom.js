@@ -86,13 +86,14 @@
   #score { 
     position: absolute; 
     font-size: 3rem; 
-    white-space: nowrap;
     font-family: ${e}; 
     bottom: 50%; 
     left: 50%; 
     mix-blend-mode: difference;
     transform: translate(-50%, 50%); 
     color: var(--phantom-foreground-color); 
+    width: 100%;
+    text-align: center;
   }
   
   canvas > img { 
