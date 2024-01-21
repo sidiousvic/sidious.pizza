@@ -23,7 +23,7 @@ thead {
 
 This website is built with web-performance and accessibility as core operational principles.
 
-It uses a single-tone low-fi visual aesthetic and a clear, minimal and machine-translatable writing style.
+It uses a single-tone low-fi visual aesthetic and aims for a clear, minimal and machine-translatable writing style.
 
 ## Design principles
 
