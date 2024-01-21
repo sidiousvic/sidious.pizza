@@ -4,7 +4,7 @@ date: 2023-12-30
 title: "SHOT IN THE DARK"
 weblog: true
 beta: true
-<!-- draft: true -->
+draft: true
 <!-- goodbye: See you, space cowboy... -->
 tags:
   - programming
