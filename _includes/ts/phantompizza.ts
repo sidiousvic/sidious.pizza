@@ -22,8 +22,9 @@ import {
   updateScore,
 } from "./phantom.js";
 
-if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-  const main = document.getElementById("main");
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+if (isMobile) {
   const styles = document.createElement("style");
   styles.textContent = `
     #main {
@@ -33,13 +34,11 @@ if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
       text-align: center;
       font-size: 1.4rem;
     }
-    strong {
-      font-size: 1.9rem;
+    #score {
+      font-size: 1.7rem !important;
     }
   `;
   document.head.appendChild(styles);
-  main.innerHTML = `<strong>"PHANTOM PIZZA"</strong><br>is not available on mobile.<br><br>Try it on a desktop browser.${main.innerHTML} `;
-  throw new Error("Phantom pizza is not available on mobile.");
 }
 
 const styles = document.createElement("style");
@@ -63,7 +62,7 @@ document.head.appendChild(styles);
 
 const ENEMY_RANDOM_SPAWN_SPEEDS = [-5, -4, -3 - 2, 2, 3, 4, 5];
 const ZERO_SPEED = { x: 0, y: 0 };
-const SPRITE_DIMENSION = 50;
+const SPRITE_DIMENSION = isMobile ? 30 : 50;
 const SCORE_UPDATER =
   (Math.pow(SPRITE_DIMENSION, 2) / (innerHeight * innerWidth)) * 1000;
 const GAME_PROMPTS = [
@@ -80,8 +79,10 @@ const GAME_PROMPTS = [
   "パイ逃避<i>！</i>",
 ];
 
+const urlContainsPhantomPizza = /phantompizza/i.test(location.href);
+
 const { sprites, score, sound, mouse, c } = config({
-  GAME_TITLE: "SIDIOUS.PIZZA",
+  GAME_TITLE: urlContainsPhantomPizza ? "PHANTOM PIZZA" : "SIDIOUS.PIZZA",
   DISPLAY_SCORE: true,
   START_SCREEN: true,
   START_SCREEN_TITLE_FONT: "var(--font-family-title)",
@@ -90,8 +91,9 @@ const { sprites, score, sound, mouse, c } = config({
   BG_COLOR_HEX: "#0d1117",
   FG_COLOR_HEX: "var(--venom)",
   FILTER: "var(--filter-invert)",
-  START_TEXT_A:
-    '<em style="filter: var(--filter-invert)">ENTER</em> AT YOUR OWN PERIL',
+  START_TEXT_A: isMobile
+    ? "<em>TOUCH</em> TO START"
+    : '<em style="filter: var(--filter-invert)">ENTER</em> AT YOUR OWN PERIL',
   START_TEXT_B:
     '危険ゾーンに <em style="filter: var(--filter-invert)">投入</em>',
   SPRITES: [
