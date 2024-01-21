@@ -222,15 +222,21 @@ h6 {
 
 h1 {
   font-family: var(--font-family-title);
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: var(--venom);
   font-weight: 100;
+  @media (max-width: 500px) {
+    font-size: 3rem;
+  }
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 2.8rem;
   color: var(--venom);
   font-weight: 100;
+  @media (max-width: 500px) {
+    font-size: 2rem;
+  }
 }
 
 h2,
