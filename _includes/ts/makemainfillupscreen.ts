@@ -1,7 +1,7 @@
 import { getElementById } from "./domutils.ts";
 import { inject, mix, mutate, pipe } from "./utils.ts";
 
-const MAIN_PADDING_PX = 25;
+const MAIN_PADDING_PX = -10;
 
 type Config = {
   navbarId: string;
