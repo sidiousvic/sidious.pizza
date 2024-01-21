@@ -52,7 +52,7 @@ button {
 @media (min-width: 1000px) {
   #music-player > h1 {
     width: 150% !important;
-    font-size: 250% !important;
+    font-size: 200% !important;
   }
 }
 
