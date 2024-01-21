@@ -1,6 +1,7 @@
 @font-face {
   font-family: Sinister;
   src: url(/assets/fonts/sinister.ttf);
+  size-adjust: 95%;
   font-display: swap;
 }
 

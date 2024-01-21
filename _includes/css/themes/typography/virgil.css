@@ -1,6 +1,7 @@
 @font-face {
   font-family: Virgil;
   src: url(/assets/fonts/virgil.ttf);
+  size-adjust: 90%;
   font-display: swap;
 }
 
