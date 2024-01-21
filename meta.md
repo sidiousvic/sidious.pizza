@@ -36,10 +36,13 @@ It uses a single-tone low-fi visual aesthetic and aims for a clear, minimal and 
 
 ## Features
 
-- Keyboard-navigable
-- Configurable fonts, colors <a href="/config" class="border tag button">configure</a>
-- Mobile-friendly
-- Lowres-aesthetic
+Keyboard-navigable
+
+<a href="/config" class="border tag button">Configurable</a>
+
+Mobile-friendly
+
+Lowres-aesthetic
 
 ## Technologies used
 
