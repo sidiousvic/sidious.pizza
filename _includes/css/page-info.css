@@ -68,6 +68,9 @@
   text-align: center;
   font-size: 2.5rem;
   font-weight: 100;
+  @media (max-width: 1000px) {
+    font-size: 1.7rem;
+  }
 }
 
 .page-info-body {
