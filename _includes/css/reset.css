@@ -29,6 +29,8 @@ main {
   overflow: hidden;
 
   @media (max-width: 500px) {
+    margin: 0 1vw;
+    padding: 0 5vw 1rem 5vw;
     justify-content: flex-start;
   }
 }

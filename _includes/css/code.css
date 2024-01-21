@@ -7,7 +7,7 @@
 @media (max-width: 500px) {
   pre {
     width: 100vw;
-    margin: auto -9vw;
+    margin: auto -6vw;
   }
   pre code.hljs {
     padding: 3rem 2rem !important;
