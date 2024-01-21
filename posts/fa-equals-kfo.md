@@ -35,8 +35,8 @@ Fa (Fucking about)
  3 ·   /
    ·  /
    · /
-   + · · · · · · · · · · · · · · · · > Fo (Finding out)
- 0       9     18     27
+   + · · · · · · · · · · · · · > Fo (Finding out)
+ 0       9     18     ...
 
 ```
 
@@ -71,8 +71,8 @@ Fa (Fucking about)
  3 ·   /
    ·  /    undefined
    · /    ↓
-   + · · · · · · · · · · · · · · · · > Fo (Finding out)
- 0       9     18     27
+   + · · · · · · · · · · · · > Fo (Finding out)
+ 0       9     18    ...
 
 ```
 
