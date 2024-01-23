@@ -46,7 +46,7 @@ Therefore we have a way to solve for how much we need to fuck about in order to 
 
 Unfortunately, it has also been proven that certain inconvenient initial conditions such as being dead result in the amount of finding out (`Fo`) collapsing to `undefined`.
 
-Moreover, one may fuck about in a way by which the numerical value of `Fa` trangresses a limit which representing a state of pining for the fjords.
+Moreover, one may fuck about in a way by which the numerical value of `Fa` trangresses a limit which represents a state of [pining for the fjords](https://www.youtube.com/watch?v=4vuW6tQ0218).
 
 It is imperative then to incorporate into the formula a limit to account for a scenario where excessive fucking about (denoted as `Fmax`) results in the mildly annoying eventuality of death.
 
