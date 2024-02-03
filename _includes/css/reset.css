@@ -154,12 +154,11 @@ blockquote {
   &:has(dialogue) {
     text-align: left;
     color: var(--lightgray);
-    padding: 2rem;
+    padding: 1.5rem 2rem;
     border-radius: 3px;
     font-family: var(--font-family-secondary);
     font-size: 1rem;
     border: 1px dotted var(--venom);
-    min-height: 150px;
   }
   & dialogue {
     position: relative;
@@ -167,38 +166,26 @@ blockquote {
   & dialogue::before {
     content: " ";
     float: left;
-    padding: 10px;
-    margin: -2rem -8rem;
     border-radius: 3px;
-    width: 4rem;
-    height: 4rem;
+    width: 4.6rem;
+    height: 4.6rem;
     background-size: contain;
     background-repeat: no-repeat;
     display: block;
     border: 1px dotted var(--venom);
     filter: var(--venom-filter);
+    margin: -1.55rem -7.5rem;
   }
-  /* & dialogue::after { */
-  /*   position: absolute; */
-  /*   top: -7px; */
-  /*   left: 0; */
-  /*   content: " "; */
-  /*   float: left; */
-  /*   padding: 10px; */
-  /*   margin: -2rem -8rem; */
-  /*   border-radius: 3px; */
-  /*   width: 4rem; */
-  /*   height: 4.2rem; */
-  /*   display: block; */
-  /*   border: 1px dotted transparent; */
-  /*   background-image: radial-gradient(transparent, black); */
-  /*   background-size: 1px 1px; */
-  /* } */
   @media (max-width: 900px) {
-    font-size: 1.5rem;
+    &:has(dialogue) {
+      min-height: 6.2rem;
+      margin: 0 0 2rem 0;
+    }
     & dialogue::before {
-      margin: unset;
-      margin-inline-end: 1rem;
+      margin: -0.5rem 1rem 0 -1rem;
+      width: 4rem;
+      height: 4rem;
+      float: left;
     }
   }
   & dialogue[vic]::before {
@@ -206,6 +193,11 @@ blockquote {
   }
   & dialogue[ai]::before {
     background-image: url("/assets/images/dialogue-ai.webp");
+  }
+  & dialogue[anonymous]::before {
+    background-image: url("/assets/images/cyberskull.gif");
+    background-position: center;
+    background-size: 70%;
   }
 }
 
