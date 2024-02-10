@@ -10,8 +10,8 @@ addEventListener("DOMContentLoaded", () => {
     const vicsAgeMs = vicsAgeDate.getTime();
     const vicsAgeYrs =
       (vicsAgeMs - LEAP_DAYS_SINCE_1991_MS) / 1000 / 60 / 60 / 24 / 365;
-    getElementById("age").innerHTML = `${vicsAgeYrs.toFixed(
-      13
-    )} <em>years old</em>`;
+    getElementById("age").innerHTML = `${vicsAgeYrs
+      .toFixed(13)
+      .padEnd(15, "0")}`;
   });
 });
