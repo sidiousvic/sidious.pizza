@@ -23,6 +23,10 @@
   }
 }
 
+.navbar > ul > li {
+  list-style: none;
+}
+
 .navbar > ul > li > a:first-letter {
   text-decoration: underline;
   text-decoration-color: var(--venom);
