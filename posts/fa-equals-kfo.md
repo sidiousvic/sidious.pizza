@@ -3,7 +3,7 @@ layout: layouts/post.vto
 title: Fa = k(Fo)
 date: 2023-01-26
 weblog: true
-goodbye: ...Fa with care!
+goodbye: See you and enjoy fucking about.
 tags:
   - life
   - math
@@ -43,19 +43,17 @@ Therefore we have a way to solve for how much we need to fuck about in order to 
 
 ## A slight impediment
 
-Unfortunately, one may fuck about in a way by which the numerical value of `Fa` represents a state of [pining for the fjords](https://www.youtube.com/watch?v=4vuW6tQ0218).
+Unfortunately, you can't fuck about too much before [pining for the fjords](https://www.youtube.com/watch?v=4vuW6tQ0218). When the value of `Fa` exceeds a certain threshold, the amount of finding out collapses.
 
-We must thus incorporate into the formula a limit to account for a scenario where excessive fucking about (denoted as `Fmax`) results in the mildly annoying eventuality of death.
+We must incorporate into the formula a limit to account for a scenario where excessive fucking about (denoted as `Fmax`) results in being _ded_.
 
 The modified formula is as follows,
 
 ```math
 
-Fa = \left\{~Fo<m:kFo,~Fo>=Fmax:Infinity~\right\}
+Fo = \left\{~Fa<Fmax:Fa / k,~Fa>=Fmax:Infinity~\right\}
 
 ```
-
-Where _`k⋅Fo`_ is the formula for knowledge gained from fucking about, _`1{Fo < Fmax}`_ is an indicator function that equals 1 when `Fa` is less than `Fmax` and `Infinity` otherwise, and _`Infinity⋅1{Fo >= Fmax}`_ is a further indicator function that equals `Infinity` when `F` is greater than or equal to `Fmax`, effectively bringing `Fo` to an incomputable-value.
 
 ```bash
 
@@ -73,12 +71,8 @@ Fa (Fucking about)
 
 ```
 
-Thus, when `Fa < Fmax` the amount of finding out is directly proportional to `F`. When `Fa` reaches or exceeds `Fmax`,
-
 This piecewise function demonstrates that while the fucking about generally leads to increased finding out, _there is a crucial limit beyond which it becomes counterproductive to fuck about_.
 
 ![A T-Rex with a full belly](/assets/images/belly-full.webp){ optimize width=800 fetchpriority="high" caption="Be careful" }
 
-Let this be a useful formula by means of which we can compute the optimal amount of finding out, provided we are able to establish the values for `k` and `Fmax` with any degree of practical accuracy.
-
-Thanks to Ville, my dear snowman pal and collaborator in this research. Stay tuned for more, and remember...
+Let this be a useful means by which we can estimate the optimal amount of fucking about, provided we are able to establish the values for `k` and `Fmax` practical accuracy.
