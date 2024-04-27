@@ -11,6 +11,7 @@ tags:
 
 With the help of a Finnish friend and fellow mathematics enthusiast, I've derived an algebraic formula that might prove useful to those wanting to find out.
 
+As we all know, one needs to fuck about in order to find out.
 ![A T-Rex chasing a caveman who was fucking about](/assets/images/fa-equals-k-fo.webp){ optimize width=800 fetchpriority="high" caption="The more you fuck about, the more you find out" }
 
 Let `Fa` be amount you fuck about, and `Fo` how much you do find out. We specify _a priori_ that a direct linear relationship exists between fucking about and finding out. This relationship can be in a simple linear equation, as follows.
@@ -43,9 +44,9 @@ Therefore we have a way to solve for how much we need to fuck about in order to 
 
 ## A slight impediment
 
-Unfortunately, you can't fuck about too much before [pining for the fjords](https://www.youtube.com/watch?v=4vuW6tQ0218). When the value of `Fa` exceeds a certain threshold, the amount of finding out collapses.
+Unfortunately, you can't fuck about too much before unaliving yourself. Therefore, the value of `Fa` exceeds a certain threshold, the amount of finding out collapses.
 
-We must incorporate into the formula a limit to account for a scenario where excessive fucking about (denoted as `Fmax`) results in being _ded_.
+We must incorporate into the formula a limit to account for a scenario where excessive fucking about (denoted as `Fmax`) results in no more you.
 
 The modified formula is as follows,
 
