@@ -4,7 +4,7 @@ title: VIC
 date: 1991-09-24
 visible: true
 order: 3
-goodbye: See you again (cyber)space cowboy
+goodbye:
 ---
 
 <script inline src="/_esnext/vicsage.js"></script>
@@ -88,13 +88,9 @@ A taste for mischief and (mis)adventure helps one escape dogma and yields the co
 
 ### <img loading="lazy" alt="A red swoosh symbol" width=40 height=40 style="transform: translateY(10px); filter: var(--venom-filter)" src="/assets/images/swoosh.webp" /> JUST DO SH\*T™️
 
-They say an idle brain is the devil's fruit shop, or something like that.
+My saying is _Just Do Sh\*t_, which means don't stay there waiting for something to happen, you go and seek it, push it, smoke it. I may not be the smartest cat, but I'm easily bored and boredom breeds adventure.
 
-My saying is _Just Do Sh\*t_, which means don't stay there waiting for something to happen, you go and seek it, push it, smoke it. I may not be the smartest cat, but I'm easily bored and boredom breeds misadventure.
-
-I have had many jobs, I've been a sweeper, video store clerk, gardener, dishwasher, graphic designer, videographer, teacher, and an engineer. I've lived in the desert and near the hutongs and between the green mountains, near industrial wastelands and in the cyberspace too.
-
-Anyway, boredom breeds misadventures. And I know a place full of those...
+I have had many jobs, I've been a sweeper, video store clerk, gardener, dishwasher, graphic designer, videographer, teacher, and an engineer. I've lived in the desert and near the hutongs and between the green mountains, near industrial wastelands and in the big urban Hades...
 
 ![A japanese classroom with an alien drawn on the blackboard](/assets/images/aliens-on-board.webp){ optimize priority="high" width=800 caption="" }
 
@@ -128,9 +124,9 @@ It's disturbed, loud, jammed, cold, hot but you can't say it's boring. I may get
 
 <a name="thanks-for-visiting"></a>
 
-## THANKS FOR VISITING!
+## THAT'S ALL, FOLKS!
 
-_どうもどうも！_ If you want to get in touch, send me a mail at
+_Thanks for visiting._ If you want to get in touch, send me a mail at
 _vic‎@‎sidious.pizza_. Welcome again and I hope you have a great time in this
 website.
 
