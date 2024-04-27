@@ -95,10 +95,6 @@ sup {
   vertical-align: super;
 }
 
-li {
-  list-style: "⌁ ";
-}
-
 ul,
 li {
   & > a {
