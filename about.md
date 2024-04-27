@@ -31,11 +31,8 @@ goodbye: See you again (cyber)space cowboy
 
 ## Hola amig(x)s!
 
-My name is Vic. Welcome to my cyber space. Here's where I
-[spill my brains](/weblog), share [weird music](/swims), computer programs
-(like [_Phantom Pizza_](/phantompizza), the game at the home page) and even
-[haiku](/kaminari-no-kage). Don't forget to visit the [sitemap](/sitemap)
-begin your adventure. Here's a little bit more about me.
+My name is Vic. Welcome to my cyber space. Here's where I spill my brains, share weird music, computer programs and randomly accessed memories. Don't forget to visit the [sitemap](/sitemap) to
+begin your adventure, and here's a little bit more about me.
 
 > “Laugh and the world laughs with you, snore and you sleep alone.” <p class="quote-author">Anthony Burgess</p>
 
@@ -62,19 +59,19 @@ begin your adventure. Here's a little bit more about me.
 
 ![A mountain in a desert city.](/assets/images/chihuahua.webp){ optimize width=800 fetchpriority="low" caption="Chihuahua, Chih. Mexico" }
 
-I was born and raised in the state of Chihuahua, in the north of Mexico. It is an arid region where water and plants are scarce. They say _Xicuahua_ means "dry and sandy place". It's the [birthplace of the burrito](https://en.wikipedia.org/wiki/Burrito#:~:text=Burritos%20are%20a%20traditional%20food%20of%20Ciudad%20Ju%C3%A1rez%2C%20a%20city%20bordering%20El%20Paso%2C%20Texas%2C%20in%20the%20northern%20Mexican%20state%20of%20Chihuahua%2C%20where%20people%20buy%20them%20at%20restaurants%20and%20roadside%20stands.%20Northern%20Mexican%20border%20towns%20like%20Villa%20Ahumada%20have%20an%20established%20reputation%20for%20serving%20burritos.), and one of the areas of [highest scorpionism on the planet](https://www.sciencedirect.com/science/article/abs/pii/0041010194903832).
-
-I have fond memories of playing footy on the dusty streets with neighbors and [empty Frutsi](https://cdn2.excelsior.com.mx/media/styles/image800x600/public/pictures/2019/06/26/2171032.jpg) bottles, oogling at vacant lots and graffiti on the way to school, and picking sugarcane from the dry riverside with grandpa.
+I was born and raised in the state of Chihuahua, in the north of Mexico. It is desert region where water and plants are scarce. They say _Xicuahua_ means "dry and sandy place". It's the [birthplace of the burrito](https://en.wikipedia.org/wiki/Burrito#:~:text=Burritos%20are%20a%20traditional%20food%20of%20Ciudad%20Ju%C3%A1rez%2C%20a%20city%20bordering%20El%20Paso%2C%20Texas%2C%20in%20the%20northern%20Mexican%20state%20of%20Chihuahua%2C%20where%20people%20buy%20them%20at%20restaurants%20and%20roadside%20stands.%20Northern%20Mexican%20border%20towns%20like%20Villa%20Ahumada%20have%20an%20established%20reputation%20for%20serving%20burritos.), and one of the areas of [highest levels of violence and scorpions](https://www.sciencedirect.com/science/article/abs/pii/0041010194903832).
 
 ![A scorpion resting on dry earth.](/assets/images/scorpionism.webp){ optimize width=800 fetchpriority="low" caption="Your deadly neighborhood arachnid" }
 
-In the desert we're bred with a sense of scarcity and danger that makes us loud, hardy, and stubborn. These of course are all double edged swords...
+In the desert we're bred with a sense of scarcity that makes us loud, hardy, and intense. We go about the simple things like they are life or death.
+
+I have fond memories of playing footy on the dusty streets with my neighbors, and vacant lots in flames and grafitti on the school walls, dusty sunsets and rojos with caguamas and rancheras in the evening.
 
 <a name="misled-youth"></a>
 
 ### MISLED YOUTH
 
-I was a bit of a goblin _(_<img loading="lazy" alt="A small Shiba Inu dog, looking sad, smoking a cigarette and with a bottle of Corona beer resting in front of it" src="/assets/images/goblin.webp" width=40 height=40 style="display: inline-block; margin: -0.5rem 0;" />_)_ when a young. Instead of praising math and Jesus, I was playing Zelda, browsing the web and watching MTV. My heroes were fiends like [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and [Angus Young](https://www.youtube.com/watch?v=PCjhgiVnYDs).
+I was a bit of a goblin _(_<img loading="lazy" alt="A small Shiba Inu dog, looking sad, smoking a cigarette and with a bottle of Corona beer resting in front of it" src="/assets/images/goblin.webp" width=40 height=40 style="display: inline-block; margin: -0.5rem 0;" />_)_ when young, Instead of praising Jesus, I was playing Zelda, smoking at school and watching MTV at night. My heroes were fiends like [Jamie Thomas](https://www.youtube.com/watch?v=452Oxqm4E3Y) and [Angus Young](https://www.youtube.com/watch?v=PCjhgiVnYDs). I skipped school, hung out with the wrong gang, and was a generic pain in the a`$$`.
 
 <div class="picture-grid stagger">
 
@@ -83,27 +80,23 @@ I was a bit of a goblin _(_<img loading="lazy" alt="A small Shiba Inu dog, looki
 
 </div>
 
-I skipped school, hung out with the wrong gang, and was a generic pain in the a`$$`.
+Some close calls led me to a better ways, but even tough I behave like an adult now, I think it's important to always keep a little of dumbfuckery alive to add a spice to life.
 
-I also never did my maths homework, which I consider one of my biggest fuck-ups so far and trust me, I've fucked up _many_ times.
-
-Even tough I behave like an adult now, I think it's important to always keep a little of dumbfuckery alive to add a spice to life. A taste for mischief and (mis)adventure helped me escape dogma and gave me courage to dive into the unknown...
+A taste for mischief and (mis)adventure helps one escape dogma and yields the courage to dive into the unknown...
 
 <a name="just-do-shit"></a>
 
-### <img loading="lazy" alt="A red swoosh symbol" width=40 height=40 style="transform: translateY(10px); filter: var(--venom-filter)" src="/assets/images/swoosh.webp" /> JUST DO SH\*T
-
-I am fond of learning because it helps me understand this wicked world a bit more.
-
-I've been a gardener on the Japanese coast, a dishwasher in a desert town, a teacher near the hutongs and rice paddies. One day I'll be a wildlife explorer, own a small brewery or push a tamale truck in Shinjuku.
-
-![A japanese classroom with an alien drawn on the blackboard](/assets/images/aliens-on-board.webp){ optimize priority="high" width=800 caption="Learn to teach, teach to learn" }
-
-[I like cooking up wacky ideas](/projects). I drew [Xeno the Alien](https://www.youtube.com/watch?v=cu3iGtqeYD4) for my 4th grade classroom, turned nightmares into awkward doomer rock when making [NEMESIS](https://open.spotify.com/intl-ja/album/1qHUvcdIbPv4CTNTDWlzPU?si=LaftNGr6Ska3ZAMejh1obA), and studied the dark arts of mathematics when designing [SPACE PHANTOM](/spacephantom).
+### <img loading="lazy" alt="A red swoosh symbol" width=40 height=40 style="transform: translateY(10px); filter: var(--venom-filter)" src="/assets/images/swoosh.webp" /> JUST DO SH\*T™️
 
 They say an idle brain is the devil's fruit shop, or something like that.
 
-Anyway, boredom breeds misadventures. And I know a place full of those!
+My saying is _Just Do Sh\*t_, which means don't stay there waiting for something to happen, you go and seek it, push it, smoke it. I may not be the smartest cat, but I'm easily bored and boredom breeds misadventure.
+
+I have had many jobs, I've been a sweeper, video store clerk, gardener, dishwasher, graphic designer, videographer, teacher, and an engineer. I've lived in the desert and near the hutongs and between the green mountains, near industrial wastelands and in the cyberspace too.
+
+Anyway, boredom breeds misadventures. And I know a place full of those...
+
+![A japanese classroom with an alien drawn on the blackboard](/assets/images/aliens-on-board.webp){ optimize priority="high" width=800 caption="" }
 
 <a name="tokyo-boy"></a>
 
@@ -111,9 +104,9 @@ Anyway, boredom breeds misadventures. And I know a place full of those!
 
 > "What a strange thing! To be alive beneath ginkgo leaves."
 
-I love Tokyo because it's mad, not in a good of bad way, but in a **fun** way.
+I love Tokyo because it's mad in a **fun** way.
 
-You can swing through its streets like a jungle, eat at a new joint every time and never run out, break no laws and still feel like a villain!
+Swing through its streets like a jungle, eat at a new joint every time and never run out, break no laws and still feel like a villain.
 
 <div class="picture-grid">
 
@@ -122,7 +115,7 @@ You can swing through its streets like a jungle, eat at a new joint every time a
 
 </div>
 
-Fried chicken by the _conbini_, blossoms and booze by the river, dystopic designs and tenebrous shrines, suits and skirts and gangsters and weirdos.
+Loiter by the conbini, watch blossoms bloom and booze by the river, hunt dystopic designs by tenebrous shrines and between milk carton buildings, drink and smoke and eat sushi with the suits standing up at night...
 
 <div class="picture-grid">
 
@@ -131,7 +124,7 @@ Fried chicken by the _conbini_, blossoms and booze by the river, dystopic design
 
 </div>
 
-You can say it's demented, jammed, cold, but you can't say it's boring. I may get sick of it all someday... but I will always call it home.
+It's disturbed, loud, jammed, cold, hot but you can't say it's boring. I may get sick of it all someday... but I will always call it home.
 
 <a name="thanks-for-visiting"></a>
 
