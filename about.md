@@ -29,7 +29,7 @@ goodbye:
 </article>
 </div>
 
-## Hola amig(x)s!
+## Hola amig(x)s,
 
 My name is Vic. Welcome to my cyber space. Here's where I spill my brains, share weird music, computer programs and randomly accessed memories. Don't forget to visit the [sitemap](/sitemap) to
 begin your adventure, and here's a little bit more about me.
@@ -90,7 +90,7 @@ A taste for mischief and (mis)adventure helps one escape dogma and yields the co
 
 My saying is _Just Do Sh\*t_, which means don't stay there waiting for something to happen, you go and seek it, push it, smoke it. I may not be the smartest cat, but I'm easily bored and boredom breeds adventure.
 
-I have had many jobs, I've been a sweeper, video store clerk, gardener, dishwasher, graphic designer, videographer, teacher, and an engineer. I've lived in the desert and near the hutongs and between the green mountains, near industrial wastelands and in the big urban Hades...
+I have had many jobs, I've been a sweeper, video store clerk, gardener, dishwasher, graphic designer, videographer, teacher, and an engineer. I've lived in the desert and near the hutongs and between the green mountains, near industrial wastelands and in the dystopic urban jungle.
 
 ![A japanese classroom with an alien drawn on the blackboard](/assets/images/aliens-on-board.webp){ optimize priority="high" width=800 caption="" }
 
@@ -111,7 +111,7 @@ Swing through its streets like a jungle, eat at a new joint every time and never
 
 </div>
 
-Loiter by the conbini, watch blossoms bloom and booze by the river, hunt dystopic designs by tenebrous shrines and between milk carton buildings, drink and smoke and eat sushi with the suits standing up at night...
+Loiter by the conbini, watch blossoms bloom and booze by the river, find cyberpunk designs next to tenebrous shrines and between milk carton buildings, drink and smoke and eat sushi with the suits and friends standing up at night...
 
 <div class="picture-grid">
 
@@ -120,7 +120,7 @@ Loiter by the conbini, watch blossoms bloom and booze by the river, hunt dystopi
 
 </div>
 
-It's disturbed, loud, jammed, cold, hot but you can't say it's boring. I may get sick of it all someday... but I will always call it home.
+It's a meltdown, disturbed, loud, jammed, cold, hot but you can't say it's boring. I may get sick of it all someday... but I will always call it home.
 
 <a name="thanks-for-visiting"></a>
 
