@@ -12,6 +12,7 @@ import {
   config,
   draw,
   Engine,
+  GameState,
   moveWithMouse,
   moveWithVelocity,
   Phantom,
@@ -61,7 +62,7 @@ styles.textContent = `
 document.head.appendChild(styles);
 
 const ENEMY_RANDOM_SPAWN_SPEEDS = [-5, -4, -3 - 2, 2, 3, 4, 5];
-const ZERO_SPEED = { x: 0, y: 0 };
+const ZERO_SPEED = 0;
 const SPRITE_DIMENSION = isMobile ? 30 : 50;
 const SCORE_UPDATER =
   (Math.pow(SPRITE_DIMENSION, 2) / (innerHeight * innerWidth)) * 1000;
@@ -82,34 +83,39 @@ const GAME_PROMPTS = [
 const urlContainsPhantomPizza = /phantompizza/i.test(location.href);
 
 const { sprites, score, sound, mouse, c } = config({
-  GAME_TITLE: urlContainsPhantomPizza ? "PHANTOM PIZZA" : "SIDIOUS.PIZZA",
-  DISPLAY_SCORE: true,
-  START_SCREEN: true,
-  START_SCREEN_TITLE_FONT: "var(--font-family-title)",
-  START_SCREEN_TEXT_FONT: "var(--font-family)",
-  SCORE_FONT: "var(--font-family-title)",
-  BG_COLOR_HEX: "#0d1117",
-  FG_COLOR_HEX: "var(--venom)",
-  FILTER: "var(--filter-invert)",
-  START_TEXT_A: isMobile
+  gameTitle: urlContainsPhantomPizza ? "PHANTOM PIZZA" : "SIDIOUS.PIZZA",
+  displayScore: true,
+  startScreen: true,
+  startScreenTitleFont: "var(--font-family-title)",
+  startScreenTextFont: "var(--font-family)",
+  scoreFont: "var(--font-family-title)",
+  bgColorHex: "#0d1117",
+  fgColorHex: "var(--venom)",
+  filter: "var(--filter-invert)",
+  startTextA: isMobile
     ? "<em>TOUCH</em> TO START"
     : '<em style="filter: var(--filter-invert)">ENTER</em> AT YOUR OWN PERIL',
-  START_TEXT_B:
-    '危険ゾーンに <em style="filter: var(--filter-invert)">投入</em>',
-  SPRITES: [
+  startTextB: '危険ゾーンに <em style="filter: var(--filter-invert)">投入</em>',
+  sprites: [
     "/assets/images/enemyl.webp",
     "/assets/images/enemyr.webp",
     "/assets/images/swoosh.webp",
     "/assets/images/player.gif",
   ],
-  AUDIOS: [
+  audios: [
     { url: "/assets/music/swoosh.wav", volume: 0.3 },
     { url: "/assets/music/death.wav", volume: 0.9 },
     { url: "/assets/music/phantompizza.wav", volume: 0.8 },
   ],
 });
 
-const z = {
+type Phantoms = {
+  player: Phantom;
+  swoosh: Phantom;
+  enemies: Phantom[];
+};
+
+const phantoms = {
   player: Phantom(mouse)(SPRITE_DIMENSION)(sprites.player)(ZERO_SPEED),
   swoosh: Phantom(randomSpawn(SPRITE_DIMENSION))(SPRITE_DIMENSION)(
     sprites.swoosh
@@ -119,47 +125,52 @@ const z = {
       randomElement(ENEMY_RANDOM_SPAWN_SPEEDS)
     ),
   ],
+};
+
+const z: GameState<Phantoms> = {
+  phantoms,
   sound,
   score,
   mouse,
 };
 
 requestAnimationFrame(() => {
-  Engine(c)(z)(
+  Engine<Phantoms>(c)(z)(
     (u) => (
       u.score.value === 0 &&
-        ((document.getElementById("score").innerHTML = "START!"),
+        ((document.getElementById("score")!.innerHTML = "START!"),
         u.sound.phantompizza.pause()),
       u.score.value > 1 && u.sound.phantompizza.play().catch(() => {}),
-      moveWithMouse(u.player)(u.mouse),
-      draw(c)(u.player),
-      collide(u.swoosh)(u.player)(
+      moveWithMouse(u.phantoms.player)(u.mouse),
+      draw(c)(u.phantoms.player),
+      collide(u.phantoms.swoosh)(u.phantoms.player)(
         () => (
           updateScore(u.score)(SCORE_UPDATER),
           !(~~u.score.value % 3)
-            ? ((document.getElementById("score").style.animation =
+            ? ((document.getElementById("score")!.style.animation =
                 "shake .5s infinite"),
-              (score.sprite.innerHTML =
+              (score.sprite!.innerHTML =
                 randomElement(GAME_PROMPTS).toUpperCase()))
-            : (document.getElementById("score").style.animation = "none"),
-          respawn(u.swoosh),
+            : (document.getElementById("score")!.style.animation = "none"),
+          respawn(u.phantoms.swoosh),
           u.sound.swoosh.play().catch(() => {}),
-          u.enemies.push(
+          u.phantoms.enemies.push(
             Phantom(randomSpawn(SPRITE_DIMENSION))(SPRITE_DIMENSION)(
               sprites.enemyr
             )(randomElement(ENEMY_RANDOM_SPAWN_SPEEDS))
           )
         )
       ),
-      draw(c)(u.swoosh),
-      u.enemies.map(
-        (e) => (
+      draw(c)(u.phantoms.swoosh),
+      u.phantoms.enemies.map(
+        (e: Phantom) => (
+          //@ts-ignore
           (u.enemy = e),
-          collide(e)(u.player)(
+          collide(e)(u.phantoms.player)(
             () => (
-              respawn(u.swoosh),
+              respawn(u.phantoms.swoosh),
               (u.score.value = 0),
-              (u.enemies.length = 0),
+              (u.phantoms.enemies.length = 0),
               u.sound.death.play().catch(() => {})
             )
           ),
