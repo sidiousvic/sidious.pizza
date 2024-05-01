@@ -199,7 +199,7 @@ export const respawn = (o: Phantom) => (
  * @example updateScore(score)(1) ⚡︎
  */
 export const updateScore = (score: Score) => (amount: number) => (
-  (score.value += amount), (score.sprite.innerHTML = String(~~score.value))
+  (score.value += amount), (score.sprite!.innerHTML = String(~~score.value))
 );
 
 /**
