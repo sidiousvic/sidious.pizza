@@ -99,7 +99,12 @@ ul,
 li {
   & > a {
     margin-left: 0.5rem;
+    list-style-type: none;
   }
+}
+
+ul li {
+  list-style-type: "⌁ ";
 }
 
 ol li {
