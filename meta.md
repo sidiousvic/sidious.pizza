@@ -23,8 +23,6 @@ thead {
 
 This website is built with web-performance, accessibility, and **fun™️** as core operational principles.
 
-The single-tone low-fi visual aesthetic was chosen to pair with the minimal and machine-translatable writing style.
-
 ## Design principles
 
 |           |                                                                                                                                    |
@@ -42,7 +40,9 @@ Configurable graphics <a href="/config" class="border tag button">Fuck around he
 
 Mobile-friendly, I hope
 
-Hipster friendly (lowres aesthetic)
+The single-tone low-fi visual aesthetic (hipster friendly)
+
+Minimal, machine-translatable writing style
 
 ## Technologies used
 
