@@ -14,4 +14,4 @@ const setCurtainOpacityToZero = (z: State) =>
 
 const liftCurtain = pipe(inject(config), mutate(setCurtainOpacityToZero));
 
-addEventListener("screenDimensionsReady", liftCurtain);
+addEventListener("load", liftCurtain);

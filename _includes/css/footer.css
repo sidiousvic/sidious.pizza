@@ -1,6 +1,6 @@
 footer {
+  grid-area: footer;
   display: flex;
-  width: 100%;
   justify-content: center;
   align-items: center;
   color: var(--darksteel);
@@ -8,7 +8,7 @@ footer {
 }
 
 footer > p {
-  margin-top: 5px;
+  margin: 0;
   font-family: var(--font-family-secondary);
   line-height: normal;
   text-align: center;

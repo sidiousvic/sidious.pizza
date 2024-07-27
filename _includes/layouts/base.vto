@@ -26,11 +26,8 @@
       title="{{ site.title }}">
 
     <link rel="icon" type="image/x-icon" href="/assets/images/pizzaslice.webp">
+    <style> {{ include "/css/curtain.css" }} </style>
   </head>
-  <body>
-
-
-    {{ include "templates/navbar.vto" }}
 
 <!--  .-----.
     /  .----.\
@@ -45,17 +42,26 @@
 S I D I O U S . P I Z Z A  -->
 
 
-    <style> {{ include "/css/curtain.css" }} </style>
+
+  <body>
+
+    {{ include "templates/navbar.vto" }}
 
     <div id="curtain"></div>
 
-    <main id="main" class="{{ page.bodyClass }}">
+    <main id="main" class="{{ page.bodyClass }} border-3d">
       {{ content }}
+
+    {{ if page.data.info }} 
+      {{ include "templates/page-info.vto" }}
+    {{ /if }}
+
     </main>
 
-    <footer id="footer">
+    <footer id="footer" class="border-3d">
       <p id="footer-rights">
-        <em>®</em> 2024 <a href="https://github.com/sidiousvic"><em>"sidiousvic"</em></a> All Rights Reserved.
+        <em>®</em> 2025
+        <a href="https://github.com/sidiousvic"><em>"sidiousvic"</em></a> All Rights Reserved.
       </p>
       <p hidden id="footer-updated">
         <a href="https://github.com/sidiousvic/sidious.pizza/commits/master/">
@@ -64,9 +70,6 @@ S I D I O U S . P I Z Z A  -->
       </p>
     </footer>
 
-  {{ if page.data.info }} 
-    {{ include "templates/page-info.vto" }}
-  {{ /if }}
 
   <script inline src="/_esnext/obscurenavbarlinksonmobile.js"></script>
 
@@ -75,8 +78,6 @@ S I D I O U S . P I Z Z A  -->
   <script inline src="/_esnext/getcolorsfromstorage.js"></script>
 
   <script inline src="/_esnext/gettypographyfromstorage.js"></script>
-
-  <script inline src="/_esnext/makemainfillupscreen.js"></script>
 
   <script defer inline src="/_esnext/keyboardnav.js"></script>
 

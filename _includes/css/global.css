@@ -3,6 +3,9 @@
   border-radius: 3px;
 }
 
+.border-3d {
+}
+
 .ascii {
   font-feature-settings: "emoji" 0;
   -webkit-font-feature-settings: "emoji" 0;

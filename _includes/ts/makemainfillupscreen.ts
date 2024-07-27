@@ -4,7 +4,6 @@ import { inject, mix, mutate, pipe } from "./utils.ts";
 const MAIN_PADDING_PX = -20;
 
 type Config = {
-  navbarId: string;
   footerId: string;
   mainId: string;
   screenDimensionsReadyEventName: string;
@@ -12,30 +11,12 @@ type Config = {
 };
 
 const config: Config = {
-  navbarId: "navbar",
   footerId: "footer",
   mainId: "main",
   screenDimensionsReadyEventName: "screenDimensionsReady",
 };
 
 type State = Config & Event;
-
-const computeNavbarOffsetHeight = (z: State) =>
-  getElementById(z.navbarId).offsetHeight;
-
-const computeNavbarPaddingTop = (z: State) =>
-  parseInt(
-    window
-      .getComputedStyle(getElementById(z.navbarId))
-      .getPropertyValue("padding-top")
-  );
-
-const computeNavbarPaddingBottom = (z: State) =>
-  parseInt(
-    window
-      .getComputedStyle(getElementById(z.navbarId))
-      .getPropertyValue("padding-bottom")
-  );
 
 const computeFooterMarginTop = (z: State) =>
   parseInt(
@@ -70,12 +51,10 @@ const computeMainPaddingBottom = (z: State) =>
 
 const makeMainElementFillUpScreen = pipe(
   inject(config),
+  mix((z: State) => console.log(z)),
   mix((z: State) => ({
     computedMainHeight:
       window.innerHeight -
-      (computeNavbarPaddingTop(z) +
-        computeNavbarPaddingBottom(z) +
-        computeNavbarOffsetHeight(z)) -
       (computeFooterMarginTop(z) +
         computeFooterMarginBottom(z) +
         computeFooterOffsetHeight(z)) -

@@ -15,6 +15,20 @@ body {
   }
 }
 
+body {
+  display: grid;
+  grid-template-columns: 20vw 80vw;
+  grid-template-rows: 95vh 5vh;
+  grid-template-areas:
+    "navbar main"
+    "footer footer";
+
+  & > * {
+    padding: 0;
+    margin: 0;
+  }
+}
+
 #frame {
   border: 1px dotted var(--venom);
   height: 100vh;
@@ -29,12 +43,14 @@ body {
 }
 
 main {
+  grid-area: main;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 0 20vw 1rem 20vw;
-  overflow: hidden;
+  justify-content: flex-start;
+  padding: 5vw 20vw 1rem 20vw;
+  overflow-y: auto;
+  overflow-x: hidden;
 
   @media (max-width: 500px) {
     margin: 0 1vw;
