@@ -29,6 +29,12 @@ body {
   }
 }
 
+body.focus {
+  grid-template-columns: 100vw !important;
+  grid-template-rows: 100vh !important;
+  grid-template-areas: "main" !important;
+}
+
 #frame {
   border: 1px dotted var(--venom);
   height: 100vh;

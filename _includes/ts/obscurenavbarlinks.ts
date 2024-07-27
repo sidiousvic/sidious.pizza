@@ -1,18 +1,18 @@
 import { Try } from "./dontpanic.ts";
 import { inject, mutate, pipe } from "./utils.ts";
 
-type Config = { navbarLinksID: string };
+type Config = { navbarId: string };
 
-const config: Config = { navbarLinksID: "navbar-links" };
+const config: Config = { navbarId: "navbar" };
 
 type State = Config & Event;
 
-const obscureNavbarLinksOnMobile = (z: State) =>
-  Try(document.getElementById(z.navbarLinksID))(
-    `ID ${z.navbarLinksID} not found.`,
-  ).style.display = "none";
+const obscureNavbarLinks = (z: State) =>
+  (Try(document.getElementById(z.navbarId))(
+    `ID ${z.navbarId} not found.`
+  ).style.display = "none");
 
 addEventListener(
   "DOMContentLoaded",
-  pipe(inject(config), mutate(obscureNavbarLinksOnMobile)),
+  pipe(inject(config), mutate(obscureNavbarLinks))
 );
