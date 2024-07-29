@@ -1,5 +1,5 @@
 .navbar {
-  font-size: small;
+  font-size: 0.8rem;
   text-transform: uppercase;
   grid-area: navbar;
   flex-direction: column;
@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 3vh 2vw;
+  padding: 15px 0 0 30px;
   margin: 0 0 0 0;
   column-gap: 2rem;
   mix-blend-mode: var(--blend-mode);
@@ -19,11 +19,6 @@
       text-decoration: none;
     }
   }
-
-  @media (max-width: 768px) {
-    margin: 0 0 1rem 0;
-    padding: 2vh 5vw 0 5vw;
-  }
 }
 
 .navbar-home {
@@ -31,7 +26,7 @@
   color: var(--venom);
   font-family: var(--font-family-title);
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .navbar > ul > li {
@@ -66,6 +61,7 @@
   column-gap: 2rem;
   align-items: center;
   justify-content: space-around;
+  text-wrap: nowrap;
 
   &[aria-current="page"] {
     font-weight: bold;

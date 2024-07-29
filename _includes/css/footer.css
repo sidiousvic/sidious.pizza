@@ -1,18 +1,34 @@
 footer {
-  grid-area: footer;
+  position: fixed;
+  top: 0;
+  right: -5px;
+  width: 40px;
+  height: 100%;
+  padding:  0;
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
-  color: var(--darksteel);
-  font-size: 0.9rem;
+  font-size: 0.6rem;
+  background: transparent;
+  writing-mode: vertical-rl;
+  text-align: left;
+  color: var(--darksteel) !important;
 }
 
 footer > p {
+  color: var(--darksteel) !important;
   margin: 0;
   font-family: var(--font-family-secondary);
   line-height: normal;
   text-align: center;
   text-wrap: wrap;
+  background: var(--darkgray) !important;
+  padding: 9px;
+  border-radius: 0 0 4px 4px;
+}
+
+#footer-updated > a, #last-updated-datetime {
+  color: var(--venom) !important;
 }
 
 @media (max-width: 500px) {
