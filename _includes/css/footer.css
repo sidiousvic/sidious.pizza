@@ -24,7 +24,7 @@ footer > p {
   text-wrap: wrap;
   background: var(--darkgray) !important;
   padding: 9px;
-  border-radius: 0 0 4px 4px;
+  border-radius: 4px 0 0 0;
 }
 
 #footer-updated > a, #last-updated-datetime {

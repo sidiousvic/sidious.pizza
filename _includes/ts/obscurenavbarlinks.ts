@@ -12,7 +12,18 @@ const obscureNavbarLinks = (z: State) =>
     `ID ${z.navbarId} not found.`
   ).style.display = "none");
 
+const makeGridSingleColumn = () =>
+  (document.body.style.gridTemplateColumns = "100vw");
+
+const makeGridSingleArea = () =>
+  (document.body.style.gridTemplateAreas = '"main"');
+
 addEventListener(
   "DOMContentLoaded",
-  pipe(inject(config), mutate(obscureNavbarLinks))
+  pipe(
+    inject(config),
+    mutate(obscureNavbarLinks),
+    mutate(makeGridSingleColumn),
+    mutate(makeGridSingleArea)
+  )
 );
