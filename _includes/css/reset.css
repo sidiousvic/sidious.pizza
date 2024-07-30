@@ -16,10 +16,10 @@ body {
 }
 
 body {
-  animation: glow 2s ease-in-out infinite;
+  /*animation: glow 2s ease-in-out infinite;*/
   display: grid;
   grid-template-columns: 20vw auto;
-  grid-template-rows: 95vh 5vh;
+  grid-template-rows: 100vh;
   grid-template-areas: "navbar main";
 
   @media (max-width: 1050px) {

@@ -11,16 +11,6 @@ order: 0
     }
 </style>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-	if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-		const main = document.querySelector('#main');	
-		main.innerHTML = '';
-		window.location.href = '/sitemap';
-	}
-});
-</script>
-
 <h2>Hello, my name is <em>Vic</em>.</h2>
 <h2>Welcome to my website.</h2>
 
