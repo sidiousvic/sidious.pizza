@@ -17,7 +17,7 @@ body {
 
 body {
   display: grid;
-  grid-template-columns: 21vw auto;
+  grid-template-columns: 22vw auto;
   grid-template-rows: 95vh 5vh;
   grid-template-areas: "navbar main" "footer main";
 

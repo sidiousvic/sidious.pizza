@@ -9,12 +9,12 @@ footer {
   padding: 0;
   font-size: .6rem;
   display: flex;
-  color: var(--darksteel) !important;
+  color: var(--venom);
   justify-content: center;
 }
 
 footer > p {
-  color: var(--darksteel) !important;
+  color: var(--venom);
   margin: 0;
   font-family: var(--font-family-secondary);
   line-height: normal;
@@ -26,7 +26,7 @@ footer > p {
 }
 
 #footer-updated > a, #last-updated-datetime {
-  color: var(--venom) !important;
+  color: var(--venom);
 }
 
 @media (max-width: 500px) {

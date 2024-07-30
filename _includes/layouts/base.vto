@@ -27,6 +27,7 @@
 
     <link rel="icon" type="image/x-icon" href="/assets/images/pizzaslice.webp">
     <style> {{ include "/css/curtain.css" }} </style>
+    <style> {{ include "/css/glow.css" }} </style>
   </head>
 
 <!--  .-----.
@@ -48,6 +49,8 @@ S I D I O U S . P I Z Z A  -->
     {{ include "templates/navbar.vto" }}
 
     <div id="curtain"></div>
+
+    <div id="glow"></div>
 
     <main id="main" class="{{ page.bodyClass }}">
       {{ content }}
