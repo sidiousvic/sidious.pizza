@@ -23,7 +23,6 @@
   @media (max-width: 1050px) {
     display: none;
   }
-  border-right: 1px ridge var(--venom);
 }
 
 .navbar-home {

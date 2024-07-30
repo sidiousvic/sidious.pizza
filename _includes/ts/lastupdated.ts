@@ -1,5 +1,5 @@
 import { getElementById } from "./domutils";
-import { inject, isMobile, mutate, pipe } from "./utils";
+import { inject, mutate, pipe } from "./utils";
 
 type Config = {
   repoUrl: "https://api.github.com/repos/sidiousvic/sidious.pizza";
@@ -9,9 +9,9 @@ type Config = {
 const config: Config = {
   repoUrl: "https://api.github.com/repos/sidiousvic/sidious.pizza",
   dateTimeFormat: new Intl.DateTimeFormat("en-US", {
-    weekday: isMobile(navigator.userAgent) ? "short" : "long",
+    weekday: "narrow",
     year: "numeric",
-    month: "short",
+    month: "narrow",
     day: "numeric",
     hour: "2-digit",
     minute: "2-digit",
@@ -30,7 +30,7 @@ const updateLastUpdated = pipe(
         getElementById("last-updated-datetime") as HTMLSpanElement
       ).innerText = `${config.dateTimeFormat.format(
         new Date((await promise).pushed_at)
-      )} ${isMobile(navigator.userAgent) ? " Tokyo" : " Asia/Tokyo"}`)
+      )} Tokyo`)
   )
 );
 

@@ -1,18 +1,16 @@
 footer {
-  position: fixed;
-  top: 0;
-  right: -5px;
-  width: 40px;
-  height: 100%;
-  padding:  0;
-  display: flex;
+  grid-area: footer;
+  text-align: left;
+  background: 0 0;
   justify-content: end;
   align-items: center;
-  font-size: 0.6rem;
-  background: transparent;
-  writing-mode: vertical-rl;
-  text-align: left;
+  height: 50px;
+  width: 100%;
+  padding: 0;
+  font-size: .6rem;
+  display: flex;
   color: var(--darksteel) !important;
+  justify-content: center;
 }
 
 footer > p {
@@ -24,7 +22,7 @@ footer > p {
   text-wrap: wrap;
   background: var(--darkgray) !important;
   padding: 9px;
-  border-radius: 4px 0 0 0;
+  border-radius: 5px 5px 0 0;
 }
 
 #footer-updated > a, #last-updated-datetime {
