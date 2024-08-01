@@ -5,7 +5,7 @@
   flex-direction: column;
   letter-spacing: 0.1rem;
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: flex-start;
   padding: 15px 0 0 30px;
   margin: 0 0 0 0;
@@ -26,11 +26,29 @@
 }
 
 .navbar-home {
+  margin-top: 1rem;
   grid-area: banner;
   color: var(--venom);
   font-family: var(--font-family-title);
   text-align: center;
   font-size: 1rem;
+  border-radius: 20px;
+  padding: 10px 15px;
+  text-decoration: none !important;
+  background: var(--venom);
+  box-shadow: -1px -1px 11px 2px inset black;
+  color: var(--darkgray);
+  transition: all 0.2s ease-in-out, color 0.3s ease-in-out;
+
+  &:hover {
+    color: var(--darkgray);
+    transform: scale(1.05);
+  }
+
+  &:focus {
+    transform: scale(1);
+    border-radius: 20px;
+  }
 }
 
 .navbar > ul > li {
@@ -47,12 +65,6 @@
 
 .navbar > a,
 .navbar > ul > li > a {
-  text-decoration: none !important;
-  &:hover {
-    text-decoration: underline;
-    text-decoration-color: var(--venom);
-    text-decoration-style: dotted;
-  }
 }
 
 #navbar-links {

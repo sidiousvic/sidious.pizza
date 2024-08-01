@@ -18,12 +18,13 @@ body {
 body {
   display: grid;
   grid-template-columns: 22vw auto;
-  grid-template-rows: 95vh 5vh;
-  grid-template-areas: "navbar main" "footer main";
+  grid-template-rows: 100vh;
+  grid-template-areas: "navbar main";
 
   @media (max-width: 1050px) {
     grid-template-columns: 100vw;
-    grid-template-areas: "main" "main";
+    grid-template-rows: 100vh;
+    grid-template-areas: "main";
   }
 }
 
@@ -65,10 +66,11 @@ main {
 
 button {
   transition: color, background, background-color 0.3s ease-in-out;
+  height: 50px;
   width: auto;
   color: var(--venom);
-  padding: 0.5rem;
-  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
   font-family: var(--font-family-title);
   font-size: 1.3rem;
   font-weight: 400;
@@ -76,19 +78,21 @@ button {
   border: var(--venom) dotted 1px;
   cursor: pointer;
   outline: none;
+  box-shadow: 0 0 5px black;
 
   &:hover {
     box-shadow: -1px -2px 11px black inset;
     background-color: var(--venom);
     color: var(--darkgray);
     border: black solid 1px;
+    border-radius: 20px;
   }
 
   &:focus {
     box-shadow: -1px -2px 11px black inset;
     background-color: var(--venom);
     color: var(--darkgray);
-    border-radius: 10px;
+    border-radius: 20px;
   }
 }
 

@@ -15,6 +15,9 @@ const obscureNavbarLinks = (z: State) =>
 const makeGridSingleColumn = () =>
   (document.body.style.gridTemplateColumns = "100vw");
 
+const makeGridSingleRow = () =>
+  (document.body.style.gridTemplateRows = "100vh");
+
 const makeGridSingleArea = () =>
   (document.body.style.gridTemplateAreas = '"main"');
 
@@ -24,6 +27,7 @@ addEventListener(
     inject(config),
     mutate(obscureNavbarLinks),
     mutate(makeGridSingleColumn),
+    mutate(makeGridSingleRow),
     mutate(makeGridSingleArea)
   )
 );

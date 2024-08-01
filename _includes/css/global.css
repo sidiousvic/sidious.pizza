@@ -16,6 +16,7 @@
 
 .glow {
   box-shadow: 0px -20px 13rem 13px inset var(--venom);
+  animation: glow 1s infinite;
 }
 
 @keyframes glow {
