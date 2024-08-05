@@ -63,10 +63,6 @@
   text-decoration-thickness: 0.1rem;
 }
 
-.navbar > a,
-.navbar > ul > li > a {
-}
-
 #navbar-links {
   color: whitesmoke;
   padding: 0.5rem;
