@@ -3,8 +3,7 @@ import { Try } from "./dontpanic.ts";
 export const removeClassContaining = (type?: string) =>
   [...document.documentElement.classList].map(
     (c) =>
-      c.includes(type as string) &&
-      document.documentElement.classList.remove(c),
+      c.includes(type as string) && document.documentElement.classList.remove(c)
   );
 
 export const removeStoredItem = (type?: string) =>

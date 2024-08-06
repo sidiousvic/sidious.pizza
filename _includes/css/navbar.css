@@ -26,8 +26,6 @@
 }
 
 .navbar-home {
-  margin-top: 1rem;
-  grid-area: banner;
   color: var(--venom);
   font-family: var(--font-family-title);
   text-align: center;
@@ -35,12 +33,12 @@
   border-radius: 20px;
   padding: 10px 15px;
   text-decoration: none !important;
-  background: var(--venom);
   box-shadow: -1px -1px 11px 2px inset black;
-  color: var(--darkgray);
-  transition: all 0.2s ease-in-out, color 0.3s ease-in-out;
+  color: var(--venom);
+  transition: all 0.1s ease-in-out, color 0.3s ease-in-out;
 
   &:hover {
+    background-color: var(--venom);
     color: var(--darkgray);
     transform: scale(1.05);
   }
@@ -106,6 +104,7 @@
   top: 20px;
   right: 20px;
   height: 25px;
+  transition: all 0.1s ease-in-out;
 }
 
 .config-buttons button {
@@ -113,24 +112,23 @@
   border-radius: 50%;
   height: 25px;
   width: 25px;
-  padding: 0.5rem;
+  padding: 5px;
   font-size: 0.8rem;
   cursor: pointer;
-  box-shadow: 0 0 5px 1px inset black;
+  text-align: center;
+  border: 1px dotted var(--venom);
+  box-shadow: none;
 }
 
 .config-buttons button[data-value="fire"] {
-  background-color: #ff1700ff !important;
+  content: "🔥";
 }
 
 .config-buttons button[data-value="venom"] {
-  background-color: #00ff00ff !important;
 }
 
 .config-buttons button[data-value="phantom"] {
-  background-color: hsla(242, 88.4%, 66.3%, 1) !important;
 }
 
 .config-buttons button[data-value="moon"] {
-  background-color: white !important;
 }
