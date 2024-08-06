@@ -15,5 +15,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px -200px 50rem -175px inset var(--venom);
+  box-shadow: 0px -200px 15rem -175px inset var(--venom);
+}
+
+@keyframes glowing {
+  0% {
+    box-shadow: 0px -200px 50rem -175px inset var(--venom);
+  }
+  50% {
+    box-shadow: 0px -200px 50rem -175px inset var(--venom);
+  }
+  100% {
+    box-shadow: 0px -200px 50rem -175px inset var(--venom);
+  }
 }

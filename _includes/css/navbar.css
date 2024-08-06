@@ -63,6 +63,10 @@
   text-decoration-thickness: 0.1rem;
 }
 
+.navbar ul > li:last-child {
+  margin-bottom: 0;
+}
+
 #navbar-links {
   color: whitesmoke;
   padding: 0.5rem;

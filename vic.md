@@ -18,8 +18,7 @@ goodbye:
 
 |         |                                                                                                |
 | ------- | ---------------------------------------------------------------------------------------------- |
-| _Name_  | Victor René Molina Rodríguez _(Vic Sidious)_                                                   |
-| _Work_  | Programmer, Axewielder, Generic Dark Lord                                                      |
+| _Name_  | Victor René Molina Rodríguez _(Vic)_                                                           |
 | _Lives_ | [澁谷東京 <em>(Shibuya, Tokyo)</em>](https://goo.gl/maps/1YfuGi5HYgRpBjN7A)                    |
 | _Born_  | [Chihuahua, Mexico](https://goo.gl/maps/Ja9LxnZ6kosdRa586)                                     |
 | _Age_   | <span id="age">?</span>                                                                        |
@@ -29,18 +28,11 @@ goodbye:
 </article>
 </div>
 
-## Hola amig(x)s,
-
-My name is Vic. Welcome to my cyber space. Here's where I spill my brains, share weird music, computer programs and randomly accessed memories. Don't forget to visit the [sitemap](/sitemap) to
-begin your adventure, and here's a little bit more about me.
-
 > “Laugh and the world laughs with you, snore and you sleep alone.” <p class="quote-author">Anthony Burgess</p>
 
 <div class="contents">
 
 ### Index
-
-<!-- - [BIOGRAPHY](#bio) -->
 
 - [BORN AND RAISED IN THE DESERT](#born-and-raised)
 - [MISLED YOUTH](#misled-youth)
@@ -57,15 +49,13 @@ begin your adventure, and here's a little bit more about me.
 
 ### BORN AND RAISED IN THE DESERT
 
+I was born and raised in the state of Chihuahua, in the north of Mexico. It is a desert region where water and plants are scarce. _Xicuahua_ means "dry and sandy place". It's the [birthplace of the burrito](https://en.wikipedia.org/wiki/Burrito#:~:text=Burritos%20are%20a%20traditional%20food%20of%20Ciudad%20Ju%C3%A1rez%2C%20a%20city%20bordering%20El%20Paso%2C%20Texas%2C%20in%20the%20northern%20Mexican%20state%20of%20Chihuahua%2C%20where%20people%20buy%20them%20at%20restaurants%20and%20roadside%20stands.%20Northern%20Mexican%20border%20towns%20like%20Villa%20Ahumada%20have%20an%20established%20reputation%20for%20serving%20burritos.), and one of the cores of the Mexican Revolution.
+
 ![A mountain in a desert city.](/assets/images/chihuahua.webp){ optimize width=800 fetchpriority="low" caption="Chihuahua, Chih. Mexico" }
 
-I was born and raised in the state of Chihuahua, in the north of Mexico. It is desert region where water and plants are scarce. They say _Xicuahua_ means "dry and sandy place". It's the [birthplace of the burrito](https://en.wikipedia.org/wiki/Burrito#:~:text=Burritos%20are%20a%20traditional%20food%20of%20Ciudad%20Ju%C3%A1rez%2C%20a%20city%20bordering%20El%20Paso%2C%20Texas%2C%20in%20the%20northern%20Mexican%20state%20of%20Chihuahua%2C%20where%20people%20buy%20them%20at%20restaurants%20and%20roadside%20stands.%20Northern%20Mexican%20border%20towns%20like%20Villa%20Ahumada%20have%20an%20established%20reputation%20for%20serving%20burritos.), and one of the areas of [highest levels of violence and scorpions](https://www.sciencedirect.com/science/article/abs/pii/0041010194903832).
+People in Chihuahua are loud, hardy, and proud. We may treat simple things like they are life or death.
 
-![A scorpion resting on dry earth.](/assets/images/scorpionism.webp){ optimize width=800 fetchpriority="low" caption="Your deadly neighborhood arachnid" }
-
-In the desert we're bred with a sense of scarcity that makes us loud, hardy, and intense. We go about the simple things like they are life or death.
-
-I have fond memories of playing footy on the dusty streets with my neighbors, and vacant lots in flames and grafitti on the school walls, dusty sunsets and rojos with caguamas and rancheras in the evening.
+I have fond memories of playing footy on the dusty streets with my friends, loitering at night in vacant lots.
 
 <a name="misled-youth"></a>
 
