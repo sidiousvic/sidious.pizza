@@ -19,30 +19,9 @@ thead {
 
 ## Engineering
 
-<span style="font-family: var(--font-family-title);color:var(--venom)">SIDIOUS.PIZZA</span> is designed and programmed by [Vic Sidious](/about), from a small apartment `+` various ceffeine and booze joints in Tokyo.
+<span style="font-family: var(--font-family-title);color:var(--venom)">SIDIOUS.PIZZA</span> is designed and built by [Vic Sidious](/about), from a small apartment and various ceffeine and booze joints in Tokyo.
 
-This website is built with web-performance, accessibility, and **fun™️** as core operational principles.
-
-## Design principles
-
-|           |                                                                                                                                    |
-| --------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| _0_&nbsp; | Use native web technologies                                                                                                        |
-| _1_&nbsp; | `Design = { ..., Performance, Accessibility }`                                                                                     |
-| _2_&nbsp; | Fun to make _=_ fun to visit                                                                                                       |
-| _3_&nbsp; | Be like [Curve Space](https://geocities.restorativland.org/ResearchTriangle/Forum/1545/index.html), my favorite website growing up |
-
-## Features
-
-Keyboard-teleport (Hit underlined key in navigation)
-
-Configurable graphics <a href="/config" class="border tag button">Fuck around here</a>
-
-Mobile-friendly, I hope
-
-The single-tone low-fi visual aesthetic (hipster friendly)
-
-Minimal, machine-translatable writing style
+The website is built with web-performance, accessibility, and original internet **fun™️** as core principles.
 
 ## Technologies used
 

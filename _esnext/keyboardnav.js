@@ -1,1 +1,1 @@
-(()=>{[e=>e.key==="h"&&location.assign("/"),e=>e.key==="s"&&location.assign("/settings"),e=>e.key==="w"&&location.assign("/weblog"),e=>e.key==="v"&&location.assign("/vic"),e=>e.key==="p"&&location.assign("/projects"),e=>e.key==="m"&&location.assign("/meta")].map(e=>window.addEventListener("keydown",e));})();
+(()=>{[e=>e.key==="h"&&location.assign("/"),e=>e.key==="w"&&location.assign("/weblog"),e=>e.key==="v"&&location.assign("/vic"),e=>e.key==="p"&&location.assign("/projects"),e=>e.key==="m"&&location.assign("/meta")].map(e=>window.addEventListener("keydown",e));})();

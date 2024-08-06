@@ -15,7 +15,7 @@ order: 0
 <h2>Welcome to my website.</h2>
 
 <picture class="no-border">
-    <img width=400 src="assets/images/vic.gif">
+    <!--<img width=400 src="assets/images/vic.gif">-->
 </picture>
 
-Press the <em>`X`</em> key to enter zen mode.
+Press the <em>`z`</em> key anytime to enter zen mode.

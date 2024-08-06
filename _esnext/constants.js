@@ -1,1 +1,1 @@
-(()=>{var o=["zero","venom","fire","void","phantom"],e=["sinister","dexter","virgil","nilheim","doomed","sidious"];})();
+(()=>{var o=["venom","fire","phantom"],e=["nilheim"];})();

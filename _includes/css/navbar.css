@@ -93,3 +93,40 @@
   width: 10px;
   display: inline-block;
 }
+
+.config-buttons {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(10px, 1fr));
+  gap: 0.5rem;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  height: 25px;
+}
+
+.config-buttons button {
+  border: none;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  box-shadow: 0 0 5px 1px inset black;
+}
+
+.config-buttons button[data-value="fire"] {
+  background-color: #ff1700ff !important;
+}
+
+.config-buttons button[data-value="venom"] {
+  background-color: #00ff00ff !important;
+}
+
+.config-buttons button[data-value="phantom"] {
+  background-color: hsla(242, 88.4%, 66.3%, 1) !important;
+}
+
+.config-buttons button[data-value="moon"] {
+  background-color: white !important;
+}

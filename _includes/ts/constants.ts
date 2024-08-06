@@ -1,10 +1,3 @@
-export const COLORS = ["zero", "venom", "fire", "void", "phantom"];
+export const COLORS = ["venom", "fire", "phantom"];
 
-export const TYPOGRAPHIES = [
-  "sinister",
-  "dexter",
-  "virgil",
-  "nilheim",
-  "doomed",
-  "sidious",
-];
+export const TYPOGRAPHIES = ["nilheim"];

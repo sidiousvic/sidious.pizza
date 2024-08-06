@@ -32,6 +32,10 @@ body.focus {
   grid-template-columns: 100vw !important;
   grid-template-rows: 100vh !important;
   grid-template-areas: "main" !important;
+
+  > .navbar > .config-buttons {
+    display: none;
+  }
 }
 
 #frame {
