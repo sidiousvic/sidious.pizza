@@ -1,21 +1,21 @@
 footer {
+  z-index: 100;
   position: fixed;
-  right: 0;
-  bottom: 50%;
-  transform: translateY(50%);
+  bottom: 0;
+  right: 50%;
+  transform: translateX(50%);
   grid-area: footer;
-  text-align: left;
   background: 0 0;
   justify-content: end;
   align-items: center;
   padding: 0;
+  word-wrap: nowrap;
   font-size: 0.6rem;
   display: flex;
   justify-content: center;
   background: var(--darkgray) !important;
   border-radius: 5px 0 0 5px;
   border: 1px solid var(--darkgray);
-  writing-mode: vertical-rl;
   box-shadow: 0 0 5px black;
 }
 
@@ -26,6 +26,7 @@ footer > p {
   text-align: center;
   text-wrap: wrap;
   padding: 9px;
+  white-space: nowrap;
 }
 
 footer,

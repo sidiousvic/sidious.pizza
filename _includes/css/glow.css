@@ -15,7 +15,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px -200px 15rem -175px inset var(--venom);
 }
 
 @keyframes glowing {
