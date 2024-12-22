@@ -2,8 +2,6 @@
 
 Vic's cyber space.
 
-![Preview of sidious.pizza, showing various of its screens.](assets/images/preview.gif)
-
 ## Develop
 
 Install [Deno](https://deno.com/) and run `deno task serve` to launch watch mode.
