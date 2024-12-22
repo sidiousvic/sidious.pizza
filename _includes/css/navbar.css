@@ -21,7 +21,8 @@
   }
 
   @media (max-width: 1050px) {
-    display: none;
+    align-items: center;
+    padding: 0;
   }
 }
 
@@ -46,6 +47,10 @@
   &:focus {
     transform: scale(1);
     border-radius: 20px;
+  }
+
+  @media (max-width: 1050px) {
+    font-size: 1.5rem;
   }
 }
 
@@ -81,6 +86,10 @@
     font-weight: bold;
     color: var(--venom);
   }
+
+  @media (max-width: 1050px) {
+    display: none;
+  }
 }
 
 .navbar-search {
@@ -101,14 +110,17 @@
   grid-template-columns: repeat(1, minmax(10px, 1fr));
   gap: 0.5rem;
   position: fixed;
-  top: 20px;
+  top: 10px;
   right: 20px;
   height: 25px;
   transition: all 0.1s ease-in-out;
+
+  @media (max-width: 1050px) {
+    display: none;
+  }
 }
 
 .config-buttons button {
-  border: none;
   border-radius: 50%;
   height: 25px;
   width: 25px;
@@ -116,19 +128,6 @@
   font-size: 0.8rem;
   cursor: pointer;
   text-align: center;
-  border: 1px dotted var(--venom);
+  border: 1px dashed var(--venom);
   box-shadow: none;
-}
-
-.config-buttons button[data-value="fire"] {
-  content: "🔥";
-}
-
-.config-buttons button[data-value="venom"] {
-}
-
-.config-buttons button[data-value="phantom"] {
-}
-
-.config-buttons button[data-value="moon"] {
 }
