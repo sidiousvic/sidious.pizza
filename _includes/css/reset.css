@@ -68,6 +68,34 @@ main {
   }
 }
 
+.button {
+  color: var(--venom);
+  font-family: var(--font-family-title);
+  text-align: center;
+  font-size: 1rem;
+  border-radius: 20px;
+  padding: 10px 15px;
+  text-decoration: none !important;
+  box-shadow: -1px -1px 11px 2px inset black;
+  color: var(--venom);
+  transition: all 0.1s ease-in-out, color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: var(--venom);
+    color: var(--darkgray);
+    transform: scale(1.05);
+  }
+
+  &:focus {
+    transform: scale(1);
+    border-radius: 20px;
+  }
+
+  @media (max-width: 1050px) {
+    font-size: 1.5rem;
+  }
+}
+
 button {
   transition: color, background, background-color 0.3s ease-in-out;
   height: 50px;
