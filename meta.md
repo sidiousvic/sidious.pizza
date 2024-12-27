@@ -17,6 +17,12 @@ thead {
 }
 </style>
 
+## Instructions
+
+Press the underlined key in a <a>m</a>enu item to navigate.
+
+Press `z` to hide the menu.
+
 ## Engineering
 
 <span style="font-family: var(--font-family-title);color:var(--venom)">SIDIOUS.PIZZA</span> is designed and built by [Vic Sidious](/about), from a small apartment and various ceffeine and booze joints in Tokyo.

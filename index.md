@@ -16,3 +16,5 @@ addEventListener("DOMContentLoaded", () => {
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 })
 </script>
+
+<script inline src="/_esnext/phantompizza.js"></script>
