@@ -1,5 +1,6 @@
 import { getElementById } from "./domutils";
-import { inject, mutate, pipe } from "./utils";
+import { GitHubRateLimitExceededError } from "./errors";
+import { error, inject, mutate, pipe } from "./utils";
 
 type Config = {
   repoUrl: "https://api.github.com/repos/sidiousvic/sidious.pizza";
@@ -19,17 +20,21 @@ const config: Config = {
   }),
 };
 
-const fetchRepo = async (z: Config) => fetch(z.repoUrl).then((r) => r.json());
-
 const updateLastUpdated = pipe(
   inject(config),
-  fetchRepo,
+  async (z: Config) =>
+    fetch(z.repoUrl).then(async (r) => {
+      const data = await r.json();
+      if (JSON.stringify(data).includes("rate limit"))
+        error(GitHubRateLimitExceededError);
+      return data;
+    }),
   mutate(
     async (promise: Promise<{ pushed_at: string }>) =>
-      ((
-        getElementById("last-updated-datetime") as HTMLSpanElement
+      (getElementById(
+        "last-updated-datetime"
       ).innerText = `${config.dateTimeFormat.format(
-        new Date((await promise).pushed_at)
+        new Date((await promise)?.pushed_at || Date.now())
       )} Asia/Pacific (Tokyo)`)
   )
 );
