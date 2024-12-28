@@ -14,6 +14,12 @@ goodbye:
 
 <article>
 
+<div class="info">
+
+![A black-clad man with a beanie in an autumn park](/assets/images/vic.webp){ optimize height=275 fetchpriority="high" caption="" }
+
+<article>
+
 |         |                                                                                                |
 | ------- | ---------------------------------------------------------------------------------------------- |
 | _Name_  | Victor René Molina Rodríguez _(Vic)_                                                           |
