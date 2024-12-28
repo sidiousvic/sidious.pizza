@@ -5,14 +5,5 @@ title: SIDIOUS.PIZZA
 order: 0
 ---
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-	if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-		const main = document.querySelector('#main');	
-		main.innerHTML = '';
-		window.location.href = '/mobile';
-	}
-});
-</script>
-
+<script inline src="/_esnext/routeMobile.js"></script>
 <script inline src="/_esnext/phantompizza.js"></script>
