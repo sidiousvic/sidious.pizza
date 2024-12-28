@@ -1,0 +1,1 @@
+(()=>{window.addEventListener("DOMContentLoaded",()=>{let e=document.querySelector("#navbar");document.querySelector("#navbar-mobile-button")?.addEventListener("click",()=>{e?.classList.toggle("display")})});})();

@@ -23,8 +23,8 @@ body {
 
   @media (max-width: 1050px) {
     grid-template-columns: 100vw;
-    grid-template-rows: 5vh 95vh;
-    grid-template-areas: "navbar" "main";
+    grid-template-rows: 100vh;
+    grid-template-areas: "main";
   }
 }
 
@@ -57,43 +57,23 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 5vh 14vw;
+  padding: 8vh 14vw 0 14vw;
   overflow-y: auto;
   overflow-x: hidden;
 
   @media (max-width: 500px) {
     margin: 0 1vw;
-    padding: 20px 5vw 1rem 5vw;
+    padding: 10vh 5vw 1rem 5vw;
     justify-content: flex-start;
   }
 }
 
-.button {
-  color: var(--venom);
-  font-family: var(--font-family-title);
-  text-align: center;
-  font-size: 1rem;
-  border-radius: 20px;
-  padding: 10px 15px;
-  text-decoration: none !important;
-  box-shadow: -1px -1px 11px 2px inset black;
-  color: var(--venom);
-  transition: color 0.1s ease-in-out, color 0.3s ease-in-out;
+.hidden {
+  display: none !important;
+}
 
-  &:hover {
-    background-color: var(--venom);
-    color: var(--darkgray);
-    transform: scale(1.05);
-  }
-
-  &:focus {
-    transform: scale(1);
-    border-radius: 20px;
-  }
-
-  @media (max-width: 1050px) {
-    font-size: 1.5rem;
-  }
+.display {
+  display: flex;
 }
 
 button {
@@ -110,20 +90,23 @@ button {
   cursor: pointer;
   outline: none;
   box-shadow: 0 0 5px black;
+  transition: box-shadow, padding, 0.4s ease-in-out;
 
   &:hover {
     box-shadow: -1px -2px 11px black inset;
     background-color: var(--venom);
-    color: var(--darkgray);
-    border: black solid 1px;
     border-radius: 20px;
+    color: var(--darkgray);
   }
 
   &:focus {
     box-shadow: -1px -2px 11px black inset;
-    background-color: var(--venom);
-    color: var(--darkgray);
     border-radius: 20px;
+  }
+
+  &:active {
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px var(--venom);
   }
 }
 

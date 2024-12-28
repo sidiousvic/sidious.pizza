@@ -5,4 +5,4 @@ title: SIDIOUS.PIZZA
 order: 0
 ---
 
-# Hola, you're on mobile _📱_
+### Hola, you're on mobile. _📱_

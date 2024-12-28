@@ -8,6 +8,51 @@
   -webkit-font-feature-settings: "emoji" 0;
 }
 
+#site-title {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  right: 50%;
+  transform: translateX(50%);
+  border-radius: 0 0 10px 10px;
+
+  @media (min-width: 1050px) {
+    display: none;
+  }
+}
+
+.button {
+  background: 0 0;
+  justify-content: end;
+  align-items: center;
+  word-wrap: nowrap;
+  display: flex;
+  justify-content: center;
+  background: var(--darkgray);
+  box-shadow: 0 0 5px black;
+  color: var(--venom);
+  padding: 9px;
+  font-family: var(--font-family-title);
+  font-size: 1rem;
+  transition: box-shadow 0.9s ease-in-out;
+
+  &:hover {
+    box-shadow: -1px -2px 11px black inset;
+    background-color: var(--venom);
+    color: var(--darkgray);
+  }
+
+  &:focus {
+    box-shadow: -1px -2px 11px black inset;
+    background-color: var(--venom);
+  }
+
+  &:active {
+    box-shadow: 0px 0px 15px var(--venom);
+    background-color: var(--venom);
+  }
+}
+
 .goodbye {
   font-size: 2rem;
   text-align: center;

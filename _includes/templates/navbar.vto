@@ -1,16 +1,24 @@
 {{ set projects = search.pages("projects") }}
 
 <script inline src="/_esnext/togglenav.js"></script>
+<script inline src="/_esnext/mobileNav.js"></script>
+
+
+<a id="navbar-mobile-button" class="button" aria-label="Navigation button">
+  Menu
+</a>
+
 
 <nav id="navbar" class="navbar">
-  <a href="/" class="button">
+  <a href="/" class="navbar-site-title">
     {{ site.title }}
   </a>
 
-<ul id="navbar-links">
-  <li style="list-style-type: '⌂'" ><a href="/">Home</a></li>
-  <li style="list-style-type: '∿'" ><a href="/weblog">Weblog</a></li>
-  <li style="list-style-type: '⌗'" ><a href="/meta">Meta</a></li>
-  <li style="list-style-type: '𝖛'"><a href="/vic">VIC</a></li>
-</ul>
+  <ul id="navbar-links" class="navbar-links">
+    <li style="list-style-type: '⌂'" ><a href="/">Home</a></li>
+    <li style="list-style-type: '∿'" ><a href="/weblog">Weblog</a></li>
+    <li style="list-style-type: '⌗'" ><a href="/meta">Meta</a></li>
+    <li style="list-style-type: '𝖛'"><a href="/vic">VIC</a></li>
+  </ul>
 </nav>
+
