@@ -4,7 +4,13 @@ import { isMobile } from "./utils";
 
 const LEAP_DAYS_SINCE_1991_MS = 691_200_000;
 const vicsBirthday = new Date("September 24, 1991, 23:54:00 GMT-7");
-const INTERVAL = isMobile(navigator.userAgent) ? 1000 : undefined;
+
+const MOBILE_INTERVAL = 9999999; // Don't update on mobile
+const DESKTOP_INTERVAL = undefined; // Update every frame
+
+const INTERVAL_TO_USE = isMobile(navigator.userAgent)
+  ? MOBILE_INTERVAL
+  : DESKTOP_INTERVAL;
 
 function updateVicsAge() {
   const unixNow = new Date();
@@ -16,5 +22,7 @@ function updateVicsAge() {
 }
 
 addEventListener("DOMContentLoaded", () => {
-  setInterval(updateVicsAge, INTERVAL);
+  console.log(INTERVAL_TO_USE);
+  updateVicsAge();
+  setInterval(updateVicsAge, INTERVAL_TO_USE);
 });
