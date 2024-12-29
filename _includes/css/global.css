@@ -82,13 +82,16 @@
   &.notch {
     z-index: 1;
     position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.7rem;
-    border-radius: 0 0 5px 5px;
-    width: 100%;
-    max-width: 200px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    writing-mode: vertical-rl;
+    font-size: 0.5rem;
+    border-radius: 10px 0 0 10px;
+    border: none;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    font-weight: 600;
+    box-shadow: 0 0 5px black;
   }
 
   &.big {
