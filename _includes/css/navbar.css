@@ -11,6 +11,7 @@
   margin: 0 0 0 0;
   column-gap: 2rem;
   mix-blend-mode: var(--blend-mode);
+  overflow: hidden;
 
   & a {
     display: block;

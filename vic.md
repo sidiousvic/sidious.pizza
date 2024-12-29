@@ -22,7 +22,7 @@ goodbye:
 
 |         |                                                                                                |
 | ------- | ---------------------------------------------------------------------------------------------- |
-| _Name_  | Victor René Molina Rodríguez _(Vic)_                                                           |
+| _Name_  | <strong>Vic</strong>tor René Molina Rodríguez                                                  |
 | _Lives_ | [澁谷東京 <em>(Shibuya, Tokyo)</em>](https://goo.gl/maps/1YfuGi5HYgRpBjN7A)                    |
 | _Born_  | [Chihuahua, Mexico](https://goo.gl/maps/Ja9LxnZ6kosdRa586)                                     |
 | _Age_   | <span id="age">?</span>                                                                        |
