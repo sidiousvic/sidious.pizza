@@ -37,9 +37,9 @@ export const compilePrograms =
             .catch(() => new Uint8Array([0]))
         );
 
-        await Deno.remove("_temp/esnext", { recursive: true }).catch(
-          () => "🛃 No _temp/esnext directory found. Creating one..."
-        );
+        await Deno.remove(Deno.cwd() + "_temp/esnext", {
+          recursive: true,
+        }).catch(() => "🛃 No _temp/esnext directory found. Creating one...");
 
         if (e.type === "beforeBuild") {
           console.log(
@@ -47,7 +47,9 @@ export const compilePrograms =
           );
         }
 
-        await Deno.mkdir("_temp/esnext", { recursive: true }).catch(() =>
+        await Deno.mkdir(Deno.cwd() + "/_temp/esnext", {
+          recursive: true,
+        }).catch(() =>
           console.info(`🛃 _temp/esnext directory already exists. Ignoring...`)
         );
 
