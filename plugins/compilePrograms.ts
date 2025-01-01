@@ -1,6 +1,6 @@
-import { build } from "https://deno.land/x/esbuild@v0.19.9/mod.js";
+import { build } from "esbuild/mod.js";
 import { Event } from "lume/core/events.ts";
-import { sha256 } from "https://denopkg.com/chiefbiiko/sha256@v1.0.0/mod.ts";
+import { sha256 } from "sha256/mod.ts";
 import Site from "lume/core/site.ts";
 import { walkSync } from "lume/deps/fs.ts";
 
