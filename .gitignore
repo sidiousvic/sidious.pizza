@@ -5,4 +5,4 @@ _temp
 *.DS_Store
 *.vscode
 *.gitkeep
-coc-settings.json
+*-settings.json
