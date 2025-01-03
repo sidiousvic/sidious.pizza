@@ -2,11 +2,11 @@
 layout: layouts/haiku.vto
 title: 雪片か？
 date: 2023-12-11
-pinned: true
-pin: 🔥 HOT
+pinned: false
 gif: /assets/images/onsen.gif
 tags:
   - haiku
+weblog: true
 draft: false
 ---
 

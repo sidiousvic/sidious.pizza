@@ -6,4 +6,5 @@ gif: /assets/images/wraith.gif
 audio: /assets/music/wraith.mp3
 tags:
   - music
+weblog: true
 ---

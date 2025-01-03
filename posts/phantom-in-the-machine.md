@@ -4,8 +4,8 @@ date: 2023-07-09
 tags:
   - programming
   - computers
-weblog: true
 beta: true
+weblog: true
 draft: false
 ---
 

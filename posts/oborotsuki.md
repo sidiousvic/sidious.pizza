@@ -6,6 +6,7 @@ pinned: false
 gif: /assets/images/oborotsuki.gif
 tags:
   - haiku
+weblog: true
 draft: false
 ---
 

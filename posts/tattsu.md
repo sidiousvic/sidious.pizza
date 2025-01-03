@@ -6,4 +6,5 @@ gif: /assets/images/tattsu.gif
 audio: /assets/music/tattsu.mp3
 tags:
   - music
+weblog: true
 ---

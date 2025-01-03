@@ -6,6 +6,7 @@ pinned: false
 gif: /assets/images/asebamuyo.gif
 tags:
   - haiku
+weblog: true
 draft: false
 ---
 
