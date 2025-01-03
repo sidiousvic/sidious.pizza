@@ -4,6 +4,9 @@ import { sha256 } from "sha256/mod.ts";
 import Site from "lume/core/site.ts";
 import { walkSync } from "lume/deps/fs.ts";
 
+/**
+ * Compiles TypeScript programs in _includes/ts to JavaScript.
+ */
 export const compilePrograms =
   (options: { dirname?: string }) => (site: Site) => {
     const defaultOptions = {
@@ -11,6 +14,8 @@ export const compilePrograms =
     };
 
     async function compilePrograms(e: Event) {
+      console.log(`🏭 Compiling programs in _includes/ts...`);
+
       const tsFiles = await Promise.all(
         Array.from(
           walkSync(
@@ -42,7 +47,7 @@ export const compilePrograms =
         }).catch(() => "🛃 No _temp/esnext directory found. Creating one...");
 
         if (e.type === "beforeBuild") {
-          console.log(
+          console.debug(
             `🛠️  Compiling _includes/ts/${file.path.split("/").pop()}...`
           );
         }
@@ -50,7 +55,7 @@ export const compilePrograms =
         await Deno.mkdir(Deno.cwd() + "/_temp/esnext", {
           recursive: true,
         }).catch(() =>
-          console.info(`🛃 _temp/esnext directory already exists. Ignoring...`)
+          console.debug(`🛃 _temp/esnext directory already exists. Ignoring...`)
         );
 
         await build({
@@ -62,9 +67,8 @@ export const compilePrograms =
           bundle: true,
         }).catch(console.error);
 
-        if (e.type === "beforeBuild") {
-          console.log(`🏭 Compiled _esnext/${file.path.split("/").pop()}!`);
-        }
+        if (e.type === "beforeBuild")
+          console.debug(`🏭 Compiled _esnext/${file.path.split("/").pop()}!`);
 
         const bundledAndMinifiedBinary = await Deno.readFile(generatedFilePath)
           .then((binary) => binary)
@@ -90,17 +94,30 @@ export const compilePrograms =
           )
         );
 
-        if (e.type === "afterUpdate") {
-          console.log(
-            `👩🏽‍ Recompiled  ♻️  _esnext/${file.path
+        if (e.type === "afterUpdate")
+          console.debug(
+            `♻️  Recompiled _esnext/${file.path
               .split("/")
               .pop()
               ?.replace("ts", "js")}!`
           );
-        }
       });
+
+      if (e.type === "beforeBuild")
+        console.log(`🌈 Compiled all files into _esnext/ts!`);
+
+      if (e.type === "afterUpdate")
+        console.log(`♻️  Recompiled updated files into _esnext/ts!`);
     }
 
     site.addEventListener("beforeBuild", compilePrograms);
     site.addEventListener("afterUpdate", compilePrograms);
+
+    async function cleanup() {
+      await Deno.remove(Deno.cwd() + "/_temp", {
+        recursive: true,
+      }).catch((e) => console.error(`🚨 [Deno] Error removing _temp ${e}`));
+    }
+
+    site.addEventListener("afterBuild", cleanup);
   };

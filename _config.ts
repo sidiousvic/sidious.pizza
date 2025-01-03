@@ -17,6 +17,8 @@ import { compilePrograms } from "$/plugins/compilePrograms.ts";
 import katex from "lume/plugins/katex.ts";
 import minifyHTML from "lume/plugins/minify_html.ts";
 
+if (!(Deno.env.get("LOG_LEVEL") === "DEBUG")) console.debug = () => {};
+
 const site = lume({
   location: new URL("https://sidious.pizza/"),
   watcher: { ignore: ["_temp"] },
