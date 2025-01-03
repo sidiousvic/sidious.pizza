@@ -1,8 +1,0 @@
----
-layout: layouts/base.vto
----
-<h1>Tags</h1>
-
-{{ for page of search.pages("type=tag", "tag") }}
-  <a href="{{ url }}" class="tag big">{{ page.tag }}</a>
-{{ /for }}
