@@ -5,6 +5,27 @@ Vic's cyber space.
 <img width="400" alt="Screenshot 2024-12-27 at 10 31 52 p m" src="https://github.com/user-attachments/assets/46046032-21ff-46be-bf83-57ee90bb949b" /><img width="400" alt="Screenshot 2024-12-27 at 10 26 23 p m" src="https://github.com/user-attachments/assets/29f08917-9f4c-4289-a942-4e93486354af" />
 <img width="400" alt="Screenshot 2024-12-27 at 10 30 47 p m" src="https://github.com/user-attachments/assets/a5ddef61-1841-4df5-bab4-6ffc6f198e84" /><img width="400" alt="Screenshot 2024-12-27 at 10 31 59 p m" src="https://github.com/user-attachments/assets/4509ec38-6198-4b43-a287-96c9d1875b20" />
 
+## Structure
+
+```bash
+▸ _esnext/ # Compiled ESNEXT browser scripts
+▸ _includes/ # Layouts, templates, and source CSS and TS files
+▸ _site/ # The static build of the site
+▸ _spacephantom/ # Special directory hosting the Space Phantom game
+▸ _temp/ # Generated locally when compiling programs, for diffing checksums
+▸ assets/ # Images and other static assets
+▸ filters/ # Filters for text content such as language detectors
+▸ plugins/ # Server plugins for Lume, such as the program compiler and CSS bundler
+▸ posts/ # These are the markdown files that contain the content of the site
+▸ processors/ # Processors for posts, such as the HTML image markup optimizer
+  404.vto # 404 page, shown on path misses
+  _bundle.css # Bundled CSS file, contains all styles inline
+  _config.ts # Registers, plugins, processors, filters, and other configs
+  index.md # Home page
+  README.md # This file
+  server.ts # Server setup
+  *.(md|vto) # Pages, such as the weblog
+```
 
 ## Develop
 
