@@ -30,7 +30,7 @@ site
   .use(inline({ extensions: [".mjs", ".html", ".css", ".js"] }))
   .use(bundleStyles({ bundler: { filename: "_includes/css/styles.css" } }))
   .use(compilePrograms({ dirname: "_includes/ts" }))
-  .use(minifyHTML({ options: { minify_js: false } }))
+  .use(minifyHTML({ options: { minify_js: false, keep_comments: true } }))
   .use(terser({ extensions: [".mjs"] }))
   .use(date())
   .use(codeHighlight())
