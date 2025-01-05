@@ -15,6 +15,7 @@ import readInfo from "lume/plugins/reading_info.ts";
 import { compilePrograms } from "$/plugins/compilePrograms.ts";
 import katex from "lume/plugins/katex.ts";
 import minifyHTML from "lume/plugins/minify_html.ts";
+import brotli from "lume/plugins/brotli.ts";
 
 if (!(Deno.env.get("LOG_LEVEL") === "DEBUG")) console.debug = () => {};
 
@@ -27,6 +28,7 @@ site
   .ignore("README.md")
   .copy("assets")
   .copy("spacephantom/game")
+  .use(brotli())
   .use(inline({ extensions: [".mjs", ".html", ".css", ".js"] }))
   .use(bundleStyles({ bundler: { filename: "_includes/css/styles.css" } }))
   .use(compilePrograms({ dirname: "_includes/ts" }))
