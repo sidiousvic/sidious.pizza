@@ -67,6 +67,14 @@
   animation: blink 1s infinite;
 }
 
+.slow {
+  animation-duration: 3s;
+}
+
+.fast {
+  animation-duration: 1s;
+}
+
 @keyframes blink {
   0% {
     opacity: 0;
