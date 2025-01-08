@@ -25,7 +25,7 @@ Press `z` to hide the menu.
 
 ## Engineering
 
-<span style="font-family: var(--font-family-title);color:var(--venom)">SIDIOUS.PIZZA</span> is designed and built by [Vic Sidious](/vic), from a small apartment and various coffee and booze joints in Tokyo.
+<span style="font-family: var(--font-family-title);color:var(--venom)">SIDIOUS.PIZZA</span> is designed and built by [Vic](/vic), from a small apartment and various coffee and booze joints in Tokyo.
 
 The website is built with web-performance, accessibility, and original internet **fun™️** as core principles.
 
