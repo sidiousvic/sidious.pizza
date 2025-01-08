@@ -16,7 +16,7 @@ main {
 
 <h3>Welcome to</h3>
 
-<h1><em>SIDIOUS.PIZZA</em></h1>
+<h1>"<em>SIDIOUS.PIZZA</em>"</h1>
 
 <img
   style="filter: var(--venom-filter);"
@@ -28,30 +28,35 @@ main {
 
 <h2><em>VIC's personal website.</em></h2>
 
-<br>
-  <nav style="display: flex; gap: 1rem; flex-wrap: wrap;">
-    <button style="list-style-type: '⌂'" ><a href="/">Home</a></button>
-    <button style="list-style-type: '∿'" ><a href="/weblog">Weblog</a></button>
-    <button style="list-style-type: '⌗'" ><a href="/meta">Meta</a></button>
-    <button style="list-style-type: '🁞'"><a href="/games">Games</a></button>
-    <button style="list-style-type: '𝖛'"><a href="/vic">Vic</a></button>
-  </nav>
-<br>
-<br>
+<nav style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 16px auto 32px auto">
+  <form action="/">
+    <input class="button" type="submit" value="Home" />
+  </form>
+  <form action="/weblog">
+    <input class="button" type="submit" value="Weblog" />
+  </form>
+  <form action="/meta">
+    <input class="button" type="submit" value="Meta" />
+  </form>
+  <form action="/games">
+    <input class="button" type="submit" value="Games" />
+  </form>
+  <form action="/vic">
+    <input class="button" type="submit" value="Vic" />
+  </form>
+</nav>
 
 <p>
-  I'm a boy from Mexico, living in Tokyo. I like to make things and write about things and think about things. Here's a thing I made recently:
-
-</p>
+I'm a boy from Mexico, living in Tokyo. I like to make things. Here's a thing I made recently:
 
 {{ set posts = search.pages("weblog=true", "date=desc") }}
 {{ set post = posts[0] }}
 
-<a href="{{ post.url }}" class="postList-title"{{ if post.url == url }} aria-current="page"{{ /if }}>
-  {{ if post.title }}
-    {{ post.title |> toUpperCase }}
-  {{ else }}
-    <code>{{ post.path }}</code>
-  {{ /if }}
-</a>
-
+  <a href="{{ post.url }}" class="postList-title"{{ if post.url == url }} aria-current="page"{{ /if }}>
+    {{ if post.title }}
+      {{ post.title |> toUpperCase }}
+    {{ else }}
+      <code>{{ post.path }}</code>
+    {{ /if }}
+  </a>
+</p>

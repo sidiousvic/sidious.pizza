@@ -58,12 +58,12 @@ main {
   display: flex;
 }
 
-button {
-  height: 50px;
+.button {
+  height: 40px;
   width: auto;
   color: var(--venom);
-  padding: 0.5rem 1rem;
-  border-radius: 15px;
+  padding: 0.1rem 0.8rem;
+  border-radius: 10px;
   font-family: var(--font-family-title);
   font-size: 16px;
   font-weight: 400;
@@ -72,12 +72,11 @@ button {
   cursor: pointer;
   outline: none;
   box-shadow: 0 0 5px black;
-  transition: box-shadow, padding, 0.4s ease-in-out;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
     box-shadow: -1px -2px 11px black inset;
     background-color: var(--venom);
-    border-radius: 20px;
     color: var(--darkgray);
 
     & a {
@@ -87,11 +86,9 @@ button {
 
   &:focus {
     box-shadow: -1px -2px 11px black inset;
-    border-radius: 20px;
   }
 
   &:active {
-    border-radius: 20px;
     box-shadow: 0px 0px 15px var(--venom);
   }
 }
