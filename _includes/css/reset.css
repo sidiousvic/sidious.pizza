@@ -63,7 +63,7 @@ button {
   width: auto;
   color: var(--venom);
   padding: 0.5rem 1rem;
-  border-radius: 20px;
+  border-radius: 15px;
   font-family: var(--font-family-title);
   font-size: 16px;
   font-weight: 400;

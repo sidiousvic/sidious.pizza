@@ -5,44 +5,55 @@ title: WEBLOG
 order: 0
 ---
 
-{{ set posts = search.pages("weblog=true", "date=desc") }}
+{{ set logs = search.pages("weblog=true", "date=desc") }}
 
 <h1 class="page-title">WEBLOG</h1>
 
-<section class="weblog-content">
-  <ul class="weblog">
-    {{ for post of posts }}
-      <li class="weblog-post">
-        <p>
-          <a 
-            href="{{ post.url }}" 
-            class="weblog-title"{{ if post.url == url }} 
-            aria-current="page"{{ /if }}>
-            {{ if post.title }}
-              {{ post.title |> toUpperCase }}
+<table id="weblog">
+    <thead>
+      <tr>
+        <th class="hide-on-mobile">Title</th>
+        <th class="hide-on-mobile">Status</th>
+        <th class="hide-on-mobile">Date</th>
+        <th class="hide-on-mobile">Tags</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{ for log of logs }}
+        <tr class="log">
+          <td>
+            <a class="log-title" href="{{ log.url }}">
+              {{ if log.title }}
+                {{ log.title |> toUpperCase }}
+              {{ else }}
+                <code>{{ log.path }}</code>
+              {{ /if }}
+            </a>
+          </td>
+          <td class="hide-on-mobile">
+            {{ if log.beta }}
+              <span class="tag border marker">BETA</span>
+            {{ else if log.pinned }}
+              <span class="tag border marker venomous">{{ log.pin || '🔥 HOT' }}</span>
             {{ else }}
-              <code>{{ post.path }}</code>
+              <span class="tag border marker venom">OK ✔</span>
             {{ /if }}
-          </a>
-          {{ if post.beta }} 
-            <sup class="tag border marker">THIS POST IS IN BETA</sup> 
-          {{ /if }}
-          {{ if post.pinned }} 
-            <sup class="tag border marker venomous">{{ post.pin || '🔥 HOT' }}</sup> 
-          {{ /if }}
-        </p>
-        <time class="weblog-date" datetime="{{ post.date |> date('DATETIME') }}">
-          {{ post.date |> date('HUMAN_DATE') }}
-        </time>
-        <div class="weblog-tags">
-          {{ for tag of post.tags }}
-            {{ set page = search.pages("type=tag tag='" + tag + "'") }}
-            {{ if page }}
-              <a href="/tags/{{ tag }}" class="tag">{{ tag }}</a>
-            {{ /if }}
-          {{ /for }}
-        </div>
-      </li>
-    {{ /for }}
-  </ul>
-</section>
+          </td>
+          <td>
+            <time class="hide-on-mobile" datetime="{{ log.date |> date('DATETIME') }}">
+              {{ log.date |> date('HUMAN_DATE') }}
+            </time>
+          </td>
+          <td class="log-tags hide-on-mobile">
+            {{ for tag of log.tags }}
+              {{ set page = search.pages("type=tag tag='" + tag + "'") }}
+              {{ if page }}
+                <a href="/tags/{{ tag }}">{{ tag }}</a>
+              {{ /if }}
+            {{ /for }}
+          </td>
+        </tr>
+      {{ /for }}
+    </tbody>
+</table>
+

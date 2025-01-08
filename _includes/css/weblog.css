@@ -1,33 +1,32 @@
-.weblog {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+@media (max-width: 1050px) {
+  .hide-on-mobile {
+    display: none;
+  }
 }
 
-.weblog-tags {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0.5rem 0;
+.log {
+  line-height: 2rem;
+  text-align: center;
+  list-style: none;
+
+  & td {
+    text-align: left;
+  }
+
+  & time {
+    color: var(--lightgray);
+    font-size: 0.7rem;
+  }
+
+  & .venom {
+    background: var(--venom);
+    color: var(--darkgray);
+  }
+}
+
+.log-tags {
+  text-transform: uppercase;
+  color: var(--venom);
   font-style: italic;
   font-size: 0.6rem;
-}
-
-.weblog-tags a {
-  margin-inline: 0;
-}
-
-.weblog-date {
-  font-size: 0.8rem;
-  color: var(--lightgray);
-  margin-block: 0;
-}
-
-.weblog-post {
-  text-align: center;
-  margin: 0.5rem 0rem;
-  list-style: none;
 }
