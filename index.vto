@@ -1,0 +1,57 @@
+---
+layout: layouts/base.vto
+visible: false
+title: SIDIOUS.PIZZA
+order: 0
+---
+
+<style>
+main {
+  padding: 8vh 14vw 5vh;
+  @media (min-width: 800px) {
+    padding: 8vh 25vw 5vh;
+  }
+}
+</style>
+
+<h3>Welcome to</h3>
+
+<h1><em>SIDIOUS.PIZZA</em></h1>
+
+<img
+  style="filter: var(--venom-filter);"
+  width="400"
+  src="/assets/images/skating-tokyo.gif"
+/>
+
+<br>
+
+<h2><em>VIC's personal website.</em></h2>
+
+<br>
+  <nav style="display: flex; gap: 1rem; flex-wrap: wrap;">
+    <button style="list-style-type: '⌂'" ><a href="/">Home</a></button>
+    <button style="list-style-type: '∿'" ><a href="/weblog">Weblog</a></button>
+    <button style="list-style-type: '⌗'" ><a href="/meta">Meta</a></button>
+    <button style="list-style-type: '🁞'"><a href="/games">Games</a></button>
+    <button style="list-style-type: '𝖛'"><a href="/vic">Vic</a></button>
+  </nav>
+<br>
+<br>
+
+<p>
+  I'm a boy from Mexico, living in Tokyo. I like to make things and write about things and think about things. Here's a thing I made recently:
+
+</p>
+
+{{ set posts = search.pages("weblog=true", "date=desc") }}
+{{ set post = posts[0] }}
+
+<a href="{{ post.url }}" class="postList-title"{{ if post.url == url }} aria-current="page"{{ /if }}>
+  {{ if post.title }}
+    {{ post.title |> toUpperCase }}
+  {{ else }}
+    <code>{{ post.path }}</code>
+  {{ /if }}
+</a>
+

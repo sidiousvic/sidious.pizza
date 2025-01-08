@@ -14,25 +14,9 @@ body {
 
 body {
   display: grid;
-  grid-template-columns: 22vw auto;
+  grid-template-columns: 100vw auto;
   grid-template-rows: 100vh;
-  grid-template-areas: "navbar main";
-
-  @media (max-width: 1050px) {
-    grid-template-columns: 100vw;
-    grid-template-rows: 100vh;
-    grid-template-areas: "main";
-  }
-}
-
-body.zen {
-  grid-template-columns: 100vw !important;
-  grid-template-rows: 100vh !important;
-  grid-template-areas: "main" !important;
-
-  > .navbar > .config-buttons {
-    display: none;
-  }
+  grid-template-areas: "main";
 }
 
 #frame {
@@ -55,6 +39,7 @@ main {
   align-items: center;
   justify-content: flex-start;
   padding: 8vh 14vw 5vh 14vw;
+  height: fit-content;
   overflow-y: auto;
   overflow-x: hidden;
 
@@ -94,6 +79,10 @@ button {
     background-color: var(--venom);
     border-radius: 20px;
     color: var(--darkgray);
+
+    & a {
+      color: var(--darkgray);
+    }
   }
 
   &:focus {
@@ -385,7 +374,7 @@ picture::after {
 
 figure {
   width: fit-content;
-  margin: 0 auto;
+  margin: 0 1rem;
   display: flex;
   flex-direction: column;
   align-items: baseline;

@@ -5,9 +5,44 @@ title: WEBLOG
 order: 0
 ---
 
+{{ set posts = search.pages("weblog=true", "date=desc") }}
+
 <h1 class="page-title">WEBLOG</h1>
 
 <section class="weblog-content">
-  {{ include "templates/postslist.vto" { query: "pinned=true"} }}
-  {{ include "templates/postslist.vto" { query: "pinned!=true"} }}
+  <ul class="weblog">
+    {{ for post of posts }}
+      <li class="weblog-post">
+        <p>
+          <a 
+            href="{{ post.url }}" 
+            class="weblog-title"{{ if post.url == url }} 
+            aria-current="page"{{ /if }}>
+            {{ if post.title }}
+              {{ post.title |> toUpperCase }}
+            {{ else }}
+              <code>{{ post.path }}</code>
+            {{ /if }}
+          </a>
+          {{ if post.beta }} 
+            <sup class="tag border marker">THIS POST IS IN BETA</sup> 
+          {{ /if }}
+          {{ if post.pinned }} 
+            <sup class="tag border marker venomous">{{ post.pin || '🔥 HOT' }}</sup> 
+          {{ /if }}
+        </p>
+        <time class="weblog-date" datetime="{{ post.date |> date('DATETIME') }}">
+          {{ post.date |> date('HUMAN_DATE') }}
+        </time>
+        <div class="weblog-tags">
+          {{ for tag of post.tags }}
+            {{ set page = search.pages("type=tag tag='" + tag + "'") }}
+            {{ if page }}
+              <a href="/tags/{{ tag }}" class="tag">{{ tag }}</a>
+            {{ /if }}
+          {{ /for }}
+        </div>
+      </li>
+    {{ /for }}
+  </ul>
 </section>

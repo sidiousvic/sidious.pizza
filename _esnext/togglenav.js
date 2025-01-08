@@ -1,1 +1,1 @@
-(()=>{window.addEventListener("keydown",e=>{e.key==="z"&&document.querySelector("body")?.classList.toggle("zen")});})();
+(()=>{window.addEventListener("keydown",d=>{if(d.key==="z"){let n=document.querySelector("body"),e=document.getElementById("navbar");if(!n||!e)return;n.classList.toggle("zen"),e.hidden=!e?.hidden}});})();
