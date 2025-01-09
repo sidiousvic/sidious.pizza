@@ -7,7 +7,7 @@ gif: /assets/images/oborotsuki.gif
 tags:
   - haiku
 weblog: true
-draft: false
+draft: true
 ---
 
 <!-- jp -->

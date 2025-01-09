@@ -5,47 +5,43 @@ title: WEBLOG
 order: 0
 ---
 
-{{ set logs = search.pages("weblog=true", "date=desc") }}
+{{ set posts = search.pages("weblog=true", "date=desc") }}
 
 <h1 class="page-title">WEBLOG</h1>
 
-<table id="weblog">
+<table id="webpost">
     <thead>
       <tr>
         <th class="hide-on-mobile">Title</th>
-        <th class="hide-on-mobile">Status</th>
-        <th class="hide-on-mobile">Date</th>
-        <th class="hide-on-mobile">Tags</th>
+        <th class="hide-700">Date</th>
+        <th class="hide-700">Status</th>
+        <th class="hide-1050">Tags</th>
       </tr>
     </thead>
     <tbody>
-      {{ for log of logs }}
-        <tr class="log">
+      {{ for post of posts }}
+        <tr class="post">
           <td>
-            <a class="log-title" href="{{ log.url }}">
-              {{ if log.title }}
-                {{ log.title |> toUpperCase }}
-              {{ else }}
-                <code>{{ log.path }}</code>
-              {{ /if }}
-            </a>
-          </td>
-          <td class="hide-on-mobile">
-            {{ if log.beta }}
-              <span class="tag border marker">BETA</span>
-            {{ else if log.pinned }}
-              <span class="tag border marker venomous">{{ log.pin || '🔥 HOT' }}</span>
-            {{ else }}
-              <span class="tag border marker venom">OK ✔</span>
-            {{ /if }}
+            <form action="{{ post.url }}">
+              <input class="post-name" type="submit" value="{{ post.title }}" />
+            </form>
           </td>
           <td>
-            <time class="hide-on-mobile" datetime="{{ log.date |> date('DATETIME') }}">
-              {{ log.date |> date('HUMAN_DATE') }}
+            <time class="hide-700" datetime="{{ post.date |> date('DATETIME') }}">
+              {{ post.date |> date('HUMAN_DATE') |> toUpperCase }}
             </time>
           </td>
-          <td class="log-tags hide-on-mobile">
-            {{ for tag of log.tags }}
+          <td class="hide-700">
+            {{ if post.beta }}
+              <span class="tag border marker w40">β</span>
+            {{ else if post.pinned }}
+              <span class="tag border marker venomous w40">{{ post.pin || '🔥' }} <span>
+            {{ else }}
+              <span class="tag border marker venom w40">✔</span>
+            {{ /if }}
+          </td>
+          <td class="post-tags hide-1050">
+            {{ for tag of post.tags }}
               {{ set page = search.pages("type=tag tag='" + tag + "'") }}
               {{ if page }}
                 <a href="/tags/{{ tag }}">{{ tag }}</a>

@@ -6,12 +6,6 @@ order: 0
 ---
 
 <style>
-main {
-  padding: 8vh 14vw 5vh;
-  @media (min-width: 800px) {
-    padding: 8vh 25vw 5vh;
-  }
-}
 </style>
 
 <h3>Welcome to</h3>
@@ -28,35 +22,33 @@ main {
 
 <h2><em>VIC's personal website.</em></h2>
 
-<nav style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 16px auto 32px auto">
+<nav id="menu" style="" >
   <form action="/">
-    <input class="button" type="submit" value="Home" />
+    <input class="button lt" type="submit" value="Home" />
   </form>
   <form action="/weblog">
-    <input class="button" type="submit" value="Weblog" />
+    <input class="button lt" type="submit" value="Weblog" />
   </form>
   <form action="/meta">
-    <input class="button" type="submit" value="Meta" />
+    <input class="button lt" type="submit" value="Meta" />
   </form>
   <form action="/games">
-    <input class="button" type="submit" value="Games" />
+    <input class="button lt" type="submit" value="Games" />
   </form>
   <form action="/vic">
-    <input class="button" type="submit" value="Vic" />
+    <input class="button lt" type="submit" value="Vic" />
   </form>
 </nav>
 
-<p>
-I'm a boy from Mexico, living in Tokyo. I like to make things. Here's a thing I made recently:
+<em>Hot off the oven...</em>
 
 {{ set posts = search.pages("weblog=true", "date=desc") }}
 {{ set post = posts[0] }}
 
-  <a href="{{ post.url }}" class="postList-title"{{ if post.url == url }} aria-current="page"{{ /if }}>
-    {{ if post.title }}
-      {{ post.title |> toUpperCase }}
-    {{ else }}
-      <code>{{ post.path }}</code>
-    {{ /if }}
-  </a>
-</p>
+<form action="{{ post.url }}">
+  <input class="button xlt" type="submit" value='" {{ post.title }} "' />
+</form>
+
+<br>
+
+<h4><em>Enjoy your stay!</em></h4>

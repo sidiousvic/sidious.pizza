@@ -33,15 +33,19 @@ body {
 }
 
 main {
+  padding: 8vh 14vw 5vh;
   grid-area: main;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 8vh 14vw 5vh 14vw;
   height: fit-content;
   overflow-y: auto;
   overflow-x: hidden;
+
+  @media (min-width: 800px) {
+    padding: 8vh 25vw 5vh;
+  }
 
   @media (max-width: 500px) {
     margin: 0 1vw;
@@ -55,7 +59,45 @@ main {
 }
 
 .display {
-  display: flex;
+  display: flex !important;
+}
+
+.w40 {
+  width: 40px !important;
+}
+
+.xlt {
+  font-size: 2rem !important;
+}
+
+.lt {
+  font-size: 1.2rem !important;
+}
+
+.mt {
+  font-size: 1rem !important;
+}
+
+.st {
+  font-size: 0.6rem !important;
+}
+
+@media (max-width: 1050px) {
+  .hide-1050 {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .hide-700 {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .hide-500 {
+    display: none;
+  }
 }
 
 .button {
@@ -63,21 +105,23 @@ main {
   width: auto;
   color: var(--venom);
   padding: 0.1rem 0.8rem;
-  border-radius: 10px;
+  border-radius: 5px;
   font-family: var(--font-family-title);
   font-size: 16px;
   font-weight: 400;
   background-color: var(--darkgray);
-  border: var(--venom) dotted 1px;
+  border: none;
   cursor: pointer;
   outline: none;
-  box-shadow: 0 0 5px black;
   transition: all 0.3s ease-in-out;
+  text-decoration: underline;
+  text-decoration-style: dotted;
 
   &:hover {
     box-shadow: -1px -2px 11px black inset;
     background-color: var(--venom);
     color: var(--darkgray);
+    text-decoration: none;
 
     & a {
       color: var(--darkgray);
@@ -371,7 +415,7 @@ picture::after {
 
 figure {
   width: fit-content;
-  margin: 0 1rem;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: baseline;

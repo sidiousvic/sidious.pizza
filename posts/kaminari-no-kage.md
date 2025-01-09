@@ -7,7 +7,7 @@ gif: /assets/images/lightning-strike.gif
 tags:
   - haiku
 weblog: true
-draft: false
+draft: true
 ---
 
 <!-- jp -->

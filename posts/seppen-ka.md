@@ -7,7 +7,7 @@ gif: /assets/images/onsen.gif
 tags:
   - haiku
 weblog: true
-draft: false
+draft: true
 ---
 
 <!-- jp -->

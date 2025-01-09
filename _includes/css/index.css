@@ -1,4 +1,7 @@
-#score {
-  color: var(--venom);
-  filter: var(--filter-invert);
+#menu {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 16px auto 32px auto;
 }
