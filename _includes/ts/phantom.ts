@@ -20,7 +20,7 @@ export type Sprites = {
 /**
  * The state of the game
  */
-export type GameState<Phantoms> = {
+export type projectstate<Phantoms> = {
   // sprites: { [key: string]: HTMLImageElement };
   sound: { [key: string]: HTMLAudioElement };
   score: Score;
@@ -249,12 +249,12 @@ export const Phantom =
   });
 
 /**
- * Runs a gamestate mutation at the current frame of the game and schedules the next frame
+ * Runs a projectstate mutation at the current frame of the game and schedules the next frame
  */
 export const Engine =
   <Phantoms>(c: HTMLCanvasElement | null) =>
-  (z: GameState<Phantoms>) =>
-  (m: (z: GameState<Phantoms>) => void) => (
+  (z: projectstate<Phantoms>) =>
+  (m: (z: projectstate<Phantoms>) => void) => (
     requestAnimationFrame(() => Engine(c)(z)(m as Mutation)),
     c?.getContext("2d")?.clearRect(0, 0, c.width, c.height),
     m(z)

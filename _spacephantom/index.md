@@ -30,4 +30,4 @@ The ship gyrates towards the direction of motion, adjusting the angle of shootin
 
 ![A screengrab of the game Space Phantom, depicting an alien ship destroying enemies in the shape of red skulls with laser beams.](/assets/images/spacephantom.gif){ optimize priority="high" caption="Space invaders, with a twist." }
 
-The music was made using Logic Pro X drum machine and graphics w/ a pixel editor. I would love to create a manual for it in the style of old NES games sometime.
+The music was made using Logic Pro X drum machine and graphics w/ a pixel editor. I would love to create a manual for it in the style of old NES projects sometime.

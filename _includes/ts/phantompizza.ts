@@ -12,7 +12,7 @@ import {
   config,
   draw,
   Engine,
-  GameState,
+  projectstate,
   moveWithMouse,
   moveWithVelocity,
   Phantom,
@@ -28,9 +28,6 @@ const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 if (isMobile) {
   const styles = document.createElement("style");
   styles.textContent = `
-    body {
-      cursor: none !important;
-    }
     #main {
       display: flex;
       justify-content: center;
@@ -47,8 +44,7 @@ if (isMobile) {
 
 const styles = document.createElement("style");
 styles.textContent = `
-  body {
-    cursor: none !important;
+  #main {
   }
   #score { 
     animation: shake .5s infinite;
@@ -135,7 +131,7 @@ const phantoms = {
   ],
 };
 
-const z: GameState<Phantoms> = {
+const z: projectstate<Phantoms> = {
   phantoms,
   sound,
   score,
