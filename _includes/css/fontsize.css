@@ -22,7 +22,7 @@
 /* Small screens (min-width: 640px) */
 @media (min-width: 640px) {
   .xxlt-sm {
-    font-size: 2rem !important;
+    font-size: 1.8rem !important;
   }
 
   .xlt-sm {
@@ -30,7 +30,7 @@
   }
 
   .lt-sm {
-    font-size: 1.2rem !important;
+    font-size: 1.4rem !important;
   }
 
   .mt-sm {
@@ -38,14 +38,14 @@
   }
 
   .st-sm {
-    font-size: 0.6rem !important;
+    font-size: 0.8rem !important;
   }
 }
 
 /* Medium screens (min-width: 768px) */
 @media (min-width: 768px) {
   .xxlt-md {
-    font-size: 2rem !important;
+    font-size: 1.8rem !important;
   }
 
   .xlt-md {
@@ -53,7 +53,7 @@
   }
 
   .lt-md {
-    font-size: 1.2rem !important;
+    font-size: 1.4rem !important;
   }
 
   .mt-md {
@@ -61,14 +61,14 @@
   }
 
   .st-md {
-    font-size: 0.6rem !important;
+    font-size: 0.8rem !important;
   }
 }
 
 /* Large screens (min-width: 1024px) */
 @media (min-width: 1024px) {
   .xxlt-lg {
-    font-size: 2rem !important;
+    font-size: 1.8rem !important;
   }
 
   .xlt-lg {
@@ -76,7 +76,7 @@
   }
 
   .lt-lg {
-    font-size: 1.2rem !important;
+    font-size: 1.4rem !important;
   }
 
   .mt-lg {
@@ -84,14 +84,14 @@
   }
 
   .st-lg {
-    font-size: 0.6rem !important;
+    font-size: 0.8rem !important;
   }
 }
 
 /* Extra-large screens (min-width: 1280px) */
 @media (min-width: 1280px) {
   .xxlt-xl {
-    font-size: 2rem !important;
+    font-size: 1.8rem !important;
   }
 
   .xlt-xl {
@@ -99,7 +99,7 @@
   }
 
   .lt-xl {
-    font-size: 1.2rem !important;
+    font-size: 1.4rem !important;
   }
 
   .mt-xl {
@@ -107,14 +107,14 @@
   }
 
   .st-xl {
-    font-size: 0.6rem !important;
+    font-size: 0.8rem !important;
   }
 }
 
 /* 2XL screens (min-width: 1536px) */
 @media (min-width: 1536px) {
   .xxlt-2xl {
-    font-size: 2rem !important;
+    font-size: 1.8rem !important;
   }
 
   .xlt-2xl {
@@ -122,7 +122,7 @@
   }
 
   .lt-2xl {
-    font-size: 1.2rem !important;
+    font-size: 1.4rem !important;
   }
 
   .mt-2xl {
@@ -130,6 +130,6 @@
   }
 
   .st-2xl {
-    font-size: 0.6rem !important;
+    font-size: 0.8rem !important;
   }
 }

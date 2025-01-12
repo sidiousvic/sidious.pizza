@@ -275,11 +275,10 @@ export const config = ({
   filter,
   audios,
   startScreen,
-  cursor,
   bgColorHex,
   fgColorHex,
 }: GameConfig) => {
-  document.querySelector("main")!.innerHTML += `
+  document.body.innerHTML += `
 <canvas>
   ${sprites.map(
     (sprite) =>
@@ -308,12 +307,7 @@ export const config = ({
   
   body {
     background: transparent; 
-    cursor: ${cursor ? "default" : "none"}; 
     touch-action: none;
-  }
-  
-  a { 
-    cursor: pointer; 
   }
   
   p { 
@@ -326,7 +320,6 @@ export const config = ({
     position: absolute; 
     top: 0; 
     left: 0; 
-    cursor: ${cursor ? "default" : "none"}; 
   }
   
   #start-screen { 

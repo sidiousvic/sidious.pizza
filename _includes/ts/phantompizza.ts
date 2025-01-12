@@ -28,12 +28,13 @@ const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 if (isMobile) {
   const styles = document.createElement("style");
   styles.textContent = `
-    #main {
+    body {
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
       font-size: 1.4rem;
+      cursor: none !important;
     }
     #score {
       font-size: 1.7rem !important;
@@ -44,7 +45,8 @@ if (isMobile) {
 
 const styles = document.createElement("style");
 styles.textContent = `
-  #main {
+  body {
+    cursor: none !important;
   }
   #score { 
     animation: shake .5s infinite;
@@ -98,7 +100,7 @@ const { sprites, score, sound, mouse, c } = config({
   filter: "var(--filter-invert)",
   startTextA: isMobile
     ? "<em>TOUCH</em> TO START"
-    : '<em style="filter: var(--filter-invert)">ENTER</em> AT YOUR OWN PERIL',
+    : 'PRESS <em style="filter: var(--filter-invert)">START</em>',
   startTextB: '危険ゾーンに <em style="filter: var(--filter-invert)">投入</em>',
   sprites: [
     "/assets/images/enemyl.webp",

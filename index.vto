@@ -13,27 +13,31 @@ order: 0
 <h1>"<em>SIDIOUS.PIZZA</em>"</h1>
 
 <img
-  style="filter: var(--venom-filter);"
+  class="pulse"
+  style="
+    filter: var(--venom-filter);
+    transform: rotate(-2deg);
+  "
   width="400"
-  src="/assets/images/skating-tokyo.gif"
+  src="/assets/images/skating-tokyo-camera.gif"
 />
 
 <br>
 
-<h2><em>VIC's personal website.</em></h2>
+<h2 style="text-align: center;" class="xlt xxlt-sm"><em>VIC's personal website.</em></h2>
 
 <nav id="menu" style="" >
   <form action="/weblog">
     <input class="menu-item button lt" type="submit" value="Weblog" />
-  </form>
-  <form action="/meta">
-    <input class="menu-item button lt" type="submit" value="Meta" />
   </form>
   <form action="/projects">
     <input class="menu-item button lt" type="submit" value="Projects" />
   </form>
   <form action="/vic">
     <input class="menu-item button lt" type="submit" value="Vic" />
+  </form>
+  <form action="/meta">
+    <input class="menu-item button lt" type="submit" value="Meta" />
   </form>
 </nav>
 
@@ -42,10 +46,8 @@ order: 0
 {{ set posts = search.pages("weblog=true", "date=desc") }}
 {{ set post = posts[0] }}
 
-<form action="{{ post.url }}">
-  <input class="button lt xlt-sm xxlt-md" type="submit" value=' " {{ post.title }} " ' />
-</form>
+<a style="text-align: center;" href="{{ post.url }}"><strong class="mt xlt-sm">"{{ post.title }}"</strong></a>
 
 <br>
 
-<h4><em><strong>Stay</strong> wicked! <code>>:)</code></em></h4>
+<h4><em><strong>Stay wicked</strong>! <code>>:)</code></em></h4>

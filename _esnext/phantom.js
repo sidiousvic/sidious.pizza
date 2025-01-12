@@ -1,19 +1,19 @@
-(()=>{var m=e=>t=>Math.sqrt(Math.pow(t.x-e.x,2)+Math.pow(t.y-e.y,2)),p=e=>t=>Math.floor(Math.random()*(t-e+1)+e),R=e=>e[Math.floor(Math.random()*e.length)],l=e=>-e,C=e=>t=>e+t/2,k=e=>e/2,E=e=>k(e.dimension),A=e=>t=>m(e)(t)<=E(e)+E(t),$=e=>t=>r=>A(e)(t)&&void r(),b=e=>(e.x+=e.speed.x,e.y+=e.speed.y),W=e=>t=>(e.x=t.x,e.y=t.y),_=e=>t=>e.sprite=t,z=e=>({x:p(e)(innerWidth-e),y:p(e)(innerHeight-e)}),O=e=>(e.x=p(e.dimension)(innerWidth-e.dimension),e.y=p(e.dimension)(innerHeight-e.dimension)),B=e=>t=>(e.value+=t,e.sprite.innerHTML=String(~~e.value)),D=e=>t=>m(e)({x:e.x,y:t.y})<=e.dimension||m(e)({x:e.x,y:t.y})-t.y>0?e.speed.y=l(e.speed.y):(m(e)({x:t.x,y:e.y})<=e.dimension||m(e)({x:t.x,y:e.y})-t.x>0)&&(e.speed.x=l(e.speed.x)),N=e=>({sprite:t,x:r,y:i,dimension:a})=>e?.getContext("2d")?.drawImage(t,r,i,a,a),F=({x:e,y:t})=>r=>i=>a=>({x:e,y:t,sprite:i,dimension:r,speed:{x:a,y:a}}),I=e=>t=>r=>(requestAnimationFrame(()=>I(e)(t)(r)),e?.getContext("2d")?.clearRect(0,0,e.width,e.height),r(t)),q=({scoreFont:e,startScreenTextFont:t,startScreenTitleFont:r,startTextA:i,startTextB:a,displayScore:f,gameTitle:w,sprites:x,filter:h,audios:M,startScreen:T,cursor:u,bgColorHex:L,fgColorHex:S})=>{document.querySelector("main").innerHTML+=`
+(()=>{var m=e=>t=>Math.sqrt(Math.pow(t.x-e.x,2)+Math.pow(t.y-e.y,2)),p=e=>t=>Math.floor(Math.random()*(t-e+1)+e),I=e=>e[Math.floor(Math.random()*e.length)],l=e=>-e,R=e=>t=>e+t/2,P=e=>e/2,v=e=>P(e.dimension),k=e=>t=>m(e)(t)<=v(e)+v(t),C=e=>t=>r=>k(e)(t)&&void r(),$=e=>(e.x+=e.speed.x,e.y+=e.speed.y),b=e=>t=>(e.x=t.x,e.y=t.y),W=e=>t=>e.sprite=t,_=e=>({x:p(e)(innerWidth-e),y:p(e)(innerHeight-e)}),z=e=>(e.x=p(e.dimension)(innerWidth-e.dimension),e.y=p(e.dimension)(innerHeight-e.dimension)),O=e=>t=>(e.value+=t,e.sprite.innerHTML=String(~~e.value)),B=e=>t=>m(e)({x:e.x,y:t.y})<=e.dimension||m(e)({x:e.x,y:t.y})-t.y>0?e.speed.y=l(e.speed.y):(m(e)({x:t.x,y:e.y})<=e.dimension||m(e)({x:t.x,y:e.y})-t.x>0)&&(e.speed.x=l(e.speed.x)),D=e=>({sprite:t,x:r,y:i,dimension:a})=>e?.getContext("2d")?.drawImage(t,r,i,a,a),N=({x:e,y:t})=>r=>i=>a=>({x:e,y:t,sprite:i,dimension:r,speed:{x:a,y:a}}),A=e=>t=>r=>(requestAnimationFrame(()=>A(e)(t)(r)),e?.getContext("2d")?.clearRect(0,0,e.width,e.height),r(t)),F=({scoreFont:e,startScreenTextFont:t,startScreenTitleFont:r,startTextA:i,startTextB:a,displayScore:E,gameTitle:f,sprites:x,filter:h,audios:w,startScreen:M,bgColorHex:T,fgColorHex:L})=>{document.body.innerHTML+=`
 <canvas>
   ${x.map(n=>`<img alt="an in-game sprite" id="${n.split("/").pop().split(".")[0]}" width="0" height="0" src=${n} />`)}
 </canvas>
 
-<p id="score" ${f?"visible":"hidden"}>0</p>
+<p id="score" ${E?"visible":"hidden"}>0</p>
 
 <div id="start-screen">
-  <h1 id="start-screen-title">${w}</h1>
+  <h1 id="start-screen-title">${f}</h1>
   <p id="start-screen-text">${i}</p>
 </div>
 
 <style>
   :root {
-    --phantom-background-color: ${L};
-    --phantom-foreground-color: ${S};
+    --phantom-background-color: ${T};
+    --phantom-foreground-color: ${L};
   }
   
   html { 
@@ -22,12 +22,7 @@
   
   body {
     background: transparent; 
-    cursor: ${u?"default":"none"}; 
     touch-action: none;
-  }
-  
-  a { 
-    cursor: pointer; 
   }
   
   p { 
@@ -40,11 +35,10 @@
     position: absolute; 
     top: 0; 
     left: 0; 
-    cursor: ${u?"default":"none"}; 
   }
   
   #start-screen { 
-    display: ${T?"flex":"none"};
+    display: ${M?"flex":"none"};
     top: 0;
     left: 0; 
     background-color: var(--phantom-background-color); 
@@ -101,4 +95,4 @@
     image-rendering: pixelated; 
   }
 </style>
-`;let g=x.reduce((n,s)=>({...n,[s.split("/").pop().split(".")[0]]:document.getElementById(s.split("/").pop().split(".")[0])}),{score:document.getElementById("score")}),c=document.getElementById("start-screen"),y=document.getElementById("start-screen-text"),d=document.querySelector("canvas");d.width=innerWidth,d.height=innerHeight;let o={x:d.width/2,y:d.height/2},H={value:0,sprite:g.score},P=M.reduce((n,s)=>{let v=new Audio(s.url);return v.volume=s.volume,{...n,[s.url.split("/").pop().split(".")[0]]:v}},{});return setInterval(()=>y.innerHTML=y.innerHTML===i?a:i,2e3),addEventListener("resize",()=>(d.width=innerWidth,d.height=innerHeight)),addEventListener("mousemove",({clientX:n,clientY:s})=>(o.x=n,o.y=s)),addEventListener("touchmove",n=>(o.x=n.touches[0].clientX-17,o.y=n.touches[0].clientY-90),{passive:!1}),addEventListener("touchstart",n=>(o.x=n.touches[0].clientX,o.y=n.touches[0].clientY),{passive:!1}),addEventListener("keydown",n=>n.key==="Enter"&&c.remove()),addEventListener("keydown",n=>n.key==="ArrowUp"&&(o.y-=60)),addEventListener("keydown",n=>n.key==="ArrowRight"&&(o.x+=60)),addEventListener("keydown",n=>n.key==="ArrowDown"&&(o.y+=60)),addEventListener("keydown",n=>n.key==="ArrowLeft"&&(o.x-=60)),addEventListener("click",()=>c.remove()),addEventListener("touchstart",()=>c.remove()),{c:d,mouse:o,sound:P,score:H,sprites:g}};})();
+`;let u=x.reduce((n,s)=>({...n,[s.split("/").pop().split(".")[0]]:document.getElementById(s.split("/").pop().split(".")[0])}),{score:document.getElementById("score")}),c=document.getElementById("start-screen"),g=document.getElementById("start-screen-text"),d=document.querySelector("canvas");d.width=innerWidth,d.height=innerHeight;let o={x:d.width/2,y:d.height/2},S={value:0,sprite:u.score},H=w.reduce((n,s)=>{let y=new Audio(s.url);return y.volume=s.volume,{...n,[s.url.split("/").pop().split(".")[0]]:y}},{});return setInterval(()=>g.innerHTML=g.innerHTML===i?a:i,2e3),addEventListener("resize",()=>(d.width=innerWidth,d.height=innerHeight)),addEventListener("mousemove",({clientX:n,clientY:s})=>(o.x=n,o.y=s)),addEventListener("touchmove",n=>(o.x=n.touches[0].clientX-17,o.y=n.touches[0].clientY-90),{passive:!1}),addEventListener("touchstart",n=>(o.x=n.touches[0].clientX,o.y=n.touches[0].clientY),{passive:!1}),addEventListener("keydown",n=>n.key==="Enter"&&c.remove()),addEventListener("keydown",n=>n.key==="ArrowUp"&&(o.y-=60)),addEventListener("keydown",n=>n.key==="ArrowRight"&&(o.x+=60)),addEventListener("keydown",n=>n.key==="ArrowDown"&&(o.y+=60)),addEventListener("keydown",n=>n.key==="ArrowLeft"&&(o.x-=60)),addEventListener("click",()=>c.remove()),addEventListener("touchstart",()=>c.remove()),{c:d,mouse:o,sound:H,score:S,sprites:u}};})();
