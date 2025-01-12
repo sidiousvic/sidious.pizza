@@ -66,22 +66,6 @@ main {
   width: 40px !important;
 }
 
-.xlt {
-  font-size: 2rem !important;
-}
-
-.lt {
-  font-size: 1.2rem !important;
-}
-
-.mt {
-  font-size: 1rem !important;
-}
-
-.st {
-  font-size: 0.6rem !important;
-}
-
 @media (max-width: 1050px) {
   .hide-1050 {
     display: none;
@@ -113,7 +97,7 @@ main {
   border: none;
   cursor: pointer;
   outline: none;
-  transition: all 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
   text-decoration: underline;
   text-decoration-style: dotted;
 

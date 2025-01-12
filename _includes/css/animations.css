@@ -44,6 +44,22 @@
   }
 }
 
+.venomous-color {
+  animation: venomous-color 3s infinite;
+}
+
+@keyframes venomous-color {
+  0% {
+    color: var(--darkgray);
+  }
+  50% {
+    color: var(--venom);
+  }
+  100% {
+    color: var(--darkgray);
+  }
+}
+
 .venomous {
   animation: venomous 3s infinite;
 }

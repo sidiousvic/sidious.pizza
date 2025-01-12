@@ -23,32 +23,29 @@ order: 0
 <h2><em>VIC's personal website.</em></h2>
 
 <nav id="menu" style="" >
-  <form action="/">
-    <input class="button lt" type="submit" value="Home" />
-  </form>
   <form action="/weblog">
-    <input class="button lt" type="submit" value="Weblog" />
+    <input class="menu-item button lt" type="submit" value="Weblog" />
   </form>
   <form action="/meta">
-    <input class="button lt" type="submit" value="Meta" />
+    <input class="menu-item button lt" type="submit" value="Meta" />
   </form>
   <form action="/games">
-    <input class="button lt" type="submit" value="Games" />
+    <input class="menu-item button lt" type="submit" value="Games" />
   </form>
   <form action="/vic">
-    <input class="button lt" type="submit" value="Vic" />
+    <input class="menu-item button lt" type="submit" value="Vic" />
   </form>
 </nav>
 
-<em>This is hot off the oven...</em>
+<em>This one is <code>HOT</code> off the oven...</em>
 
 {{ set posts = search.pages("weblog=true", "date=desc") }}
 {{ set post = posts[0] }}
 
 <form action="{{ post.url }}">
-  <input class="button xlt" type="submit" value=' " {{ post.title }} " ' />
+  <input class="button lt xlt-sm xxlt-md" type="submit" value=' " {{ post.title }} " ' />
 </form>
 
 <br>
 
-<h4><em>Enjoy your stay!</em></h4>
+<h4><em><strong>Stay</strong> wicked! <code>>:)</code></em></h4>

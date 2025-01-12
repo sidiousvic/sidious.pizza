@@ -47,12 +47,13 @@ S I D I O U S . P I Z Z A  -->
 
 
   <body>
-
     <div id="curtain"></div>
 
-    <a href="/" id="site-title" class="button">
-      {{ site.title }}
-    </a>
+    {{if url !== "/"}}
+      <a href="/" id="site-title" class="button">
+        {{ site.title }}
+      </a>
+    {{/if}}
 
     <main id="main" class="{{ page.bodyClass }}">
       {{ content }}
