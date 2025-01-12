@@ -1,0 +1,35 @@
+---
+layout: layouts/base.vto
+title: GAMES
+order: 0
+---
+
+{{ set games = search.pages("game=true", "date=desc", 99) }}
+
+<h1 class="page-title">GAMES</h1>
+
+<ul class="games">
+{{ for game of games }}
+  <li class="games-post">
+      {{ if game.gif }}
+        <picture class="no-border">
+          <img src="{{ game.gif }}" />
+        </picture>
+      {{ else }}
+        <picture class="no-border">
+          <img alt="a pizza with a phantomy face" src="/assets/images/enemyr.png" />
+        </picture>
+      {{ /if }}
+    <div class="games-meta">
+      <a href="{{ game.url }}" class="game-title"{{ if game.url == url }} aria-current="page"{{ /if }}>
+      {{ if game.shortTitle }}
+      {{ game.shortTitle |> toUpperCase }}
+      {{ else if game.title }}
+      {{ game.title |> toUpperCase}}
+      {{ else }}
+        <code>{{ game.url }}</code>
+      {{ /if }}
+    </a>
+    </div>
+{{ /for }}
+</ul>

@@ -1,5 +1,5 @@
 ---
-layout: layouts/swims.vto
+layout: layouts/musics.vto
 title: Tattsu
 date: 2023-08-01
 gif: /assets/images/tattsu.gif

@@ -40,13 +40,13 @@ order: 0
   </form>
 </nav>
 
-<em>Hot off the oven...</em>
+<em>This is hot off the oven...</em>
 
 {{ set posts = search.pages("weblog=true", "date=desc") }}
 {{ set post = posts[0] }}
 
 <form action="{{ post.url }}">
-  <input class="button xlt" type="submit" value='" {{ post.title }} "' />
+  <input class="button xlt" type="submit" value=' " {{ post.title }} " ' />
 </form>
 
 <br>

@@ -1,4 +1,4 @@
-.things {
+.games {
   list-style: none;
   padding: 0;
   display: flex;
@@ -9,16 +9,16 @@
   gap: 2rem;
 }
 
-.thing-title {
+.game-title {
   letter-spacing: 3px;
 }
 
-.things-date {
+.games-date {
   font-size: 0.8rem;
   color: var(--lightgray);
 }
 
-.things-header {
+.games-header {
   display: block;
   padding: 0.5em 0.2em;
   font-size: 1.2rem;
@@ -29,7 +29,7 @@
   }
 }
 
-.things-post {
+.games-post {
   margin: 0;
   display: flex;
   flex-direction: column;

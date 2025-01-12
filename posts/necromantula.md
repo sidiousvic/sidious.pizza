@@ -1,5 +1,5 @@
 ---
-layout: layouts/swims.vto
+layout: layouts/musics.vto
 title: NECROMANTULA
 date: 2023-08-30
 gif: /assets/images/necromantula.gif

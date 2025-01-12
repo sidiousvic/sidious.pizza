@@ -28,6 +28,9 @@ const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 if (isMobile) {
   const styles = document.createElement("style");
   styles.textContent = `
+    body {
+      cursor: none !important;
+    }
     #main {
       display: flex;
       justify-content: center;
@@ -44,6 +47,9 @@ if (isMobile) {
 
 const styles = document.createElement("style");
 styles.textContent = `
+  body {
+    cursor: none !important;
+  }
   #score { 
     animation: shake .5s infinite;
   }
@@ -58,7 +64,9 @@ styles.textContent = `
       transform: translate(-50%, calc(50% + 2px));
     }
   }
+
 `;
+
 document.head.appendChild(styles);
 
 const ENEMY_RANDOM_SPAWN_SPEEDS = [-5, -4, -3 - 2, 2, 3, 4, 5];

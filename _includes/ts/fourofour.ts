@@ -14,7 +14,7 @@ const config: Config = {
     "Are you lost?",
     "You seem to be lost.",
     "You should not be here.",
-    "There is nothing here for you.",
+    "There is nogame here for you.",
     "Turn around.",
     "Wrong turn, perhaps?",
     "They are watching you.",

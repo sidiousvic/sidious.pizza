@@ -102,6 +102,9 @@
   }
 </style>
 `;let A=P.reduce((n,r)=>({...n,[r.split("/").pop().split(".")[0]]:document.getElementById(r.split("/").pop().split(".")[0])}),{score:document.getElementById("score")}),f=document.getElementById("start-screen"),H=document.getElementById("start-screen-text"),l=document.querySelector("canvas");l.width=innerWidth,l.height=innerHeight;let o={x:l.width/2,y:l.height/2},Y={value:0,sprite:A.score},X=U.reduce((n,r)=>{let I=new Audio(r.url);return I.volume=r.volume,{...n,[r.url.split("/").pop().split(".")[0]]:I}},{});return setInterval(()=>H.innerHTML=H.innerHTML===a?m:a,2e3),addEventListener("resize",()=>(l.width=innerWidth,l.height=innerHeight)),addEventListener("mousemove",({clientX:n,clientY:r})=>(o.x=n,o.y=r)),addEventListener("touchmove",n=>(o.x=n.touches[0].clientX-17,o.y=n.touches[0].clientY-90),{passive:!1}),addEventListener("touchstart",n=>(o.x=n.touches[0].clientX,o.y=n.touches[0].clientY),{passive:!1}),addEventListener("keydown",n=>n.key==="Enter"&&f.remove()),addEventListener("keydown",n=>n.key==="ArrowUp"&&(o.y-=60)),addEventListener("keydown",n=>n.key==="ArrowRight"&&(o.x+=60)),addEventListener("keydown",n=>n.key==="ArrowDown"&&(o.y+=60)),addEventListener("keydown",n=>n.key==="ArrowLeft"&&(o.x-=60)),addEventListener("click",()=>f.remove()),addEventListener("touchstart",()=>f.remove()),{c:l,mouse:o,sound:X,score:Y,sprites:A}};var T=/iPhone|iPad|iPod|Android/i.test(navigator.userAgent);if(T){let e=document.createElement("style");e.textContent=`
+    body {
+      cursor: none !important;
+    }
     #main {
       display: flex;
       justify-content: center;
@@ -113,6 +116,9 @@
       font-size: 1.7rem !important;
     }
   `,document.head.appendChild(e)}var $=document.createElement("style");$.textContent=`
+  body {
+    cursor: none !important;
+  }
   #score { 
     animation: shake .5s infinite;
   }
@@ -127,4 +133,5 @@
       transform: translate(-50%, calc(50% + 2px));
     }
   }
+
 `;document.head.appendChild($);var N=[-5,-4,-5,2,3,4,5],_=0,i=T?30:50,Q=Math.pow(i,2)/(innerHeight*innerWidth)*1e3,j=["Wicked<i>\uFF01</i>","Pie-wack<i>\uFF01</i>","Slice 'n' dice<i>\uFF01</i>","Mamma mia<i>\uFF01</i>","Pizza-boo<i>\uFF01</i>","Sizzle and fizzle<i>\uFF01</i>","Pie 'n' die<i>\uFF01</i>","\u30D1\u30A4\u3084\u3070\u3063<i>\uFF01</i>","\u51C4\u8155\u30D4\u30B6<i>\uFF01</i>","\u9003\u3052\u308D\u30FC<i>\uFF01</i>","\u30D1\u30A4\u9003\u907F<i>\uFF01</i>"],ee=/phantompizza/i.test(location.href),{sprites:c,score:D,sound:te,mouse:B,c:v}=W({gameTitle:ee?"PHANTOM PIZZA":"SIDIOUS.PIZZA",displayScore:!0,startScreen:!0,startScreenTitleFont:"var(--font-family-title)",startScreenTextFont:"var(--font-family)",scoreFont:"var(--font-family-title)",bgColorHex:"#0d1117",fgColorHex:"var(--venom)",filter:"var(--filter-invert)",startTextA:T?"<em>TOUCH</em> TO START":'<em style="filter: var(--filter-invert)">ENTER</em> AT YOUR OWN PERIL',startTextB:'\u5371\u967A\u30BE\u30FC\u30F3\u306B <em style="filter: var(--filter-invert)">\u6295\u5165</em>',sprites:["/assets/images/enemyl.webp","/assets/images/enemyr.webp","/assets/images/swoosh.webp","/assets/images/player.gif"],audios:[{url:"/assets/music/swoosh.wav",volume:.3},{url:"/assets/music/death.wav",volume:.9},{url:"/assets/music/phantompizza.wav",volume:.8}]}),ne={player:d(B)(i)(c.player)(_),swoosh:d(x(i))(i)(c.swoosh)(_),enemies:[d(x(i))(i)(c.enemyr)(u(N))]},oe={phantoms:ne,sound:te,score:D,mouse:B};requestAnimationFrame(()=>{S(v)(oe)(e=>(e.score.value===0&&(document.getElementById("score").innerHTML="START!",e.sound.phantompizza.pause()),e.score.value>1&&e.sound.phantompizza.play().catch(()=>{}),C(e.phantoms.player)(e.mouse),g(v)(e.phantoms.player),E(e.phantoms.swoosh)(e.phantoms.player)(()=>(b(e.score)(Q),~~e.score.value%3?document.getElementById("score").style.animation="none":(document.getElementById("score").style.animation="shake .5s infinite",D.sprite.innerHTML=u(j).toUpperCase()),w(e.phantoms.swoosh),e.sound.swoosh.play().catch(()=>{}),e.phantoms.enemies.push(d(x(i))(i)(c.enemyr)(u(N))))),g(v)(e.phantoms.swoosh),e.phantoms.enemies.map(t=>(e.enemy=t,E(t)(e.phantoms.player)(()=>(w(e.phantoms.swoosh),e.score.value=0,e.phantoms.enemies.length=0,e.sound.death.play().catch(()=>{}))),z(t),k(t)(t.speed.x<0?c.enemyl:c.enemyr),O(t)({x:innerWidth,y:innerHeight}),g(v)(t)))))});})();

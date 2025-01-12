@@ -1,5 +1,5 @@
 ---
-layout: layouts/swims.vto
+layout: layouts/musics.vto
 title: BASH YOUR BRAINS
 shortTitle: Bash Ur Brains
 date: 2023-10-11

@@ -43,7 +43,7 @@ The source `.css` files can be found in the [\_includes/css](_includes/css) dire
 
 Programs are compiled from Typescript into [ESNext](https://developer.mozilla.org/en-US/docs/Web/JavaScript/JavaScript_technologies_overview#standardization_process) on build, in order to be delivered inline from server with the document.
 
-Source `.ts` files can be found in the [\_includes/ts](_includes/ts) folder. Compiled files are stored in the `_esnext` directory. [Here's an example of a layout using compiled files.](_includes/layouts/swims.vto#L5)
+Source `.ts` files can be found in the [\_includes/ts](_includes/ts) folder. Compiled files are stored in the `_esnext` directory. [Here's an example of a layout using compiled files.](_includes/layouts/musics.vto#L5)
 
 Programs are written in my own functional dialect and might look a bit unlike typical DOM manipulators. Why? Because it's fun. 😈
 
