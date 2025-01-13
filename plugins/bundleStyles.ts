@@ -1,5 +1,5 @@
-import { bundleAsync } from "npm:lightningcss-wasm@1.22.1";
 import { sha256 } from "sha256/mod.ts";
+import { bundleAsync } from "lightningcss-wasm";
 import { Event } from "lume/core/events.ts";
 import Site from "lume/core/site.ts";
 
