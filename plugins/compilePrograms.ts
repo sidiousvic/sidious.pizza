@@ -112,12 +112,4 @@ export const compilePrograms =
 
     site.addEventListener("beforeBuild", compilePrograms);
     site.addEventListener("afterUpdate", compilePrograms);
-
-    async function cleanup() {
-      await Deno.remove(Deno.cwd() + "/_temp", {
-        recursive: true,
-      }).catch((e) => console.error(`🚨 [Deno] Error removing _temp ${e}`));
-    }
-
-    site.addEventListener("afterBuild", cleanup);
   };
