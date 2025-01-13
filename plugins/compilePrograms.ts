@@ -1,8 +1,8 @@
 import { build } from "esbuild/mod.js";
 import { Event } from "lume/core/events.ts";
 import { sha256 } from "sha256/mod.ts";
-import Site from "lume/core/site.ts";
-import { walkSync } from "https://deno.land/std@0.224.0/fs/mod.ts";
+import Site, { SiteEventMap } from "lume/core/site.ts";
+import { walkSync } from "lume/deps/fs.ts";
 
 /**
  * Compiles TypeScript programs in _includes/ts to JavaScript.
@@ -122,6 +122,8 @@ export const compilePrograms =
 
       if (e.type === "afterUpdate")
         console.log(`♻️  Recompiled updated files into _esnext/ts!`);
+
+      return site;
     }
 
     const isDevMode = Deno.args.includes("-s");
@@ -133,7 +135,8 @@ export const compilePrograms =
     );
 
     if (isDevMode)
-      site.addEventListener("beforeBuild", compilePrograms),
-        site.addEventListener("afterUpdate", compilePrograms);
+      ["beforeBuild", "afterUpdate"].map((event) =>
+        site.addEventListener(event as keyof SiteEventMap, compilePrograms)
+      );
     else compilePrograms({ type: "beforeBuild" });
   };
