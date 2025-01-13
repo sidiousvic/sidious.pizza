@@ -1,4 +1,4 @@
-import { build } from "esbuild/mod.js";
+import { build, stop } from "esbuild/mod.js";
 import { Event } from "lume/core/events.ts";
 import { sha256 } from "sha256/mod.ts";
 import Site, { SiteEventMap } from "lume/core/site.ts";
@@ -68,7 +68,23 @@ export const compilePrograms =
             color: true,
             minify: true,
             bundle: true,
-          }).catch(console.error);
+          })
+            .then(() => {
+              console.log(
+                `🔨 Compiled _temp/esnext/${file.path.split("/").pop()}!`
+              );
+            })
+            .catch((e) => {
+              console.error(`🚨 [esbuild] Error compiling ${file.path}!`);
+              if (e instanceof Error) console.error(e.message);
+            });
+
+          const escapeHatchTimeoutMs = 1000;
+          setTimeout(() => {
+            // https://esbuild.github.io/getting-started/#deno
+            // WebAssembly/Deno bug where process doesn't exit
+            stop();
+          }, escapeHatchTimeoutMs);
 
           if (e.type === "beforeBuild")
             console.debug(`🏭 Compiled _esnext/${file.path.split("/").pop()}!`);
@@ -138,5 +154,7 @@ export const compilePrograms =
       ["beforeBuild", "afterUpdate"].map((event) =>
         site.addEventListener(event as keyof SiteEventMap, compilePrograms)
       );
-    else compilePrograms({ type: "beforeBuild" });
+    else {
+      compilePrograms({ type: "beforeBuild" });
+    }
   };
