@@ -13,6 +13,8 @@
     "lume": "echo \"import 'lume/cli.ts'\" | deno run -A -"
   },
   "compilerOptions": {
-    "types": ["lume/types.ts"]
+    "types": [
+      "lume/types.ts"
+    ]
   }
 }
