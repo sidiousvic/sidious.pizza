@@ -1,6 +1,6 @@
 {
   "imports": {
-    "lume/": "https://deno.land/x/lume@v2.4.3/",
+    "lume/": "https://deno.land/x/lume@v2.5.0/",
     "esbuild/": "https://deno.land/x/esbuild@v0.19.9/",
     "sha256/": "https://denopkg.com/chiefbiiko/sha256@v1.0.0/",
     "fs/": "https://deno.land/std/fs/mod.ts/",
