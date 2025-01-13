@@ -17,12 +17,12 @@ export const compilePrograms =
       console.log(`🏭 Compiling programs in _includes/ts...`);
 
       const tsFiles = await Promise.all(
-        Array.from(
-          walkSync(
+        [
+          ...walkSync(
             Deno.cwd() + "/" + (options.dirname || defaultOptions.dirname),
             { includeDirs: false, includeFiles: true }
-          )
-        )
+          ),
+        ]
           .filter((entry) => entry.isFile)
           .map(async (entry) => ({
             path: entry.path,
