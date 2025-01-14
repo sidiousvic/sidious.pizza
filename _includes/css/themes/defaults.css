@@ -1,18 +1,18 @@
 @font-face {
   font-family: DotGothic16;
-  src: url(/assets/fonts/dotgothic16.ttf);
+  src: url(/assets/fonts/DotGothic16.ttf);
   font-display: swap;
 }
 
 @font-face {
   font-family: OffBitDot;
-  src: url(/assets/fonts/offbittrial-dot.ttf);
+  src: url(/assets/fonts/OffBitTrial-Dot.ttf);
   font-display: swap;
 }
 
 @font-face {
   font-family: OffBitDotBold;
-  src: url(/assets/fonts/offbittrial-dotbold.ttf);
+  src: url(/assets/fonts/OffBitTrial-DotBold.ttf);
   font-display: swap;
 }
 
