@@ -6,6 +6,11 @@ order: 0
 ---
 
 <style>
+img {
+  @media (max-width: 600px) {
+    width: 350px;
+  }
+}
 </style>
 
 <h3>Welcome to</h3>
@@ -44,12 +49,12 @@ order: 0
   </form>
 </nav>
 
-<em>This one is <code>HOT</code> off the oven...</em>
+<em style="margin-bottom: 8px;">This one is <code>HOT</code> off the oven...</em>
 
 {{ set posts = search.pages("weblog=true", "date=desc") }}
 {{ set post = posts[0] }}
 
-<a style="text-align: center;" href="{{ post.url }}"><strong class="mt xlt-sm">"{{ post.title }}"</strong></a>
+<a style="text-align: center;" href="{{ post.url }}"><strong class="xxlt">"{{ post.title }}"</strong></a>
 
 <br>
 
