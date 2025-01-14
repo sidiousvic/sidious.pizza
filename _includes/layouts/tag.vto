@@ -3,8 +3,7 @@ layout: layouts/base.vto
 bodyClass: body-tag
 ---
 
-<h1 class="page-title">{{ title |> toUpperCase }}</h1>
+<h1 class="page-title">TAGGED <em>"{{ title |> toUpperCase }}"</em></h1>
 
-{{ include "templates/postslist.vto" { query: "'" + tag + "'" } }}
-
+{{ include "templates/postable.vto" { query: tag } }}
 

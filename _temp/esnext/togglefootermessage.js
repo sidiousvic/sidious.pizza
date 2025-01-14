@@ -1,0 +1,1 @@
+(()=>{var a=t=>{throw new Error(t)},r=t=>e=>t??a(e);var n=t=>r(document.getElementById(t))(`ID ${t} not found.`);var i=4e3,o={active:"rights",inactive:"updated"},c=t=>{let{active:e,inactive:s}=t;t.active=s,t.inactive=e};setInterval(()=>{n(`footer-${o.active}`).style.display="none",n(`footer-${o.inactive}`).style.display="block",c(o)},i);})();

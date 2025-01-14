@@ -1,0 +1,1 @@
+(()=>{var a=t=>{throw new Error(t)},n=t=>e=>t??a(e);var o=t=>n(document.getElementById(t))(`ID ${t} not found.`);addEventListener("DOMContentLoaded",()=>{let e=new Date("September 24, 1991, 23:54:00 GMT-7");setInterval(()=>{let s=new Date,r=(new Date(s.getTime()-e.getTime()).getTime()-6912e5)/1e3/60/60/24/365;o("age").innerHTML=`${r.toFixed(13).padEnd(15,"0")}`})});})();
