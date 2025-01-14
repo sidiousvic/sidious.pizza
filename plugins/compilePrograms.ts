@@ -118,8 +118,9 @@ export const compilePrograms =
 
           // Workaround for WASM bug where ESBuild process doesn't exit
           // https://esbuild.github.io/getting-started/#deno
-          const escapeHatchTimeoutMs = 1000;
+          const escapeHatchTimeoutMs = 4000;
           setTimeout(() => {
+            console.log(`⚠️ [esbuild] Process hanging. Exiting...`);
             stop();
           }, escapeHatchTimeoutMs);
 

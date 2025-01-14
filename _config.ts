@@ -29,7 +29,6 @@ site
   .ignore("README.md")
   .copy("assets")
   .copy("spacephantom/game")
-  .use(brotli())
   .use(inline({ extensions: [".mjs", ".html", ".css", ".js"] }))
   .use(purgecss())
   .use(bundleStyles({ bundler: { filename: "_includes/css/styles.css" } }))
@@ -46,6 +45,7 @@ site
   .use(readInfo())
   .use(resolveUrls())
   .process([".md"], optimizePics9000)
+  .use(brotli())
   .filter("jp", (body: string) => lang(body, "jp"))
   .filter("en", (body: string) => lang(body, "en"));
 
