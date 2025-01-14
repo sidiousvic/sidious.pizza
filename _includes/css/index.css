@@ -17,6 +17,8 @@
       align-items: center;
       justify-content: center;
       width: 100%;
+      border: 1px dotted var(--venom);
+      border-radius: 5px;
     }
 
     input {
