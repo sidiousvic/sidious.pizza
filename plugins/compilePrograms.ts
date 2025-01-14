@@ -147,7 +147,7 @@ export const compilePrograms =
         })
       );
 
-      if (e.type === "beforeBuild") console.timeEnd(`🌈 Compiled programs`);
+      console.timeEnd(`🌈 Compiled programs`);
 
       if (e.type === "afterUpdate")
         console.log(`♻️  Recompiled updated files into _esnext!`);
