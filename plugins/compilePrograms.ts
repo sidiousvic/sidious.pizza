@@ -20,6 +20,7 @@ export const compilePrograms =
     };
 
     async function compilePrograms(e: Event) {
+      console.time(`🌈 Compiled programs`);
       console.log(`🏭 Compiling programs in _includes/ts...`);
 
       const tsFiles = await Promise.all(
@@ -145,8 +146,7 @@ export const compilePrograms =
         })
       );
 
-      if (e.type === "beforeBuild")
-        console.log(`🌈 Compiled all files into _esnext!`);
+      if (e.type === "beforeBuild") console.timeEnd(`🌈 Compiled programs`);
 
       if (e.type === "afterUpdate")
         console.log(`♻️  Recompiled updated files into _esnext!`);
