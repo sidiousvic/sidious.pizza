@@ -10,6 +10,14 @@ goodbye:
 <script inline src="/_esnext/vicsage.js"></script>
 <script inline src="/_esnext/lazyvideos.js"></script>
 
+<style>
+  .info {
+    & > figure {
+      margin: 0 2rem;
+    }
+  }
+</style>
+
 <div class="info">
 
 <article>
