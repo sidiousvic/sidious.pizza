@@ -18,8 +18,9 @@
 }
 
 .post-name {
+  text-align: left;
   height: fit-content;
-  width: auto;
+  width: 100%;
   color: var(--venom);
   padding: 0.5rem;
   border-radius: 5px;
@@ -47,6 +48,10 @@
 
   &:active {
     box-shadow: 0px 0px 15px var(--venom);
+  }
+
+  @media (max-width: 700px) {
+    text-align: center;
   }
 }
 

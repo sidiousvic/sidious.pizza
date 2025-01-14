@@ -3,7 +3,7 @@
 <table id="webpost">
     <thead>
       <tr>
-        <th class="hide-on-mobile">Title</th>
+        <th class="hide-700">Title</th>
         <th class="hide-700">Date</th>
         <th class="hide-700">Status</th>
         <th class="hide-1050">Tags</th>
@@ -17,8 +17,8 @@
               <input class="post-name" type="submit" value="{{ post.title }}" />
             </form>
           </td>
-          <td>
-            <time class="hide-700" datetime="{{ post.date |> date('DATETIME') }}">
+          <td class="hide-700">
+            <time datetime="{{ post.date |> date('DATETIME') }}">
               {{ post.date |> date('HUMAN_DATE') |> toUpperCase }}
             </time>
           </td>
