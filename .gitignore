@@ -1,6 +1,6 @@
 _site
 _bin
-_temp
+_temp/esnext
 *.vim
 *.DS_Store
 *.vscode
