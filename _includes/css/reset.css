@@ -123,6 +123,10 @@ main {
     color: var(--darkgray);
     box-shadow: 0px 0px 15px var(--venom);
   }
+
+  @media (max-width: 700px) {
+    transition: none;
+  }
 }
 
 canvas {

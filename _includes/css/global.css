@@ -16,12 +16,31 @@
   transform: translateX(50%);
   border-radius: 0 0 10px 10px;
   padding: 7px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 0 8px black;
 
-  @media (min-width: 1050px) {
-    box-shadow: 0 0 8px black;
-    font-size: 1rem;
-    text-align: center;
-    width: 250px;
+  &:hover {
+    box-shadow: -1px -2px 11px black inset;
+    background-color: var(--venom);
+    color: var(--darkgray);
+    text-decoration: none;
+
+    & a {
+      color: var(--darkgray);
+    }
+  }
+
+  &:focus {
+    background-color: var(--venom);
+    color: var(--darkgray);
+    box-shadow: -1px -2px 11px black inset;
+  }
+
+  &:active {
+    background-color: var(--venom);
+    color: var(--darkgray);
+    box-shadow: 0px 0px 15px var(--venom);
   }
 }
 
