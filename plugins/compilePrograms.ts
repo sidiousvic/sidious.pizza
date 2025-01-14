@@ -5,7 +5,13 @@ import Site, { SiteEventMap } from "lume/core/site.ts";
 import { walkSync } from "lume/deps/fs.ts";
 
 /**
- * Compiles TypeScript programs in _includes/ts to JavaScript.
+ * Compiles TypeScript programs in directory to JavaScript using ESBuild.
+ * It compares the checksum of the compiled file to the previous checksum to determine if the file should be recompiled when in dev mode.
+ *
+ * @param options.dirname The directory to compile TypeScript programs from.
+ * @param site The site to compile TypeScript programs for.
+ *
+ * @bug ESBuild is loaded through WASM, and there is a bug where process doesn't exit after compilation. An escape hatch is set to exit after 1 second if the process hangs.
  */
 export const compilePrograms =
   (options: { dirname?: string }) => (site: Site) => {
@@ -34,90 +40,96 @@ export const compilePrograms =
 
       await Promise.all(
         [...tsFiles].map(async (file) => {
-          const generatedFilePath =
-            "_temp/esnext/" + file.path.split("/").pop()?.replace(".ts", ".js");
+          const fileName = file.path.split("/").pop();
+          const prevDirSlug = "/_prev/";
+          const prevFilePath = Deno.cwd() + "/_esnext" + prevDirSlug + fileName;
+          const finalFilePath =
+            Deno.cwd() + "/_esnext/" + fileName?.replace(".ts", ".js");
+          const defaultFileBinary = new Uint8Array([0]);
 
-          const previousChecksum = sha256(
-            await Deno.readFile(generatedFilePath)
-              .then((binary) => binary)
-              .catch(() => new Uint8Array([0]))
-          );
+          console.debug({
+            filePath: file.path,
+            prevFilePath,
+            finalFilePath,
+          });
 
-          await Deno.remove(Deno.cwd() + "_temp/esnext", {
-            recursive: true,
-          }).catch(() => "🛃 No _temp/esnext directory found. Creating one...");
-
-          if (e.type === "beforeBuild") {
-            console.debug(
-              `🛠️  Compiling _includes/ts/${file.path.split("/").pop()}...`
-            );
-          }
-
-          await Deno.mkdir(Deno.cwd() + "/_temp/esnext", {
+          await Deno.mkdir(Deno.cwd() + "_esnext" + prevDirSlug, {
             recursive: true,
           }).catch(() =>
             console.debug(
-              `🛃 _temp/esnext directory already exists. Ignoring...`
+              `🛃t ${prevDirSlug} directory already exists. Ignoring...`
+            )
+          );
+
+          await Deno.mkdir(Deno.cwd() + "/_esnext" + prevDirSlug, {
+            recursive: true,
+          }).catch(() =>
+            console.debug(
+              `🛃t ${prevDirSlug} directory already exists. Ignoring...`
+            )
+          );
+
+          const previousChecksum = sha256(
+            await Deno.readFile(prevFilePath)
+              .then((binary) => binary)
+              .catch(() => {
+                console.debug(
+                  `🛃 No previous checksum found for ${prevFilePath}.`
+                );
+                return defaultFileBinary;
+              })
+          );
+
+          const currChecksum = sha256(
+            await Deno.readFile(file.path)
+              .then((binary) => binary)
+              .catch(() => {
+                console.error(`🚨 [Deno] Error reading ${file.path}`);
+                return defaultFileBinary;
+              })
+          );
+
+          if (previousChecksum.toString() === currChecksum.toString()) return;
+
+          console.log(`🔨 Compiling ${fileName}...`);
+
+          await Deno.remove(prevDirSlug, {
+            recursive: true,
+          }).catch(() =>
+            console.debug(
+              `🛃  No ${prevDirSlug} directory found. Creating one...`
             )
           );
 
           await build({
             entryPoints: [file.path],
-            outdir: "_temp/esnext",
+            outdir: "_esnext",
             logLevel: "error",
             color: true,
             minify: true,
             bundle: true,
           })
-            .then(() => {
-              console.log(
-                `🔨 Compiled _temp/esnext/${file.path.split("/").pop()}!`
-              );
-            })
+            .then(() => console.log(`🔨 Compiled ${file.path}!`))
             .catch((e) => {
               console.error(`🚨 [esbuild] Error compiling ${file.path}!`);
               if (e instanceof Error) console.error(e.message);
             });
 
+          // Workaround for WASM bug where ESBuild process doesn't exit
+          // https://esbuild.github.io/getting-started/#deno
           const escapeHatchTimeoutMs = 1000;
           setTimeout(() => {
-            // https://esbuild.github.io/getting-started/#deno
-            // WebAssembly/Deno bug where process doesn't exit
             stop();
           }, escapeHatchTimeoutMs);
 
-          if (e.type === "beforeBuild")
-            console.debug(`🏭 Compiled _esnext/${file.path.split("/").pop()}!`);
-
-          const bundledAndMinifiedBinary = await Deno.readFile(
-            generatedFilePath
-          )
-            .then((binary) => binary)
-            .catch(() =>
-              console.error(`🚨 [Deno] Error reading ${generatedFilePath}`)
-            );
-
-          const currChecksum = sha256(
-            (bundledAndMinifiedBinary as Uint8Array) || new Uint8Array([0])
-          ).toString();
-
-          if (previousChecksum.toString() === currChecksum.toString()) return;
-
-          await Deno.writeFile(
-            generatedFilePath.replace("_temp/esnext", "_esnext"),
-            bundledAndMinifiedBinary as Uint8Array
-          ).catch(() =>
-            console.error(
-              `🚨 [Deno] Error writing ${generatedFilePath.replace(
-                "_temp/esnext",
-                "_esnext"
-              )}`
-            )
+          await Deno.remove(prevFilePath);
+          await Deno.copyFile(file.path, prevFilePath).catch(() =>
+            console.error(`🚨 [Deno] Error writing ${finalFilePath}`)
           );
 
           if (e.type === "beforeBuild")
             console.debug(
-              `✅ Copied _esnext/${file.path
+              `✅ Copied ${finalFilePath
                 .split("/")
                 .pop()
                 ?.replace("ts", "js")}!`
@@ -125,7 +137,7 @@ export const compilePrograms =
 
           if (e.type === "afterUpdate")
             console.debug(
-              `♻️  Recompiled _esnext/${file.path
+              `♻️  Recompiled ${finalFilePath
                 .split("/")
                 .pop()
                 ?.replace("ts", "js")}!`
@@ -134,12 +146,10 @@ export const compilePrograms =
       );
 
       if (e.type === "beforeBuild")
-        console.log(`🌈 Compiled all files into _esnext/ts!`);
+        console.log(`🌈 Compiled all files into _esnext!`);
 
       if (e.type === "afterUpdate")
-        console.log(`♻️  Recompiled updated files into _esnext/ts!`);
-
-      return site;
+        console.log(`♻️  Recompiled updated files into _esnext!`);
     }
 
     const isDevMode = Deno.args.includes("-s");

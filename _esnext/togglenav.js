@@ -1,1 +1,0 @@
-(()=>{window.addEventListener("keydown",d=>{if(d.key==="z"){let n=document.querySelector("body"),e=document.getElementById("navbar");if(!n||!e)return;n.classList.toggle("zen"),e.hidden=!e?.hidden}});})();

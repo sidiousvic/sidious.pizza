@@ -22,7 +22,7 @@ if (!(Deno.env.get("LOG_LEVEL") === "DEBUG")) console.debug = () => {};
 
 const site = lume({
   location: new URL("https://sidious.pizza/"),
-  watcher: { ignore: ["_temp"] },
+  watcher: { ignore: ["_esnext/_prev"] },
 });
 
 site
