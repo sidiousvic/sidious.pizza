@@ -82,7 +82,7 @@
 #music-player-levels {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
@@ -97,8 +97,8 @@ path {
   display: inline-block;
   width: 37px;
   text-align: center;
-  font-size: 20px;
-  margin: auto;
+  font-size: 18px;
+  margin: 5px;
   color: var(--venom);
 }
 
@@ -119,7 +119,7 @@ input[type="range"] {
   margin: 0;
   padding: 0;
   height: 19px;
-  margin: auto;
+  margin: 15px;
   float: left;
   outline: none;
   background-color: transparent;
