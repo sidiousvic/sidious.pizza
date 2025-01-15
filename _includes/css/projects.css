@@ -11,6 +11,8 @@
 
 .project-title {
   letter-spacing: 3px;
+  font-family: "Alagard";
+  color: var(--venom);
 }
 
 .projects-date {

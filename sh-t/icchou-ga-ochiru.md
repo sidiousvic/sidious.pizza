@@ -6,7 +6,7 @@ gif: /assets/images/ginkgo.gif
 tags:
   - haiku
 weblog: true
-draft: true
+type: sh*t
 ---
 
 <!-- jp -->

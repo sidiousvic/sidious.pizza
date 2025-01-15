@@ -93,16 +93,25 @@ main {
   font-family: var(--font-family-title);
   font-size: 16px;
   font-weight: 400;
-  background-color: var(--darkgray);
   border: none;
   cursor: pointer;
   outline: none;
-  transition: background-color 0.3s ease-in-out;
   text-decoration: underline;
   text-decoration-style: dotted;
+  background-color: var(--venom);
+  color: var(--darkgray);
+  box-shadow: -1px -2px 5px black inset;
+  transition: background-color, box-shadow 0.2s ease-in-out;
+
+  &.tomei {
+    background-color: var(--darkgray);
+    box-shadow: none;
+    color: var(--venom);
+  }
 
   &:hover {
-    box-shadow: -1px -2px 11px black inset;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: -1px -2px 5px black inset;
     background-color: var(--venom);
     color: var(--darkgray);
     text-decoration: none;

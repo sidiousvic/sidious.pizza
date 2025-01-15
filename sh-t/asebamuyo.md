@@ -7,7 +7,7 @@ gif: /assets/images/asebamuyo.gif
 tags:
   - haiku
 weblog: true
-draft: true
+type: sh*t
 ---
 
 <!-- jp -->

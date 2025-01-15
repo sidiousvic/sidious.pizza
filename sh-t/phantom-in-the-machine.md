@@ -5,8 +5,7 @@ tags:
   - programming
   - computers
 beta: true
-weblog: true
-draft: false
+type: weblog
 ---
 
 ![A computer chip](/assets/images/phantom-pc.gif){ optimize width=500 fetchpriority="high" }
