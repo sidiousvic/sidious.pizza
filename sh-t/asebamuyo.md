@@ -2,7 +2,6 @@
 layout: layouts/haiku.vto
 title: 汗ばむ夜
 date: 2023-06-02
-pinned: false
 gif: /assets/images/asebamuyo.gif
 tags:
   - haiku

@@ -59,7 +59,7 @@ img {
 
 <em style="margin-bottom: 8px;">This one is <code>HOT</code> off the oven...</em>
 
-{{ set posts = search.pages("weblog=true", "date=desc") }}
+{{ set posts = search.pages("pinned=true", "date=desc") }}
 {{ set post = posts[0] }}
 
 <a style="text-align: center;" href="{{ post.url }}"><strong class="xxlt">"{{ post.title }}"</strong></a>

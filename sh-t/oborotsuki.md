@@ -2,7 +2,6 @@
 layout: layouts/haiku.vto
 title: 朧月
 date: 2023-06-01
-pinned: false
 gif: /assets/images/oborotsuki.gif
 tags:
   - haiku
