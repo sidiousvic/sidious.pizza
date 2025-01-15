@@ -345,7 +345,8 @@ a {
   cursor: pointer;
 
   &:hover {
-    color: var(--venom);
+    filter: brightness(1.4);
+    text-decoration: none;
   }
 }
 
