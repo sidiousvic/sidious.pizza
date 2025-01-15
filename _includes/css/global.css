@@ -18,10 +18,10 @@
   padding: 7px;
   width: 250px;
   text-align: center;
-  box-shadow: 0 0 8px black;
+  box-shadow: -1px -2px 5px black inset;
 
   &:hover {
-    box-shadow: -1px -2px 11px black inset;
+    box-shadow: -1px -2px 5px black inset;
     background-color: var(--venom);
     color: var(--darkgray);
     text-decoration: none;
