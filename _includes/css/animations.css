@@ -92,3 +92,19 @@
     opacity: 0;
   }
 }
+
+.glow {
+  animation: glow 2s infinite;
+}
+
+@keyframes glow {
+  0% {
+    filter: brightness(1) saturate(1);
+  }
+  50% {
+    filter: brightness(1.4) saturate(2);
+  }
+  100% {
+    filter: brightness(1) saturate(1);
+  }
+}
