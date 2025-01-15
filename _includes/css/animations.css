@@ -2,6 +2,102 @@
   animation: shake 0.5s infinite;
 }
 
+.shinjuku {
+  animation: shinjuku 7s infinite;
+  mix-blend-mode: difference;
+}
+
+@keyframes shinjuku {
+  10% {
+    opacity: 1;
+    filter: brightness(1.4) saturate(2);
+  }
+  12% {
+    opacity: 0.8;
+    filter: brightness(1.4) saturate(2);
+  }
+  19% {
+    opacity: 1;
+    filter: brightness(1.4) saturate(2);
+  }
+  20% {
+    opacity: 0.8;
+    filter: brightness(1.4) saturate(2);
+  }
+  28% {
+    opacity: 0.9;
+    filter: brightness(1.4) saturate(2);
+  }
+  29% {
+    opacity: 0.5;
+    filter: brightness(1) saturate(1);
+  }
+  31% {
+    opacity: 1;
+    filter: brightness(1.4) saturate(2);
+  }
+  79% {
+    opacity: 1;
+    filter: brightness(1.4) saturate(2);
+  }
+  80% {
+    opacity: 0.8;
+    filter: brightness(1.4) saturate(2);
+  }
+  92% {
+    opacity: 1;
+    filter: brightness(1.4) saturate(2);
+  }
+}
+
+.kowloon {
+  animation: kowloon 7s infinite;
+  mix-blend-mode: difference;
+}
+
+@keyframes kowloon {
+  0% {
+    opacity: 1;
+    filter: brightness(1.4) saturate(2);
+  }
+  2% {
+    opacity: 0.8;
+    filter: brightness(1.4) saturate(2);
+  }
+  30% {
+    opacity: 1;
+    filter: brightness(1.4) saturate(2);
+  }
+  31% {
+    opacity: 0.8;
+    filter: brightness(1.4) saturate(2);
+  }
+  48% {
+    opacity: 0.9;
+    filter: brightness(1.4) saturate(2);
+  }
+  50% {
+    opacity: 0.5;
+    filter: brightness(1) saturate(1);
+  }
+  52% {
+    opacity: 1;
+    filter: brightness(1.4) saturate(2);
+  }
+  88% {
+    opacity: 1;
+    filter: brightness(1.4) saturate(2);
+  }
+  90% {
+    opacity: 0.8;
+    filter: brightness(1.4) saturate(2);
+  }
+  92% {
+    opacity: 1;
+    filter: brightness(1.4) saturate(2);
+  }
+}
+
 .pulse {
   animation: pulse 7s infinite;
   mix-blend-mode: difference;
