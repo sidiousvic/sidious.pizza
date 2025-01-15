@@ -4,32 +4,4 @@ title: SH*T
 order: 0
 ---
 
-{{ set projects = search.pages("type=sh*t", "date=desc", 99) }}
-
-<h1 class="page-title">SH*T</h1>
-
-<ul class="projects">
-{{ for project of projects }}
-  <li class="projects-post">
-      {{ if project.gif }}
-        <picture class="no-border">
-          <img src="{{ project.gif }}" />
-        </picture>
-      {{ else }}
-        <picture class="no-border">
-          <img alt="a pizza with a phantomy face" src="/assets/images/enemyR.webp" />
-        </picture>
-      {{ /if }}
-    <div class="projects-meta">
-      <a href="{{ project.url }}" class="project-title"{{ if project.url == url }} aria-current="page"{{ /if }}>
-      {{ if project.shortTitle }}
-      {{ project.shortTitle |> toUpperCase }}
-      {{ else if project.title }}
-      {{ project.title }}
-      {{ else }}
-        <code>{{ project.url }}</code>
-      {{ /if }}
-    </a>
-    </div>
-{{ /for }}
-</ul>
+{{ include "templates/swims.vto" { query: "type=sh*t", sort: "date=desc" } }}
