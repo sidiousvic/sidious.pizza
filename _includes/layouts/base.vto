@@ -50,9 +50,9 @@ S I D I O U S . P I Z Z A  -->
     <div id="curtain"></div>
 
     {{if url !== "/"}}
-      <a href="/" id="site-title" class="button">
-        {{ site.title }}
-      </a>
+    <form action="/">
+      <input id="site-title" class="button tomei" type="submit" value="{{ site.title }}" />
+    </form>
     {{/if}}
 
     <main id="main" class="{{ page.bodyClass }}">
