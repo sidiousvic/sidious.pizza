@@ -101,7 +101,6 @@ main {
   background-color: var(--venom);
   color: var(--darkgray);
   box-shadow: -1px -2px 5px black inset;
-  transition: background-color 0.2s ease-in-out;
 
   &.tomei {
     background-color: var(--darkgray);
@@ -110,7 +109,6 @@ main {
   }
 
   &:hover {
-    transition: background-color 0.3s ease-in-out;
     box-shadow: -1px -2px 5px black inset;
     background-color: var(--venom);
     color: var(--darkgray);
