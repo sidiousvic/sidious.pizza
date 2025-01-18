@@ -16,6 +16,12 @@ img {
     width: 350px;
   }
 }
+
+.pinned-post-gif {
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
 </style>
 
 <h3>Welcome to</h3>
@@ -57,12 +63,19 @@ img {
   </form>
 </nav>
 
-<em style="margin-bottom: 8px;">This one is <code class="shinjuku">HOT</code> off the oven...</em>
+<em style="margin-bottom: 16px;">This one is <code class="shinjuku">HOT</code> off the oven...</em>
 
 {{ set posts = search.pages("pinned=true", "date=desc") }}
 {{ set post = posts[0] }}
 
-<a style="text-align: center;" href="{{ post.url }}"><strong class="xxlt glow">"{{ post.title }}"</strong></a>
+<div class="kowloon" style="display: flex; gap: 1rem; align-items: center; justify-content: start;">
+  <picture
+    style="mix-blend-mode: difference; display: inline-block; margin: 0 auto;"
+    class="no-border">
+    <img class="pinned-post-gif" width=100 style="max-width: 100px; position: absolute; transform: translateY(-50%); top: 50%; right: -30px;" src="{{ post.gif }}"></img>
+  </picture>
+  <a style="text-align: center;" href="{{ post.url }}"><strong class="xxlt glow">"{{ post.title }}"</strong></a>
+</div>
 
 <br>
 
