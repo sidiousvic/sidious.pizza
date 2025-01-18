@@ -1,12 +1,7 @@
 ---
-layout: layouts/haiku.vto
 title: 雷の陰
 date: 2023-11-20
 gif: /assets/images/lightning-strike.gif
-tags:
-  - haiku
-weblog: true
-type: sh*t
 ---
 
 <!-- jp -->

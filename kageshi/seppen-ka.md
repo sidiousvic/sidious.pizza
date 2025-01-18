@@ -1,12 +1,7 @@
 ---
-layout: layouts/haiku.vto
 title: 雪片か？
 date: 2023-12-11
 gif: /assets/images/onsen.gif
-tags:
-  - haiku
-weblog: true
-type: sh*t
 ---
 
 <!-- jp -->

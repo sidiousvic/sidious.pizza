@@ -52,9 +52,6 @@ img {
   <form action="/projects">
     <input class="menu-item button tomei lt" type="submit" value="Projects" />
   </form>
-  <form action="/sh-t">
-    <input class="menu-item button tomei lt" type="submit" value="Sh*t" />
-  </form>
   <form action="/vic">
     <input class="menu-item button tomei lt" type="submit" value="Vic" />
   </form>
@@ -63,7 +60,9 @@ img {
   </form>
 </nav>
 
-<em style="margin-bottom: 16px;">This one is <code class="shinjuku">HOT</code> off the oven...</em>
+<em>This one is <code class="shinjuku">HOT</code> off the oven...</em>
+
+<br>
 
 {{ set posts = search.pages("pinned=true", "date=desc") }}
 {{ set post = posts[0] }}

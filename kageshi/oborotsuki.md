@@ -1,12 +1,7 @@
 ---
-layout: layouts/haiku.vto
 title: 朧月
 date: 2023-06-01
 gif: /assets/images/oborotsuki.gif
-tags:
-  - haiku
-weblog: true
-type: sh*t
 ---
 
 <!-- jp -->
