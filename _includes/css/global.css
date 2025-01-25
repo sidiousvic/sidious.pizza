@@ -98,7 +98,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   margin: 0 0 2rem 0;
 }
@@ -106,7 +106,6 @@
 .contents {
   margin: 0 0 2rem 0;
   padding: 2rem 1rem 2rem 2.5rem;
-  border: var(--venom) 1px dashed;
   text-transform: uppercase;
 
   & h2 {

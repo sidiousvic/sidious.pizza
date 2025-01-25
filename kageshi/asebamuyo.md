@@ -2,8 +2,6 @@
 title: 汗ばむ夜
 date: 2023-06-02
 gif: /assets/images/asebamuyo.gif
-tags:
-  - haiku
 ---
 
 <!-- jp -->

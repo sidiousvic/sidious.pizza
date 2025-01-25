@@ -10,23 +10,9 @@ goodbye:
 <script inline src="/_esnext/vicsage.js"></script>
 <script inline src="/_esnext/lazyvideos.js"></script>
 
-<style>
-  .info {
-    & > figure {
-      margin: 0 2rem;
-    }
-  }
-</style>
+<div class="info" style="margin: 0">
 
-<div class="info">
-
-<article>
-
-<div class="info">
-
-![A black-clad man with a beanie in an autumn park](/assets/images/vic.webp){ optimize height=275 fetchpriority="high" caption="" }
-
-<article>
+![A man having a beer and a burrito in front of a fire](/assets/images/vic.webp){ optimize height=275 fetchpriority="high" }
 
 |         |                                                                                                |
 | ------- | ---------------------------------------------------------------------------------------------- |
@@ -37,23 +23,7 @@ goodbye:
 | _Vices_ | Pizza, booze, [axe](https://youtu.be/en7EKL1pX5w) and [burritos](https://youtu.be/YZRtE9I5w7k) |
 | _Email_ | _vic‎@‎sidious.pizza_                                                                          |
 
-</article>
 </div>
-
-<div class="contents">
-
-### Index
-
-- [BORN AND RAISED IN THE DESERT](#born-and-raised)
-- [MISLED YOUTH](#misled-youth)
-- ["JUST DO SH\*T"](#just-do-shit)
-- [TOYKO BOY](#tokyo-boy)
-
-</div>
-
-<a name="bio"></a>
-
-<a name="born-and-raised"></a>
 
 ### BORN AND RAISED IN THE DESERT
 
@@ -74,5 +44,3 @@ I was born and raised in the state of Chihuahua, in the north of Mexico. It is a
 ![The Tokyo skyline at night.](/assets/images/skyline-tokyo.gif){ optimize }
 
 </div>
-
-<!--_vic‎@‎sidious.pizza_. Welcome again and I hope you have a great time in this-->

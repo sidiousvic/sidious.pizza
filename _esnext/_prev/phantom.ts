@@ -350,7 +350,7 @@ export const config = ({
     filter: ${filter};w
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     #start-screen-title {
       font-size: 30px;
     }

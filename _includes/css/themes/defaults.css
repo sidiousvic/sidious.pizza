@@ -19,7 +19,7 @@
 :root {
   /* Colors */
   --lightgray: whitesmoke;
-  --darkgray: #111;
+  --darkgray: #0d1117 !important;
   --venom: whitesmoke;
   --venom-filter: grayscale(1) saturate(5);
   --venom-filter-canvas: grayscale(1) brightness(01);

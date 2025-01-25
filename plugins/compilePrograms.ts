@@ -139,7 +139,7 @@ export const compilePrograms =
 
           if (e.type === "afterUpdate")
             console.debug(
-              `♻️  Recompiled ${finalFilePath
+              `♻️ Recompiled ${finalFilePath
                 .split("/")
                 .pop()
                 ?.replace("ts", "js")}!`
@@ -150,7 +150,7 @@ export const compilePrograms =
       console.timeEnd(`🌈 Compiled programs`);
 
       if (e.type === "afterUpdate")
-        console.log(`♻️  Recompiled updated files into _esnext!`);
+        console.log(`♻️ Recompiled updated files into _esnext!`);
     }
 
     const isDevMode = Deno.args.includes("-s");
