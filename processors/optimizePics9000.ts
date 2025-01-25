@@ -59,8 +59,6 @@ export function optimizePics9000(pages: RawData[]) {
   <figcaption>${caption}</figcaption>
 </figure>`;
 
-        console.log(optimizedPicHTML);
-
         page.content = (page.content as string).replace(
           picToOptimize,
           isVideo ? optimizedVideoHTML : optimizedPicHTML
