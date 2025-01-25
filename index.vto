@@ -6,9 +6,10 @@ order: 0
 ---
 
 <style>
-main {
+h1 {
+  font-size: 3.5rem;
   @media (max-width: 700px) {
-    padding: 30px;
+    font-size: 3rem;
   }
 }
 
@@ -30,15 +31,14 @@ main {
 
 <h3>Welcome to</h3>
 
-<h1 style="margin: 0">"<em style="font-family: Alagard"> {{ title }} </em>"</h1>
+<h1 style="margin: 0">"<em style="font-family: Alagard">{{ title }}</em>"</h1>
 
     <link rel="preload" as="image" href="/assets/images/northern-devil.jpg">
     <img
       id="main-image"
-      class="pulse"
       width="400"
       height="237.82" 
-      alt="A black-clad man ollieying over aen empty detergent container on the street." src="/assets/images/giphy.png"
+      alt="Elmo raising hell." src="/assets/images/giphy.png"
       fetchpriority="high" 
     >
 
@@ -48,16 +48,16 @@ main {
 
 <nav id="menu">
   <form action="/weblog">
-    <input class="menu-item button tomei lt" type="submit" value="Weblog" />
+    <input class="menu-item button tomei" type="submit" value="Weblog" />
   </form>
   <form action="/projects">
-    <input class="menu-item button tomei lt" type="submit" value="Projects" />
+    <input class="menu-item button tomei" type="submit" value="Projects" />
   </form>
   <form action="/vic">
-    <input class="menu-item button tomei lt" type="submit" value="Vic" />
+    <input class="menu-item button tomei" type="submit" value="Vic" />
   </form>
   <form action="/meta">
-    <input class="menu-item button tomei lt" type="submit" value="Meta" />
+    <input class="menu-item button tomei" type="submit" value="Meta" />
   </form>
 </nav>
 

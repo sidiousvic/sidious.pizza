@@ -26,7 +26,6 @@ footer {
 footer > p {
   margin: 0;
   font-family: var(--font-family-secondary);
-  line-height: normal;
   text-align: center;
   text-wrap: wrap;
   padding: 9px;
