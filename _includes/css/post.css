@@ -1,6 +1,6 @@
 .post {
   margin: 0;
-  text-align: center;
+  text-align: left;
   padding: 0 0 1rem 0;
 }
 
@@ -9,12 +9,9 @@
 }
 
 .post-title {
-  text-align: center;
+  text-align: left;
   color: var(--venom);
-}
-
-.post-tags {
-  display: inline;
+  padding-inline-end: 15rem;
 }
 
 .post-body {

@@ -16,48 +16,15 @@
   }
 }
 
-.post-name {
-  text-align: left;
-  height: fit-content;
-  width: 100%;
-  color: var(--venom);
-  padding: 0.5rem;
-  border-radius: 5px;
-  font-family: var(--font-family-title);
-  font-size: 16px;
-  font-weight: 400;
-  background-color: var(--darkgray);
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-
-  &:hover {
-    box-shadow: -1px -2px 11px black inset;
-    background-color: var(--venom);
-    color: var(--darkgray);
-
-    & a {
-      color: var(--darkgray);
-    }
-  }
-
-  &:focus {
-    box-shadow: -1px -2px 11px black inset;
-  }
-
-  &:active {
-    box-shadow: 0px 0px 15px var(--venom);
-  }
-
-  @media (max-width: 700px) {
-    text-align: center;
-  }
-}
-
 .post-tags {
   float: left;
   text-transform: uppercase;
   color: var(--venom);
   font-style: italic;
   font-size: 0.6rem;
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
 }

@@ -6,11 +6,23 @@ order: 0
 ---
 
 <style>
+main {
+  padding: 4vw 50vw 0 2vh;
+
+  @media (max-width: 900px) {
+    padding: 3vh 2vh;
+  }
+}
+
 h1 {
   font-size: 3.5rem;
   @media (max-width: 700px) {
     font-size: 3rem;
   }
+}
+
+img {
+  filter: var(--venom-filter);
 }
 
 #main-image {
@@ -31,52 +43,63 @@ h1 {
 
 <h3>Welcome to</h3>
 
-<h1 style="margin: 0">"<em style="font-family: Alagard">{{ title }}</em>"</h1>
+    <link rel="preload" as="image" href="/assets/images/site-title.gif">
+    <img
+      class="pulse"
+      id="main-image"
+      alt="SIDIOUS.PIZZA" src="/assets/images/site-title.gif"
+      fetchpriority="high" 
+    >
+
+    <br>
 
     <link rel="preload" as="image" href="/assets/images/vic-toon.gif">
     <img
       class="pulse"
       id="main-image"
       height="300"
-      alt="Elmo raising hell." src="/assets/images/vic-toon.gif"
+      alt="Cartoon man on a skateboard" src="/assets/images/vic-toon.gif"
       fetchpriority="high" 
     >
 
 <br>
 
-<h2 style="text-align: center;" class="xlt xxlt-sm"><em>VIC's personal website.</em></h2>
+<em>Hola, I'm Vic. Welcome to my website.</em>
 
 <nav id="menu">
   <form action="/weblog">
-    <input class="menu-item button tomei" type="submit" value="Weblog" />
+    <input class="menu-item button tomei mt" type="submit" value="Weblog" />
   </form>
   <form action="/projects">
-    <input class="menu-item button tomei" type="submit" value="Projects" />
+    <input class="menu-item button tomei mt" type="submit" value="Projects" />
   </form>
   <form action="/vic">
-    <input class="menu-item button tomei" type="submit" value="Vic" />
+    <input class="menu-item button tomei mt" type="submit" value="Vic" />
   </form>
   <form action="/meta">
-    <input class="menu-item button tomei" type="submit" value="Meta" />
+    <input class="menu-item button tomei mt" type="submit" value="Meta" />
   </form>
 </nav>
 
-<em>This one is <code>HOT</code> off the oven...</em>
-
-<br>
+<em>This one is <img src="/assets/images/hot.gif" alt="HOT" height=40 style="transform: translateY(10px);"> off the oven...</em>
 
 {{ set posts = search.pages("pinned=true", "date=desc") }}
 {{ set post = posts[0] }}
 
-<div style="display: flex; gap: 1rem; align-items: center; justify-content: start;">
+<div style="display: flex; align-items: center; justify-content: start;">
+  <form action="{{ post.url }}">
+    <input class="menu-item button tomei lt" type="submit" value='"{{ post.title }}"' />
+  </form>
   <picture
     style="mix-blend-mode: difference; display: inline-block; margin: 0 auto;"
     class="no-border">
-    <img class="pinned-post-gif" width=100 style="max-width: 100px; position: absolute; transform: translateY(-50%); top: 50%; right: -30px;" src="{{ post.gif }}"></img>
+    <img class="pinned-post-gif" width=100 style="max-width: 100px; position: absolute; transform: translateY(-55%); top: 50%; left: 0px;" src="{{ post.gif }}"></img>
   </picture>
-  <a style="text-align: center;" href="{{ post.url }}"><strong class="xlt glow">"{{ post.title }}"</strong></a>
 </div>
 
-<br>
+<h4><span class="mt">And remember...</span> <em><strong>stay <span style="font-family: Sinister">WICKED</span></strong>!</em> 
+</h4>
 
-<h4><em><strong>Stay <span style="font-family: Sinister">WICKED</span></strong>!</em></h4>
+<div style="position: fixed; bottom: -130px; left: -50px; pointer-events: none; filter: var(--venom-filter); mix-blend-mode: hard-light;">
+<img src="/assets/images/fire_floor.gif" alt="HOT" width="500"> 
+</div>

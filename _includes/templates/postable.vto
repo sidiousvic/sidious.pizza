@@ -3,8 +3,8 @@
 <table id="webpost">
     <thead>
       <tr>
-        <th class="hide-700">Title</th>
-        <th class="hide-700">Date</th>
+        <th style="padding-left: 0.8rem;">Title</th>
+        <th>Date</th>
         <th class="hide-700">Status</th>
         <th class="hide-1050">Tags</th>
       </tr>
@@ -14,10 +14,10 @@
         <tr class="post">
           <td>
             <form action="{{ post.url }}">
-              <input class="post-name" type="submit" value="{{ post.title }}" />
+              <input class="button mt tomei" type="submit" value="{{ post.title }}" />
             </form>
           </td>
-          <td class="hide-700">
+          <td>
             <time datetime="{{ post.date |> date('DATETIME') }}">
               {{ post.date |> date('HUMAN_DATE') |> toUpperCase }}
             </time>

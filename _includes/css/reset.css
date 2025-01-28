@@ -9,7 +9,7 @@ body {
   font-weight: 400;
   line-height: 1.6;
   letter-spacing: 1px;
-  font-size: 16px;
+  font-size: 17px;
 
   @media (max-width: 500px) {
     font-size: 12px;
@@ -37,18 +37,18 @@ body {
 }
 
 main {
-  padding: 8vh 14vw 5vh;
+  padding: 7vh 50vw 0vh 2.5vh;
   grid-area: main;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   height: fit-content;
   overflow-y: auto;
   overflow-x: hidden;
 
-  @media (min-width: 800px) {
-    padding: 8vh 25vw 5vh;
+  @media (max-width: 900px) {
+    padding: 6vh 4vw;
   }
 }
 
@@ -127,10 +127,6 @@ main {
     background-color: var(--venom);
     color: var(--darkgray);
     box-shadow: 0px 0px 15px var(--venom);
-  }
-
-  @media (max-width: 700px) {
-    transition: none !important;
   }
 }
 
@@ -294,9 +290,9 @@ h6 {
 h1 {
   font-family: var(--font-family-title);
   font-size: 5rem;
+  line-height: 5rem;
   color: var(--venom);
   font-weight: 100;
-  line-height: 5rem;
 }
 
 h2 {
@@ -385,6 +381,7 @@ picture {
   filter: var(--venom-filter);
   image-rendering: pixelated;
   border: var(--venom) dotted 1px;
+  border-radius: 3px;
   & > p {
     margin: 0;
     display: contents;
@@ -409,7 +406,7 @@ picture::after {
 
 figure {
   width: fit-content;
-  margin: 0 auto;
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: baseline;

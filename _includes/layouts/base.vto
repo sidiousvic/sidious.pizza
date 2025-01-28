@@ -50,9 +50,11 @@ S I D I O U S . P I Z Z A  -->
     <div id="curtain"></div>
 
     {{if url !== "/"}}
+    <nav id="sitebar">
     <form action="/">
-      <input id="site-title" class="button" type="submit" value="{{ site.title }}" />
+      <input id="sitebar-home-button" type="submit" value="{{ site.title }}" />
     </form>
+    </nav>
     {{/if}}
 
     <main id="main" class="{{ page.bodyClass }}">

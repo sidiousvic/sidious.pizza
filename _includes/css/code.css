@@ -10,8 +10,6 @@
     margin: auto -6vw;
   }
   pre code.hljs {
-    padding: 3rem 2rem !important;
-    padding-top: 4rem;
     border: none !important;
     border-radius: 0 !important;
   }
@@ -26,24 +24,13 @@ pre code {
 
 code {
   color: var(--venom);
-}
-
-pre::after {
-  padding: 0.5rem 0 0.1rem 0;
-  content: " ▢ ▢ ▢";
-  color: var(--venom);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: calc(1rem + 2px);
-  border-bottom: 1px dotted var(--venom);
-  filter: hue-rotate(5deg) saturate(1.5) brightness(0.8);
-  border-radius: 6px 6px 0 0;
+  scrollbar-color: var(--venom) var(--darkgray);
+  scrollbar-width: thin;
 }
 
 pre {
   position: relative;
+  filter: var(--venom-filter);
 }
 
 pre,
@@ -62,15 +49,16 @@ code > .hljs-comment {
 pre code.hljs {
   display: block;
   overflow-x: auto;
-  padding: 3rem;
-  padding-top: 4.2rem;
+  padding: 2rem 2rem 1.8rem 2rem;
   background: #010101;
   filter: contrast(0.9) brightness(1);
-  border-radius: 0.3rem;
+  border-radius: 3px;
 }
+
 code.hljs {
   padding: 3px 5px;
 }
+
 .hljs {
   color: var(--venom);
   background: transparent;

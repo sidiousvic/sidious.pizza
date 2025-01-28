@@ -7,6 +7,7 @@ gif: /assets/images/phantom-pc.gif
 tags:
   - programming
   - computers
+  - algorithms
 beta: true
 type: weblog
 ---
