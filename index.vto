@@ -25,6 +25,19 @@ img {
   filter: var(--venom-filter);
 }
 
+#hot {
+  transform: translateY(10px); 
+}
+
+#fire{
+  pointer-events: none;
+  position: fixed;
+  bottom: -130px;
+  left: -50px;
+  mix-blend-mode: hard-light;
+  opacity: 90%;
+}
+
 #main-image {
   filter: var(--venom-filter);
   transform: rotate(-2deg);
@@ -68,20 +81,20 @@ img {
 
 <nav id="menu">
   <form action="/weblog">
-    <input class="menu-item button tomei mt" type="submit" value="Weblog" />
+    <input class="menu-item button tomei lt" type="submit" value="Weblog" />
   </form>
   <form action="/projects">
-    <input class="menu-item button tomei mt" type="submit" value="Projects" />
+    <input class="menu-item button tomei lt" type="submit" value="Projects" />
   </form>
   <form action="/vic">
-    <input class="menu-item button tomei mt" type="submit" value="Vic" />
+    <input class="menu-item button tomei lt" type="submit" value="Vic" />
   </form>
   <form action="/meta">
-    <input class="menu-item button tomei mt" type="submit" value="Meta" />
+    <input class="menu-item button tomei lt" type="submit" value="Meta" />
   </form>
 </nav>
 
-<em>This one is <img src="/assets/images/hot.gif" alt="HOT" height=40 style="transform: translateY(10px);"> off the oven...</em>
+<em>This one is <img id="hot" src="/assets/images/hot.gif" alt="HOT" height=40> off the oven...</em>
 
 {{ set posts = search.pages("pinned=true", "date=desc") }}
 {{ set post = posts[0] }}
@@ -92,14 +105,14 @@ img {
   </form>
   <picture
     style="mix-blend-mode: difference; display: inline-block; margin: 0 auto;"
-    class="no-border">
-    <img class="pinned-post-gif" width=100 style="max-width: 100px; position: absolute; transform: translateY(-55%); top: 50%; left: 0px;" src="{{ post.gif }}"></img>
+  >
+    <img class="pinned-post-gif" width=100 style="" src="{{ post.gif }}"></img>
   </picture>
 </div>
 
-<h4><span class="mt">And remember...</span> <em><strong>stay <span style="font-family: Sinister">WICKED</span></strong>!</em> 
+<h4><span class="lt">And remember...</span> <em><strong>stay <span style="font-family: Sinister">WICKED</span></strong>!</em> 
 </h4>
 
-<div style="position: fixed; bottom: -130px; left: -50px; pointer-events: none; filter: var(--venom-filter); mix-blend-mode: hard-light;">
-<img src="/assets/images/fire_floor.gif" alt="HOT" width="500"> 
+<div id="fire">
+  <img src="/assets/images/fire_floor.gif" alt="HOT" width="500"> 
 </div>

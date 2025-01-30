@@ -20,16 +20,6 @@ I was born and raised in the north of Mexico. It is a desert region where water 
 
 Growing up here made me hard-headed and stubborn but also tenacious.
 
-## <img loading="lazy" alt="A red swoosh symbol" width=40 height=40 style="transform: translateY(10px); filter: var(--venom-filter)" src="/assets/images/swoosh.webp" /> "JUST DO SH\*T"
-
-<div class="picture-grid">
-
-![A river near Asakusabashi, in east Tokyo.](/assets/images/tokyo.gif){ optimize }
+## TOKYO BOY
 
 ![A street with a cherry blossom tree and a convenience store in Tokyo.](/assets/images/cherry-blossoms-at-nite.gif){ optimize }
-
-![A "shotengai" or "street lined with small shops" at night, in Tokyo.](/assets/images/apa-hotel-blues.gif){ optimize }
-
-![The Tokyo skyline at night.](/assets/images/skyline-tokyo.gif){ optimize }
-
-</div>

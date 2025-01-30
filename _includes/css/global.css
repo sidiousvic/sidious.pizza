@@ -150,29 +150,3 @@
   text-align: right;
   margin: 0;
 }
-
-.picture-grid {
-  margin: 2rem -200px;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr 1fr;
-  & > p {
-    display: none;
-  }
-
-  &.stagger > :nth-child(odd) {
-    transform: translateY(-20px);
-  }
-
-  &.stagger > :nth-child(even) {
-    transform: translateY(20px);
-  }
-
-  @media (max-width: 800px) {
-    margin-inline: -300px;
-  }
-
-  @media (max-width: 500px) {
-    margin-inline: -50vw;
-  }
-}
