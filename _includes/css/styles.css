@@ -1,18 +1,189 @@
-@import "themes/index.css";
+@font-face {
+  font-family: DotGothic16;
+  src: url(/assets/fonts/DotGothic16.ttf);
+  font-display: swap;
+}
 
-@import "animations.css";
-@import "code.css";
-@import "curtain.css";
-@import "footer.css";
-@import "global.css";
-@import "haiku.css";
-@import "index.css";
-@import "musicPlayer.css";
-@import "weblog.css";
-@import "post.css";
-@import "reset.css";
-@import "search.css";
-@import "sitemap.css";
-@import "swims.css";
-@import "fontsize.css";
-@import "tags.css";
+@font-face {
+  font-family: OffBitDot;
+  src: url(/assets/fonts/OffBitTrial-Dot.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: OffBitDotBold;
+  src: url(/assets/fonts/OffBitTrial-DotBold.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Nilheim;
+  src: url(/assets/fonts/Nilheim.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Billy;
+  src: url(/assets/fonts/Billy.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Code;
+  src: url(/assets/fonts/code.ttf);
+  font-display: swap;
+}
+
+:root {
+  --foreground: #e6e6e6 !important;
+  --background: #0d1117 !important;
+  --venom: #00ff00 !important;
+  --venom-filter: sepia(1) hue-rotate(90deg) saturate(5) !important;
+
+  --font-prose: OffBitDot, DotGothic16, monospace;
+  --font-emphasis: OffBitDotBold, DotGothic16, monospace;
+  --font-special: DotGothic16, monospace;
+  --font-title: Nilheim, monospace;
+  --font-code: Code, monospace;
+
+  --blend-mode: difference;
+  --filter-invert: invert(0);
+}
+
+body {
+  letter-spacing: 1px;
+  filter: blur(0.2px);
+  font-family: var(--font-prose);
+  background: var(--background);
+  color: var(--foreground);
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  padding: 2rem 20rem 2rem 2rem;
+}
+
+code {
+  font-family: var(--font-code);
+  font-size: 0.8rem;
+}
+
+h1 {
+  font-family: var(--font-title);
+  color: var(--venom);
+  font-size: 4rem;
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  line-height: 1.5rem;
+}
+
+em {
+  font-family: var(--font-emphasis);
+}
+
+a {
+  color: var(--venom);
+}
+
+pre code {
+  border: 1px dotted var(--venom);
+}
+
+code {
+  color: var(--venom);
+  scrollbar-color: var(--venom) var(--darkgray);
+  scrollbar-width: thin;
+}
+
+pre {
+  position: relative;
+  filter: var(--venom-filter);
+}
+
+pre,
+code {
+  font-family: Code, DotGothic16, monospace !important;
+  font-weight: 100;
+  font-size: 0.8rem;
+  line-height: 1rem;
+}
+
+code > .hljs-comment {
+  animation: blink 1s infinite;
+  animation-duration: 4s;
+  color: var(--darksteel) !important;
+}
+pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 2rem 2rem 1.8rem 2rem;
+  background: #010101;
+  filter: contrast(0.9) brightness(1);
+  border-radius: 3px;
+}
+
+picture {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 80vw;
+  margin: 0 auto;
+  width: fit-content;
+  height: fit-content;
+  filter: var(--venom-filter);
+  image-rendering: pixelated;
+  border: var(--venom) dotted 1px;
+  border-radius: 3px;
+  & > p {
+    margin: 0;
+    display: contents;
+  }
+}
+
+picture::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 99;
+  content: "";
+  background-image: radial-gradient(transparent, black);
+  background-size: 2px 2px;
+  pointer-events: none;
+  & > * {
+    image-rendering: pixelated;
+  }
+}
+
+figure {
+  width: fit-content;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+figcaption {
+  color: var(--venom);
+  font-size: 0.8rem;
+  margin-top: 0.3em;
+  & > p {
+    margin: 0;
+  }
+}
+
+video {
+  min-width: 200px;
+}
+
+aside {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: var(--venom);
+}

@@ -5,77 +5,9 @@ title: SIDIOUS.PIZZA
 order: 0
 ---
 
-<style>
-main {
-  padding: 4vw 50vw 0 2vh;
-
-  @media (max-width: 900px) {
-    padding: 3vh 2vh;
-  }
-}
-
-h1 {
-  font-size: 3.5rem;
-  @media (max-width: 700px) {
-    font-size: 3rem;
-  }
-}
-
-img {
-  filter: var(--venom-filter);
-}
-
-#hot {
-  transform: translateY(10px); 
-}
-
-#fire{
-  pointer-events: none;
-  position: fixed;
-  bottom: -130px;
-  left: -50px;
-  mix-blend-mode: hard-light;
-  opacity: 90%;
-}
-
-#main-image {
-  filter: var(--venom-filter);
-  transform: rotate(-2deg);
-
-  @media (max-width: 700px) {
-    width: 350px;
-  }
-}
-
-.pinned-post-gif {
-  @media (max-width: 700px) {
-    display: none;
-  }
-}
-</style>
-
 <h3>Welcome to</h3>
 
-    <link rel="preload" as="image" href="/assets/images/site-title.gif">
-    <img
-      class="pulse"
-      id="main-image"
-      alt="SIDIOUS.PIZZA" src="/assets/images/site-title.gif"
-      fetchpriority="high" 
-    >
-
-    <br>
-
-    <link rel="preload" as="image" href="/assets/images/vic-toon.gif">
-    <img
-      class="pulse"
-      id="main-image"
-      height="300"
-      alt="Cartoon man on a skateboard" src="/assets/images/vic-toon.gif"
-      fetchpriority="high" 
-    >
-
-<br>
+<h1>SIDIOUS.PIZZA</h1>
 
 <em>Hola, I'm Vic. Welcome to my website.</em>
 
@@ -94,25 +26,17 @@ img {
   </form>
 </nav>
 
-<em>This one is <img id="hot" src="/assets/images/hot.gif" alt="HOT" height=40> off the oven...</em>
-
 {{ set posts = search.pages("pinned=true", "date=desc") }}
 {{ set post = posts[0] }}
+
+Hot off the oven.
 
 <div style="display: flex; align-items: center; justify-content: start;">
   <form action="{{ post.url }}">
     <input class="menu-item button tomei lt" type="submit" value='"{{ post.title }}"' />
   </form>
-  <picture
-    style="mix-blend-mode: difference; display: inline-block; margin: 0 auto;"
-  >
-    <img class="pinned-post-gif" width=100 style="" src="{{ post.gif }}"></img>
-  </picture>
 </div>
 
 <h4><span class="lt">And remember...</span> <em><strong>stay <span style="font-family: Sinister">WICKED</span></strong>!</em> 
 </h4>
 
-<div id="fire">
-  <img src="/assets/images/fire_floor.gif" alt="HOT" width="500"> 
-</div>
