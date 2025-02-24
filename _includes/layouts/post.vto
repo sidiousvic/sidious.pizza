@@ -4,9 +4,9 @@ bodyClass: body-post
 ---
 
 <article class="post" data-pagefind-body>                 
-	<div class="post-header">                              
+	<section class="post-header venom-bg fullscreen flex">                              
 		<h1 class="post-title">                              
-			{{ title |> toUpperCase }}                          
+			"{{ title |> toUpperCase }}"                         
 		</h1>                                                
 
 		{{ if title != 404 }}                              
@@ -21,8 +21,8 @@ bodyClass: body-post
         <sup class="tag border beta venomous">THIS ENTRY IS IN BETA</sup>
 			{{ /if }}                 
 
-	</div>                                            
-	<div class="post-body">                                
+	</section>                                            
+	<section class="post-body dark-bg fullscreen">                                
 		{{ if page.data.subtitle }}
 		<h3 style="text-align:center;display:block;font-size:1.5rem;">{{ page.data.subtitle }}</h3>
 		{{ /if }}
@@ -33,5 +33,5 @@ bodyClass: body-post
 			{{ if page.data.goodbye }}
 			<h3 class="goodbye">{{ goodbye }}</h3>
 			{{ /if }}
-	</div>                          
+	</section>                          
 </article>

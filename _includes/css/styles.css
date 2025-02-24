@@ -5,26 +5,38 @@
 }
 
 @font-face {
-  font-family: OffBitDot;
-  src: url(/assets/fonts/OffBitTrial-Dot.ttf);
+  font-family: GomePixelR;
+  src: url(/assets/fonts/GomePixelR.otf);
   font-display: swap;
 }
 
 @font-face {
-  font-family: OffBitDotBold;
-  src: url(/assets/fonts/OffBitTrial-DotBold.ttf);
+  font-family: GomePixel;
+  src: url(/assets/fonts/GomePixel.otf);
   font-display: swap;
 }
 
 @font-face {
-  font-family: Nilheim;
-  src: url(/assets/fonts/Nilheim.ttf);
+  font-family: NeueBit;
+  src: url(/assets/fonts/NeueBit.otf);
   font-display: swap;
 }
 
 @font-face {
-  font-family: Billy;
-  src: url(/assets/fonts/Billy.ttf);
+  font-family: Oswald;
+  src: url(/assets/fonts/Oswald.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Mondwest;
+  src: url(/assets/fonts/Mondwest.otf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: LowDef;
+  src: url(/assets/fonts/LowDef.ttf);
   font-display: swap;
 }
 
@@ -35,32 +47,53 @@
 }
 
 :root {
-  --foreground: #e6e6e6 !important;
-  --background: #0d1117 !important;
   --venom: #00ff00 !important;
+  --foreground: var(--venom) !important;
+  --background: #111 !important;
   --venom-filter: sepia(1) hue-rotate(90deg) saturate(5) !important;
 
-  --font-prose: OffBitDot, DotGothic16, monospace;
-  --font-emphasis: OffBitDotBold, DotGothic16, monospace;
-  --font-special: DotGothic16, monospace;
-  --font-title: Nilheim, monospace;
+  --font-prose: NeueBit, DotGothic16, monospace;
+  --font-emphasis: Mondwest, DotGothic16, monospace;
+  --font-special: NeueBit, monospace;
+  --font-logo: LowDef, monospace;
+  --font-title: Oswald, monospace;
   --font-code: Code, monospace;
 
   --blend-mode: difference;
   --filter-invert: invert(0);
 }
 
-body {
-  letter-spacing: 1px;
-  filter: blur(0.2px);
+* {
+  color: var(--foreground);
+}
+
+html {
   font-family: var(--font-prose);
   background: var(--background);
-  color: var(--foreground);
   font-size: 16px;
   margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  padding: 2rem 20rem 2rem 2rem;
+
+  @media (max-width: 600px) {
+    font-size: 12px;
+  }
+}
+
+body {
+  color: var(--foreground);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  margin: 0;
+}
+
+main {
+  height: 90vh;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 code {
@@ -69,10 +102,11 @@ code {
 }
 
 h1 {
-  font-family: var(--font-title);
-  color: var(--venom);
+  text-align: center;
+  font-family: var(--font-logo);
+  color: var(--foreground);
   font-size: 4rem;
-  font-weight: 100;
+  font-weight: 500;
   margin: 0;
   padding: 0;
 }
@@ -186,4 +220,108 @@ aside {
   margin: 0.5rem 0;
   font-size: 0.9rem;
   color: var(--venom);
+}
+
+li a {
+  font-family: Oswald;
+  font-weight: 500;
+}
+
+#sitebar {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--foreground);
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: blur(0.5px);
+  width: 90px;
+  padding-top: 10px;
+}
+
+.site-title {
+  font-family: var(--font-logo);
+  text-decoration: none;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--foreground);
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  width: 100%;
+  background-repeat: no-repeat;
+  color: var(--foreground);
+
+  &.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &.fullscreen {
+    height: 100vh;
+  }
+}
+
+#logo {
+  text-align: center;
+  transform: skew(-2deg, -1deg);
+  width: 35vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 600px) {
+    width: 80vw;
+  }
+}
+
+#logo-type {
+  color: var(--venom);
+  font-size: 3rem;
+  font-family: var(--font-logo);
+  margin: 0;
+  padding: 0;
+  transform: rotateX(45deg) scaleY(1.5);
+  font-weight: 100;
+  filter: drop-shadow(1px 1px 1px black);
+  mix-blend-mode: hard-light;
+
+  & h1 {
+    font-size: 6rem;
+    color: var(--venom);
+  }
+
+  @media (max-width: 600px) {
+    text-align: center;
+  }
+}
+
+#logo-swoosh {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  filter: drop-shadow(1px 1px 1px #000) invert() sepia() hue-rotate(381deg)
+    saturate(42.5) blur(1px);
+  width: 50vw;
+  transform: translate(-50%) translateY(50%);
+
+  @media (max-width: 600px) {
+    width: 80vw;
+  }
+}
+
+a {
+  color: var(--venom);
+  text-decoration: none;
+}
+
+footer {
+  display: none;
 }

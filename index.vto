@@ -5,38 +5,54 @@ title: SIDIOUS.PIZZA
 order: 0
 ---
 
-<h3>Welcome to</h3>
+<section id="logo">
+  <img id="logo-swoosh" src="/assets/images/svlogo.gif"> 
+  <div id="logo-type">
+  I'm Vic. I'm an ordinary guy. I like computers, music and pizza. I live in Tokyo.
+  </div>
+</section>
 
-<h1>SIDIOUS.PIZZA</h1>
+<style>
+body {
+  min-height: 100vh;
+  background-color: #000;
+  background-image: radial-gradient(#00ff00 .5px, #0000 .5px), radial-gradient(#0f0 .5px, #000 .5px);
+  background-position: 0 0, 20px 20px;
+  background-size: 40px 40px;
+  box-shadow: 0px -300px 500px inset black;
+}
 
-<em>Hola, I'm Vic. Welcome to my website.</em>
 
-<nav id="menu">
-  <form action="/weblog">
-    <input class="menu-item button tomei lt" type="submit" value="Weblog" />
-  </form>
-  <form action="/projects">
-    <input class="menu-item button tomei lt" type="submit" value="Projects" />
-  </form>
-  <form action="/vic">
-    <input class="menu-item button tomei lt" type="submit" value="Vic" />
-  </form>
-  <form action="/meta">
-    <input class="menu-item button tomei lt" type="submit" value="Meta" />
-  </form>
-</nav>
+#nav-links {
+  font-family: var(--font-logo), sans-serif;
+  color: #00ff00;
+  position: fixed;
+  padding: 1rem;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-around;
+  align-items: flex-end;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
 
-{{ set posts = search.pages("pinned=true", "date=desc") }}
-{{ set post = posts[0] }}
+  p {
+    margin: 0;
+    padding: 0;
+  }
 
-Hot off the oven.
+  a:hover {
+    text-decoration: underline;
+  }
+}
+</style>
 
-<div style="display: flex; align-items: center; justify-content: start;">
-  <form action="{{ post.url }}">
-    <input class="menu-item button tomei lt" type="submit" value='"{{ post.title }}"' />
-  </form>
-</div>
-
-<h4><span class="lt">And remember...</span> <em><strong>stay <span style="font-family: Sinister">WICKED</span></strong>!</em> 
-</h4>
-
+<nav id="nav-links">
+  <a href="/weblog">WEBLOG</a>
+  <a href="/blog">ABOUT</a>
+  <a href="/projects">PROJECTS</a>
+  <a href="/meta">META</a>
+<nav>
