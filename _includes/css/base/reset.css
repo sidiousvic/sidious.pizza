@@ -15,6 +15,22 @@ body {
   line-height: 1.5;
 }
 
+main {
+  padding-top: 100px;
+  min-height: calc(100vh - 100px);
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+@media (max-width: 576px) {
+  main {
+    padding-top: 80px;
+    min-height: calc(100vh - 80px);
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
 img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
