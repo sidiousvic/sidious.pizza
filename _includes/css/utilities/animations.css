@@ -15,4 +15,55 @@
   transition: opacity 0.7s ease-in-out;
 }
 
+@keyframes flicker {
+  0% { opacity: 1; }
+  5% { opacity: 0.95; }
+  10% { opacity: 1; }
+  15% { opacity: 0.98; }
+  20% { opacity: 1; }
+  25% { opacity: 0.97; }
+  30% { opacity: 1; }
+  35% { opacity: 0.96; }
+  40% { opacity: 1; }
+  45% { opacity: 0.99; }
+  50% { opacity: 1; }
+  55% { opacity: 0.98; }
+  60% { opacity: 1; }
+  65% { opacity: 0.97; }
+  70% { opacity: 1; }
+  75% { opacity: 0.96; }
+  80% { opacity: 1; }
+  85% { opacity: 0.98; }
+  90% { opacity: 1; }
+  95% { opacity: 0.97; }
+  100% { opacity: 1; }
+}
+
+@keyframes hover-flicker {
+  0% { color: #0f0; opacity: 1; }
+  10% { color: #000; opacity: 0.7; }
+  20% { color: #0f0; opacity: 1; }
+  30% { color: #000; opacity: 0.8; }
+  40% { color: #0f0; opacity: 1; }
+  50% { color: #000; opacity: 0.6; }
+  60% { color: #0f0; opacity: 1; }
+  70% { color: #000; opacity: 0.9; }
+  80% { color: #0f0; opacity: 1; }
+  90% { color: #000; opacity: 0.7; }
+  100% { color: #0f0; opacity: 1; }
+}
+
+/* Apply flicker to specific elements */
+#logo-type {
+  animation: flicker 2s infinite;
+}
+
+#nav-links a:hover {
+  animation: hover-flicker 0.3s infinite;
+}
+
+footer p {
+  animation: flicker 3s infinite;
+}
+
 /* Additional animations can be added here */ 
