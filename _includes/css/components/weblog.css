@@ -1,0 +1,127 @@
+#webpost {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-family: 'NeueBit', serif;
+}
+
+#webpost th {
+  text-align: left;
+  padding: 1rem;
+  font-family: 'OffBitBold', sans-serif;
+  color: #0f0;
+  border-bottom: 2px solid #0f0;
+}
+
+#webpost td {
+  padding: 1rem;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(0, 255, 0, 0.2);
+}
+
+#webpost tr:hover {
+  background-color: rgba(0, 255, 0, 0.05);
+}
+
+#webpost .button {
+  background: none;
+  border: none;
+  color: #0f0;
+  font-family: 'OffBitBold', sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+#webpost .button:hover {
+  background-color: rgba(0, 255, 0, 0.1);
+  transform: translateX(5px);
+}
+
+#webpost time {
+  font-family: 'OffBitDot', sans-serif;
+  color: #0f0;
+  white-space: nowrap;
+}
+
+#webpost .post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+#webpost .post-tags a {
+  color: #0f0;
+  text-decoration: none;
+  font-family: 'OffBitDot', sans-serif;
+  font-size: 0.9rem;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid rgba(0, 255, 0, 0.3);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+#webpost .post-tags a:hover {
+  background-color: rgba(0, 255, 0, 0.1);
+  border-color: #0f0;
+}
+
+@media (max-width: 1050px) {
+  #webpost .hide-1050 {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  #webpost .hide-700 {
+    display: none;
+  }
+  
+  #webpost th, 
+  #webpost td {
+    padding: 0.8rem;
+  }
+  
+  #webpost .button {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #webpost {
+    display: block;
+  }
+  
+  #webpost thead {
+    display: none;
+  }
+  
+  #webpost tbody {
+    display: block;
+  }
+  
+  #webpost tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    border-radius: 4px;
+  }
+  
+  #webpost td {
+    display: block;
+    text-align: left;
+    padding: 0.8rem;
+    border: none;
+  }
+  
+  #webpost td:before {
+    content: attr(data-label);
+    font-family: 'OffBitBold', sans-serif;
+    color: #0f0;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+} 
