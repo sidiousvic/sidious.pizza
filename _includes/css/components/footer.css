@@ -7,16 +7,17 @@
   padding: 1rem;
   font-size: 0.8rem;
   color: #0f0;
-  font-family: 'Playfair Display', serif;
+  font-family: 'NeueBit', serif;
   font-weight: 400;
 }
 
 #footer a {
   color: #0f0;
   text-decoration: none;
+  font-family: 'OffBitBold', sans-serif;
 }
 
 #footer em {
   font-style: normal;
-  font-family: 'OffBitTrial-Dot', monospace;
+  font-family: 'OffBitDot', sans-serif;
 } 
