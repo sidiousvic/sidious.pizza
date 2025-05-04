@@ -6,6 +6,19 @@ body {
   color: var(--color-text);
 }
 
+/* Text Selection */
+::selection {
+  background: #0f0;
+  color: #000;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: #0f0;
+  color: #000;
+  text-shadow: none;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'OffBitBold', sans-serif;
   font-weight: bold;
