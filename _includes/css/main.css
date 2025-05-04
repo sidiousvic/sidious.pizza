@@ -4,8 +4,8 @@
 @import "base/typography.css";
 
 /* Components */
+@import "components/header.css";
 /* TODO: Create these files */
-/* @import "components/header.css"; */
 /* @import "components/footer.css"; */
 /* @import "components/navigation.css"; */
 /* @import "components/search.css"; */
