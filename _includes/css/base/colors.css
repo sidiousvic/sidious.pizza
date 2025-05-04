@@ -4,4 +4,48 @@
   --color-text: #0f0;
   --color-link: #0f0;
   --color-link-hover: #fff;
+  --color-bg: #111;
+  --color-accent: #0f0;
+}
+
+@keyframes bg-flicker {
+  0% { opacity: 1; }
+  5% { opacity: 0.95; }
+  10% { opacity: 1; }
+  15% { opacity: 0.98; }
+  20% { opacity: 1; }
+  25% { opacity: 0.97; }
+  30% { opacity: 1; }
+  35% { opacity: 0.96; }
+  40% { opacity: 1; }
+  45% { opacity: 0.99; }
+  50% { opacity: 1; }
+  55% { opacity: 0.98; }
+  60% { opacity: 1; }
+  65% { opacity: 0.97; }
+  70% { opacity: 1; }
+  75% { opacity: 0.96; }
+  80% { opacity: 1; }
+  85% { opacity: 0.98; }
+  90% { opacity: 1; }
+  95% { opacity: 0.97; }
+  100% { opacity: 1; }
+}
+
+body {
+  background-color: #000;
+  background-image: radial-gradient(#00ff00 .5px, #0000 .5px), radial-gradient(#0f0 .5px, #000 .5px);
+  background-position: 0 0, 20px 20px;
+  background-size: 40px 40px;
+  color: var(--color-text);
+  animation: background-diagonal 1s linear infinite, bg-flicker 2s infinite;
+}
+
+@keyframes background-diagonal {
+  0% {
+    background-position: 0 0, 20px 20px;
+  }
+  100% {
+    background-position: 40px 40px, 60px 60px;
+  }
 } 
