@@ -84,8 +84,11 @@
 }
 
 #logo-type {
+  font-family: 'NeueBit', serif;
+  font-size: 1.5rem;
   color: #0f0;
-  font-family: 'DotGothic16', monospace;
-  font-size: 1.2rem;
-  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  filter: blur(0.5px);
+  animation: flicker 0.15s infinite;
 } 

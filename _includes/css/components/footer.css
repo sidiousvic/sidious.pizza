@@ -7,7 +7,8 @@
   padding: 1rem;
   font-size: 0.8rem;
   color: #0f0;
-  font-family: 'DotGothic16', monospace;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
 }
 
 #footer a {

@@ -24,4 +24,29 @@
 @import "utilities/animations.css";
 /* TODO: Create these files */
 /* @import "utilities/transitions.css"; */
-/* @import "utilities/helpers.css"; */ 
+/* @import "utilities/helpers.css"; */
+
+/* Font Declarations */
+@font-face {
+  font-family: 'NeueBit';
+  src: url('/assets/fonts/NeueBit.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OffBitBold';
+  src: url('/assets/fonts/OffBitTrial-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OffBitDot';
+  src: url('/assets/fonts/OffBitTrial-Dot.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+} 
