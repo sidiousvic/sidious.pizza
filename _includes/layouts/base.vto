@@ -45,11 +45,22 @@ S I D I O U S . P I Z Z A  -->
   <body>
     <div id="curtain"></div>
 
-      <nav id="sitebar">
-        <a class="site-title" href="/">
-          <img width=80 id="" src="/assets/images/VSMTV.png"> 
-        </a>
-      </nav>
+    <nav id="sitebar">
+      <a class="site-title" href="/">
+        <img width=80 id="" src="/assets/images/VSMTV.png"> 
+      </a>
+      <div id="nav-links">
+        <a href="/weblog">WEBLOG</a>
+        <a href="/about">ABOUT</a>
+        <a href="/projects">PROJECTS</a>
+        <a href="/meta">META</a>
+      </div>
+      <button id="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
 
     <main id="main" class="{{ page.bodyClass }}">
       {{ content }}
@@ -75,6 +86,7 @@ S I D I O U S . P I Z Z A  -->
     <script inline src="/_esnext/gettypographyfromstorage.js"></script>
     <script inline src="/_esnext/switchselectedconfig.js"></script>
     <script inline src="/_esnext/enableautorandomconfig.js"></script>
+    <script inline src="/_esnext/toggleNav.js"></script>
 
   </body>
 </html>

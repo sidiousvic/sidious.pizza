@@ -22,6 +22,12 @@
   width: auto;
 }
 
+#nav-links {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
 /* Responsive adjustments */
 @media (max-width: 576px) {
   #sitebar {

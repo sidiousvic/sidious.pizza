@@ -5,9 +5,9 @@
 
 /* Components */
 @import "components/header.css";
+@import "components/navigation.css";
 /* TODO: Create these files */
 /* @import "components/footer.css"; */
-/* @import "components/navigation.css"; */
 /* @import "components/search.css"; */
 
 /* Layouts */
