@@ -72,7 +72,7 @@
 }
 
 .site-title::after {
-  content: "sidious.pizza";
+  content: "SIDIOUS.PIZZA";
   font-family: 'Nilheim', 'OffBitBold', sans-serif;
   color: var(--color-main);
   font-size: 1.2rem;
