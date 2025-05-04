@@ -1,0 +1,21 @@
+#logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#logo-swoosh {
+  max-width: 100%;
+  height: auto;
+}
+
+#logo-type {
+  color: #0f0;
+  font-family: 'DotGothic16', monospace;
+  font-size: 1.2rem;
+  line-height: 1.5;
+} 
