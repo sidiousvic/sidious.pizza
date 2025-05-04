@@ -5,7 +5,14 @@
   font-family: 'NeueBit', serif;
   position: relative;
   background: #000;
-  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+  border-radius: 12px;
+  box-shadow: 
+    0 0 0 2px rgba(0, 255, 0, 0.3),
+    0 4px 0 0 rgba(0, 255, 0, 0.2),
+    0 8px 0 0 rgba(0, 255, 0, 0.1),
+    inset 0 2px 4px rgba(0, 255, 0, 0.2),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
 }
 
 #webpost::before {
@@ -15,12 +22,32 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
-    linear-gradient(90deg, rgba(0, 255, 0, 0.1) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(0, 255, 0, 0.1) 1px, transparent 1px);
-  background-size: 20px 20px;
+  background: linear-gradient(
+    45deg,
+    rgba(0, 255, 0, 0.05) 0%,
+    rgba(0, 255, 0, 0.02) 25%,
+    rgba(0, 255, 0, 0.05) 50%,
+    rgba(0, 255, 0, 0.02) 75%,
+    rgba(0, 255, 0, 0.05) 100%
+  );
   pointer-events: none;
-  opacity: 0.2;
+  animation: burn-in 20s infinite;
+  border-radius: 12px;
+}
+
+@keyframes burn-in {
+  0% {
+    opacity: 0.3;
+    transform: scale(1.02);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.01);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(1.02);
+  }
 }
 
 #webpost th {
