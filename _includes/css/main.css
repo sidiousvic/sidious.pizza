@@ -2,12 +2,15 @@
 @import "base/reset.css";
 @import "base/variables.css";
 @import "base/typography.css";
+@import "base/colors.css";
 
 /* Components */
 @import "components/header.css";
 @import "components/navigation.css";
+@import "components/footer.css";
+@import "components/curtain.css";
+@import "components/animations.css";
 /* TODO: Create these files */
-/* @import "components/footer.css"; */
 /* @import "components/search.css"; */
 
 /* Layouts */

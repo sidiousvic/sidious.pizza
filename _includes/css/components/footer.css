@@ -1,0 +1,21 @@
+#footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+  color: #0f0;
+  font-family: 'DotGothic16', monospace;
+}
+
+#footer a {
+  color: #0f0;
+  text-decoration: none;
+}
+
+#footer em {
+  font-style: normal;
+  font-family: 'OffBitTrial-Dot', monospace;
+} 
