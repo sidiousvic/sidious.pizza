@@ -8,14 +8,14 @@ body {
 
 /* Text Selection */
 ::selection {
-  background: #0f0;
-  color: #000;
+  background: var(--color-main);
+  color: var(--color-bg);
   text-shadow: none;
 }
 
 ::-moz-selection {
-  background: #0f0;
-  color: #000;
+  background: var(--color-main);
+  color: var(--color-bg);
   text-shadow: none;
 }
 

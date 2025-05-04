@@ -1,11 +1,19 @@
 :root {
-  --color-primary: #0f0;
-  --color-background: #000;
-  --color-text: #0f0;
-  --color-link: #0f0;
+  /* Main Colors */
+  --color-main: #0f0;
+  --color-main-rgb: 0, 255, 0;
+  --color-bg: #000;
+  --color-bg-dark: #001a00;
+  --color-bg-darker: #002200;
+  
+  /* Derived Colors */
+  --color-primary: var(--color-main);
+  --color-secondary: var(--color-main);
+  --color-accent: var(--color-main);
+  --color-background: var(--color-bg);
+  --color-text: var(--color-main);
+  --color-link: var(--color-main);
   --color-link-hover: #fff;
-  --color-bg: #111;
-  --color-accent: #0f0;
 }
 
 @keyframes bg-flicker {
@@ -33,8 +41,10 @@
 }
 
 body {
-  background-color: #000;
-  background-image: radial-gradient(#00ff00 .5px, #0000 .5px), radial-gradient(#0f0 .5px, #000 .5px);
+  background-color: var(--color-bg);
+  background-image: 
+    radial-gradient(var(--color-main) .5px, transparent .5px),
+    radial-gradient(var(--color-main) .5px, var(--color-bg) .5px);
   background-position: 0 0, 20px 20px;
   background-size: 40px 40px;
   color: var(--color-text);

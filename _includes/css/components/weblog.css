@@ -4,13 +4,13 @@
   margin: 2rem 0;
   font-family: 'NeueBit', serif;
   position: relative;
-  background: #000;
+  background: var(--color-bg);
   border-radius: 12px;
   box-shadow: 
-    0 0 0 2px rgba(0, 255, 0, 0.3),
-    0 4px 0 0 rgba(0, 255, 0, 0.2),
-    0 8px 0 0 rgba(0, 255, 0, 0.1),
-    inset 0 2px 4px rgba(0, 255, 0, 0.2),
+    0 0 0 2px rgba(var(--color-main-rgb), 0.3),
+    0 4px 0 0 rgba(var(--color-main-rgb), 0.2),
+    0 8px 0 0 rgba(var(--color-main-rgb), 0.1),
+    inset 0 2px 4px rgba(var(--color-main-rgb), 0.2),
     inset 0 -2px 4px rgba(0, 0, 0, 0.5);
   overflow: hidden;
 }
@@ -54,16 +54,16 @@
   text-align: left;
   padding: 0.5rem 1rem;
   font-family: 'OffBitBold', sans-serif;
-  color: #0f0;
-  background: #001a00;
-  text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+  color: var(--color-main);
+  background: var(--color-bg-dark);
+  text-shadow: 0 0 5px rgba(var(--color-main-rgb), 0.5);
 }
 
 #webpost td {
   padding: 0.5rem 1rem;
   vertical-align: middle;
-  background: #002200;
-  color: #0f0;
+  background: var(--color-bg-darker);
+  color: var(--color-main);
 }
 
 #webpost td.post-tags.hide-1050 {
