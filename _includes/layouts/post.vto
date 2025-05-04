@@ -4,7 +4,7 @@ bodyClass: body-post
 ---
 
 <article class="post" data-pagefind-body>                 
-	<section class="post-header venom-bg fullscreen flex">                              
+	<section class="post-header">                              
 		<h1 class="post-title">                              
 			"{{ title |> toUpperCase }}"                         
 		</h1>                                                
@@ -14,15 +14,11 @@ bodyClass: body-post
 			<em><b>{{ date |> date('HUMAN_DATE') }}</b>. {{ if page.data.readingInfo }}{{ readingInfo.words }} words, {{ readingInfo.minutes }} min read</em>{{ /if }}
 		</time>                                             
 		{{ /if }}                                        
-
-		</br>
-
 			{{ if page.data.beta }}                                  
         <sup class="tag border beta venomous">THIS ENTRY IS IN BETA</sup>
 			{{ /if }}                 
-
 	</section>                                            
-	<section class="post-body dark-bg fullscreen">                                
+	<section class="post-body fullscreen">                                
 		{{ if page.data.subtitle }}
 		<h3 style="text-align:center;display:block;font-size:1.5rem;">{{ page.data.subtitle }}</h3>
 		{{ /if }}

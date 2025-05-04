@@ -5,13 +5,6 @@ title: SIDIOUS.PIZZA
 order: 0
 ---
 
-<section id="logo">
-  <img id="logo-swoosh" src="/assets/images/svlogo.gif"> 
-  <div id="logo-type">
-  I'm Vic. I'm an ordinary guy. I like computers, music and pizza. I live in Tokyo.
-  </div>
-</section>
-
 <style>
 body {
   min-height: 100vh;
@@ -20,39 +13,40 @@ body {
   background-position: 0 0, 20px 20px;
   background-size: 40px 40px;
   box-shadow: 0px -300px 500px inset black;
+  overflow: hidden;
+  animation: background-diagonal 1s linear infinite;
 }
 
+@keyframes background-diagonal {
+  0% {
+    background-position: 0 0, 20px 20px;
+  }
+  100% {
+    background-position: 40px 40px, 60px 60px;
+  }
+}
 
-#nav-links {
-  font-family: var(--font-logo), sans-serif;
-  color: #00ff00;
-  position: fixed;
-  padding: 1rem;
-  padding-bottom: 0;
-  margin-bottom: 0;
-  bottom: 1rem;
+main {
+  height: 90vh;
+  width: 90vw;
   display: flex;
-  gap: 1rem;
-  justify-content: space-around;
-  align-items: flex-end;
-  color: #fff;
-  font-size: 1.5rem;
-  font-weight: bold;
-
-  p {
-    margin: 0;
-    padding: 0;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 </style>
 
+
+<section id="logo">
+  <img id="logo-swoosh" src="/assets/images/svlogo.gif"> 
+  <div id="logo-type">
+  I'm Vic. I'm an ordinary boy. I like computers, music and pizza. I live in Tokyo.
+  </div>
+</section>
+
 <nav id="nav-links">
   <a href="/weblog">WEBLOG</a>
-  <a href="/blog">ABOUT</a>
+  <a href="/vic">ABOUT</a>
   <a href="/projects">PROJECTS</a>
   <a href="/meta">META</a>
 <nav>

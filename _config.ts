@@ -18,7 +18,7 @@ import minifyHTML from "lume/plugins/minify_html.ts";
 import purgecss from "lume/plugins/purgecss.ts";
 import brotli from "lume/plugins/brotli.ts";
 
-if (!(Deno.env.get("LOG_LEVEL") === "DEBUG")) console.debug = () => {};
+if (!(Deno.env.get("LOG_LEVEL") === "DEBUG")) console.debug = () => { };
 
 const site = lume({
   location: new URL("https://sidious.pizza/"),
@@ -31,7 +31,7 @@ site
   .copy("spacephantom/game")
   .use(inline({ extensions: [".mjs", ".html", ".css", ".js"] }))
   .use(purgecss())
-  .use(bundleStyles({ bundler: { filename: "_includes/css/styles.css" } }))
+  .use(bundleStyles({ bundler: { filename: "_includes/css/main.css" } }))
   .use(compilePrograms({ dirname: "_includes/ts" }))
   .use(minifyHTML({ options: { minify_js: false, keep_comments: true } }))
   .use(terser({ extensions: [".mjs"] }))
