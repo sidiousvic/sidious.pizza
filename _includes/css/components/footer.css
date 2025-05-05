@@ -4,8 +4,8 @@
   left: 0;
   width: 100%;
   text-align: center;
-  padding: 1rem;
-  font-size: 0.8rem;
+  padding: 0.6rem;
+  font-size: 0.7rem;
   color: #0f0;
   font-family: 'NeueBit', serif;
   font-weight: 400;
@@ -20,4 +20,9 @@
 #footer em {
   font-style: normal;
   font-family: 'OffBitDot', sans-serif;
+}
+
+#footer-updated {
+  font-size: 0.6rem;
+  opacity: 0.8;
 } 

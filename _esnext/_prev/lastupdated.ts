@@ -11,9 +11,9 @@ type Config = {
 const config: Config = {
   repoUrl: "https://api.github.com/repos/sidiousvic/sidious.pizza",
   dateTimeFormat: new Intl.DateTimeFormat("en-US", {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
+    weekday: "short",
+    year: "2-digit",
+    month: "short",
     day: "numeric",
     hour: "2-digit",
     minute: "2-digit",
@@ -41,7 +41,7 @@ const updateLastUpdated = pipe(
       "last-updated-datetime"
     ).innerText = `${config.dateTimeFormat.format(
       new Date((await promise)?.pushed_at || Date.now())
-    )} Asia/Pacific (Tokyo)`)
+    )} TYO`)
   )
 );
 
