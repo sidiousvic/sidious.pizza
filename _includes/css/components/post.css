@@ -1,6 +1,6 @@
 /* Post Content Styling */
 .post-content {
-  max-width: 100%;
+  max-width: 110ch;
   margin: 0 auto 2rem;
   padding: 0;
   animation: fade-in 0.5s ease-out;
@@ -177,12 +177,12 @@
   background: none;
 }
 
-.post-title {
-  font-size: 3.5rem;
-  margin: 1em 0;
+h1.post-title {
+  font-size: 4.5rem;
+  margin: 0 0 0.5em 0;
   color: var(--color-main);
-  text-transform: uppercase;
-  font-family: 'Nilheim', sans-serif;
+  text-transform: none;
+  font-family: 'Mondwest', sans-serif;
   font-weight: normal;
   text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
 }
@@ -318,7 +318,7 @@
     margin: 0;
   }
   
-  .post-title {
+  h1.post-title {
     font-size: 2.5rem;
   }
   
