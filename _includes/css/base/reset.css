@@ -16,18 +16,17 @@ body {
 }
 
 main {
-  padding-top: 100px;
   min-height: calc(100vh - 100px);
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-top: 40px;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
-@media (max-width: 576px) {
+@media (min-width: 768px) {
   main {
-    padding-top: 80px;
-    min-height: calc(100vh - 80px);
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-top: 60px;
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 }
 

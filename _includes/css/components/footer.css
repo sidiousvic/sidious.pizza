@@ -9,6 +9,26 @@
   color: #0f0;
   font-family: 'NeueBit', serif;
   font-weight: 400;
+  background: #001100;
+  border-top: 1px solid rgba(0, 255, 0, 0.2);
+  box-shadow: 
+    0 0 0 1px rgba(0, 255, 0, 0.3),
+    0 4px 0 0 rgba(0, 255, 0, 0.15),
+    0 8px 0 0 rgba(0, 255, 0, 0.1),
+    inset 0 2px 4px rgba(0, 255, 0, 0.15),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+}
+
+#footer > * {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
 }
 
 #footer a {
@@ -25,4 +45,25 @@
 #footer-updated {
   font-size: 0.6rem;
   opacity: 0.8;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#footer-rights {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.footer-message {
+  font-family: 'OffBitDot', sans-serif;
+  font-size: 0.9rem;
+  color: var(--color-main);
+  text-align: center;
+  padding: 0.5rem 1.5rem;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 9999px;
+  display: inline-block;
+  margin: 0 auto;
+  border: 1px solid rgba(0, 255, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.1);
 } 

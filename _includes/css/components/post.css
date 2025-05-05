@@ -1,8 +1,8 @@
 /* Post Content Styling */
 .post-content {
-  max-width: 85ch;
-  margin: 2rem auto;
-  padding: 0 var(--spacing-lg);
+  max-width: 100%;
+  margin: 0 auto 2rem;
+  padding: 0;
   animation: fade-in 0.5s ease-out;
   position: relative;
   background: rgba(0, 34, 0, 0.4);
@@ -167,7 +167,7 @@
 
 /* Post Header */
 .post-header {
-  margin: 1em 0;
+  margin: 1em 0 0;
   text-align: center;
   animation: slide-up 0.5s ease-out;
   padding: 2em 1rem 1rem;
@@ -287,7 +287,7 @@
 .post-body {
   animation: fade-in 0.5s ease-out;
   padding: 0 1rem;
-  margin-top: 1em;
+  margin-top: 0;
   position: relative;
 }
 
@@ -310,11 +310,11 @@
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .post-content {
-    padding: 0 var(--spacing-md);
-    margin: 1rem;
-    max-width: 95%;
+    padding: 0 var(--spacing-sm);
+    max-width: 98%;
+    margin: 0;
   }
   
   .post-title {
@@ -326,11 +326,20 @@
   }
   
   .post-meta {
-    font-size: 1em;
+    font-size: 0.9em;
+  }
+
+  .post-meta time {
+    font-size: 0.9rem;
   }
   
   .post-header {
     padding: 1rem;
+  }
+
+  .post-tags a {
+    font-size: 0.8em;
+    padding: 0.2em 0.6em;
   }
 
   .post-content h1 { font-size: 2.5rem; }
