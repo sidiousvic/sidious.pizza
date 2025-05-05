@@ -6,6 +6,7 @@ tags:
   - technology
   - philosophy
   - future
+readiness: med
 type: weblog
 ---
 

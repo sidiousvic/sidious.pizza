@@ -7,6 +7,7 @@ tags:
   - future
   - philosophy
 beta: true
+readiness: low
 type: weblog
 ---
 

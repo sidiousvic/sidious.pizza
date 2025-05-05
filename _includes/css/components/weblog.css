@@ -5,15 +5,17 @@
   margin: 2rem 0;
   font-family: 'NeueBit', serif;
   position: relative;
-  background-color: var(--color-bg-dark);
+  background: rgba(0, 34, 0, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 
-    0 0 0 2px rgba(var(--color-main-rgb), 0.3),
-    0 4px 0 0 rgba(var(--color-main-rgb), 0.2),
-    0 8px 0 0 rgba(var(--color-main-rgb), 0.1),
-    inset 0 2px 4px rgba(var(--color-main-rgb), 0.2),
-    inset 0 -2px 4px rgba(0, 0, 0, 0.5);
+    0 0 0 1px rgba(0, 255, 0, 0.3),
+    0 4px 0 0 rgba(0, 255, 0, 0.15),
+    0 8px 0 0 rgba(0, 255, 0, 0.1),
+    inset 0 2px 4px rgba(0, 255, 0, 0.15),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.3);
 }
 
 #webpost::before {
@@ -25,15 +27,16 @@
   bottom: 0;
   background: linear-gradient(
     45deg,
-    rgba(0, 255, 0, 0.05) 0%,
-    rgba(0, 255, 0, 0.02) 25%,
-    rgba(0, 255, 0, 0.05) 50%,
-    rgba(0, 255, 0, 0.02) 75%,
-    rgba(0, 255, 0, 0.05) 100%
+    rgba(0, 34, 0, 0.5) 0%,
+    rgba(0, 34, 0, 0.4) 25%,
+    rgba(0, 34, 0, 0.5) 50%,
+    rgba(0, 34, 0, 0.4) 75%,
+    rgba(0, 34, 0, 0.5) 100%
   );
   pointer-events: none;
   animation: burn-in 20s infinite;
   border-radius: 12px;
+  z-index: -1;
 }
 
 #webpost::after {
@@ -45,13 +48,12 @@
   bottom: 0;
   background: repeating-linear-gradient(
     0deg,
-    rgba(0, 0, 0, 0.15) 0px,
-    rgba(0, 0, 0, 0.15) 1px,
-    transparent 1px,
+    rgba(0, 0, 0, 0.08) 0px,
+    rgba(0, 0, 0, 0.08) 0.5px,
+    transparent 0.5px,
     transparent 2px
   );
   pointer-events: none;
-  animation: scanlines 0.5s linear infinite;
   border-radius: 12px;
 }
 
@@ -84,19 +86,23 @@
   padding: 0.5rem 1rem;
   font-family: 'OffBitBold', sans-serif;
   color: var(--color-main);
-  background: var(--color-bg-dark);
-  text-shadow: 0 0 5px rgba(var(--color-main-rgb), 0.5);
+  background: rgba(0, 34, 0, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
 }
 
 #webpost td {
   padding: 0.5rem 1rem;
   vertical-align: middle;
-  background: var(--color-bg-darker);
+  background: rgba(0, 34, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: var(--color-main);
 }
 
 #webpost td.post-tags.hide-1050 {
-  background: #002200;
+  background: rgba(0, 34, 0, 0.5);
 }
 
 #webpost tr {
@@ -176,7 +182,13 @@
 @media (max-width: 576px) {
   #webpost {
     display: block;
+    background: none;
     box-shadow: none;
+    margin: 1rem 0;
+  }
+  
+  #webpost::before {
+    display: none;
   }
   
   #webpost thead {
@@ -189,19 +201,68 @@
   
   #webpost tr {
     display: block;
-    margin-bottom: 1rem;
-    border-radius: 4px;
-    background: #002200;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    background: rgba(0, 34, 0, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 
+      0 0 0 1px rgba(0, 255, 0, 0.3),
+      0 4px 0 0 rgba(0, 255, 0, 0.15),
+      0 8px 0 0 rgba(0, 255, 0, 0.1),
+      inset 0 2px 4px rgba(0, 255, 0, 0.15),
+      inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  #webpost tr::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      45deg,
+      rgba(0, 34, 0, 0.7) 0%,
+      rgba(0, 34, 0, 0.6) 25%,
+      rgba(0, 34, 0, 0.7) 50%,
+      rgba(0, 34, 0, 0.6) 75%,
+      rgba(0, 34, 0, 0.7) 100%
+    );
+    pointer-events: none;
+    animation: burn-in 20s infinite;
+    border-radius: 8px;
+    z-index: -1;
+  }
+  
+  #webpost tr::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.08) 0px,
+      rgba(0, 0, 0, 0.08) 0.5px,
+      transparent 0.5px,
+      transparent 2px
+    );
+    pointer-events: none;
+    border-radius: 8px;
   }
   
   #webpost td {
     display: block;
     text-align: left;
-    padding: 0.5rem 0.8rem;
+    padding: 0.8rem 1rem;
     background: none;
     color: #0f0;
     border: none;
+    position: relative;
   }
   
   #webpost td:before {

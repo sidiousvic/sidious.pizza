@@ -8,6 +8,7 @@ tags:
   - friends
   - tokyo
   - life
+readiness: hot
 type: weblog
 ---
 

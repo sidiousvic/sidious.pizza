@@ -24,11 +24,24 @@
           </td>
           <td class="hide-700" data-label="Status">
             {{ if post.beta }}
-              <span class="tag border marker w40">β</span>
+              <span class="tag border marker w40" style="display: inline-block; width: 40px; height: 16px; position: relative; border: 1px solid #0f0; border-radius: 2px; padding: 2px;">
+                <span style="display: block; width: 25%; height: 100%; background: #0f0; border-radius: 1px;"></span>
+              </span>
             {{ else if post.pinned }}
-              <span class="tag border marker venomous w40">{{ post.pin || '🔥' }}</span>
+              <span class="tag border marker venomous w40" style="display: inline-block; width: 40px; height: 16px; position: relative; border: 1px solid #0f0; border-radius: 2px; padding: 2px;">
+                <span style="display: block; width: 100%; height: 100%; background: #0f0; border-radius: 1px;"></span>
+              </span>
             {{ else }}
-              <span class="tag border marker venom w40">✔</span>
+              {{ set level = post.readiness || 'med' }}
+              {{ set width = 
+                level === 'low' ? 25 :
+                level === 'med' ? 50 :
+                level === 'high' ? 75 :
+                level === 'hot' ? 100 : 50
+              }}
+              <span class="tag border marker venom w40" style="display: inline-block; width: 40px; height: 16px; position: relative; border: 1px solid #0f0; border-radius: 2px; padding: 2px;">
+                <span style="display: block; width: {{ width }}%; height: 100%; background: #0f0; border-radius: 1px;"></span>
+              </span>
             {{ /if }}
           </td>
           <td class="post-tags hide-1050" data-label="Tags">
