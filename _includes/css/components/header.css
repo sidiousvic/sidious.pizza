@@ -6,7 +6,7 @@
   width: 100%;
   height: 80px;
   background-color: var(--color-bg-dark);
-  z-index: 100;
+  z-index: 1000;
   display: flex;
   align-items: center;
   padding: 0 1rem;
@@ -44,6 +44,25 @@
   border-radius: 12px;
 }
 
+#sitebar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15) 0px,
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  animation: scanlines 0.5s linear infinite;
+  border-radius: 12px;
+}
+
 @keyframes burn-in {
   0% {
     opacity: 0.3;
@@ -56,6 +75,15 @@
   100% {
     opacity: 0.3;
     transform: scale(1.02);
+  }
+}
+
+@keyframes scanlines {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(2px);
   }
 }
 

@@ -1,18 +1,19 @@
 #webpost {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   margin: 2rem 0;
   font-family: 'NeueBit', serif;
   position: relative;
-  background: var(--color-bg);
+  background-color: var(--color-bg-dark);
   border-radius: 12px;
+  overflow: hidden;
   box-shadow: 
     0 0 0 2px rgba(var(--color-main-rgb), 0.3),
     0 4px 0 0 rgba(var(--color-main-rgb), 0.2),
     0 8px 0 0 rgba(var(--color-main-rgb), 0.1),
     inset 0 2px 4px rgba(var(--color-main-rgb), 0.2),
     inset 0 -2px 4px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
 }
 
 #webpost::before {
@@ -35,6 +36,25 @@
   border-radius: 12px;
 }
 
+#webpost::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15) 0px,
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  animation: scanlines 0.5s linear infinite;
+  border-radius: 12px;
+}
+
 @keyframes burn-in {
   0% {
     opacity: 0.3;
@@ -47,6 +67,15 @@
   100% {
     opacity: 0.3;
     transform: scale(1.02);
+  }
+}
+
+@keyframes scanlines {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(2px);
   }
 }
 

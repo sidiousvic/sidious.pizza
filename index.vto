@@ -103,12 +103,74 @@ main {
   padding: 2rem;
   box-sizing: border-box;
 }
+
+#logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+#logo-type {
+  font-family: 'Nilheim', 'OffBitBold', sans-serif;
+  font-size: 1.5rem;
+  color: var(--color-main);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateX(10deg);
+  transition: transform 0.3s ease;
+}
+
+#logo-type::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: rgba(0, 255, 0, 0.2);
+  transform: translateZ(-20px);
+  filter: blur(8px);
+  z-index: -1;
+}
+
+#logo-type::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: rgba(0, 255, 0, 0.1);
+  transform: translateZ(-40px);
+  filter: blur(12px);
+  z-index: -2;
+}
+
+#logo-type:hover {
+  transform: perspective(1000px) rotateX(15deg);
+}
+
+#logo-type:hover::before {
+  transform: translateZ(-30px);
+  filter: blur(10px);
+}
+
+#logo-type:hover::after {
+  transform: translateZ(-50px);
+  filter: blur(15px);
+}
 </style>
 
 
 <section id="logo">
   <img id="logo-swoosh" src="/assets/images/svlogo.gif"> 
-  <div id="logo-type">
+  <div id="logo-type" data-text="I'm Vic. I'm an ordinary boy. I like computers, music and pizza. I live in Tokyo.">
   I'm Vic. I'm an ordinary boy. I like computers, music and pizza. I live in Tokyo.
   </div>
 </section>
