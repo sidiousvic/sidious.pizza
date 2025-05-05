@@ -258,28 +258,29 @@
 }
 
 .post-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5em;
-  justify-content: center;
   width: 100%;
 }
 
 .post-tags a {
-  font-size: 0.9em;
-  padding: 0.3em 0.8em;
+  color: var(--color-main);
+  text-shadow: 0 0 12px rgba(var(--color-main-rgb), 0.7);
   background-color: transparent;
   border-radius: 3px;
-  text-decoration: none;
-  color: var(--color-main);
+  padding: 0.3em 0.8em 0.3em 0;
   font-family: 'Doomed', sans-serif;
-  text-shadow: 0 0 12px rgba(var(--color-main-rgb), 0.7);
+  font-size: 0.9em;
+  text-decoration: none;
   transition: all 0.3s;
+  margin-right: 0.5em;
+}
+
+.post-tags a:last-child {
+  margin-right: 0;
 }
 
 .post-tags a:hover {
-  background-color: transparent;
   text-shadow: 0 0 20px rgba(var(--color-main-rgb), 1), 0 0 40px rgba(var(--color-main-rgb), 0.8);
+  background-color: transparent;
   animation: 0.08s infinite flicker;
 }
 

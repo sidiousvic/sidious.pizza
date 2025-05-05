@@ -16,6 +16,16 @@
             <form action="{{ post.url }}">
               <input class="button" type="submit" value="{{ post.title }}" />
             </form>
+            {{ set preview = post.content
+              .replace(/<[^>]*>/g, '')  // Remove HTML tags
+              .replace(/!\[.*?\]\(.*?\)/g, '')  // Remove markdown images
+              .replace(/\[.*?\]\(.*?\)/g, '')  // Remove markdown links
+              .replace(/\{.*?\}/g, '')  // Remove any curly brace content
+              .replace(/\s+/g, ' ')  // Normalize whitespace
+              .trim()
+              .substring(0, 100)
+              .replace(/\s+\S*$/, '') + '...' }}
+            <div class="content-preview">{{ preview }}</div>
           </td>
           <td data-label="Date">
             <time datetime="{{ post.date |> date('DATETIME') }}">
