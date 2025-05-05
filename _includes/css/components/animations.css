@@ -7,6 +7,30 @@
   }
 }
 
+@keyframes flicker {
+  0% { opacity: 1 }
+  5% { opacity: 0.4 }
+  10% { opacity: 1 }
+  15% { opacity: 0.5 }
+  20% { opacity: 1 }
+  25% { opacity: 0.3 }
+  30% { opacity: 1 }
+  35% { opacity: 0.4 }
+  40% { opacity: 1 }
+  45% { opacity: 0.5 }
+  50% { opacity: 1 }
+  55% { opacity: 0.3 }
+  60% { opacity: 1 }
+  65% { opacity: 0.4 }
+  70% { opacity: 1 }
+  75% { opacity: 0.5 }
+  80% { opacity: 1 }
+  85% { opacity: 0.3 }
+  90% { opacity: 1 }
+  95% { opacity: 0.4 }
+  100% { opacity: 1 }
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
