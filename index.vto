@@ -229,6 +229,47 @@ main {
   filter: blur(15px);
 }
 
+#welcome-text span {
+  display: inline-block;
+  animation: pulse-glow 2s infinite;
+}
+
+#welcome-text span span {
+  display: inline-block;
+  animation: letter-bounce 0.5s infinite;
+  animation-delay: calc(var(--letter-index) * 0.1s);
+}
+
+@keyframes pulse-glow {
+  0% {
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5),
+                 0 0 10px rgba(0, 255, 0, 0.3),
+                 0 0 15px rgba(0, 255, 0, 0.1);
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8),
+                 0 0 20px rgba(0, 255, 0, 0.5),
+                 0 0 30px rgba(0, 255, 0, 0.2);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5),
+                 0 0 10px rgba(0, 255, 0, 0.3),
+                 0 0 15px rgba(0, 255, 0, 0.1);
+  }
+}
+
+@keyframes letter-bounce {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-5px) rotate(-2deg);
+  }
+  75% {
+    transform: translateY(5px) rotate(2deg);
+  }
+}
+
 @media (max-width: 768px) {
   #welcome-text, #logo-type {
     font-size: 1rem;
@@ -246,7 +287,7 @@ main {
 
 <section id="logo">
   <div id="welcome-text" data-text="WELCOME TO SIDIOUS.PIZZA!">
-    WELCOME TO SIDIOUS.PIZZA!
+    WELCOME TO <span><span style="--letter-index: 0">S</span><span style="--letter-index: 1">I</span><span style="--letter-index: 2">D</span><span style="--letter-index: 3">I</span><span style="--letter-index: 4">O</span><span style="--letter-index: 5">U</span><span style="--letter-index: 6">S</span><span style="--letter-index: 7">.</span><span style="--letter-index: 8">P</span><span style="--letter-index: 9">I</span><span style="--letter-index: 10">Z</span><span style="--letter-index: 11">Z</span><span style="--letter-index: 12">A</span></span>!
   </div>
   <img id="logo-swoosh" src="/assets/images/svlogo.gif"> 
   <div id="logo-type" data-text="I'm Vic. I'm an ordinary boy. I like computers, music and pizza. I live in Tokyo.">
