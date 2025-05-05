@@ -6,6 +6,13 @@ order: 0
 ---
 
 <style>
+@font-face {
+  font-family: 'Doomed';
+  src: url('/assets/fonts/Doomed.ttf') format('truetype');
+  size-adjust: 110%;
+  font-display: swap;
+}
+
 body {
   min-height: 100vh;
   background-color: #000;
@@ -118,8 +125,8 @@ main {
 }
 
 #logo-type {
-  font-family: 'Nilheim', 'OffBitBold', sans-serif;
-  font-size: 1.5rem;
+  font-family: 'OffBitBold', sans-serif;
+  font-size: 1.2rem;
   color: var(--color-main);
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -168,10 +175,79 @@ main {
   transform: translateZ(-50px);
   filter: blur(15px);
 }
+
+#welcome-text {
+  font-family: 'Doomed', monospace;
+  font-size: 1.2rem;
+  color: var(--color-main);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateX(10deg);
+  transition: transform 0.3s ease;
+  animation: flicker 0.15s infinite;
+}
+
+#welcome-text::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: rgba(0, 255, 0, 0.2);
+  transform: translateZ(-20px);
+  filter: blur(8px);
+  z-index: -1;
+}
+
+#welcome-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: rgba(0, 255, 0, 0.1);
+  transform: translateZ(-40px);
+  filter: blur(12px);
+  z-index: -2;
+}
+
+#welcome-text:hover {
+  transform: perspective(1000px) rotateX(15deg);
+}
+
+#welcome-text:hover::before {
+  transform: translateZ(-30px);
+  filter: blur(10px);
+}
+
+#welcome-text:hover::after {
+  transform: translateZ(-50px);
+  filter: blur(15px);
+}
+
+@media (max-width: 768px) {
+  #welcome-text, #logo-type {
+    font-size: 1rem;
+  }
+}
+
+#logo-swoosh {
+  filter: drop-shadow(320px 38px 339px #00ff000);
+  width: 760px;
+  height: auto;
+  margin: -2rem 0;
+}
 </style>
 
 
 <section id="logo">
+  <div id="welcome-text" data-text="WELCOME TO SIDIOUS.PIZZA!">
+    WELCOME TO SIDIOUS.PIZZA!
+  </div>
   <img id="logo-swoosh" src="/assets/images/svlogo.gif"> 
   <div id="logo-type" data-text="I'm Vic. I'm an ordinary boy. I like computers, music and pizza. I live in Tokyo.">
   I'm Vic. I'm an ordinary boy. I like computers, music and pizza. I live in Tokyo.
