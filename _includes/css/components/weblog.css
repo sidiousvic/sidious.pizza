@@ -119,13 +119,27 @@
   cursor: pointer;
   text-align: left;
   width: 100%;
-  text-shadow: 0 0 12px rgba(var(--color-main-rgb), 0.7);
-  transition: text-shadow 0.3s;
+  transition: all 0.3s;
 }
 
-#webpost .button:hover {
-  text-shadow: 0 0 20px rgba(var(--color-main-rgb), 1), 0 0 40px rgba(var(--color-main-rgb), 0.8);
-  animation: 0.08s infinite flicker;
+#webpost tr:hover {
+  background: rgba(0, 34, 0, 0.8);
+  box-shadow: 
+    0 0 0 1px rgba(0, 255, 0, 0.3),
+    0 4px 0 0 rgba(0, 255, 0, 0.15),
+    0 8px 0 0 rgba(0, 255, 0, 0.1),
+    inset 0 2px 4px rgba(0, 255, 0, 0.15),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#webpost tr:hover .button {
+  color: #0f0;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+#webpost tr:hover td {
+  color: #0f0;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
 }
 
 #webpost .post-tags {
@@ -271,6 +285,21 @@
     color: #0f0;
     display: block;
     margin-bottom: 0.5rem;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+  }
+  
+  #webpost tr:hover {
+    background: rgba(0, 34, 0, 0.8);
+    box-shadow: 
+      0 0 0 1px rgba(0, 255, 0, 0.3),
+      0 4px 0 0 rgba(0, 255, 0, 0.15),
+      0 8px 0 0 rgba(0, 255, 0, 0.1),
+      inset 0 2px 4px rgba(0, 255, 0, 0.15),
+      inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  #webpost tr:hover td {
+    color: #0f0;
     text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
   }
 } 

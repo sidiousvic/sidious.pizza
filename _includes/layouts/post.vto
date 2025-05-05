@@ -3,31 +3,32 @@ layout: layouts/base.vto
 bodyClass: body-post
 ---
 
-<article class="post" data-pagefind-body>                 
-	<section class="post-header">                              
-		<h1 class="post-title">                              
-			"{{ title |> toUpperCase }}"                         
-		</h1>                                                
-
-		{{ if title != 404 }}                              
-		<time class="post-meta" datetime="{{ date |> date('DATETIME') }}">
-			<em><b>{{ date |> date('HUMAN_DATE') }}</b>. {{ if page.data.readingInfo }}{{ readingInfo.words }} words, {{ readingInfo.minutes }} min read</em>{{ /if }}
-		</time>                                             
-		{{ /if }}                                        
-			{{ if page.data.beta }}                                  
-        <sup class="tag border beta venomous">THIS ENTRY IS IN BETA</sup>
-			{{ /if }}                 
-	</section>                                            
-	<section class="post-body fullscreen">                                
-		{{ if page.data.subtitle }}
-		<h3 style="text-align:center;display:block;font-size:1.5rem;">{{ page.data.subtitle }}</h3>
+<article class="post-content">
+	<header class="post-header">
+		<h1 class="post-title">{{ title }}</h1>
+		{{ if gif }}
+			<div class="post-image">
+				<img src="{{ gif }}" alt="{{ title }}" />
+			</div>
 		{{ /if }}
+		<div class="post-meta">
+			<time datetime="{{ date |> date('DATETIME') }}">
+				{{ date |> date('HUMAN_DATE') |> toUpperCase }}
+			</time>
+			{{ if tags }}
+				<div class="post-tags">
+					{{ for tag of tags }}
+						{{ set page = search.pages("type=tag tag='" + tag + "'") }}
+						{{ if page }}
+							<a href="/tags/{{ tag }}">{{ tag }}</a>
+						{{ /if }}
+					{{ /for }}
+				</div>
+			{{ /if }}
+		</div>
+	</header>
+
+	<div class="post-body">
 		{{ content }}
-			{{ if page.data.beta }}
-				<h3 style="display:block;">To be continued...</h3>
-			{{ /if }}
-			{{ if page.data.goodbye }}
-			<h3 class="goodbye">{{ goodbye }}</h3>
-			{{ /if }}
-	</section>                          
+	</div>
 </article>

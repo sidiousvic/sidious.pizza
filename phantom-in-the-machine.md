@@ -12,8 +12,6 @@ beta: true
 type: weblog
 ---
 
-![A computer chip](/assets/images/phantom-pc.gif){ optimize width=500 fetchpriority="high" }
-
 The best programs are written so that computing machines can perform them quickly and so that human beings can understand them clearly. A programmer is ideally an essayist who works with traditional aesthetic and literary forms as well as mathematical concepts, to communicate the way that an algorithm works and to convince a reader that the results will be correct.
 
 The process of preparing programs for a digital computer is especially attractive, not only because it can be economically and scientifically rewarding, but also because it can be an aesthetic experience much like composing poetry or music. In fact, my experiences as I was writing the 3:16 book weren't that different from writing computer books, although I wasn't using integral signs as much.
