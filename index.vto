@@ -287,7 +287,7 @@ main {
 
 @media (max-width: 768px) {
   #welcome-text, #logo-type {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -296,6 +296,46 @@ main {
   width: 760px;
   height: auto;
   margin: -2rem 0;
+}
+
+#index {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: calc(100vh - 100px);
+  gap: 2rem;
+}
+
+#index .welcome {
+  margin: 0 auto;
+  text-align: center;
+  animation: fade-in 0.5s ease-out;
+}
+
+#index .welcome h1 {
+  font-size: 4rem;
+  color: var(--color-main);
+  font-family: 'Doomed', sans-serif;
+}
+
+#index .welcome p {
+  font-size: 2rem;
+  color: var(--color-text);
+  font-family: 'Mondwest', serif;
+}
+
+@media (min-width: 768px) {
+  #index {
+    gap: 3rem;
+  }
+  
+  #index .welcome h1 {
+    font-size: 4.5rem;
+  }
+  
+  #index .welcome p {
+    font-size: 2.2rem;
+  }
 }
 </style>
 

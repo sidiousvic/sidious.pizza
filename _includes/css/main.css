@@ -83,14 +83,14 @@
   max-width: 1200px;
   margin: 0 auto;
   min-height: calc(100vh - 100px);
-  padding: 40px 2rem 0;
+  padding: 20px 1rem 0;
   display: flex;
   flex-direction: column;
 }
 
 @media (min-width: 768px) {
   #content {
-    padding-top: 60px;
+    padding: 40px 2rem 0;
   }
 }
 
