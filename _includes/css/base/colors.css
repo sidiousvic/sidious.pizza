@@ -14,6 +14,13 @@
   --color-text: var(--color-main);
   --color-link: var(--color-main);
   --color-link-hover: #fff;
+
+  /* Grayscale Mode */
+  --grayscale-filter: none;
+}
+
+:root.grayscale {
+  --grayscale-filter: grayscale(100%);
 }
 
 @keyframes bg-flicker {
@@ -58,4 +65,14 @@ body {
   100% {
     background-position: 40px 40px, 60px 60px;
   }
+}
+
+/* Apply grayscale to content elements */
+:root.grayscale #main,
+:root.grayscale #sitebar,
+:root.grayscale #footer,
+:root.grayscale #curtain,
+:root.grayscale #scanlines-container {
+  filter: var(--grayscale-filter);
+  transition: filter 0.5s ease;
 } 
