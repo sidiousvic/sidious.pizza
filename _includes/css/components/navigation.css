@@ -1,6 +1,7 @@
 #nav-links {
   display: flex;
   gap: 2rem;
+  margin-left: auto;
 }
 
 #nav-links a {
@@ -94,7 +95,6 @@
     position: absolute;
     top: 20px;
     right: 20px;
-    background: none;
     border: none;
     color: var(--color-main);
     font-family: 'Nilheim', 'OffBitBold', sans-serif;

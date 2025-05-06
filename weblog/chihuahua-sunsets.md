@@ -3,7 +3,7 @@ layout: layouts/post.vto
 title: Chihuahua Sunsets
 date: 2023-07-09
 pinned: true
-gif: /assets/images/chihuahua-sunset.gif
+gif: /assets/images/chihuahua.webp
 tags:
   - mexico
   - travel
@@ -12,8 +12,6 @@ beta: true
 readiness: low
 type: weblog
 ---
-
-![A desert sunset in Chihuahua](/assets/images/chihuahua-sunset.gif){ optimize width=500 fetchpriority="high" }
 
 The desert winds of Chihuahua whisper stories of revolution and resilience. This northern Mexican state, often overshadowed by its more famous neighbors, holds a unique charm in its vast landscapes and rich cultural heritage.
 

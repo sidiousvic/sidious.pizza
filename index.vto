@@ -15,16 +15,14 @@ order: 0
 
 body {
   min-height: 100vh;
-  background-color: #000;
-  background-image: radial-gradient(#00ff00 .5px, #0000 .5px), radial-gradient(#0f0 .5px, #000 .5px);
-  background-position: 0 0, 20px 20px;
-  background-size: 40px 40px;
-  overflow: hidden;
-  animation: background-diagonal 1s linear infinite;
   position: relative;
 }
 
-body::before {
+body.index-page {
+  overflow: hidden;
+}
+
+body.index-page::before {
   content: '';
   position: fixed;
   top: 0;
@@ -46,7 +44,7 @@ body::before {
   animation: flicker 0.15s infinite;
 }
 
-body::after {
+body.index-page::after {
   content: '';
   position: fixed;
   top: 0;
@@ -346,7 +344,7 @@ main {
 }
 </style>
 
-
+<body class="index-page">
 <section id="logo">
   <div id="welcome-to">WELCOME TO...</div>
   <div id="welcome-text" data-text="SIDIOUS.PIZZA!">
