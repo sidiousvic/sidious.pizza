@@ -10,51 +10,17 @@ goodbye:
 <script inline src="/_esnext/vicsage.js"></script>
 <script inline src="/_esnext/lazyvideos.js"></script>
 
-<style>
-  
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Mondwest', serif;
-  margin-bottom: 2rem;
-  color: var(--color-main);
-  text-shadow: 0 0 12px rgba(var(--color-main-rgb), 0.7);
-}
-
-.post-content img {
-  max-height: 400px;
-  width: auto;
-  margin: 2rem auto;
-  display: block;
-}
-
-.post-content table {
-  margin-bottom: 2rem;
-}
-
-.post-content ul, .post-content ol {
-  font-family: 'Mondwest', serif;
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  padding-left: 2rem;
-  color: var(--color-main);
-  text-shadow: 0 0 12px rgba(var(--color-main-rgb), 0.7);
-}
-
-.post-content li {
-  margin-bottom: 1rem;
-}
-</style>
-
 ![Victor Molina Rodriguez](/assets/images/vic-main.png){ optimize width=600 fetchpriority="high" }
 
-My name is Victor René Molina Rodríguez. I'm an ordinary man based in [澁谷東京 <em>(Shibuya, Tokyo)</em>](https://goo.gl/maps/1YfuGi5HYgRpBjN7A). I'm in my 30's, the spring of life. My vices are pizza, booze, [axe](https://youtu.be/en7EKL1pX5w) and [burritos](https://youtu.be/YZRtE1I5w7k).
+My name is Victor René Molina Rodríguez. I'm an ordinary man based in [澁谷東京 <em>(Shibuya, Tokyo)</em>](https://goo.gl/maps/1YfuGi5HYgRpBjN7A). I'm in my 30's, the spring of life. My vices are pizza, booze, [the axe](https://youtu.be/en7EKL1pX5w) and [burritos](https://youtu.be/YZRtE1I5w7k).
 
-| Data             |                         |
-|------------------|-----------------------------|
-| Age              | <script>document.write(new Date().getFullYear() - 1991)</script> |
-| Place of Birth   | Chihuahua, Mexico           |
-| Residence| Tokyo, Japan                |
-| Current Job      | Engineering Lead, Toyota    |
-| Nicknames        | Toru, Vic Sidious, "You idiot"|
+| Data           |                                |
+| -------------- | ------------------------------ |
+| Age            | <span id="vicsage"></span>     |
+| Place of Birth | Chihuahua, Mexico              |
+| Residence      | Tokyo, Japan                   |
+| Current Job    | Engineering Lead, Toyota       |
+| Nicknames      | Toru, Vic Sidious, "You idiot" |
 
 ## 🧠 Early Life and Education
 
@@ -67,6 +33,7 @@ I was born in **Chihuahua**, northern Mexico. I lived there until 2009, then mov
 I've worked in warehouses, taught math, coached football, built software for the grid, and shoveled dirt. I don't see myself as having a career, I've just do things for fun, for good of myself and others, and to earn my bread.
 
 Some of the jobs I've done:
+
 - Buyer for industrial supplies
 - Warehouse worker
 - Gardener
@@ -89,6 +56,7 @@ I play **guitar** and make playlists that follow a mood or idea. I like all kind
 
 I care about how things are put together.  
 I like:
+
 - Pueblo architecture
 - Urban graffiti
 - Pixel art and retro UI

@@ -160,6 +160,37 @@
   width: auto;
   margin: 2rem auto;
   display: block;
+  filter: 
+    sepia(100%) 
+    saturate(300%) 
+    hue-rotate(60deg) 
+    brightness(0.7) 
+    contrast(1.2);
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  border: 1px solid rgba(0, 255, 0, 0.5);
+  border-radius: 8px;
+  position: relative;
+}
+
+.post-content img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1) 0px,
+    rgba(0, 0, 0, 0.1) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  border-radius: 8px;
 }
 
 .post-content table {
