@@ -104,13 +104,12 @@ body::after {
 }
 
 main {
-  height: 90vh;
-  width: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -118,90 +117,44 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   text-align: center;
   position: relative;
   z-index: 2;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
 }
 
-#logo-type {
-  font-family: 'OffBitBold', sans-serif;
-  font-size: 1.2rem;
+#welcome-to {
+  font-family: 'Nilheim', serif;
+  font-size: 1.8rem;
   color: var(--color-main);
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  margin-bottom: 1rem;
   position: relative;
-  transform-style: preserve-3d;
-  transform: perspective(500px) rotateX(20deg);
-  transition: transform 0.3s ease;
-}
-
-#logo-type .cursor {
-  display: inline-block;
-  width: 0.5em;
-  height: 1em;
-  background-color: var(--color-main);
-  margin-left: 0.1em;
-  animation: blink 1s step-end infinite;
-  vertical-align: middle;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-#logo-type::before {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  color: rgba(0, 255, 0, 0.2);
-  transform: translateZ(-30px);
-  filter: blur(8px);
-  z-index: -1;
-}
-
-#logo-type::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  color: rgba(0, 255, 0, 0.1);
-  transform: translateZ(-60px);
-  filter: blur(12px);
-  z-index: -2;
-}
-
-#logo-type:hover {
-  transform: perspective(500px) rotateX(30deg);
-}
-
-#logo-type:hover::before {
-  transform: translateZ(-40px);
-  filter: blur(10px);
-}
-
-#logo-type:hover::after {
-  transform: translateZ(-70px);
-  filter: blur(15px);
+  z-index: 3;
 }
 
 #welcome-text {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 3;
   font-family: 'Doomed', monospace;
-  font-size: 1.2rem;
+  font-size: 2.2rem;
   color: var(--color-main);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  position: relative;
   transform-style: preserve-3d;
-  transform: perspective(1000px) rotateX(10deg);
-  transition: transform 0.3s ease;
+  transform: perspective(1000px) rotateX(10deg) translateY(-50%);
   animation: flicker 0.15s infinite;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
 }
 
 #welcome-text::before {
@@ -230,18 +183,67 @@ main {
   z-index: -2;
 }
 
-#welcome-text:hover {
-  transform: perspective(1000px) rotateX(15deg);
+#logo-swoosh {
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(320px 38px 339px #00ff000);
+  width: 760px;
+  height: auto;
+  margin: -5rem 0;
 }
 
-#welcome-text:hover::before {
+#logo-type {
+  position: relative;
+  z-index: 4;
+  font-family: 'OffBitBold', sans-serif;
+  font-size: 1.2rem;
+  color: var(--color-main);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transform-style: preserve-3d;
+  transform: perspective(500px) rotateX(20deg);
+  margin-top: 2rem;
+}
+
+#logo-type::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: rgba(0, 255, 0, 0.2);
   transform: translateZ(-30px);
-  filter: blur(10px);
+  filter: blur(8px);
+  z-index: -1;
 }
 
-#welcome-text:hover::after {
-  transform: translateZ(-50px);
-  filter: blur(15px);
+#logo-type::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: rgba(0, 255, 0, 0.1);
+  transform: translateZ(-60px);
+  filter: blur(12px);
+  z-index: -2;
+}
+
+#logo-type .cursor {
+  display: inline-block;
+  width: 0.5em;
+  height: 1em;
+  background-color: var(--color-main);
+  margin-left: 0.1em;
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 #welcome-text span {
@@ -286,63 +288,69 @@ main {
 }
 
 @media (max-width: 768px) {
-  #welcome-text, #logo-type {
-    font-size: 1.3rem;
+  #welcome-to {
+    font-size: 1.5rem;
+  }
+  #welcome-text {
+    font-size: 1.5rem;
+    white-space: normal;
+  }
+  #logo-swoosh {
+    margin: -2rem 0 !important;
   }
 }
 
-#logo-swoosh {
-  filter: drop-shadow(320px 38px 339px #00ff000);
-  width: 760px;
-  height: auto;
-  margin: -2rem 0;
+@media (min-width: 768px) {
+  #welcome-text {
+    font-size: 3.2rem;
+  }
+  #index {
+    gap: 3rem;
+  }
+  
+  #index .welcome h1 {
+    font-size: 2.2rem;
+  }
+  
+  #index .welcome p {
+    font-size: 1.8rem;
+  }
 }
 
 #index {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: calc(100vh - 100px);
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
+  width: 100%;
+  height: 100%;
 }
 
 #index .welcome {
   margin: 0 auto;
   text-align: center;
   animation: fade-in 0.5s ease-out;
+  width: 100%;
+  max-width: 760px;
 }
 
 #index .welcome h1 {
-  font-size: 4rem;
-  color: var(--color-main);
-  font-family: 'Doomed', sans-serif;
+  display: none;
 }
 
 #index .welcome p {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--color-text);
   font-family: 'Mondwest', serif;
-}
-
-@media (min-width: 768px) {
-  #index {
-    gap: 3rem;
-  }
-  
-  #index .welcome h1 {
-    font-size: 4.5rem;
-  }
-  
-  #index .welcome p {
-    font-size: 2.2rem;
-  }
 }
 </style>
 
 
 <section id="logo">
-  <div id="welcome-text" data-text="WELCOME TO SIDIOUS.PIZZA!">
-    WELCOME TO <span><span style="--letter-index: 0">S</span><span style="--letter-index: 1">I</span><span style="--letter-index: 2">D</span><span style="--letter-index: 3">I</span><span style="--letter-index: 4">O</span><span style="--letter-index: 5">U</span><span style="--letter-index: 6">S</span><span style="--letter-index: 7">.</span><span style="--letter-index: 8">P</span><span style="--letter-index: 9">I</span><span style="--letter-index: 10">Z</span><span style="--letter-index: 11">Z</span><span style="--letter-index: 12">A</span></span>!
+  <div id="welcome-to">WELCOME TO...</div>
+  <div id="welcome-text" data-text="SIDIOUS.PIZZA!">
+    <span><span style="--letter-index: 0">S</span><span style="--letter-index: 1">I</span><span style="--letter-index: 2">D</span><span style="--letter-index: 3">I</span><span style="--letter-index: 4">O</span><span style="--letter-index: 5">U</span><span style="--letter-index: 6">S</span><span style="--letter-index: 7">.</span><span style="--letter-index: 8">P</span><span style="--letter-index: 9">I</span><span style="--letter-index: 10">Z</span><span style="--letter-index: 11">Z</span><span style="--letter-index: 12">A!</span></span>
   </div>
   <img id="logo-swoosh" src="/assets/images/svlogo.gif"> 
   <div id="logo-type" data-text="I'm Vic. I'm an ordinary boy. I like computers, music and pizza. I live in Tokyo.">
