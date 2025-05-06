@@ -48,11 +48,11 @@ h1, h2, h3, h4, h5, h6 {
 
 My name is Victor René Molina Rodríguez. I'm an ordinary man based in [澁谷東京 <em>(Shibuya, Tokyo)</em>](https://goo.gl/maps/1YfuGi5HYgRpBjN7A). I'm in my 30's, the spring of life. My vices are pizza, booze, [axe](https://youtu.be/en7EKL1pX5w) and [burritos](https://youtu.be/YZRtE1I5w7k).
 
-| Field             | Info                        |
+| Data             |                         |
 |------------------|-----------------------------|
 | Age              | <script>document.write(new Date().getFullYear() - 1991)</script> |
 | Place of Birth   | Chihuahua, Mexico           |
-| Current Residence| Tokyo, Japan                |
+| Residence| Tokyo, Japan                |
 | Current Job      | Engineering Lead, Toyota    |
 | Nicknames        | Toru, Vic Sidious, "You idiot"|
 
