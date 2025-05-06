@@ -18,7 +18,7 @@ function updateVicsAge() {
   const vicsAgeMs = vicsAgeDate.getTime();
   const vicsAgeYrs =
     (vicsAgeMs - LEAP_DAYS_SINCE_1991_MS) / 1000 / 60 / 60 / 24 / 365;
-  getElementById("age").innerHTML = `${vicsAgeYrs.toFixed(13).padEnd(15, "0")}`;
+  getElementById("vicsage").innerHTML = `${vicsAgeYrs.toFixed(13).padEnd(15, "0")}`;
 }
 
 addEventListener("DOMContentLoaded", () => {
