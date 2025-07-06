@@ -269,9 +269,6 @@
   overflow: hidden;
   order: 1;
   border-radius: 8px;
-  box-shadow: 
-    0 0 20px rgba(0, 255, 0, 0.3),
-    0 0 40px rgba(0, 255, 0, 0.2);
 }
 
 .post-image img {
