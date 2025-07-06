@@ -28,4 +28,4 @@ jobs:
         with:
           project: sidiouspizza
           import-map: "./deno.json"
-          entrypoint: server.ts
+          entrypoint: _config.ts
