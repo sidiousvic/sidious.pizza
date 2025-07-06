@@ -13,9 +13,7 @@
   "compilerOptions": {
     "types": [
       "lume/types.ts"
-    ],
-    "jsx": "react-jsx",
-    "jsxImportSource": "lume"
+    ]
   },
   "unstable": [
     "temporal",

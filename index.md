@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100..700&display=swap');
 
 body, html {
+  filter: blur(0.3px);
   background: #111;
   color: whitesmoke;
   font-family: monospace;
@@ -16,26 +17,14 @@ h1, h2, h3, h4 {
 }
 </style>
 
-<h1>Hola, this is Vic website.</h2> 
+# Hola, my name is Vic. 
 
-Vic nuke me. Want build again. 
+I am an ordinary man from Mexico, based in Tokyo.
 
-<br>
-<br>
+I like math, music, and art.
 
-He said complicated bad. Simple better.
+Right now my website is a bit empty. 
 
-<br>
-<br>
+I'll have time soon to fill it with good things.
 
-Wait please. Good website come soon.
-
-<br>
-<br>
-
-Gracias.
-
-<br>
-<br>
-
-—Vic website
+### _Smell ya later!_
