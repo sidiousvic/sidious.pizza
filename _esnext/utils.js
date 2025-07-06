@@ -1,1 +1,0 @@
-(()=>{var p=t=>t[Math.floor(Math.random()*t.length)],c=(...t)=>o=>t.reduce((e,r)=>r(e),o),i=t=>o=>n(t(o))(o),n=t=>o=>Object.getOwnPropertyNames(t).reduce((e,r)=>(Object.defineProperty(e,r,Object.getOwnPropertyDescriptor(t,r)),e),o),s=t=>o=>t(o),d=t=>o=>({...o,...t(o)}),x=t=>o=>(t(o),o),a=t=>/iPhone|iPad|iPod|Android/i.test(t),m=t=>{throw new Error(t)};})();

@@ -1,1 +1,0 @@
-(()=>{document.addEventListener("DOMContentLoaded",()=>{localStorage.getItem("grayscale")==="true"&&document.documentElement.classList.add("grayscale"),document.addEventListener("keydown",e=>{if(e.key.toLowerCase()==="g"){let t=document.documentElement.classList.toggle("grayscale");localStorage.setItem("grayscale",t.toString())}})});})();
