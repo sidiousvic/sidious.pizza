@@ -33,6 +33,7 @@ main {
 img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
+  filter: var(--venom-filter);
 }
 
 input, button, textarea, select {

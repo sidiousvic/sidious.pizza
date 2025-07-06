@@ -11,7 +11,7 @@ order: 3
 
 ![Victor Molina Rodriguez](/assets/images/vic-main.png){ optimize width=600 fetchpriority="high" }
 
-My name is Victor René Molina Rodríguez, but you can call me Vic. I'm an ordinary man. I'm in my 30's, the spring of life. My vices are pizza, booze, [the axe](https://youtu.be/en7EKL1pX5w) and [burritos](https://youtu.be/YZRtE1I5w7k).
+My name is Victor René Molina Rodríguez, but I go by "Vic". I describe myself as just an ordinary man. I'm in my 30's. I have good friends. My vices are pizza, booze, [the axe](https://youtu.be/en7EKL1pX5w) and [burritos](https://youtu.be/YZRtE1I5w7k).
 
 | Data      |                                  |
 | --------- | -------------------------------- |
@@ -25,35 +25,19 @@ My name is Victor René Molina Rodríguez, but you can call me Vic. I'm an ordin
 
 ![A mountain in a desert city.](/assets/images/chihuahua.webp){ optimize width=800 fetchpriority="low" caption="Chihuahua, Chih. Mexico" }
 
-I was born in **Chihuahua**, northern Mexico. The climate is tough, with no running water for half the day, sandstorms, and bad news. It’s always been a violent place, from La Revolución to the drug wars, part of why I got the hell out. People grow up with a do-or-die attitude. You solve problems, you stay sharp, and you don’t complain much.
+I was born in **Chihuahua**, northern Mexico. It's a land of extremes, tough, with no running water for half the day, sandstorms, and plenty of bad news. The region has a history of violence, from La Revolución to the drug wars, and manufacturing. Lots of beef and auto/planes manufacturing. People generally grow up with a hardy do-or-die attitude. You solve problems, you stay sharp, and you don’t complain much.
 
-Things we say often in Chihuahua:
-
-- “El que se enoja pierde” — _Whoever gets mad, loses_
-- “No te hagas bolas” — \_Don’t get tangled up (Don't overcomplicate it)
-- ”¡Arre!” — Like “Hell yeah”, when faced with a challenge
-- “No le saques” — Don’t chicken out, face your fear
-- ”¡Ayay!” — Said when someone’s being too dramatic or sappy
-
-I still have a lot of friends and family there. I miss the burritos and the tacos. I didn't expect it, but I also miss the desert. Have you ever seen an ocean with no water? The most magnificent sunsets in my life, I've seen them in Chihuahua.
+I still have a lot of friends and family there. I miss the burritos which are the regional specialty. I also miss the beautiful desert. (Have you ever seen an ocean without water?) The most beautiful sunsets in my life, I've seen them in Chihuahua.
 
 ## 🗼 Tokyo Boy
 
-Before coming to Tokyo, I ran around the block a bit:
-
-- **1991–2009**: Northern Mexico (Chihuahua)
-- **2009–2013**: American Southwest
-- **2013**: Northern China (4 months)
-- **2016–2019**: Japan (Osaka, Kanagawa, Okayama, Mie, Aichi)
-- **2019–Now**:
-
   ![A street with a cherry blossom tree and a convenience store in Tokyo.](/assets/images/cherry-blossoms-at-nite.gif){ optimize }
 
-I like Tokyo because like any intersting human, or work, it's a big f\*\*ing contradiction. It's weird and frantic, but also quiet and calm in strange pockets. It’s Dirty Harry and squeaky clean. It’s artistic and convenient. It’s safe, but there's grannies in bikes and fights break out every weekend in Shimbashi.
+I enjoy living in Tokyo because just as it is with people, it's a place of contradiction. It's weird and frantic, but also quiet and calm in strange pockets. It’s both gritty and squeaky clean. It’s artistic, frivolous and convenient. It’s safe but it might get utterly destroyed.
 
 ![A street with a cherry blossom tree and a convenience store in Tokyo.](/assets/images/apa-hotel-blues.gif){ optimize }
 
-Every neighborhood has its own vibe and history. It feels like a fantastic engineering project that somehow went perfectly and completely wrong at the same time. I've made a lot of friends here and I know it almost as well as Batman knows Gotham. I think it's very real.
+Every neighborhood has its own vibe and history. It feels like a fantastic engineering project that somehow went perfectly and completely wrong at the same time. I've made a lot of friends here and I know it almost as well as Batman knows Gotham. I think it's a very real if that makes any sense.
 
 ## 🛠 Work
 
@@ -62,12 +46,11 @@ I've worked in warehouses, taught math, coached football, worked with computers,
 Some of the jobs I've done:
 
 - Buyer for industrial supplies
-- Warehouse worker
 - Gardener
-- Special needs educator
 - Football coach
-- Computer science instructor
-- Energy software engineer at **Toyota** (Now)
+- Special needs educator
+- Computer science teacher
+- Engineer at **Toyota** (Now)
 
 My work philosophy is do things well, make them last, don't over-engineer. Be a good leader and steady when things go wrong. Emergencies and pressure are part of any job, so you stay calm and handle it. Don't be afraid of hard decisions, don't pretend things are fine when they're not. Face problems as a team, deal with them, learn from failure and move forward.
 
@@ -93,9 +76,9 @@ I like art that is simple, accessible, and beautiful.
 
 ### 💪 Fitness
 
-I **lift weights**, **box**, and walk long distances—often **15 to 25 kilometers a day**.  
+I **lift weights**, **box**, and walk long distances—often dozens of kilometers a day.  
 I like walking around the city, studying at cafes, listening to music, and journaling.  
-I drink coffee, soy protein, craft beer, and whiskey.
+I like drinking coffee, craft beer, and whiskey. I enjoy smoking cigarros from time to time.
 
 ## 🧭 Values and Philosophy
 

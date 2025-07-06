@@ -62,7 +62,6 @@ styles.textContent = `
       transform: translate(-50%, calc(50% + 2px));
     }
   }
-
 `;
 
 document.head.appendChild(styles);
@@ -97,7 +96,6 @@ const { sprites, score, sound, mouse, c } = config({
   scoreFont: "var(--font-family-title)",
   bgColorHex: "#0d1117",
   fgColorHex: "var(--venom)",
-  filter: "var(--filter-invert)",
   startTextA: isMobile
     ? "<em>TOUCH</em> TO START"
     : 'PRESS <em style="filter: var(--filter-invert)">START</em>',

@@ -306,7 +306,6 @@ export const config = ({
   }
   
   body {
-    background: transparent; 
     touch-action: none;
   }
   
@@ -375,7 +374,7 @@ export const config = ({
     text-align: center;
   }
   
-  canvas > img { 
+  img { 
     mix-blend-mode: exclusion;
     image-rendering: pixelated; 
   }

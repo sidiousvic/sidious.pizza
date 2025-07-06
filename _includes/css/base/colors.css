@@ -17,6 +17,8 @@
 
   /* Grayscale Mode */
   --grayscale-filter: none;
+
+  --venom-filter: sepia(1) hue-rotate(90deg) saturate(5) !important;
 }
 
 :root.grayscale {
