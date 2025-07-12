@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if title }}{{ title }} - {{ /if }}{{ site.title }}</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            height: 100%;
+            font-family: 'M PLUS 1 Code', 'Courier New', monospace;
+            background: #0d0d0d;
+            color: #f8f8f2;
+            font-size: 14px;
+            line-height: 1.4;
+            overflow: hidden;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            padding: 0;
+            margin: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        
+        .terminal-header {
+            background: #1a1a1a;
+            border-bottom: 1px solid #2a2a2a;
+            padding: 8px 16px;
+            font-size: 12px;
+            color: #f8f8f2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .terminal-header span {
+            color: #50fa7b;
+        }
+        
+        .terminal-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        
+        .status-bar {
+            background: #1a1a1a;
+            border-top: 1px solid #2a2a2a;
+            padding: 8px 16px;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .status-left {
+            display: flex;
+            gap: 20px;
+            color: #50fa7b;
+        }
+        
+        .status-left span:nth-child(1) {
+            color: #50fa7b;
+        }
+        
+        .status-left span:nth-child(2) {
+            color: #50fa7b;
+        }
+        
+        .status-left span:nth-child(3) {
+            color: #50fa7b;
+        }
+        
+        .status-right {
+            color: #50fa7b;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: #50fa7b;
+            margin: 0 0 16px 0;
+        }
+        
+        h1 {
+            font-size: 24px;
+            border-bottom: 1px solid #2a2a2a;
+            padding-bottom: 8px;
+        }
+        
+        h2 {
+            font-size: 20px;
+            color: #50fa7b;
+        }
+        
+        h3 {
+            font-size: 16px;
+            color: #50fa7b;
+        }
+        
+        p {
+            margin: 0 0 16px 0;
+            color: #f8f8f2;
+        }
+        
+        a {
+            color: #50fa7b;
+            text-decoration: underline;
+        }
+        
+        a:hover {
+            text-decoration: underline dotted;
+        }
+        
+        .top-nav {
+            display: flex;
+            gap: 16px;
+        }
+        
+        .top-nav a {
+            color: #50fa7b;
+            text-decoration: none;
+            font-size: 12px;
+            position: relative;
+        }
+        
+        .top-nav a::first-letter {
+            text-decoration: underline dotted;
+        }
+        
+        .top-nav a:hover {
+            color: #8fff9b;
+        }
+        
+        .top-nav a.active {
+            color: #8fff9b;
+            text-decoration: underline solid;
+        }
+        
+        .top-nav a:hover::first-letter {
+            text-decoration: underline dotted;
+        }
+        
+        .top-nav a.active::first-letter {
+            text-decoration: underline solid;
+        }
+        
+        pre {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            padding: 16px;
+            overflow-x: auto;
+            margin: 16px 0;
+            font-family: 'M PLUS 1 Code', monospace;
+            color: #f8f8f2;
+        }
+        
+        code {
+            background: #1a1a1a;
+            padding: 2px 4px;
+            font-family: 'M PLUS 1 Code', monospace;
+            color: #50fa7b;
+            border: 1px solid #2a2a2a;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: #f8f8f2;
+            border: none;
+        }
+        
+        blockquote {
+            border-left: 3px solid #50fa7b;
+            padding-left: 16px;
+            margin: 16px 0;
+            color: #f8f8f2;
+            font-style: italic;
+        }
+        
+        ul, ol {
+            margin: 0 0 16px 20px;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        ul li::before {
+            content: "⦚ ";
+            color: #50fa7b;
+            margin-right: 8px;
+        }
+        
+        li {
+            margin: 4px 0;
+        }
+        
+        .ascii-art {
+            font-family: 'M PLUS 1 Code', monospace;
+            white-space: pre;
+            color: #50fa7b;
+            text-align: center;
+            margin: 40px 0;
+            font-size: 12px;
+            line-height: 1.2;
+            transform: perspective(800px) rotateX(25deg) rotateY(-5deg);
+            transform-origin: center center;
+            text-shadow: 
+                0 1px 0 #2a5a2a,
+                0 2px 0 #2a5a2a,
+                0 3px 0 #2a5a2a,
+                0 4px 0 #2a5a2a,
+                0 5px 10px rgba(0,0,0,0.6);
+        }
+        
+        .terminal-prompt {
+            color: #50fa7b;
+        }
+        
+        .terminal-prompt::before {
+            content: "⌁ ";
+            color: #50fa7b;
+        }
+        
+        @media (max-width: 768px) {
+            .terminal-content {
+                padding: 16px;
+            }
+            
+            .status-bar {
+                flex-direction: column;
+                gap: 4px;
+                text-align: center;
+            }
+            
+            .status-left {
+                justify-content: center;
+            }
+            
+            .top-nav {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .ascii-art {
+                font-size: 8px;
+                margin: 20px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal-header">
+        <span>⚡︎ victorrene.molinarodriguez@19910924</span>
+        <nav class="top-nav">
+            <a href="/"{{ if url == "/" }} class="active"{{ /if }}>HOME</a>
+            <a href="/about/"{{ if url == "/about/" }} class="active"{{ /if }}>ABOUT</a>
+            <a href="/writes/"{{ if url == "/writes/" }} class="active"{{ /if }}>WRITES</a>
+            <a href="/graphics/"{{ if url == "/graphics/" }} class="active"{{ /if }}>GRAPHICS</a>
+            <a href="/meta/"{{ if url == "/meta/" }} class="active"{{ /if }}>META</a>
+        </nav>
+    </div>
+    
+    <div class="terminal-content">
+        {{ content }}
+    </div>
+    
+    <div class="status-bar">
+        <div class="status-left">
+            <span id="current-time"></span>
+            <span>TOKYO</span>
+            <span>© 2025 VIC SIDIOUS</span>
+        </div>
+        <div class="status-right">
+            >:-) BE A GOOD BOY
+        </div>
+    </div>
+    
+    <script>
+        // Time update functionality
+        function updateTime() {
+            const now = new Date();
+            const tokyo = new Date(now.toLocaleString("en-US", {timeZone: "Asia/Tokyo"}));
+            const timeString = tokyo.toLocaleTimeString('en-US', { 
+                hour12: false,
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+            document.getElementById('current-time').textContent = timeString;
+        }
+        
+        updateTime();
+        setInterval(updateTime, 1000);
+        
+        // Keyboard navigation functionality
+        const keyboardNav = {
+            routes: {
+                'h': '/',           // home
+                'a': '/about/',     // about
+                'w': '/writes/',    // writes
+                'g': '/graphics/',  // graphics
+                'm': '/meta/'       // meta
+            },
+            
+            init() {
+                document.addEventListener('keydown', this.handleKeypress.bind(this));
+            },
+            
+            handleKeypress(event) {
+                // Don't trigger navigation if user is typing in an input field
+                if (event.target.tagName === 'INPUT' || 
+                    event.target.tagName === 'TEXTAREA' || 
+                    event.target.isContentEditable) {
+                    return;
+                }
+                
+                // Don't trigger if modifier keys are pressed
+                if (event.ctrlKey || event.metaKey || event.altKey) {
+                    return;
+                }
+                
+                const key = event.key.toLowerCase();
+                const route = this.routes[key];
+                
+                if (route) {
+                    event.preventDefault();
+                    window.location.href = route;
+                }
+            }
+        };
+        
+        // Initialize keyboard navigation when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            keyboardNav.init();
+        });
+    </script>
+</body>
+</html>
