@@ -1,30 +1,23 @@
+---
+layout: layouts/base.vto
+homepage: true
+---
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100..700&display=swap');
-
-body, html {
-  filter: blur(0.3px);
-  background: #111;
-  color: whitesmoke;
-  font-family: monospace;
-  font-size: 20px;
-  padding: 1rem;
-  font-family: "M PLUS 1 Code"
-}
-
-h1, h2, h3, h4 {
-  font-family: "M PLUS 1 Code"
-}
-</style>
-
-# Hola, my name is Vic. 
-
-I am an ordinary man from Mexico, based in Tokyo.
-
-I like math, music, and art.
-
-Right now my website is a bit empty. 
-
-I'll have time soon to fill it with good things.
-
-### _Smell ya later!_
+<div class="homepage-terminal">
+    <div class="homepage-prompt">WELCOME TO <span class="site-name">SIDIOUS.PIZZA</span>.<br class="mobile-break"> VIC'S WEBSITE OF DOOM >:-)</div>
+    <div class="homepage-command-line">
+        <span>></span>
+        <span id="homepage-command-text"></span>
+        <span class="homepage-cursor">█</span>
+    </div>
+    <div class="homepage-help">Enter COMMAND (about, writes, graphics, meta, back, help)</div>
+    <div class="homepage-output" id="homepage-output">placeholder text for layout stability</div>
+    
+    <nav class="mobile-nav">
+        <a href="/about/">ABOUT</a>
+        <a href="/writes/">WRITES</a>
+        <a href="/graphics/">GRAPHICS</a>
+        <a href="/meta/">META</a>
+        <a href="/help/">HELP</a>
+    </nav>
+</div>

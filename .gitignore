@@ -5,3 +5,5 @@ _bin
 *.vscode
 *.gitkeep
 *-settings.json
+.claude_config
+.claude/
