@@ -72,7 +72,7 @@
             overflow: hidden;
             letter-spacing: 1px;
             filter: blur(.3px);
-	    transform: skewY(-.08deg) skewX(-.05deg);
+	          transform: skewY(-.08deg) skewX(-.05deg) scale(1.004);
         }
         
         body {
@@ -940,12 +940,10 @@
         fetchLastCommit();
         
         
-        // Global Command Modal functionality
-        const globalCommandModal = {
-            modal: null,
-            input: null,
-            output: null,
-            
+        let HHH = 0;
+
+        // Shared command handling
+        const commandHandler = {
             commands: {
                 'home': '/',
                 'about': '/about/',
@@ -973,11 +971,72 @@
                     return '';
                 },
                 'clear': () => {
-                    const output = document.getElementById('modal-command-output');
-                    if (output) output.innerHTML = '';
-                    return '';
+                    return 'clear';
                 }
             },
+            
+            // Process command and return result object
+            processCommand(command) {
+                if (!command) return { type: 'none' };
+
+                // Handle tulips
+                if (command.includes("hana")) {
+                    return { 
+                        type: 'error', 
+                        message: "Did you ever love me?",
+                        timeout: 3000
+                    };
+                }
+
+                // Handle hello
+                if (command.includes('hello')) {
+                    return { 
+                        type: 'error', 
+                        message: 'Hola :) how you doin',
+                        timeout: 3000
+                    };
+                }
+                
+                // Handle profanity
+                if (command.includes('fuck you')) {
+                    return { 
+                        type: 'error', 
+                        message: 'Fuck YOU, actually.',
+                        timeout: 3000
+                    };
+                }
+                
+                const cmd = this.commands[command];
+                
+                if (typeof cmd === 'string') {
+                    // Navigation command
+                    return { type: 'navigation', url: cmd };
+                } else if (typeof cmd === 'function') {
+                    // Function command
+                    const result = cmd();
+                    if (result === 'clear') {
+                        return { type: 'clear' };
+                    } else if (result) {
+                        return { type: 'success', message: result };
+                    } else {
+                        return { type: 'none' };
+                    }
+                } else {
+                    // Unknown command
+                    return { 
+                        type: 'error', 
+                        message: `Unknown command: ${command}. Type 'help' for available commands.`,
+                        timeout: 3000
+                    };
+                }
+            }
+        };
+        
+        // Global Command Modal functionality
+        const globalCommandModal = {
+            modal: null,
+            input: null,
+            output: null,
             
             init() {
                 this.modal = document.getElementById('command-modal');
@@ -1046,80 +1105,47 @@
             executeCommand(command) {
                 if (!command) return;
                 
-                // Handle profanity
-                if (command.includes('fuck you')) {
-                    this.output.textContent = "FUCK YOU TOO. DOUBLE FUCK YOU, MOTHERFUCKER.";
-                    this.output.classList.remove('success');
-                    this.output.classList.add('error', 'visible');
-                    setTimeout(() => {
-                        this.output.classList.remove('visible', 'error');
-                    }, 3000);
-                    return;
-                }
+                const result = commandHandler.processCommand(command.trim().toLowerCase());
                 
-                const cmd = this.commands[command];
-                
-                if (typeof cmd === 'string') {
-                    // Navigation command
-                    this.output.classList.remove('visible', 'error', 'success');
-                    window.location.href = cmd;
-                } else if (typeof cmd === 'function') {
-                    // Function command
-                    const result = cmd();
-                    if (result) {
-                        this.output.textContent = result;
+                switch(result.type) {
+                    case 'navigation':
+                        this.output.classList.remove('visible', 'error', 'success');
+                        window.location.href = result.url;
+                        break;
+                        
+                    case 'success':
+                        this.output.textContent = result.message;
                         this.output.classList.remove('error');
                         this.output.classList.add('success', 'visible');
-                    } else {
+                        break;
+                        
+                    case 'error':
+                        this.output.textContent = result.message;
+                        this.output.classList.remove('success');
+                        this.output.classList.add('error', 'visible');
+                        if (result.timeout) {
+                            setTimeout(() => {
+                                this.output.classList.remove('visible', 'error');
+                            }, result.timeout);
+                        }
+                        break;
+                        
+                    case 'clear':
+                        const output = document.getElementById('modal-command-output');
+                        if (output) output.innerHTML = '';
                         this.output.classList.remove('visible', 'error', 'success');
-                    }
-                } else {
-                    // Unknown command
-                    this.output.textContent = `Unknown command: ${command}. Type 'help' for available commands.`;
-                    this.output.classList.remove('success');
-                    this.output.classList.add('error', 'visible');
-                    // Hide the error message after 3 seconds
-                    setTimeout(() => {
-                        this.output.classList.remove('visible', 'error');
-                    }, 3000);
+                        break;
+                        
+                    case 'none':
+                    default:
+                        this.output.classList.remove('visible', 'error', 'success');
+                        break;
                 }
             }
         };
         
         // Command prompt functionality for inline prompt (home page)
         const inlineCommandPrompt = {
-            commands: {
-                'home': '/',
-                'about': '/about/',
-                'writes': '/writes/',
-                'write': '/writes/',
-                'graphics': '/graphics/',
-                'graphic': '/graphics/',
-                'art': '/graphics/',
-                'meta': '/meta/',
-                'help': '/help/',
-                'back': () => {
-                    window.history.back();
-                    return '';
-                },
-                'forward': () => {
-                    window.history.forward();
-                    return '';
-                },
-                'refresh': () => {
-                    window.location.reload();
-                    return '';
-                },
-                'reload': () => {
-                    window.location.reload();
-                    return '';
-                },
-                'clear': () => {
-                    const output = document.getElementById('command-output');
-                    if (output) output.innerHTML = '';
-                    return '';
-                }
-            },
             
             init() {
                 const input = document.querySelector('.command-input:not(#modal-command-input)');
@@ -1139,20 +1165,29 @@
             executeCommand(command, output) {
                 if (!command) return;
                 
-                const cmd = this.commands[command];
+                const result = commandHandler.processCommand(command);
                 
-                if (typeof cmd === 'string') {
-                    // Navigation command
-                    window.location.href = cmd;
-                } else if (typeof cmd === 'function') {
-                    // Function command
-                    const result = cmd();
-                    if (result) {
-                        output.innerHTML = `<div class="success">${result}</div>`;
-                    }
-                } else {
-                    // Unknown command
-                    output.innerHTML = `<div class="error">Unknown command: ${command}. Type 'help' for available commands.</div>`;
+                switch(result.type) {
+                    case 'navigation':
+                        window.location.href = result.url;
+                        break;
+                        
+                    case 'success':
+                        output.innerHTML = `<div class="success">${result.message}</div>`;
+                        break;
+                        
+                    case 'error':
+                        output.innerHTML = `<div class="error">${result.message}</div>`;
+                        break;
+                        
+                    case 'clear':
+                        const cmdOutput = document.getElementById('command-output');
+                        if (cmdOutput) cmdOutput.innerHTML = '';
+                        break;
+                        
+                    case 'none':
+                    default:
+                        break;
                 }
             }
         };
@@ -1205,27 +1240,45 @@
                 const command = this.commandText.trim().toLowerCase();
                 if (!command) return;
                 
-                const cmd = globalCommandModal.commands[command];
                 const output = document.getElementById('homepage-output');
+                if (!output) return;
                 
-                if (typeof cmd === 'string') {
-                    // Navigation command
-                    if (output) output.classList.remove('visible');
-                    window.location.href = cmd;
-                } else if (typeof cmd === 'function') {
-                    // Function command - for homepage, just execute
-                    if (output) output.classList.remove('visible');
-                    cmd();
-                } else {
-                    // Unknown command
-                    if (output) {
-                        output.textContent = `Unknown command: ${command}. Type 'help' for available commands.`;
+                const result = commandHandler.processCommand(command);
+                
+                switch(result.type) {
+                    case 'navigation':
+                        output.classList.remove('visible');
+                        window.location.href = result.url;
+                        break;
+                        
+                    case 'success':
+                        output.textContent = result.message;
                         output.classList.add('visible');
-                        // Hide the error message after 3 seconds
-                        setTimeout(() => {
-                            output.classList.remove('visible');
-                        }, 3000);
-                    }
+                        if (result.timeout) {
+                            setTimeout(() => {
+                                output.classList.remove('visible');
+                            }, result.timeout);
+                        }
+                        break;
+                        
+                    case 'error':
+                        output.textContent = result.message;
+                        output.classList.add('visible');
+                        if (result.timeout) {
+                            setTimeout(() => {
+                                output.classList.remove('visible');
+                            }, result.timeout);
+                        }
+                        break;
+                        
+                    case 'clear':
+                        output.classList.remove('visible');
+                        break;
+                        
+                    case 'none':
+                    default:
+                        output.classList.remove('visible');
+                        break;
                 }
                 
                 // Clear command
