@@ -26,5 +26,5 @@ But don't think twice, it's all right
 
 </em>
 
-<img width="300px" src="/images/porco-goodbye.png">
+![Porco Rosso saying goodbye.](/images/porco-goodbye.png){ width=300 optimize }
 

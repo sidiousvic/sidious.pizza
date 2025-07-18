@@ -10,6 +10,7 @@ import check_urls from "lume/plugins/check_urls.ts";
 import brotli from "lume/plugins/brotli.ts";
 import vento from "lume/plugins/vento.ts";
 import markdown from "lume/plugins/markdown.ts";
+import { optimizePics9000 } from "./processors/optimizePics9000.ts"
 
 const site = lume();
 
@@ -19,6 +20,7 @@ site.copy("_includes/fonts", "fonts");
 site.copy("_includes/images", "images");
 site.copy("_includes/styles", "styles");
 site.copy("_includes/scripts", "scripts");
+
 
 site.use(markdown());
 site.use(vento());
@@ -31,5 +33,7 @@ site.use(esbuild());
 site.use(base_path());
 site.use(check_urls());
 site.use(brotli());
+
+site.process([".md", ".vto"], optimizePics9000)
 
 export default site;

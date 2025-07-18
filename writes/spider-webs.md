@@ -9,7 +9,7 @@ Six hours without electricity meant homes went dark and cold in the dead of wint
 
 In the past few years, power grids, waterways, and fuel systems are being woven together through the cloud.
 
-<img width="400" src="/images/darkout.gif">
+![An animated scene of a city blackout](/images/darkout.gif){ width=400 optimize }
 
 Networks break in unusual ways. Small local problems can spread across the whole system. Networks act unpredictably when parts fail and create unexpected connections. They can be damaged if someone hits the important nodes, causing major damage from one small hit. Feedback loops make the system unstable. And there's hidden connections where systems that seem separate fail together. This is the bread of every day for programmers. 
 
