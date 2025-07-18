@@ -13,6 +13,8 @@ import markdown from "lume/plugins/markdown.ts";
 
 const site = lume();
 
+site.ignore('README.md')
+
 site.copy("_includes/fonts", "fonts");
 site.copy("_includes/images", "images");
 
