@@ -11,9 +11,7 @@ In the past few years, power grids, waterways, and fuel systems are being woven 
 
 ![An animated scene of a city blackout](/images/darkout.gif){ width=400 optimize }
 
-Networks break in unusual ways. Small local problems can spread across the whole system. Networks act unpredictably when parts fail and create unexpected connections. They can be damaged if someone hits the important nodes, causing major damage from one small hit. Feedback loops make the system unstable. And there's hidden connections where systems that seem separate fail together. This is the bread of every day for programmers. 
-
-In graph theory, we call these high-tension connection points [centrality nodes](https://en.wikipedia.org/wiki/Centrality). They're like the spinal cord in the nervous system. Sever it, and messages from the brain can't reach the body. In that way we all share the same vulnerability as distributed computing systems. The point is that the same race conditions, deadlocks, and memory leaks that crash software now threaten critical infrastructure. 
+Networks break in unusual ways. Small local problems can spread across the whole system. In graph theory, we call these high-tension connection points [centrality nodes](https://en.wikipedia.org/wiki/Centrality). They're like the spinal cord in the nervous system. Sever it, and messages from the brain can't reach the body. The web behaves unpredictably. Feedback loops make the system unstable. And there's hidden connections where systems that seem separate fail together. This is the bread of every day for us programmers working with distributed systems.
 
 I was with my manager Dan at the pub once talking about this. At one point he held up his phone and said, "This could cause a terror attack." He had admin access to our cloud infrastructure that controlled almost 6GW of energy resources. Our company managed over 500,000 devices. Batteries, solar panels, wind turbines, and power plants. 
 
