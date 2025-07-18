@@ -17,6 +17,7 @@ site.ignore('README.md')
 
 site.copy("_includes/fonts", "fonts");
 site.copy("_includes/images", "images");
+site.copy("_includes/styles", "styles");
 
 site.use(markdown());
 site.use(vento());

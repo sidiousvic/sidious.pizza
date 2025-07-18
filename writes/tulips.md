@@ -1,6 +1,6 @@
 ---
 title: チュリップ
-date: 2025-01-14
+date: 2025-06-14
 layout: false
 ---
 
@@ -26,5 +26,5 @@ But don't think twice, it's all right
 
 </em>
 
-<img width="300px" style="filter: sepia(1) hue-rotate(70deg) saturate(1.5) contrast(1.5)" src="/images/porco-goodbye.png">
+<img width="300px" src="/images/porco-goodbye.png">
 

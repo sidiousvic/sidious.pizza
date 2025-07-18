@@ -5,16 +5,10 @@ title: writes
 
 <h1>cd /writes</h1>
 
-{{ for post of search.pages() }}
-  {{ if post.url && post.url.includes("/writes/") && post.url !== "/writes/" }}
+{{ for post of search.pages("url^=/writes/ url!=/writes/", 'date=desc') }}
 
 <h2>cat {{ post.date |> date("yyyy-MM-dd") }}/{{ post.title.toLowerCase().replace(/\s+/g, "-") }}.md</h2>
 
 {{ post.content |> md |> safe }}
 
-  {{ /if }}
-
-  </br>
-  </br>
-  </br>
 {{ /for }}
