@@ -9,10 +9,14 @@ Six hours without electricity meant homes went dark and cold in the dead of wint
 
 In the past few years, power grids, waterways, and fuel systems are being woven together through the cloud.
 
-![An animated scene of a city blackout](/images/darkout.gif){ width=400 optimize }
+Networks break in unusual ways. Small local problems can spread across the whole system. In graph theory, we call these high-tension connection points [centrality nodes](https://en.wikipedia.org/wiki/Centrality). They're like the spinal cord in the nervous system. Sever it, and messages from the brain can't reach the body. The web behaves unpredictably. Feedback loops make the system unstable. And there's hidden connections where systems that seem separate fail together. This is the bread of every day for us bunch of computer monkeys playing around with distributed systems.
 
-Networks break in unusual ways. Small local problems can spread across the whole system. In graph theory, we call these high-tension connection points [centrality nodes](https://en.wikipedia.org/wiki/Centrality). They're like the spinal cord in the nervous system. Sever it, and messages from the brain can't reach the body. The web behaves unpredictably. Feedback loops make the system unstable. And there's hidden connections where systems that seem separate fail together. This is the bread of every day for us programmers working with distributed systems.
+I was having a drink with my manager Dan at the pub once going over some numbers. He was the top dog for our software platform. At the time, I was basically a bricklayer in the company, just another engineer. "We manage almost 6GW of energy in the region". "Our company controls over 500,000 devices". "Batteries, solar panels, wind turbines, power plants, generators, hamster wheels". It all was going over my head. "Cool." Not what he expected. He put down his beer, held up his phone, and said,
 
-I was with my manager Dan at the pub once talking about this. At one point he held up his phone and said, "This could cause a terror attack." He had admin access to our cloud infrastructure that controlled almost 6GW of energy resources. Our company managed over 500,000 devices. Batteries, solar panels, wind turbines, and power plants. 
+> "If someone got a hold of this, they could cause a terror attack right now." 
+
+Oh.
 
 Ever seen a spider web burn?
+
+![An animated scene of a city blackout](/images/darkout.gif){ width=400 optimize }
