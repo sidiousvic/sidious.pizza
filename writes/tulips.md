@@ -15,16 +15,5 @@ layout: false
 
 君が僕を愛していなかったとしても
 
-<em>
-
-```
-And I wish there was something you would do or say
-To try and make me change my mind and stay
-We never did too much talking anyway
-But don't think twice, it's all right
-```
-
-</em>
-
 ![Porco Rosso saying goodbye.](/images/porco-goodbye.png){ width=300 optimize }
 
