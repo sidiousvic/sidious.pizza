@@ -48,6 +48,16 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'DotGothic16';
+    src: url('/fonts/DotGothic16-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'MPLUS1Code';
+    src: url('/fonts/MPLUS1Code.ttf') format('truetype');
+}
+
 /* Base styles */
 * {
     margin: 0;
@@ -57,7 +67,7 @@
 
 html, body {
     height: 100%;
-    font-family: 'OffBit', 'M PLUS 1 Code', 'Courier New', monospace;
+    font-family: 'OffBit', 'DotGothic16', 'MPLUS1Code', 'Courier New', monospace;
     background: #050505;
     color: #f8f8f2;
     font-size: 14px;
@@ -184,7 +194,7 @@ body::after {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: 'Alagard', 'OffBit', 'M PLUS 1 Code', monospace;
+    font-family: 'Alagard', 'OffBit', 'DotGothic16', 'MPLUS1Code', monospace;
     z-index: 99;
     position: fixed;
     top: 0;
@@ -261,12 +271,12 @@ body::after {
     display: flex;
     gap: 20px;
     color: #50fa7b;
-    font-family: 'Alagard', 'OffBit', 'M PLUS 1 Code', monospace;
+    font-family: 'Alagard', 'OffBit', 'DotGothic16', 'MPLUS1Code', monospace;
 }
 
 .status-left span:nth-child(1) {
     color: #50fa7b;
-    font-family: 'Alagard', 'M PLUS 1 Code', monospace;
+    font-family: 'Alagard', 'DotGothic16', 'MPLUS1Code', monospace;
 }
 
 .status-left span:nth-child(2) {
@@ -279,14 +289,14 @@ body::after {
 
 .status-right {
     color: #50fa7b;
-    font-family: 'Alagard', 'OffBit', 'M PLUS 1 Code', monospace;
+    font-family: 'Alagard', 'OffBit', 'DotGothic16', 'MPLUS1Code', monospace;
 }
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
     color: #50fa7b;
     margin: 0 0 16px 0;
-    font-family: 'OffBit', 'M PLUS 1 Code', monospace;
+    font-family: 'OffBit', 'DotGothic16', 'MPLUS1Code', monospace;
     font-weight: normal;
 }
 
@@ -346,7 +356,7 @@ a:hover {
     text-decoration: none;
     font-size: 12px;
     position: relative;
-    font-family: 'Alagard', 'OffBit', 'M PLUS 1 Code', monospace;
+    font-family: 'Alagard', 'OffBit', 'DotGothic16', 'MPLUS1Code', monospace;
 }
 
 .top-nav a::first-letter {
@@ -376,7 +386,7 @@ pre {
     padding: 20px;
     overflow-x: auto;
     margin: 20px 0;
-    font-family: 'OffBit', 'M PLUS 1 Code', monospace;
+    font-family: 'OffBit', 'DotGothic16', 'MPLUS1Code', monospace;
     border-radius: 4px;
     color: #50fa7b;
 }
@@ -384,7 +394,7 @@ pre {
 code {
     background: #050505;
     padding: 4px 8px;
-    font-family: 'OffBit', 'M PLUS 1 Code', monospace;
+    font-family: 'OffBit', 'DotGothic16', 'MPLUS1Code', monospace;
     color: #50fa7b;
     border-radius: 3px;
 }
@@ -425,7 +435,7 @@ li {
 
 /* Media and images */
 .ascii-art {
-    font-family: 'OffBit', 'M PLUS 1 Code', monospace;
+    font-family: 'OffBit', 'DotGothic16', 'MPLUS1Code', monospace;
     white-space: pre;
     color: #50fa7b;
     text-align: center;
@@ -446,7 +456,7 @@ img {
     border-radius: 4px;
     padding: 20px;
     margin: 30px 0;
-    font-family: 'OffBit', 'M PLUS 1 Code', monospace;
+    font-family: 'OffBit', 'DotGothic16', 'MPLUS1Code', monospace;
 }
 
 .command-line {
@@ -550,7 +560,7 @@ img {
     padding: 20px;
     width: 100%;
     max-width: none;
-    font-family: 'OffBit', 'M PLUS 1 Code', monospace;
+    font-family: 'OffBit', 'DotGothic16', 'MPLUS1Code', monospace;
     box-shadow: none;
 }
 
@@ -560,7 +570,7 @@ img {
     justify-content: center;
     gap: 8px;
     margin-bottom: 15px;
-    font-family: 'OffBit', 'M PLUS 1 Code', monospace;
+    font-family: 'OffBit', 'DotGothic16', 'MPLUS1Code', monospace;
 }
 
 .command-modal .command-input {
@@ -608,7 +618,7 @@ img {
 }
 
 .doom-text {
-    font-family: 'Alagard', 'OffBit', monospace;
+    font-family: 'Alagard', 'OffBit', 'DotGothic16', 'MPLUS1Code', monospace;
 }
 
 .homepage-terminal {
@@ -636,7 +646,7 @@ img {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    font-family: 'OffBit', 'M PLUS 1 Code', monospace;
+    font-family: 'OffBit', 'DotGothic16', 'MPLUS1Code', monospace;
 }
 
 .homepage-command-line > span:first-child {
@@ -686,7 +696,7 @@ img {
 
 /* Man page styles */
 .man-page {
-    font-family: 'Dank Mono', 'M PLUS 1 Code', monospace;
+    font-family: 'Dank Mono', 'DotGothic16', 'MPLUS1Code', monospace;
     color: #f8f8f2;
     line-height: 1.6;
 }
@@ -723,7 +733,7 @@ img {
 }
 
 .site-name {
-    font-family: 'Alagard', 'OffBit', 'M PLUS 1 Code', monospace;
+    font-family: 'Alagard', 'OffBit', 'DotGothic16', 'MPLUS1Code', monospace;
 }
 
 @media (max-width: 768px) {
@@ -810,7 +820,7 @@ img {
         color: #50fa7b;
         text-decoration: none;
         font-size: 18px;
-        font-family: 'Alagard', 'OffBit', 'M PLUS 1 Code', monospace;
+        font-family: 'Alagard', 'OffBit', 'DotGothic16', 'MPLUS1Code', monospace;
         text-align: center;
         padding: 12px 16px;
         border: 1px dotted rgba(80, 250, 123, 0.7);

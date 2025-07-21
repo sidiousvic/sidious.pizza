@@ -1,7 +1,7 @@
 ---
 title: チュリップ
 date: 2025-06-14
-layout: false
+layout: layouts/post.vto
 ---
 
 君について好きだったこと

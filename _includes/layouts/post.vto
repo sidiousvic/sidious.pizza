@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if title }}{{ title }} - {{ /if }}{{ site.title }}</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/filters.css">
+    <style>
+        h1 {
+            font-size: 50px;
+            margin-bottom: 30px;
+        }
+        /* Ensure Japanese characters in the title use DotGothic16 and MPLUS1Code */
+        h1:has(> :matches([\u3040-\u309F], [\u30A0-\u30FF], [\u4E00-\u9FAF])),
+        h1:matches([\u3040-\u309F], [\u30A0-\u30FF], [\u4E00-\u9FAF]) {
+            font-family: 'Alagard', 'DotGothic16', 'MPLUS1Code', sans-serif !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal-header">
+        <a href="/" style="color: #50fa7b; text-decoration: none;">⚡︎ sidiousvic@19910924</a>
+        <nav class="top-nav">
+            <a href="/"{{ if url == "/" }} class="active"{{ /if }}>HOME</a>
+            <a href="/about/"{{ if url == "/about/" }} class="active"{{ /if }}>ABOUT</a>
+            <a href="/writes/"{{ if url == "/writes/" || url.startsWith("/writes/") }} class="active"{{ /if }}>WRITES</a>
+            <a href="/graphics/"{{ if url == "/graphics/" }} class="active"{{ /if }}>GRAPHICS</a>
+            <a href="/meta/"{{ if url == "/meta/" }} class="active"{{ /if }}>META</a>
+            <a href="/help/"{{ if url == "/help/" }} class="active"{{ /if }}>HELP</a>
+        </nav>
+    </div>
+    
+    <div class="terminal-content">
+        <h1>{{ title }}</h1>
+        <div class="post">
+            <h2>cat {{ date |> date("yyyy-MM-dd") }}/{{ title.toLowerCase().replace(/\s+/g, "-") }}.md</h2>
+            {{ content |> safe }}
+        </div>
+    </div>
+    
+    <div class="status-bar">
+        <div class="status-left">
+            <span style="width: 40px" id="current-time"></span>
+            <span>TOKYO</span>
+            <span>© 2025 VIC SIDIOUS</span>
+            <span id="last-commit"></span>
+        </div>
+        <div class="status-right">
+            >:-) BE A GOOD BOY
+        </div>
+    </div>
+    
+    <!-- Global Command Modal -->
+    <div class="command-modal" id="command-modal">
+        <div class="command-modal-wrapper">
+            <div class="command-modal-content">
+                <div class="command-modal-header">DON'T BE NAUGHTY... >:-)</div>
+                <div class="command-line">
+                    <span class="command-prompt-symbol">></span>
+                    <input type="text" class="command-input" id="modal-command-input" autocomplete="off" autocapitalize="off" spellcheck="false">
+                </div>
+                <div class="command-modal-help">ENTER COMMAND (about, writes, graphics, meta, back, help)</div>
+                <div class="command-output" id="modal-command-output">placeholder text for layout stability</div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/scripts/program.js" type="module"></script>
+</body>
+</html>

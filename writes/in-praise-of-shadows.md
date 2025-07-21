@@ -1,7 +1,7 @@
 ---
 title: In Praise of Shadows
 date: 2025-01-14
-layout: false
+layout: layouts/post.vto
 ---
 
 Tanizaki Jun’ichirō wrote In Praise of Shadows (陰翳礼讃) in 1933, at a time when Japan was turning quickly toward "the West’s bright lights". He saw beauty in what was being left behind. In the dim rooms, in the soft glow of lacquerware, in the soft light that filters in slowly through the blinds at dusk.

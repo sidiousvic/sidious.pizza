@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
           
           // Create post HTML
           postElement.innerHTML = `
-            <h2>cat ${formattedDate}/${post.title.toLowerCase().replace(/\s+/g, "-")}.md</h2>
+            <h2><a href="${post.url}" style="text-decoration: none; color: inherit;">cat ${formattedDate}/${post.title.toLowerCase().replace(/\s+/g, "-")}.md</a></h2>
             ${post.content}
           `;
           

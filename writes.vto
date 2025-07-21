@@ -9,7 +9,7 @@ title: writes
 {{ for post of search.pages("url^=/writes/ url!=/writes/", 'date=desc', 2) }}
 
 <div class="post">
-  <h2>cat {{ post.date |> date("yyyy-MM-dd") }}/{{ post.title.toLowerCase().replace(/\s+/g, "-") }}.md</h2>
+  <h2><a href="{{ post.url }}" style="text-decoration: none; color: inherit;">cat {{ post.date |> date("yyyy-MM-dd") }}/{{ post.title.toLowerCase().replace(/\s+/g, "-") }}.md</a></h2>
 
   {{ post.content |> md |> safe }}
 </div>
