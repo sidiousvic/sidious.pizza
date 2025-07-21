@@ -2,17 +2,15 @@
  * Infinite scroll for blog posts
  * Loads posts dynamically as the user scrolls
  */
+import { logger } from './logger.js';
 document.addEventListener('DOMContentLoaded', function() {
   // Only run on writes page
   if (!window.location.pathname.startsWith('/writes')) {
     return;
   }
 
-  // Always enable logging for now while developing
-  const isDev = true;
-  
-  // Custom logging function
-  const log = console.log.bind(console);
+  // Use the logger from our utility module
+  const log = logger.log;
   
   // Variables to track loading state
   const postsContainer = document.getElementById('posts-container');
@@ -105,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Lazy load any new images
         lazyLoadImages();
       } catch (error) {
-        console.error('Error loading posts:', error);
+        logger.error('Error loading posts:', error);
       } finally {
         // Reset loading state
         loading = false;

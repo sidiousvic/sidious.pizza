@@ -1,3 +1,5 @@
+import { logger } from './logger.js';
+
 // Time update functionality
 function updateTime() {
     const now = new Date();
@@ -39,7 +41,7 @@ async function fetchLastCommit() {
             }
         }
     } catch (error) {
-        console.error('Failed to fetch last commit:', error);
+        logger.error('Failed to fetch last commit:', error);
         const statusElement = document.getElementById('last-commit');
         if (statusElement) {
             statusElement.textContent = 'UPDATED N/A';
