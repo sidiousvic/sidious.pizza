@@ -1,6 +1,0 @@
-/* Custom image filters for sidious.pizza */
-
-img {
-  filter: sepia(1) hue-rotate(70deg) saturate(1.5) contrast(1.5);
-  margin-bottom: 16px;
-}

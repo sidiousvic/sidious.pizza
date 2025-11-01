@@ -155,9 +155,17 @@ const globalCommandModal = {
         this.modal = document.getElementById('command-modal');
         this.input = document.getElementById('modal-command-input');
         this.output = document.getElementById('modal-command-output');
+        this.cursor = document.querySelector('.command-cursor');
         const closeBtn = document.getElementById('modal-close');
         
         if (!this.modal || !this.input || !this.output) return;
+        
+        // Position cursor at end of input field
+        if (this.input && this.cursor) {
+            this.input.addEventListener('input', () => this.updateCursorPosition());
+            this.input.addEventListener('click', () => this.updateCursorPosition());
+            this.input.addEventListener('keyup', () => this.updateCursorPosition());
+        }
         
         // Cmd+P / Ctrl+P to toggle modal (not on homepage)
         document.addEventListener('keydown', (event) => {
@@ -194,10 +202,14 @@ const globalCommandModal = {
         
         // Enter to execute command
         this.input.addEventListener('keydown', (event) => {
+            // Update cursor position for all keydown events
+            setTimeout(() => this.updateCursorPosition(), 5);
+            
             if (event.key === 'Enter') {
                 event.preventDefault();
                 this.executeCommand(this.input.value.trim().toLowerCase());
                 this.input.value = '';
+                this.updateCursorPosition();
             }
         });
     },
@@ -207,12 +219,39 @@ const globalCommandModal = {
         document.body.style.overflow = 'hidden';
         this.input.focus();
         this.output.classList.remove('visible', 'error', 'success');
+        
+        // Update cursor position when modal opens
+        setTimeout(() => this.updateCursorPosition(), 50);
     },
     
     hideModal() {
         this.modal.classList.remove('active');
         document.body.style.overflow = '';
         this.output.classList.remove('visible', 'error', 'success');
+    },
+    
+    updateCursorPosition() {
+        if (!this.input || !this.cursor) return;
+        
+        // Create a temporary span to measure text width
+        const span = document.createElement('span');
+        span.style.visibility = 'hidden';
+        span.style.position = 'absolute';
+        span.style.whiteSpace = 'pre';
+        span.style.font = window.getComputedStyle(this.input).font;
+        span.textContent = this.input.value;
+        document.body.appendChild(span);
+        
+        // Calculate position
+        const inputRect = this.input.getBoundingClientRect();
+        const textWidth = span.offsetWidth;
+        
+        // Position cursor
+        this.cursor.style.left = `${inputRect.left + textWidth + 4}px`;
+        this.cursor.style.top = `${inputRect.top}px`;
+        
+        // Remove temporary span
+        document.body.removeChild(span);
     },
     
     executeCommand(command) {
