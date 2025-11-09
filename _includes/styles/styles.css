@@ -58,7 +58,7 @@ p {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 200px 1rem 2rem 1rem;
 }
 
 /* Links */
@@ -81,6 +81,82 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* Navigation Bar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  padding: 30px 0;
+  background: transparent;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-logo {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.navbar-logo-img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 20px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  filter: brightness(0.8);
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin: 0 auto;
+}
+
+.navbar-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  background: conic-gradient(
+    from 0deg,
+    #ff0080 0deg,
+    #ff8000 60deg,
+    #ffff00 120deg,
+    #80ff00 180deg,
+    #00ff80 240deg,
+    #0080ff 300deg,
+    #8000ff 360deg
+  );
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.8;
+  filter: blur(10px);
+}
+
+/* Navbar Hover Effects */
+.navbar-logo:hover {
+  transform: scale(1.1);
+}
+
+.navbar-logo:hover .navbar-logo-img {
+  filter: brightness(1);
+}
+
+.navbar-logo:hover .navbar-glow {
+  transform: translate(-50%, -50%) scale(1);
+  animation: rainbow-rotate 2s linear infinite;
 }
 
 /* Mac-style Dock Menu */
