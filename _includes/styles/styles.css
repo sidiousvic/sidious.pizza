@@ -19,9 +19,11 @@ body {
   margin: 0;
   font-family: 'Victor Mono', 'Fira Code', monospace;
   background-color: #111;
-  color: #fff;
-  line-height: 1.6;
+  color: #e0e0e0;
+  line-height: 1.8;
   min-height: 100vh;
+  font-size: 18px;
+  letter-spacing: 0.3px;
 }
 
 /* Font Definitions */
@@ -44,31 +46,108 @@ body {
 /* Typography */
 h1, h2, h3, h4, h5 {
   font-family: 'Instrument Serif', serif;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
   color: #fff;
   font-weight: 100;
 }
 
+h1 {
+  font-size: 3rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+}
+
+h5 {
+  font-size: 1.2rem;
+}
+
 p {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  max-width: 70ch;
+  font-size: 1.1rem;
+}
+
+/* Better reading experience */
+strong, b {
+  color: #fff;
+  font-weight: 600;
+}
+
+em, i {
+  color: #f0f0f0;
+  font-style: italic;
 }
 
 /* Layout */
 .container {
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 200px 1rem 2rem 1rem;
+  padding: 200px 2rem 4rem 2rem;
+  line-height: 1.8;
+}
+
+/* Reading-focused layout */
+.reading-content {
+  max-width: 65ch;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 180px 1.5rem 3rem 1.5rem;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 1.875rem;
+  }
+
+  p {
+    font-size: 1rem;
+    max-width: none;
+  }
 }
 
 /* Links */
 a {
-  color: #fff;
+  color: #4fc3f7;
   text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: all 0.2s ease;
 }
 
 a:hover {
-  opacity: 0.8;
+  color: #81d4fa;
+  text-decoration-thickness: 2px;
+}
+
+/* Navigation links (exempt from reading styles) */
+.navbar a,
+.dock a {
+  color: inherit;
+  text-decoration: none;
 }
 
 /* Forms */
