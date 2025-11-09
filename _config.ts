@@ -16,6 +16,7 @@ const site = lume();
 
 site.ignore('README.md')
 
+// Copy static assets
 site.copy("_includes/fonts", "fonts");
 site.copy("_includes/images", "images");
 site.copy("_includes/styles", "styles");

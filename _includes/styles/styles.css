@@ -1,0 +1,84 @@
+/* Simple, consolidated styles for sidious.pizza */
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: system-ui, sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Victor Mono', 'Fira Code', monospace;
+  background-color: #111;
+  color: #fff;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Font Definitions */
+@font-face {
+  font-family: 'Instrument Serif';
+  src: url('/fonts/Instrument_Serif/InstrumentSerif-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Victor Mono';
+  src: url('/fonts/Victor_Mono/static/VictorMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5 {
+  font-family: 'Instrument Serif', serif;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #fff;
+  font-weight: 100;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Links */
+a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* Forms */
+input, button, textarea, select {
+  font-family: inherit;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
