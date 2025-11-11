@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title || "Sidious Pizza" }}</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="preload" href="/fonts/Victor_Mono/static/VictorMono-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="/fonts/Instrument_Serif/InstrumentSerif-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="/fonts/OffBit/OffBit-Regular.ttf" as="font" type="font/ttf" crossorigin>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/" class="navbar-logo">
+                <div class="navbar-glow"></div>
+                <img src="/images/nav-logo.png" alt="Logo" class="navbar-logo-img">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Full Screen Article Header -->
+    <section class="article-hero">
+        <div class="article-hero-content">
+            <h1 class="article-title">{{ title }}</h1>
+            {{ if subtitle }}
+                <p class="article-subtitle">{{ subtitle }}</p>
+            {{ /if }}
+            {{ if date }}
+                <div class="article-date">{{ date.toDateString() }}</div>
+            {{ /if }}
+        </div>
+        <div class="scroll-indicator"></div>
+    </section>
+
+    <!-- Article Content -->
+    <main class="article-container">
+        <div class="article-content">
+            {{ content }}
+        </div>
+    </main>
+
+    <!-- Mac-style Dock Menu -->
+    <nav class="dock">
+        <a href="/" class="dock-item">
+            <div class="dock-glow"></div>
+            <img src="/images/menu-pine.gif" alt="Home" class="dock-icon">
+            <span class="dock-label">Home</span>
+        </a>
+        <a href="/writes" class="dock-item">
+            <div class="dock-glow"></div>
+            <img src="/images/menu-eyes.gif" alt="Writes" class="dock-icon">
+            <span class="dock-label">Writes</span>
+        </a>
+        <a href="/about" class="dock-item">
+            <div class="dock-glow"></div>
+            <img src="/images/menu-shark.gif" alt="About" class="dock-icon">
+            <span class="dock-label">About</span>
+        </a>
+        <a href="/meta" class="dock-item">
+            <div class="dock-glow"></div>
+            <img src="/images/menu-ball.gif" alt="Meta" class="dock-icon">
+            <span class="dock-label">Meta</span>
+        </a>
+        <a href="/works" class="dock-item">
+            <div class="dock-glow"></div>
+            <img src="/images/menu-skull.gif" alt="Works" class="dock-icon">
+            <span class="dock-label">Works</span>
+        </a>
+    </nav>
+
+    <script src="/scripts/dock.js"></script>
+    <script src="/scripts/article.js"></script>
+</body>
+</html>
