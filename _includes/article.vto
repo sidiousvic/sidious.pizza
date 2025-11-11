@@ -41,8 +41,11 @@
         </div>
     </main>
 
+    <!-- Dock Activation Zone -->
+    <div class="dock-activation-zone"></div>
+
     <!-- Mac-style Dock Menu -->
-    <nav class="dock">
+    <nav class="dock{{ if hideMenuAutohide }} dock-always-visible{{ /if }}">
         <a href="/" class="dock-item">
             <div class="dock-glow"></div>
             <img src="/images/menu-pine.gif" alt="Home" class="dock-icon">

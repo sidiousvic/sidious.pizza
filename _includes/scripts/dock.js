@@ -3,8 +3,37 @@
 document.addEventListener('DOMContentLoaded', function() {
     const dock = document.querySelector('.dock');
     const dockItems = document.querySelectorAll('.dock-item');
+    const dockActivationZone = document.querySelector('.dock-activation-zone');
 
     if (!dock || dockItems.length === 0) return;
+
+    // Auto-hide dock functionality
+    if (dockActivationZone && !dock.classList.contains('dock-always-visible')) {
+        let dockTimeout;
+
+        // Show dock on mouse enter activation zone
+        function showDock() {
+            clearTimeout(dockTimeout);
+            dock.classList.add('dock-visible');
+        }
+
+        // Hide dock on mouse leave immediately
+        function hideDock() {
+            clearTimeout(dockTimeout);
+            dock.classList.remove('dock-visible');
+        }
+
+        // Mouse events for activation zone
+        dockActivationZone.addEventListener('mouseenter', showDock);
+        dockActivationZone.addEventListener('mouseleave', hideDock);
+
+        // Mouse events for dock itself
+        dock.addEventListener('mouseenter', showDock);
+        dock.addEventListener('mouseleave', hideDock);
+
+        // Enable pointer events on activation zone when needed
+        dockActivationZone.style.pointerEvents = 'auto';
+    }
 
     // Enhanced neighbor magnification
     dockItems.forEach((item, index) => {

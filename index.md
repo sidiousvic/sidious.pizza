@@ -1,7 +1,7 @@
 ---
 layout: article.vto
 title: Xenom, Part IV
-subtitle: The Zandhir Manics of the West
+subtitle: Or, the Zandhir Manics of the West
 date: 2024-11-12
 ---
 

@@ -36,4 +36,35 @@ document.addEventListener('DOMContentLoaded', function() {
         scrollIndicator.style.transition = 'opacity 0.3s ease';
         scrollIndicator.style.cursor = 'pointer';
     }
+
+    // Auto-hide dock functionality
+    const dock = document.querySelector('.dock');
+    const dockActivationZone = document.querySelector('.dock-activation-zone');
+
+    if (dock && dockActivationZone && !dock.classList.contains('dock-always-visible')) {
+        let dockTimeout;
+
+        // Show dock on mouse enter activation zone
+        function showDock() {
+            clearTimeout(dockTimeout);
+            dock.classList.add('dock-visible');
+        }
+
+        // Hide dock on mouse leave immediately
+        function hideDock() {
+            clearTimeout(dockTimeout);
+            dock.classList.remove('dock-visible');
+        }
+
+        // Mouse events for activation zone
+        dockActivationZone.addEventListener('mouseenter', showDock);
+        dockActivationZone.addEventListener('mouseleave', hideDock);
+
+        // Mouse events for dock itself
+        dock.addEventListener('mouseenter', showDock);
+        dock.addEventListener('mouseleave', hideDock);
+
+        // Enable pointer events on activation zone when needed
+        dockActivationZone.style.pointerEvents = 'auto';
+    }
 });
