@@ -1,0 +1,29 @@
+---
+layout: base.eta
+---
+
+<% const projectKey = it.project ?? it.page?.data?.project; %>
+<% const posts = it.posts ?? (it.site && it.site.data && it.site.data.posts) ?? []; %>
+<% const chapters = posts
+  .filter((item) => item.type === "project" && item.project === projectKey)
+  .slice()
+  .sort((a, b) => (a.order || 0) - (b.order || 0)); %>
+<% const first = chapters[0] || {}; %>
+
+<section class="hero">
+  <h1><%= first.project_title || it.project_title || projectKey %></h1>
+</section>
+
+<ul class="post-list">
+  <% chapters.forEach((chapter) => { %>
+    <li>
+      <a href="<%= chapter.url %>">
+        <div class="post-title"><%= chapter.title %></div>
+      </a>
+      <div class="post-meta">
+        <span class="meta-label">Chapter <%= chapter.order || "" %></span>
+        <% if (chapter.date) { %><span class="meta-label"><%= new Date(chapter.date).toDateString() %></span><% } %>
+      </div>
+    </li>
+  <% }); %>
+</ul>

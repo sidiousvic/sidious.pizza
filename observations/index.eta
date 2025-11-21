@@ -1,0 +1,27 @@
+---
+layout: base.eta
+title: Observations
+---
+
+<section class="hero">
+  <p class="eyebrow">day to day observations</p>
+  <h1>Observations</h1>
+</section>
+
+<ul class="post-list">
+  <% const observations = (it.posts ?? (it.site && it.site.data && it.site.data.posts) ?? [])
+    .filter((item) => item.type === "observation")
+    .slice()
+    .sort((a, b) => (new Date(b.date).getTime() || 0) - (new Date(a.date).getTime() || 0));
+  %>
+  <% observations.forEach((post) => { %>
+    <li>
+      <a href="<%= post.url %>">
+        <div class="post-title"><%= post.title %></div>
+      </a>
+      <div class="post-meta">
+        <% if (post.date) { %><span><%= new Date(post.date).toDateString() %></span><% } %>
+      </div>
+    </li>
+  <% }); %>
+</ul>

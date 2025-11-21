@@ -1,0 +1,35 @@
+---
+layout: base.eta
+title: Archive
+---
+
+<section class="hero">
+  <p class="eyebrow">All the mischief</p>
+  <h1>Archive</h1>
+</section>
+
+<ul class="post-list">
+  <% const posts = (it.posts ?? (it.site && it.site.data && it.site.data.posts) ?? [])
+    .filter((item) => ["observation", "project", "book"].includes(item.type))
+    .slice()
+    .sort((a, b) => (new Date(b.date).getTime() || 0) - (new Date(a.date).getTime() || 0));
+  %>
+  <% posts.forEach((post) => { %>
+    <li>
+      <a href="<%= post.url %>">
+        <div class="post-title"><%= post.title %></div>
+      </a>
+      <div class="post-meta">
+        <% const projectLabel = post.project ? post.project.split("-").map((p) => p.charAt(0).toUpperCase() + p.slice(1)).join(" ") : ""; %>
+        <span class="meta-label">
+          <%= post.type === "book"
+            ? projectLabel || "Book"
+            : post.type === "project"
+            ? projectLabel || "Project"
+            : "Observation" %>
+        </span>
+        <% if (post.date) { %><span><%= new Date(post.date).toDateString() %></span><% } %>
+      </div>
+    </li>
+  <% }); %>
+</ul>

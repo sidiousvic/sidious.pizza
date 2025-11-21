@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vic Sidious</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="preload" href="/fonts/Victor_Mono/static/VictorMono-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="/fonts/Instrument_Serif/InstrumentSerif-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="/fonts/DotGothic16/DotGothic16-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <div class="site-title">
+          <img src="/images/menu-skull.gif" alt="Site logo" loading="eager" decoding="async" class="site-logo">
+          <a href="/">VIC SIDIOUS</a>
+        </div>
+        <div class="site-actions">
+          <nav class="site-nav full-nav">
+            <a href="/posts">Archive</a>
+            <a href="/observations">Observations</a>
+            <a href="/projects">Projects</a>
+            <a href="/about">About</a>
+            <a href="/meta">Meta</a>
+          </nav>
+          <a href="#" class="menu-trigger" aria-controls="menu-overlay" aria-expanded="false">Menu</a>
+          <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Toggle theme">
+            <img src="/images/menu-eyes.gif" alt="" width="22" height="22" aria-hidden="true" decoding="async">
+          </button>
+        </div>
+      </header>
+      <main class="shell <%= (it.shellClass || it.page?.data?.shellClass || "").trim() %>">
+        <%~ content %>
+      </main>
+      <footer class="site-footer" aria-label="Site footer">
+        <span class="footer-meta"><strong>© SIDIOUSWARE 2026 </strong>障害こそが道だ</span>
+      </footer>
+    </div>
+    <div id="menu-overlay" class="menu-overlay" aria-hidden="true">
+      <div class="menu-sheet">
+        <nav class="menu-list" aria-label="Overlay navigation">
+          <a href="/posts">Archive</a>
+          <a href="/observations">Observations</a>
+          <a href="/projects">Projects</a>
+          <a href="/about">About</a>
+          <a href="/meta">Meta</a>
+        </nav>
+      </div>
+    </div>
+    <script>
+      (() => {
+        const header = document.querySelector(".site-header");
+        const themeToggle = document.querySelector(".theme-toggle");
+        const THEME_KEY = "sidious-theme";
+
+        const applyTheme = (mode) => {
+          const dark = mode === "dark";
+          document.documentElement.classList.toggle("theme-dark", dark);
+          if (themeToggle) {
+            themeToggle.setAttribute("aria-pressed", String(dark));
+            themeToggle.querySelector("svg")?.setAttribute("data-mode", dark ? "dark" : "light");
+          }
+        };
+
+        const stored = window.localStorage?.getItem(THEME_KEY);
+        const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)");
+        let mode = stored || (prefersDark && prefersDark.matches ? "dark" : "light");
+        applyTheme(mode);
+
+        if (themeToggle) {
+          themeToggle.addEventListener("click", () => {
+            mode = mode === "dark" ? "light" : "dark";
+            window.localStorage?.setItem(THEME_KEY, mode);
+            applyTheme(mode);
+          });
+        }
+
+        if (prefersDark && prefersDark.addEventListener) {
+          prefersDark.addEventListener("change", (event) => {
+            if (window.localStorage?.getItem(THEME_KEY)) return;
+            mode = event.matches ? "dark" : "light";
+            applyTheme(mode);
+          });
+        }
+
+        const menuOverlay = document.getElementById("menu-overlay");
+        const menuTrigger = document.querySelector(".menu-trigger");
+
+        const toggleMenu = (force) => {
+          if (!menuOverlay) return;
+          const open = typeof force === "boolean" ? force : !menuOverlay.classList.contains("is-open");
+          menuOverlay.classList.toggle("is-open", open);
+          menuOverlay.setAttribute("aria-hidden", String(!open));
+          document.body.classList.toggle("menu-open", open);
+          if (menuTrigger) menuTrigger.setAttribute("aria-expanded", String(open));
+        };
+
+        menuTrigger?.addEventListener("click", (e) => {
+          e.preventDefault();
+          toggleMenu();
+        });
+
+        menuOverlay?.addEventListener("click", (e) => {
+          const linkClicked = e.target && e.target.closest && e.target.closest("a");
+          if (linkClicked) return;
+          toggleMenu(false);
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key && e.key.toLowerCase() === "t") {
+            mode = mode === "dark" ? "light" : "dark";
+            window.localStorage?.setItem(THEME_KEY, mode);
+            applyTheme(mode);
+          }
+
+          if (e.key === "Escape") {
+            toggleMenu(false);
+          }
+        });
+
+        const toggleHeader = () => {
+          if (!header) return;
+          header.classList.toggle("is-scrolled", window.scrollY > 8);
+        };
+        toggleHeader();
+        window.addEventListener("scroll", toggleHeader, { passive: true });
+
+        const links = Array.from(document.querySelectorAll(".menu-list a"));
+        links.forEach((link) => {
+          const href = link.getAttribute("href") || "";
+          if (href !== "/" && window.location.pathname.startsWith(href)) {
+            link.classList.add("is-active");
+            link.scrollIntoView({ inline: "center", behavior: "smooth", block: "nearest" });
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

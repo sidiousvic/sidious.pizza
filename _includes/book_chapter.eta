@@ -1,0 +1,7 @@
+---
+layout: article.eta
+---
+<% it.navType = it.navType ?? "book"; %>
+<% it.shellClass = it.shellClass || "book-shell"; %>
+<% it.book = it.book ?? it.project ?? it.page?.data?.project; %>
+<%~ content %>

@@ -1,15 +1,12 @@
 ---
-layout: base.vto
-title: Meta - Vic Sidious
+layout: base.eta
+title: Meta
+type: page
+hidden: true
 ---
+
+<p class="eyebrow">How it's built</p>
 
 # Meta
 
-The site is intentionally minimal, inspired by the early web when content mattered. 
-
-**Technical details:**
-- Static site generation with Lume
-- No JavaScript, no tracking, no cookies
-- Hosted as static files
-
-[← Back to Home](/)
+This page is under construction.

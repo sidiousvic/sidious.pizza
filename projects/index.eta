@@ -1,0 +1,41 @@
+---
+layout: base.eta
+title: Projects
+---
+
+<section class="hero">
+  <p class="eyebrow">sh*t i'm working on</p>
+  <h1>Projects</h1>
+</section>
+
+<ul class="post-list">
+  <% const projectPages = (it.posts ?? (it.site && it.site.data && it.site.data.posts) ?? [])
+    .filter((item) => ["project", "book"].includes(item.type) && item.project)
+    .slice()
+    .sort((a, b) => (a.order || 0) - (b.order || 0)); %>
+  <% const projectKeys = Array.from(new Set(projectPages.map((item) => item.project))); %>
+  <% projectKeys.forEach((key) => { %>
+    <% const pages = projectPages
+      .filter((item) => item.project === key)
+      .sort((a, b) => (a.order || 0) - (b.order || 0));
+    const first = pages[0];
+    const displayTitle = (first.project_title || key)
+      .split("-")
+      .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+      .join(" ");
+    const summary = first.project_summary || first.summary || "";
+    const firstDate = first.date ? new Date(first.date).toDateString() : "";
+    const firstType = (first.navType || first.type || "project").toUpperCase();
+    %>
+    <li>
+      <a href="/<%= key %>/">
+        <div class="post-title"><%= displayTitle %></div>
+      </a>
+      <div class="post-meta">
+        <span class="meta-label"><%= firstType %></span>
+        <% if (firstDate) { %><span class="meta-label"><%= firstDate %></span><% } %>
+        <span class="meta-label"><%= pages.length %> chapter<%= pages.length > 1 ? "s" : "" %></span>
+      </div>
+    </li>
+  <% }); %>
+</ul>

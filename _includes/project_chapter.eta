@@ -1,0 +1,7 @@
+---
+layout: article.eta
+---
+<% it.type = it.type ?? "project"; %>
+<% it.project = it.project ?? it.page?.data?.project; %>
+<% const chapterBody = it.content ?? (typeof content !== "undefined" ? content : ""); %>
+<%~ chapterBody %>
