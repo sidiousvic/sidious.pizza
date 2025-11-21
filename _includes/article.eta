@@ -17,7 +17,7 @@
       <header class="site-header">
         <div class="site-title">
           <img src="/images/menu-skull.gif" alt="Site logo" loading="eager" decoding="async" class="site-logo">
-          <a href="/">Vic Sidious</a>
+          <a href="/">VIC SIDIOUS</a>
         </div>
         <div class="site-actions">
           <nav class="site-nav full-nav">
@@ -160,7 +160,9 @@
 
         const toggleHeader = () => {
           if (!header) return;
-          header.classList.toggle("is-scrolled", window.scrollY > 8);
+          const scrolled = window.scrollY > 8;
+          header.classList.toggle("is-scrolled", scrolled);
+          document.body.classList.toggle("body-tilt", scrolled);
         };
         toggleHeader();
         window.addEventListener("scroll", toggleHeader, { passive: true });
@@ -173,6 +175,107 @@
             link.scrollIntoView({ inline: "center", behavior: "smooth", block: "nearest" });
           }
         });
+      })();
+    </script>
+    <script>
+      (() => {
+        const start = () => {
+          const canvas = document.createElement("canvas");
+          canvas.className = "grain-canvas";
+          canvas.setAttribute("aria-hidden", "true");
+          document.body.appendChild(canvas);
+
+          const gl = canvas.getContext("webgl", { premultipliedAlpha: false });
+          if (!gl) return;
+
+          const vertSrc = `
+            attribute vec2 position;
+            void main() {
+              gl_Position = vec4(position, 0.0, 1.0);
+            }
+          `;
+
+          const fragSrc = `
+            precision mediump float;
+            uniform vec2 u_res;
+            uniform float u_time;
+            float rand(vec2 st) {
+              return fract(sin(dot(st, vec2(12.9898,78.233))) * 43758.5453123);
+            }
+            void main() {
+              vec2 uv = gl_FragCoord.xy / u_res;
+              float n = rand(uv + vec2(u_time * 0.55, u_time * 0.97));
+              float tone = 0.35 + (n - 0.5) * 0.3; // darker mid with gentle variation
+              gl_FragColor = vec4(vec3(tone), 0.23);
+            }
+          `;
+
+          const compile = (type, source) => {
+            const shader = gl.createShader(type);
+            gl.shaderSource(shader, source);
+            gl.compileShader(shader);
+            if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+              console.warn(gl.getShaderInfoLog(shader));
+              gl.deleteShader(shader);
+              return null;
+            }
+            return shader;
+          };
+
+          const vert = compile(gl.VERTEX_SHADER, vertSrc);
+          const frag = compile(gl.FRAGMENT_SHADER, fragSrc);
+          if (!vert || !frag) return;
+
+          const program = gl.createProgram();
+          gl.attachShader(program, vert);
+          gl.attachShader(program, frag);
+          gl.linkProgram(program);
+          if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+            console.warn(gl.getProgramInfoLog(program));
+            return;
+          }
+
+          gl.useProgram(program);
+
+          const positionLoc = gl.getAttribLocation(program, "position");
+          const buffer = gl.createBuffer();
+          gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+          gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+          gl.enableVertexAttribArray(positionLoc);
+          gl.vertexAttribPointer(positionLoc, 2, gl.FLOAT, false, 0, 0);
+
+          const resLoc = gl.getUniformLocation(program, "u_res");
+          const timeLoc = gl.getUniformLocation(program, "u_time");
+
+          let w = 0, h = 0;
+          const resize = () => {
+            const dpr = window.devicePixelRatio || 1;
+            const nw = Math.floor(window.innerWidth * dpr);
+            const nh = Math.floor(window.innerHeight * dpr);
+            if (nw === w && nh === h) return;
+            w = nw; h = nh;
+            canvas.width = w;
+            canvas.height = h;
+            canvas.style.width = "100%";
+            canvas.style.height = "100%";
+            gl.viewport(0, 0, w, h);
+          };
+
+          const render = (t) => {
+            resize();
+            gl.clearColor(0, 0, 0, 0);
+            gl.clear(gl.COLOR_BUFFER_BIT);
+            gl.uniform2f(resLoc, w, h);
+            gl.uniform1f(timeLoc, t * 0.001);
+            gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+            requestAnimationFrame(render);
+          };
+
+          requestAnimationFrame(render);
+        };
+
+        if (document.readyState === "complete") start();
+        else window.addEventListener("load", start, { once: true });
       })();
     </script>
   </body>
