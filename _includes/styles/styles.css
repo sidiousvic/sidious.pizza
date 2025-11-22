@@ -398,8 +398,19 @@ body {
   height: 100%;
   pointer-events: none;
   mix-blend-mode: soft-light;
-  opacity: 0.23;
+  opacity: 0;
+  transition: opacity 3s ease-in-out;
   z-index: 12;
+}
+
+.grain-on .grain-canvas {
+  opacity: 0.23;
+}
+
+@media (max-width: 720px) {
+  .grain-canvas {
+    display: none;
+  }
 }
 
 .shell.vod-wide,

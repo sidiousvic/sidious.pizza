@@ -276,6 +276,13 @@
 
         if (document.readyState === "complete") start();
         else window.addEventListener("load", start, { once: true });
+
+        const isMobile = window.matchMedia && window.matchMedia("(max-width: 720px)").matches;
+        if (!isMobile) {
+          window.setTimeout(() => {
+            document.body.classList.add("grain-on");
+          }, 1000);
+        }
       })();
     </script>
   </body>
