@@ -52,6 +52,7 @@
       (() => {
         const header = document.querySelector(".site-header");
         const themeToggle = document.querySelector(".theme-toggle");
+        const isMobile = window.matchMedia && window.matchMedia("(max-width: 720px)").matches;
         const THEME_KEY = "sidious-theme";
 
         const applyTheme = (mode) => {
@@ -121,6 +122,11 @@
 
         const toggleHeader = () => {
           if (!header) return;
+          if (isMobile) {
+            header.classList.remove("is-scrolled");
+            document.body.classList.remove("body-tilt");
+            return;
+          }
           const scrolled = window.scrollY > 8;
           header.classList.toggle("is-scrolled", scrolled);
           document.body.classList.toggle("body-tilt", scrolled);
@@ -148,7 +154,6 @@
           canvas.className = "grain-canvas";
           canvas.setAttribute("aria-hidden", "true");
           document.body.appendChild(canvas);
-
           const gl = canvas.getContext("webgl", { premultipliedAlpha: false });
           if (!gl) return;
 
