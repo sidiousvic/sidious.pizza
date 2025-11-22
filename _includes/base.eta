@@ -140,6 +140,9 @@
     </script>
     <script>
       (() => {
+        const isMobile = window.matchMedia && window.matchMedia("(max-width: 720px)").matches;
+        if (isMobile) return;
+
         const start = () => {
           const canvas = document.createElement("canvas");
           canvas.className = "grain-canvas";
@@ -209,8 +212,10 @@
           const timeLoc = gl.getUniformLocation(program, "u_time");
 
           let w = 0, h = 0;
+          let dpr = window.devicePixelRatio || 1;
           const resize = () => {
-            const dpr = window.devicePixelRatio || 1;
+            const nextDpr = window.devicePixelRatio || 1;
+            if (nextDpr !== dpr) dpr = nextDpr;
             const nw = Math.floor(window.innerWidth * dpr);
             const nh = Math.floor(window.innerHeight * dpr);
             if (nw === w && nh === h) return;
@@ -222,8 +227,10 @@
             gl.viewport(0, 0, w, h);
           };
 
+          resize();
+          window.addEventListener("resize", resize, { passive: true });
+
           const render = (t) => {
-            resize();
             gl.clearColor(0, 0, 0, 0);
             gl.clear(gl.COLOR_BUFFER_BIT);
             gl.uniform2f(resLoc, w, h);
@@ -238,12 +245,9 @@
         if (document.readyState === "complete") start();
         else window.addEventListener("load", start, { once: true });
 
-        const isMobile = window.matchMedia && window.matchMedia("(max-width: 720px)").matches;
-        if (!isMobile) {
-          window.setTimeout(() => {
-            document.body.classList.add("grain-on");
-          }, 1000);
-        }
+        window.setTimeout(() => {
+          document.body.classList.add("grain-on");
+        }, 1000);
       })();
     </script>
   </body>

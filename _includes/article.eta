@@ -1,289 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vic Sidious</title>
-    <link rel="stylesheet" href="/styles/styles.css">
-    <link rel="preload" href="/fonts/Victor_Mono/static/VictorMono-Regular.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="/fonts/Instrument_Serif/InstrumentSerif-Regular.ttf" as="font" type="font/ttf" crossorigin>
-  </head>
-  <body>
-    <div class="page">
-      <% const navPrev = it.prev ?? it.page?.data?.prev ?? null; %>
-      <% const navNext = it.next ?? it.page?.data?.next ?? null; %>
-      <% const navProject = it.project ?? it.page?.data?.project ?? null; %>
-      <% const navType = it.type ?? it.page?.data?.type ?? null; %>
-      <header class="site-header">
-        <div class="site-title">
-          <img src="/images/menu-skull.gif" alt="Site logo" loading="eager" decoding="async" class="site-logo">
-          <a href="/">VIC SIDIOUS</a>
-        </div>
-        <div class="site-actions">
-          <nav class="site-nav full-nav">
-            <a href="/posts">Archive</a>
-            <a href="/observations">Observations</a>
-            <a href="/projects">Projects</a>
-            <a href="/about">About</a>
-            <a href="/meta">Meta</a>
-          </nav>
-          <a href="#" class="menu-trigger" aria-controls="menu-overlay" aria-expanded="false">Menu</a>
-          <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Toggle theme">
-            <img src="/images/menu-eyes.gif" alt="" width="22" height="22" aria-hidden="true" decoding="async">
-          </button>
-        </div>
-      </header>
-      <main class="shell article-shell <%= (it.shellClass || it.page?.data?.shellClass || "").trim() %>">
-        <article class="article">
-          <header class="article-head">
-            <% const navLabel = navType === "project"
-              ? "A serialized project chapter"
-              : navType === "book"
-              ? (it.book_title || it.project_title || it.book || it.project || "Book")
-              : ""; %>
-            <% if (navLabel) { %><p class="eyebrow"><%= navLabel %></p><% } %>
-            <h1><%= it.title %></h1>
-            <% if (it.subtitle) { %>
-              <p class="subtitle"><%= it.subtitle %></p>
-            <% } %>
-            <% if (it.date) { %>
-              <p class="date"><%= it.date.toDateString() %></p>
-            <% } %>
-          </header>
+---
+layout: base.eta
+shellClass: article-shell
+---
 
-          <%~ content || it.content || it.page?.content || it.page?.data?.content || "" %>
+<article class="article">
+  <% const navPrev = it.prev ?? it.page?.data?.prev ?? null; %>
+  <% const navNext = it.next ?? it.page?.data?.next ?? null; %>
+  <% const navProject = it.project ?? it.page?.data?.project ?? null; %>
+  <% const navType = it.type ?? it.page?.data?.type ?? null; %>
 
-          <% if ((navType === "project" || navType === "book") && navProject) { %>
-            <nav class="chapter-nav">
-              <div>
-                <% if (navPrev) { %>
-                  <a href="<%= navPrev.url %>">← Prev</a>
-                <% } %>
-              </div>
-              <div class="align-center"></div>
-              <div class="align-right">
-                <% if (navNext) { %>
-                  <a href="<%= navNext.url %>">Next →</a>
-                <% } %>
-              </div>
-            </nav>
-          <% } %>
+  <header class="article-head">
+    <% const navLabel = navType === "project"
+      ? "A serialized project chapter"
+      : navType === "book"
+      ? (it.book_title || it.project_title || it.book || it.project || "Book")
+      : ""; %>
+    <% if (navLabel) { %><p class="eyebrow"><%= navLabel %></p><% } %>
+    <h1><%= it.title %></h1>
+    <% if (it.subtitle) { %>
+      <p class="subtitle"><%= it.subtitle %></p>
+    <% } %>
+    <% if (it.date) { %>
+      <p class="date"><%= it.date.toDateString() %></p>
+    <% } %>
+  </header>
 
-        </article>
-      </main>
-      <footer class="site-footer" aria-label="Site footer">
-        <span class="footer-meta"><strong>© SIDIOUSWARE 2026 </strong>障害こそが道だ</span>
-      </footer>
-    </div>
-    <button class="menu-notch" type="button" aria-expanded="false" aria-controls="menu-overlay">Menu</button>
-    <div id="menu-overlay" class="menu-overlay" aria-hidden="true">
-      <div class="menu-sheet">
-        <nav class="menu-list" aria-label="Overlay navigation">
-          <a href="/posts">Archive</a>
-          <a href="/observations">Observations</a>
-          <a href="/projects">Projects</a>
-          <a href="/about">About</a>
-          <a href="/meta">Meta</a>
-        </nav>
+  <%~ content || it.content || it.page?.content || it.page?.data?.content || "" %>
+
+  <% if ((navType === "project" || navType === "book") && navProject) { %>
+    <nav class="chapter-nav">
+      <div>
+        <% if (navPrev) { %>
+          <a href="<%= navPrev.url %>">← Prev</a>
+        <% } %>
       </div>
-    </div>
-    <script>
-      (() => {
-        const header = document.querySelector(".site-header");
-        const themeToggle = document.querySelector(".theme-toggle");
-        const THEME_KEY = "sidious-theme";
+      <div class="align-center"></div>
+      <div class="align-right">
+        <% if (navNext) { %>
+          <a href="<%= navNext.url %>">Next →</a>
+        <% } %>
+      </div>
+    </nav>
+  <% } %>
 
-        const applyTheme = (mode) => {
-          const dark = mode === "dark";
-          document.documentElement.classList.toggle("theme-dark", dark);
-          if (themeToggle) {
-            themeToggle.setAttribute("aria-pressed", String(dark));
-            themeToggle.querySelector("svg")?.setAttribute("data-mode", dark ? "dark" : "light");
-          }
-        };
-
-        const stored = window.localStorage?.getItem(THEME_KEY);
-        const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)");
-        let mode = stored || (prefersDark && prefersDark.matches ? "dark" : "light");
-        applyTheme(mode);
-
-        if (themeToggle) {
-          themeToggle.addEventListener("click", () => {
-            mode = mode === "dark" ? "light" : "dark";
-            window.localStorage?.setItem(THEME_KEY, mode);
-            applyTheme(mode);
-          });
-        }
-
-        if (prefersDark && prefersDark.addEventListener) {
-          prefersDark.addEventListener("change", (event) => {
-            if (window.localStorage?.getItem(THEME_KEY)) return;
-            mode = event.matches ? "dark" : "light";
-            applyTheme(mode);
-          });
-        }
-
-        const menuOverlay = document.getElementById("menu-overlay");
-        const menuTrigger = document.querySelector(".menu-trigger");
-
-        const toggleMenu = (force) => {
-          if (!menuOverlay) return;
-          const open = typeof force === "boolean" ? force : !menuOverlay.classList.contains("is-open");
-          menuOverlay.classList.toggle("is-open", open);
-          menuOverlay.setAttribute("aria-hidden", String(!open));
-          document.body.classList.toggle("menu-open", open);
-          if (menuTrigger) menuTrigger.setAttribute("aria-expanded", String(open));
-        };
-
-        menuTrigger?.addEventListener("click", (e) => {
-          e.preventDefault();
-          toggleMenu();
-        });
-
-        menuOverlay?.addEventListener("click", (e) => {
-            const linkClicked = e.target && e.target.closest && e.target.closest("a");
-            if (linkClicked) return;
-            toggleMenu(false);
-        });
-
-        document.addEventListener("keydown", (e) => {
-          if (e.key && e.key.toLowerCase() === "t") {
-            mode = mode === "dark" ? "light" : "dark";
-            window.localStorage?.setItem(THEME_KEY, mode);
-            applyTheme(mode);
-          }
-
-          if (e.key === "Escape") {
-            toggleMenu(false);
-          }
-        });
-
-        const toggleHeader = () => {
-          if (!header) return;
-          const scrolled = window.scrollY > 8;
-          header.classList.toggle("is-scrolled", scrolled);
-          document.body.classList.toggle("body-tilt", scrolled);
-        };
-        toggleHeader();
-        window.addEventListener("scroll", toggleHeader, { passive: true });
-
-        const links = Array.from(document.querySelectorAll(".menu-list a"));
-        links.forEach((link) => {
-          const href = link.getAttribute("href") || "";
-          if (href !== "/" && window.location.pathname.startsWith(href)) {
-            link.classList.add("is-active");
-            link.scrollIntoView({ inline: "center", behavior: "smooth", block: "nearest" });
-          }
-        });
-      })();
-    </script>
-    <script>
-      (() => {
-        const start = () => {
-          const canvas = document.createElement("canvas");
-          canvas.className = "grain-canvas";
-          canvas.setAttribute("aria-hidden", "true");
-          document.body.appendChild(canvas);
-
-          const gl = canvas.getContext("webgl", { premultipliedAlpha: false });
-          if (!gl) return;
-
-          const vertSrc = `
-            attribute vec2 position;
-            void main() {
-              gl_Position = vec4(position, 0.0, 1.0);
-            }
-          `;
-
-          const fragSrc = `
-            precision mediump float;
-            uniform vec2 u_res;
-            uniform float u_time;
-            float rand(vec2 st) {
-              return fract(sin(dot(st, vec2(12.9898,78.233))) * 43758.5453123);
-            }
-            void main() {
-              vec2 uv = gl_FragCoord.xy / u_res;
-              float n = rand(uv + vec2(u_time * 0.55, u_time * 0.97));
-              float tone = 0.35 + (n - 0.5) * 0.3; // darker mid with gentle variation
-              gl_FragColor = vec4(vec3(tone), 0.23);
-            }
-          `;
-
-          const compile = (type, source) => {
-            const shader = gl.createShader(type);
-            gl.shaderSource(shader, source);
-            gl.compileShader(shader);
-            if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-              console.warn(gl.getShaderInfoLog(shader));
-              gl.deleteShader(shader);
-              return null;
-            }
-            return shader;
-          };
-
-          const vert = compile(gl.VERTEX_SHADER, vertSrc);
-          const frag = compile(gl.FRAGMENT_SHADER, fragSrc);
-          if (!vert || !frag) return;
-
-          const program = gl.createProgram();
-          gl.attachShader(program, vert);
-          gl.attachShader(program, frag);
-          gl.linkProgram(program);
-          if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-            console.warn(gl.getProgramInfoLog(program));
-            return;
-          }
-
-          gl.useProgram(program);
-
-          const positionLoc = gl.getAttribLocation(program, "position");
-          const buffer = gl.createBuffer();
-          gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
-          gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
-          gl.enableVertexAttribArray(positionLoc);
-          gl.vertexAttribPointer(positionLoc, 2, gl.FLOAT, false, 0, 0);
-
-          const resLoc = gl.getUniformLocation(program, "u_res");
-          const timeLoc = gl.getUniformLocation(program, "u_time");
-
-          let w = 0, h = 0;
-          const resize = () => {
-            const dpr = window.devicePixelRatio || 1;
-            const nw = Math.floor(window.innerWidth * dpr);
-            const nh = Math.floor(window.innerHeight * dpr);
-            if (nw === w && nh === h) return;
-            w = nw; h = nh;
-            canvas.width = w;
-            canvas.height = h;
-            canvas.style.width = "100%";
-            canvas.style.height = "100%";
-            gl.viewport(0, 0, w, h);
-          };
-
-          const render = (t) => {
-            resize();
-            gl.clearColor(0, 0, 0, 0);
-            gl.clear(gl.COLOR_BUFFER_BIT);
-            gl.uniform2f(resLoc, w, h);
-            gl.uniform1f(timeLoc, t * 0.001);
-            gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-            requestAnimationFrame(render);
-          };
-
-          requestAnimationFrame(render);
-        };
-
-        if (document.readyState === "complete") start();
-        else window.addEventListener("load", start, { once: true });
-
-        const isMobile = window.matchMedia && window.matchMedia("(max-width: 720px)").matches;
-        if (!isMobile) {
-          window.setTimeout(() => {
-            document.body.classList.add("grain-on");
-          }, 1000);
-        }
-      })();
-    </script>
-  </body>
-</html>
+</article>

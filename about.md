@@ -33,7 +33,7 @@ shellClass: vod-wide
     </tr>
     <tr>
       <th>AKA</th>
-      <td>Victor, Toru, @sidiousvic</td>
+      <td>Victor, とる, <strong>@sidiousvic</strong></td>
     </tr>
   </table>
 </div>
