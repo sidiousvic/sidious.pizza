@@ -40,7 +40,4 @@ title: Vic Sidious
     </li>
   <% }); %>
   </ul>
-  <script>
-    console.log("Pool:", <%= typed.length %>, "items. Showing", <%= recent.length %>);
-  </script>
 </section>

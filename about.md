@@ -32,8 +32,8 @@ shellClass: vod-wide
       <td>Guitar, burritos, engines, fights, brews</td>
     </tr>
     <tr>
-      <th>AKA</th>
-      <td>Victor, とる, <strong>@sidiousvic</strong></td>
+      <th>Aliases</th>
+      <td>Victor, Tōru, <strong>@sidiousvic</strong></td>
     </tr>
   </table>
 </div>
@@ -62,8 +62,7 @@ shellClass: vod-wide
 
 ## Early Life
 
-Victor Rene Molina Rodriguez, known as Vic Sidious, was born in Chihuahua, Mexico, and grew up in a working-class family. His father sold electric mining cable and his mother taught at a public primary school. He has one younger brother.
+My name is Victor Rene Molina Rodriguez, and I was born in the town of Chihuahua, northern Mexico. I grew up in a working-class family. My father sold electric mining cable and my mother taught at a public primary school. I have one younger brother. 
 
-Much of his childhood was spent at his grandmother’s house, where he was surrounded by extended family, including his uncles, godfather, and many cousins. The family did not have much money, but they took local trips when they could and kept a steady routine of shared activities.
+I studied university in the USA, visited Japan during my time as a student. To this day, I can't explain what drew me here. Maybe it was my fascination with the films of Ozu and Kurosawa, the memories I made during my visit, or simply the bath culture. Here we are, many misadventures and defeats later, in Tokyo. 
 
-The region of northern Mexico is defined by scarce water and desert landscapes, and many residents work in cattle ranching or mechanical trades. As a major route for northbound drug trafficking, the area also experienced frequent cartel violence. Gunfire and armed conflict were part of the broader atmosphere where he and his friends grew up.
