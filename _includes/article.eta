@@ -9,6 +9,9 @@ shellClass: article-shell
   <% const navProject = it.project ?? it.page?.data?.project ?? null; %>
   <% const navType = it.type ?? it.page?.data?.type ?? null; %>
   <% const isObservation = navType === "observation"; %>
+  <% const langsRaw = it.languages || it.page?.data?.languages || []; %>
+  <% const langList = Array.isArray(langsRaw) ? langsRaw : (typeof langsRaw === "string" ? langsRaw.split(",").map((l) => l.trim()).filter(Boolean) : []); %>
+  <% const langPref = it.lang || it.page?.data?.lang || langList[0] || "en"; %>
 
   <header class="article-head">
     <% const navLabel = navType === "project"
@@ -24,9 +27,21 @@ shellClass: article-shell
     <% if (!isObservation && it.subtitle) { %>
       <p class="subtitle"><%= it.subtitle %></p>
     <% } %>
-    <% if (it.date) { %>
-      <p class="date"><%= it.date.toDateString() %></p>
-    <% } %>
+    <div class="article-meta">
+      <% if (it.date) { %>
+        <p class="date"><%= it.date.toDateString() %></p>
+      <% } %>
+      <% if ((langList && langList.length) || it.lang) { %>
+        <div class="lang-switch" data-default-lang="<%= langPref %>" data-langs="<%= (langList && langList.length ? langList : ['en']).join(',') %>">
+          <% const langCodes = (langList && langList.length) ? langList : ["en"]; %>
+          <div class="lang-actions">
+            <% for (const code of langCodes) { %>
+              <button type="button" class="lang-btn" data-lang="<%= code %>" aria-pressed="false"><%= (code || "").toString().toUpperCase() %></button>
+            <% } %>
+          </div>
+        </div>
+      <% } %>
+    </div>
   </header>
 
   <%~ content || it.content || it.page?.content || it.page?.data?.content || "" %>

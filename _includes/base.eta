@@ -65,6 +65,6 @@
         </nav>
       </div>
     </div>
-    <script type="module" src="/scripts/site.js"></script>
+    <script type="module" src="/scripts/site.js?v=2"></script>
   </body>
 </html>

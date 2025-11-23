@@ -102,11 +102,64 @@ function initHeaderScroll() {
   window.addEventListener("scroll", onScroll, { passive: true });
 }
 
+const SUPPORTED_LANGS = ["en", "jp", "es"];
+
+function initLangSwitch() {
+  const langSwitch = qs(".lang-switch");
+  if (!langSwitch) return;
+
+  const langAttr = langSwitch.getAttribute("data-langs") || "";
+  const configuredLangs = langAttr.split(",").map((l) => l.trim().toLowerCase()).filter(Boolean);
+  const buttons = Array.from(langSwitch.querySelectorAll(".lang-btn"));
+  if (!buttons.length) return;
+
+  const presentLangs = configuredLangs.length ? configuredLangs : SUPPORTED_LANGS;
+  const contentSections = Array.from(document.querySelectorAll("en, jp, es, [data-lang]")).filter((el) => {
+    // Ignore the language switch controls themselves
+    if (el.closest(".lang-switch")) return false;
+    const tag = el.tagName.toLowerCase();
+    const attr = el.getAttribute("data-lang");
+    const code = attr || tag;
+    return presentLangs.includes(code);
+  });
+
+  const defaultLang = langSwitch.getAttribute("data-default-lang") || presentLangs[0] || "en";
+  let current = defaultLang;
+
+  const setLang = (lang) => {
+    current = lang;
+    buttons.forEach((btn) => {
+      const code = btn.getAttribute("data-lang");
+      const active = code === lang;
+      btn.style.display = "inline-flex";
+      btn.style.removeProperty("display");
+      btn.classList.toggle("is-active", active);
+      btn.setAttribute("aria-pressed", String(active));
+    });
+
+    contentSections.forEach((el) => {
+      const tag = el.tagName.toLowerCase();
+      const dataLang = el.getAttribute("data-lang");
+      const elLang = dataLang || tag;
+      el.style.display = elLang === lang ? "" : "none";
+    });
+  };
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      setLang(btn.getAttribute("data-lang") || "en");
+    });
+  });
+
+  setLang(current);
+}
+
 function init() {
   initTheme();
   initMenu();
   initActiveNav();
   initHeaderScroll();
+  initLangSwitch();
 }
 
 if (document.readyState === "loading") {

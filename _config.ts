@@ -43,6 +43,27 @@ site.preprocess([".md", ".eta"], (pages) => {
   const projects = pages.filter((page) => serialTypes.has(page.data.type as string) && page.data.project);
   const grouped = new Map();
 
+  const detectLanguages = (content: unknown) => {
+    if (typeof content !== "string") return [] as string[];
+    const langs = new Set<string>();
+    const regex = /<\s*(en|jp|es)(\s|>)/gi;
+    let match;
+    while ((match = regex.exec(content)) !== null) {
+      langs.add(match[1].toLowerCase());
+    }
+    return Array.from(langs);
+  };
+
+  for (const page of pages) {
+    const languages = detectLanguages(page.content ?? page.data.content);
+    if (languages.length) {
+      page.data.languages = languages;
+      if (!page.data.lang && languages.length) {
+        page.data.lang = languages[0];
+      }
+    }
+  }
+
   for (const page of projects) {
     const key = page.data.project as string;
     if (!grouped.has(key)) grouped.set(key, []);
