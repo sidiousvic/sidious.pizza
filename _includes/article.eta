@@ -8,6 +8,7 @@ shellClass: article-shell
   <% const navNext = it.next ?? it.page?.data?.next ?? null; %>
   <% const navProject = it.project ?? it.page?.data?.project ?? null; %>
   <% const navType = it.type ?? it.page?.data?.type ?? null; %>
+  <% const isObservation = navType === "observation"; %>
 
   <header class="article-head">
     <% const navLabel = navType === "project"
@@ -16,8 +17,11 @@ shellClass: article-shell
       ? (it.book_title || it.project_title || it.book || it.project || "Book")
       : ""; %>
     <% if (navLabel) { %><p class="eyebrow"><%= navLabel %></p><% } %>
+    <% if (isObservation && it.subtitle) { %>
+      <p class="eyebrow"><%= it.subtitle %></p>
+    <% } %>
     <h1><%= it.title %></h1>
-    <% if (it.subtitle) { %>
+    <% if (!isObservation && it.subtitle) { %>
       <p class="subtitle"><%= it.subtitle %></p>
     <% } %>
     <% if (it.date) { %>

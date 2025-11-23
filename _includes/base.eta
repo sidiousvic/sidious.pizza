@@ -12,9 +12,24 @@
   <body>
     <div class="page">
       <header class="site-header">
+        <% const currentTitle = it.page?.data?.title || it.title || "VIC SIDIOUS"; %>
+        <% const currentUrl = it.page?.data?.url || it.url || ""; %>
+        <% const isHome = currentUrl === "/" || currentUrl === ""; %>
+        <% const titleWords = (currentTitle || "").split(/\s+/).filter(Boolean); %>
+        <% const fontCycle = ["title-part--goth", "title-part--bold", "title-part--serif"]; %>
         <div class="site-title">
-          <img src="/images/menu-skull.gif" alt="Site logo" loading="eager" decoding="async" class="site-logo">
-          <a href="/">VIC SIDIOUS</a>
+          <a href="/" aria-label="Vic Sidious home">
+            <img src="/images/vic-mtv-clay-logo.png" alt="Site logo" loading="eager" decoding="async" class="site-logo">
+          </a>
+          <a href="/">
+            <% if (isHome) { %>
+            <% } else { %>
+              <% titleWords.forEach((word, idx) => { %>
+                <span class="title-part <%= fontCycle[idx % fontCycle.length] %>"><%= word %></span>
+              <% }); %>
+              <sup class="title-part title-part--tm">™️</sup>
+            <% } %>
+          </a>
         </div>
         <div class="site-actions">
           <nav class="site-nav full-nav">
@@ -36,7 +51,7 @@
         <%~ content %>
       </main>
       <footer class="site-footer" aria-label="Site footer">
-        <span class="footer-meta"><strong>© SIDIOUSWARE 2026 </strong>障害こそが道だ</span>
+        <span class="footer-meta"><strong class="footer-brand">© SIDIOUSWARE 2026 </strong>障害こそが道だ</span>
       </footer>
     </div>
     <div id="menu-overlay" class="menu-overlay" aria-hidden="true">

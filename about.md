@@ -64,5 +64,5 @@ shellClass: vod-wide
 
 My name is Victor Rene Molina Rodriguez, and I was born in the town of Chihuahua, northern Mexico. I grew up in a working-class family. My father sold electric mining cable and my mother taught at a public primary school. I have one younger brother. 
 
-I studied university in the USA, visited Japan during my time as a student. To this day, I can't explain what drew me here. Maybe it was my fascination with the films of Ozu and Kurosawa, the memories I made during my visit, or simply the bath culture. Here we are, many misadventures and defeats later, in Tokyo. 
+I studied university in the USA, and visited Japan during as an exchange student. To this day, it is difficult to explain what drew me here. Maybe it was my fascination with the films of Ozu and Kurosawa, the memories I made during my visit, or simply the sentō culture. But here we are, many misadventures and defeats later, in Tokyo. 
 

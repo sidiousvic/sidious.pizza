@@ -1,6 +1,6 @@
 :root {
   --bg: #fcf3e8;
-  --bg-header: #f4ebe1;
+  --bg-header: var(--bg);
   --text: #111111;
   --muted: #4a3f31;
   --border: #e1d2be;
@@ -18,7 +18,7 @@
 
 :root.theme-dark {
   --bg: #0d0d10;
-  --bg-header: #0e0e0e;
+  --bg-header: var(--bg);
   --text: #f1ede4;
   --muted: #b0abc2;
   --border: #2a2a32;
@@ -104,7 +104,7 @@ body,
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 6vw 16px;
+  padding: 15px 2vw 15px;
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
@@ -238,9 +238,17 @@ body,
 
 .site-title img,
 .site-logo {
-  height: 28px;
-  width: 28px;
+  height: 70px;
+  width: 70px;
   object-fit: contain;
+  mix-blend-mode: multiply;
+  animation: logo-float 5s ease-in-out infinite;
+}
+
+@keyframes logo-float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px) scale(1.02); }
+  100% { transform: translateY(0); }
 }
 
 .site-title a {
@@ -256,6 +264,34 @@ body,
 .site-title a:focus-visible {
   text-decoration: none;
   color: var(--text);
+}
+
+.title-part {
+  display: inline-block;
+}
+
+.title-part--goth {
+  font-family: "DotGothic16", "Victor Mono", "Times New Roman", serif;
+  letter-spacing: 0.02em;
+}
+
+.title-part--bold {
+  font-family: "Arial Black", "Instrument Serif", "Times New Roman", serif;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+.title-part--serif {
+  font-family: "Instrument Serif", "DotGothic16", "Times New Roman", serif;
+  letter-spacing: 0.01em;
+}
+
+.title-part--tm {
+  font-family: "Arial Black", "Instrument Serif", "Times New Roman", serif;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  vertical-align: super;
+  font-size: 0.65em;
 }
 
 .site-nav {
@@ -393,22 +429,6 @@ body,
   transform: scale(0.95);
 }
 
-.grain-canvas {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  mix-blend-mode: soft-light;
-  opacity: 0;
-  transition: opacity 3s ease-in-out;
-  z-index: 12;
-}
-
-.grain-on .grain-canvas {
-  opacity: 0.23;
-}
-
 .shell.vod-wide,
 .shell.book-shell,
 .shell.article-shell,
@@ -511,20 +531,21 @@ h6 {
   font-family: "Instrument Serif", "DotGothic16", "Times New Roman", serif;
   font-weight: 400;
   color: var(--text);
-  margin: 0 0 0.6em 0;
+  margin: 0 0 0.3em 0;
 }
 
 h1 {
-  font-size: 3.3rem;
+  font-size: 3.7rem;
   line-height: 1.1;
+  animation: ui-flicker 6s ease-in-out infinite;
 }
 
 h2 {
-  font-size: 2.4rem;
+  font-size: 2.8rem;
 }
 
 h3 {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
 }
 
 :lang(ja) h1,
@@ -539,10 +560,27 @@ p {
   margin: 0 0 1.1em;
 }
 
+blockquote {
+  font-size: 1.5rem;
+  margin: 1.2em 0;
+  padding: 0.6em 0;
+  font-family: "Instrument Serif", "DotGothic16", "Times New Roman", serif;
+  font-style: italic;
+  animation: ui-flicker 6s ease-in-out infinite;
+}
+
 a {
   color: var(--link);
   text-decoration: underline;
   text-underline-offset: 0.12em;
+}
+
+b,
+strong {
+  font-family: "Victor Mono", "DotGothic16", "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  animation: ui-flicker 6s ease-in-out infinite;
 }
 
 a:hover {
@@ -581,6 +619,7 @@ hr {
   font-style: italic;
   color: var(--muted);
   margin: -0.3em 0 0.8em;
+  animation: ui-flicker 6s ease-in-out infinite;
 }
 
 .date,
@@ -743,6 +782,10 @@ hr {
   font-size: 0.95rem;
   font-family: "Instrument Serif", "DotGothic16", "Times New Roman", serif;
   animation: ui-flicker 4s ease-in-out infinite;
+}
+
+.footer-brand {
+  font-family: "Instrument Serif", "DotGothic16", "Times New Roman", serif;
 }
 
 @keyframes ui-flicker {
