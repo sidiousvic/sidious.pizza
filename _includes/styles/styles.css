@@ -242,21 +242,13 @@ body,
   width: 70px;
   object-fit: contain;
   mix-blend-mode: multiply;
-  animation: logo-float 5s ease-in-out infinite;
   transform-origin: center;
-  transition: transform 0.5s ease-in-out, width 0.5s ease-in-out, height 0.5s ease-in-out;
-}
-
-@keyframes logo-float {
-  0% { transform: translateY(4px); }
-  50% { transform: translateY(-2px) scale(1.02); }
-  100% { transform: translateY(4px); }
+  transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
 }
 
 .site-title a:hover .site-logo,
 .site-title a:focus-visible .site-logo {
-  animation: none;
-  transform: scale(1.08);
+  transform: scale(1.04);
 }
 
 .site-title a {
@@ -465,8 +457,7 @@ body,
   width: 100%;
   max-width: 100%;
   object-fit: contain;
-  filter: grayscale(1) contrast(1.08) brightness(0.98);
-  mix-blend-mode: multiply;
+  filter: grayscale(0.95) contrast(1.05) brightness(1.05) hue-rotate(80deg) saturate(0.8);
   position: relative;
 }
 
@@ -483,10 +474,12 @@ body,
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: radial-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 0);
-  background-size: 3px 3px;
+  background-image:
+    radial-gradient(rgba(0, 0, 0, 0.08) 0.8px, transparent 0),
+    radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0);
+  background-size: 2px 2px, 3px 3px;
   mix-blend-mode: soft-light;
-  opacity: 0.45;
+  opacity: 0.5;
 }
 
 .about-intro {
@@ -714,15 +707,27 @@ hr {
 
 .lang-btn:hover,
 .lang-btn:focus-visible {
-  border-color: #ffffff;
+  border-color: #111111;
   background: var(--bg-header);
+}
+
+.theme-dark .lang-btn:hover,
+.theme-dark .lang-btn:focus-visible {
+  border-color: #f3f1e8;
 }
 
 .lang-btn.is-active,
 .lang-btn[aria-pressed="true"] {
-  background: #0a0a0a;
+  background: #111111;
   color: #ffffff;
-  border-color: #2a2a2a;
+  border-color: #111111;
+}
+
+.theme-dark .lang-btn.is-active,
+.theme-dark .lang-btn[aria-pressed="true"] {
+  background: #f3f1e8;
+  color: #111111;
+  border-color: #f3f1e8;
 }
 
 .lang-btn.is-disabled,

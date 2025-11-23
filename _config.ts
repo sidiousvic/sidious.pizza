@@ -47,8 +47,12 @@ site.preprocess([".md", ".eta"], (pages) => {
     if (typeof content !== "string") return [] as string[];
     const langs = new Set<string>();
     const regex = /<\s*(en|jp|es)(\s|>)/gi;
+    const dataAttrRegex = /data-lang\s*=\s*["']\s*(en|jp|es)\s*["']/gi;
     let match;
     while ((match = regex.exec(content)) !== null) {
+      langs.add(match[1].toLowerCase());
+    }
+    while ((match = dataAttrRegex.exec(content)) !== null) {
       langs.add(match[1].toLowerCase());
     }
     return Array.from(langs);

@@ -7,6 +7,7 @@ title: Vic Sidious
 <section class="hero">
   <p class="eyebrow">Primate of the species <em>mēhxican</em></p>
   <h1>Vic Sidious</h1>
+  <p class="lead"><p>
 </section>
 
 <% const posts = it.posts ?? (it.site && it.site.data && it.site.data.posts) ?? [];
