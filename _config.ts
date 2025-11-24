@@ -39,6 +39,17 @@ site.process([".md", ".eta"], optimizePics9000)
 let postsCache: unknown[] = [];
 
 site.preprocess([".md", ".eta"], (pages) => {
+  const includeDrafts = Deno.env.get("INCLUDE_DRAFTS") === "true";
+
+  // Drop drafts unless explicitly included
+  for (let i = pages.length - 1; i >= 0; i--) {
+    const page = pages[i];
+    const isDraft = page.data?.status === "draft" || page.data?.draft === true;
+    if (isDraft && !includeDrafts) {
+      pages.splice(i, 1);
+    }
+  }
+
   const serialTypes = new Set(["project", "book"]);
   const projects = pages.filter((page) => serialTypes.has(page.data.type as string) && page.data.project);
   const grouped = new Map();
