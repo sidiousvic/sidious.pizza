@@ -681,6 +681,9 @@ hr {
   display: inline-flex;
   align-items: center;
   gap: 12px;
+  padding: 0;
+  margin-top: -30px;
+  margin-right: auto;
 }
 
 .lang-switch {
@@ -700,15 +703,37 @@ hr {
   border: 1px solid transparent;
   background: transparent;
   color: var(--text);
-  font-family: "Instrument Serif", "DotGothic16", "Times New Roman", serif;
+  font-family: "Instrument Serif", "M PLUS 1 Code", monospace;
   font-size: 0.9rem;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 8px;
   transition: border-color 0.2s ease, background-color 0.2s ease;
-  min-width: 56px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 480px) {
+  .lang-actions {
+    gap: 4px;
+  }
+  .lang-btn {
+    min-width: 35px;
+    padding: 6px 8px;
+    font-size: 0.8rem;
+  }
+
+  .tts-toggle {
+    font-size: 0.8rem;
+  }
+
+  .article-controls {
+    gap: 8px;
+    padding: 0;
+  }
+  .title-part {
+    font-size: .9rem;
+  }
 }
 
 .lang-btn:hover,
@@ -749,18 +774,16 @@ hr {
 }
 
 .tts-stop {
-  width: 70px;
   padding: 8px 10px;
   border: 1px solid var(--border, #222);
   background: transparent;
   color: var(--text);
   font-size: 0.9rem;
   font-family: "Victor Mono", "M PLUS 1 Code", monospace;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
   opacity: 0;
   pointer-events: none;
-  transform: translateX(-6px);
   transition: opacity 0.2s ease, transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
 }
 
@@ -768,6 +791,12 @@ hr {
   opacity: 1;
   pointer-events: auto;
   transform: translateX(0);
+}
+
+.tts-stop.is-unavailable {
+  opacity: 1;
+  pointer-events: none;
+  animation: stop-unavailable 3.18s ease-out forwards;
 }
 
 .tts-stop:hover,
@@ -782,18 +811,25 @@ hr {
 }
 
 .tts-toggle {
-  width: 110px;
-  padding: 8px 10px;
-  border: 1px solid var(--border, #222);
+  filter: grayscale(1);
+  padding: 8px 12px;
+  border: 1px solid var(--border, #111);
   background: transparent;
   color: var(--text);
   font-size: 0.9rem;
   font-family: "Victor Mono", "M PLUS 1 Code", monospace;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
   transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
   position: relative;
   text-align: center;
+  opacity: 1;
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease, opacity 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 2px 2px 2px black;
 }
 
 .tts-toggle:hover,
@@ -823,6 +859,59 @@ hr {
   color: #111111;
 }
 
+.tts-toggle.is-error {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tts-wave {
+  width: 42px;
+  height: 18px;
+  stroke: var(--text);
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 32 16;
+  stroke-dashoffset: 0;
+}
+
+.tts-toggle[data-state="loading"] .tts-wave {
+  stroke: rgba(255, 255, 255, 0.9);
+  animation: wave-dash 0.9s ease-in-out infinite;
+}
+
+.tts-toggle[data-state="playing"] .tts-wave {
+  stroke: #00ffa9;
+  animation: wave-dash 0.9s ease-in-out infinite;
+}
+
+.tts-toggle[data-state="paused"] .tts-wave {
+  stroke: var(--text);
+}
+
+.tts-toggle[data-state="idle"] .tts-wave {
+  stroke: var(--text);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes wave-dash {
+  0% { stroke-dashoffset: 0; }
+  50% { stroke-dashoffset: -12; }
+  100% { stroke-dashoffset: -24; }
+}
+
 @keyframes tts-border-white {
   0% { border-color: rgba(255, 255, 255, 0.9); }
   50% { border-color: rgba(255, 255, 255, 0.25); }
@@ -838,12 +927,12 @@ hr {
 .toast-error {
   position: fixed;
   top: 12px;
-  right: 12px;
-  transform: translate(0, 0);
+  left: 50%;
+  transform: translate(-50%, 0);
   background: #b00020;
   color: #ffffff;
   padding: 10px 14px;
-  border-radius: 10px;
+  border-radius: 8px;
   z-index: 9999;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
   font-family: "Victor Mono", "M PLUS 1 Code", monospace;
@@ -854,19 +943,26 @@ hr {
 @keyframes toast-in {
   from {
     opacity: 0;
-    transform: translate(8px, -6px);
+    transform: translate(-50%, -10px);
   }
   to {
     opacity: 1;
-    transform: translate(0, 0);
+    transform: translate(-50%, 0);
   }
 }
 
 @keyframes toast-out {
   to {
     opacity: 0;
-    transform: translate(8px, -6px);
+    transform: translate(-50%, -10px);
   }
+}
+
+@keyframes stop-unavailable {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 .article-footer {

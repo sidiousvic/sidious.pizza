@@ -31,15 +31,10 @@ shellClass: article-shell
       <% if (it.date) { %>
         <p class="date"><%= it.date.toDateString() %></p>
       <% } %>
+    </div>
+  </header>
+
       <div class="article-controls">
-        <div class="tts-controls">
-          <button type="button" class="tts-stop" aria-label="Stop playback">
-            Stop
-          </button>
-          <button type="button" class="tts-toggle" aria-live="polite">
-            <span class="tts-label">Listen</span>
-          </button>
-        </div>
         <% if ((langList && langList.length) || it.lang) { %>
           <div class="lang-switch" data-default-lang="<%= langPref %>" data-langs="<%= (langList && langList.length ? langList : ['en']).join(',') %>">
             <% const langCodes = (langList && langList.length) ? langList : ["en"]; %>
@@ -50,9 +45,16 @@ shellClass: article-shell
             </div>
           </div>
         <% } %>
+        <div class="tts-controls">
+          <button type="button" class="tts-toggle" aria-live="polite" data-state="idle" aria-label="Listen">
+            🎙️ 
+            <span class="sr-only">Listen</span>
+          </button>
+          <button type="button" class="tts-stop" aria-label="Stop playback">
+            Stop
+          </button>
+        </div>
       </div>
-    </div>
-  </header>
 
   <%~ content || it.content || it.page?.content || it.page?.data?.content || "" %>
 

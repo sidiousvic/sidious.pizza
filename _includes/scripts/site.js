@@ -164,34 +164,27 @@ const TTS_ENDPOINT = (() => {
   return global || meta || "/api/tts";
 })();
 
-function showToastError(message) {
-  const existing = document.querySelector(".toast-error");
-  if (existing) existing.remove();
-
-  const toast = document.createElement("div");
-  toast.className = "toast-error";
-  toast.textContent = message;
-  document.body.appendChild(toast);
-
-  setTimeout(() => {
-    toast.style.opacity = "0";
-    toast.style.transform = "translate(8px, -8px)";
-    setTimeout(() => toast.remove(), 300);
-  }, 3000);
-}
-
 function initTTS(langApi) {
   const trigger = qs(".tts-toggle");
   const stopBtn = qs(".tts-stop");
-  const label = trigger?.querySelector(".tts-label");
   if (!trigger || !stopBtn) return;
 
-  const setLabel = (text) => {
-    if (label) label.textContent = text;
+  const setState = (state) => {
+    trigger.dataset.state = state;
   };
 
   const setStopVisible = (visible) => {
     stopBtn.classList.toggle("is-visible", visible);
+  };
+
+  const setStopText = (text) => {
+    stopBtn.textContent = text;
+  };
+
+  const clearStopUnavailable = () => {
+    stopBtn.classList.remove("is-unavailable");
+    setStopText("Stop");
+    setStopVisible(false);
   };
 
   let audio;
@@ -213,8 +206,8 @@ function initTTS(langApi) {
     controller = null;
     isPlaying = false;
     trigger.classList.remove("is-playing");
-    setStopVisible(false);
-    setLabel("Listen");
+    clearStopUnavailable();
+    setState("idle");
   };
 
   const getTextForCurrentLang = () => {
@@ -228,7 +221,8 @@ function initTTS(langApi) {
     isLoading = state;
     trigger.classList.toggle("is-loading", state);
     trigger.disabled = state;
-    if (state) setLabel("Loading");
+    if (state) setState("loading");
+    if (!state) trigger.classList.remove("is-error");
   };
 
   stopBtn.addEventListener("click", () => {
@@ -244,13 +238,13 @@ function initTTS(langApi) {
         audio.pause();
         isPlaying = false;
         trigger.classList.remove("is-playing");
-        setLabel("Paused");
+        setState("paused");
         setStopVisible(true);
       } else {
         await audio.play();
         isPlaying = true;
         trigger.classList.add("is-playing");
-        setLabel("Playing");
+        setState("playing");
         setStopVisible(true);
       }
       return;
@@ -258,13 +252,13 @@ function initTTS(langApi) {
 
     const { lang, text } = getTextForCurrentLang();
     if (!text) {
-      setLabel("Listen");
+      setState("idle");
       showToastError("No text to read");
       return;
     }
 
     setLoading(true);
-    setLabel("Loading");
+    setState("loading");
     controller = new AbortController();
 
     try {
@@ -293,20 +287,27 @@ function initTTS(langApi) {
       audio.addEventListener("ended", () => {
         isPlaying = false;
         trigger.classList.remove("is-playing");
-        setLabel("Listen");
+        setState("idle");
         setStopVisible(false);
       });
 
       await audio.play();
       isPlaying = true;
       trigger.classList.add("is-playing");
-      setLabel("Playing");
+      setState("playing");
       setStopVisible(true);
     } catch (err) {
       console.error(err);
       cleanupAudio();
-      setLabel("Listen");
-      showToastError(err?.message || "TTS failed");
+      setState("idle");
+      trigger.classList.add("is-error");
+      setStopText("Unavailable");
+      setStopVisible(false);
+      stopBtn.classList.add("is-unavailable");
+      setTimeout(() => {
+        stopBtn.classList.remove("is-unavailable");
+        clearStopUnavailable();
+      }, 3200);
     } finally {
       setLoading(false);
     }
