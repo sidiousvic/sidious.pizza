@@ -27,5 +27,4 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: sidiouspizza
-          import-map: "./deno.json"
-          entrypoint: _config.ts
+          entrypoint: server.ts
