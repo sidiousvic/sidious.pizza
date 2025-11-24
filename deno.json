@@ -8,6 +8,8 @@
     "lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
     "build": "deno task lume",
     "serve": "deno task lume -s",
+    "serve-ui": "deno task lume -s",
+    "serve-backend": "deno run -A server.ts --port=4000",
     "cms": "deno task lume cms"
   },
   "compilerOptions": {

@@ -31,16 +31,26 @@ shellClass: article-shell
       <% if (it.date) { %>
         <p class="date"><%= it.date.toDateString() %></p>
       <% } %>
-      <% if ((langList && langList.length) || it.lang) { %>
-        <div class="lang-switch" data-default-lang="<%= langPref %>" data-langs="<%= (langList && langList.length ? langList : ['en']).join(',') %>">
-          <% const langCodes = (langList && langList.length) ? langList : ["en"]; %>
-          <div class="lang-actions">
-            <% for (const code of langCodes) { %>
-              <button type="button" class="lang-btn" data-lang="<%= code %>" aria-pressed="false"><%= (code || "").toString().toUpperCase() %></button>
-            <% } %>
-          </div>
+      <div class="article-controls">
+        <div class="tts-controls">
+          <button type="button" class="tts-stop" aria-label="Stop playback">
+            Stop
+          </button>
+          <button type="button" class="tts-toggle" aria-live="polite">
+            <span class="tts-label">Listen</span>
+          </button>
         </div>
-      <% } %>
+        <% if ((langList && langList.length) || it.lang) { %>
+          <div class="lang-switch" data-default-lang="<%= langPref %>" data-langs="<%= (langList && langList.length ? langList : ['en']).join(',') %>">
+            <% const langCodes = (langList && langList.length) ? langList : ["en"]; %>
+            <div class="lang-actions">
+              <% for (const code of langCodes) { %>
+                <button type="button" class="lang-btn" data-lang="<%= code %>" aria-pressed="false"><%= (code || "").toString().toUpperCase() %></button>
+              <% } %>
+            </div>
+          </div>
+        <% } %>
+      </div>
     </div>
   </header>
 

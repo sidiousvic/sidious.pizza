@@ -7,3 +7,4 @@ _bin
 *-settings.json
 .claude_config
 .claude/
+.env

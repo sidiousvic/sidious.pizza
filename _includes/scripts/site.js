@@ -152,6 +152,165 @@ function initLangSwitch() {
   });
 
   setLang(current);
+
+  return {
+    getCurrent: () => current,
+  };
+}
+
+const TTS_ENDPOINT = (() => {
+  const meta = document.querySelector('meta[name="tts-endpoint"]')?.getAttribute("content");
+  const global = typeof window !== "undefined" ? window.TTS_ENDPOINT : null;
+  return global || meta || "/api/tts";
+})();
+
+function showToastError(message) {
+  const existing = document.querySelector(".toast-error");
+  if (existing) existing.remove();
+
+  const toast = document.createElement("div");
+  toast.className = "toast-error";
+  toast.textContent = message;
+  document.body.appendChild(toast);
+
+  setTimeout(() => {
+    toast.style.opacity = "0";
+    toast.style.transform = "translate(8px, -8px)";
+    setTimeout(() => toast.remove(), 300);
+  }, 3000);
+}
+
+function initTTS(langApi) {
+  const trigger = qs(".tts-toggle");
+  const stopBtn = qs(".tts-stop");
+  const label = trigger?.querySelector(".tts-label");
+  if (!trigger || !stopBtn) return;
+
+  const setLabel = (text) => {
+    if (label) label.textContent = text;
+  };
+
+  const setStopVisible = (visible) => {
+    stopBtn.classList.toggle("is-visible", visible);
+  };
+
+  let audio;
+  let audioUrl;
+  let controller;
+  let isPlaying = false;
+  let isLoading = false;
+
+  const cleanupAudio = () => {
+    if (audio) {
+      audio.pause();
+      audio = null;
+    }
+    if (audioUrl) {
+      URL.revokeObjectURL(audioUrl);
+      audioUrl = null;
+    }
+    if (controller) controller.abort();
+    controller = null;
+    isPlaying = false;
+    trigger.classList.remove("is-playing");
+    setStopVisible(false);
+    setLabel("Listen");
+  };
+
+  const getTextForCurrentLang = () => {
+    const lang = (langApi && langApi.getCurrent ? langApi.getCurrent() : null) || qs(".lang-switch")?.getAttribute("data-default-lang") || "en";
+    const target = document.querySelector(`section[data-lang="${lang}"]`) || document.querySelector(`[data-lang="${lang}"]`);
+    const text = (target?.innerText || document.querySelector(".article")?.innerText || "").trim();
+    return { lang, text };
+  };
+
+  const setLoading = (state) => {
+    isLoading = state;
+    trigger.classList.toggle("is-loading", state);
+    trigger.disabled = state;
+    if (state) setLabel("Loading");
+  };
+
+  stopBtn.addEventListener("click", () => {
+    cleanupAudio();
+  });
+
+  trigger.addEventListener("click", async () => {
+    if (isLoading) return;
+
+    // Toggle pause/play if audio already loaded
+    if (audio) {
+      if (isPlaying) {
+        audio.pause();
+        isPlaying = false;
+        trigger.classList.remove("is-playing");
+        setLabel("Paused");
+        setStopVisible(true);
+      } else {
+        await audio.play();
+        isPlaying = true;
+        trigger.classList.add("is-playing");
+        setLabel("Playing");
+        setStopVisible(true);
+      }
+      return;
+    }
+
+    const { lang, text } = getTextForCurrentLang();
+    if (!text) {
+      setLabel("Listen");
+      showToastError("No text to read");
+      return;
+    }
+
+    setLoading(true);
+    setLabel("Loading");
+    controller = new AbortController();
+
+    try {
+      const res = await fetch(TTS_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          input: text.slice(0, 4000),
+          lang,
+          format: "mp3",
+        }),
+        signal: controller.signal,
+      });
+
+      if (!res.ok) {
+        const errText = await res.text();
+        throw new Error(errText || `TTS failed (${res.status})`);
+      }
+
+      const buf = await res.arrayBuffer();
+      const blob = new Blob([buf], { type: "audio/mpeg" });
+      audioUrl = URL.createObjectURL(blob);
+      audio = new Audio(audioUrl);
+      audio.addEventListener("ended", () => {
+        isPlaying = false;
+        trigger.classList.remove("is-playing");
+        setLabel("Listen");
+        setStopVisible(false);
+      });
+
+      await audio.play();
+      isPlaying = true;
+      trigger.classList.add("is-playing");
+      setLabel("Playing");
+      setStopVisible(true);
+    } catch (err) {
+      console.error(err);
+      cleanupAudio();
+      setLabel("Listen");
+      showToastError(err?.message || "TTS failed");
+    } finally {
+      setLoading(false);
+    }
+  });
 }
 
 function init() {
@@ -159,7 +318,8 @@ function init() {
   initMenu();
   initActiveNav();
   initHeaderScroll();
-  initLangSwitch();
+  const langApi = initLangSwitch();
+  initTTS(langApi);
 }
 
 if (document.readyState === "loading") {

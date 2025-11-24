@@ -677,6 +677,12 @@ hr {
   flex-direction: row;
 }
 
+.article-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .lang-switch {
   display: flex;
   align-items: center;
@@ -734,6 +740,133 @@ hr {
 .lang-btn[disabled] {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.tts-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tts-stop {
+  width: 70px;
+  padding: 8px 10px;
+  border: 1px solid var(--border, #222);
+  background: transparent;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-family: "Victor Mono", "M PLUS 1 Code", monospace;
+  border-radius: 10px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.tts-stop.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+.tts-stop:hover,
+.tts-stop:focus-visible {
+  border-color: #111111;
+  background: var(--bg-header);
+}
+
+.theme-dark .tts-stop:hover,
+.theme-dark .tts-stop:focus-visible {
+  border-color: #f3f1e8;
+}
+
+.tts-toggle {
+  width: 110px;
+  padding: 8px 10px;
+  border: 1px solid var(--border, #222);
+  background: transparent;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-family: "Victor Mono", "M PLUS 1 Code", monospace;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  position: relative;
+  text-align: center;
+}
+
+.tts-toggle:hover,
+.tts-toggle:focus-visible {
+  border-color: #111111;
+  background: var(--bg-header);
+}
+
+.theme-dark .tts-toggle:hover,
+.theme-dark .tts-toggle:focus-visible {
+  border-color: #f3f1e8;
+}
+
+.tts-toggle.is-loading {
+  cursor: progress;
+  animation: tts-border-white 1.2s ease-in-out infinite;
+}
+
+.tts-toggle.is-playing {
+  background: #111111;
+  color: #ffffff;
+  animation: tts-border-green 1.2s ease-in-out infinite;
+}
+
+.theme-dark .tts-toggle.is-playing {
+  background: #f3f1e8;
+  color: #111111;
+}
+
+@keyframes tts-border-white {
+  0% { border-color: rgba(255, 255, 255, 0.9); }
+  50% { border-color: rgba(255, 255, 255, 0.25); }
+  100% { border-color: rgba(255, 255, 255, 0.9); }
+}
+
+@keyframes tts-border-green {
+  0% { border-color: rgba(255, 255, 255, 0.9); }
+  50% { border-color: rgba(255, 255, 255, 0.25); }
+  100% { border-color: rgba(255, 255, 255, 0.9); }
+}
+
+.toast-error {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  transform: translate(0, 0);
+  background: #b00020;
+  color: #ffffff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  z-index: 9999;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+  font-family: "Victor Mono", "M PLUS 1 Code", monospace;
+  opacity: 0;
+  animation: toast-in 0.18s ease-out forwards, toast-out 0.2s ease-in forwards 3s;
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translate(8px, -6px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes toast-out {
+  to {
+    opacity: 0;
+    transform: translate(8px, -6px);
+  }
 }
 
 .article-footer {
