@@ -9,6 +9,7 @@ project: shodo
 tags:
 languages: [en, jp, es]
 tts: true
+featured: true
 ---
 
 ![](/images/desert-mountains.png)

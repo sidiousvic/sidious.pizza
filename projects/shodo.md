@@ -9,6 +9,7 @@ date: 2025-03-01
 languages: [en]
 logo: /images/shodo.webp
 templateEngine: ["eta"]
+featured: true
 ---
 
 <p>

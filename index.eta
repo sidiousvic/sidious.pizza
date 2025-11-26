@@ -5,14 +5,14 @@ title: Vic Sidious
 ---
 
 <% const posts = it.posts ?? (it.site && it.site.data && it.site.data.posts) ?? [];
-  const typed = posts.filter((item) => ["file", "project", "book"].includes(item.type));
-  const recent = typed
+  const typed = posts.filter((item) => ["file", "project", "book", "haiku"].includes(item.type));
+  const pool = typed.filter((item) => item.featured === true);
+  const recent = pool.length ? pool : typed;
+  const normalized = recent
     .slice()
     .sort((a, b) => (new Date(b.date).getTime() || 0) - (new Date(a.date).getTime() || 0))
-    .slice(0, 12);
-  const normalized = recent.map((post) => {
-    return { ...post };
-  });
+    .slice(0, 12)
+    .map((post) => ({ ...post }));
   const desktopItems = [
     { title: "About Me", url: "/about", logo: "/images/vic-clays.gif", isAbout: true },
     { title: "Meta", url: "/meta", logo: "/images/pizzadrop.gif", isAbout: true },

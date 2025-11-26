@@ -42,24 +42,12 @@ function initTheme() {
       applyTheme(mode, themeToggle);
     });
   }
-}
 
-function initMenu() {
   document.addEventListener("keydown", (e) => {
     if (e.key && e.key.toLowerCase() === "t") {
       const next = document.documentElement.classList.contains("theme-dark") ? "light" : "dark";
       window.localStorage?.setItem(THEME_KEY, next);
-      applyTheme(next, qs(".theme-toggle"));
-    }
-  });
-}
-
-function initActiveNav() {
-  qsa(".menu-list a").forEach((link) => {
-    const href = link.getAttribute("href") || "";
-    if (href !== "/" && window.location.pathname.startsWith(href)) {
-      link.classList.add("is-active");
-      link.scrollIntoView({ inline: "center", behavior: "smooth", block: "nearest" });
+      applyTheme(next, themeToggle);
     }
   });
 }
@@ -416,8 +404,6 @@ function initTTS(langApi) {
 
 function init() {
   initTheme();
-  initMenu();
-  initActiveNav();
   initHeaderScroll();
   initClock();
   initDesktopLayout();

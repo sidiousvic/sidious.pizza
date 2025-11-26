@@ -266,6 +266,52 @@ body,
   text-decoration: none;
 }
 
+.haiku-shell .site-header,
+.haiku-shell .site-footer {
+  display: none;
+}
+
+.haiku-shell .shell {
+  max-width: none;
+  padding: 0;
+}
+
+.haiku-canvas {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 5vw;
+}
+
+.haiku-text {
+  writing-mode: vertical-rl;
+  font-family: "DotGothic16", "Instrument Serif", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+  text-align: center;
+  display: flex;
+  gap: 18px;
+}
+
+.haiku-line {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 720px) {
+  .haiku-shell .site-header,
+  .haiku-shell .site-footer {
+    display: none;
+  }
+
+  .haiku-text {
+    font-size: clamp(2.2rem, 10vw, 2.8rem);
+  }
+}
+
 .site-nav a {
   color: var(--text);
   text-decoration: none;
@@ -298,17 +344,6 @@ body,
   justify-content: center;
   font-family: "DotGothic16", "Victor Mono", monospace;
   text-decoration: none;
-}
-
-@media (max-width: 1199px) {
-  .site-actions .menu-trigger {
-    display: inline-flex;
-  }
-
-  .site-nav.full-nav {
-    display: flex;
-    flex-wrap: wrap;
-  }
 }
 
 @media (max-width: 720px) {
@@ -364,13 +399,6 @@ img {
   transform: scaleX(-1);
 }
 
-.menu-trigger img {
-  width: 30px;
-  height: 30px;
-  display: block;
-  object-fit: contain;
-}
-
 .theme-toggle:hover,
 .theme-toggle:focus-visible {
   transform: scale(1.02);
@@ -393,13 +421,18 @@ img {
   border: 1px solid var(--border);
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
   flex-shrink: 0;
+  animation: floating 6s ease-in-out infinite;
 }
 
 .about-portrait img {
   width: 100%;
   display: block;
+}
+
+@keyframes floating {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }
 
 .article img,

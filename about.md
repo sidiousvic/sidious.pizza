@@ -7,9 +7,9 @@ shellClass: vod-wide
 
 <p class="eyebrow">Primate of the species mēhxican</p>
 
-# Vic
+# Vic Sidious
 
-![](/images/vic-mural.png)
+<img style="width: 400px; animation: floating 3s ease-in-out infinite;" src="/images/vic-mural.png">
 
 <div class="about-intro">
   <table class="about-facts">
@@ -35,7 +35,7 @@ shellClass: vod-wide
     </tr>
     <tr>
       <th>Aliases</th>
-      <td>Victor, Tōru, @sidiousvic</td>
+      <td>Victor, Tōru, @sidiousvic, Don Vic</td>
     </tr>
   </table>
 </div>

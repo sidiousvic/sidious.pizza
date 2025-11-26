@@ -1,0 +1,24 @@
+<% layout("base.eta", { shellClass: "haiku-shell" }); %>
+<% const rawLines = it.haiku_lines || it.haiku || it.lines || it.content; %>
+<% const lines = Array.isArray(rawLines)
+  ? rawLines
+  : (rawLines || "")
+      .toString()
+      .split(/\r?\n+/)
+      .map((l) => l.trim())
+      .filter(Boolean); %>
+<% const rendered = lines.slice(0, 3); %>
+
+<div class="haiku-canvas" aria-label="Haiku">
+  <% if (rendered.length) { %>
+    <div class="haiku-text">
+      <% rendered.forEach((line) => { %>
+        <span class="haiku-line"><%= line %></span>
+      <% }); %>
+    </div>
+  <% } else { %>
+    <div class="haiku-text">
+      <span class="haiku-line">・・</span>
+    </div>
+  <% } %>
+</div>

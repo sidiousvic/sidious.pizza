@@ -16,13 +16,13 @@
     <div class="page">
       <header class="site-header">
         <div class="site-actions">
-          <a class="site-title-label" href="/" aria-label="Home"> ⟁ SIDIOUSWARE<sup> ™</sup></a>
+          <a class="site-title-label" href="/" aria-label="Home">🍕 SIDIOUSWARE<sup> ™</sup></a>
           <nav class="site-nav full-nav">
             <a href="/posts">Archive</a>
-            <a href="/files" class="hide-mobile">Files</a>
             <a href="/projects">Projects</a>
             <a href="/about">About</a>
             <a href="/meta" class="hide-mobile">Meta</a>
+            <a href="/posts">Archive</a>
             <a href="#" class="theme-toggle theme-toggle--text" aria-pressed="false" aria-label="Toggle theme">
               <span class="theme-toggle__label" data-theme-label>Light</span>
             </a>
