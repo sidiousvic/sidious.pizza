@@ -5,9 +5,12 @@ title: Vic Sidious
 ---
 
 <section class="hero">
-  <p class="eyebrow">Primate of the species <em>mēhxican</em></p>
-  <h1>Vic Sidious</h1>
-  <p class="lead"><p>
+  <p class="eyebrow">VIC'S WWW OF DOOM</p>
+  <h1 class="hero-title">
+    <img src="/images/vic-clays.gif" alt="Vic Clays logo" class="hero-title-logo" decoding="async">
+    <span>SIDIOUS.PIZZA</span>
+  </h1>
+  <p class="lead">My name is Vic. Welcome to my website.<p>
 </section>
 
 <% const posts = it.posts ?? (it.site && it.site.data && it.site.data.posts) ?? [];

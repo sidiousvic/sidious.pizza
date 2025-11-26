@@ -7,6 +7,39 @@ const isMobile = Boolean(mediaMobile && mediaMobile.matches);
 const qs = (sel) => document.querySelector(sel);
 const qsa = (sel) => Array.from(document.querySelectorAll(sel));
 
+function initLogoShuffle() {
+  const siteTitle = qs(".site-title");
+  if (!siteTitle) return;
+
+  const isHome = siteTitle.getAttribute("data-is-home") === "true" || window.location.pathname === "/";
+  if (isHome) return;
+
+  const poolAttr = siteTitle.getAttribute("data-logo-pool");
+  const logoEls = qsa(".site-title .site-logo");
+  if (!logoEls.length) return;
+
+  let pool = logoEls.map((img) => img.getAttribute("src")).filter(Boolean);
+
+  if (poolAttr) {
+    try {
+      const parsed = JSON.parse(poolAttr);
+      if (Array.isArray(parsed) && parsed.length) pool = parsed;
+    } catch (err) {
+      console.error("Logo pool parse failed", err);
+    }
+  }
+
+  if (!pool.length) return;
+
+  const choice = pool[Math.floor(Math.random() * pool.length)];
+  logoEls[0].setAttribute("src", choice);
+  logoEls.slice(1).forEach((img) => {
+    img.setAttribute("aria-hidden", "true");
+    img.setAttribute("tabindex", "-1");
+    img.style.display = "none";
+  });
+}
+
 function applyTheme(mode, toggle) {
   const dark = mode === "dark";
   document.documentElement.classList.toggle("theme-dark", dark);
@@ -317,6 +350,7 @@ function initTTS(langApi) {
 function init() {
   initTheme();
   initMenu();
+  initLogoShuffle();
   initActiveNav();
   initHeaderScroll();
   const langApi = initLangSwitch();

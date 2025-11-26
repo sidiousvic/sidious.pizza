@@ -1,13 +1,15 @@
 ---
 layout: base.eta
-title: Vic
+title: About Myself
 type: page
 shellClass: vod-wide
 ---
 
-<p class="eyebrow">About myself</p>
+<p class="eyebrow">Primate of the species mēhxican</p>
 
 # Vic
+
+![](/images/vic-mural.png)
 
 <div class="about-intro">
   <table class="about-facts">
@@ -25,15 +27,15 @@ shellClass: vod-wide
     </tr>
     <tr>
       <th>Work</th>
-      <td>Engineer at Toyota</td>
+      <td>Engineer Mn at Toyota</td>
     </tr>
     <tr>
       <th>Likes</th>
-      <td>Guitar, burritos, engines, fights, brews</td>
+      <td>Guitar, burritos, engines, football, brews</td>
     </tr>
     <tr>
       <th>Aliases</th>
-      <td>Victor, Tōru, <strong>@sidiousvic</strong></td>
+      <td>Victor, Tōru, @sidiousvic</td>
     </tr>
   </table>
 </div>
@@ -62,7 +64,8 @@ shellClass: vod-wide
 
 ## Early Life
 
-My name is Victor Rene Molina Rodriguez, and I was born in the town of Chihuahua, northern Mexico. I grew up in a working-class family. My father sold electric mining cable and my mother taught at a public primary school. I have one younger brother. 
+Born _Victor Rene Molina Rodriguez_, in the town of Santa Isabel, Chihuahua, in northern Mexico. Grew up in a working-class family, his father sold electric mining cable and mother taught at a public primary school. He has one younger brother. 
 
-I studied university in the USA, and visited Japan during as an exchange student. To this day, it is difficult to explain what drew me here. Maybe it was my fascination with the films of Ozu and Kurosawa, the memories I made during my visit, or simply the sentō culture. But here we are, many misadventures and defeats later, in Tokyo. 
+## Work
 
+Engineer at Toyota in Tokyo, where he leads a small group of fellow primates building software for electric systems.

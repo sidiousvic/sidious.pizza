@@ -15,11 +15,15 @@
         <% const currentTitle = it.page?.data?.title || it.title || "VIC SIDIOUS"; %>
         <% const currentUrl = it.page?.data?.url || it.url || ""; %>
         <% const isHome = currentUrl === "/" || currentUrl === ""; %>
+        <% const logoPool = ["/images/vic-mtv-clay-logo.png", "/images/vic-clays.gif", "/images/pizzadrop.gif"]; %>
+        <% const logosToRender = isHome ? ['/images/vic-mtv-clay-logo.png'] : [logoPool[Math.floor(Math.random() * logoPool.length)]]; %>
         <% const titleWords = (currentTitle || "").split(/\s+/).filter(Boolean); %>
         <% const fontCycle = ["title-part--goth", "title-part--bold", "title-part--serif"]; %>
-        <div class="site-title">
+        <div class="site-title" data-logo-pool="<%= JSON.stringify(logoPool) %>" data-is-home="<%= isHome ? "true" : "false" %>">
           <a href="/" aria-label="Vic Sidious home">
-            <img src="/images/vic-mtv-clay-logo.png" alt="Site logo" loading="eager" decoding="async" class="site-logo">
+            <% logosToRender.forEach((logoSrc) => { %>
+              <img src="<%= logoSrc %>" alt="Site logo" loading="eager" decoding="async" class="site-logo">
+            <% }); %>
           </a>
           <a href="/">
             <% if (isHome) { %>
@@ -40,7 +44,7 @@
             <a href="/meta">Meta</a>
           </nav>
           <a href="#" class="menu-trigger" aria-controls="menu-overlay" aria-expanded="false" aria-label="Open menu">
-            <img src="/images/menu-pine.png" alt="" width="22" height="22" aria-hidden="true" decoding="async">
+            <img src="/images/pizzadrop.gif" alt="" width="22" height="22" aria-hidden="true" decoding="async">
           </a>
           <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Toggle theme">
             <img src="/images/menu-eyes.gif" alt="" width="22" height="22" aria-hidden="true" decoding="async">
