@@ -187,61 +187,6 @@ body,
   }
 }
 
-.site-title {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
-  animation: ui-flicker 6s ease-in-out infinite;
-  text-align: left;
-  grid-column: 1;
-}
-
-.site-title img,
-.site-logo {
-  height: 30px;
-  width: 30px;
-  object-fit: contain;
-  transform-origin: center;
-  transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
-}
-
-.site-logo[src*="vic-mtv-clay-logo"] {
-  animation: mtv-hue-spin 5s linear infinite;
-}
-
-@keyframes mtv-hue-spin {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  50% {
-    filter: hue-rotate(-10deg);
-  }
-  50% {
-    filter: hue-rotate(0deg);
-  }
-}
-
-.site-title a:hover .site-logo,
-.site-title a:focus-visible .site-logo {
-  transform: scale(1.04);
-}
-
-.site-title a {
-  font-family: "Instrument Serif", "DotGothic16", "Times New Roman", serif;
-  font-size: 1.4rem;
-  letter-spacing: 0.02em;
-  text-decoration: none;
-  color: var(--text);
-  white-space: nowrap;
-}
-
-.site-title a:hover,
-.site-title a:focus-visible {
-  text-decoration: none;
-  color: var(--text);
-}
-
 .title-part {
   display: inline-block;
 }
