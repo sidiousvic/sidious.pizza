@@ -1,11 +1,14 @@
 ---
 layout: article.eta
-type: observation
+type: file
 title: The Obstacle is the Way
 subtitle: 障害こそが道だ
 date: 2024-11-20
+logo: /images/organs.png
+project: shodo
 tags:
 languages: [en, jp, es]
+tts: true
 ---
 
 ![](/images/desert-mountains.png)

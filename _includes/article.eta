@@ -8,23 +8,24 @@ shellClass: article-shell
   <% const navNext = it.next ?? it.page?.data?.next ?? null; %>
   <% const navProject = it.project ?? it.page?.data?.project ?? null; %>
   <% const navType = it.type ?? it.page?.data?.type ?? null; %>
-  <% const isObservation = navType === "observation"; %>
+  <% const isFile = navType === "file"; %>
   <% const langsRaw = it.languages || it.page?.data?.languages || []; %>
   <% const langList = Array.isArray(langsRaw) ? langsRaw : (typeof langsRaw === "string" ? langsRaw.split(",").map((l) => l.trim()).filter(Boolean) : []); %>
   <% const langPref = it.lang || it.page?.data?.lang || langList[0] || "en"; %>
+  <% const ttsEnabled = it.tts === true || it.page?.data?.tts === true ? "true" : "false"; %>
 
   <header class="article-head">
     <% const navLabel = navType === "project"
-      ? "A serialized project chapter"
+      ? "PROJECT"
       : navType === "book"
       ? (it.book_title || it.project_title || it.book || it.project || "Book")
       : ""; %>
     <% if (navLabel) { %><p class="eyebrow"><%= navLabel %></p><% } %>
-    <% if (isObservation && it.subtitle) { %>
+    <% if (isFile && it.subtitle) { %>
       <p class="eyebrow"><%= it.subtitle %></p>
     <% } %>
     <h1><%= it.title %></h1>
-    <% if (!isObservation && it.subtitle) { %>
+    <% if (!isFile && it.subtitle) { %>
       <p class="subtitle"><%= it.subtitle %></p>
     <% } %>
     <div class="article-meta">
@@ -45,7 +46,7 @@ shellClass: article-shell
             </div>
           </div>
         <% } %>
-        <div class="tts-controls">
+        <div class="tts-controls" data-tts-enabled="<%= ttsEnabled %>">
           <button type="button" class="tts-toggle" aria-live="polite" data-state="idle" aria-label="Listen">
             🎙️ 
             <span class="sr-only">Listen</span>

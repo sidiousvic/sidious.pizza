@@ -19,7 +19,7 @@ title: Projects
       .filter((item) => item.project === key)
       .sort((a, b) => (a.order || 0) - (b.order || 0));
     const first = pages[0];
-    const displayTitle = (first.project_title || key)
+    const displayTitle = (first.title || key)
       .split("-")
       .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
       .join(" ");
@@ -28,7 +28,7 @@ title: Projects
     const firstType = (first.navType || first.type || "project").toUpperCase();
     %>
     <li>
-      <a href="/<%= key %>/">
+      <a href="<%= first.url %>">
         <div class="post-title"><%= displayTitle %></div>
       </a>
       <div class="post-meta">

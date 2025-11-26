@@ -8,66 +8,40 @@
     <link rel="preload" href="/fonts/Victor_Mono/static/VictorMono-Regular.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="preload" href="/fonts/Instrument_Serif/InstrumentSerif-Regular.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="preload" href="/fonts/DotGothic16/DotGothic16-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@400;600&display=swap">
+    <% const currentTitle = it.page?.data?.title || it.title || "VIC SIDIOUS"; %>
+    <% const currentUrl = it.page?.data?.url || it.url || ""; %>
+    <% const isHome = currentUrl === "/" || currentUrl === ""; %>
+    <% const customLogo = it.page?.data?.logo || it.logo || null; %>
+    <% const defaultLogo = "/images/vic-mtv-clay-logo.png"; %>
+    <% const logosToRender = [customLogo || defaultLogo]; %>
   </head>
-  <body>
+  <body class="<%= isHome ? "is-home" : "" %>">
     <div class="page">
       <header class="site-header">
-        <% const currentTitle = it.page?.data?.title || it.title || "VIC SIDIOUS"; %>
-        <% const currentUrl = it.page?.data?.url || it.url || ""; %>
-        <% const isHome = currentUrl === "/" || currentUrl === ""; %>
-        <% const logoPool = ["/images/vic-mtv-clay-logo.png", "/images/vic-clays.gif", "/images/pizzadrop.gif"]; %>
-        <% const logosToRender = isHome ? ['/images/vic-mtv-clay-logo.png'] : [logoPool[Math.floor(Math.random() * logoPool.length)]]; %>
-        <% const titleWords = (currentTitle || "").split(/\s+/).filter(Boolean); %>
-        <% const fontCycle = ["title-part--goth", "title-part--bold", "title-part--serif"]; %>
-        <div class="site-title" data-logo-pool="<%= JSON.stringify(logoPool) %>" data-is-home="<%= isHome ? "true" : "false" %>">
-          <a href="/" aria-label="Vic Sidious home">
-            <% logosToRender.forEach((logoSrc) => { %>
-              <img src="<%= logoSrc %>" alt="Site logo" loading="eager" decoding="async" class="site-logo">
-            <% }); %>
-          </a>
-          <a href="/">
-            <% if (isHome) { %>
-            <% } else { %>
-              <% titleWords.forEach((word, idx) => { %>
-                <span class="title-part <%= fontCycle[idx % fontCycle.length] %>"><%= word %></span>
-              <% }); %>
-              <sup class="title-part title-part--tm">™️</sup>
-            <% } %>
-          </a>
-        </div>
         <div class="site-actions">
+          <a class="site-title-label" href="/" aria-label="Home"> ⟁ SIDIOUSWARE<sup> ™</sup></a>
           <nav class="site-nav full-nav">
             <a href="/posts">Archive</a>
-            <a href="/observations">Observations</a>
+            <a href="/files" class="hide-mobile">Files</a>
             <a href="/projects">Projects</a>
             <a href="/about">About</a>
-            <a href="/meta">Meta</a>
+            <a href="/meta" class="hide-mobile">Meta</a>
+            <a href="#" class="theme-toggle theme-toggle--text" aria-pressed="false" aria-label="Toggle theme">
+              <span class="theme-toggle__label" data-theme-label>Light</span>
+            </a>
           </nav>
-          <a href="#" class="menu-trigger" aria-controls="menu-overlay" aria-expanded="false" aria-label="Open menu">
-            <img src="/images/pizzadrop.gif" alt="" width="22" height="22" aria-hidden="true" decoding="async">
-          </a>
-          <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Toggle theme">
-            <img src="/images/menu-eyes.gif" alt="" width="22" height="22" aria-hidden="true" decoding="async">
-          </button>
+        </div>
+        <div class="header-clock" aria-label="Current time in Chihuahua, Mexico">
+          <span data-clock>--:--</span>
         </div>
       </header>
       <main class="shell <%= (it.shellClass || it.page?.data?.shellClass || "").trim() %>">
         <%~ content %>
       </main>
       <footer class="site-footer" aria-label="Site footer">
-        <span class="footer-meta"><strong class="footer-brand">© SIDIOUSWARE 2026 </strong>障害こそが道だ</span>
+        <span class="footer-meta"><strong class="footer-brand">© VIC SIDIOUS 2026 </strong>障害こそが道だ</span>
       </footer>
-    </div>
-    <div id="menu-overlay" class="menu-overlay" aria-hidden="true">
-      <div class="menu-sheet">
-        <nav class="menu-list" aria-label="Overlay navigation">
-          <a href="/posts">Archive</a>
-          <a href="/observations">Observations</a>
-          <a href="/projects">Projects</a>
-          <a href="/about">About</a>
-          <a href="/meta">Meta</a>
-        </nav>
-      </div>
     </div>
     <script type="module" src="/scripts/site.js?v=2"></script>
   </body>

@@ -104,7 +104,7 @@ site.preprocess([".md", ".eta"], (pages) => {
   }
 
   // Build the posts collection from page front matter so we don't maintain _data/posts.json manually.
-  const postTypes = new Set(["observation", "project", "book"]);
+  const postTypes = new Set(["file", "project", "book"]);
   const posts = pages
     .filter((page) => postTypes.has(page.data.type as string))
     .map((page) => {
@@ -122,6 +122,7 @@ site.preprocess([".md", ".eta"], (pages) => {
         url: page.data.url,
         date,
         summary: page.data.summary,
+        logo: page.data.logo,
         tags: Array.isArray(page.data.tags) ? page.data.tags : undefined,
       };
     })

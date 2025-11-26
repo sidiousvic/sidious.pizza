@@ -27,7 +27,7 @@ shellClass: vod-wide
     </tr>
     <tr>
       <th>Work</th>
-      <td>Engineer Mn at Toyota</td>
+      <td>Engineer at Toyota</td>
     </tr>
     <tr>
       <th>Likes</th>

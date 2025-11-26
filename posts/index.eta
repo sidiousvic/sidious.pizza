@@ -10,7 +10,7 @@ title: Archive
 
 <ul class="post-list">
   <% const posts = (it.posts ?? (it.site && it.site.data && it.site.data.posts) ?? [])
-    .filter((item) => ["observation", "project", "book"].includes(item.type))
+    .filter((item) => ["file", "project", "book"].includes(item.type))
     .slice()
     .sort((a, b) => (new Date(b.date).getTime() || 0) - (new Date(a.date).getTime() || 0));
   %>
@@ -26,7 +26,7 @@ title: Archive
             ? projectLabel || "Book"
             : post.type === "project"
             ? projectLabel || "Project"
-            : "Observation" %>
+            : "File" %>
         </span>
         <% if (post.date) { %><span><%= new Date(post.date).toDateString() %></span><% } %>
       </div>

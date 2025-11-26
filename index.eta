@@ -4,44 +4,46 @@ shellClass: home-shell
 title: Vic Sidious
 ---
 
-<section class="hero">
-  <p class="eyebrow">VIC'S WWW OF DOOM</p>
-  <h1 class="hero-title">
-    <img src="/images/vic-clays.gif" alt="Vic Clays logo" class="hero-title-logo" decoding="async">
-    <span>SIDIOUS.PIZZA</span>
-  </h1>
-  <p class="lead">My name is Vic. Welcome to my website.<p>
-</section>
-
 <% const posts = it.posts ?? (it.site && it.site.data && it.site.data.posts) ?? [];
-  const typed = posts.filter((item) => ["observation", "project", "book"].includes(item.type));
+  const typed = posts.filter((item) => ["file", "project", "book"].includes(item.type));
   const recent = typed
     .slice()
     .sort((a, b) => (new Date(b.date).getTime() || 0) - (new Date(a.date).getTime() || 0))
-    .slice(0, 5);
+    .slice(0, 12);
+  const normalized = recent.map((post) => {
+    return { ...post };
+  });
+  const desktopItems = [
+    { title: "About Me", url: "/about", logo: "/images/vic-clays.gif", isAbout: true },
+    { title: "Meta", url: "/meta", logo: "/images/pizzadrop.gif", isAbout: true },
+    ...normalized.map((post) => ({
+      title: post.title,
+      url: post.url,
+      logo: post.logo,
+      isAbout: false,
+      isMeta: false
+    })),
+  ];
 %>
-<section>
-  <div class="post-meta" style="margin-bottom: 0.6em;">
-    <span class="meta-label">Latest</span>
-  </div>
-  <ul class="post-list">
-    <% recent.forEach((post) => { %>
-      <li>
-        <a href="<%= post.url %>">
-          <div class="post-title"><%= post.title %></div>
-        </a>
-      <div class="post-meta">
-        <% const projectLabel = post.project ? post.project.split("-").map((p) => p.charAt(0).toUpperCase() + p.slice(1)).join(" ") : ""; %>
-        <span class="meta-label">
-          <%= post.type === "book"
-            ? projectLabel || "Book"
-            : post.type === "project"
-            ? projectLabel || "Project"
-            : "Observation" %>
+
+<section class="desktop-area desktop-area--home" aria-label="Desktop">
+  <div class="desktop-icons" aria-label="Latest items">
+    <% desktopItems.forEach((item) => { %>
+      <% const iconSrc = item.logo || "/images/file.png"; %>
+      <a class="desktop-icon <%= item.isAbout ? 'desktop-icon--about' : '' %>" data-about="<%= item.isAbout ? 'true' : 'false' %>" href="<%= item.url %>">
+        <span class="desktop-icon__thumb">
+          <img src="<%= iconSrc %>" alt="" loading="lazy" decoding="async">
         </span>
-        <% if (post.date) { %><span><%= new Date(post.date).toDateString() %></span><% } %>
-      </div>
-    </li>
-  <% }); %>
+        <span class="desktop-icon__label"><%= item.title %></span>
+      </a>
+    <% }); %>
+  </div>
+
+  <ul class="mobile-home-list" aria-label="Latest items (mobile)">
+    <% desktopItems.forEach((item) => { %>
+      <li>
+        <a href="<%= item.url %>"><%= item.title %></a>
+      </li>
+    <% }); %>
   </ul>
 </section>

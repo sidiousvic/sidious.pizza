@@ -7,45 +7,14 @@ const isMobile = Boolean(mediaMobile && mediaMobile.matches);
 const qs = (sel) => document.querySelector(sel);
 const qsa = (sel) => Array.from(document.querySelectorAll(sel));
 
-function initLogoShuffle() {
-  const siteTitle = qs(".site-title");
-  if (!siteTitle) return;
-
-  const isHome = siteTitle.getAttribute("data-is-home") === "true" || window.location.pathname === "/";
-  if (isHome) return;
-
-  const poolAttr = siteTitle.getAttribute("data-logo-pool");
-  const logoEls = qsa(".site-title .site-logo");
-  if (!logoEls.length) return;
-
-  let pool = logoEls.map((img) => img.getAttribute("src")).filter(Boolean);
-
-  if (poolAttr) {
-    try {
-      const parsed = JSON.parse(poolAttr);
-      if (Array.isArray(parsed) && parsed.length) pool = parsed;
-    } catch (err) {
-      console.error("Logo pool parse failed", err);
-    }
-  }
-
-  if (!pool.length) return;
-
-  const choice = pool[Math.floor(Math.random() * pool.length)];
-  logoEls[0].setAttribute("src", choice);
-  logoEls.slice(1).forEach((img) => {
-    img.setAttribute("aria-hidden", "true");
-    img.setAttribute("tabindex", "-1");
-    img.style.display = "none";
-  });
-}
-
 function applyTheme(mode, toggle) {
   const dark = mode === "dark";
   document.documentElement.classList.toggle("theme-dark", dark);
   if (toggle) {
     toggle.setAttribute("aria-pressed", String(dark));
     toggle.querySelector("svg")?.setAttribute("data-mode", dark ? "dark" : "light");
+    const label = toggle.querySelector("[data-theme-label]");
+    if (label) label.textContent = dark ? "Dark" : "Light";
   }
 }
 
@@ -53,11 +22,14 @@ function initTheme() {
   const themeToggle = qs(".theme-toggle");
   const stored = window.localStorage?.getItem(THEME_KEY);
   const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)");
-  let mode = stored || (prefersDark && prefersDark.matches ? "dark" : "light");
+  let mode = stored || "dark";
 
   applyTheme(mode, themeToggle);
 
-  themeToggle?.addEventListener("click", () => {
+  themeToggle?.addEventListener("click", (e) => {
+    if (themeToggle.tagName && themeToggle.tagName.toLowerCase() === "a") {
+      e.preventDefault();
+    }
     mode = mode === "dark" ? "light" : "dark";
     window.localStorage?.setItem(THEME_KEY, mode);
     applyTheme(mode, themeToggle);
@@ -73,36 +45,12 @@ function initTheme() {
 }
 
 function initMenu() {
-  const menuOverlay = document.getElementById("menu-overlay");
-  const menuTrigger = qs(".menu-trigger");
-
-  const toggleMenu = (force) => {
-    if (!menuOverlay) return;
-    const open = typeof force === "boolean" ? force : !menuOverlay.classList.contains("is-open");
-    menuOverlay.classList.toggle("is-open", open);
-    menuOverlay.setAttribute("aria-hidden", String(!open));
-    document.body.classList.toggle("menu-open", open);
-    if (menuTrigger) menuTrigger.setAttribute("aria-expanded", String(open));
-  };
-
-  menuTrigger?.addEventListener("click", (e) => {
-    e.preventDefault();
-    toggleMenu();
-  });
-
-  menuOverlay?.addEventListener("click", (e) => {
-    const linkClicked = e.target && e.target.closest && e.target.closest("a");
-    if (linkClicked) return;
-    toggleMenu(false);
-  });
-
   document.addEventListener("keydown", (e) => {
     if (e.key && e.key.toLowerCase() === "t") {
       const next = document.documentElement.classList.contains("theme-dark") ? "light" : "dark";
       window.localStorage?.setItem(THEME_KEY, next);
       applyTheme(next, qs(".theme-toggle"));
     }
-    if (e.key === "Escape") toggleMenu(false);
   });
 }
 
@@ -133,6 +81,118 @@ function initHeaderScroll() {
 
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
+}
+
+function initClock() {
+  const clock = qs("[data-clock]");
+  if (!clock) return;
+
+  const fmt = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/Chihuahua",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+
+  const tick = () => {
+    try {
+      clock.textContent = fmt.format(new Date());
+    } catch (err) {
+      console.error("Clock update failed", err);
+    }
+  };
+
+  tick();
+  setInterval(tick, 30_000);
+}
+
+function initDesktopLayout() {
+  const container = qs(".desktop-icons");
+  if (!container) return;
+  const icons = qsa(".desktop-icons .desktop-icon");
+  if (!icons.length) return;
+  const aboutIcon = icons.find((icon) => icon.dataset.about === "true");
+
+  const toGrid = () => {
+    container.classList.add("desktop-grid");
+    icons.forEach((icon) => {
+      icon.style.removeProperty("left");
+      icon.style.removeProperty("top");
+      icon.style.removeProperty("position");
+      icon.style.removeProperty("transform");
+    });
+  };
+
+  const placeScatter = () => {
+    container.classList.remove("desktop-grid");
+    container.style.position = "relative";
+    const pad = 24;
+    const cw = container.clientWidth;
+    const ch = Math.max(container.clientHeight, Math.round(window.innerHeight * 0.65));
+    if (cw <= 0) return toGrid();
+
+    const boxes = [];
+
+    if (aboutIcon) {
+      const rect = aboutIcon.getBoundingClientRect();
+      const w = Math.min(rect.width || 128, cw - pad * 2);
+      const h = Math.min(rect.height || 140, ch - pad * 2);
+      if (w <= 0 || h <= 0) return toGrid();
+      const x = Math.max(pad, cw - pad - w);
+      const y = pad + 6;
+      boxes.push({ x, y, w, h });
+      aboutIcon.style.position = "absolute";
+      aboutIcon.style.left = `${x}px`;
+      aboutIcon.style.top = `${y}px`;
+      aboutIcon.style.transform = "none";
+    }
+
+    const overlaps = (x, y, w, h) => boxes.some((b) => !(x + w <= b.x || b.x + b.w <= x || y + h <= b.y || b.y + b.h <= y));
+
+    for (const icon of icons) {
+      if (icon === aboutIcon) continue;
+      const rect = icon.getBoundingClientRect();
+      const iw = Math.min(rect.width || 128, cw - pad * 2);
+      const ih = Math.min(rect.height || 140, ch - pad * 2);
+      let placed = false;
+      for (let attempt = 0; attempt < 160; attempt++) {
+        const maxX = Math.max(8, cw - pad * 2 - iw);
+        const maxY = Math.max(8, ch - pad * 2 - ih);
+        const x = pad + Math.random() * maxX;
+        const y = pad + Math.random() * maxY;
+        if (!overlaps(x, y, iw, ih)) {
+          boxes.push({ x, y, w: iw, h: ih });
+          icon.style.position = "absolute";
+          icon.style.left = `${x}px`;
+          icon.style.top = `${y}px`;
+          icon.style.transform = "none";
+          placed = true;
+          break;
+        }
+      }
+      if (!placed) {
+        return toGrid();
+      }
+    }
+  };
+
+  const applyLayout = () => {
+    if (window.innerWidth < 900) {
+      toGrid();
+    } else {
+      placeScatter();
+    }
+  };
+
+  const debounced = (() => {
+    let t;
+    return () => {
+      clearTimeout(t);
+      t = setTimeout(applyLayout, 120);
+    };
+  })();
+
+  applyLayout();
+  window.addEventListener("resize", debounced);
 }
 
 const SUPPORTED_LANGS = ["en", "jp", "es"];
@@ -201,6 +261,13 @@ function initTTS(langApi) {
   const trigger = qs(".tts-toggle");
   const stopBtn = qs(".tts-stop");
   if (!trigger || !stopBtn) return;
+
+  const ttsEnabled = document.querySelector("[data-tts-enabled='true']");
+  if (!ttsEnabled) {
+    trigger.style.display = "none";
+    stopBtn.style.display = "none";
+    return;
+  }
 
   const setState = (state) => {
     trigger.dataset.state = state;
@@ -350,9 +417,10 @@ function initTTS(langApi) {
 function init() {
   initTheme();
   initMenu();
-  initLogoShuffle();
   initActiveNav();
   initHeaderScroll();
+  initClock();
+  initDesktopLayout();
   const langApi = initLangSwitch();
   initTTS(langApi);
 }

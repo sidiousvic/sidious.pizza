@@ -1,20 +1,20 @@
 ---
 layout: base.eta
-title: Observations
+title: Files
 ---
 
 <section class="hero">
-  <p class="eyebrow">day to day observations</p>
-  <h1>Observations</h1>
+  <p class="eyebrow">Day to day documents, images</p>
+  <h1>Files</h1>
 </section>
 
 <ul class="post-list">
-  <% const observations = (it.posts ?? (it.site && it.site.data && it.site.data.posts) ?? [])
-    .filter((item) => item.type === "observation")
+  <% const files = (it.posts ?? (it.site && it.site.data && it.site.data.posts) ?? [])
+    .filter((item) => item.type === "file")
     .slice()
     .sort((a, b) => (new Date(b.date).getTime() || 0) - (new Date(a.date).getTime() || 0));
   %>
-  <% observations.forEach((post) => { %>
+  <% files.forEach((post) => { %>
     <li>
       <a href="<%= post.url %>">
         <div class="post-title"><%= post.title %></div>
