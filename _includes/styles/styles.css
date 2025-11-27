@@ -285,10 +285,15 @@ body,
   justify-content: center;
   gap: 18px;
   text-align: center;
-  min-height: 100vh;
-  margin: 0 auto;
+  flex: 1 1 auto;
+  margin: auto;
   padding: 24px 5vw;
   box-sizing: border-box;
+}
+
+body.haiku-shell .article.haiku-article {
+  flex: 0 1 auto;
+  margin: 0;
 }
 
 .article.haiku-article .article-head,
@@ -316,6 +321,7 @@ body,
   writing-mode: vertical-rl;
   font-size: 3rem;
   margin: 0;
+  animation: ui-flicker 3s infinite;
 }
 
 .haiku-controls {
@@ -382,6 +388,12 @@ body.haiku-shell .site-footer {
   display: none;
 }
 
+body.haiku-shell,
+body.haiku-shell .page {
+  min-height: 100vh;
+  height: 100vh;
+}
+
 body.haiku-shell .shell {
   max-width: none;
   width: 100%;
@@ -390,6 +402,7 @@ body.haiku-shell .shell {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 body.haiku-shell .haiku-shell {
@@ -546,6 +559,12 @@ img {
   max-width: var(--max-width);
 }
 
+.shell.article-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .about-portrait {
   max-width: 220px;
   margin: 12px 0 24px;
@@ -559,6 +578,44 @@ img {
 .about-portrait img {
   width: 100%;
   display: block;
+}
+
+.about-portrait-wrap {
+  position: relative;
+  margin: 3rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-portrait-banner {
+  position: absolute;
+  inset: -18px;
+  background: url("https://t4.ftcdn.net/jpg/11/42/59/95/360_F_1142599578_lId0HnZphh1i488OxxSbOqw3y2sCBlSy.jpg");
+  background-size: cover;
+  border-radius: 5px;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.16);
+  z-index: 0;
+  animation: banner-shift 10s ease-in-out infinite;
+}
+
+.theme-dark .about-portrait-banner {
+  background: url("https://t4.ftcdn.net/jpg/11/42/59/95/360_F_1142599578_lId0HnZphh1i488OxxSbOqw3y2sCBlSy.jpg");
+  background-size: cover;
+}
+
+.about-portrait-img {
+  position: relative;
+  z-index: 1;
+  width: 400px;
+  max-width: 100%;
+  animation: floating 3s ease-in-out infinite;
+  display: block;
+}
+
+@keyframes banner-shift {
+  0%, 100% { transform: translateY(4px); }
+  50% { transform: translateY(-6px); }
 }
 
 @keyframes floating {

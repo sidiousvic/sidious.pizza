@@ -419,6 +419,12 @@ function initTTS(langApi) {
   });
 }
 
+function initHaikuShell() {
+  if (document.querySelector(".article.haiku-article")) {
+    document.body.classList.add("haiku-shell");
+  }
+}
+
 function init() {
   initTheme();
   initHeaderScroll();
@@ -426,6 +432,7 @@ function init() {
   initDesktopLayout();
   const langApi = initLangSwitch();
   initTTS(langApi);
+  initHaikuShell();
 }
 
 if (document.readyState === "loading") {

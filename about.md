@@ -9,7 +9,10 @@ shellClass: vod-wide
 
 # Vic Sidious
 
-<img style="width: 400px; animation: floating 3s ease-in-out infinite;" src="/images/vic-clay.png">
+<div class="about-portrait-wrap">
+  <div class="about-portrait-banner" aria-hidden="true"></div>
+  <img style="mix=blend-mode: hard-light" class="about-portrait-img" src="/images/vic-clays.gif" alt="Vic clay portrait">
+</div>
 
 <div class="about-intro">
   <table class="about-facts">
@@ -42,10 +45,21 @@ shellClass: vod-wide
 
 <script type="module" src="/scripts/about-age.js"></script>
 
+My name is Victor René Molina Rodríguez. I was born in 1991 in northern Mexico. I live in Tokyo, where I work as an engineer for Toyota. 
+
 ## Early Life
 
-My name is Vic.  _Victor Rene Molina Rodriguez_, in the town of Santa Isabel, Chihuahua, in northern Mexico. I grew up in a working-class family, my father sold electric mining cable and mother taught at a public primary school. I have one younger brother who I love a lot. My mother used to say "we are rich in love." and "you need to live amongst wolves". My father used to say "get your shit off the entrance".
+I was born the town of Santa Isabel, Chihuahua, Mexico. My father sold electric mining cable and mother taught at a public primary school. I have one younger brother. I grew up with 90's cartoons, Nintendo, and the internet. I've loved football and music all my life. I studied university in Las Cruces, USA, spent some time in Hong Kong and Mexico again before moving to Japan.
 
 ## Work
+I've done many jobs in my life. I've been a gardener, teacher, and designer, and now I am an engineering lead wrangling a great team that builds energy systems software.
 
-Engineer at Toyota in Tokyo, where he leads a small group of fellow primates building software for electric systems.
+
+## More likes
+Music, football, beer, skateboarding, math, programming, coffee, graphics, reading, sentō, boxing, engines, weightlifting, horse riding, pizza.
+
+## Philosophy
+I am interested in philosophies that try to observe the true nature of things to allow you, not prescribe to you. I think there is no thing such as inaction, there is only delusion. I do not treat suffering and temptation as an enemy (sorry, Arjuna), they are only movements in nature that we must pass through. I like sharp practical mantras like "Just Do Sh*t" and "No matter what happens, I will be courageous" (thanks, Goku!).
+
+# Influences
+Kurosawa, Giger, Hemingway, Paz, Hofstader, Roosevelt, Tanizaki, Kar-Wai, Bergman, Toriyama, Chuck Jones, Richard Feynman, Sergio Leone, Grace Hopper, Prigogine.

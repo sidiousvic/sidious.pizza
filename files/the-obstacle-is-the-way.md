@@ -2,7 +2,9 @@
 layout: article.eta
 type: file
 title: The Obstacle is the Way
-subtitle: 障害こそが道だ
+title_es: El Obstáculo es el Camino
+title_jp: 障害こそが道だ
+subtitle: 
 date: 2024-11-20
 logo: /images/organs.png
 project: shodo
