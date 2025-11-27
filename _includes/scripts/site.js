@@ -224,6 +224,23 @@ function initLangSwitch() {
       const elLang = dataLang || tag;
       el.style.display = elLang === lang ? "" : "none";
     });
+
+    const titleVariants = Array.from(document.querySelectorAll(".title-variant"));
+    if (titleVariants.length) {
+      let matched = false;
+      titleVariants.forEach((span) => {
+        const code = span.getAttribute("data-lang") || "";
+        const show = code === lang;
+        span.style.display = show ? "inline" : "none";
+        if (show) matched = true;
+      });
+      if (!matched) {
+        titleVariants.forEach((span) => {
+          const code = span.getAttribute("data-lang") || "";
+          if (!code || code === "en") span.style.display = "inline";
+        });
+      }
+    }
   };
 
   buttons.forEach((btn) => {

@@ -13,6 +13,17 @@ shellClass: article-shell
 <% const langList = Array.isArray(langsRaw) ? langsRaw : (typeof langsRaw === "string" ? langsRaw.split(",").map((l) => l.trim()).filter(Boolean) : []); %>
 <% const langPref = it.lang || it.page?.data?.lang || langList[0] || "en"; %>
 <% const ttsEnabled = it.tts === true || it.page?.data?.tts === true ? "true" : "false"; %>
+<% const titleMap = {
+  en: it.title || "",
+  ...(it.title_en ? { en: it.title_en } : {}),
+  ...(it.title_jp ? { jp: it.title_jp } : {}),
+  ...(it.title_es ? { es: it.title_es } : {}),
+  ...(it.page?.data?.title_en ? { en: it.page.data.title_en } : {}),
+  ...(it.page?.data?.title_jp ? { jp: it.page.data.title_jp } : {}),
+  ...(it.page?.data?.title_es ? { es: it.page.data.title_es } : {}),
+}; %>
+<% const titleOrder = Array.from(new Set([...(Array.isArray(langList) ? langList : []), "en", "jp", "es"])); %>
+<% const initialTitleLang = langPref || "en"; %>
 
 <article class="article <%= isHaiku ? 'haiku-article' : '' %>">
 
@@ -26,19 +37,30 @@ shellClass: article-shell
     <% if (isFile && it.subtitle) { %>
       <p class="eyebrow"><%= it.subtitle %></p>
     <% } %>
-    <h1><%= it.title %></h1>
+    <h1>
+      <% const seenTitles = new Set(); %>
+      <% titleOrder.forEach((code) => {
+        if (seenTitles.has(code)) return;
+        seenTitles.add(code);
+        const text = titleMap[code] || titleMap.en || it.title || "";
+      %>
+        <span class="title-variant" data-lang="<%= code %>" style="display: <%= code === initialTitleLang ? 'inline' : 'none' %>;"><%= text %></span>
+      <% }); %>
+    </h1>
     <% if (!isFile && it.subtitle) { %>
       <p class="subtitle"><%= it.subtitle %></p>
     <% } %>
-    <div class="article-meta">
-      <% if (it.date) { %>
-        <p class="date"><%= it.date.toDateString() %></p>
-      <% } %>
-    </div>
+    <% if (!isHaiku) { %>
+      <div class="article-meta">
+        <% if (it.date) { %>
+          <p class="date"><%= it.date.toDateString() %></p>
+        <% } %>
+      </div>
+    <% } %>
   </header>
 
       <div class="article-controls">
-        <% if ((langList && langList.length) || it.lang) { %>
+        <% if (!isHaiku && ((langList && langList.length) || it.lang)) { %>
           <div class="lang-switch" data-default-lang="<%= langPref %>" data-langs="<%= (langList && langList.length ? langList : ['en']).join(',') %>">
             <% const langCodes = (langList && langList.length) ? langList : ["en"]; %>
             <div class="lang-actions">

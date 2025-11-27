@@ -65,6 +65,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "M PLUS 1 Code";
+  src: url("/fonts/M_PLUS_1_Code/MPLUS1Code-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :lang(ja),
 .jp {
   font-family: "DotGothic16", "Victor Mono", "Instrument Serif", "Times New Roman", sans-serif;
@@ -277,12 +285,16 @@ body,
   justify-content: center;
   gap: 18px;
   text-align: center;
-  min-height: calc(100vh - 160px);
+  min-height: 100vh;
   margin: 0 auto;
+  padding: 24px 5vw;
+  box-sizing: border-box;
 }
 
 .article.haiku-article .article-head,
 .article.haiku-article .lang-switch,
+.article.haiku-article .lang-actions,
+.article.haiku-article .article-controls,
 .article.haiku-article section {
   text-align: center;
   align-items: center;
@@ -293,6 +305,17 @@ body,
 
 .article.haiku-article section {
   width: min(620px, 92vw);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+  text-align: center;
+}
+
+.article.haiku-article section p {
+  writing-mode: vertical-rl;
+  font-size: 3rem;
+  margin: 0;
 }
 
 .haiku-controls {
@@ -331,9 +354,11 @@ body,
 }
 
 .haiku-text--jp {
-  writing-mode: vertical-lr;
-  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  writing-mode: vertical-rl;
+  font-size: 3rem;
   animation: ui-flicker 3s infinite;
+  text-align: center;
+  align-items: center;
 }
 
 @media (max-width: 720px) {
@@ -839,7 +864,8 @@ hr {
     gap: 4px;
   }
   .lang-btn,
-  .tts-toggle {
+  .tts-toggle,
+  .tts-stop {
     min-width: 35px;
     padding: 6px 8px;
     font-size: 0.8rem;

@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vic Sidious</title>
     <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="modulepreload" href="/scripts/about-age.js">
     <link rel="preload" href="/fonts/Victor_Mono/static/VictorMono-Regular.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="preload" href="/fonts/Instrument_Serif/InstrumentSerif-Regular.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="preload" href="/fonts/DotGothic16/DotGothic16-Regular.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@400;600&display=swap">
     <% const currentUrl = it.page?.data?.url || it.url || ""; %>
     <% const isHome = currentUrl === "/" || currentUrl === ""; %>
   </head>
