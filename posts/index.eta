@@ -4,13 +4,13 @@ title: Archive
 ---
 
 <section class="hero">
-  <p class="eyebrow">All the mischief</p>
-  <h1>Archive</h1>
+  <p class="eyebrow">Mischief, fresh off the oven</p>
+  <h1>Latest</h1>
 </section>
 
 <ul class="post-list">
   <% const posts = (it.posts ?? (it.site && it.site.data && it.site.data.posts) ?? [])
-    .filter((item) => ["file", "project", "book"].includes(item.type))
+    .filter((item) => ["file", "project", "haiku", "observation", "book"].includes(item.type))
     .slice()
     .sort((a, b) => (new Date(b.date).getTime() || 0) - (new Date(a.date).getTime() || 0));
   %>
@@ -25,7 +25,7 @@ title: Archive
           <%= post.type === "book"
             ? projectLabel || "Book"
             : post.type === "project"
-            ? projectLabel || "Project"
+            ? "Project"
             : "File" %>
         </span>
         <% if (post.date) { %><span><%= new Date(post.date).toDateString() %></span><% } %>

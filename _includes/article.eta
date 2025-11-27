@@ -3,16 +3,18 @@ layout: base.eta
 shellClass: article-shell
 ---
 
-<article class="article">
-  <% const navPrev = it.prev ?? it.page?.data?.prev ?? null; %>
-  <% const navNext = it.next ?? it.page?.data?.next ?? null; %>
-  <% const navProject = it.project ?? it.page?.data?.project ?? null; %>
-  <% const navType = it.type ?? it.page?.data?.type ?? null; %>
-  <% const isFile = navType === "file"; %>
-  <% const langsRaw = it.languages || it.page?.data?.languages || []; %>
-  <% const langList = Array.isArray(langsRaw) ? langsRaw : (typeof langsRaw === "string" ? langsRaw.split(",").map((l) => l.trim()).filter(Boolean) : []); %>
-  <% const langPref = it.lang || it.page?.data?.lang || langList[0] || "en"; %>
-  <% const ttsEnabled = it.tts === true || it.page?.data?.tts === true ? "true" : "false"; %>
+<% const navPrev = it.prev ?? it.page?.data?.prev ?? null; %>
+<% const navNext = it.next ?? it.page?.data?.next ?? null; %>
+<% const navProject = it.project ?? it.page?.data?.project ?? null; %>
+<% const navType = it.type ?? it.page?.data?.type ?? null; %>
+<% const isHaiku = navType === "haiku"; %>
+<% const isFile = navType === "file"; %>
+<% const langsRaw = it.languages || it.page?.data?.languages || []; %>
+<% const langList = Array.isArray(langsRaw) ? langsRaw : (typeof langsRaw === "string" ? langsRaw.split(",").map((l) => l.trim()).filter(Boolean) : []); %>
+<% const langPref = it.lang || it.page?.data?.lang || langList[0] || "en"; %>
+<% const ttsEnabled = it.tts === true || it.page?.data?.tts === true ? "true" : "false"; %>
+
+<article class="article <%= isHaiku ? 'haiku-article' : '' %>">
 
   <header class="article-head">
     <% const navLabel = navType === "project"
@@ -41,7 +43,15 @@ shellClass: article-shell
             <% const langCodes = (langList && langList.length) ? langList : ["en"]; %>
             <div class="lang-actions">
               <% for (const code of langCodes) { %>
-                <button type="button" class="lang-btn" data-lang="<%= code %>" aria-pressed="false"><%= (code || "").toString().toUpperCase() %></button>
+                <% const lower = (code || "").toString().toLowerCase();
+                   const label = lower === "jp"
+                     ? "日本語"
+                     : lower === "en"
+                     ? "English"
+                     : lower === "es"
+                     ? "Español"
+                     : (code || "").toString().toUpperCase(); %>
+                <button type="button" class="lang-btn" data-lang="<%= code %>" aria-pressed="false"><%= label %></button>
               <% } %>
             </div>
           </div>

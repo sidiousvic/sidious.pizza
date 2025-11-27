@@ -1,8 +1,7 @@
 ---
 layout: article.eta
-type: file
+type: haiku
 title: 朧月
-subtitle: Haiku
 date: 2025-01-10
 languages: [jp, en]
 logo: /images/file.png
@@ -11,16 +10,20 @@ featured: true
 
 <section data-lang="jp">
 
-朧月  
-蛇の影ただ  
+朧月 
+
+蛇影よぎりて
+
 見えたかな
 
 </section>
 
 <section data-lang="en">
 
-Hazy moon—  
-only a serpent’s shadow  
-briefly seen.
+_Hazy moon_
+
+_A snake’s shadow_
+
+_I might have seen_
 
 </section>

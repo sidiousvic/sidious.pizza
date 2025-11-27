@@ -12,17 +12,17 @@
     <% const currentUrl = it.page?.data?.url || it.url || ""; %>
     <% const isHome = currentUrl === "/" || currentUrl === ""; %>
   </head>
-  <body class="<%= isHome ? "is-home" : "" %>">
+  <% const shellClass = (it.shellClass || it.page?.data?.shellClass || "").trim(); %>
+  <body class="<%= [isHome ? "is-home" : "", shellClass].filter(Boolean).join(" ") %>">
     <div class="page">
       <header class="site-header">
         <div class="site-actions">
           <a class="site-title-label" href="/" aria-label="Home">🍕 SIDIOUSWARE<sup> ™</sup></a>
           <nav class="site-nav full-nav">
-            <a href="/posts">Archive</a>
+            <a href="/posts">Latest</a>
             <a href="/projects">Projects</a>
             <a href="/about">About</a>
             <a href="/meta" class="hide-mobile">Meta</a>
-            <a href="/posts">Archive</a>
             <a href="#" class="theme-toggle theme-toggle--text" aria-pressed="false" aria-label="Toggle theme">
               <span class="theme-toggle__label" data-theme-label>Light</span>
             </a>

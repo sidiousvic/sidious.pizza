@@ -9,7 +9,7 @@ shellClass: vod-wide
 
 # Vic Sidious
 
-<img style="width: 400px; animation: floating 3s ease-in-out infinite;" src="/images/vic-mural.png">
+<img style="width: 400px; animation: floating 3s ease-in-out infinite;" src="/images/vic-clay.png">
 
 <div class="about-intro">
   <table class="about-facts">
@@ -46,7 +46,7 @@ shellClass: vod-wide
     if (!ageEl || typeof performance === "undefined") return;
 
     // Birth: 1991-09-24T11:58-06:00 -> 1991-09-24T17:58:00Z
-    const birthMs = Date.parse("1991-09-24T17:58:00Z");
+    const birthMs = Date.parse("1991-09-24T23:58:00Z");
     const msPerYear = 365.2425 * 24 * 60 * 60 * 1000;
     // Align performance.now() with epoch for stable, high-res timing.
     const epochOffset = Date.now() - performance.now();
@@ -64,7 +64,7 @@ shellClass: vod-wide
 
 ## Early Life
 
-Born _Victor Rene Molina Rodriguez_, in the town of Santa Isabel, Chihuahua, in northern Mexico. Grew up in a working-class family, his father sold electric mining cable and mother taught at a public primary school. He has one younger brother. 
+My name is Vic.  _Victor Rene Molina Rodriguez_, in the town of Santa Isabel, Chihuahua, in northern Mexico. I grew up in a working-class family, my father sold electric mining cable and mother taught at a public primary school. I have one younger brother who I love a lot. My mother used to say "we are rich in love." and "you need to live amongst wolves". My father used to say "get your shit off the entrance".
 
 ## Work
 

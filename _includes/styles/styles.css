@@ -266,28 +266,50 @@ body,
   text-decoration: none;
 }
 
-.haiku-shell .site-header,
-.haiku-shell .site-footer {
-  display: none;
+.haiku-shell {
+  text-align: center;
 }
 
-.haiku-shell .shell {
-  max-width: none;
-  padding: 0;
+.article.haiku-article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  text-align: center;
+  min-height: calc(100vh - 160px);
+  margin: 0 auto;
+}
+
+.article.haiku-article .article-head,
+.article.haiku-article .lang-switch,
+.article.haiku-article section {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.article.haiku-article section {
+  width: min(620px, 92vw);
+}
+
+.haiku-controls {
+  display: flex;
+  justify-content: center;
 }
 
 .haiku-canvas {
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 5vw;
+  gap: 40px;
+  width: 100%;
 }
 
 .haiku-text {
-  writing-mode: vertical-rl;
   font-family: "DotGothic16", "Instrument Serif", serif;
-  font-size: clamp(2rem, 4vw, 3rem);
   letter-spacing: 0.08em;
   line-height: 1.6;
   text-align: center;
@@ -301,14 +323,98 @@ body,
   justify-content: center;
 }
 
+.haiku-text--en {
+  writing-mode: horizontal-tb;
+  font-family: "Instrument Serif", "DotGothic16", serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  opacity: 0.75;
+}
+
+.haiku-text--jp {
+  writing-mode: vertical-lr;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  animation: ui-flicker 3s infinite;
+}
+
 @media (max-width: 720px) {
-  .haiku-shell .site-header,
-  .haiku-shell .site-footer {
-    display: none;
+  .haiku-canvas {
+    flex-direction: column;
+    gap: 26px;
   }
 
   .haiku-text {
-    font-size: clamp(2.2rem, 10vw, 2.8rem);
+    font-size: clamp(2.4rem, 10vw, 3rem);
+  }
+
+  .haiku-text--en {
+    font-size: clamp(2rem, 9vw, 2.6rem);
+  }
+}
+
+/* Center haiku pages and hide chrome */
+body.haiku-shell .site-header,
+body.haiku-shell .site-footer {
+  display: none;
+}
+
+body.haiku-shell .shell {
+  max-width: none;
+  width: 100%;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.haiku-shell .haiku-shell {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 20px 5vw 40px;
+}
+
+body.haiku-shell .haiku-canvas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+}
+
+body.haiku-shell .haiku-text {
+  writing-mode: vertical-rl;
+  font-family: "DotGothic16", "Instrument Serif", serif;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+  text-align: center;
+  display: flex;
+  gap: 18px;
+}
+
+body.haiku-shell .haiku-text--en {
+  font-family: "Instrument Serif", "DotGothic16", serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  opacity: 0.75;
+}
+
+@media (max-width: 720px) {
+  body.haiku-shell .haiku-canvas {
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  body.haiku-shell .haiku-text {
+    font-size: clamp(2.4rem, 10vw, 3rem);
+  }
+
+  body.haiku-shell .haiku-text--en {
+    font-size: clamp(2rem, 9vw, 2.6rem);
   }
 }
 
@@ -332,7 +438,7 @@ body,
 .theme-toggle {
   border: none;
   background: transparent;
-  color: var(--text);
+  color: var(--muted);
   padding: 4px 0;
   border-radius: 8px;
   cursor: pointer;
@@ -698,32 +804,44 @@ hr {
   gap: 8px;
 }
 
-.lang-btn {
+.lang-btn,
+.tts-toggle {
+  font-family: "DotGothic16";
   padding: 8px 12px;
-  border: 1px solid transparent;
-  background: transparent;
+  border: 1px solid var(--border, rgba(0, 0, 0, 0.2));
+  background: rgba(235, 226, 214, 0.94);
   color: var(--text);
-  font-family: "Instrument Serif", "M PLUS 1 Code", monospace;
-  font-size: 0.9rem;
+  border-radius: 6px;
   cursor: pointer;
-  border-radius: 10px;
-  transition: border-color 0.2s ease, background-color 0.2s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 6px;
+}
+
+.theme-dark .lang-btn,
+.theme-dark .tts-toggle {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.lang-btn:active,
+.tts-toggle:active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.theme-dark .lang-btn:active,
+.theme-dark .tts-toggle:active {
+  background: rgba(255, 255, 255, 0.14);
 }
 
 @media (max-width: 480px) {
   .lang-actions {
     gap: 4px;
   }
-  .lang-btn {
+  .lang-btn,
+  .tts-toggle {
     min-width: 35px;
     padding: 6px 8px;
-    font-size: 0.8rem;
-  }
-
-  .tts-toggle {
     font-size: 0.8rem;
   }
 
@@ -734,37 +852,6 @@ hr {
   .title-part {
     font-size: .9rem;
   }
-}
-
-.lang-btn:hover,
-.lang-btn:focus-visible {
-  border-color: #111111;
-  background: var(--bg-header);
-}
-
-.theme-dark .lang-btn:hover,
-.theme-dark .lang-btn:focus-visible {
-  border-color: #f3f1e8;
-}
-
-.lang-btn.is-active,
-.lang-btn[aria-pressed="true"] {
-  background: #111111;
-  color: #ffffff;
-  border-color: #111111;
-}
-
-.theme-dark .lang-btn.is-active,
-.theme-dark .lang-btn[aria-pressed="true"] {
-  background: #f3f1e8;
-  color: #111111;
-  border-color: #f3f1e8;
-}
-
-.lang-btn.is-disabled,
-.lang-btn[disabled] {
-  opacity: 0.5;
-  cursor: not-allowed;
 }
 
 .tts-controls {
@@ -779,8 +866,8 @@ hr {
   background: transparent;
   color: var(--text);
   font-size: 0.9rem;
-  font-family: "Victor Mono", "M PLUS 1 Code", monospace;
-  border-radius: 10px;
+  font-family: "DotGothic16", "Instrument Serif", "M PLUS 1 Code", monospace;
+  border-radius: 6px;
   cursor: pointer;
   opacity: 0;
   pointer-events: none;
@@ -810,67 +897,8 @@ hr {
   border-color: #f3f1e8;
 }
 
-.tts-toggle {
-  padding: 8px 12px;
-  border: 1px solid var(--border, #111);
-  background: transparent;
-  color: var(--text);
-  font-size: 0.9rem;
-  font-family: "Victor Mono", "M PLUS 1 Code", monospace;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
-  position: relative;
-  text-align: center;
-  opacity: 1;
-  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease, opacity 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  box-shadow: 1px 1px 2px #d5c9ba;
-}
-
-.theme-dark .tts-toggle {
-  box-shadow: 2px 2px 2px black;
-}
-
-.tts-toggle:hover,
-.tts-toggle:focus-visible {
-  border-color: #333333;
-  background: #111111;
-  color: #ffffff;
-}
-
-.theme-dark .tts-toggle:hover,
-.theme-dark .tts-toggle:focus-visible {
-  border-color: #f3f1e8;
-  background: #111111;
-  color: #ffffff;
-}
-
-.tts-toggle.is-loading {
-  cursor: progress;
-  animation: tts-border-white 1.2s ease-in-out infinite;
-  background: #111111;
-  color: #ffffff;
-}
-
-.tts-toggle.is-playing {
-  background: #111111;
-  color: #ffffff;
-  animation: tts-border-green 1.2s ease-in-out infinite;
-}
-
-.theme-dark .tts-toggle.is-playing {
-  background: #f3f1e8;
-  color: #111111;
-}
-
-.tts-toggle.is-error {
-  opacity: 0;
-  pointer-events: none;
-}
+.tts-toggle.is-loading { cursor: progress; }
+.tts-toggle.is-error { opacity: 0; pointer-events: none; }
 
 .tts-wave {
   width: 42px;
@@ -1297,6 +1325,10 @@ hr {
 
   .site-header .theme-toggle {
     flex: 0 0 auto;
+  }
+
+  .theme-toggle__label, {
+    color: var(--muted);
   }
 
   .site-footer {

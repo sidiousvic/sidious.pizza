@@ -14,7 +14,7 @@ function applyTheme(mode, toggle) {
     toggle.setAttribute("aria-pressed", String(dark));
     toggle.querySelector("svg")?.setAttribute("data-mode", dark ? "dark" : "light");
     const label = toggle.querySelector("[data-theme-label]");
-    if (label) label.textContent = dark ? "Dark" : "Light";
+    if (label) label.textContent = dark ? "⽇" : "⽉";
   }
 }
 
