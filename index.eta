@@ -14,7 +14,7 @@ title: Vic Sidious
     .slice(0, 12)
     .map((post) => ({ ...post }));
   const desktopItems = [
-    { title: "About Me", url: "/about", logo: "/images/vic-clays.gif", isAbout: true },
+    { title: "About Me", url: "/about", logo: "/images/clay-vics.gif", isAbout: true },
     { title: "Meta", url: "/meta", logo: "/images/pizzadrop.gif", isAbout: true },
     ...normalized.map((post) => ({
       title: post.title,

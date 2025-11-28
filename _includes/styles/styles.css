@@ -591,26 +591,24 @@ img {
 .about-portrait-banner {
   position: absolute;
   inset: -18px;
-  background: url("https://t4.ftcdn.net/jpg/11/42/59/95/360_F_1142599578_lId0HnZphh1i488OxxSbOqw3y2sCBlSy.jpg");
+  background: url("/images/desert-banner.png");
   background-size: cover;
   border-radius: 5px;
   box-shadow: 0 18px 36px rgba(0, 0, 0, 0.16);
   z-index: 0;
   animation: banner-shift 10s ease-in-out infinite;
+  filter: saturate(.8) blur(.5px) !important;
 }
 
-.theme-dark .about-portrait-banner {
-  background: url("https://t4.ftcdn.net/jpg/11/42/59/95/360_F_1142599578_lId0HnZphh1i488OxxSbOqw3y2sCBlSy.jpg");
-  background-size: cover;
-}
 
 .about-portrait-img {
   position: relative;
   z-index: 1;
   width: 400px;
   max-width: 100%;
-  animation: floating 3s ease-in-out infinite;
+  animation: floating 3s ease-in-out infinite, drop-hue 8s ease-in-out infinite;
   display: block;
+  filter: blur(0.8px) drop-shadow(1px 1px 8px lime);
 }
 
 @keyframes banner-shift {
@@ -621,6 +619,14 @@ img {
 @keyframes floating {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
+}
+
+@keyframes drop-hue {
+  0% { filter: blur(0.8px) drop-shadow(1px 1px 8px lime); }
+  25% { filter: blur(0.8px) drop-shadow(1px 1px 8px #7154ff); }
+  50% { filter: blur(0.8px) drop-shadow(1px 1px 8px #ff662a); }
+  75% { filter: blur(0.8px) drop-shadow(1px 1px 8px #ff2a2a); }
+  100% { filter: blur(0.8px) drop-shadow(1px 1px 8px lime); }
 }
 
 .article img,

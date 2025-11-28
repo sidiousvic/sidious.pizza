@@ -4,7 +4,7 @@ type: file
 title: The Obstacle is the Way
 title_es: El Obstáculo es el Camino
 title_jp: 障害こそが道だ
-subtitle: 
+subtitle: An observation of adversity
 date: 2024-11-20
 logo: /images/organs.png
 project: shodo

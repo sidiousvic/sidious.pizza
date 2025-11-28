@@ -10,8 +10,8 @@ shellClass: vod-wide
 # Vic Sidious
 
 <div class="about-portrait-wrap">
-  <div class="about-portrait-banner" aria-hidden="true"></div>
-  <img style="mix=blend-mode: hard-light" class="about-portrait-img" src="/images/vic-clays.gif" alt="Vic clay portrait">
+  <div style="filter: blur(0.6px)" class="about-portrait-banner" aria-hidden="true"></div>
+  <img style="filter: blur(0.8px) drop-shadow(1px 1px 4px lime)" class="about-portrait-img" src="/images/clay-vics.gif" alt="Vic clay portrait">
 </div>
 
 <div class="about-intro">
@@ -58,8 +58,8 @@ I've done many jobs in my life. I've been a gardener, teacher, and designer, and
 ## More likes
 Music, football, beer, skateboarding, math, programming, coffee, graphics, reading, sentō, boxing, engines, weightlifting, horse riding, pizza.
 
-## Philosophy
-I am interested in philosophies that try to observe the true nature of things to allow you, not prescribe to you. I think there is no thing such as inaction, there is only delusion. I do not treat suffering and temptation as an enemy (sorry, Arjuna), they are only movements in nature that we must pass through. I like sharp practical mantras like "Just Do Sh*t" and "No matter what happens, I will be courageous" (thanks, Goku!).
+## Principles
+I am interested observing the true nature of things and responding accordingly. I think there is no thing such as inaction. I do not think suffering and temptation are enemies, they are only movements in nature that we must pass through. 
 
 # Influences
 Kurosawa, Giger, Hemingway, Paz, Hofstader, Roosevelt, Tanizaki, Kar-Wai, Bergman, Toriyama, Chuck Jones, Richard Feynman, Sergio Leone, Grace Hopper, Prigogine.

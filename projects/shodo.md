@@ -2,7 +2,7 @@
 layout: article.eta
 type: project
 title: 障道
-subtitle: The way of obstacles
+subtitle: The obstacle is the way
 project: shodo
 order: 1
 date: 2025-03-01
@@ -12,11 +12,11 @@ templateEngine: ["eta"]
 featured: true
 ---
 
-<img src="/images/shodo-banner.png" style="filter: saturate(.3) contrast(1.1) brightness(.9)">
+<img src="/images/shodo-banner.jpeg" style="filter: none">
 
 <section data-lang="en">
 <p>
-Here is a set of observations that form the principle of Shodō (障道, “the way of obstacles”), which describes how we move with or away from the quiet shifts and terrains of nature. 
+Here is a set of observations that form the principle of Shōdō (障道, “the way of obstacles”), which describes how we move with or away from the quiet shifts and terrains of nature. 
 </p>
 
 <p>
@@ -24,7 +24,7 @@ It grew out of a rough period in my life, when deception, clarity and growth all
 </p>
 
 <p>
-Shodō is not an ethics system. It is simply an interpretation of nature. It offers no methods and only observations.
+Shōdō is not an ethics system. It is simply an interpretation of nature. It offers no methods and only observations.
 </p>
 </section>
 
