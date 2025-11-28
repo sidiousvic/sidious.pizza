@@ -11,9 +11,11 @@
     <link rel="preload" href="/fonts/DotGothic16/DotGothic16-Regular.ttf" as="font" type="font/ttf" crossorigin>
     <% const currentUrl = it.page?.data?.url || it.url || ""; %>
     <% const isHome = currentUrl === "/" || currentUrl === ""; %>
+    <% const isHaikuPage = (it.page?.data?.type || it.type) === "haiku"; %>
   </head>
   <% const shellClass = (it.shellClass || it.page?.data?.shellClass || "").trim(); %>
-  <body class="<%= [isHome ? "is-home" : "", shellClass].filter(Boolean).join(" ") %>">
+  <% const bodyClasses = [isHome ? "is-home" : "", shellClass, isHaikuPage ? "haiku-shell" : ""].filter(Boolean).join(" "); %>
+  <body class="<%= bodyClasses %>">
     <div class="page">
       <header class="site-header">
         <div class="site-actions">

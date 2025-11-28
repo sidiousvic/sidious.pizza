@@ -1,3 +1,4 @@
+import type { Site } from "lume/core/site.ts";
 import type { Page } from "lume/core/file.ts";
 
 // Builds language metadata, prev/next for serials, filters drafts (unless INCLUDE_DRAFTS),
@@ -88,4 +89,16 @@ export function preprocessContent(pages: Page[]) {
     .filter((post) => post.title && post.type && post.url);
 
   return { posts };
+}
+
+export function applyContentPreprocess(site: Site) {
+  site.preprocess([".md", ".eta"], (pages) => {
+    const { posts } = preprocessContent(pages);
+    if (posts.length) {
+      site.data("posts", posts);
+      for (const page of pages) {
+        page.data.posts = posts;
+      }
+    }
+  });
 }

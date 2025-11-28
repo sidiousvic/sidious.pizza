@@ -12,6 +12,11 @@
   --link: #111111;
   --link-hover: #111111;
   --pad: 28px;
+  --pad-sm: 16px;
+  --pad-lg: 40px;
+  --gap-sm: 8px;
+  --gap-md: 16px;
+  --gap-lg: 28px;
   --panel-border: rgba(0, 0, 0, 0.08);
   --panel-shadow: 0 -2px 12px rgba(0, 0, 0, 0.08), 0 8px 18px rgba(0, 0, 0, 0.12);
   --theme-transition: 0.3s ease;
@@ -182,9 +187,9 @@ body,
     display: none;
   }
 
-  .shell {
-    padding: 28px 5vw 96px;
-  }
+.shell {
+  padding: var(--pad) 5vw 96px;
+}
 
   h1 {
     font-size: 2.4rem;
@@ -287,13 +292,30 @@ body,
   text-align: center;
   flex: 1 1 auto;
   margin: auto;
-  padding: 24px 5vw;
+  padding: var(--pad-sm) 5vw;
   box-sizing: border-box;
 }
 
 body.haiku-shell .article.haiku-article {
-  flex: 0 1 auto;
+  flex: 1 1 auto;
   margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 5vw;
+}
+
+body.haiku-shell .article.haiku-article .article-head {
+  margin: 0;
+}
+
+body.haiku-shell .article.haiku-article .article-head h1 {
+  margin: 0;
+}
+
+body.haiku-shell .article.haiku-article .article-controls {
+  display: none;
 }
 
 .article.haiku-article .article-head,
@@ -313,8 +335,9 @@ body.haiku-shell .article.haiku-article {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 16px;
+  gap: var(--gap-md);
   text-align: center;
+  flex-direction: row-reverse;
 }
 
 .article.haiku-article section p {
@@ -324,136 +347,32 @@ body.haiku-shell .article.haiku-article {
   animation: ui-flicker 3s infinite;
 }
 
-.haiku-controls {
-  display: flex;
-  justify-content: center;
+/* Haiku full-screen centering */
+body.haiku-shell {
+  min-height: 100vh;
+  overflow: hidden;
 }
 
-.haiku-canvas {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  width: 100%;
-}
-
-.haiku-text {
-  font-family: "DotGothic16", "Instrument Serif", serif;
-  letter-spacing: 0.08em;
-  line-height: 1.6;
-  text-align: center;
-  display: flex;
-  gap: 18px;
-}
-
-.haiku-line {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.haiku-text--en {
-  writing-mode: horizontal-tb;
-  font-family: "Instrument Serif", "DotGothic16", serif;
-  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-  opacity: 0.75;
-}
-
-.haiku-text--jp {
-  writing-mode: vertical-rl;
-  font-size: 3rem;
-  animation: ui-flicker 3s infinite;
-  text-align: center;
-  align-items: center;
-}
-
-@media (max-width: 720px) {
-  .haiku-canvas {
-    flex-direction: column;
-    gap: 26px;
-  }
-
-  .haiku-text {
-    font-size: clamp(2.4rem, 10vw, 3rem);
-  }
-
-  .haiku-text--en {
-    font-size: clamp(2rem, 9vw, 2.6rem);
-  }
-}
-
-/* Center haiku pages and hide chrome */
 body.haiku-shell .site-header,
 body.haiku-shell .site-footer {
   display: none;
 }
 
-body.haiku-shell,
 body.haiku-shell .page {
   min-height: 100vh;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 body.haiku-shell .shell {
   max-width: none;
   width: 100%;
   padding: 0;
-  min-height: 100vh;
+  flex: 1 1 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-}
-
-body.haiku-shell .haiku-shell {
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 32px;
-  padding: 20px 5vw 40px;
-}
-
-body.haiku-shell .haiku-canvas {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  width: 100%;
-}
-
-body.haiku-shell .haiku-text {
-  writing-mode: vertical-rl;
-  font-family: "DotGothic16", "Instrument Serif", serif;
-  font-size: clamp(2.2rem, 5vw, 3.2rem);
-  letter-spacing: 0.08em;
-  line-height: 1.6;
-  text-align: center;
-  display: flex;
-  gap: 18px;
-}
-
-body.haiku-shell .haiku-text--en {
-  font-family: "Instrument Serif", "DotGothic16", serif;
-  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-  opacity: 0.75;
-}
-
-@media (max-width: 720px) {
-  body.haiku-shell .haiku-canvas {
-    flex-direction: column;
-    gap: 26px;
-  }
-
-  body.haiku-shell .haiku-text {
-    font-size: clamp(2.4rem, 10vw, 3rem);
-  }
-
-  body.haiku-shell .haiku-text--en {
-    font-size: clamp(2rem, 9vw, 2.6rem);
-  }
 }
 
 .site-nav a {
@@ -523,7 +442,7 @@ body.haiku-shell .haiku-text--en {
   }
 
   .shell {
-    padding: 28px 5vw 60px;
+    padding: var(--pad) 5vw 60px;
   }
 }
 
@@ -890,7 +809,8 @@ hr {
 }
 
 .lang-btn,
-.tts-toggle {
+.tts-toggle,
+.tts-stop {
   font-family: "DotGothic16";
   padding: 8px 12px;
   border: 1px solid var(--border, rgba(0, 0, 0, 0.2));
@@ -905,17 +825,20 @@ hr {
 }
 
 .theme-dark .lang-btn,
-.theme-dark .tts-toggle {
+.theme-dark .tts-toggle,
+.theme-dark .tts-stop {
   background: rgba(255, 255, 255, 0.06);
 }
 
 .lang-btn:active,
-.tts-toggle:active {
+.tts-toggle:active,
+.tts-stop:active {
   background: rgba(255, 255, 255, 0.2);
 }
 
 .theme-dark .lang-btn:active,
-.theme-dark .tts-toggle:active {
+.theme-dark .tts-toggle:active,
+.theme-dark .tts-stop:active {
   background: rgba(255, 255, 255, 0.14);
 }
 
@@ -948,16 +871,8 @@ hr {
 
 .tts-stop {
   padding: 8px 10px;
-  border: 1px solid var(--border, #222);
-  background: transparent;
-  color: var(--text);
-  font-size: 0.9rem;
-  font-family: "DotGothic16", "Instrument Serif", "M PLUS 1 Code", monospace;
-  border-radius: 6px;
-  cursor: pointer;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease, transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .tts-stop.is-visible {
@@ -986,36 +901,6 @@ hr {
 .tts-toggle.is-loading { cursor: progress; }
 .tts-toggle.is-error { opacity: 0; pointer-events: none; }
 
-.tts-wave {
-  width: 42px;
-  height: 18px;
-  stroke: var(--text);
-  stroke-width: 2;
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 32 16;
-  stroke-dashoffset: 0;
-}
-
-.tts-toggle[data-state="loading"] .tts-wave {
-  stroke: rgba(255, 255, 255, 0.9);
-  animation: wave-dash 0.9s ease-in-out infinite;
-}
-
-.tts-toggle[data-state="playing"] .tts-wave {
-  stroke: #00ffa9;
-  animation: wave-dash 0.9s ease-in-out infinite;
-}
-
-.tts-toggle[data-state="paused"] .tts-wave {
-  stroke: var(--text);
-}
-
-.tts-toggle[data-state="idle"] .tts-wave {
-  stroke: var(--text);
-}
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -1026,24 +911,6 @@ hr {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
-}
-
-@keyframes wave-dash {
-  0% { stroke-dashoffset: 0; }
-  50% { stroke-dashoffset: -12; }
-  100% { stroke-dashoffset: -24; }
-}
-
-@keyframes tts-border-white {
-  0% { border-color: rgba(255, 255, 255, 0.9); }
-  50% { border-color: rgba(255, 255, 255, 0.25); }
-  100% { border-color: rgba(255, 255, 255, 0.9); }
-}
-
-@keyframes tts-border-green {
-  0% { border-color: rgba(255, 255, 255, 0.9); }
-  50% { border-color: rgba(255, 255, 255, 0.25); }
-  100% { border-color: rgba(255, 255, 255, 0.9); }
 }
 
 .toast-error {

@@ -10,7 +10,7 @@ import check_urls from "lume/plugins/check_urls.ts";
 import brotli from "lume/plugins/brotli.ts";
 import markdown from "lume/plugins/markdown.ts";
 import { optimizePics9000 } from "./processors/optimizePics9000.ts"
-import { preprocessContent } from "./processors/contentPreprocess.ts";
+import { applyContentPreprocess } from "./processors/contentPreprocess.ts";
 
 const site = lume();
 
@@ -35,14 +35,7 @@ site.use(check_urls());
 site.use(brotli());
 
 site.process([".md", ".eta"], optimizePics9000)
-site.preprocess([".md", ".eta"], (pages) => {
-  const { posts } = preprocessContent(pages);
-  if (posts.length) {
-    site.data("posts", posts);
-    for (const page of pages) {
-      page.data.posts = posts;
-    }
-  }
-});
+
+applyContentPreprocess(site);
 
 export default site;

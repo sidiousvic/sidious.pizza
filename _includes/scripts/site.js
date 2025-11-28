@@ -188,6 +188,7 @@ const SUPPORTED_LANGS = ["en", "jp", "es"];
 function initLangSwitch() {
   const langSwitch = qs(".lang-switch");
   if (!langSwitch) return;
+  const scope = langSwitch.closest(".article") || document;
 
   const langAttr = langSwitch.getAttribute("data-langs") || "";
   const configuredLangs = langAttr.split(",").map((l) => l.trim().toLowerCase()).filter(Boolean);
@@ -195,7 +196,7 @@ function initLangSwitch() {
   if (!buttons.length) return;
 
   const presentLangs = configuredLangs.length ? configuredLangs : SUPPORTED_LANGS;
-  const contentSections = Array.from(document.querySelectorAll("en, jp, es, [data-lang]")).filter((el) => {
+  const contentSections = Array.from(scope.querySelectorAll("en, jp, es, [data-lang]")).filter((el) => {
     // Ignore the language switch controls themselves
     if (el.closest(".lang-switch")) return false;
     const tag = el.tagName.toLowerCase();
@@ -419,12 +420,6 @@ function initTTS(langApi) {
   });
 }
 
-function initHaikuShell() {
-  if (document.querySelector(".article.haiku-article")) {
-    document.body.classList.add("haiku-shell");
-  }
-}
-
 function init() {
   initTheme();
   initHeaderScroll();
@@ -432,7 +427,6 @@ function init() {
   initDesktopLayout();
   const langApi = initLangSwitch();
   initTTS(langApi);
-  initHaikuShell();
 }
 
 if (document.readyState === "loading") {
