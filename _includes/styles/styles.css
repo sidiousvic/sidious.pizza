@@ -565,21 +565,6 @@ img {
   min-height: 100vh;
 }
 
-.about-portrait {
-  max-width: 220px;
-  margin: 12px 0 24px;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  overflow: hidden;
-  flex-shrink: 0;
-  animation: floating 6s ease-in-out infinite;
-}
-
-.about-portrait img {
-  width: 100%;
-  display: block;
-}
-
 .about-portrait-wrap {
   position: relative;
   margin: 3rem 1rem;
@@ -606,9 +591,9 @@ img {
   z-index: 1;
   width: 400px;
   max-width: 100%;
-  animation: floating 3s ease-in-out infinite, drop-hue 8s ease-in-out infinite;
+  animation: floating 3s ease-in-out infinite;
   display: block;
-  filter: blur(0.8px) drop-shadow(1px 1px 8px lime);
+  filter: blur(0.8px);
 }
 
 @keyframes banner-shift {
@@ -621,12 +606,24 @@ img {
   50% { transform: translateY(-6px); }
 }
 
+.about-portrait-img::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  border-radius: 24px;
+  filter: blur(0.8px);
+  box-shadow:
+    1px 1px 12px 2px lime,
+    0 0 0 0 transparent;
+  animation: drop-hue 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
 @keyframes drop-hue {
-  0% { filter: blur(0.8px) drop-shadow(1px 1px 8px lime); }
-  25% { filter: blur(0.8px) drop-shadow(1px 1px 8px #7154ff); }
-  50% { filter: blur(0.8px) drop-shadow(1px 1px 8px #ff662a); }
-  75% { filter: blur(0.8px) drop-shadow(1px 1px 8px #ff2a2a); }
-  100% { filter: blur(0.8px) drop-shadow(1px 1px 8px lime); }
+  0% { box-shadow: 1px 1px 12px 2px lime, 0 0 0 0 transparent; }
+  50% { box-shadow: 1px 1px 14px 2px #5b1f8f, 0 0 0 0 transparent; }
+  100% { box-shadow: 1px 1px 12px 2px lime, 0 0 0 0 transparent; }
 }
 
 .article img,
