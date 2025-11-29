@@ -183,6 +183,49 @@ function initDesktopLayout() {
   window.addEventListener("resize", debounced);
 }
 
+function initDesktopModal() {
+  const modal = qs("[data-modal]");
+  if (!modal) return;
+  const img = modal.querySelector("[data-modal-img]");
+  const caption = modal.querySelector("[data-modal-caption]");
+  let openSrc = "";
+
+  const close = () => {
+    modal.hidden = true;
+    modal.classList.remove("is-open");
+    if (img) img.src = "";
+    openSrc = "";
+  };
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") close();
+  });
+  modal.addEventListener("click", close);
+
+  qsa(".desktop-icon[data-modal-image]").forEach((icon) => {
+    icon.addEventListener("click", (e) => {
+      e.preventDefault();
+      const src = icon.getAttribute("data-modal-image");
+      const title = icon.getAttribute("data-modal-title") || "";
+      if (!src || !img) return;
+      const cleanSrc = src.replace(/^\"|\"$/g, "");
+      if (modal.classList.contains("is-open") && cleanSrc === openSrc) {
+        close();
+        return;
+      }
+      openSrc = cleanSrc;
+      img.src = cleanSrc;
+      img.alt = title || "Image";
+      if (caption) {
+        caption.textContent = title || "";
+        caption.hidden = !Boolean(title && title.trim());
+      }
+      modal.hidden = false;
+      modal.classList.add("is-open");
+    });
+  });
+}
+
 const SUPPORTED_LANGS = ["en", "jp", "es"];
 
 function initLangSwitch() {
@@ -425,6 +468,7 @@ function init() {
   initHeaderScroll();
   initClock();
   initDesktopLayout();
+  initDesktopModal();
   const langApi = initLangSwitch();
   initTTS(langApi);
 }

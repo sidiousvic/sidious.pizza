@@ -1,12 +1,23 @@
----
-layout: base.eta
-title: Meta
-type: page
-hidden: true
----
 
-<p class="eyebrow">How it's built</p>
+<style>
+@font-face {
+  font-family: "DotGothic16";
+  src: url("/fonts/DotGothic16/DotGothic16-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
-# Meta
+body {
+  background: navy;
+  color: whitesmoke;
+}
 
-This page is under construction.
+pre {
+  font-family: DotGothic16, monospace;
+}
+</style>
+
+<pre>
+YOU SHOULD NOT BE HERE
+<pre>

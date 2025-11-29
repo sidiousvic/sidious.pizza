@@ -1210,6 +1210,50 @@ hr {
   text-decoration: underline;
 }
 
+.desktop-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  pointer-events: none;
+  text-align: center;
+}
+
+.desktop-modal.is-open {
+  display: flex;
+}
+
+.desktop-modal__frame {
+  position: relative;
+  display: inline-block;
+  pointer-events: auto;
+  margin: 0 auto;
+}
+
+.desktop-modal img {
+  max-width: min(92vw, 1100px);
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  pointer-events: auto;
+  animation: ui-flicker 4s ease-in-out infinite;
+}
+
+.desktop-modal__caption {
+  color: var(--text);
+  font-family: "DotGothic16", "Victor Mono", monospace;
+  font-size: 0.95rem;
+  margin-top: 8px;
+  text-align: center;
+  pointer-events: auto;
+}
+
 .mobile-home-list {
   display: none;
   list-style: none;
