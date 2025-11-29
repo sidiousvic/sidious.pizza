@@ -183,6 +183,18 @@ function initDesktopLayout() {
   window.addEventListener("resize", debounced);
 }
 
+function initTattsuGate() {
+  const end = typeof window !== "undefined" && window.localStorage?.getItem("end") === "true";
+  qsa('[data-requires-end="true"]').forEach((icon) => {
+    if (end) {
+      icon.classList.add("is-active");
+      icon.style.removeProperty("display");
+    } else {
+      icon.remove();
+    }
+  });
+}
+
 function initDesktopModal() {
   const modal = qs("[data-modal]");
   if (!modal) return;
@@ -467,7 +479,12 @@ function init() {
   initTheme();
   initHeaderScroll();
   initClock();
+  initTattsuGate();
   initDesktopLayout();
+  const tattsuEligible = typeof window !== "undefined" && window.localStorage?.getItem("end") === "true";
+  if (tattsuEligible) {
+    qsa('[data-requires-end="true"]').forEach((icon) => icon.classList.add("is-active"));
+  }
   initDesktopModal();
   const langApi = initLangSwitch();
   initTTS(langApi);

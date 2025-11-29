@@ -1185,7 +1185,7 @@ hr {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: saturate(1) contrast(1.02);
+  image-rendering: ;
 }
 
 .desktop-icon__label {
@@ -1239,7 +1239,7 @@ hr {
   height: auto;
   display: block;
   object-fit: contain;
-  border-radius: 10px;
+  border-radius: 2px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
   pointer-events: auto;
   animation: ui-flicker 4s ease-in-out infinite;

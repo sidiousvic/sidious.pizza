@@ -16,13 +16,15 @@ title: Vic Sidious
   const desktopItems = [
     { title: "About Me", url: "/about", logo: "/images/clay-vics.gif", isAbout: true },
     { title: "Meta", url: "/meta", logo: "/images/pizzadrop.gif", isAbout: true },
-    { title: "brother.jpg", url: "#", logo: "/images/vic-and-dany.png", modalImage: "/images/vic-and-dany.png", noCaption: true },
+    { title: "brother.jpg", url: "#", logo: "/images/brothers-jpg-icon.png", modalImage: "/images/brothers.jpg" },
+    { title: "tattsu.exe", url: "#", logo: "/images/tattsu-exe.webp", requiresEnd: true },
     ...normalized.map((post) => ({
       title: post.title,
       url: post.url,
       logo: post.logo,
       isAbout: false,
-      isMeta: false
+      isMeta: false,
+      requiresEnd: false
     })),
   ];
 %>
@@ -31,7 +33,8 @@ title: Vic Sidious
   <div class="desktop-icons" aria-label="Latest items">
     <% desktopItems.forEach((item) => { %>
       <% const iconSrc = item.logo || "/images/file.png"; %>
-      <a class="desktop-icon <%= item.isAbout ? 'desktop-icon--about' : '' %>" data-about="<%= item.isAbout ? 'true' : 'false' %>" href="<%= item.url %>" <%= item.modalImage ? `data-modal-image="${iconSrc}" data-modal-title="${item.noCaption ? '' : (item.title || '')}"` : "" %>>
+      <% const modalImg= item.modalImage || "/images/file.png"; %>
+      <a class="desktop-icon <%= item.isAbout ? 'desktop-icon--about' : '' %>" data-about="<%= item.isAbout ? 'true' : 'false' %>" href="<%= item.url %>" <%= item.requiresEnd ? 'data-requires-end="true" style="display: none;"' : '' %> <%= item.modalImage ? `data-modal-image="${modalImg}" data-modal-title="${item.noCaption ? '' : (item.title || '')}"` : "" %>>
         <span class="desktop-icon__thumb">
           <img src="<%= iconSrc %>" alt="" loading="lazy" decoding="async">
         </span>
@@ -43,7 +46,7 @@ title: Vic Sidious
   <ul class="mobile-home-list" aria-label="Latest items (mobile)">
     <% desktopItems.forEach((item) => { %>
       <li>
-        <a href="<%= item.url %>"><%= item.title %></a>
+        <a href="<%= item.url %>" <%= item.requiresEnd ? 'data-requires-end="true" style="display: none;"' : '' %>><%= item.title %></a>
       </li>
     <% }); %>
   </ul>
