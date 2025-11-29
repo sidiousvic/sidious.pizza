@@ -1239,7 +1239,7 @@ hr {
   height: auto;
   display: block;
   object-fit: contain;
-  border-radius: 10px;
+  border-radius: 2px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
   pointer-events: auto;
   animation: ui-flicker 4s ease-in-out infinite;
