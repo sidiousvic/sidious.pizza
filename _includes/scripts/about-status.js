@@ -18,9 +18,9 @@
 
   const applyTransient = (status) => {
     const map = {
-      scheming: { label: "Squirrel?", cls: "status-scheming" },
-      short: { label: "Short-circuiting", cls: "status-short" },
-      lost: { label: "Signal lost...", cls: "status-lost" },
+      scheming: { label: "Scheming...", cls: "status-scheming" },
+      short: { label: "Short-circuiting...", cls: "status-short" },
+      lost: { label: "Signal lost", cls: "status-lost" },
     };
     const entry = map[status];
     if (!entry) return null;
@@ -31,10 +31,13 @@
 
   applyStatus(baseStatus());
 
+  const transientPool = ["scheming", "short", "lost"];
+  let transientIndex = 0;
+
   setInterval(() => {
-    const transientPool = ["scheming", "short", "lost"];
-    const pick = transientPool[Math.floor(Math.random() * transientPool.length)];
+    const pick = transientPool[transientIndex % transientPool.length];
+    transientIndex += 1;
     const restore = applyTransient(pick);
     if (restore) setTimeout(restore, 3000);
-  }, 8000);
+  }, 18_000);
 })();

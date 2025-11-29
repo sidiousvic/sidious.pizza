@@ -672,15 +672,15 @@ figcaption {
 
 .status-led {
   display: inline-block;
-  width: 5px;
-  height: 5px;
+  width: 7px;
+  height: 7px;
   margin-right: 6px;
   border-radius: 50%;
-  background: currentColor;
+  background: #ffffff;
   box-shadow:
     0 0 0 2px currentColor,
-    0 0 12px 2px currentColor,
-    0 0 18px 2px rgba(0, 0, 0, 0.4);
+    0 0 14px 3px currentColor,
+    0 0 22px 4px rgba(0, 0, 0, 0.4);
   vertical-align: middle;
   animation: status-pulse 2.4s ease-in-out infinite;
 }
@@ -694,7 +694,7 @@ figcaption {
 }
 
 .status-scheming {
-  color: mediumpurple;
+  color: #00ffb3;
 }
 
 .status-short {
@@ -702,21 +702,21 @@ figcaption {
 }
 
 .status-lost {
-  color: #333;
+  color: #00a2ff;
 }
 
 @keyframes status-pulse {
   0%, 100% {
     box-shadow:
       0 0 0 2px currentColor,
-      0 0 12px 2px currentColor,
-      0 0 18px 2px rgba(0, 0, 0, 0.4);
+      0 0 14px 3px currentColor,
+      0 0 22px 4px rgba(0, 0, 0, 0.4);
   }
   50% {
     box-shadow:
       0 0 0 3px currentColor,
-      0 0 16px 3px currentColor,
-      0 0 24px 3px rgba(0, 0, 0, 0.25);
+      0 0 20px 4px currentColor,
+      0 0 28px 4px rgba(0, 0, 0, 0.25);
   }
 }
 
