@@ -556,6 +556,7 @@ img {
   position: relative;
   display: block;
   height: auto;
+  margin-bottom: 10px;
 }
 
 :root:not(.theme-dark) .article img,
@@ -569,6 +570,48 @@ img {
   width: 100%;
   max-width: 100%;
   margin: 0 0 1.2em;
+}
+
+.float-figure {
+  float: right;
+  max-width: 320px;
+  margin: 0 0 1em 1.4em;
+}
+
+.float-figure img {
+  width: 100%;
+  height: auto;
+}
+
+.float-figure figcaption {
+  text-align: left;
+}
+
+.float-figure-left {
+  float: left;
+  max-width: 320px;
+  margin: 0 1.4em 1em 0;
+}
+
+@media (max-width: 720px) {
+  .float-figure,
+  .float-figure-left {
+    float: none;
+    max-width: 100%;
+    margin: 0 0 1em 0;
+  }
+
+  .float-figure figcaption,
+  .float-figure-left figcaption {
+    text-align: center;
+  }
+}
+
+figcaption {
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-align: center;
 }
 
 .article en,
@@ -625,6 +668,56 @@ img {
 .about-facts tr:last-child th,
 .about-facts tr:last-child td {
   border-bottom: none;
+}
+
+.status-led {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow:
+    0 0 0 2px currentColor,
+    0 0 12px 2px currentColor,
+    0 0 18px 2px rgba(0, 0, 0, 0.4);
+  vertical-align: middle;
+  animation: status-pulse 2.4s ease-in-out infinite;
+}
+
+.status-hungry {
+  color: #ff3b3b;
+}
+
+.status-sleepy {
+  color: #c763ff;
+}
+
+.status-scheming {
+  color: mediumpurple;
+}
+
+.status-short {
+  color: #ffb600;
+}
+
+.status-lost {
+  color: #333;
+}
+
+@keyframes status-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 0 2px currentColor,
+      0 0 12px 2px currentColor,
+      0 0 18px 2px rgba(0, 0, 0, 0.4);
+  }
+  50% {
+    box-shadow:
+      0 0 0 3px currentColor,
+      0 0 16px 3px currentColor,
+      0 0 24px 3px rgba(0, 0, 0, 0.25);
+  }
 }
 
 .age-counter {
