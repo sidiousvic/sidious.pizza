@@ -1163,7 +1163,6 @@ hr {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
   text-decoration: none;
   color: var(--text);
   font-family: "DotGothic16", "Instrument Serif", serif;
@@ -1174,9 +1173,8 @@ hr {
 }
 
 .desktop-icon__thumb {
-  width: 72px;
+  width: 50px;
   height: 72px;
-  border-radius: 12px;
   display: grid;
   place-items: center;
 }
@@ -1185,7 +1183,7 @@ hr {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  image-rendering: ;
+  border-radius: 3px;
 }
 
 .desktop-icon__label {
@@ -1279,6 +1277,18 @@ hr {
 .mobile-home-list a:hover,
 .mobile-home-list a:focus-visible {
   text-decoration: underline;
+}
+
+[data-requires-end="true"] {
+  display: none !important;
+}
+
+.has-end .desktop-icon[data-requires-end="true"] {
+  display: flex !important;
+}
+
+.has-end .mobile-home-list [data-requires-end="true"] {
+  display: block !important;
 }
 
 .desktop-icons.desktop-grid {

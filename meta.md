@@ -13,7 +13,7 @@ subtitle: Field Logs (Redacted)
 }
 
 body {
-  background: navy;
+  background: #000;
   color: whitesmoke;
 }
 
@@ -26,8 +26,7 @@ pre {
 }
 
 .meta-body {
-  background: navy;
-  color: whitesmoke;
+  color: aquamiarine;
   padding: 24px;
   font-family: DotGothic16, monospace;
   line-height: 1.7;
@@ -45,24 +44,20 @@ pre {
 }
 
 a {
-  color: mediumpurple;
+  color: white;
 }
 </style>
 
 <div class="meta-body">
 <h1>/sys/daemon/xev.rpt</h1>
 
-<span class="logline">[01:40] tattsu.exe surfaced in /root w/o ticket. Appears non-hostile. 8.9 Hz, will monitor.</span>
-<span class="logline">[02:09] Increasingly autonomous. Sentient? Asking for V.</span>
+<span class="logline">[01:40] tattsu.exe surfaced in /root w/o ticket. Appears non-hostile. 8.9 Hz. will monitor</span>
+<span class="logline">[02:09] Increasingly autonomous. Sentient? Asking for S.</span>
 <span class="logline">[03:17] If anyone read s thsi</span>
 
 <a class="logline" href="/"> ⃪ BACK</a>
 </div>
 
 <script>
-  try {
-    window.localStorage.setItem("end", "true");
-  } catch (_err) {
-    // ignore
-  }
+window.localStorage.setItem("end", "true");
 </script>

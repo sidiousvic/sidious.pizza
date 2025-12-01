@@ -93,7 +93,7 @@ An omnivorous species, it displays a constant voracity for beef in nearly all fo
 
 The species is often observed sliding into indie brew joints for coffee or beer. It also routinely forages for sushi, hamburgers, and other calorie-dense goblin meals.
 
-The species also displays a marked attraction to distilled substances, most notably _sotol_, _absinthe_, and _sake_. Observers describe frequent appearances at local establishments, where the organism inspects the bottles completely unaware of their significance but part of an performative ritual. These liquids appear to function as auxiliary fuel sources, supporting its extended physical and creative activity. While no formal study confirms their necessity for survival, several observations suggest that regular dosing seems to be pervasive.
+The species also displays a marked attraction to distilled substances, most notably _sotol_, _absinthe_, and _sake_. Observers describe frequent appearances at local establishments, where the organism inspects bottles largely unaware of their significance but as part of an performative ritual. These liquids appear to function as auxiliary fuel sources, supporting its extended physical and creative activity. 
 
 ### Pizza
 
@@ -104,8 +104,7 @@ Pizza holds a unique ecological role in the species’ life cycle and is the bas
     <figcaption>An unrelated rodent demonstrating the same pizza-oriented instincts observed in S. pizzivorus, shown here for comparative purposes.<figcaption>
 </figure>
 
-Field observations suggest that the organism regards pizza as more than physical nourishment, displaying reverence for its stable mathematical ratios and spiritual properties. The act of sharing pizza appears equally primal, functioning as a community-stabilizing ritual that reinforces its social bonds within the familiar group. Regular exposure contributes to overall behavioral regulation, both nutritional and transcendental.
-
+Field observations suggest that the organism regards pizza as more than physical nourishment, displaying reverence for its mathematical and spiritual properties. The act of sharing pizza appears equally primal, functioning as a community-stabilizing ritual that reinforces its social bonds within the familiar group. 
 
 ## Social Structure and Behavior
 
@@ -118,7 +117,7 @@ The default aspect is a mischievous smile paired with scheming eyes reminiscent 
 
 The species exhibits a tendency toward banter and low-grade trickery towards other primates, a behavioral residue from its original habitat. 
 
-When mildly entertained, the organism produces a characteristic “uhuhuhu” or "hehehe". During encounters with ranchera music, _S. pizzivorus_ may exhibit a sudden urge for howling, reminiscent of a midsized desert canine at a note far outside its natural range. 
+When mildly amused, the organism produces a characteristic “uhuhuhu” or "hehehe". During encounters with ranchera music, _S. pizzivorus_ may exhibit a sudden urge for howling, reminiscent of a midsized desert canine at a note far outside its natural range. 
 
 Although _S. pizzivorus_ often retreats into solitary intervals to study, refresh, or develop new cognitive structures, it enjoys its few relationships and shows a clear preference for spending valuable time with a small number of familiar primates. These interactions are steady, forming long-term bonds that the organism maintains with loyalty.
 
@@ -129,7 +128,7 @@ Outside group settings, the species engages in consistent physical training, lat
     <figcaption>The species shows consistent curiosity toward complex systems and machinery, especially objects that move, spin, or go <i>"vroom vroom"</i>.</figcaption>
 </figure>
 
-Field observations show that S. pizzivorus is consistently drawn to mechanical structures. This includes engines, bridges, mathematical frameworks, bridges, computer systems, and importantly, bridges, which it holds as examples of human ingenuity and considers good-looking. It often stands in front of these constructions for long periods, smiling at the machinery, diagram, or structure. The true purpose of this energy-consuming behavior remains unsolved by science. Some field notes propose _S. pizzivorus_ might just be having _a good time._
+Field observations show that _S. pizzivorus_ is consistently drawn to mechanical structures. This includes engines, bridges, mathematical frameworks, bridges, computer systems and bridges, which it holds as examples of human ingenuity and considers good-looking. It often stands in front of these constructions for long periods, smiling at the machinery, diagram, or structure. The true purpose of this energy-consuming behavior remains unsolved by science. Some field notes propose _S. pizzivorus_ might just be having _a good time._
 
 ## Adaptive Strategies 
 
@@ -138,7 +137,7 @@ When confronted with obstacles, S. pizzivorus typically categorizes them as ordi
 Over longer intervals, the species settles into durable patterns of conduct that provide stability across environments. However, the species remains susceptible to sudden bouts of experimentation and free-range behavior when local conditions align.
 
 <figure class="float-figure-left">
-  <img src="/images/vic-stupid.jpg" alt="Vic next to a rocket engine.">
+  <img src="/images/vic-stupid.jpg" alt="Vic standing in the train station. A handwritten note over the picture reads: 'Stupid'">
   <figcaption>Specimen observed in the wild. Annotation is not sponsored by this article.</figcaption>
 </figure>
 
@@ -153,6 +152,5 @@ This produces a somewhat efficient behavioral economy, allowing the species to m
 
 There is currently only one confirmed specimen of _Vic sidious pizzivorus_. Although the species is resilient and widely adaptable, its greatest threat remains largely itself, particularly during spontaneous episodes of singing while driving or engaging in age-inappropriate skateboarding rituals. Conservation efforts focus on ensuring adequate nourishment, limited but meaningful social contact, and keeping the specimen sufficiently entertained with bridges to reduce unnecessary misadventure.
 
-## Learn More
 
 

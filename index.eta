@@ -15,7 +15,7 @@ title: Vic Sidious
     .map((post) => ({ ...post }));
   const desktopItems = [
     { title: "About Me", url: "/about", logo: "/images/clay-vics.gif", isAbout: true },
-    { title: "Meta", url: "/meta", logo: "/images/pizzadrop.gif", isAbout: true },
+    { title: "Meta", url: "/meta", logo: "/images/meta-icon.png", isAbout: true },
     { title: "brother.jpg", url: "#", logo: "/images/brothers-jpg-icon.png", modalImage: "/images/brothers.jpg" },
     { title: "tattsu.exe", url: "#", logo: "/images/tattsu-exe.webp", requiresEnd: true },
     ...normalized.map((post) => ({
@@ -34,7 +34,12 @@ title: Vic Sidious
     <% desktopItems.forEach((item) => { %>
       <% const iconSrc = item.logo || "/images/file.png"; %>
       <% const modalImg= item.modalImage || "/images/file.png"; %>
-      <a class="desktop-icon <%= item.isAbout ? 'desktop-icon--about' : '' %>" data-about="<%= item.isAbout ? 'true' : 'false' %>" href="<%= item.url %>" <%= item.requiresEnd ? 'data-requires-end="true" style="display: none;"' : '' %> <%= item.modalImage ? `data-modal-image="${modalImg}" data-modal-title="${item.noCaption ? '' : (item.title || '')}"` : "" %>>
+      <a
+        class="desktop-icon <%= item.isAbout ? 'desktop-icon--about' : '' %>"
+        data-about="<%= item.isAbout ? 'true' : 'false' %>"
+        href="<%= item.url %>"
+        <% if (item.requiresEnd) { %>data-requires-end="true"<% } %>
+        <%= item.modalImage ? `data-modal-image="${modalImg}" data-modal-title="${item.noCaption ? '' : (item.title || '')}"` : "" %>>
         <span class="desktop-icon__thumb">
           <img src="<%= iconSrc %>" alt="" loading="lazy" decoding="async">
         </span>
@@ -46,7 +51,7 @@ title: Vic Sidious
   <ul class="mobile-home-list" aria-label="Latest items (mobile)">
     <% desktopItems.forEach((item) => { %>
       <li>
-        <a href="<%= item.url %>" <%= item.requiresEnd ? 'data-requires-end="true" style="display: none;"' : '' %>><%= item.title %></a>
+        <a href="<%= item.url %>" <% if (item.requiresEnd) { %>data-requires-end="true"<% } %>><%= item.title %></a>
       </li>
     <% }); %>
   </ul>
