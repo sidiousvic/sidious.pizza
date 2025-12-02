@@ -1,6 +1,5 @@
 ---
-title: Meta — Tattsu Mk. IV
-subtitle: Field Logs (Redacted)
+title: Meta
 ---
 
 <style>
@@ -54,8 +53,6 @@ a {
 <span class="logline">[01:40] tattsu.exe surfaced in /root w/o ticket. Appears non-hostile. 8.9 Hz. will monitor</span>
 <span class="logline">[02:09] Increasingly autonomous. Sentient? Asking for S.</span>
 <span class="logline">[03:17] If anyone read s thsi</span>
-
-<a class="logline" href="/"> ⃪ BACK</a>
 </div>
 
 <script>
