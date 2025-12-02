@@ -11,6 +11,7 @@ import brotli from "lume/plugins/brotli.ts";
 import markdown from "lume/plugins/markdown.ts";
 import { optimizePics9000 } from "./processors/optimizePics9000.ts"
 import { applyContentPreprocess } from "./processors/contentPreprocess.ts";
+import { minifyCss } from "./processors/minifyCss.ts";
 
 const site = lume();
 
@@ -35,6 +36,7 @@ site.use(check_urls());
 site.use(brotli());
 
 site.process([".md", ".eta"], optimizePics9000)
+site.process([".css"], minifyCss)
 
 applyContentPreprocess(site);
 

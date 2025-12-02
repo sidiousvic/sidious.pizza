@@ -1,7 +1,7 @@
 ---
 layout: article.eta
 type: file
-title: From Shadow, The Way
+title: Shadow Yields the Way
 title_es: De La Sombra, El Camino
 title_jp: 影より道
 subtitle: A principle of nature
@@ -18,11 +18,11 @@ featured: true
 
 <section data-lang="en">
 
-Nature unfolds in its own way, as quietly as a flower blossoms before dawn. I do not send for its petals, yet there they are by morning, spread under the same light that will see them away. I do not ask them to die, and they are already underway, though I often feel yearning for it not to be so. And though I see their soft fraying at the edges, it is slow enough, and for a moment, I forget it. Still, the river does not settle, the sun darkens as the evening comes, and it is only me who yearns, and nothing is abrupt, and nothing waits, and it is only me that mourns it. 
+Nature moves on its own, as quietly as flower that blossoms before dawnI do not ask for petals, yet there they are by morning, under the same light that will see them away. I do not ask them to die, but they are already underway, though I often want it not to be so. And though I see their fraying at the edges, it is slow enough that for a moment, I can forget it. The river though, does not settle, the sun darkens when the evening comes, and it is only me who yearns, and nothing is abrupt, and nothing waits, and it is only me that mourns it. 
 
-Where does this yearning come from? Have I ever seen the sea without a rise, a desert without a ridge, a stretch of ground that does not, somewhere, break, dip, turn, or harden underfoot? Why should I act as though nature owes me a fair road, or as though I could break the mountain or halt the bitter cold? Why should I avoid or deny it where it twists and shallows? The tide, the fallen tree, the clap of thunder? No daemon made them. They are not flaws in the terrain. They are the terrain. The ridge is there. I am the one who names it an enemy. 
+Where does this sadness come from? Have I ever seen the sea without a rise, a desert without a ridge, a stretch of ground that does not, somewhere, break, dip, turn, or harden underfoot? Why should I act as though nature owes me the fair road, or as though I could break the ridge or halt the cold? Why should I avoid or deny it where it twists and shallows? The tide, the fallen tree, the clap of thunder? No daemon made them. They are not flaws in the terrain. They are the terrain. The ridge is there. I am the one who names it an enemy. 
 
-Yearning rises in the same way, without evil, just as the blossom opens and the evening comes. It is not outside nature. It is one more movement in it. Its trouble lies not in the pain but in the degree I take toward the path. A mountain becomes an obstacle only where I wanted a plain, though the mountain is as natural and as necessary as the plain. Silence becomes a blade only when I hoped for the dawn chorus, though darkness is what makes the light, and silence is only the darkness of voices. The path stays what it is. Yearning is the natural pull. I am the one who decides if I resist it, deny it, defy it, or fall with it. Nature has its own momentum, and I cannot will it to change. What I can will is the angle with which I meet it.
+Sadness rises in the same way, without evil, just as the blossom opens and the evening comes. It is not outside nature. It is one more movement in it. Its trouble lies not in the pain but in the degree I take toward the path. A mountain becomes an obstacle only where I wanted a plain, though the mountain is as natural and as necessary as the plain. Silence becomes a blade only when I hoped for the dawn chorus, though darkness is what makes the light, and silence is only the darkness of voices. The path stays what it is. Yearning is the natural pull. I am the one who decides if I resist it, deny it, defy it, or fall with it. Nature has its own momentum, and I cannot will it to change. What I can will is the angle with which I meet it.
 </section>
 
 <section data-lang="jp">

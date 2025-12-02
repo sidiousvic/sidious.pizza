@@ -63,6 +63,22 @@
 }
 
 @font-face {
+  font-family: "Victor Mono";
+  src: url("/fonts/Victor_Mono/static/VictorMono-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Victor Mono";
+  src: url("/fonts/Victor_Mono/static/VictorMono-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "DotGothic16";
   src: url("/fonts/DotGothic16/DotGothic16-Regular.ttf") format("truetype");
   font-weight: 400;
@@ -812,7 +828,6 @@ a {
 b,
 strong {
   font-family: "Victor Mono", "DotGothic16", "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
-  text-transform: uppercase;
   font-weight: 700;
   animation: ui-flicker 6s ease-in-out infinite;
 }
